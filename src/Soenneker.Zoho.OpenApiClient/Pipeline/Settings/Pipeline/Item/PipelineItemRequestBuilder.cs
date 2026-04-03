@@ -42,11 +42,11 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse?> GetAsSinglePipelineGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder.PipelineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder.PipelineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse> GetAsSinglePipelineGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder.PipelineItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder.PipelineItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,30 +55,6 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get particular pipeline by ID
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse">When receiving a 400 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsSinglePipelineGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder.PipelineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder.PipelineItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update/Delete an pipeline
@@ -220,14 +196,6 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PipelineItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder.PipelineItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Update/Delete an pipeline
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -245,14 +213,6 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PipelineItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder.PipelineItemRequestBuilderPatchQueryParameters>
-        {
-        }
-        /// <summary>
         /// Update/Delete an pipeline
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -268,14 +228,6 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item
             [QueryParameter("layout_id")]
             public string LayoutId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PipelineItemRequestBuilderPutRequestConfiguration : RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder.PipelineItemRequestBuilderPutQueryParameters>
-        {
         }
     }
 }

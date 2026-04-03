@@ -93,33 +93,11 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count
         public partial class CountRequestBuilderGetQueryParameters 
         {
             /// <summary>Filters leads based on their approval status.</summary>
-            [Obsolete("This property is deprecated, use ApprovedAsGetApprovedQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("approved")]
-            public string? Approved { get; set; }
-#nullable restore
-#else
-            [QueryParameter("approved")]
-            public string Approved { get; set; }
-#endif
-            /// <summary>Filters leads based on their approval status.</summary>
-            [QueryParameter("approved")]
-            public global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.GetApprovedQueryParameterType? ApprovedAsGetApprovedQueryParameterType { get; set; }
-            /// <summary>Filters leads based on their conversion status.</summary>
-            [Obsolete("This property is deprecated, use ConvertedAsGetConvertedQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("converted")]
-            public string? Converted { get; set; }
-#nullable restore
-#else
-            [QueryParameter("converted")]
-            public string Converted { get; set; }
-#endif
+            public global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.GetApprovedQueryParameterType? Approved { get; set; }
             /// <summary>Filters leads based on their conversion status.</summary>
             [QueryParameter("converted")]
-            public global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.GetConvertedQueryParameterType? ConvertedAsGetConvertedQueryParameterType { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.GetConvertedQueryParameterType? Converted { get; set; }
             /// <summary>&quot;Performs search by following the shown criteria: `(({api_name}:{operator}:{value}) and/or ({api_name}:{operator}:{value}))`Performs a search based on the following format:`(({field_API_name}:{operator}:{value}) and/or ({field_API_name}:{operator}:{value}))`Replace `{field_API_name}`, `{operator}`, and `{value}` with the appropriate field API name, condition, and value.**Key Points:**- You can search for a maximum of **10 criteria** (with same or different columns)- The only operator that is supported for **encrypted fields** is `equals`- When using the `equals` operator in the Search API, it behaves like `contains`, retrieving records that include the specified value**Single Condition:**If the condition is `(Company:equals:ABC)`, the response will include records with \&quot;ABC\&quot; as well as \&quot;ABC Inc\&quot; in the Company field.**Multiple Conditions:**`equals` still behaves like `contains`. For example, `((Company:equals:ABC) and (First_Name:starts_with:M))`, it retrieves records where the \&quot;First Name\&quot; starts with \&quot;M\&quot; and the \&quot;Company\&quot; contains \&quot;ABC\&quot; (e.g., \&quot;ABC\&quot; or \&quot;ABC Inc.\&quot;).**Note:** The above behaviour does not apply to the **picklist field type**.**IN Operator:**The `in` operator checks if a field&apos;s value matches any value in a given list.For example, `(Full_Name:in:Patricia,Boyle,Kate)`, it retrieves records where the Full Name is Patricia, Boyle, or Kate.**Special Character Handling:**When a single-line field value contains characters such as `{`, `}`, `[`, `]`, `^`, `:`, `-`, `/`, `!`, `?`, `*`, `_`, `@`, space, the Search API returns records with similar-looking values, even if the characters are not an exact match.For example, if Record A has the field value `sales-team@zoho.com` and Record B has `sales_team@zoho.com`, a search using `equals:sales-team@zoho.com` may return both records.**Escaping Special Characters:**When using parentheses `()`, commas `,`, or a backslash `\` as the last character in a search value, follow these steps:1. Escape special characters using a backslash `\`2. Encode the value before making the API request. Select the value of the criteria, right-click the value, and choose the EncodeURIComponent option.**Example 1: Escaping Parentheses and Commas**- Search term: `((Last_Name:equals:Burns,B) and (First_Name:starts_with:M))`- Escape the comma `\,`: `((Last_Name:equals:Burns\,B) and (First_Name:starts_with:M))`- Encode the value: `((Last_Name:equals:Burns%5C%2CB) and (First_Name:starts_with:M))`**Example 2: Escaping a Backslash at the End**- Search term: `(Last_Name:equals:K\)`- Escape the backslash `\\`: `(Last_Name:equals:K\\)`- Encode the value: `(Last_Name:equals:K%5C%5C)`**Supported Data Types:**`picklist`, `owner_lookup`, `user_lookup`, `lookup`, `phone`, `email`, `date`, `datetime`, `text`, `textarea`, `integer`, `currency`, `decimal`, `multiselectpicklist`, `bigint`, `percent`, `formula`, `website`, `boolean`, `double`**Supported Operators:**`equals`, `starts_with`, `in`, `not_equal`, `greater_equal`, `greater_than`, `less_equal`, `less_than`, `between`**Operator Compatibility by Data Type:**| Data Type | equals | starts_with | in | not_equal | greater_equal | greater_than | less_equal | less_than | between ||---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|| **text** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **textarea** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **email** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **phone** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **website** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **picklist** | ✓ | ✗ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **multiselectpicklist** | ✓ | ✗ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **lookup** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **owner_lookup** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **user_lookup** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **boolean** | ✓ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **integer** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **bigint** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **currency** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **decimal** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **double** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **percent** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **date** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **datetime** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **formula** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |**Legend:** ✓ = Supported, ✗ = Not Supported**Note:** Refer to the Zoho CRM API documentation for the most up-to-date operator compatibility information.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -167,19 +145,8 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count
             public string Phone { get; set; }
 #endif
             /// <summary>Filters users based on their type. This parameter is supported **only for the Users module**.</summary>
-            [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
-            /// <summary>Filters users based on their type. This parameter is supported **only for the Users module**.</summary>
-            [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.GetTypeQueryParameterType? Type { get; set; }
             /// <summary>Performs a global search within the specified module using the given word. The matchable records across multiple fields based on the search term. (e.g., `fin` to match records containing &apos;fin&apos; in any searchable field).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -190,14 +157,6 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count
             [QueryParameter("word")]
             public string Word { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CountRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

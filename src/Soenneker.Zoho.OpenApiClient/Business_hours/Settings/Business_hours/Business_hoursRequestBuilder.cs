@@ -61,11 +61,11 @@ namespace Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Business_hours403Error">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPostResponse?> PostAsBusiness_hoursPostResponseAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_createBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPostResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_createBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPostResponse> PostAsBusiness_hoursPostResponseAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_createBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPostResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_createBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -77,32 +77,6 @@ namespace Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPostResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new business hours configuration specifying working days, hours, and timezone for the organization.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursResponse"/></returns>
-        /// <param name="body">Business hours creation request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Business_hours403Error">When receiving a 403 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsBusiness_hoursPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_createBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_createBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Business_hours403Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
         /// Updates the existing business hours configuration with new working days, hours, or timezone settings.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPutResponse"/></returns>
@@ -112,11 +86,11 @@ namespace Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Business_hours403Error">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPutResponse?> PutAsBusiness_hoursPutResponseAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_updateBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPutResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_updateBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPutResponse> PutAsBusiness_hoursPutResponseAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_updateBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPutResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_updateBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -126,32 +100,6 @@ namespace Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.Business_hours403Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPutResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates the existing business hours configuration with new working days, hours, or timezone settings.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursResponse"/></returns>
-        /// <param name="body">Business hours update request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Business_hours403Error">When receiving a 403 status code</exception>
-        [Obsolete("This method is obsolete. Use PutAsBusiness_hoursPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_updateBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Business_hours_updateBusinessHours body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Business_hours403Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the current business hours configuration including working days, hours, and timezone.
@@ -224,30 +172,6 @@ namespace Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours
         public global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Zoho.OpenApiClient.Business_hours.Settings.Business_hours.Business_hoursRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Business_hoursRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Business_hoursRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Business_hoursRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

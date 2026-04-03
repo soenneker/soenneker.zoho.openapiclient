@@ -103,33 +103,11 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
         public partial class SearchRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter records by their approval status. This parameter is particularly useful for modules with approval workflows or data validation processes.</summary>
-            [Obsolete("This property is deprecated, use ApprovalStateAsGetApprovalStateQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("approval_state")]
-            public string? ApprovalState { get; set; }
-#nullable restore
-#else
-            [QueryParameter("approval_state")]
-            public string ApprovalState { get; set; }
-#endif
-            /// <summary>Filter records by their approval status. This parameter is particularly useful for modules with approval workflows or data validation processes.</summary>
-            [QueryParameter("approval_state")]
-            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetApproval_stateQueryParameterType? ApprovalStateAsGetApprovalStateQueryParameterType { get; set; }
-            /// <summary>Filter records by their conversion status. Primarily used with Leads module to distinguish between converted and non-converted leads. Also applicable to other modules with conversion workflows.</summary>
-            [Obsolete("This property is deprecated, use ConvertedAsGetConvertedQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("converted")]
-            public string? Converted { get; set; }
-#nullable restore
-#else
-            [QueryParameter("converted")]
-            public string Converted { get; set; }
-#endif
+            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetApproval_stateQueryParameterType? ApprovalState { get; set; }
             /// <summary>Filter records by their conversion status. Primarily used with Leads module to distinguish between converted and non-converted leads. Also applicable to other modules with conversion workflows.</summary>
             [QueryParameter("converted")]
-            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetConvertedQueryParameterType? ConvertedAsGetConvertedQueryParameterType { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetConvertedQueryParameterType? Converted { get; set; }
             /// <summary>Complex query string to search for records using field-specific conditions and operators. Supports up to 15 conditions combined with AND/OR operators. **Format:** `(field_name:operator:value)` with logical operators.*Mandatory if email, phone, and word are not present.*</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,33 +165,11 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
             public string SortBy { get; set; }
 #endif
             /// <summary>The sorting direction for the results. Use &apos;asc&apos; for ascending (A-Z, 1-9, oldest first) or &apos;desc&apos; for descending (Z-A, 9-1, newest first).</summary>
-            [Obsolete("This property is deprecated, use SortOrderAsGetSortOrderQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort_order")]
-            public string? SortOrder { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort_order")]
-            public string SortOrder { get; set; }
-#endif
-            /// <summary>The sorting direction for the results. Use &apos;asc&apos; for ascending (A-Z, 1-9, oldest first) or &apos;desc&apos; for descending (Z-A, 9-1, newest first).</summary>
-            [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetSort_orderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
-            /// <summary>Filter users by their status, role, or confirmation state</summary>
-            [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetSort_orderQueryParameterType? SortOrder { get; set; }
             /// <summary>Filter users by their status, role, or confirmation state</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetTypeQueryParameterType? Type { get; set; }
             /// <summary>A simple word or phrase to search across all supported text fields in the module. Performs a global search with minimum 2 characters required. This is the broadest search method but may be slower than specific field searches.*Mandatory if criteria, email, and phone are not present.*</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -224,14 +180,6 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
             [QueryParameter("word")]
             public string Word { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SearchRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

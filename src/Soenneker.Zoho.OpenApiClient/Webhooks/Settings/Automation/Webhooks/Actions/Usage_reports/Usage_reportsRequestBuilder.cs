@@ -91,33 +91,11 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Act
         public partial class Usage_reportsRequestBuilderGetQueryParameters 
         {
             /// <summary>The start date in YYYY-MM-DD format, from which webhook failure details are to be fetched.. </summary>
-            [Obsolete("This property is deprecated, use FromAsGetFromQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("from")]
-            public string? From { get; set; }
-#nullable restore
-#else
-            [QueryParameter("from")]
-            public string From { get; set; }
-#endif
-            /// <summary>The start date in YYYY-MM-DD format, from which webhook failure details are to be fetched.. </summary>
-            [QueryParameter("from")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.GetFromQueryParameterType? FromAsGetFromQueryParameterType { get; set; }
-            /// <summary>Specify the criteria to group the usage data. Please note that date is mandatory, and you can optionally include other values separated by commas.</summary>
-            [Obsolete("This property is deprecated, use GroupByAsGetGroupByQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("group_by")]
-            public string? GroupBy { get; set; }
-#nullable restore
-#else
-            [QueryParameter("group_by")]
-            public string GroupBy { get; set; }
-#endif
+            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.GetFromQueryParameterType? From { get; set; }
             /// <summary>Specify the criteria to group the usage data. Please note that date is mandatory, and you can optionally include other values separated by commas.</summary>
             [QueryParameter("group_by")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.GetGroup_byQueryParameterType? GroupByAsGetGroupByQueryParameterType { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.GetGroup_byQueryParameterType? GroupBy { get; set; }
             /// <summary>To get the list of webhooks from the respective pages. The default value is 1. Note that you cannot use this param with the &quot;page_token&quot; param.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -125,41 +103,11 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Act
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>The end date in YYYY-MM-DD format, up to which failure records are to be retrieved.</summary>
-            [Obsolete("This property is deprecated, use ToAsGetToQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("to")]
-            public string? To { get; set; }
-#nullable restore
-#else
-            [QueryParameter("to")]
-            public string To { get; set; }
-#endif
-            /// <summary>The end date in YYYY-MM-DD format, up to which failure records are to be retrieved.</summary>
-            [QueryParameter("to")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.GetToQueryParameterType? ToAsGetToQueryParameterType { get; set; }
-            /// <summary>Specify the type of resource to filter or group the usage data. This parameter is mandatory when resource is included in the group_by value.</summary>
-            [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.GetToQueryParameterType? To { get; set; }
             /// <summary>Specify the type of resource to filter or group the usage data. This parameter is mandatory when resource is included in the group_by value.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Usage_reportsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.Usage_reportsRequestBuilder.Usage_reportsRequestBuilderGetQueryParameters>
-        {
+            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.GetTypeQueryParameterType? Type { get; set; }
         }
     }
 }
