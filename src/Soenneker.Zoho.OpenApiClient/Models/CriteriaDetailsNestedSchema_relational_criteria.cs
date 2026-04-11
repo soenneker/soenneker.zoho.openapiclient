@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The related module details. This key is mandatory if module_selection is specific.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria_module? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria_module Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema Module { get; set; }
 #endif
         /// <summary>Specify the details of the related record to be evaluated.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria_module_selection? ModuleSelection { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria.CriteriaDetailsNestedSchema_relational_criteria_criteria>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria.CriteriaDetailsNestedSchema_relational_criteria_criteria.CreateFromDiscriminatorValue); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria_module>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria_module.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
                 { "module_selection", n => { ModuleSelection = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria_module_selection>(); } },
             };
         }
@@ -62,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria.CriteriaDetailsNestedSchema_relational_criteria_criteria>("criteria", Criteria);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria_module>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("module", Module);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema_relational_criteria_module_selection>("module_selection", ModuleSelection);
         }
         /// <summary>

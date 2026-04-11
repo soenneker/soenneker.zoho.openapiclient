@@ -17,10 +17,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The encrypt_case property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EncryptCase { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? EncryptCase { get; set; }
 #nullable restore
 #else
-        public string EncryptCase { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch EncryptCase { get; set; }
 #endif
         /// <summary>The encryption mode used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "encrypt_case", n => { EncryptCase = n.GetStringValue(); } },
+                { "encrypt_case", n => { EncryptCase = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "mode", n => { Mode = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("encrypt_case", EncryptCase);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("encrypt_case", EncryptCase);
             writer.WriteStringValue("mode", Mode);
             writer.WriteIntValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

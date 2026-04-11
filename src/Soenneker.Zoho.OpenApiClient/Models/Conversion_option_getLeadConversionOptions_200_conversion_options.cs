@@ -16,18 +16,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The Accounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Accounts { get; set; }
 #nullable restore
 #else
-        public UntypedNode Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Accounts { get; set; }
 #endif
         /// <summary>The Contacts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Contacts { get; set; }
 #nullable restore
 #else
-        public UntypedNode Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Contacts { get; set; }
 #endif
         /// <summary>The module_preference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,10 +40,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The modules_with_multiple_layouts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ModulesWithMultipleLayouts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ModulesWithMultipleLayouts { get; set; }
 #nullable restore
 #else
-        public UntypedNode ModulesWithMultipleLayouts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ModulesWithMultipleLayouts { get; set; }
 #endif
         /// <summary>The preference_field_matched_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,10 +71,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Accounts", n => { Accounts = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "Contacts", n => { Contacts = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "Accounts", n => { Accounts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "Contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "module_preference", n => { ModulePreference = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Conversion_option_getLeadConversionOptions_200_conversion_options_module_preference>(global::Soenneker.Zoho.OpenApiClient.Models.Conversion_option_getLeadConversionOptions_200_conversion_options_module_preference.CreateFromDiscriminatorValue); } },
-                { "modules_with_multiple_layouts", n => { ModulesWithMultipleLayouts = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "modules_with_multiple_layouts", n => { ModulesWithMultipleLayouts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "preference_field_matched_value", n => { PreferenceFieldMatchedValue = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Conversion_option_getLeadConversionOptions_200_conversion_options_preference_field_matched_value>(global::Soenneker.Zoho.OpenApiClient.Models.Conversion_option_getLeadConversionOptions_200_conversion_options_preference_field_matched_value.CreateFromDiscriminatorValue); } },
             };
         }
@@ -85,10 +85,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("Accounts", Accounts);
-            writer.WriteObjectValue<UntypedNode>("Contacts", Contacts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Accounts", Accounts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Contacts", Contacts);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Conversion_option_getLeadConversionOptions_200_conversion_options_module_preference>("module_preference", ModulePreference);
-            writer.WriteObjectValue<UntypedNode>("modules_with_multiple_layouts", ModulesWithMultipleLayouts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("modules_with_multiple_layouts", ModulesWithMultipleLayouts);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Conversion_option_getLeadConversionOptions_200_conversion_options_preference_field_matched_value>("preference_field_matched_value", PreferenceFieldMatchedValue);
         }
     }

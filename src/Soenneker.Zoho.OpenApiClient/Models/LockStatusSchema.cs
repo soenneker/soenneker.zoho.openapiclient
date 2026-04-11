@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>&quot;Field: locked_by&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockStatusSchema_locked_by? LockedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockedByObjectSchema? LockedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockStatusSchema_locked_by LockedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockedByObjectSchema LockedBy { get; set; }
 #endif
         /// <summary>A note or label to indicate the reason or context for locking the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "locked_by", n => { LockedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockStatusSchema_locked_by>(global::Soenneker.Zoho.OpenApiClient.Models.LockStatusSchema_locked_by.CreateFromDiscriminatorValue); } },
+                { "locked_by", n => { LockedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockedByObjectSchema>(global::Soenneker.Zoho.OpenApiClient.Models.LockedByObjectSchema.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetBoolValue(); } },
             };
@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockStatusSchema_locked_by>("locked_by", LockedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockedByObjectSchema>("locked_by", LockedBy);
             writer.WriteStringValue("message", Message);
             writer.WriteBoolValue("status", Status);
         }

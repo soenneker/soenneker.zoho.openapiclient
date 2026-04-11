@@ -16,18 +16,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Target field API name in the Invoices module, or null if no mapping exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Invoices { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Invoices { get; set; }
 #nullable restore
 #else
-        public string Invoices { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Invoices { get; set; }
 #endif
         /// <summary>Target field API name in the Sales_Orders module, or null if no mapping exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SalesOrders { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? SalesOrders { get; set; }
 #nullable restore
 #else
-        public string SalesOrders { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch SalesOrders { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,8 +47,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Invoices", n => { Invoices = n.GetStringValue(); } },
-                { "Sales_Orders", n => { SalesOrders = n.GetStringValue(); } },
+                { "Invoices", n => { Invoices = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "Sales_Orders", n => { SalesOrders = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,8 +58,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Invoices", Invoices);
-            writer.WriteStringValue("Sales_Orders", SalesOrders);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Invoices", Invoices);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Sales_Orders", SalesOrders);
         }
     }
 }

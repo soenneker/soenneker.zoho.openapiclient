@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The instant_actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConditionActionCountSummarySchema_instant_actions? InstantActions { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema? InstantActions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConditionActionCountSummarySchema_instant_actions InstantActions { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema InstantActions { get; set; }
 #endif
         /// <summary>&quot;Field: scheduled_actions&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "instant_actions", n => { InstantActions = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConditionActionCountSummarySchema_instant_actions>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConditionActionCountSummarySchema_instant_actions.CreateFromDiscriminatorValue); } },
+                { "instant_actions", n => { InstantActions = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema>(global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema.CreateFromDiscriminatorValue); } },
                 { "scheduled_actions", n => { ScheduledActions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema>(global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sequence_number", n => { SequenceNumber = n.GetIntValue(); } },
             };
@@ -71,7 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConditionActionCountSummarySchema_instant_actions>("instant_actions", InstantActions);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema>("instant_actions", InstantActions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema>("scheduled_actions", ScheduledActions);
             writer.WriteIntValue("sequence_number", SequenceNumber);
         }

@@ -24,18 +24,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Unique identifier of the query used to filter lookup options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_query_detailsMember1_query_id? QueryId { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? QueryId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_query_detailsMember1_query_id QueryId { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch QueryId { get; set; }
 #endif
         /// <summary>System-generated query ID for filtering lookup options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SystemQueryId { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? SystemQueryId { get; set; }
 #nullable restore
 #else
-        public string SystemQueryId { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch SystemQueryId { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,8 +56,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_query_detailsMember1_criteria>(global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_query_detailsMember1_criteria.CreateFromDiscriminatorValue); } },
-                { "query_id", n => { QueryId = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_query_detailsMember1_query_id>(global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_query_detailsMember1_query_id.CreateFromDiscriminatorValue); } },
-                { "system_query_id", n => { SystemQueryId = n.GetStringValue(); } },
+                { "query_id", n => { QueryId = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "system_query_id", n => { SystemQueryId = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,8 +68,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_query_detailsMember1_criteria>("criteria", Criteria);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_query_detailsMember1_query_id>("query_id", QueryId);
-            writer.WriteStringValue("system_query_id", SystemQueryId);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("query_id", QueryId);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("system_query_id", SystemQueryId);
         }
     }
 }

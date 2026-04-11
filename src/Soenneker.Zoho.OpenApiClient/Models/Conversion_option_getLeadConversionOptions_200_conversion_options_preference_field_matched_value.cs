@@ -15,20 +15,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The Accounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Accounts { get; set; }
 #nullable restore
 #else
-        public UntypedNode Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Accounts { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Contacts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Contacts { get; set; }
 #nullable restore
 #else
-        public UntypedNode Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Contacts { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Conversion_option_getLeadConversionOptions_200_conversion_options_preference_field_matched_value"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Accounts", n => { Accounts = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "Contacts", n => { Contacts = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "Accounts", n => { Accounts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "Contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("Accounts", Accounts);
-            writer.WriteObjectValue<UntypedNode>("Contacts", Contacts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Accounts", Accounts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Contacts", Contacts);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

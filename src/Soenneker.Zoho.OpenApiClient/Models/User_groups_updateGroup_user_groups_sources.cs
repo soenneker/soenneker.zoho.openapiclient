@@ -22,9 +22,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.User_groups_updateGroup_user_groups_sources_source Source { get; set; }
 #endif
         /// <summary>Include subordinates flag</summary>
-        public bool? Subordinates { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Subordinates { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Subordinates { get; set; }
+#endif
         /// <summary>Include sub-territories flag</summary>
-        public bool? SubTerritories { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? SubTerritories { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch SubTerritories { get; set; }
+#endif
         /// <summary>Type of source</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.User_groups_updateGroup_user_groups_sources_type? Type { get; set; }
         /// <summary>
@@ -46,8 +58,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_updateGroup_user_groups_sources_source>(global::Soenneker.Zoho.OpenApiClient.Models.User_groups_updateGroup_user_groups_sources_source.CreateFromDiscriminatorValue); } },
-                { "sub_territories", n => { SubTerritories = n.GetBoolValue(); } },
-                { "subordinates", n => { Subordinates = n.GetBoolValue(); } },
+                { "sub_territories", n => { SubTerritories = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "subordinates", n => { Subordinates = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_updateGroup_user_groups_sources_type>(); } },
             };
         }
@@ -59,8 +71,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_updateGroup_user_groups_sources_source>("source", Source);
-            writer.WriteBoolValue("subordinates", Subordinates);
-            writer.WriteBoolValue("sub_territories", SubTerritories);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("subordinates", Subordinates);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("sub_territories", SubTerritories);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_updateGroup_user_groups_sources_type>("type", Type);
         }
     }

@@ -26,10 +26,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Group description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Description { get; set; }
 #endif
         /// <summary>Unique identifier for the group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,10 +50,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Last modification timestamp</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ModifiedTime { get; set; }
 #nullable restore
 #else
-        public string ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ModifiedTime { get; set; }
 #endif
         /// <summary>Name of the group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,10 +99,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_created_by>(global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_created_by.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_modified_by>(global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_modified_by.CreateFromDiscriminatorValue); } },
-                { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
+                { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "sources", n => { Sources = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_sources>(global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_sources.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sources_count", n => { SourcesCount = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_sources_count>(global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_sources_count.CreateFromDiscriminatorValue); } },
@@ -117,10 +117,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_created_by>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
-            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_modified_by>("modified_by", ModifiedBy);
-            writer.WriteStringValue("modified_time", ModifiedTime);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_sources>("sources", Sources);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200_user_groups_sources_count>("sources_count", SourcesCount);

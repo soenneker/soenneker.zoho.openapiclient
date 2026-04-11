@@ -26,10 +26,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The field states of the locked record. Can be null when no field state is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FieldStates { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? FieldStates { get; set; }
 #nullable restore
 #else
-        public string FieldStates { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch FieldStates { get; set; }
 #endif
         /// <summary>The ID of the locking information record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,10 +94,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Zia Visions related information. Can be null when not present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZiaVisions { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ZiaVisions { get; set; }
 #nullable restore
 #else
-        public string ZiaVisions { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ZiaVisions { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -119,7 +119,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "$editable", n => { Editable = n.GetBoolValue(); } },
                 { "Feature_Type__s", n => { FeatureTypeS = n.GetStringValue(); } },
-                { "$field_states", n => { FieldStates = n.GetStringValue(); } },
+                { "$field_states", n => { FieldStates = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "Lock_Source__s", n => { LockSourceS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_getRecordLockingInformationOfTheRecord_200_data_Lock_Source__s>(); } },
                 { "Locked_By__s", n => { LockedByS = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_getRecordLockingInformationOfTheRecord_200_data_Locked_By__s>(global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_getRecordLockingInformationOfTheRecord_200_data_Locked_By__s.CreateFromDiscriminatorValue); } },
@@ -129,7 +129,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "Record_Locking_Configuration_Id__s", n => { RecordLockingConfigurationIdS = n.GetStringValue(); } },
                 { "Record_Locking_Rule_Id__s", n => { RecordLockingRuleIdS = n.GetStringValue(); } },
                 { "$sharing_permission", n => { SharingPermission = n.GetStringValue(); } },
-                { "$zia_visions", n => { ZiaVisions = n.GetStringValue(); } },
+                { "$zia_visions", n => { ZiaVisions = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -141,7 +141,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("$editable", Editable);
             writer.WriteStringValue("Feature_Type__s", FeatureTypeS);
-            writer.WriteStringValue("$field_states", FieldStates);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("$field_states", FieldStates);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_getRecordLockingInformationOfTheRecord_200_data_Locked_By__s>("Locked_By__s", LockedByS);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_getRecordLockingInformationOfTheRecord_200_data_Locked_For__s>("Locked_For__s", LockedForS);
@@ -151,7 +151,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("Record_Locking_Configuration_Id__s", RecordLockingConfigurationIdS);
             writer.WriteStringValue("Record_Locking_Rule_Id__s", RecordLockingRuleIdS);
             writer.WriteStringValue("$sharing_permission", SharingPermission);
-            writer.WriteStringValue("$zia_visions", ZiaVisions);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("$zia_visions", ZiaVisions);
         }
     }
 }

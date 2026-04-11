@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Description of the user group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Description { get; set; }
 #endif
         /// <summary>Name of the user group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "sources", n => { Sources = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_createGroup_user_groups_sources>(global::Soenneker.Zoho.OpenApiClient.Models.User_groups_createGroup_user_groups_sources.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -67,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_createGroup_user_groups_sources>("sources", Sources);
         }

@@ -26,10 +26,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssignToNestedSchemaMember2_resource? Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema? Resource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssignToNestedSchemaMember2_resource Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema Resource { get; set; }
 #endif
         /// <summary>Type of assignment.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.AssignToNestedSchemaMember2_type? Type { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "associated_to", n => { AssociatedTo = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignToNestedSchemaMember2_associated_to>(); } },
                 { "details", n => { Details = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignToNestedSchemaMember2_resource>(global::Soenneker.Zoho.OpenApiClient.Models.AssignToNestedSchemaMember2_resource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignToNestedSchemaMember2_type>(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignToNestedSchemaMember2_associated_to>("associated_to", AssociatedTo);
             writer.WriteObjectValue<UntypedNode>("details", Details);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignToNestedSchemaMember2_resource>("resource", Resource);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema>("resource", Resource);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignToNestedSchemaMember2_type>("type", Type);
         }
     }

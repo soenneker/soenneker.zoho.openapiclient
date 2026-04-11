@@ -5,7 +5,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>Specify the type of the owner assignment</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum AssignToNestedSchemaMember2_resource_type
+    public enum ResourceNestedSchema_type
     {
         [EnumMember(Value = "user")]
         #pragma warning disable CS1591

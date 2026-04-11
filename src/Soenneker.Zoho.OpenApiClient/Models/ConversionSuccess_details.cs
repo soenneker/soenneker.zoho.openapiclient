@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Account record information, or null if no Account was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccess_details_Accounts? Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? Accounts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccess_details_Accounts Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference Accounts { get; set; }
 #endif
         /// <summary>Reference to a CRM entity with ID and name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,10 +32,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Deal record information, or null if no Deal was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccess_details_Deals? Deals { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? Deals { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccess_details_Deals Deals { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference Deals { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Accounts", n => { Accounts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccess_details_Accounts>(global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccess_details_Accounts.CreateFromDiscriminatorValue); } },
+                { "Accounts", n => { Accounts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EntityReference>(global::Soenneker.Zoho.OpenApiClient.Models.EntityReference.CreateFromDiscriminatorValue); } },
                 { "Contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EntityReference>(global::Soenneker.Zoho.OpenApiClient.Models.EntityReference.CreateFromDiscriminatorValue); } },
-                { "Deals", n => { Deals = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccess_details_Deals>(global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccess_details_Deals.CreateFromDiscriminatorValue); } },
+                { "Deals", n => { Deals = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EntityReference>(global::Soenneker.Zoho.OpenApiClient.Models.EntityReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,9 +67,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccess_details_Accounts>("Accounts", Accounts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EntityReference>("Accounts", Accounts);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EntityReference>("Contacts", Contacts);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccess_details_Deals>("Deals", Deals);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EntityReference>("Deals", Deals);
         }
     }
 }

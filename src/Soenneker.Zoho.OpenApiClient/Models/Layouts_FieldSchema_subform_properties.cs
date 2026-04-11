@@ -16,7 +16,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Custom width of the field column in pixels when displayed in a subform. Null when no custom width is configured.</summary>
-        public int? CustomWidth { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? CustomWidth { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch CustomWidth { get; set; }
+#endif
         /// <summary>Indicates if the field column is pinned (frozen) when scrolling horizontally in the subform.</summary>
         public bool? PinnedColumn { get; set; }
         /// <summary>
@@ -44,7 +50,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_width", n => { CustomWidth = n.GetIntValue(); } },
+                { "custom_width", n => { CustomWidth = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "pinned_column", n => { PinnedColumn = n.GetBoolValue(); } },
             };
         }
@@ -55,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("custom_width", CustomWidth);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("custom_width", CustomWidth);
             writer.WriteBoolValue("pinned_column", PinnedColumn);
             writer.WriteAdditionalData(AdditionalData);
         }

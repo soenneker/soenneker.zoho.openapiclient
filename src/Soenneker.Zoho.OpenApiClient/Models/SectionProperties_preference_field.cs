@@ -8,37 +8,36 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Value to compare against
+    /// Reference to the field being used in the preference criteria.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldRequestBodySchema_fields_lookup_query_details_criteria_group_value : IAdditionalDataHolder, IParsable
+    public partial class SectionProperties_preference_field : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>ID of the resource</summary>
+        /// <summary>API identifier using alphanumeric characters and underscores, must start with a letter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? ApiName { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string ApiName { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_lookup_query_details_criteria_group_value"/> and sets the default values.
-        /// </summary>
-        public FieldRequestBodySchema_fields_lookup_query_details_criteria_group_value()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Unique identifier (64-bit integer represented as string)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_lookup_query_details_criteria_group_value"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference_field"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_lookup_query_details_criteria_group_value CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference_field CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_lookup_query_details_criteria_group_value();
+            return new global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference_field();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,7 +47,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "api_name", n => { ApiName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,8 +58,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteStringValue("api_name", ApiName);
+            writer.WriteStringValue("id", Id);
         }
     }
 }

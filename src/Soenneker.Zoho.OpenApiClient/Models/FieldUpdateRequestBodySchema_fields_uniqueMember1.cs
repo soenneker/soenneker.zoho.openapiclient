@@ -16,7 +16,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates whether uniqueness is case sensitive</summary>
         public bool? CaseSensitive { get; set; }
         /// <summary>The disable property</summary>
-        public bool? Disable { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Disable { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Disable { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +42,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "case_sensitive", n => { CaseSensitive = n.GetBoolValue(); } },
-                { "_disable", n => { Disable = n.GetBoolValue(); } },
+                { "_disable", n => { Disable = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -47,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("case_sensitive", CaseSensitive);
-            writer.WriteBoolValue("_disable", Disable);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("_disable", Disable);
         }
     }
 }

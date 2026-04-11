@@ -17,22 +17,28 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The prefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prefix { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Prefix { get; set; }
 #nullable restore
 #else
-        public string Prefix { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Prefix { get; set; }
 #endif
         /// <summary>The length of the starting number</summary>
         public int? StartingNumberLength { get; set; }
         /// <summary>The start_number property</summary>
-        public double? StartNumber { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? StartNumber { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch StartNumber { get; set; }
+#endif
         /// <summary>The suffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Suffix { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Suffix { get; set; }
 #nullable restore
 #else
-        public string Suffix { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Suffix { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_auto_number"/> and sets the default values.
@@ -59,10 +65,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "prefix", n => { Prefix = n.GetStringValue(); } },
-                { "start_number", n => { StartNumber = n.GetDoubleValue(); } },
+                { "prefix", n => { Prefix = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "start_number", n => { StartNumber = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "starting_number_length", n => { StartingNumberLength = n.GetIntValue(); } },
-                { "suffix", n => { Suffix = n.GetStringValue(); } },
+                { "suffix", n => { Suffix = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,10 +78,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("prefix", Prefix);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("prefix", Prefix);
             writer.WriteIntValue("starting_number_length", StartingNumberLength);
-            writer.WriteDoubleValue("start_number", StartNumber);
-            writer.WriteStringValue("suffix", Suffix);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("start_number", StartNumber);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("suffix", Suffix);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

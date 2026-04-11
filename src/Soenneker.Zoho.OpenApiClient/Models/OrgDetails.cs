@@ -16,34 +16,34 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Company&apos;s alias</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alias { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Alias { get; set; }
 #nullable restore
 #else
-        public string Alias { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Alias { get; set; }
 #endif
         /// <summary>Company&apos;s city</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? City { get; set; }
 #nullable restore
 #else
-        public string City { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch City { get; set; }
 #endif
         /// <summary>Company&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? CompanyName { get; set; }
 #nullable restore
 #else
-        public string CompanyName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch CompanyName { get; set; }
 #endif
         /// <summary>Company&apos;s country</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Country { get; set; }
 #nullable restore
 #else
-        public string Country { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Country { get; set; }
 #endif
         /// <summary>Company&apos;s country code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,10 +84,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Description { get; set; }
 #endif
         /// <summary>domain name of the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,18 +100,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Company&apos;s employee count</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? EmployeeCount { get; set; }
 #nullable restore
 #else
-        public string EmployeeCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch EmployeeCount { get; set; }
 #endif
         /// <summary>Company&apos;s fax</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fax { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Fax { get; set; }
 #nullable restore
 #else
-        public string Fax { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Fax { get; set; }
 #endif
         /// <summary>google apps integration status</summary>
         public bool? GappsEnabled { get; private set; }
@@ -156,60 +156,60 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Company&apos;s mobile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mobile { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Mobile { get; set; }
 #nullable restore
 #else
-        public string Mobile { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Mobile { get; set; }
 #endif
         /// <summary>Company&apos;s phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Phone { get; set; }
 #nullable restore
 #else
-        public string Phone { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Phone { get; set; }
 #endif
         /// <summary>photo id of the company&apos;s logo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhotoId { get; private set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? PhotoId { get; private set; }
 #nullable restore
 #else
-        public string PhotoId { get; private set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch PhotoId { get; private set; }
 #endif
         /// <summary>Email of the super admin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryEmail { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? PrimaryEmail { get; set; }
 #nullable restore
 #else
-        public string PrimaryEmail { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch PrimaryEmail { get; set; }
 #endif
         /// <summary>The primary_zuid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryZuid { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? PrimaryZuid { get; set; }
 #nullable restore
 #else
-        public string PrimaryZuid { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch PrimaryZuid { get; set; }
 #endif
         /// <summary>privacy settings enabled status</summary>
         public bool? PrivacySettings { get; private set; }
         /// <summary>Company&apos;s state</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? State { get; set; }
 #nullable restore
 #else
-        public string State { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch State { get; set; }
 #endif
         /// <summary>Company&apos;s street</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Street { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Street { get; set; }
 #nullable restore
 #else
-        public string Street { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Street { get; set; }
 #endif
         /// <summary>Company&apos;s time zone</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -226,10 +226,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Company&apos;s website</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Website { get; set; }
 #nullable restore
 #else
-        public string Website { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Website { get; set; }
 #endif
         /// <summary>zgid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -250,10 +250,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Company&apos;s postal code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Zip { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Zip { get; set; }
 #nullable restore
 #else
-        public string Zip { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Zip { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -273,20 +273,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alias", n => { Alias = n.GetStringValue(); } },
-                { "city", n => { City = n.GetStringValue(); } },
-                { "company_name", n => { CompanyName = n.GetStringValue(); } },
-                { "country", n => { Country = n.GetStringValue(); } },
+                { "alias", n => { Alias = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "city", n => { City = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "company_name", n => { CompanyName = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "country_code", n => { CountryCode = n.GetStringValue(); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "currency_locale", n => { CurrencyLocale = n.GetStringValue(); } },
                 { "currency_symbol", n => { CurrencySymbol = n.GetStringValue(); } },
                 { "deletable_org_account", n => { DeletableOrgAccount = n.GetBoolValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "domain_name", n => { DomainName = n.GetStringValue(); } },
-                { "employee_count", n => { EmployeeCount = n.GetStringValue(); } },
-                { "fax", n => { Fax = n.GetStringValue(); } },
+                { "employee_count", n => { EmployeeCount = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "fax", n => { Fax = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "gapps_enabled", n => { GappsEnabled = n.GetBoolValue(); } },
                 { "hierarchy_preferences", n => { HierarchyPreferences = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_hierarchy_preferences>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_hierarchy_preferences.CreateFromDiscriminatorValue); } },
                 { "hipaa_compliance_enabled", n => { HipaaComplianceEnabled = n.GetBoolValue(); } },
@@ -295,21 +295,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "license_details", n => { LicenseDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_license_details>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_license_details.CreateFromDiscriminatorValue); } },
                 { "lite_users_enabled", n => { LiteUsersEnabled = n.GetBoolValue(); } },
                 { "mc_status", n => { McStatus = n.GetBoolValue(); } },
-                { "mobile", n => { Mobile = n.GetStringValue(); } },
-                { "phone", n => { Phone = n.GetStringValue(); } },
-                { "photo_id", n => { PhotoId = n.GetStringValue(); } },
-                { "primary_email", n => { PrimaryEmail = n.GetStringValue(); } },
-                { "primary_zuid", n => { PrimaryZuid = n.GetStringValue(); } },
+                { "mobile", n => { Mobile = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "phone", n => { Phone = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "photo_id", n => { PhotoId = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "primary_email", n => { PrimaryEmail = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "primary_zuid", n => { PrimaryZuid = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "privacy_settings", n => { PrivacySettings = n.GetBoolValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
-                { "street", n => { Street = n.GetStringValue(); } },
+                { "state", n => { State = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "street", n => { Street = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "time_zone", n => { TimeZone = n.GetStringValue(); } },
                 { "translation_enabled", n => { TranslationEnabled = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_type>(); } },
-                { "website", n => { Website = n.GetStringValue(); } },
+                { "website", n => { Website = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "zgid", n => { Zgid = n.GetStringValue(); } },
                 { "zia_portal_id", n => { ZiaPortalId = n.GetStringValue(); } },
-                { "zip", n => { Zip = n.GetStringValue(); } },
+                { "zip", n => { Zip = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -319,29 +319,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("alias", Alias);
-            writer.WriteStringValue("city", City);
-            writer.WriteStringValue("company_name", CompanyName);
-            writer.WriteStringValue("country", Country);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("alias", Alias);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("city", City);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("company_name", CompanyName);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("country", Country);
             writer.WriteStringValue("country_code", CountryCode);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("currency_locale", CurrencyLocale);
             writer.WriteStringValue("currency_symbol", CurrencySymbol);
-            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("description", Description);
             writer.WriteStringValue("domain_name", DomainName);
-            writer.WriteStringValue("employee_count", EmployeeCount);
-            writer.WriteStringValue("fax", Fax);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("employee_count", EmployeeCount);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("fax", Fax);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_hierarchy_preferences>("hierarchy_preferences", HierarchyPreferences);
             writer.WriteStringValue("iso_code", IsoCode);
-            writer.WriteStringValue("mobile", Mobile);
-            writer.WriteStringValue("phone", Phone);
-            writer.WriteStringValue("primary_email", PrimaryEmail);
-            writer.WriteStringValue("primary_zuid", PrimaryZuid);
-            writer.WriteStringValue("state", State);
-            writer.WriteStringValue("street", Street);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("mobile", Mobile);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("phone", Phone);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("primary_email", PrimaryEmail);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("primary_zuid", PrimaryZuid);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("state", State);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("street", Street);
             writer.WriteStringValue("time_zone", TimeZone);
-            writer.WriteStringValue("website", Website);
-            writer.WriteStringValue("zip", Zip);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("website", Website);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("zip", Zip);
         }
     }
 }

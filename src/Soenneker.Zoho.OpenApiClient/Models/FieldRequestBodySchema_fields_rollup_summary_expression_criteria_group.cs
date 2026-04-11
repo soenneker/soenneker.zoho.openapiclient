@@ -26,10 +26,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Value to compare against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_rollup_summary_expression_criteria_group_value? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_rollup_summary_expression_criteria_group_value Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Value { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "comparator", n => { Comparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_rollup_summary_expression_criteria_group_comparator>(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_rollup_summary_expression_criteria_group_field>(global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_rollup_summary_expression_criteria_group_field.CreateFromDiscriminatorValue); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_rollup_summary_expression_criteria_group_value>(global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_rollup_summary_expression_criteria_group_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_rollup_summary_expression_criteria_group_comparator>("comparator", Comparator);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_rollup_summary_expression_criteria_group_field>("field", Field);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchema_fields_rollup_summary_expression_criteria_group_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("value", Value);
         }
     }
 }

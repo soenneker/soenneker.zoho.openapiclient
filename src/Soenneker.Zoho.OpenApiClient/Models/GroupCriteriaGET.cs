@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The `group` property of the `Group_Criteria_GET` schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET_group>? Group { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>? Group { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET_group> Group { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch> Group { get; set; }
 #endif
         /// <summary>The `group_operator` property of the `Group_Criteria_GET` schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group", n => { Group = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET_group>(global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET_group.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "group", n => { Group = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "group_operator", n => { GroupOperator = n.GetStringValue(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET_group>("group", Group);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("group", Group);
             writer.WriteStringValue("group_operator", GroupOperator);
         }
     }

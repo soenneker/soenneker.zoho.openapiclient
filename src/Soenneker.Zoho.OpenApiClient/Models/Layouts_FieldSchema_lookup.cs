@@ -18,26 +18,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The api_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ApiName { get; set; }
 #nullable restore
 #else
-        public string ApiName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ApiName { get; set; }
 #endif
         /// <summary>The display_label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayLabel { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? DisplayLabel { get; set; }
 #nullable restore
 #else
-        public string DisplayLabel { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch DisplayLabel { get; set; }
 #endif
         /// <summary>Unique identifier of the lookup field. Can be null for certain lookup configurations (e.g., multi-module lookups where the target module is dynamic).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Id { get; set; }
 #endif
         /// <summary>Module details for the lookup field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,9 +82,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "api_name", n => { ApiName = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "display_label", n => { DisplayLabel = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_module>(global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_module.CreateFromDiscriminatorValue); } },
                 { "query_details", n => { QueryDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup.Layouts_FieldSchema_lookup_query_details>(global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup.Layouts_FieldSchema_lookup_query_details.CreateFromDiscriminatorValue); } },
                 { "revalidate_filter_during_edit", n => { RevalidateFilterDuringEdit = n.GetBoolValue(); } },
@@ -97,9 +97,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("api_name", ApiName);
-            writer.WriteStringValue("display_label", DisplayLabel);
-            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("api_name", ApiName);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("display_label", DisplayLabel);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup_module>("module", Module);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_lookup.Layouts_FieldSchema_lookup_query_details>("query_details", QueryDetails);
             writer.WriteBoolValue("revalidate_filter_during_edit", RevalidateFilterDuringEdit);

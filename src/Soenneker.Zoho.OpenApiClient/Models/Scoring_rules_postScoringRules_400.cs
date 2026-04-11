@@ -19,10 +19,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of error objects</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_postScoringRules_400_scoring_rules>? ScoringRules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GeneralErrorResponse>? ScoringRules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_postScoringRules_400_scoring_rules> ScoringRules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GeneralErrorResponse> ScoringRules { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +42,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scoring_rules", n => { ScoringRules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_postScoringRules_400_scoring_rules>(global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_postScoringRules_400_scoring_rules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "scoring_rules", n => { ScoringRules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GeneralErrorResponse>(global::Soenneker.Zoho.OpenApiClient.Models.GeneralErrorResponse.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_postScoringRules_400_scoring_rules>("scoring_rules", ScoringRules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GeneralErrorResponse>("scoring_rules", ScoringRules);
         }
     }
 }

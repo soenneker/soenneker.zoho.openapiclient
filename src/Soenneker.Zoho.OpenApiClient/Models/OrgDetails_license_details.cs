@@ -18,10 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>license expiry date</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaidExpiry { get; private set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? PaidExpiry { get; private set; }
 #nullable restore
 #else
-        public string PaidExpiry { get; private set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch PaidExpiry { get; private set; }
 #endif
         /// <summary>actual license type</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_license_details_paid_type? PaidType { get; private set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "paid", n => { Paid = n.GetBoolValue(); } },
-                { "paid_expiry", n => { PaidExpiry = n.GetStringValue(); } },
+                { "paid_expiry", n => { PaidExpiry = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "paid_type", n => { PaidType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_license_details_paid_type>(); } },
                 { "portal_users_license_purchased", n => { PortalUsersLicensePurchased = n.GetIntValue(); } },
                 { "trial_expiry", n => { TrialExpiry = n.GetStringValue(); } },

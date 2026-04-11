@@ -16,26 +16,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Target field API name in the Accounts module, or null if no mapping exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Accounts { get; set; }
 #nullable restore
 #else
-        public string Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Accounts { get; set; }
 #endif
         /// <summary>Target field API name in the Contacts module, or null if no mapping exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Contacts { get; set; }
 #nullable restore
 #else
-        public string Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Contacts { get; set; }
 #endif
         /// <summary>Target field API name in the Deals module, or null if no mapping exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Deals { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Deals { get; set; }
 #nullable restore
 #else
-        public string Deals { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Deals { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Accounts", n => { Accounts = n.GetStringValue(); } },
-                { "Contacts", n => { Contacts = n.GetStringValue(); } },
-                { "Deals", n => { Deals = n.GetStringValue(); } },
+                { "Accounts", n => { Accounts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "Contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "Deals", n => { Deals = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,9 +67,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Accounts", Accounts);
-            writer.WriteStringValue("Contacts", Contacts);
-            writer.WriteStringValue("Deals", Deals);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Accounts", Accounts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Contacts", Contacts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Deals", Deals);
         }
     }
 }

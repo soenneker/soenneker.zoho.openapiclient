@@ -26,10 +26,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The `users` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Territory_users_associateUserToSpecificTerritory_200_users>? Users { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>? Users { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Territory_users_associateUserToSpecificTerritory_200_users> Users { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch> Users { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Territory_users_associateUserToSpecificTerritory_200"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Territory_users_associateUserToSpecificTerritory_200_users>(global::Soenneker.Zoho.OpenApiClient.Models.Territory_users_associateUserToSpecificTerritory_200_users.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("type", Type);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Territory_users_associateUserToSpecificTerritory_200_users>("users", Users);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

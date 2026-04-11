@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Individual preference criterion configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutResponseSchema_layouts_sections_properties_preference : IParsable
+    public partial class SectionProperties_preference : IParsable
     {
         /// <summary>Comparison operator used to evaluate the field value against the specified value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Reference to the field being used in the preference criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties_preference_field? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference_field? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties_preference_field Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference_field Field { get; set; }
 #endif
         /// <summary>Type of the criteria value. Indicates whether the value is a static value or a field reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,12 +48,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties_preference"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties_preference CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties_preference();
+            return new global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comparator", n => { Comparator = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties_preference_field>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties_preference_field.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference_field>(global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference_field.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
@@ -77,7 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comparator", Comparator);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties_preference_field>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference_field>("field", Field);
             writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("value", Value);
         }

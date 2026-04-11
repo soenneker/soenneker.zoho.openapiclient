@@ -88,10 +88,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Module information for the related list (null if not applicable).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedList_module? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedList_module Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule Module { get; set; }
 #endif
         /// <summary>Internal name of the related list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -175,7 +175,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "linkingmodule", n => { Linkingmodule = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedList_module>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedList_module.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_related_lists", n => { ParentRelatedLists = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListParentReference>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedListParentReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "personality_name", n => { PersonalityName = n.GetStringValue(); } },
@@ -205,7 +205,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("linkingmodule", Linkingmodule);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedList_module>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListParentReference>("parent_related_lists", ParentRelatedLists);
             writer.WriteStringValue("personality_name", PersonalityName);

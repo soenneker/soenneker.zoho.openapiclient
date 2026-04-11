@@ -7,13 +7,12 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Define the condition to evaluate on the rollup summary field. The object must include field, comparator and value.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DetailsNestedForRollupSummarySchema_criteria : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class DetailsCriteriaNestedSchema : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the comparison operator to evaluate the field value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the API name and the unique ID of the roll up summary field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria_field? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema_field? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria_field Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema_field Field { get; set; }
 #endif
         /// <summary>Specify the value to compare against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,21 +38,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria"/> and sets the default values.
-        /// </summary>
-        public DetailsNestedForRollupSummarySchema_criteria()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria();
+            return new global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comparator", n => { Comparator = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria_field>(global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria_field.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema_field>(global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema_field.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -76,9 +68,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comparator", Comparator);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria_field>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema_field>("field", Field);
             writer.WriteStringValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

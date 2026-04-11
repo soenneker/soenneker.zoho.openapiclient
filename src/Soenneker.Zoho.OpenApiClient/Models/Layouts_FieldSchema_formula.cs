@@ -42,18 +42,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Conditional expression that determines when to stop computing the formula. Only evaluated when stop_compute_conditionally is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StopComputeExpression { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? StopComputeExpression { get; set; }
 #nullable restore
 #else
-        public string StopComputeExpression { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch StopComputeExpression { get; set; }
 #endif
         /// <summary>Sub-type for the return type, providing additional precision for certain data types (e.g., &apos;small&apos; for text fields with limited length).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubReturnType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? SubReturnType { get; set; }
 #nullable restore
 #else
-        public string SubReturnType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch SubReturnType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema_formula"/> and sets the default values.
@@ -86,8 +86,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "expression", n => { Expression = n.GetStringValue(); } },
                 { "return_type", n => { ReturnType = n.GetStringValue(); } },
                 { "stop_compute_conditionally", n => { StopComputeConditionally = n.GetBoolValue(); } },
-                { "stop_compute_expression", n => { StopComputeExpression = n.GetStringValue(); } },
-                { "sub_return_type", n => { SubReturnType = n.GetStringValue(); } },
+                { "stop_compute_expression", n => { StopComputeExpression = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "sub_return_type", n => { SubReturnType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -103,8 +103,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("expression", Expression);
             writer.WriteStringValue("return_type", ReturnType);
             writer.WriteBoolValue("stop_compute_conditionally", StopComputeConditionally);
-            writer.WriteStringValue("stop_compute_expression", StopComputeExpression);
-            writer.WriteStringValue("sub_return_type", SubReturnType);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("stop_compute_expression", StopComputeExpression);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("sub_return_type", SubReturnType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

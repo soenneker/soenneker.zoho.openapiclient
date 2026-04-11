@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Id of the default assignee. Will be deprecated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject_id? Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject_id Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Id { get; set; }
 #endif
         /// <summary>Display name of the default assignee. Will be deprecated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject_id>(global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject.DefaultAssigneeResponseObject_resource>(global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject.DefaultAssigneeResponseObject_resource.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject_type>(); } },
@@ -70,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject_id>("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject.DefaultAssigneeResponseObject_resource>("resource", Resource);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject_type>("type", Type);

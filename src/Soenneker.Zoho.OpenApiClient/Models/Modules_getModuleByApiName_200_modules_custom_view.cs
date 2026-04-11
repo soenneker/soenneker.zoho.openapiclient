@@ -88,10 +88,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The modified_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ModifiedTime { get; set; }
 #nullable restore
 #else
-        public string ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ModifiedTime { get; set; }
 #endif
         /// <summary>Module reference indicating which module this custom view belongs to. Only exposed for client calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,7 +174,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "locked", n => { Locked = n.GetBoolValue(); } },
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_custom_view_modified_by>(global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_custom_view_modified_by.CreateFromDiscriminatorValue); } },
                 { "$modified_criteria", n => { ModifiedCriteria = n.GetBoolValue(); } },
-                { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
+                { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_custom_view_module>(global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_custom_view_module.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "offline", n => { Offline = n.GetBoolValue(); } },
@@ -208,7 +208,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("locked", Locked);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_custom_view_modified_by>("modified_by", ModifiedBy);
             writer.WriteBoolValue("$modified_criteria", ModifiedCriteria);
-            writer.WriteStringValue("modified_time", ModifiedTime);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("modified_time", ModifiedTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_custom_view_module>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("offline", Offline);

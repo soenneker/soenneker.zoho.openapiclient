@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The system_query_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SystemQueryId { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? SystemQueryId { get; set; }
 #nullable restore
 #else
-        public string SystemQueryId { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch SystemQueryId { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "query_id", n => { QueryId = n.GetStringValue(); } },
-                { "system_query_id", n => { SystemQueryId = n.GetStringValue(); } },
+                { "system_query_id", n => { SystemQueryId = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("query_id", QueryId);
-            writer.WriteStringValue("system_query_id", SystemQueryId);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("system_query_id", SystemQueryId);
         }
     }
 }

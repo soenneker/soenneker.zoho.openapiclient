@@ -86,10 +86,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The modified_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ModifiedTime { get; set; }
 #nullable restore
 #else
-        public string ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ModifiedTime { get; set; }
 #endif
         /// <summary>Internal name of the layout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,7 +152,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "has_more_profiles", n => { HasMoreProfiles = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_layouts_modified_by>(global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_layouts_modified_by.CreateFromDiscriminatorValue); } },
-                { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
+                { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "profiles", n => { Profiles = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_layouts_profiles>(global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_layouts_profiles.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sections", n => { Sections = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_layouts_sections>(global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_layouts_sections.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -180,7 +180,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("has_more_profiles", HasMoreProfiles);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_layouts_modified_by>("modified_by", ModifiedBy);
-            writer.WriteStringValue("modified_time", ModifiedTime);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_layouts_profiles>("profiles", Profiles);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Modules_getModuleByApiName_200_modules_layouts_sections>("sections", Sections);

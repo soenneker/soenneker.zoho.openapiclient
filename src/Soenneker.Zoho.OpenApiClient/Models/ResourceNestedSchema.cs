@@ -8,20 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Specify the API name and the unique ID of the roll up summary field.
+    /// Specify the details based on the owner assignment
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DetailsNestedForRollupSummarySchema_criteria_field : IParsable
+    public partial class ResourceNestedSchema : IParsable
     {
-        /// <summary>API Name of the field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ApiName { get; set; }
-#nullable restore
-#else
-        public string ApiName { get; set; }
-#endif
-        /// <summary>ID of the field</summary>
+        /// <summary>Specify the id of the owner assignment (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,15 +21,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Specify the api name of the owner assignment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Specify the type of the owner assignment</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria_field"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria_field CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchema_criteria_field();
+            return new global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,8 +49,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema_type>(); } },
             };
         }
         /// <summary>
@@ -58,8 +61,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceNestedSchema_type>("type", Type);
         }
     }
 }

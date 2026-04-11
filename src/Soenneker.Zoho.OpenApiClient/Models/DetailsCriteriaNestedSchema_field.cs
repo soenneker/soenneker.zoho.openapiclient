@@ -8,14 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details with validation information
+    /// Specify the API name and the unique ID of the roll up summary field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Scoring_rules_putScoringRuleById_400_scoring_rules_details : IAdditionalDataHolder, IParsable
+    public partial class DetailsCriteriaNestedSchema_field : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Detail field: api_name&quot;</summary>
+        /// <summary>API Name of the field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -23,30 +21,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>&quot;Detail field: json_path&quot;</summary>
+        /// <summary>ID of the field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonPath { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string JsonPath { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_putScoringRuleById_400_scoring_rules_details"/> and sets the default values.
-        /// </summary>
-        public Scoring_rules_putScoringRuleById_400_scoring_rules_details()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_putScoringRuleById_400_scoring_rules_details"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema_field"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_putScoringRuleById_400_scoring_rules_details CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema_field CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_putScoringRuleById_400_scoring_rules_details();
+            return new global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema_field();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "json_path", n => { JsonPath = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,8 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
-            writer.WriteStringValue("json_path", JsonPath);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteStringValue("id", Id);
         }
     }
 }

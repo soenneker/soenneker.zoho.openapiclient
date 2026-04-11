@@ -82,10 +82,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties? Properties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties Properties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties Properties { get; set; }
 #endif
         /// <summary>Order of the section within the layout. Generally starts from 1, but may have gaps.</summary>
         public int? SequenceNumber { get; set; }
@@ -123,7 +123,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_mode>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_section", n => { ParentSection = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_parent_section>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_parent_section.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties>(global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties.CreateFromDiscriminatorValue); } },
                 { "sequence_number", n => { SequenceNumber = n.GetIntValue(); } },
                 { "tab_traversal", n => { TabTraversal = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_tab_traversal>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_type>(); } },
@@ -148,7 +148,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_mode>("mode", Mode);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_parent_section>("parent_section", ParentSection);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_properties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties>("properties", Properties);
             writer.WriteIntValue("sequence_number", SequenceNumber);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_tab_traversal>("tab_traversal", TabTraversal);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_type>("type", Type);
