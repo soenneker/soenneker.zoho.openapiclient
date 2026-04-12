@@ -36,27 +36,27 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         /// <summary>
         /// To the list of features like blueprints, workflows create, workflow convert, workflow task, ABM, etc in which a particular picklist value is used.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getPickListValuesAssociations_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getPickListValuesAssociations_200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getPickListValuesAssociations_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getPickListValuesAssociations_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Actions.Pick_list_values_associations.Pick_list_values_associationsRequestBuilder.Pick_list_values_associationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Actions.Pick_list_values_associations.Pick_list_values_associationsRequestBuilder.Pick_list_values_associationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getPickListValuesAssociations_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Actions.Pick_list_values_associations.Pick_list_values_associationsRequestBuilder.Pick_list_values_associationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Actions.Pick_list_values_associations.Pick_list_values_associationsRequestBuilder.Pick_list_values_associationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getPickListValuesAssociations_200403Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getPickListValuesAssociations_200500Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200403Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getPickListValuesAssociations_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getPickListValuesAssociations_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To the list of features like blueprints, workflows create, workflow convert, workflow task, ABM, etc in which a particular picklist value is used.

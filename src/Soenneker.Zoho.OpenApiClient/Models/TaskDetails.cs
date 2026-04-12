@@ -86,10 +86,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains information about a module, including labels and API names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ModuleDetails? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ModuleDetails Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails Module { get; set; }
 #endif
         /// <summary>&quot;Field: name&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "lock_status", n => { LockStatus = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockStatus>(global::Soenneker.Zoho.OpenApiClient.Models.LockStatus.CreateFromDiscriminatorValue); } },
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModifierDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ModifierDetails.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ModuleDetails>(global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ModuleDetails.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notify", n => { Notify = n.GetBoolValue(); } },
                 { "related_module", n => { RelatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails.CreateFromDiscriminatorValue); } },
@@ -171,7 +171,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockStatus>("lock_status", LockStatus);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModifierDetails>("modified_by", ModifiedBy);
             writer.WriteStringValue("modified_time", ModifiedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ModuleDetails>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("notify", Notify);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails>("related_module", RelatedModule);

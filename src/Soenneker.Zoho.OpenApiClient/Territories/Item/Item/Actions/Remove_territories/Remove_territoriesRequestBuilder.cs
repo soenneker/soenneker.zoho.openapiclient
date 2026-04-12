@@ -41,14 +41,14 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Item.Item.Actions.Remove_terr
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Territories_removeTerritoriesToRecord_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Territories_removeTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Territories_removeTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Item.Item.Actions.Remove_terr
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Territories_removeTerritoriesToRecord_500.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord500.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -68,11 +68,11 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Item.Item.Actions.Remove_terr
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Territories_removeTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Territories_removeTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

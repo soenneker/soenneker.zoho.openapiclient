@@ -18,10 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Error details with validation information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchemaDetails? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchemaDetails Details { get; set; }
 #endif
         /// <summary>Error message</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_message? Message { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_code>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_details>(global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_details.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchemaDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_message>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_status>(); } },
             };
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_details>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchemaDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_message>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AlreadyUsedSchema_status>("status", Status);
         }

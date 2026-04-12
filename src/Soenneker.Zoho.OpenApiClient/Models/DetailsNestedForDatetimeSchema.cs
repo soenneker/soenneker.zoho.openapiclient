@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The details of the date or datetime field, based on which the Workflow rule should be triggered. Specify the field API name and the field ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchema_field? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchemaField? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchema_field Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchemaField Field { get; set; }
 #endif
         /// <summary>The time unit.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchema_period? Period { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "execute_at", n => { ExecuteAt = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchema_field>(global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchema_field.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchemaField>(global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchemaField.CreateFromDiscriminatorValue); } },
                 { "period", n => { Period = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchema_period>(); } },
                 { "recur_cycle", n => { RecurCycle = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchema_recur_cycle>(); } },
                 { "repeat", n => { Repeat = n.GetBoolValue(); } },
@@ -80,7 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("execute_at", ExecuteAt);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchema_field>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchemaField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchema_period>("period", Period);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForDatetimeSchema_recur_cycle>("recur_cycle", RecurCycle);
             writer.WriteBoolValue("repeat", Repeat);

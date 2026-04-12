@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Rules with actions and conditions limit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchema_rules_count? RulesCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount? RulesCount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchema_rules_count RulesCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount RulesCount { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "rules_count", n => { RulesCount = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchema_rules_count>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchema_rules_count.CreateFromDiscriminatorValue); } },
+                { "rules_count", n => { RulesCount = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchema_rules_count>("rules_count", RulesCount);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount>("rules_count", RulesCount);
         }
     }
 }

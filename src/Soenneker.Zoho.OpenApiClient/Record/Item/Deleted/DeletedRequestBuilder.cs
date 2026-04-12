@@ -36,29 +36,29 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Deleted
         /// <summary>
         /// Retrieve the deleted records for the module. This endpoint can retrieve both permanently deleted records and temporarily deleted records from the recycle bin.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords401">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.Deleted.DeletedRequestBuilder.DeletedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.Deleted.DeletedRequestBuilder.DeletedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.Deleted.DeletedRequestBuilder.DeletedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.Deleted.DeletedRequestBuilder.DeletedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_401.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_404.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords400.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords401.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords404.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Record_getDeletedRecords_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the deleted records for the module. This endpoint can retrieve both permanently deleted records and temporarily deleted records from the recycle bin.

@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Fiscal_year.Settings.Fiscal_year
         /// <param name="body">Request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Fiscal_year_updateFiscalYear_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearUpdateFiscalYear400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UpdateFiscalYearResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Fiscal_year.Settings.Fiscal_year
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Fiscal_year_updateFiscalYear_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearUpdateFiscalYear400.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateFiscalYearResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateFiscalYearResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

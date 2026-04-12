@@ -39,8 +39,8 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeletetagsResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Tags_deleteTags_403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Tags_deleteTags_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsDeleteTags403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsDeleteTags404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DeletetagsResponse200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,8 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Tags_deleteTags_403.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Tags_deleteTags_404.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsDeleteTags403.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsDeleteTags404.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeletetagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeletetagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -65,8 +65,8 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.Item
         /// <param name="body">Request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Tags_putTagsWithId_403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Tags_putTagsWithId_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsPutTagsWithId403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsPutTagsWithId404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PuttagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.Item.TagsItemRequestBuilder.TagsItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,8 +80,8 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Tags_putTagsWithId_403.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Tags_putTagsWithId_404.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsPutTagsWithId403.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsPutTagsWithId404.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

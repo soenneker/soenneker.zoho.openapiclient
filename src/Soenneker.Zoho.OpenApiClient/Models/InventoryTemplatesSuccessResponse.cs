@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Pagination metadata for list responses (per_page, page, count, more_records).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Inventory_templates_InfoBlock? Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesInfoBlock? Info { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Inventory_templates_InfoBlock Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesInfoBlock Info { get; set; }
 #endif
         /// <summary>List of inventory templates</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Inventory_templates_InfoBlock>(global::Soenneker.Zoho.OpenApiClient.Models.Inventory_templates_InfoBlock.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesInfoBlock>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesInfoBlock.CreateFromDiscriminatorValue); } },
                 { "inventory_templates", n => { InventoryTemplates = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateItem>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Inventory_templates_InfoBlock>("info", Info);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesInfoBlock>("info", Info);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateItem>("inventory_templates", InventoryTemplates);
         }
     }

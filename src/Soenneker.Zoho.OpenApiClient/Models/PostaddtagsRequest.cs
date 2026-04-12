@@ -26,10 +26,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>root key (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_TagsNested>? Tags { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>? Tags { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_TagsNested> Tags { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested> Tags { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "ids", n => { Ids = n.GetStringValue(); } },
                 { "over_write", n => { OverWrite = n.GetBoolValue(); } },
-                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_TagsNested>(global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_TagsNested.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ids", Ids);
             writer.WriteBoolValue("over_write", OverWrite);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_TagsNested>("tags", Tags);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>("tags", Tags);
         }
     }
 }

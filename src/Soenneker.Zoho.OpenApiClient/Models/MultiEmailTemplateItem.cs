@@ -64,10 +64,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Statistics from the last version of the template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MultiEmailTemplateItem_last_version_statistics? LastVersionStatistics { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MultiEmailTemplateItemLastVersionStatistics? LastVersionStatistics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MultiEmailTemplateItem_last_version_statistics LastVersionStatistics { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MultiEmailTemplateItemLastVersionStatistics LastVersionStatistics { get; set; }
 #endif
         /// <summary>Reference to a user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,7 +133,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "folder", n => { Folder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FolderRef>(global::Soenneker.Zoho.OpenApiClient.Models.FolderRef.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_usage_time", n => { LastUsageTime = n.GetDateTimeOffsetValue(); } },
-                { "last_version_statistics", n => { LastVersionStatistics = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MultiEmailTemplateItem_last_version_statistics>(global::Soenneker.Zoho.OpenApiClient.Models.MultiEmailTemplateItem_last_version_statistics.CreateFromDiscriminatorValue); } },
+                { "last_version_statistics", n => { LastVersionStatistics = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MultiEmailTemplateItemLastVersionStatistics>(global::Soenneker.Zoho.OpenApiClient.Models.MultiEmailTemplateItemLastVersionStatistics.CreateFromDiscriminatorValue); } },
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserRef>(global::Soenneker.Zoho.OpenApiClient.Models.UserRef.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleRef>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleRef.CreateFromDiscriminatorValue); } },
@@ -160,7 +160,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FolderRef>("folder", Folder);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_usage_time", LastUsageTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MultiEmailTemplateItem_last_version_statistics>("last_version_statistics", LastVersionStatistics);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MultiEmailTemplateItemLastVersionStatistics>("last_version_statistics", LastVersionStatistics);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserRef>("modified_by", ModifiedBy);
             writer.WriteDateTimeOffsetValue("modified_time", ModifiedTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleRef>("module", Module);

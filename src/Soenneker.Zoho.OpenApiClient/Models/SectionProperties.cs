@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The bulk_addition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? BulkAddition { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition? BulkAddition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch BulkAddition { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition BulkAddition { get; set; }
 #endif
         /// <summary>Maximum number of rows allowed in the subform</summary>
         public int? MaximumRows { get; set; }
@@ -36,10 +36,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The tooltip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_tooltip? Tooltip { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip? Tooltip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_tooltip Tooltip { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip Tooltip { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,11 +59,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bulk_addition", n => { BulkAddition = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "bulk_addition", n => { BulkAddition = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition>(global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition.CreateFromDiscriminatorValue); } },
                 { "maximum_rows", n => { MaximumRows = n.GetIntValue(); } },
                 { "preference", n => { Preference = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference>(global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reorder_rows", n => { ReorderRows = n.GetBoolValue(); } },
-                { "tooltip", n => { Tooltip = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_tooltip>(global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_tooltip.CreateFromDiscriminatorValue); } },
+                { "tooltip", n => { Tooltip = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip>(global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,11 +73,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("bulk_addition", BulkAddition);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition>("bulk_addition", BulkAddition);
             writer.WriteIntValue("maximum_rows", MaximumRows);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference>("preference", Preference);
             writer.WriteBoolValue("reorder_rows", ReorderRows);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_tooltip>("tooltip", Tooltip);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip>("tooltip", Tooltip);
         }
     }
 }

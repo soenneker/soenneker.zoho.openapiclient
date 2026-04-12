@@ -36,25 +36,25 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_f
         /// <summary>
         /// Fetches the full content of rich text fields for a specific record. If the &apos;fields&apos; parameter is not provided, all rich text fields in the module will be fetched.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Fetch_full_data_fetchFullDataForSingleRecord_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Fetch_full_data_fetchFullDataForSingleRecord_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Fetch_full_data_fetchFullDataForSingleRecord_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Fetch_full_data_fetchFullDataForSingleRecord_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Fetch_full_data_fetchFullDataForSingleRecord_200500Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Fetch_full_data_fetchFullDataForSingleRecord_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Fetch_full_data_fetchFullDataForSingleRecord_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches the full content of rich text fields for a specific record. If the &apos;fields&apos; parameter is not provided, all rich text fields in the module will be fetched.

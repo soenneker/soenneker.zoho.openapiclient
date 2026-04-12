@@ -108,11 +108,11 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryInternalServerErrorSchema">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Territories_updateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Territories_updateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -170,11 +170,11 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Territories_updateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Territories_updateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

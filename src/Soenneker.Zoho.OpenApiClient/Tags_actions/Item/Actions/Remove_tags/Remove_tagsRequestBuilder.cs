@@ -40,7 +40,7 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Remove_tags
         /// <param name="body">Request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_postRemoveTags_403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsPostRemoveTags403">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostremovetagsResponse200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostremovetagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Remove_tags.Remove_tagsRequestBuilder.Remove_tagsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,7 +54,7 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Remove_tags
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_postRemoveTags_403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsPostRemoveTags403.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostremovetagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostremovetagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

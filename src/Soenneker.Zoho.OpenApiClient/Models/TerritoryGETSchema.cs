@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The `account_rule_criteria` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_account_rule_criteria? AccountRuleCriteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaAccountRuleCriteria? AccountRuleCriteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_account_rule_criteria AccountRuleCriteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaAccountRuleCriteria AccountRuleCriteria { get; set; }
 #endif
         /// <summary>The `api_name` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,28 +32,28 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The `created_by` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_created_by? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaCreatedBy? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_created_by CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaCreatedBy CreatedBy { get; set; }
 #endif
         /// <summary>The `created_time` property.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
         /// <summary>The `deal_rule_criteria` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_deal_rule_criteria? DealRuleCriteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaDealRuleCriteria? DealRuleCriteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_deal_rule_criteria DealRuleCriteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaDealRuleCriteria DealRuleCriteria { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_description? Description { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaDescription? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_description Description { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaDescription Description { get; set; }
 #endif
         /// <summary>The `id` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,26 +66,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The `lead_rule_criteria` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_lead_rule_criteria? LeadRuleCriteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaLeadRuleCriteria? LeadRuleCriteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_lead_rule_criteria LeadRuleCriteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaLeadRuleCriteria LeadRuleCriteria { get; set; }
 #endif
         /// <summary>The manager property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_manager? Manager { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaManager? Manager { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_manager Manager { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaManager Manager { get; set; }
 #endif
         /// <summary>The `modified_by` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_modified_by? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaModifiedBy? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_modified_by ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaModifiedBy ModifiedBy { get; set; }
 #endif
         /// <summary>The `modified_time` property.</summary>
         public DateTimeOffset? ModifiedTime { get; set; }
@@ -102,10 +102,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The `reporting_to` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_reporting_to? ReportingTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaReportingTo? ReportingTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_reporting_to ReportingTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaReportingTo ReportingTo { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -125,20 +125,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_rule_criteria", n => { AccountRuleCriteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_account_rule_criteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_account_rule_criteria.CreateFromDiscriminatorValue); } },
+                { "account_rule_criteria", n => { AccountRuleCriteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaAccountRuleCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaAccountRuleCriteria.CreateFromDiscriminatorValue); } },
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_created_by>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_created_by.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaCreatedBy.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "deal_rule_criteria", n => { DealRuleCriteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_deal_rule_criteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_deal_rule_criteria.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_description>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_description.CreateFromDiscriminatorValue); } },
+                { "deal_rule_criteria", n => { DealRuleCriteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaDealRuleCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaDealRuleCriteria.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaDescription>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaDescription.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "lead_rule_criteria", n => { LeadRuleCriteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_lead_rule_criteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_lead_rule_criteria.CreateFromDiscriminatorValue); } },
-                { "manager", n => { Manager = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_manager>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_manager.CreateFromDiscriminatorValue); } },
-                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_modified_by>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_modified_by.CreateFromDiscriminatorValue); } },
+                { "lead_rule_criteria", n => { LeadRuleCriteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaLeadRuleCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaLeadRuleCriteria.CreateFromDiscriminatorValue); } },
+                { "manager", n => { Manager = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaManager>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaManager.CreateFromDiscriminatorValue); } },
+                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaModifiedBy.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permission_type", n => { PermissionType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_permission_type>(); } },
-                { "reporting_to", n => { ReportingTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_reporting_to>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_reporting_to.CreateFromDiscriminatorValue); } },
+                { "reporting_to", n => { ReportingTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaReportingTo>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaReportingTo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -148,364 +148,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_account_rule_criteria>("account_rule_criteria", AccountRuleCriteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaAccountRuleCriteria>("account_rule_criteria", AccountRuleCriteria);
             writer.WriteStringValue("api_name", ApiName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_created_by>("created_by", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaCreatedBy>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_deal_rule_criteria>("deal_rule_criteria", DealRuleCriteria);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_description>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaDealRuleCriteria>("deal_rule_criteria", DealRuleCriteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaDescription>("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_lead_rule_criteria>("lead_rule_criteria", LeadRuleCriteria);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_manager>("manager", Manager);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_modified_by>("modified_by", ModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaLeadRuleCriteria>("lead_rule_criteria", LeadRuleCriteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaManager>("manager", Manager);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaModifiedBy>("modified_by", ModifiedBy);
             writer.WriteDateTimeOffsetValue("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_permission_type>("permission_type", PermissionType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema_reporting_to>("reporting_to", ReportingTo);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TerritoryGETSchema_account_rule_criteria : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject? CriteriaObject { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject CriteriaObject { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET? GroupCriteriaGET { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET GroupCriteriaGET { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_account_rule_criteria"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_account_rule_criteria CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_account_rule_criteria();
-                if("CriteriaObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CriteriaObject = new global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject();
-                }
-                else if("GroupCriteriaGET".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GroupCriteriaGET = new global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CriteriaObject != null)
-                {
-                    return CriteriaObject.GetFieldDeserializers();
-                }
-                else if(GroupCriteriaGET != null)
-                {
-                    return GroupCriteriaGET.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(CriteriaObject != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject>(null, CriteriaObject);
-                }
-                else if(GroupCriteriaGET != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET>(null, GroupCriteriaGET);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TerritoryGETSchema_deal_rule_criteria : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject? CriteriaObject { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject CriteriaObject { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET? GroupCriteriaGET { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET GroupCriteriaGET { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_deal_rule_criteria"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_deal_rule_criteria CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_deal_rule_criteria();
-                if("CriteriaObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CriteriaObject = new global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject();
-                }
-                else if("GroupCriteriaGET".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GroupCriteriaGET = new global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CriteriaObject != null)
-                {
-                    return CriteriaObject.GetFieldDeserializers();
-                }
-                else if(GroupCriteriaGET != null)
-                {
-                    return GroupCriteriaGET.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(CriteriaObject != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject>(null, CriteriaObject);
-                }
-                else if(GroupCriteriaGET != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET>(null, GroupCriteriaGET);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TerritoryGETSchema_description : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_description"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_description CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_description();
-                if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UnionBranch = new global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null)
-                {
-                    return UnionBranch.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(UnionBranch != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TerritoryGETSchema_lead_rule_criteria : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject? CriteriaObject { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject CriteriaObject { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET? GroupCriteriaGET { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET GroupCriteriaGET { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_lead_rule_criteria"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_lead_rule_criteria CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchema.TerritoryGETSchema_lead_rule_criteria();
-                if("CriteriaObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CriteriaObject = new global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject();
-                }
-                else if("GroupCriteriaGET".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GroupCriteriaGET = new global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CriteriaObject != null)
-                {
-                    return CriteriaObject.GetFieldDeserializers();
-                }
-                else if(GroupCriteriaGET != null)
-                {
-                    return GroupCriteriaGET.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(CriteriaObject != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaObject>(null, CriteriaObject);
-                }
-                else if(GroupCriteriaGET != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaGET>(null, GroupCriteriaGET);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGETSchemaReportingTo>("reporting_to", ReportingTo);
         }
     }
 }

@@ -19,10 +19,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Additional context about the specific error, typically identifying the problematic parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponseDetails? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponseDetails Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
@@ -55,7 +55,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse_code>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse_details>(global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse_details.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponseDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse_status>(); } },
             };
@@ -68,7 +68,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse_details>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetErrorResponse_status>("status", Status);
         }

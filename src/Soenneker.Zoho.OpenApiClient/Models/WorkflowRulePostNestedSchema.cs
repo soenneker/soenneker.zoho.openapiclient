@@ -40,10 +40,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify whether the workflow rule should be locked for editing by other users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchema_lock? Lock { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock? Lock { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchema_lock Lock { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock Lock { get; set; }
 #endif
         /// <summary>Specify the module/field to which the workflow rule applies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "execute_when", n => { ExecuteWhen = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema.CreateFromDiscriminatorValue); } },
-                { "lock", n => { Lock = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchema_lock>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchema_lock.CreateFromDiscriminatorValue); } },
+                { "lock", n => { Lock = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock.CreateFromDiscriminatorValue); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -97,7 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>("conditions", Conditions);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema>("execute_when", ExecuteWhen);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchema_lock>("lock", Lock);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock>("lock", Lock);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("module", Module);
             writer.WriteStringValue("name", Name);
         }

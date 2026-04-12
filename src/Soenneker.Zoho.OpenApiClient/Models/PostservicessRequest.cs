@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>data array  (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Services_DataNested>? Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Services_DataNested> Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested> Data { get; set; }
 #endif
         /// <summary>boolean</summary>
         public bool? SkipMandatory { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Services_DataNested>(global::Soenneker.Zoho.OpenApiClient.Models.Services_DataNested.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "skip_mandatory", n => { SkipMandatory = n.GetBoolValue(); } },
             };
         }
@@ -52,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Services_DataNested>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested>("data", Data);
             writer.WriteBoolValue("skip_mandatory", SkipMandatory);
         }
     }

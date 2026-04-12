@@ -36,18 +36,18 @@ namespace Soenneker.Zoho.OpenApiClient.Send_mail.Item.Item.Actions.Send_mail
         /// <summary>
         /// Sends an email using specific templates or custom content to a record in a given module.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Send_mail_SuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SendMailSuccessResponse"/></returns>
         /// <param name="body">Root object for the send mail request.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FlatErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Send_mail_SuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SendMailSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Send_mail_SuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SendMailSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Send_mail.Item.Item.Actions.Send_mail
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.FlatErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Send_mail_SuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Send_mail_SuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SendMailSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SendMailSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sends an email using specific templates or custom content to a record in a given module.

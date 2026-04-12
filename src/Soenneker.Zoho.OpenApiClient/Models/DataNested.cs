@@ -210,10 +210,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>rescheduled by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataNested_Rescheduled_By? RescheduledBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRescheduledBy? RescheduledBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataNested_Rescheduled_By RescheduledBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRescheduledBy RescheduledBy { get; set; }
 #endif
         /// <summary>Appointment Rescheduled from (this field is mandatory when you want to create an rescheduled appointment)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -346,7 +346,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "Reschedule_Count", n => { RescheduleCount = n.GetIntValue(); } },
                 { "Reschedule_Note", n => { RescheduleNote = n.GetStringValue(); } },
                 { "Reschedule_Reason", n => { RescheduleReason = n.GetStringValue(); } },
-                { "Rescheduled_By", n => { RescheduledBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNested_Rescheduled_By>(global::Soenneker.Zoho.OpenApiClient.Models.DataNested_Rescheduled_By.CreateFromDiscriminatorValue); } },
+                { "Rescheduled_By", n => { RescheduledBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRescheduledBy>(global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRescheduledBy.CreateFromDiscriminatorValue); } },
                 { "Rescheduled_From", n => { RescheduledFrom = n.GetStringValue(); } },
                 { "Rescheduled_Time", n => { RescheduledTime = n.GetStringValue(); } },
                 { "Rescheduled_To", n => { RescheduledTo = n.GetStringValue(); } },
@@ -394,7 +394,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("Record_Status__s", RecordStatusS);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DataNested_Remind_At>("Remind_At", RemindAt);
             writer.WriteIntValue("Reschedule_Count", RescheduleCount);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNested_Rescheduled_By>("Rescheduled_By", RescheduledBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRescheduledBy>("Rescheduled_By", RescheduledBy);
             writer.WriteStringValue("Rescheduled_From", RescheduledFrom);
             writer.WriteStringValue("Rescheduled_Time", RescheduledTime);
             writer.WriteStringValue("Rescheduled_To", RescheduledTo);

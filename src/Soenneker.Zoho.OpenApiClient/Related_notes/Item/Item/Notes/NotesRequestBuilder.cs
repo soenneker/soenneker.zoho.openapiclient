@@ -49,116 +49,116 @@ namespace Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes
         /// <summary>
         /// Deletes one or more notes associated with a specific parent record using comma-separated note IDs in the query parameter.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200401Error">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes.NotesRequestBuilder.NotesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200401Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200500Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200401Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200404Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_deleteBulkNotes_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a paginated list of notes associated with a specific parent record in a CRM module.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200401Error">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes.NotesRequestBuilder.NotesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes.NotesRequestBuilder.NotesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes.NotesRequestBuilder.NotesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes.NotesRequestBuilder.NotesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200401Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200500Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200401Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200404Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_getNotes_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesGetNotes200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates one or more notes associated with a specific parent record. Either note content or note title must be provided (at least one is mandatory).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201"/></returns>
         /// <param name="body">Request payload for creating notes</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_NoPermissionError">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201401Error">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_NoPermissionError.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201500Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201401Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201404Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes_201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates one or more notes associated with a specific parent record. Either note content or note title must be provided (at least one is mandatory) for each note.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200"/></returns>
         /// <param name="body">Request payload for updating notes</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200401Error">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200401Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200500Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200401Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200404Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes one or more notes associated with a specific parent record using comma-separated note IDs in the query parameter.
@@ -206,11 +206,11 @@ namespace Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_createNotes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesCreateNotes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -228,11 +228,11 @@ namespace Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.Notes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Related_notes_updateBulkNotes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateBulkNotes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -18,10 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Error details with validation information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchemaDetails? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchemaDetails Details { get; set; }
 #endif
         /// <summary>Error message</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_message? Message { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_code>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_details>(global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_details.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchemaDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_message>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_status>(); } },
             };
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_details>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchemaDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_message>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LimitExceededSchema_status>("status", Status);
         }

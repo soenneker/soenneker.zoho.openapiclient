@@ -49,79 +49,79 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays
         /// <summary>
         /// Retrieves a list of holidays filtered by year, type (business or shift), and shift ID. Business holidays apply organization-wide, while shift holidays are specific to configured shifts. Returns paginated results with metadata.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Holidays_getHolidays_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHolidays200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Holidays_getHolidays_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHolidays400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Holidays_getHolidays_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.HolidaysRequestBuilder.HolidaysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHolidays200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.HolidaysRequestBuilder.HolidaysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Holidays_getHolidays_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.HolidaysRequestBuilder.HolidaysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHolidays200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.HolidaysRequestBuilder.HolidaysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Holidays_getHolidays_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHolidays400.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Holidays_getHolidays_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Holidays_getHolidays_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHolidays200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHolidays200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates one or more holidays with specified names, dates, types, and associated shift hours. Each holiday must have a unique name and date combination. Business holidays apply to all users, while shift holidays require a valid shift_hour association.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays201"/></returns>
         /// <param name="body">The Request body of the object.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays_201403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays201403Error">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays_201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays_201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays_400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays_201403Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays400.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays201403Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays_201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays_201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates one or more existing holidays by their IDs with new names, dates, or shift hour associations.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200"/></returns>
         /// <param name="body">The Request body of the object.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays_200403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200403Error">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays_200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays_200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays_400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays_200403Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays400.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200403Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of holidays filtered by year, type (business or shift), and shift ID. Business holidays apply organization-wide, while shift holidays are specific to configured shifts. Returns paginated results with metadata.
@@ -150,11 +150,11 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Holidays_createHolidays body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -172,11 +172,11 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Holidays_updateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

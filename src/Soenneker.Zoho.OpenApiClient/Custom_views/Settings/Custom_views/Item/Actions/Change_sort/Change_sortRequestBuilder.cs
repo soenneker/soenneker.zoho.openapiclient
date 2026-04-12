@@ -43,11 +43,11 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.A
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_changeSortById body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortById body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_changeSortById body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortById body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -66,11 +66,11 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.A
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_changeSortById body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortById body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_changeSortById body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortById body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

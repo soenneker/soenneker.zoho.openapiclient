@@ -49,50 +49,50 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts
         /// <summary>
         /// Retrieves the list of email drafts associated with the specified record in the given module.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_getEmailDrafts_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_getEmailDrafts_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_getEmailDrafts_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Email_draftsRequestBuilder.Email_draftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Email_draftsRequestBuilder.Email_draftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_getEmailDrafts_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Email_draftsRequestBuilder.Email_draftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Email_draftsRequestBuilder.Email_draftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_getEmailDrafts_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts400.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_getEmailDrafts_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_getEmailDrafts_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates one or more email drafts associated with the specified record in the given module.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201"/></returns>
         /// <param name="body">Request body for creating email drafts.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts_403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts403">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts_201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts_201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts_403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts403.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts_201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts_201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the list of email drafts associated with the specified record in the given module.
@@ -121,11 +121,11 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Email_drafts_createEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

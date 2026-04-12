@@ -26,10 +26,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema10? Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema10? Resource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema10 Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema10 Resource { get; set; }
 #endif
         /// <summary>&quot;Field: type&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "date", n => { Date = n.GetStringValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema10>(global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema10.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema10>(global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema10.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("date", Date);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema10>("resource", Resource);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema10>("resource", Resource);
             writer.WriteStringValue("type", Type);
         }
     }

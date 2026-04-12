@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for module</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Workflow_configurations_ModuleNested? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsModuleNested? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Workflow_configurations_ModuleNested Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsModuleNested Module { get; set; }
 #endif
         /// <summary>&quot;Field: name&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_configurations_ModuleNested>(global::Soenneker.Zoho.OpenApiClient.Models.Workflow_configurations_ModuleNested.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsModuleNested>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsModuleNested.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "triggers", n => { Triggers = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TriggersNested>(global::Soenneker.Zoho.OpenApiClient.Models.TriggersNested.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -77,7 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_configurations_ModuleNested>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsModuleNested>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TriggersNested>("triggers", Triggers);
         }

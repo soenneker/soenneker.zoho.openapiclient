@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Pagination and metadata information for the GET records response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse_info? Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponseInfo? Info { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse_info Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponseInfo Info { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse_data>(global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse_data.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse_info>(global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse_info.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponseInfo>(global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponseInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse_data>("data", Data);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse_info>("info", Info);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponseInfo>("info", Info);
         }
     }
 }

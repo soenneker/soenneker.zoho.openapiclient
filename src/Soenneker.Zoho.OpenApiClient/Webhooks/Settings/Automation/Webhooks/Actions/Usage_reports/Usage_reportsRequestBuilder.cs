@@ -36,25 +36,25 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Act
         /// <summary>
         /// To retrieve usage statistics for Webhook actions executed in Zoho CRM over the last&amp;nbsp;seven days.&amp;nbsp;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema1"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_getUsageReports_403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGetUsageReports403">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema1?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.Usage_reportsRequestBuilder.Usage_reportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema1?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.Usage_reportsRequestBuilder.Usage_reportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema1> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.Usage_reportsRequestBuilder.Usage_reportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema1> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.Usage_reportsRequestBuilder.Usage_reportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_getUsageReports_403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGetUsageReports403.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema1>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema1>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve usage statistics for Webhook actions executed in Zoho CRM over the last&amp;nbsp;seven days.&amp;nbsp;

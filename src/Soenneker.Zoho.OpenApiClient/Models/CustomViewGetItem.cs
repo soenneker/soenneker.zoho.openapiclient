@@ -30,10 +30,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Filter criteria for data selection supporting both simple field-based filters and complex grouped filters with logical operators</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_FilterCriterionResponse? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionResponse? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_FilterCriterionResponse Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionResponse Criteria { get; set; }
 #endif
         /// <summary>Cross Filters applied to the Custom View</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,18 +116,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Field used to sort the Custom View</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldReference? SortBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortBy? SortBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldReference SortBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortBy SortBy { get; set; }
 #endif
         /// <summary>Sort order of the Custom View</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? SortOrder { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder? SortOrder { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch SortOrder { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder SortOrder { get; set; }
 #endif
         /// <summary>Indicates if the Custom View is system defined</summary>
         public bool? SystemDefined { get; set; }
@@ -163,7 +163,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "category", n => { Category = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_category>(); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserReference>(global::Soenneker.Zoho.OpenApiClient.Models.UserReference.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_FilterCriterionResponse>(global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_FilterCriterionResponse.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionResponse>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionResponse.CreateFromDiscriminatorValue); } },
                 { "cross_filters", n => { CrossFilters = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_cross_filters>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_cross_filters.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "default", n => { Default = n.GetBoolValue(); } },
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
@@ -179,8 +179,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "offline", n => { Offline = n.GetBoolValue(); } },
                 { "shared_to", n => { SharedTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views>(global::Soenneker.Zoho.OpenApiClient.Models.Custom_views.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "sort_by", n => { SortBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>(global::Soenneker.Zoho.OpenApiClient.Models.FieldReference.CreateFromDiscriminatorValue); } },
-                { "sort_order", n => { SortOrder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "sort_by", n => { SortBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortBy>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortBy.CreateFromDiscriminatorValue); } },
+                { "sort_order", n => { SortOrder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder.CreateFromDiscriminatorValue); } },
                 { "system_defined", n => { SystemDefined = n.GetBoolValue(); } },
                 { "system_name", n => { SystemName = n.GetStringValue(); } },
                 { "wrap_text", n => { WrapText = n.GetBoolValue(); } },
@@ -197,7 +197,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_category>("category", Category);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserReference>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_FilterCriterionResponse>("criteria", Criteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionResponse>("criteria", Criteria);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_cross_filters>("cross_filters", CrossFilters);
             writer.WriteBoolValue("default", Default);
             writer.WriteStringValue("display_value", DisplayValue);
@@ -213,8 +213,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("offline", Offline);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views>("shared_to", SharedTo);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>("sort_by", SortBy);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("sort_order", SortOrder);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortBy>("sort_by", SortBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder>("sort_order", SortOrder);
             writer.WriteBoolValue("system_defined", SystemDefined);
             writer.WriteStringValue("system_name", SystemName);
             writer.WriteBoolValue("wrap_text", WrapText);

@@ -36,29 +36,29 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         /// <summary>
         /// Schedules or executes replacement of picklist values for the specified global picklist. You can specify either `id`, `display_value`, or both for `old_value` and `new_value`. If both are provided, the system validates them for consistency. The `from` (old) value can be non-existent in the current picklist, but the `to` (new) value must be in the **used** state of the picklist option.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200"/></returns>
         /// <param name="body">Request body for replacing picklist values in a global picklist.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues_200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues_200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues_200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues_200403Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues_200500Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200403Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Schedules or executes replacement of picklist values for the specified global picklist. You can specify either `id`, `display_value`, or both for `old_value` and `new_value`. If both are provided, the system validates them for consistency. The `from` (old) value can be non-existent in the current picklist, but the `to` (new) value must be in the **used** state of the picklist option.
@@ -68,11 +68,11 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_replacePicklistValues body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

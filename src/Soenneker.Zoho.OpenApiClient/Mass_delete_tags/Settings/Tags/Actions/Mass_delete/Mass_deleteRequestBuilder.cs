@@ -36,40 +36,40 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Ma
         /// <summary>
         /// Retrieve the status of a scheduled mass delete job using its job_id
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_getStatus_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetStatus200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_getStatus_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetStatus200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_getStatus_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetStatus200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_getStatus_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_getStatus_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetStatus200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetStatus200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Schedules a job to delete multiple tags across modules in Zoho CRM.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_createMassDeleteTags_202"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags202"/></returns>
         /// <param name="body">Schema for scheduling mass delete tags job</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_createMassDeleteTags_202?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_createMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags202?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_createMassDeleteTags_202> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_createMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags202> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_createMassDeleteTags_202>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_createMassDeleteTags_202.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags202>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags202.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the status of a scheduled mass delete job using its job_id
@@ -98,11 +98,11 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Ma
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_createMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Mass_delete_tags_createMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

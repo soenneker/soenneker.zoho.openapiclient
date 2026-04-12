@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Pagination information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_info? Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseInfo? Info { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_info Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseInfo Info { get; set; }
 #endif
         /// <summary>List of territories assigned to the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_info>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_info.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseInfo>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseInfo.CreateFromDiscriminatorValue); } },
                 { "territories", n => { Territories = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_territories>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_territories.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_info>("info", Info);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseInfo>("info", Info);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_territories>("territories", Territories);
         }
     }

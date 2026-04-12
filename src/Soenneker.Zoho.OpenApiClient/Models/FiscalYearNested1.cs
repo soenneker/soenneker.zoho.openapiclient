@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Fiscal_year_DetailsNested? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDetailsNested? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Fiscal_year_DetailsNested Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDetailsNested Details { get; set; }
 #endif
         /// <summary>&quot;Field: message&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Fiscal_year_DetailsNested>(global::Soenneker.Zoho.OpenApiClient.Models.Fiscal_year_DetailsNested.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDetailsNested>(global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDetailsNested.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -77,7 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Fiscal_year_DetailsNested>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDetailsNested>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("status", Status);
         }

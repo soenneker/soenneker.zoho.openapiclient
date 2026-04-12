@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>&quot;Field: data&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Services_DataNested1>? Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested1>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Services_DataNested1> Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested1> Data { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Services_DataNested1>(global::Soenneker.Zoho.OpenApiClient.Models.Services_DataNested1.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested1>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested1.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Services_DataNested1>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested1>("data", Data);
         }
     }
 }

@@ -36,27 +36,27 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_t
         /// <summary>
         /// Changing portal users status.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Portal_users_changePortalUsersStatus_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatus200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Portal_users_changePortalUsersStatus_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Portal_users_changePortalUsersStatus_403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatus400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatus403">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Portal_users_changePortalUsersStatus_200?> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.Users.Item.Actions.Change_status.Change_statusRequestBuilder.Change_statusRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatus200?> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.Users.Item.Actions.Change_status.Change_statusRequestBuilder.Change_statusRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Portal_users_changePortalUsersStatus_200> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.Users.Item.Actions.Change_status.Change_statusRequestBuilder.Change_statusRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatus200> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.Users.Item.Actions.Change_status.Change_statusRequestBuilder.Change_statusRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Portal_users_changePortalUsersStatus_400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Portal_users_changePortalUsersStatus_403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatus400.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatus403.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Portal_users_changePortalUsersStatus_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Portal_users_changePortalUsersStatus_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatus200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatus200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Changing portal users status.

@@ -32,10 +32,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of scheduled actions associated with the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchema_item>? ScheduledActions { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchemaItem>? ScheduledActions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchema_item> ScheduledActions { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchemaItem> ScheduledActions { get; set; }
 #endif
         /// <summary>&quot;Field: usage_count&quot;</summary>
         public int? UsageCount { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "instant_actions", n => { InstantActions = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageWithTagsSchema>(global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageWithTagsSchema.CreateFromDiscriminatorValue); } },
-                { "scheduled_actions", n => { ScheduledActions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchema_item>(global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchema_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "scheduled_actions", n => { ScheduledActions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchemaItem>(global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchemaItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "usage_count", n => { UsageCount = n.GetIntValue(); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageWithTagsSchema>("instant_actions", InstantActions);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchema_item>("scheduled_actions", ScheduledActions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchemaItem>("scheduled_actions", ScheduledActions);
             writer.WriteIntValue("usage_count", UsageCount);
         }
     }

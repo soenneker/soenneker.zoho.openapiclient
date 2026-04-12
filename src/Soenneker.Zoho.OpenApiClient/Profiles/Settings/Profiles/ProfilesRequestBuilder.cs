@@ -49,19 +49,19 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles
         /// <summary>
         /// Retrieves the list of CRM profiles with metadata.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.read
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Profiles_getProfiles_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Profiles_InternalServerError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Profiles_getProfiles_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Profiles_getProfiles_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -69,9 +69,9 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles
             {
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Profiles_InternalServerError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Profiles_getProfiles_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Profiles_getProfiles_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the list of CRM profiles with metadata.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.read

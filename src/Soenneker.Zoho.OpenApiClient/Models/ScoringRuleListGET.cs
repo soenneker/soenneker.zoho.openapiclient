@@ -66,10 +66,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Few rule object has errors, others are updated successfully.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGET_manual_scoring_rule? ManualScoringRule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGETManualScoringRule? ManualScoringRule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGET_manual_scoring_rule ManualScoringRule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGETManualScoringRule ManualScoringRule { get; set; }
 #endif
         /// <summary>Nested schema for modified_by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,10 +108,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Few rule object has errors, others are updated successfully.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGET_zia_scoring_rule? ZiaScoringRule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGETZiaScoringRule? ZiaScoringRule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGET_zia_scoring_rule ZiaScoringRule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGETZiaScoringRule ZiaScoringRule { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -138,13 +138,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutDetails>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutDetails.CreateFromDiscriminatorValue); } },
-                { "manual_scoring_rule", n => { ManualScoringRule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGET_manual_scoring_rule>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGET_manual_scoring_rule.CreateFromDiscriminatorValue); } },
+                { "manual_scoring_rule", n => { ManualScoringRule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGETManualScoringRule>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGETManualScoringRule.CreateFromDiscriminatorValue); } },
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema14>(global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema14.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleDetails.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "scoring_type", n => { ScoringType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringType>(); } },
-                { "zia_scoring_rule", n => { ZiaScoringRule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGET_zia_scoring_rule>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGET_zia_scoring_rule.CreateFromDiscriminatorValue); } },
+                { "zia_scoring_rule", n => { ZiaScoringRule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGETZiaScoringRule>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGETZiaScoringRule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -161,13 +161,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutDetails>("layout", Layout);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGET_manual_scoring_rule>("manual_scoring_rule", ManualScoringRule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGETManualScoringRule>("manual_scoring_rule", ManualScoringRule);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema14>("modified_by", ModifiedBy);
             writer.WriteStringValue("modified_time", ModifiedTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleDetails>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringType>("scoring_type", ScoringType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGET_zia_scoring_rule>("zia_scoring_rule", ZiaScoringRule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleListGETZiaScoringRule>("zia_scoring_rule", ZiaScoringRule);
         }
     }
 }

@@ -72,25 +72,25 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.Item.Contact_Role
         /// <summary>
         /// Retrieve contact roles associated with a deal
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Deal_contact_roles_getAssociatedContactRoles_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Deal_contact_roles_getAssociatedContactRoles_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Deal_contact_roles_getAssociatedContactRoles_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.Item.Contact_Roles.Contact_RolesRequestBuilder.Contact_RolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.Item.Contact_Roles.Contact_RolesRequestBuilder.Contact_RolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Deal_contact_roles_getAssociatedContactRoles_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.Item.Contact_Roles.Contact_RolesRequestBuilder.Contact_RolesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.Item.Contact_Roles.Contact_RolesRequestBuilder.Contact_RolesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Deal_contact_roles_getAssociatedContactRoles_200500Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Deal_contact_roles_getAssociatedContactRoles_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Deal_contact_roles_getAssociatedContactRoles_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add contact roles to a deal or update existing contact role relations in bulk

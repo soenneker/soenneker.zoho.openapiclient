@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Module Details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchema_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchemaDetails? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchema_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchemaDetails Details { get; set; }
 #endif
         /// <summary>Specify the unique id of any associate action (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchema_details>(global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchema_details.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchemaDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "related_details", n => { RelatedDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema.CreateFromDiscriminatorValue); } },
@@ -79,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchema_details>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchemaDetails>("details", Details);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema>("related_details", RelatedDetails);

@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>&quot;Field: variable_groups&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Variable_groups_VariableGroupSummary>? VariableGroups { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsVariableGroupSummary>? VariableGroups { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Variable_groups_VariableGroupSummary> VariableGroups { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsVariableGroupSummary> VariableGroups { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "variable_groups", n => { VariableGroups = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Variable_groups_VariableGroupSummary>(global::Soenneker.Zoho.OpenApiClient.Models.Variable_groups_VariableGroupSummary.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "variable_groups", n => { VariableGroups = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsVariableGroupSummary>(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsVariableGroupSummary.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Variable_groups_VariableGroupSummary>("variable_groups", VariableGroups);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsVariableGroupSummary>("variable_groups", VariableGroups);
         }
     }
 }

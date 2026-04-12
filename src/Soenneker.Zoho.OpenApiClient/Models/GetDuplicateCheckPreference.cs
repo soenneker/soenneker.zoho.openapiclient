@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Duplicate check preference details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference_duplicate_check_preference? DuplicateCheckPreference { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference? DuplicateCheckPreference { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference_duplicate_check_preference DuplicateCheckPreference { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference DuplicateCheckPreference { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "duplicate_check_preference", n => { DuplicateCheckPreference = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference_duplicate_check_preference>(global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference_duplicate_check_preference.CreateFromDiscriminatorValue); } },
+                { "duplicate_check_preference", n => { DuplicateCheckPreference = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference>(global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference_duplicate_check_preference>("duplicate_check_preference", DuplicateCheckPreference);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference>("duplicate_check_preference", DuplicateCheckPreference);
         }
     }
 }

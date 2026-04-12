@@ -36,56 +36,56 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert
         /// <summary>
         /// Retrieve the status and counts of a previously scheduled mass convert job using job_id query parameter.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_getJobStatus_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_getJobStatus_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_getJobStatus_403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus403">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_getJobStatus_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert.Mass_convertRequestBuilder.Mass_convertRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert.Mass_convertRequestBuilder.Mass_convertRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_getJobStatus_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert.Mass_convertRequestBuilder.Mass_convertRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert.Mass_convertRequestBuilder.Mass_convertRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_getJobStatus_400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_getJobStatus_403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus400.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus403.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_getJobStatus_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_getJobStatus_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Start a scheduled mass-convert job that converts multiple leads into other modules (Deals/Contacts/Accounts) according to provided options. Max 50 lead IDs per request.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_202"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202"/></returns>
         /// <param name="body">Request payload for mass convert operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_202?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_202> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_403.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert400.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert403.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert500.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_202>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert_202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the status and counts of a previously scheduled mass convert job using job_id query parameter.
@@ -114,11 +114,11 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Mass_convert_massConvert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

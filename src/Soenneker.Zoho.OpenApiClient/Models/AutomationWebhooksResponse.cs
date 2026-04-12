@@ -50,10 +50,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for date_time_format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema5? DateTimeFormat { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema5? DateTimeFormat { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema5 DateTimeFormat { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema5 DateTimeFormat { get; set; }
 #endif
         /// <summary>&quot;Field: deletable&quot;</summary>
         public bool? Deletable { get; set; }
@@ -194,7 +194,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "body", n => { Body = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody.CreateFromDiscriminatorValue); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreatedByResponse>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreatedByResponse.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetStringValue(); } },
-                { "date_time_format", n => { DateTimeFormat = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema5>(global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema5.CreateFromDiscriminatorValue); } },
+                { "date_time_format", n => { DateTimeFormat = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema5>(global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema5.CreateFromDiscriminatorValue); } },
                 { "deletable", n => { Deletable = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "editable", n => { Editable = n.GetBoolValue(); } },
@@ -225,7 +225,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody>("body", Body);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreatedByResponse>("created_by", CreatedBy);
             writer.WriteStringValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema5>("date_time_format", DateTimeFormat);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema5>("date_time_format", DateTimeFormat);
             writer.WriteBoolValue("deletable", Deletable);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("editable", Editable);

@@ -44,11 +44,11 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Item.Item.Actions.Assign_terr
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryInternalServerErrorSchema">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Territories_asssignTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAsssignTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Territories_asssignTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAsssignTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -68,11 +68,11 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Item.Item.Actions.Assign_terr
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Territories_asssignTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAsssignTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Territories_asssignTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAsssignTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

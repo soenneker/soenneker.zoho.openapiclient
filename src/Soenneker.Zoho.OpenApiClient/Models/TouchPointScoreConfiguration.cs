@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Channel (Related record) object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_group? Group { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationGroup? Group { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_group Group { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationGroup Group { get; set; }
 #endif
         /// <summary>score configurations in the mentioned channel</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_group>(global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_group.CreateFromDiscriminatorValue); } },
+                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationGroup>(global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationGroup.CreateFromDiscriminatorValue); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_rules>(global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_rules.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_group>("group", Group);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationGroup>("group", Group);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_rules>("rules", Rules);
         }
     }

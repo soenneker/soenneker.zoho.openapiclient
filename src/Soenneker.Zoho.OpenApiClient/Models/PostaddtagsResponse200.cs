@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>&quot;Field: data&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_DataNested>? Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_DataNested> Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested> Data { get; set; }
 #endif
         /// <summary>record ids</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_DataNested>(global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_DataNested.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ids", n => { Ids = n.GetStringValue(); } },
                 { "locked_count", n => { LockedCount = n.GetStringValue(); } },
                 { "over_write", n => { OverWrite = n.GetBoolValue(); } },
@@ -88,7 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_DataNested>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>("data", Data);
             writer.WriteStringValue("ids", Ids);
             writer.WriteStringValue("locked_count", LockedCount);
             writer.WriteBoolValue("over_write", OverWrite);

@@ -36,29 +36,29 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         /// <summary>
         /// Retrieves associations of picklist values with modules, fields, and layouts for a given global picklist ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Actions.Associations.AssociationsRequestBuilder.AssociationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Actions.Associations.AssociationsRequestBuilder.AssociationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Actions.Associations.AssociationsRequestBuilder.AssociationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Actions.Associations.AssociationsRequestBuilder.AssociationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_200403Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_200500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations400.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200403Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Global_picklists_getGlobalPickListFieldAssociations_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves associations of picklist values with modules, fields, and layouts for a given global picklist ID.

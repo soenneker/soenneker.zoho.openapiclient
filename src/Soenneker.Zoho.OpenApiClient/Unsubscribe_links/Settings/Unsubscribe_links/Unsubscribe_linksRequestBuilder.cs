@@ -76,7 +76,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
         /// <param name="body">Request payload to create one or more unsubscribe links.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Unsubscribe_links_postUnsubscribeLinks_403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPostUnsubscribeLinks403">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CreateUnsubscribeLinksSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.InitiateUnsubscribeLinksRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,7 +90,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Unsubscribe_links_postUnsubscribeLinks_403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPostUnsubscribeLinks403.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CreateUnsubscribeLinksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CreateUnsubscribeLinksSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

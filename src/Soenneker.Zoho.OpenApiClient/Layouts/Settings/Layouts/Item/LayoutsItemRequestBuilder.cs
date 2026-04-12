@@ -39,9 +39,9 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutSuccessResponseBody"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutSuccessResponseBody?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder.LayoutsItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,9 +54,9 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutSuccessResponseBody>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutSuccessResponseBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -67,8 +67,8 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder.LayoutsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,8 +82,8 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema400Error.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -95,10 +95,10 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse">When receiving a 405 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 405 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutSuccessResponse?> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder.LayoutsItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -113,10 +113,10 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse.CreateFromDiscriminatorValue },
-                { "405", global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Layouts_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
+                { "405", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

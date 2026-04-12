@@ -36,22 +36,22 @@ namespace Soenneker.Zoho.OpenApiClient.Coql
         /// <summary>
         /// Executes a COQL select query to fetch records data.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Coql_executeCOQLQuery_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCOQLQuery200"/></returns>
         /// <param name="body">Request Body to get records data using COQL</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Coql_executeCOQLQuery_200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Coql_executeCOQLQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCOQLQuery200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCOQLQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Coql_executeCOQLQuery_200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Coql_executeCOQLQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCOQLQuery200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCOQLQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Coql_executeCOQLQuery_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Coql_executeCOQLQuery_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCOQLQuery200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCOQLQuery200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Executes a COQL select query to fetch records data.
@@ -61,11 +61,11 @@ namespace Soenneker.Zoho.OpenApiClient.Coql
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Coql_executeCOQLQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCOQLQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Coql_executeCOQLQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCOQLQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

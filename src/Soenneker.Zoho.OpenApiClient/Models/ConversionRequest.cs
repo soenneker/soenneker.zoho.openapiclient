@@ -18,18 +18,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specifies the user to assign the converted records to. If omitted, records are assigned to the current Lead owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest_assign_to? AssignTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo? AssignTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest_assign_to AssignTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo AssignTo { get; set; }
 #endif
         /// <summary>Configuration for carrying over tags from the Lead to converted records</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest_carry_over_tags? CarryOverTags { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags? CarryOverTags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest_carry_over_tags CarryOverTags { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags CarryOverTags { get; set; }
 #endif
         /// <summary>Deal record configuration for lead conversion</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,8 +64,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "add_to_existing_record", n => { AddToExistingRecord = n.GetBoolValue(); } },
-                { "assign_to", n => { AssignTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest_assign_to>(global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest_assign_to.CreateFromDiscriminatorValue); } },
-                { "carry_over_tags", n => { CarryOverTags = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest_carry_over_tags>(global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest_carry_over_tags.CreateFromDiscriminatorValue); } },
+                { "assign_to", n => { AssignTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo>(global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo.CreateFromDiscriminatorValue); } },
+                { "carry_over_tags", n => { CarryOverTags = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags>(global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags.CreateFromDiscriminatorValue); } },
                 { "Deals", n => { Deals = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealConversion>(global::Soenneker.Zoho.OpenApiClient.Models.DealConversion.CreateFromDiscriminatorValue); } },
                 { "notify_lead_owner", n => { NotifyLeadOwner = n.GetBoolValue(); } },
                 { "notify_new_entity_owner", n => { NotifyNewEntityOwner = n.GetBoolValue(); } },
@@ -80,8 +80,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("add_to_existing_record", AddToExistingRecord);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest_assign_to>("assign_to", AssignTo);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest_carry_over_tags>("carry_over_tags", CarryOverTags);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo>("assign_to", AssignTo);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags>("carry_over_tags", CarryOverTags);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealConversion>("Deals", Deals);
             writer.WriteBoolValue("notify_lead_owner", NotifyLeadOwner);
             writer.WriteBoolValue("notify_new_entity_owner", NotifyNewEntityOwner);

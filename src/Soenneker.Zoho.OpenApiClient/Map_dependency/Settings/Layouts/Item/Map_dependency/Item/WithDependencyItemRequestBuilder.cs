@@ -36,89 +36,89 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
         /// <summary>
         /// Deletes an existing field dependency from a specific layout. This operation permanently removes the dependency mapping between parent and child fields.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency400.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200403Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200404Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_deleteMapDependency_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves detailed information about a specific field dependency including parent and child field relationships with picklist value mappings.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById400.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200403Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200404Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_getMapDependencyById_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Updates the picklist value mappings for an existing field dependency. Use \&quot;_delete\&quot;: null to remove specific mappings.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200"/></returns>
         /// <param name="body">Request body for updating a field dependency</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200500Error">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200500Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200403Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200404Error.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200500Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes an existing field dependency from a specific layout. This operation permanently removes the dependency mapping between parent and child fields.
@@ -166,11 +166,11 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency_updateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder.WithDependencyItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

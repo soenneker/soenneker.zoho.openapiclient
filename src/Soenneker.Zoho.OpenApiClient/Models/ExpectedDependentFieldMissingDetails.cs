@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Expected field object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails_dependee? Dependee { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee? Dependee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails_dependee Dependee { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee Dependee { get; set; }
 #endif
         /// <summary>List of expected fields that are missing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dependee", n => { Dependee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails_dependee>(global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails_dependee.CreateFromDiscriminatorValue); } },
+                { "dependee", n => { Dependee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee>(global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee.CreateFromDiscriminatorValue); } },
                 { "expected_fields", n => { ExpectedFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails_expected_fields>(global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails_expected_fields.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails_dependee>("dependee", Dependee);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee>("dependee", Dependee);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails_expected_fields>("expected_fields", ExpectedFields);
         }
     }

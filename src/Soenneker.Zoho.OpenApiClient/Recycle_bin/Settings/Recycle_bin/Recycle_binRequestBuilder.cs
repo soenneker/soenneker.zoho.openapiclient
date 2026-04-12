@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ResultList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Recycle_bin_deleteRecycleBinRecords_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecords400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ResultList?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Recycle_binRequestBuilder.Recycle_binRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,27 +71,27 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Recycle_bin_deleteRecycleBinRecords_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecords400.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ResultList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns paginated recycle-bin entries. Use filters or ids to scope results.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Recycle_bin_getRecycleBinRecords_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Recycle_bin_getRecycleBinRecords_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Recycle_bin_getRecycleBinRecords_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Recycle_bin_getRecycleBinRecords_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Recycle_bin_getRecycleBinRecords_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Permanently deletes matching recycle-bin records. This is a destructive operation and may partially succeed for some items; check 207 responses for per-item results.

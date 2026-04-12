@@ -18,10 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Extra details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccess_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessDetails? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccess_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessDetails Details { get; set; }
 #endif
         /// <summary>Human readable message indicating success.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccess_code>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccess_details>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccess_details.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessDetails>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccess_status>(); } },
             };
@@ -65,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccess_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccess_details>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccess_status>("status", Status);
         }

@@ -61,31 +61,31 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <summary>
         /// Permanently deletes one or more records from the specified module using comma-separated record IDs. Returns per-item results for bulk operations.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords401">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_401.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_403.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_500.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords401.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords403.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords404.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords500.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Record_deleteRecords_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To get the list of available records from a module
@@ -160,7 +160,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_updateRecords_412">When receiving a 412 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecords412">When receiving a 412 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,7 +179,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse.CreateFromDiscriminatorValue },
-                { "412", global::Soenneker.Zoho.OpenApiClient.Models.Record_updateRecords_412.CreateFromDiscriminatorValue },
+                { "412", global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecords412.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

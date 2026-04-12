@@ -36,7 +36,7 @@ namespace Soenneker.Zoho.OpenApiClient.Apis.Apis
         /// <summary>
         /// Returns the list of available REST API endpoints, grouped by module and feature, that the current user can access in this tenant.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Apis_getAvailableApis_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponse">When receiving a 400 status code</exception>
@@ -47,11 +47,11 @@ namespace Soenneker.Zoho.OpenApiClient.Apis.Apis
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Apis_getAvailableApis_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Apis.Apis.ApisRequestBuilder.ApisRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Apis.Apis.ApisRequestBuilder.ApisRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Apis_getAvailableApis_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Apis.Apis.ApisRequestBuilder.ApisRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Apis.Apis.ApisRequestBuilder.ApisRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Apis.Apis
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Apis_getAvailableApis_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Apis_getAvailableApis_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the list of available REST API endpoints, grouped by module and feature, that the current user can access in this tenant.

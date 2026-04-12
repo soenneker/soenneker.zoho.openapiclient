@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Filter criteria for data selection supporting both simple field-based filters and complex grouped filters with logical operators</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_FilterCriterionResponse? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionResponse? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_FilterCriterionResponse Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionResponse Criteria { get; set; }
 #endif
         /// <summary>Indicates if related records are to be included</summary>
         public bool? IncludeObjects { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_FilterCriterionResponse>(global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_FilterCriterionResponse.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionResponse>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionResponse.CreateFromDiscriminatorValue); } },
                 { "include_objects", n => { IncludeObjects = n.GetBoolValue(); } },
                 { "relation", n => { Relation = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_cross_filters_relation>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_cross_filters_relation.CreateFromDiscriminatorValue); } },
             };
@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_FilterCriterionResponse>("criteria", Criteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionResponse>("criteria", Criteria);
             writer.WriteBoolValue("include_objects", IncludeObjects);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_cross_filters_relation>("relation", Relation);
         }

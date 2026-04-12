@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Exists in</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPath_exists_in? ExistsIn { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPathExistsIn? ExistsIn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPath_exists_in ExistsIn { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPathExistsIn ExistsIn { get; set; }
 #endif
         /// <summary>JSON path of the field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "exists_in", n => { ExistsIn = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPath_exists_in>(global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPath_exists_in.CreateFromDiscriminatorValue); } },
+                { "exists_in", n => { ExistsIn = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPathExistsIn>(global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPathExistsIn.CreateFromDiscriminatorValue); } },
                 { "json_path", n => { JsonPath = n.GetStringValue(); } },
             };
         }
@@ -68,7 +68,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPath_exists_in>("exists_in", ExistsIn);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPathExistsIn>("exists_in", ExistsIn);
             writer.WriteStringValue("json_path", JsonPath);
         }
     }

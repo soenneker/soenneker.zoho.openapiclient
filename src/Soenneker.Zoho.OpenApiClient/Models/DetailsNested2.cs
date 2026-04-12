@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for created_by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_CreatedByNested? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsCreatedByNested? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_CreatedByNested CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsCreatedByNested CreatedBy { get; set; }
 #endif
         /// <summary>&quot;Field: created_time&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,10 +48,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for modified_by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_ModifiedByNested? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_ModifiedByNested ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested ModifiedBy { get; set; }
 #endif
         /// <summary>&quot;Field: modified_time&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,10 +80,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "color_code", n => { ColorCode = n.GetStringValue(); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_CreatedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_CreatedByNested.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsCreatedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsCreatedByNested.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_ModifiedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_ModifiedByNested.CreateFromDiscriminatorValue); } },
+                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
             };
         }
@@ -95,10 +95,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("color_code", ColorCode);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_CreatedByNested>("created_by", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsCreatedByNested>("created_by", CreatedBy);
             writer.WriteStringValue("created_time", CreatedTime);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_ModifiedByNested>("modified_by", ModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested>("modified_by", ModifiedBy);
             writer.WriteStringValue("modified_time", ModifiedTime);
         }
     }

@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedWithRepeatMatchAllSchemaCriteria? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedWithRepeatMatchAllSchemaCriteria Criteria { get; set; }
 #endif
         /// <summary>Specifies whether all criteria must be met for the Workflow rule to trigger.</summary>
         public bool? MatchAll { get; set; }
@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedWithRepeatMatchAllSchemaCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedWithRepeatMatchAllSchemaCriteria.CreateFromDiscriminatorValue); } },
                 { "match_all", n => { MatchAll = n.GetBoolValue(); } },
                 { "repeat", n => { Repeat = n.GetBoolValue(); } },
                 { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema>("criteria", Criteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedWithRepeatMatchAllSchemaCriteria>("criteria", Criteria);
             writer.WriteBoolValue("match_all", MatchAll);
             writer.WriteBoolValue("repeat", Repeat);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("trigger_module", TriggerModule);

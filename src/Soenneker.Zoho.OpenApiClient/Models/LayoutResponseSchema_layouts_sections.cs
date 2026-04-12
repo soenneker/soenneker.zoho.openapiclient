@@ -42,10 +42,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Fields within this section. Ordered by sequence_number in ascending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema>? Fields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchema>? Fields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema> Fields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchema> Fields { get; set; }
 #endif
         /// <summary>Indicates if the section is system-generated or user-created</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_generated_type? GeneratedType { get; set; }
@@ -115,7 +115,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "column_count", n => { ColumnCount = n.GetIntValue(); } },
                 { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema>(global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchema>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchema.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "generated_type", n => { GeneratedType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_generated_type>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_parent_section", n => { IsParentSection = n.GetBoolValue(); } },
@@ -140,7 +140,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteIntValue("column_count", ColumnCount);
             writer.WriteStringValue("display_label", DisplayLabel);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_FieldSchema>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchema>("fields", Fields);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_sections_generated_type>("generated_type", GeneratedType);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_parent_section", IsParentSection);

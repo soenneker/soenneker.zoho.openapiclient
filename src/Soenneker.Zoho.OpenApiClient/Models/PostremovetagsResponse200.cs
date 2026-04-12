@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>&quot;Field: data&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_DataNested>? Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_DataNested> Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested> Data { get; set; }
 #endif
         /// <summary>&quot;Field: locked_count&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_DataNested>(global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_DataNested.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "locked_count", n => { LockedCount = n.GetStringValue(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Tags_actions_DataNested>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>("data", Data);
             writer.WriteStringValue("locked_count", LockedCount);
         }
     }

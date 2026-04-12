@@ -36,77 +36,77 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.
         /// <summary>
         /// To delete automation tasks configured in your Zoho CRM account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema3"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema3"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ErrorResponseCore11">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksErrorResponseCore11">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema3?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema3?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema3> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema3> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ErrorResponseCore11.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksErrorResponseCore11.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema3>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema3>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve automation tasks configured in your Zoho CRM organization
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema7"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema7"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ErrorResponseCore3">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ErrorResponseCore11">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksErrorResponseCore3">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksErrorResponseCore11">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema7?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.Item.TasksItemRequestBuilder.TasksItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema7?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.Item.TasksItemRequestBuilder.TasksItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema7> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.Item.TasksItemRequestBuilder.TasksItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema7> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.Item.TasksItemRequestBuilder.TasksItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ErrorResponseCore3.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ErrorResponseCore11.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksErrorResponseCore3.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksErrorResponseCore11.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema7>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema7.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema7>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema7.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update an automation task in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema6"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema6"/></returns>
         /// <param name="body">Request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_putTasksById_401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ErrorResponseCore11">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksPutTasksById401">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksErrorResponseCore11">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema6?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema6?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema6> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema6> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_putTasksById_401.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_ErrorResponseCore11.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksPutTasksById401.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksErrorResponseCore11.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema6>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema6.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema6>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema6.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To delete automation tasks configured in your Zoho CRM account.
@@ -154,11 +154,11 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Workflow_tasks_GeneratedSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

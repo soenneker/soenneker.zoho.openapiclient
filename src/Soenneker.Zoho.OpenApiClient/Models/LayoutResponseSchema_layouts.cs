@@ -40,10 +40,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Layouts_UserReference? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Layouts_UserReference CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference CreatedBy { get; set; }
 #endif
         /// <summary>The created_for property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,10 +84,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The modified_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Layouts_UserReference? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Layouts_UserReference ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference ModifiedBy { get; set; }
 #endif
         /// <summary>The modified_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -160,14 +160,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "actions_allowed", n => { ActionsAllowed = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActionsAllowed>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutActionsAllowed.CreateFromDiscriminatorValue); } },
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "convert_mapping", n => { ConvertMapping = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModule>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModule.CreateFromDiscriminatorValue); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_UserReference>(global::Soenneker.Zoho.OpenApiClient.Models.Layouts_UserReference.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference.CreateFromDiscriminatorValue); } },
                 { "created_for", n => { CreatedFor = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
                 { "generated_type", n => { GeneratedType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_generated_type>(); } },
                 { "has_more_profiles", n => { HasMoreProfiles = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_UserReference>(global::Soenneker.Zoho.OpenApiClient.Models.Layouts_UserReference.CreateFromDiscriminatorValue); } },
+                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "portal_user_types", n => { PortalUserTypes = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_portal_user_types>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_portal_user_types.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -190,14 +190,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActionsAllowed>("actions_allowed", ActionsAllowed);
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModule>("convert_mapping", ConvertMapping);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_UserReference>("created_by", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference>("created_by", CreatedBy);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("created_for", CreatedFor);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("created_time", CreatedTime);
             writer.WriteStringValue("display_label", DisplayLabel);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_generated_type>("generated_type", GeneratedType);
             writer.WriteBoolValue("has_more_profiles", HasMoreProfiles);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Layouts_UserReference>("modified_by", ModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference>("modified_by", ModifiedBy);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts_portal_user_types>("portal_user_types", PortalUserTypes);

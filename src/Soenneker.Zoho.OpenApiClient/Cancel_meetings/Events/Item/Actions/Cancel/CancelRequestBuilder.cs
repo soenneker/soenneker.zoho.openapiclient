@@ -36,29 +36,29 @@ namespace Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.Actions.Cance
         /// <summary>
         /// To post the cancelMeeting mail
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings200"/></returns>
         /// <param name="body">Contains Data properties</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings_401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings401">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings_200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings_200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings_401.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings_404.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings401.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings404.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To post the cancelMeeting mail
@@ -68,11 +68,11 @@ namespace Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.Actions.Cance
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Cancel_meetings_cancelMeetings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

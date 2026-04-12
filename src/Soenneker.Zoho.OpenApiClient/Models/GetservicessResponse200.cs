@@ -18,10 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>&quot;Field: data&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Services_GETDataNested>? Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGETDataNested>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Services_GETDataNested> Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGETDataNested> Data { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Services_GETDataNested>(global::Soenneker.Zoho.OpenApiClient.Models.Services_GETDataNested.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGETDataNested>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesGETDataNested.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Services_GETDataNested>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGETDataNested>("data", Data);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

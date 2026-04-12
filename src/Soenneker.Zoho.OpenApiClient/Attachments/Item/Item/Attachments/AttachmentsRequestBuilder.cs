@@ -52,13 +52,13 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,13 +71,13 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AttachmentListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,14 +88,14 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError">When receiving a 413 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentSuccessResponse?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -109,14 +109,14 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
                 { "413", global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Zoho.OpenApiClient.Models.Attachments_ErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AttachmentSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

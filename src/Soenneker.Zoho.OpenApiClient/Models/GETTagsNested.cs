@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for created_by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Tags_GETCreatedByNested? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TagsGETCreatedByNested? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Tags_GETCreatedByNested CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TagsGETCreatedByNested CreatedBy { get; set; }
 #endif
         /// <summary>&quot;Field: created_time&quot;</summary>
         public DateTimeOffset? CreatedTime { get; set; }
@@ -42,10 +42,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for modified_by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Tags_GETModifiedByNested? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TagsGETModifiedByNested? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Tags_GETModifiedByNested ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TagsGETModifiedByNested ModifiedBy { get; set; }
 #endif
         /// <summary>&quot;Field: modified_time&quot;</summary>
         public DateTimeOffset? ModifiedTime { get; set; }
@@ -76,10 +76,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "color_code", n => { ColorCode = n.GetStringValue(); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Tags_GETCreatedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.Tags_GETCreatedByNested.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsGETCreatedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsGETCreatedByNested.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Tags_GETModifiedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.Tags_GETModifiedByNested.CreateFromDiscriminatorValue); } },
+                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsGETModifiedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsGETModifiedByNested.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -92,10 +92,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("color_code", ColorCode);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Tags_GETCreatedByNested>("created_by", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsGETCreatedByNested>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Tags_GETModifiedByNested>("modified_by", ModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsGETModifiedByNested>("modified_by", ModifiedBy);
             writer.WriteDateTimeOffsetValue("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
         }

@@ -28,10 +28,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the details of the new owner</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_change_owner? ChangeOwner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchemaChangeOwner? ChangeOwner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_change_owner ChangeOwner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchemaChangeOwner ChangeOwner { get; set; }
 #endif
         /// <summary>Specify the unique ID of the Contact Role to be assigned if a deal is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,10 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the module to which the attachments should be moved</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_move_attachment_to? MoveAttachmentTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchemaMoveAttachmentTo? MoveAttachmentTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_move_attachment_to MoveAttachmentTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchemaMoveAttachmentTo MoveAttachmentTo { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -80,11 +80,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "add_to_existing_account", n => { AddToExistingAccount = n.GetBoolValue(); } },
                 { "add_to_existing_contact", n => { AddToExistingContact = n.GetBoolValue(); } },
                 { "carry_tags", n => { CarryTags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_carry_tags>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_carry_tags.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "change_owner", n => { ChangeOwner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_change_owner>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_change_owner.CreateFromDiscriminatorValue); } },
+                { "change_owner", n => { ChangeOwner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchemaChangeOwner>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchemaChangeOwner.CreateFromDiscriminatorValue); } },
                 { "contact_role", n => { ContactRole = n.GetStringValue(); } },
                 { "create_deal", n => { CreateDeal = n.GetBoolValue(); } },
                 { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingsNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingsNestedSchema.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "move_attachment_to", n => { MoveAttachmentTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_move_attachment_to>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_move_attachment_to.CreateFromDiscriminatorValue); } },
+                { "move_attachment_to", n => { MoveAttachmentTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchemaMoveAttachmentTo>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchemaMoveAttachmentTo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,11 +97,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("add_to_existing_account", AddToExistingAccount);
             writer.WriteBoolValue("add_to_existing_contact", AddToExistingContact);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_carry_tags>("carry_tags", CarryTags);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_change_owner>("change_owner", ChangeOwner);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchemaChangeOwner>("change_owner", ChangeOwner);
             writer.WriteStringValue("contact_role", ContactRole);
             writer.WriteBoolValue("create_deal", CreateDeal);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingsNestedSchema>("field_mappings", FieldMappings);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema_move_attachment_to>("move_attachment_to", MoveAttachmentTo);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchemaMoveAttachmentTo>("move_attachment_to", MoveAttachmentTo);
         }
     }
 }

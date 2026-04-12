@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Files
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Files_getFile_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FilesGetFile400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,34 +52,34 @@ namespace Soenneker.Zoho.OpenApiClient.Files
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Files_getFile_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FilesGetFile400.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Uploads a file to Zoho File System (ZFS) and returns the file metadata including the file ID which can be used to associate the file with records in Zoho CRM. The file is uploaded using multipart/form-data with a required &apos;file&apos; field containing the binary data of the file to be uploaded. The response includes the file ID, name, status, and other details. Can upload 10 files in a single request by repeating the &apos;file&apos; field. Maximum file size is 20 MB.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Files_uploadFiles_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200"/></returns>
         /// <param name="body">Multipart form data for uploading one or more files to Zoho File System</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Files_uploadFiles_415">When receiving a 415 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles415">When receiving a 415 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Files_uploadFiles_200?> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200?> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Files_uploadFiles_200> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "415", global::Soenneker.Zoho.OpenApiClient.Models.Files_uploadFiles_415.CreateFromDiscriminatorValue },
+                { "415", global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles415.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Files_uploadFiles_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Files_uploadFiles_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the binary content of a file stored in Zoho File System (ZFS) using its unique file ID. The file ID is provided as a required query parameter &apos;id&apos;. If the file exists, the API returns the file&apos;s binary data along with appropriate headers indicating the MIME type and content disposition for download. If the file ID does not correspond to any file in ZFS, a 204 No Content response is returned. This endpoint is used to download files that have been previously uploaded to ZFS and associated with Zoho CRM records.

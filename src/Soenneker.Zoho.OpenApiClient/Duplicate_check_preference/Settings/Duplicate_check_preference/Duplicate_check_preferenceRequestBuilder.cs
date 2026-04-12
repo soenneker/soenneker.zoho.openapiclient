@@ -36,20 +36,20 @@ namespace Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Dupli
         /// <summary>
         /// Delete the duplicate check preference for a module in Zoho CRM.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_deleteDuplicateCheckPreference_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceDeleteDuplicateCheckPreference200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_deleteDuplicateCheckPreference_200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceDeleteDuplicateCheckPreference200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_deleteDuplicateCheckPreference_200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceDeleteDuplicateCheckPreference200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_deleteDuplicateCheckPreference_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_deleteDuplicateCheckPreference_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceDeleteDuplicateCheckPreference200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceDeleteDuplicateCheckPreference200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get Duplicate Check Preference
@@ -72,42 +72,42 @@ namespace Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Dupli
         /// <summary>
         /// Create Duplicate Check Preference
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_createDuplicateCheckPreference_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceCreateDuplicateCheckPreference200"/></returns>
         /// <param name="body">Schema for getting duplicate check preference</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_createDuplicateCheckPreference_200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceCreateDuplicateCheckPreference200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_createDuplicateCheckPreference_200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceCreateDuplicateCheckPreference200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_createDuplicateCheckPreference_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_createDuplicateCheckPreference_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceCreateDuplicateCheckPreference200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceCreateDuplicateCheckPreference200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update Duplicate Check Preference API is used to update duplicate check settings for a specific module in the CRM system. It allows users to define how duplicate records are identified and managed based on field mappings between the current module and a mapped module, such as Contacts. This API helps maintain data integrity by preventing the creation of duplicate records during data entry or import processes.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_updateDuplicateCheckPreference_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200"/></returns>
         /// <param name="body">Request Body for Update Duplicate Check Preference</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_updateDuplicateCheckPreference_200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_updateDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_updateDuplicateCheckPreference_200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_updateDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_updateDuplicateCheckPreference_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_updateDuplicateCheckPreference_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete the duplicate check preference for a module in Zoho CRM.
@@ -177,11 +177,11 @@ namespace Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Dupli
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_updateDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Duplicate_check_preference_updateDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

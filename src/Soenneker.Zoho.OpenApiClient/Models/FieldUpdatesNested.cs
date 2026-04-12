@@ -20,10 +20,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for created_by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_CreatedByNested? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesCreatedByNested? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_CreatedByNested CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesCreatedByNested CreatedBy { get; set; }
 #endif
         /// <summary>&quot;Field: created_time&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,10 +74,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for modified_by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_ModifiedByNested? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesModifiedByNested? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_ModifiedByNested ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesModifiedByNested ModifiedBy { get; set; }
 #endif
         /// <summary>&quot;Field: modified_time&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,10 +90,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the module details where the field update should be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_ModuleNested? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesModuleNested? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_ModuleNested Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesModuleNested Module { get; set; }
 #endif
         /// <summary>Specify the name of the field update action. (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,10 +136,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the value to set in the specified field. (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_value? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNestedValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_value Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNestedValue Value { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -161,7 +161,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "apply_assignment_threshold", n => { ApplyAssignmentThreshold = n.GetBoolValue(); } },
                 { "associated", n => { Associated = n.GetBoolValue(); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_CreatedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_CreatedByNested.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesCreatedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesCreatedByNested.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetStringValue(); } },
                 { "deletable", n => { Deletable = n.GetBoolValue(); } },
                 { "dependent_fields", n => { DependentFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>(global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -170,9 +170,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldNested>(global::Soenneker.Zoho.OpenApiClient.Models.FieldNested.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lock_status", n => { LockStatus = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockStatusNested>(global::Soenneker.Zoho.OpenApiClient.Models.LockStatusNested.CreateFromDiscriminatorValue); } },
-                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_ModifiedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_ModifiedByNested.CreateFromDiscriminatorValue); } },
+                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesModifiedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesModifiedByNested.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_ModuleNested>(global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_ModuleNested.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesModuleNested>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesModuleNested.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notify", n => { Notify = n.GetBoolValue(); } },
                 { "related_module", n => { RelatedModule = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -180,7 +180,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_type>(); } },
                 { "update_type", n => { UpdateType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_update_type>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_value>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNestedValue>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNestedValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -192,7 +192,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apply_assignment_threshold", ApplyAssignmentThreshold);
             writer.WriteBoolValue("associated", Associated);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_CreatedByNested>("created_by", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesCreatedByNested>("created_by", CreatedBy);
             writer.WriteStringValue("created_time", CreatedTime);
             writer.WriteBoolValue("deletable", Deletable);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>("dependent_fields", DependentFields);
@@ -201,9 +201,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldNested>("field", Field);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockStatusNested>("lock_status", LockStatus);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_ModifiedByNested>("modified_by", ModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesModifiedByNested>("modified_by", ModifiedBy);
             writer.WriteStringValue("modified_time", ModifiedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Field_updates_ModuleNested>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesModuleNested>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("notify", Notify);
             writer.WriteObjectValue<UntypedNode>("related_module", RelatedModule);
@@ -211,7 +211,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("source", Source);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_type>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_update_type>("update_type", UpdateType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNestedValue>("value", Value);
         }
     }
 }

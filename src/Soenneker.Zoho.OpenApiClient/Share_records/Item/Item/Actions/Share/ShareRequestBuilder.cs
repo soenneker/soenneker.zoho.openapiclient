@@ -36,17 +36,17 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// <summary>
         /// Delete Share Records. API exposed to customers
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Share_records_deleteShareRecords_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_deleteShareRecords_200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_deleteShareRecords_200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -54,65 +54,65 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_deleteShareRecords_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Share_records_deleteShareRecords_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get Share Records. API exposed to customers
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Share_records_getShareRecords_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_getShareRecords_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.ShareRequestBuilder.ShareRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.ShareRequestBuilder.ShareRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_getShareRecords_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.ShareRequestBuilder.ShareRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.ShareRequestBuilder.ShareRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_getShareRecords_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Share_records_getShareRecords_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create Share Records. API exposed to customers
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Share_records_createShareRecords_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201"/></returns>
         /// <param name="body">Create Share Records Request</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_createShareRecords_201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Share_records_createShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_createShareRecords_201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Share_records_createShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_createShareRecords_201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Share_records_createShareRecords_201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update Share Records. API exposed to customers
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Share_records_updateShareRecords_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201"/></returns>
         /// <param name="body">Update Share Records Request</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_updateShareRecords_201?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Share_records_updateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_updateShareRecords_201> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Share_records_updateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Share_records_updateShareRecords_201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Share_records_updateShareRecords_201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete Share Records. API exposed to customers
@@ -160,11 +160,11 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Share_records_createShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Share_records_createShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -182,11 +182,11 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Share_records_updateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Share_records_updateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

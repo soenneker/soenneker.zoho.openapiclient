@@ -36,40 +36,40 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge
         /// <summary>
         /// Retrieves the status of merge jobs for finding and tracking record merge operations in Zoho CRM modules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_getMergeJobStatus_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_getMergeJobStatus_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_getMergeJobStatus_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_getMergeJobStatus_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_getMergeJobStatus_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Merges duplicate records in Zoho CRM modules with field mapping and validation. Supports synchronous and asynchronous merge operations.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_mergeRecords_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords200"/></returns>
         /// <param name="body">Request body for merging records with field mapping and validation</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_mergeRecords_200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_mergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_mergeRecords_200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_mergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_mergeRecords_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_mergeRecords_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the status of merge jobs for finding and tracking record merge operations in Zoho CRM modules.
@@ -98,11 +98,11 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_mergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Find_and_merge_mergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

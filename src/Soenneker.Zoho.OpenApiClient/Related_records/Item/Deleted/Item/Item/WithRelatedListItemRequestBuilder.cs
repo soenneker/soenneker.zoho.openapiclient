@@ -36,27 +36,27 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.Item
         /// <summary>
         /// Retrieves a list of records that were previously related to a parent record but have since been deleted. Useful for audit trails and data recovery scenarios.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_records_getDeletedRelatedRecord_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Related_records_NoPermissionError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Related_records_getDeletedRelatedRecord_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Related_records_getDeletedRelatedRecord_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Related_records_NoPermissionError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Related_records_getDeletedRelatedRecord_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Related_records_getDeletedRelatedRecord_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of records that were previously related to a parent record but have since been deleted. Useful for audit trails and data recovery scenarios.

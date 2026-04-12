@@ -42,27 +42,27 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item
         /// <summary>
         /// Get a specific custom view of a module using custom view ID
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_getCustomViewById_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_getCustomViewById_401">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById401">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_getCustomViewById_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_getCustomViewById_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_getCustomViewById_401.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById401.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_getCustomViewById_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Custom_views_getCustomViewById_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a specific custom view of a module using custom view ID

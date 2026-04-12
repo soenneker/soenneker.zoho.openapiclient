@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>User who created the attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Created_By? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Created_By CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy CreatedBy { get; set; }
 #endif
         /// <summary>Timestamp when the attachment was created (ISO 8601 with timezone)</summary>
         public DateTimeOffset? CreatedTime { get; set; }
@@ -68,28 +68,28 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>User who last modified the attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Modified_By? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectModifiedBy? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Modified_By ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectModifiedBy ModifiedBy { get; set; }
 #endif
         /// <summary>Timestamp when the attachment was last modified (ISO 8601 with timezone)</summary>
         public DateTimeOffset? ModifiedTime { get; set; }
         /// <summary>Owner of the attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Owner? Owner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectOwner? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Owner Owner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectOwner Owner { get; set; }
 #endif
         /// <summary>Parent record information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Parent_Id? ParentId { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectParentId? ParentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Parent_Id ParentId { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectParentId ParentId { get; set; }
 #endif
         /// <summary>Source module name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,7 +149,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Created_By", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Created_By>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Created_By.CreateFromDiscriminatorValue); } },
+                { "Created_By", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy.CreateFromDiscriminatorValue); } },
                 { "Created_Time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "$editable", n => { Editable = n.GetBoolValue(); } },
                 { "$field_states", n => { FieldStates = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Field_states>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Field_states.CreateFromDiscriminatorValue); } },
@@ -157,10 +157,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "File_Name", n => { FileName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "$link_url", n => { LinkUrl = n.GetStringValue(); } },
-                { "Modified_By", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Modified_By>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Modified_By.CreateFromDiscriminatorValue); } },
+                { "Modified_By", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectModifiedBy.CreateFromDiscriminatorValue); } },
                 { "Modified_Time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
-                { "Owner", n => { Owner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Owner>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Owner.CreateFromDiscriminatorValue); } },
-                { "Parent_Id", n => { ParentId = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Parent_Id>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Parent_Id.CreateFromDiscriminatorValue); } },
+                { "Owner", n => { Owner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectOwner>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectOwner.CreateFromDiscriminatorValue); } },
+                { "Parent_Id", n => { ParentId = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectParentId>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectParentId.CreateFromDiscriminatorValue); } },
                 { "$se_module", n => { SeModule = n.GetStringValue(); } },
                 { "$sharing_permission", n => { SharingPermission = n.GetStringValue(); } },
                 { "Size", n => { Size = n.GetStringValue(); } },
@@ -175,7 +175,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Created_By>("Created_By", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy>("Created_By", CreatedBy);
             writer.WriteDateTimeOffsetValue("Created_Time", CreatedTime);
             writer.WriteBoolValue("$editable", Editable);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Field_states>("$field_states", FieldStates);
@@ -183,10 +183,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("File_Name", FileName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("$link_url", LinkUrl);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Modified_By>("Modified_By", ModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectModifiedBy>("Modified_By", ModifiedBy);
             writer.WriteDateTimeOffsetValue("Modified_Time", ModifiedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Owner>("Owner", Owner);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Parent_Id>("Parent_Id", ParentId);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectOwner>("Owner", Owner);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectParentId>("Parent_Id", ParentId);
             writer.WriteStringValue("$se_module", SeModule);
             writer.WriteStringValue("$sharing_permission", SharingPermission);
             writer.WriteStringValue("Size", Size);

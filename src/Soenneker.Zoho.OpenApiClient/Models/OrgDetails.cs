@@ -16,34 +16,34 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Company&apos;s alias</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Alias { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsAlias? Alias { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Alias { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsAlias Alias { get; set; }
 #endif
         /// <summary>Company&apos;s city</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? City { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCity? City { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch City { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCity City { get; set; }
 #endif
         /// <summary>Company&apos;s name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? CompanyName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCompanyName? CompanyName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch CompanyName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCompanyName CompanyName { get; set; }
 #endif
         /// <summary>Company&apos;s country</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Country { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCountry? Country { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Country { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCountry Country { get; set; }
 #endif
         /// <summary>Company&apos;s country code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,10 +84,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Description { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsDescription? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Description { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsDescription Description { get; set; }
 #endif
         /// <summary>domain name of the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,28 +100,28 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Company&apos;s employee count</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? EmployeeCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsEmployeeCount? EmployeeCount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch EmployeeCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsEmployeeCount EmployeeCount { get; set; }
 #endif
         /// <summary>Company&apos;s fax</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Fax { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsFax? Fax { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Fax { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsFax Fax { get; set; }
 #endif
         /// <summary>google apps integration status</summary>
         public bool? GappsEnabled { get; private set; }
         /// <summary>hierarchy preference of an organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_hierarchy_preferences? HierarchyPreferences { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferences? HierarchyPreferences { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_hierarchy_preferences HierarchyPreferences { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferences HierarchyPreferences { get; set; }
 #endif
         /// <summary>hipaa compliances enabled status</summary>
         public bool? HipaaComplianceEnabled { get; private set; }
@@ -144,10 +144,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>license details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_license_details? LicenseDetails { get; private set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsLicenseDetails? LicenseDetails { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_license_details LicenseDetails { get; private set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsLicenseDetails LicenseDetails { get; private set; }
 #endif
         /// <summary>lite users enabled status</summary>
         public bool? LiteUsersEnabled { get; private set; }
@@ -156,60 +156,60 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Company&apos;s mobile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Mobile { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsMobile? Mobile { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Mobile { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsMobile Mobile { get; set; }
 #endif
         /// <summary>Company&apos;s phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Phone { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPhone? Phone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Phone { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPhone Phone { get; set; }
 #endif
         /// <summary>photo id of the company&apos;s logo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? PhotoId { get; private set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPhotoId? PhotoId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch PhotoId { get; private set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPhotoId PhotoId { get; private set; }
 #endif
         /// <summary>Email of the super admin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? PrimaryEmail { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPrimaryEmail? PrimaryEmail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch PrimaryEmail { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPrimaryEmail PrimaryEmail { get; set; }
 #endif
         /// <summary>The primary_zuid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? PrimaryZuid { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPrimaryZuid? PrimaryZuid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch PrimaryZuid { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPrimaryZuid PrimaryZuid { get; set; }
 #endif
         /// <summary>privacy settings enabled status</summary>
         public bool? PrivacySettings { get; private set; }
         /// <summary>Company&apos;s state</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? State { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsState? State { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch State { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsState State { get; set; }
 #endif
         /// <summary>Company&apos;s street</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Street { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsStreet? Street { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Street { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsStreet Street { get; set; }
 #endif
         /// <summary>Company&apos;s time zone</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -226,10 +226,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Company&apos;s website</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Website { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsWebsite? Website { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Website { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsWebsite Website { get; set; }
 #endif
         /// <summary>zgid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -250,10 +250,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Company&apos;s postal code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Zip { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsZip? Zip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Zip { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsZip Zip { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -273,43 +273,43 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alias", n => { Alias = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "city", n => { City = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "company_name", n => { CompanyName = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "alias", n => { Alias = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsAlias>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsAlias.CreateFromDiscriminatorValue); } },
+                { "city", n => { City = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCity>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCity.CreateFromDiscriminatorValue); } },
+                { "company_name", n => { CompanyName = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCompanyName>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCompanyName.CreateFromDiscriminatorValue); } },
+                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCountry>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCountry.CreateFromDiscriminatorValue); } },
                 { "country_code", n => { CountryCode = n.GetStringValue(); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "currency_locale", n => { CurrencyLocale = n.GetStringValue(); } },
                 { "currency_symbol", n => { CurrencySymbol = n.GetStringValue(); } },
                 { "deletable_org_account", n => { DeletableOrgAccount = n.GetBoolValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsDescription>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsDescription.CreateFromDiscriminatorValue); } },
                 { "domain_name", n => { DomainName = n.GetStringValue(); } },
-                { "employee_count", n => { EmployeeCount = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "fax", n => { Fax = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "employee_count", n => { EmployeeCount = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsEmployeeCount>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsEmployeeCount.CreateFromDiscriminatorValue); } },
+                { "fax", n => { Fax = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsFax>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsFax.CreateFromDiscriminatorValue); } },
                 { "gapps_enabled", n => { GappsEnabled = n.GetBoolValue(); } },
-                { "hierarchy_preferences", n => { HierarchyPreferences = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_hierarchy_preferences>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_hierarchy_preferences.CreateFromDiscriminatorValue); } },
+                { "hierarchy_preferences", n => { HierarchyPreferences = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferences>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferences.CreateFromDiscriminatorValue); } },
                 { "hipaa_compliance_enabled", n => { HipaaComplianceEnabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "iso_code", n => { IsoCode = n.GetStringValue(); } },
-                { "license_details", n => { LicenseDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_license_details>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_license_details.CreateFromDiscriminatorValue); } },
+                { "license_details", n => { LicenseDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsLicenseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsLicenseDetails.CreateFromDiscriminatorValue); } },
                 { "lite_users_enabled", n => { LiteUsersEnabled = n.GetBoolValue(); } },
                 { "mc_status", n => { McStatus = n.GetBoolValue(); } },
-                { "mobile", n => { Mobile = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "phone", n => { Phone = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "photo_id", n => { PhotoId = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "primary_email", n => { PrimaryEmail = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "primary_zuid", n => { PrimaryZuid = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "mobile", n => { Mobile = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsMobile>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsMobile.CreateFromDiscriminatorValue); } },
+                { "phone", n => { Phone = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPhone>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPhone.CreateFromDiscriminatorValue); } },
+                { "photo_id", n => { PhotoId = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPhotoId>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPhotoId.CreateFromDiscriminatorValue); } },
+                { "primary_email", n => { PrimaryEmail = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPrimaryEmail>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPrimaryEmail.CreateFromDiscriminatorValue); } },
+                { "primary_zuid", n => { PrimaryZuid = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPrimaryZuid>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPrimaryZuid.CreateFromDiscriminatorValue); } },
                 { "privacy_settings", n => { PrivacySettings = n.GetBoolValue(); } },
-                { "state", n => { State = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "street", n => { Street = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsState>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsState.CreateFromDiscriminatorValue); } },
+                { "street", n => { Street = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsStreet>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsStreet.CreateFromDiscriminatorValue); } },
                 { "time_zone", n => { TimeZone = n.GetStringValue(); } },
                 { "translation_enabled", n => { TranslationEnabled = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_type>(); } },
-                { "website", n => { Website = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "website", n => { Website = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsWebsite>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsWebsite.CreateFromDiscriminatorValue); } },
                 { "zgid", n => { Zgid = n.GetStringValue(); } },
                 { "zia_portal_id", n => { ZiaPortalId = n.GetStringValue(); } },
-                { "zip", n => { Zip = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "zip", n => { Zip = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsZip>(global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsZip.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -319,29 +319,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("alias", Alias);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("city", City);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("company_name", CompanyName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("country", Country);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsAlias>("alias", Alias);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCity>("city", City);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCompanyName>("company_name", CompanyName);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsCountry>("country", Country);
             writer.WriteStringValue("country_code", CountryCode);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("currency_locale", CurrencyLocale);
             writer.WriteStringValue("currency_symbol", CurrencySymbol);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsDescription>("description", Description);
             writer.WriteStringValue("domain_name", DomainName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("employee_count", EmployeeCount);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("fax", Fax);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetails_hierarchy_preferences>("hierarchy_preferences", HierarchyPreferences);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsEmployeeCount>("employee_count", EmployeeCount);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsFax>("fax", Fax);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferences>("hierarchy_preferences", HierarchyPreferences);
             writer.WriteStringValue("iso_code", IsoCode);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("mobile", Mobile);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("phone", Phone);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("primary_email", PrimaryEmail);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("primary_zuid", PrimaryZuid);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("state", State);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("street", Street);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsMobile>("mobile", Mobile);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPhone>("phone", Phone);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPrimaryEmail>("primary_email", PrimaryEmail);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsPrimaryZuid>("primary_zuid", PrimaryZuid);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsState>("state", State);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsStreet>("street", Street);
             writer.WriteStringValue("time_zone", TimeZone);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("website", Website);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("zip", Zip);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsWebsite>("website", Website);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsZip>("zip", Zip);
         }
     }
 }

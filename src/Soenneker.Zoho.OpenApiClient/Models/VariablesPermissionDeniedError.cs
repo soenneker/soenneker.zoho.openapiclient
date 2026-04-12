@@ -19,10 +19,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Error details with validation information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedErrorDetails? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedErrorDetails Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_code>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_details>(global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_details.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedErrorDetails>(global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedErrorDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_message>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_status>(); } },
             };
@@ -62,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_details>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedErrorDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_message>("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError_status>("status", Status);
         }

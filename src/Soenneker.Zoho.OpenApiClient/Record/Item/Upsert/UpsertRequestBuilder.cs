@@ -44,15 +44,15 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Upsert
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Record_upsertRecords_412">When receiving a 412 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords412">When receiving a 412 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Record_upsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Record_upsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -63,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Upsert
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse.CreateFromDiscriminatorValue },
-                { "412", global::Soenneker.Zoho.OpenApiClient.Models.Record_upsertRecords_412.CreateFromDiscriminatorValue },
+                { "412", global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords412.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -76,11 +76,11 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Upsert
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Record_upsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Record_upsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -94,7 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
         /// <param name="body">Schema for creating scoring rules, containing an array of scoring rule definitions.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_postScoringRules_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPostScoringRules400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -108,7 +108,7 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_postScoringRules_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPostScoringRules400.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -119,7 +119,7 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
         /// <param name="body">Request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_putScoringRules_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutScoringRules400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RequestBodyPUT body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -133,7 +133,7 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.Scoring_rules_putScoringRules_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutScoringRules400.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

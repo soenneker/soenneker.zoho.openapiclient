@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Defines the training data configuration including favourable and unfavourable scoring conditions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_training_data? TrainingData { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRuleTrainingData? TrainingData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_training_data TrainingData { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRuleTrainingData TrainingData { get; set; }
 #endif
         /// <summary>Type of scoring rule applied, such as &apos;field_attribute_score&apos;.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_type? Type { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "scoring_record_criteria", n => { ScoringRecordCriteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_scoring_record_criteria>(global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_scoring_record_criteria.CreateFromDiscriminatorValue); } },
-                { "training_data", n => { TrainingData = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_training_data>(global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_training_data.CreateFromDiscriminatorValue); } },
+                { "training_data", n => { TrainingData = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRuleTrainingData>(global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRuleTrainingData.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_type>(); } },
             };
         }
@@ -62,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_scoring_record_criteria>("scoring_record_criteria", ScoringRecordCriteria);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_training_data>("training_data", TrainingData);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRuleTrainingData>("training_data", TrainingData);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaScoringRule_type>("type", Type);
         }
     }

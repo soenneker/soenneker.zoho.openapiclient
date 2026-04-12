@@ -36,27 +36,27 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated
         /// <summary>
         /// Get the list of user groups associated with the specified user.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.Associated_groupsRequestBuilder.Associated_groupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.Associated_groupsRequestBuilder.Associated_groupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.Associated_groupsRequestBuilder.Associated_groupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.Associated_groupsRequestBuilder.Associated_groupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_404.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser400.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser404.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedGroupsForUser_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of user groups associated with the specified user.

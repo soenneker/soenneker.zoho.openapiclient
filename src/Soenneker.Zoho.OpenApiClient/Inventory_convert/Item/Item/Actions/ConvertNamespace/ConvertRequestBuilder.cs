@@ -36,22 +36,22 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_convert.Item.Item.Actions.Conve
         /// <summary>
         /// Converts the record into another inventory module type depending on the parent module:Quotes -&gt; Sales Orders, Invoices :Sales Orders -&gt; Invoices.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Inventory_convert_convertInventory_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200"/></returns>
         /// <param name="body">Request payload for inventory convert operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Inventory_convert_convertInventory_200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Inventory_convert_convertInventory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Inventory_convert_convertInventory_200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Inventory_convert_convertInventory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Inventory_convert_convertInventory_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Inventory_convert_convertInventory_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Converts the record into another inventory module type depending on the parent module:Quotes -&gt; Sales Orders, Invoices :Sales Orders -&gt; Invoices.
@@ -61,11 +61,11 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_convert.Item.Item.Actions.Conve
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Inventory_convert_convertInventory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Inventory_convert_convertInventory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

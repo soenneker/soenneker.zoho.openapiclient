@@ -36,50 +36,50 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
         /// <summary>
         /// Use the Remove Lock from Locked Records API to remove locks from locked records in different modules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_removeLockFromLockedRecord_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsRemoveLockFromLockedRecord200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_removeLockFromLockedRecord_403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsRemoveLockFromLockedRecord403">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_removeLockFromLockedRecord_200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsRemoveLockFromLockedRecord200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_removeLockFromLockedRecord_200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsRemoveLockFromLockedRecord200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_removeLockFromLockedRecord_403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsRemoveLockFromLockedRecord403.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_removeLockFromLockedRecord_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_removeLockFromLockedRecord_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsRemoveLockFromLockedRecord200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsRemoveLockFromLockedRecord200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Use the Update Record Locking Infromation API to modify locking information of locked records in different modules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord200"/></returns>
         /// <param name="body">A JSON object containing the updated reason for locking the record.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord_403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord403">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord_200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord_200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord_403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord403.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Use the Remove Lock from Locked Records API to remove locks from locked records in different modules.
@@ -108,11 +108,11 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Locking_informations_updateReasonofLockedRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsUpdateReasonofLockedRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

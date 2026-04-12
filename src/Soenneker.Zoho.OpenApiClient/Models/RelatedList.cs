@@ -85,7 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Linkingmodule { get; set; }
 #endif
-        /// <summary>Module information for the related list (null if not applicable).</summary>
+        /// <summary>Metadata describing the module associated with the related list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule? Module { get; set; }

@@ -18,10 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for form_data_content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema16? FormDataContent { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema16? FormDataContent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema16 FormDataContent { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema16 FormDataContent { get; set; }
 #endif
         /// <summary>Use this when you want to send plain text, JSON, HTML, or XML content directly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "form_data_content", n => { FormDataContent = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema16>(global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema16.CreateFromDiscriminatorValue); } },
+                { "form_data_content", n => { FormDataContent = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema16>(global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema16.CreateFromDiscriminatorValue); } },
                 { "format", n => { Format = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody_format>(); } },
                 { "raw_data_content", n => { RawDataContent = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody_type>(); } },
@@ -65,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody_format>("format", Format);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Webhooks_GeneratedSchema16>("form_data_content", FormDataContent);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema16>("form_data_content", FormDataContent);
             writer.WriteStringValue("raw_data_content", RawDataContent);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody_type>("type", Type);
         }

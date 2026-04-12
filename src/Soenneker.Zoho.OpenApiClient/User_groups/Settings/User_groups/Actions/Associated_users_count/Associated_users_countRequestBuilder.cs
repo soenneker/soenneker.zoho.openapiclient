@@ -36,25 +36,25 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.
         /// <summary>
         /// Get the count of users associated with user groups based on the provided filters.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedUsersCount_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedUsersCount200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedUsersCount_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedUsersCount404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedUsersCount_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Associated_users_count.Associated_users_countRequestBuilder.Associated_users_countRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedUsersCount200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Associated_users_count.Associated_users_countRequestBuilder.Associated_users_countRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedUsersCount_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Associated_users_count.Associated_users_countRequestBuilder.Associated_users_countRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedUsersCount200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Associated_users_count.Associated_users_countRequestBuilder.Associated_users_countRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedUsersCount_404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedUsersCount404.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedUsersCount_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.User_groups_getAssociatedUsersCount_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedUsersCount200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedUsersCount200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the count of users associated with user groups based on the provided filters.

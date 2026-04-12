@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchemaCriteria? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchemaCriteria Criteria { get; set; }
 #endif
         /// <summary>Specify the module/field to which the workflow rule applies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchemaCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchemaCriteria.CreateFromDiscriminatorValue); } },
                 { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsCriteriaNestedSchema>("criteria", Criteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DetailsNestedForRollupSummarySchemaCriteria>("criteria", Criteria);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("trigger_module", TriggerModule);
         }
     }

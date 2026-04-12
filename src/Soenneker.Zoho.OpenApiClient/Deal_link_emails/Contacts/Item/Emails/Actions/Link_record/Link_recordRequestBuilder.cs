@@ -36,45 +36,45 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
         /// <summary>
         /// Unlinks the emails from the specified records in CRM.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_getRecordActions_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsGetRecordActions200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_getRecordActions_200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsGetRecordActions200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_getRecordActions_200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsGetRecordActions200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_getRecordActions_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_getRecordActions_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsGetRecordActions200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsGetRecordActions200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Links the emails to the specified deals in CRM.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200"/></returns>
         /// <param name="body">Request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals_200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals_200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals_404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Unlinks the emails from the specified records in CRM.
@@ -103,11 +103,11 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Deal_link_emails_linkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

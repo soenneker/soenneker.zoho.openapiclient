@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>&quot;Detail field: dependee&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetails_dependee? Dependee { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetailsDependee? Dependee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetails_dependee Dependee { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetailsDependee Dependee { get; set; }
 #endif
         /// <summary>&quot;Detail field: json_path&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "dependee", n => { Dependee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetails_dependee>(global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetails_dependee.CreateFromDiscriminatorValue); } },
+                { "dependee", n => { Dependee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetailsDependee>(global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetailsDependee.CreateFromDiscriminatorValue); } },
                 { "json_path", n => { JsonPath = n.GetStringValue(); } },
                 { "param_name", n => { ParamName = n.GetStringValue(); } },
                 { "supported_values", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -86,7 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetails_dependee>("dependee", Dependee);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetailsDependee>("dependee", Dependee);
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteStringValue("param_name", ParamName);
             writer.WriteCollectionOfPrimitiveValues<string>("supported_values", SupportedValues);

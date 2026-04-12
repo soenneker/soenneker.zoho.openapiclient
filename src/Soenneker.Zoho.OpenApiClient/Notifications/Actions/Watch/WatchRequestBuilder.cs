@@ -36,143 +36,143 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <summary>
         /// Disable one or more notification channels identified by the channel_ids query parameter.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_disableNotifications_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_disableNotifications_200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_disableNotifications_200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_disableNotifications_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Notifications_disableNotifications_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of all active notification channels for the user.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_getNotifications_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_getNotifications_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_getNotifications_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_getNotifications_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Notifications_getNotifications_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Partially update selected properties of a notification channel (URL, events, expiry, conditions, token).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationInfo_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200"/></returns>
         /// <param name="body">Update specific notification info request wrapper.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationInfo_200?> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationInfo body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200?> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationInfo_200> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationInfo body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationInfo_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationInfo_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create one or more notification channels.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_createNotifications_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications201"/></returns>
         /// <param name="body">Create channels request wrapper.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_createNotifications_201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_createNotifications body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_createNotifications_201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_createNotifications body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_createNotifications_201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Notifications_createNotifications_201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Replace all details of an existing notification channel, overwriting its previous configuration.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationDetails_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails200"/></returns>
         /// <param name="body">Full details update request wrapper (replaces existing).</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationDetails_200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationDetails body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationDetails_200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationDetails body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Notifications_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationDetails_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationDetails_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disable one or more notification channels identified by the channel_ids query parameter.
@@ -220,11 +220,11 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationInfo body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationInfo body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -242,11 +242,11 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_createNotifications body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_createNotifications body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -264,11 +264,11 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationDetails body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Notifications_updateNotificationDetails body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

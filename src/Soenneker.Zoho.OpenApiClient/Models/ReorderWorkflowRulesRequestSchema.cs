@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Alternate root payload listing workflow rules and their updated execution order within the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchema_reorder? Reorder { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder? Reorder { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchema_reorder Reorder { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder Reorder { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "reorder", n => { Reorder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchema_reorder>(global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchema_reorder.CreateFromDiscriminatorValue); } },
+                { "reorder", n => { Reorder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder>(global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchema_reorder>("reorder", Reorder);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder>("reorder", Reorder);
         }
     }
 }

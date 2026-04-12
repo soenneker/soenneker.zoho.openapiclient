@@ -40,7 +40,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidIdentifierError">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Variable_groups_PermissionDeniedError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsPermissionDeniedError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupQueryResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,7 +54,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.InvalidIdentifierError.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Variable_groups_PermissionDeniedError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsPermissionDeniedError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupQueryResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupQueryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -65,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.
         /// <param name="body">Alternate request wrapper containing the variable_groups array for defining or updating variable group metadata.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Variable_groups_PermissionDeniedError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsPermissionDeniedError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupDefinitionRequestAlt body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -79,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Variable_groups_PermissionDeniedError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsPermissionDeniedError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

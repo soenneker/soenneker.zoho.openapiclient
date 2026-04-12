@@ -36,37 +36,37 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
         /// <summary>
         /// Searches records matching your criteria within a CRM module. Supports criteria queries, email/phone/word searches. At least one search parameter required. Max 2,000 records, 15 criteria conditions. Newly created records may have indexing delays.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Module_search_searchRecords_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse">When receiving a 502 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 502 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Module_search_searchRecords_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Module_search_searchRecords_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse.CreateFromDiscriminatorValue },
-                { "502", global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Zoho.OpenApiClient.Models.Module_search_ErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
+                { "502", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Module_search_searchRecords_200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Module_search_searchRecords_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Searches records matching your criteria within a CRM module. Supports criteria queries, email/phone/word searches. At least one search parameter required. Max 2,000 records, 15 criteria conditions. Newly created records may have indexing delays.
