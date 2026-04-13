@@ -24,10 +24,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the time unit (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MeetingDurationNestedSchemaUnit? Unit { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Unit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MeetingDurationNestedSchemaUnit Unit { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Unit { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "period", n => { Period = n.GetStringValue(); } },
-                { "unit", n => { Unit = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MeetingDurationNestedSchemaUnit>(global::Soenneker.Zoho.OpenApiClient.Models.MeetingDurationNestedSchemaUnit.CreateFromDiscriminatorValue); } },
+                { "unit", n => { Unit = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("period", Period);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MeetingDurationNestedSchemaUnit>("unit", Unit);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("unit", Unit);
         }
     }
 }

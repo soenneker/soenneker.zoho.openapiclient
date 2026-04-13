@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Ite
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Item.ZiaOrgEnrichmentGetOrgEnrichmentById200400Error">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermission">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Ite
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Item.ZiaOrgEnrichmentGetOrgEnrichmentById200400Error.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermission.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

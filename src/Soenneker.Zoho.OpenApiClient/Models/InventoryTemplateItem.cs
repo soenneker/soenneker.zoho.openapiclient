@@ -48,10 +48,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Last time the template was used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateItemLastUsageTime? LastUsageTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? LastUsageTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateItemLastUsageTime LastUsageTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch LastUsageTime { get; set; }
 #endif
         /// <summary>User reference with id and display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,7 +104,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "favorite", n => { Favorite = n.GetBoolValue(); } },
                 { "folder", n => { Folder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesFolderRef>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesFolderRef.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "last_usage_time", n => { LastUsageTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateItemLastUsageTime>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateItemLastUsageTime.CreateFromDiscriminatorValue); } },
+                { "last_usage_time", n => { LastUsageTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesModuleRef>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesModuleRef.CreateFromDiscriminatorValue); } },
@@ -125,7 +125,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("favorite", Favorite);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesFolderRef>("folder", Folder);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateItemLastUsageTime>("last_usage_time", LastUsageTime);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("last_usage_time", LastUsageTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef>("modified_by", ModifiedBy);
             writer.WriteDateTimeOffsetValue("modified_time", ModifiedTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesModuleRef>("module", Module);

@@ -136,10 +136,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the value to set in the specified field. (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNestedValue? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_value? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNestedValue Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_value Value { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -180,7 +180,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_type>(); } },
                 { "update_type", n => { UpdateType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_update_type>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNestedValue>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNestedValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_value>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_value.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -211,7 +211,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("source", Source);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_type>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_update_type>("update_type", UpdateType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNestedValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested_value>("value", Value);
         }
     }
 }

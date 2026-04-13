@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The additional_column property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAdditionalColumn? AdditionalColumn { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? AdditionalColumn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAdditionalColumn AdditionalColumn { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch AdditionalColumn { get; set; }
 #endif
         /// <summary>Address field configuration for composite address fields</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,10 +78,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of child fields for composite fields like addresses</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaChildFields? ChildFields { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ChildFields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaChildFields ChildFields { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ChildFields { get; set; }
 #endif
         /// <summary>Whether any colour code is enabled by system</summary>
         public bool? ColourCodeEnabledBySystem { get; set; }
@@ -106,10 +106,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Timestamp when the field was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCreatedTime? CreatedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? CreatedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCreatedTime CreatedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch CreatedTime { get; set; }
 #endif
         /// <summary>Encryption configuration for sensitive field data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,10 +132,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of customizable properties available for this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCustomizableProperties? CustomizableProperties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? CustomizableProperties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCustomizableProperties CustomizableProperties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch CustomizableProperties { get; set; }
 #endif
         /// <summary>Data type of the field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,28 +148,28 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The decimal_place property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDecimalPlace? DecimalPlace { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? DecimalPlace { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDecimalPlace DecimalPlace { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch DecimalPlace { get; set; }
 #endif
         /// <summary>Default value assigned to the field when creating new records</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDefaultValue? DefaultValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? DefaultValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDefaultValue DefaultValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch DefaultValue { get; set; }
 #endif
         /// <summary>Indicates if the field is a display field</summary>
         public bool? DisplayField { get; set; }
         /// <summary>Display format for date, time, and number fields</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormat? DisplayFormat { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? DisplayFormat { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormat DisplayFormat { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch DisplayFormat { get; set; }
 #endif
         /// <summary>Display format properties for specific field types like phone and radio buttons</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -212,10 +212,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of file upload options available for the field. Defines the sources from which users can upload files.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFileUpoladOptionlist? FileUpoladOptionlist { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? FileUpoladOptionlist { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFileUpoladOptionlist FileUpoladOptionlist { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch FileUpoladOptionlist { get; set; }
 #endif
         /// <summary>Indicates if the field is filterable</summary>
         public bool? Filterable { get; set; }
@@ -296,10 +296,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Timestamp when the field was last modified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaModifiedTime? ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ModifiedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaModifiedTime ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ModifiedTime { get; set; }
 #endif
         /// <summary>Multi-module lookup configuration allowing lookups across multiple modules</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -344,10 +344,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of available options for picklist fields</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaPickListValues? PickListValues { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? PickListValues { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaPickListValues PickListValues { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch PickListValues { get; set; }
 #endif
         /// <summary>Indicates if the pick list values are sorted lexically</summary>
         public bool? PickListValuesSortedLexically { get; set; }
@@ -446,10 +446,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of static values for fields with predefined options (e.g., static picklists or radio buttons). Contains the available options with their sequence order and unique identifiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaStaticValues? StaticValues { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? StaticValues { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaStaticValues StaticValues { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch StaticValues { get; set; }
 #endif
         /// <summary>Subform configuration for fields that reference a subform module. Contains the module API name and subform tab ID when the field is associated with a subform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -537,7 +537,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additional_column", n => { AdditionalColumn = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAdditionalColumn>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAdditionalColumn.CreateFromDiscriminatorValue); } },
+                { "additional_column", n => { AdditionalColumn = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAddress>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAddress.CreateFromDiscriminatorValue); } },
                 { "allowed_permissions_to_update", n => { AllowedPermissionsToUpdate = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAllowedPermissionsToUpdate>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAllowedPermissionsToUpdate.CreateFromDiscriminatorValue); } },
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
@@ -547,21 +547,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "blueprint_supported", n => { BlueprintSupported = n.GetBoolValue(); } },
                 { "businesscard_supported", n => { BusinesscardSupported = n.GetBoolValue(); } },
                 { "category", n => { Category = n.GetIntValue(); } },
-                { "child_fields", n => { ChildFields = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaChildFields>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaChildFields.CreateFromDiscriminatorValue); } },
+                { "child_fields", n => { ChildFields = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "colour_code_enabled_by_system", n => { ColourCodeEnabledBySystem = n.GetBoolValue(); } },
                 { "column_name", n => { ColumnName = n.GetStringValue(); } },
                 { "convert_mapping", n => { ConvertMapping = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMapping>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMapping.CreateFromDiscriminatorValue); } },
                 { "created_source", n => { CreatedSource = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchema_created_source>(); } },
-                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCreatedTime>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCreatedTime.CreateFromDiscriminatorValue); } },
+                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "crypt", n => { Crypt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCurrency>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCurrency.CreateFromDiscriminatorValue); } },
                 { "custom_field", n => { CustomField = n.GetBoolValue(); } },
-                { "customizable_properties", n => { CustomizableProperties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCustomizableProperties>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCustomizableProperties.CreateFromDiscriminatorValue); } },
+                { "customizable_properties", n => { CustomizableProperties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "data_type", n => { DataType = n.GetStringValue(); } },
-                { "decimal_place", n => { DecimalPlace = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDecimalPlace>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDecimalPlace.CreateFromDiscriminatorValue); } },
-                { "default_value", n => { DefaultValue = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDefaultValue>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDefaultValue.CreateFromDiscriminatorValue); } },
+                { "decimal_place", n => { DecimalPlace = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "default_value", n => { DefaultValue = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "display_field", n => { DisplayField = n.GetBoolValue(); } },
-                { "display_format", n => { DisplayFormat = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormat>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormat.CreateFromDiscriminatorValue); } },
+                { "display_format", n => { DisplayFormat = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "display_format_properties", n => { DisplayFormatProperties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormatProperties>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormatProperties.CreateFromDiscriminatorValue); } },
                 { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
                 { "display_type", n => { DisplayType = n.GetIntValue(); } },
@@ -569,7 +569,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "external", n => { External = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "field_label", n => { FieldLabel = n.GetStringValue(); } },
                 { "field_read_only", n => { FieldReadOnly = n.GetBoolValue(); } },
-                { "file_upolad_optionlist", n => { FileUpoladOptionlist = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFileUpoladOptionlist>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFileUpoladOptionlist.CreateFromDiscriminatorValue); } },
+                { "file_upolad_optionlist", n => { FileUpoladOptionlist = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "filterable", n => { Filterable = n.GetBoolValue(); } },
                 { "formula", n => { Formula = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormula>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormula.CreateFromDiscriminatorValue); } },
                 { "global_map_dependency", n => { GlobalMapDependency = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaGlobalMapDependency>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaGlobalMapDependency.CreateFromDiscriminatorValue); } },
@@ -584,13 +584,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "lookup", n => { Lookup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookup>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookup.CreateFromDiscriminatorValue); } },
                 { "mask_details", n => { MaskDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMaskDetails>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMaskDetails.CreateFromDiscriminatorValue); } },
                 { "mass_update", n => { MassUpdate = n.GetBoolValue(); } },
-                { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaModifiedTime>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaModifiedTime.CreateFromDiscriminatorValue); } },
+                { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "multi_module_lookup", n => { MultiModuleLookup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiModuleLookup>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiModuleLookup.CreateFromDiscriminatorValue); } },
                 { "multiselectlookup", n => { Multiselectlookup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookup>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookup.CreateFromDiscriminatorValue); } },
                 { "multiuserlookup", n => { Multiuserlookup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiuserlookup>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiuserlookup.CreateFromDiscriminatorValue); } },
                 { "operation_type", n => { OperationType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaOperationType>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaOperationType.CreateFromDiscriminatorValue); } },
                 { "parent_field", n => { ParentField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaParentField>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaParentField.CreateFromDiscriminatorValue); } },
-                { "pick_list_values", n => { PickListValues = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaPickListValues>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaPickListValues.CreateFromDiscriminatorValue); } },
+                { "pick_list_values", n => { PickListValues = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "pick_list_values_sorted_lexically", n => { PickListValuesSortedLexically = n.GetBoolValue(); } },
                 { "portal_user_types", n => { PortalUserTypes = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchema_portal_user_types>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchema_portal_user_types.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "private", n => { Private = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaPrivate>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaPrivate.CreateFromDiscriminatorValue); } },
@@ -611,7 +611,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "show_type", n => { ShowType = n.GetIntValue(); } },
                 { "sortable", n => { Sortable = n.GetBoolValue(); } },
                 { "static_field", n => { StaticField = n.GetBoolValue(); } },
-                { "static_values", n => { StaticValues = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaStaticValues>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaStaticValues.CreateFromDiscriminatorValue); } },
+                { "static_values", n => { StaticValues = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "subform", n => { Subform = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubform>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubform.CreateFromDiscriminatorValue); } },
                 { "subform_properties", n => { SubformProperties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformProperties>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformProperties.CreateFromDiscriminatorValue); } },
                 { "system_mandatory", n => { SystemMandatory = n.GetBoolValue(); } },
@@ -634,7 +634,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAdditionalColumn>("additional_column", AdditionalColumn);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("additional_column", AdditionalColumn);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAddress>("address", Address);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaAllowedPermissionsToUpdate>("allowed_permissions_to_update", AllowedPermissionsToUpdate);
             writer.WriteStringValue("api_name", ApiName);
@@ -644,21 +644,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("blueprint_supported", BlueprintSupported);
             writer.WriteBoolValue("businesscard_supported", BusinesscardSupported);
             writer.WriteIntValue("category", Category);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaChildFields>("child_fields", ChildFields);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("child_fields", ChildFields);
             writer.WriteBoolValue("colour_code_enabled_by_system", ColourCodeEnabledBySystem);
             writer.WriteStringValue("column_name", ColumnName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMapping>("convert_mapping", ConvertMapping);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchema_created_source>("created_source", CreatedSource);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCreatedTime>("created_time", CreatedTime);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("created_time", CreatedTime);
             writer.WriteObjectValue<UntypedNode>("crypt", Crypt);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCurrency>("currency", Currency);
             writer.WriteBoolValue("custom_field", CustomField);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCustomizableProperties>("customizable_properties", CustomizableProperties);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("customizable_properties", CustomizableProperties);
             writer.WriteStringValue("data_type", DataType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDecimalPlace>("decimal_place", DecimalPlace);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDefaultValue>("default_value", DefaultValue);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("decimal_place", DecimalPlace);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("default_value", DefaultValue);
             writer.WriteBoolValue("display_field", DisplayField);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormat>("display_format", DisplayFormat);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("display_format", DisplayFormat);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormatProperties>("display_format_properties", DisplayFormatProperties);
             writer.WriteStringValue("display_label", DisplayLabel);
             writer.WriteIntValue("display_type", DisplayType);
@@ -666,7 +666,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("external", External);
             writer.WriteStringValue("field_label", FieldLabel);
             writer.WriteBoolValue("field_read_only", FieldReadOnly);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFileUpoladOptionlist>("file_upolad_optionlist", FileUpoladOptionlist);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("file_upolad_optionlist", FileUpoladOptionlist);
             writer.WriteBoolValue("filterable", Filterable);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormula>("formula", Formula);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaGlobalMapDependency>("global_map_dependency", GlobalMapDependency);
@@ -681,13 +681,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookup>("lookup", Lookup);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMaskDetails>("mask_details", MaskDetails);
             writer.WriteBoolValue("mass_update", MassUpdate);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaModifiedTime>("modified_time", ModifiedTime);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("modified_time", ModifiedTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiModuleLookup>("multi_module_lookup", MultiModuleLookup);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookup>("multiselectlookup", Multiselectlookup);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiuserlookup>("multiuserlookup", Multiuserlookup);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaOperationType>("operation_type", OperationType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaParentField>("parent_field", ParentField);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaPickListValues>("pick_list_values", PickListValues);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("pick_list_values", PickListValues);
             writer.WriteBoolValue("pick_list_values_sorted_lexically", PickListValuesSortedLexically);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchema_portal_user_types>("portal_user_types", PortalUserTypes);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaPrivate>("private", Private);
@@ -708,7 +708,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("show_type", ShowType);
             writer.WriteBoolValue("sortable", Sortable);
             writer.WriteBoolValue("static_field", StaticField);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaStaticValues>("static_values", StaticValues);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("static_values", StaticValues);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubform>("subform", Subform);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformProperties>("subform_properties", SubformProperties);
             writer.WriteBoolValue("system_mandatory", SystemMandatory);

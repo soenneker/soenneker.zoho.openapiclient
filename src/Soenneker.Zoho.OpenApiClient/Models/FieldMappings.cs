@@ -34,10 +34,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>&quot;Field: value&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingsValue? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings_value? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingsValue Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings_value Value { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,7 +60,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldAttributes>(global::Soenneker.Zoho.OpenApiClient.Models.FieldAttributes.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings_type>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingsValue>(global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingsValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings_value>(global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings_value.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("display_value", DisplayValue);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldAttributes>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingsValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings_value>("value", Value);
         }
     }
 }

@@ -16,18 +16,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specifies which records the rule should apply to. Set this to null to apply the rule to all records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaCriteria? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria.CriteriaDetailsNestedSchemaRelationalCriteria_criteria? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaCriteria Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria.CriteriaDetailsNestedSchemaRelationalCriteria_criteria Criteria { get; set; }
 #endif
         /// <summary>The related module details. This key is mandatory if module_selection is specific.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModule? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModule Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema Module { get; set; }
 #endif
         /// <summary>Specify the details of the related record to be evaluated.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria_module_selection? ModuleSelection { get; set; }
@@ -49,8 +49,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaCriteria.CreateFromDiscriminatorValue); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModule>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModule.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria.CriteriaDetailsNestedSchemaRelationalCriteria_criteria>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria.CriteriaDetailsNestedSchemaRelationalCriteria_criteria.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
                 { "module_selection", n => { ModuleSelection = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria_module_selection>(); } },
             };
         }
@@ -61,9 +61,84 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaCriteria>("criteria", Criteria);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModule>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria.CriteriaDetailsNestedSchemaRelationalCriteria_criteria>("criteria", Criteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("module", Module);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria_module_selection>("module_selection", ModuleSelection);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaSchema"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SingleCriteriaSchema"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CriteriaDetailsNestedSchemaRelationalCriteria_criteria : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaSchema"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaSchema? GroupCriteriaSchema { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaSchema GroupCriteriaSchema { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SingleCriteriaSchema"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Zoho.OpenApiClient.Models.SingleCriteriaSchema? SingleCriteriaSchema { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Zoho.OpenApiClient.Models.SingleCriteriaSchema SingleCriteriaSchema { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria.CriteriaDetailsNestedSchemaRelationalCriteria_criteria"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria.CriteriaDetailsNestedSchemaRelationalCriteria_criteria CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria.CriteriaDetailsNestedSchemaRelationalCriteria_criteria();
+                if("GroupCriteriaSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.GroupCriteriaSchema = new global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaSchema();
+                }
+                else if("SingleCriteriaSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SingleCriteriaSchema = new global::Soenneker.Zoho.OpenApiClient.Models.SingleCriteriaSchema();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(GroupCriteriaSchema != null)
+                {
+                    return GroupCriteriaSchema.GetFieldDeserializers();
+                }
+                else if(SingleCriteriaSchema != null)
+                {
+                    return SingleCriteriaSchema.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(GroupCriteriaSchema != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupCriteriaSchema>(null, GroupCriteriaSchema);
+                }
+                else if(SingleCriteriaSchema != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SingleCriteriaSchema>(null, SingleCriteriaSchema);
+                }
+            }
         }
     }
 }

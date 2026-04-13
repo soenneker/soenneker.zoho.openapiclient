@@ -16,26 +16,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The Accounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingAccounts? Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Accounts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingAccounts Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Accounts { get; set; }
 #endif
         /// <summary>The Contacts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingContacts? Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Contacts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingContacts Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Contacts { get; set; }
 #endif
         /// <summary>The Deals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingDeals? Deals { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Deals { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingDeals Deals { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Deals { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Accounts", n => { Accounts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingAccounts>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingAccounts.CreateFromDiscriminatorValue); } },
-                { "Contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingContacts>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingContacts.CreateFromDiscriminatorValue); } },
-                { "Deals", n => { Deals = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingDeals>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingDeals.CreateFromDiscriminatorValue); } },
+                { "Accounts", n => { Accounts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "Contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "Deals", n => { Deals = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,9 +67,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingAccounts>("Accounts", Accounts);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingContacts>("Contacts", Contacts);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingDeals>("Deals", Deals);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Accounts", Accounts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Contacts", Contacts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Deals", Deals);
         }
     }
 }

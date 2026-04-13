@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The scheduler_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSharingPropertiesSchedulerStatus? SchedulerStatus { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? SchedulerStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSharingPropertiesSchedulerStatus SchedulerStatus { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch SchedulerStatus { get; set; }
 #endif
         /// <summary>The share permission for the field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scheduler_status", n => { SchedulerStatus = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSharingPropertiesSchedulerStatus>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSharingPropertiesSchedulerStatus.CreateFromDiscriminatorValue); } },
+                { "scheduler_status", n => { SchedulerStatus = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "share_permission", n => { SharePermission = n.GetStringValue(); } },
                 { "share_preference_enabled", n => { SharePreferenceEnabled = n.GetBoolValue(); } },
                 { "share_with_superiors", n => { ShareWithSuperiors = n.GetBoolValue(); } },
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSharingPropertiesSchedulerStatus>("scheduler_status", SchedulerStatus);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("scheduler_status", SchedulerStatus);
             writer.WriteStringValue("share_permission", SharePermission);
             writer.WriteBoolValue("share_preference_enabled", SharePreferenceEnabled);
             writer.WriteBoolValue("share_with_superiors", ShareWithSuperiors);
