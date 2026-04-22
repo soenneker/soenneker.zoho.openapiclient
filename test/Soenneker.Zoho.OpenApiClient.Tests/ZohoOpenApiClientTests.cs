@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Zoho.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class ZohoOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class ZohoOpenApiClientTests : HostedUnitTest
 {
-    public ZohoOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public ZohoOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
