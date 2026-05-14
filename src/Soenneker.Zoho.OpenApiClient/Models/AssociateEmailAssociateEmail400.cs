@@ -8,12 +8,13 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>
-    /// Details about a failed API request.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AssociateEmailAssociateEmail400 : ApiException, IParsable
+    #pragma warning disable CS1591
+    public partial class AssociateEmailAssociateEmail400 : ApiException, IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Error code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +50,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail400"/> and sets the default values.
+        /// </summary>
+        public AssociateEmailAssociateEmail400()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail400"/></returns>
@@ -83,6 +91,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail400_details>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

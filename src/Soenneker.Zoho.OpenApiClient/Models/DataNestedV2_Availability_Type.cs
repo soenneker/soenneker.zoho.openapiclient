@@ -5,7 +5,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>service availability type i.e specific date range or specific days </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum DataNestedBase_Availability_Type
+    public enum DataNestedV2_Availability_Type
     {
         [EnumMember(Value = "Specific Day(s)")]
         #pragma warning disable CS1591

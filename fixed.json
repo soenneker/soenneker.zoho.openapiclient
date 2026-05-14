@@ -29835,9 +29835,6 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectBase"
-          },
-          {
             "required": [
               "id",
               "name"
@@ -29846,6 +29843,18 @@
             "description": "Base minified record of the lookup module."
           }
         ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Represents the record id of the lookup module",
+            "format": "int64"
+          },
+          "name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the name of the lookup module record"
+          }
+        },
         "description": "Lookup object value for filter criteria",
         "x-jsonschema-unevaluatedProperties": false
       },
@@ -29861,9 +29870,6 @@
             "type": "object",
             "allOf": [
               {
-                "$ref": "#/components/schemas/FilterFieldBase"
-              },
-              {
                 "required": [
                   "api_name"
                 ],
@@ -29871,6 +29877,18 @@
                 "description": "Field reference for filter operations with minimal required properties"
               }
             ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Field identifier (optional for filter operations)",
+                "format": "int64"
+              },
+              "api_name": {
+                "maxLength": 255,
+                "type": "string",
+                "description": "Field API name for filter application. Supports relationship notation (e.g., \u0027Deals__r.Stage\u0027)"
+              }
+            },
             "description": "Field to apply the filter on",
             "x-jsonschema-unevaluatedProperties": false
           },
@@ -29991,9 +30009,6 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectBase"
-          },
-          {
             "required": [
               "id"
             ],
@@ -30001,6 +30016,18 @@
             "description": "Base minified record of the lookup module."
           }
         ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Represents the record id of the lookup module",
+            "format": "int64"
+          },
+          "name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the name of the lookup module record"
+          }
+        },
         "description": "Lookup object value for filter criteria",
         "x-jsonschema-unevaluatedProperties": false
       },
@@ -30016,9 +30043,6 @@
             "type": "object",
             "allOf": [
               {
-                "$ref": "#/components/schemas/FilterFieldBase"
-              },
-              {
                 "required": [
                   "api_name"
                 ],
@@ -30026,6 +30050,18 @@
                 "description": "Field reference for filter operations with minimal required properties"
               }
             ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Field identifier (optional for filter operations)",
+                "format": "int64"
+              },
+              "api_name": {
+                "maxLength": 255,
+                "type": "string",
+                "description": "Field API name for filter application. Supports relationship notation (e.g., \u0027Deals__r.Stage\u0027)"
+              }
+            },
             "description": "Field to apply the filter on",
             "x-jsonschema-unevaluatedProperties": false
           },
@@ -32655,7 +32691,39 @@
             "$ref": "#/components/schemas/UserReference"
           },
           "fields": {
-            "$ref": "#/components/schemas/CustomViewField"
+            "maxItems": 250,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "api_name": {
+                  "type": "string",
+                  "description": "API name of the field",
+                  "nullable": true
+                },
+                "id": {
+                  "type": "string",
+                  "description": "field id",
+                  "nullable": true
+                },
+                "_pin": {
+                  "type": "boolean",
+                  "description": "Indicates if the field is pinned"
+                },
+                "_width": {
+                  "type": "integer",
+                  "description": "Width of the field in pixels",
+                  "format": "int32"
+                },
+                "_pin_order": {
+                  "type": "integer",
+                  "description": "Pin order of the field",
+                  "format": "int32"
+                }
+              },
+              "description": "Field Object"
+            },
+            "description": "Fields included in the Custom View"
           },
           "sort_by": {
             "type": "object",
@@ -32759,79 +32827,70 @@
         "description": "CustomView Base Response"
       },
       "CustomViewUpdateMultiStatusSuccess": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CustomViewBaseItem"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "status": {
-                "enum": [
-                  "success"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Status for the operation"
-              },
-              "code": {
-                "enum": [
-                  "SUCCESS"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Short status code for the operation"
-              },
-              "message": {
-                "maxLength": 255,
-                "type": "string",
-                "description": "Human readable message"
-              },
-              "details": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "maxLength": 20,
-                    "type": "string",
-                    "description": "ID of the Custom View"
-                  }
-                },
-                "additionalProperties": false,
-                "description": "Extra details"
-              }
-            },
-            "additionalProperties": false,
-            "description": "Custom view success properties"
-          }
+        "required": [
+          "status",
+          "code",
+          "message"
         ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "error",
+              "success"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Status for the operation"
+          },
+          "code": {
+            "type": "string",
+            "description": "Keywords that explain the operation result",
+            "format": "string"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Human readable message"
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewBaseItemDetails"
+          }
+        },
         "additionalProperties": false,
         "description": "Successful custom view update result"
       },
       "CustomViewMultiStatusFailureDetails": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CustomViewBaseItem"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "code": {
-                "enum": [
-                  "INVALID_DATA",
-                  "LIMIT_EXCEEDED",
-                  "MANDATORY_NOT_FOUND"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Error code for failure"
-              }
-            },
-            "additionalProperties": false,
-            "description": "Custom view failure properties"
-          }
+        "required": [
+          "status",
+          "code",
+          "message"
         ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "error",
+              "success"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Status for the operation"
+          },
+          "code": {
+            "type": "string",
+            "description": "Keywords that explain the operation result",
+            "format": "string"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Human readable message"
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewBaseItemDetails"
+          }
+        },
         "description": "Custom view failure item"
       },
       "InvalidDataSort": {
@@ -33288,9 +33347,6 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectBase"
-          },
-          {
             "required": [
               "id"
             ],
@@ -33298,15 +33354,24 @@
             "description": "Base minified record of the lookup module."
           }
         ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Represents the record id of the lookup module",
+            "format": "int64"
+          },
+          "name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the name of the lookup module record"
+          }
+        },
         "description": "Lookup object value for filter criteria",
         "x-jsonschema-unevaluatedProperties": false
       },
       "CustomViewsSimpleFilterCriterionValueObjectResponse": {
         "type": "object",
         "allOf": [
-          {
-            "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectBase"
-          },
           {
             "required": [
               "id",
@@ -33316,6 +33381,18 @@
             "description": "Base minified record of the lookup module."
           }
         ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Represents the record id of the lookup module",
+            "format": "int64"
+          },
+          "name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the name of the lookup module record"
+          }
+        },
         "description": "Lookup object value for filter criteria",
         "x-jsonschema-unevaluatedProperties": false
       },
@@ -33347,9 +33424,6 @@
             "type": "object",
             "allOf": [
               {
-                "$ref": "#/components/schemas/CustomViewsFilterFieldBase"
-              },
-              {
                 "required": [
                   "api_name"
                 ],
@@ -33357,6 +33431,18 @@
                 "description": "Field reference for filter operations with minimal required properties"
               }
             ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Field identifier (optional for filter operations)",
+                "format": "int64"
+              },
+              "api_name": {
+                "maxLength": 255,
+                "type": "string",
+                "description": "Field API name for filter application. Supports relationship notation (e.g., \u0027Deals__r.Stage\u0027)"
+              }
+            },
             "description": "Field to apply the filter on",
             "x-jsonschema-unevaluatedProperties": false
           },
@@ -33423,9 +33509,6 @@
             "type": "object",
             "allOf": [
               {
-                "$ref": "#/components/schemas/CustomViewsFilterFieldBase"
-              },
-              {
                 "required": [
                   "api_name"
                 ],
@@ -33433,6 +33516,18 @@
                 "description": "Field reference for filter operations with minimal required properties"
               }
             ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Field identifier (optional for filter operations)",
+                "format": "int64"
+              },
+              "api_name": {
+                "maxLength": 255,
+                "type": "string",
+                "description": "Field API name for filter application. Supports relationship notation (e.g., \u0027Deals__r.Stage\u0027)"
+              }
+            },
             "description": "Field to apply the filter on",
             "x-jsonschema-unevaluatedProperties": false
           },
@@ -34583,109 +34678,111 @@
         }
       },
       "ErrorItemMandatoryNotFound": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ErrorItemBase"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "code": {
-                "enum": [
-                  "MANDATORY_NOT_FOUND"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Error code"
-              },
-              "details": {
-                "type": "object",
-                "oneOf": [
-                  {
-                    "type": "object",
-                    "description": "Additional details"
-                  },
-                  {
-                    "required": [
-                      "parent_api_name"
-                    ],
-                    "type": "object",
-                    "properties": {
-                      "parent_api_name": {
-                        "maxLength": 128,
-                        "type": "string",
-                        "description": "Parent API name"
-                      }
-                    },
-                    "additionalProperties": false,
-                    "description": "Details with parent API name"
-                  }
-                ]
-              }
-            },
-            "additionalProperties": false,
-            "description": "Specialized properties for MANDATORY_NOT_FOUND error"
-          }
+        "required": [
+          "code",
+          "message",
+          "status",
+          "details"
         ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "Error code identifier"
+          },
+          "message": {
+            "maxLength": 1024,
+            "type": "string",
+            "description": "Human-readable error message"
+          },
+          "status": {
+            "enum": [
+              "error",
+              "warning",
+              "info"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error severity"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details"
+          }
+        },
         "description": "Error item for missing mandatory field"
       },
       "ErrorItemInvalidDataForGet": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ErrorItemBase"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "code": {
-                "enum": [
-                  "INVALID_DATA",
-                  "INVALID_MODULE"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Error code for invalid data or module"
-              },
-              "details": {
-                "type": "object",
-                "description": "Additional details about the invalid data"
-              }
-            },
-            "additionalProperties": false,
-            "description": "Invalid data error details"
-          }
+        "required": [
+          "code",
+          "message",
+          "status",
+          "details"
         ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "Error code identifier"
+          },
+          "message": {
+            "maxLength": 1024,
+            "type": "string",
+            "description": "Human-readable error message"
+          },
+          "status": {
+            "enum": [
+              "error",
+              "warning",
+              "info"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error severity"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details"
+          }
+        },
         "description": "Error for invalid data or module"
       },
       "ErrorItemInvalidData": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ErrorItemBase"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "code": {
-                "enum": [
-                  "INVALID_DATA",
-                  "INVALID_MODULE"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Error code"
-              },
-              "details": {
-                "type": "object",
-                "description": "Additional details"
-              }
-            },
-            "additionalProperties": false,
-            "description": "Specialized properties for INVALID_DATA/INVALID_MODULE error"
-          }
+        "required": [
+          "code",
+          "message",
+          "status",
+          "details"
         ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "Error code identifier"
+          },
+          "message": {
+            "maxLength": 1024,
+            "type": "string",
+            "description": "Human-readable error message"
+          },
+          "status": {
+            "enum": [
+              "error",
+              "warning",
+              "info"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error severity"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details"
+          }
+        },
         "description": "Error item for invalid data/module"
       },
       "ErrorItemBase": {
@@ -34726,99 +34823,75 @@
         "description": "Base structure for error items"
       },
       "ErrorItemPatternNotMatchedForGet": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ErrorItemBase"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "code": {
-                "enum": [
-                  "PATTERN_NOT_MATCHED"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Error code for pattern mismatch"
-              },
-              "details": {
-                "type": "object",
-                "oneOf": [
-                  {
-                    "required": [
-                      "api_name"
-                    ],
-                    "type": "object",
-                    "properties": {
-                      "api_name": {
-                        "maxLength": 255,
-                        "type": "string",
-                        "description": "Field API name that failed pattern matching"
-                      }
-                    },
-                    "additionalProperties": false,
-                    "description": "Details with API name"
-                  },
-                  {
-                    "type": "object",
-                    "description": "Generic pattern mismatch details"
-                  }
-                ]
-              }
-            },
-            "additionalProperties": false,
-            "description": "Pattern not matched error details"
-          }
+        "required": [
+          "code",
+          "message",
+          "status",
+          "details"
         ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "Error code identifier"
+          },
+          "message": {
+            "maxLength": 1024,
+            "type": "string",
+            "description": "Human-readable error message"
+          },
+          "status": {
+            "enum": [
+              "error",
+              "warning",
+              "info"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error severity"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details"
+          }
+        },
         "description": "Error for pattern validation failure"
       },
       "ErrorItemPatternNotMatched": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ErrorItemBase"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "code": {
-                "enum": [
-                  "PATTERN_NOT_MATCHED"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Error code"
-              },
-              "details": {
-                "type": "object",
-                "oneOf": [
-                  {
-                    "required": [
-                      "api_name"
-                    ],
-                    "type": "object",
-                    "properties": {
-                      "api_name": {
-                        "maxLength": 128,
-                        "type": "string",
-                        "description": "API name that failed pattern"
-                      }
-                    },
-                    "additionalProperties": false,
-                    "description": "Details with api name"
-                  },
-                  {
-                    "type": "object",
-                    "description": "Additional details"
-                  }
-                ]
-              }
-            },
-            "additionalProperties": false,
-            "description": "Specialized properties for PATTERN_NOT_MATCHED error"
-          }
+        "required": [
+          "code",
+          "message",
+          "status",
+          "details"
         ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "Error code identifier"
+          },
+          "message": {
+            "maxLength": 1024,
+            "type": "string",
+            "description": "Human-readable error message"
+          },
+          "status": {
+            "enum": [
+              "error",
+              "warning",
+              "info"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error severity"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details"
+          }
+        },
         "description": "Error item when a value fails to match a required pattern"
       },
       "ErrorItemInvalidRequest": {
@@ -41255,80 +41328,75 @@
         "description": "Error response schema for inventory templates operations."
       },
       "InventoryTemplatesErrorItemMandatoryNotFound": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/InventoryTemplatesErrorItemBase"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "code": {
-                "enum": [
-                  "MANDATORY_NOT_FOUND"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Error code"
-              },
-              "details": {
-                "type": "object",
-                "oneOf": [
-                  {
-                    "type": "object",
-                    "description": "Additional details"
-                  },
-                  {
-                    "required": [
-                      "parent_api_name"
-                    ],
-                    "type": "object",
-                    "properties": {
-                      "parent_api_name": {
-                        "maxLength": 128,
-                        "type": "string",
-                        "description": "Parent API name"
-                      }
-                    },
-                    "additionalProperties": false,
-                    "description": "Details with parent API name"
-                  }
-                ]
-              }
-            },
-            "additionalProperties": false,
-            "description": "Specialized properties for MANDATORY_NOT_FOUND error"
-          }
+        "required": [
+          "code",
+          "message",
+          "status",
+          "details"
         ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "Error code identifier"
+          },
+          "message": {
+            "maxLength": 1024,
+            "type": "string",
+            "description": "Human-readable error message"
+          },
+          "status": {
+            "enum": [
+              "error",
+              "warning",
+              "info"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error severity"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details"
+          }
+        },
         "description": "Error item for missing mandatory field"
       },
       "InventoryTemplatesErrorItemInvalidData": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/InventoryTemplatesErrorItemBase"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "code": {
-                "enum": [
-                  "INVALID_DATA",
-                  "INVALID_MODULE"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Error code"
-              },
-              "details": {
-                "type": "object",
-                "description": "Additional details"
-              }
-            },
-            "additionalProperties": false,
-            "description": "Specialized properties for INVALID_DATA/INVALID_MODULE error"
-          }
+        "required": [
+          "code",
+          "message",
+          "status",
+          "details"
         ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "Error code identifier"
+          },
+          "message": {
+            "maxLength": 1024,
+            "type": "string",
+            "description": "Human-readable error message"
+          },
+          "status": {
+            "enum": [
+              "error",
+              "warning",
+              "info"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error severity"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details"
+          }
+        },
         "description": "Error item for invalid data/module"
       },
       "InventoryTemplatesErrorItemBase": {
@@ -41369,51 +41437,39 @@
         "description": "Base structure for error items"
       },
       "InventoryTemplatesErrorItemPatternNotMatched": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/InventoryTemplatesErrorItemBase"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "code": {
-                "enum": [
-                  "PATTERN_NOT_MATCHED"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Error code"
-              },
-              "details": {
-                "type": "object",
-                "oneOf": [
-                  {
-                    "required": [
-                      "api_name"
-                    ],
-                    "type": "object",
-                    "properties": {
-                      "api_name": {
-                        "maxLength": 128,
-                        "type": "string",
-                        "description": "API name that failed pattern"
-                      }
-                    },
-                    "additionalProperties": false,
-                    "description": "Details with api name"
-                  },
-                  {
-                    "type": "object",
-                    "description": "Additional details"
-                  }
-                ]
-              }
-            },
-            "additionalProperties": false,
-            "description": "Specialized properties for PATTERN_NOT_MATCHED error"
-          }
+        "required": [
+          "code",
+          "message",
+          "status",
+          "details"
         ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "type": "string",
+            "description": "Error code identifier"
+          },
+          "message": {
+            "maxLength": 1024,
+            "type": "string",
+            "description": "Human-readable error message"
+          },
+          "status": {
+            "enum": [
+              "error",
+              "warning",
+              "info"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error severity"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details"
+          }
+        },
         "description": "Error item when a value fails to match a required pattern"
       },
       "ErrorResponseCore1090893661Details": {
@@ -48197,12 +48253,39 @@
         "description": "Error when a request query parameter has an invalid value."
       },
       "CloneProfileInvalidIdErrorResponse": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ProfilesInvalidIdError"
-          }
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
         ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "enum": [
+              "INVALID_DATA"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error code."
+          },
+          "details": {
+            "$ref": "#/components/schemas/ProfilesInvalidIdErrorDetails"
+          },
+          "message": {
+            "maxLength": 1000,
+            "type": "string",
+            "description": "Human-readable error message."
+          },
+          "status": {
+            "enum": [
+              "error"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error status indicator."
+          }
+        },
         "description": "Error when the profile ID in the clone profile request path is invalid or already deleted."
       },
       "CloneProfileInvalidCreateRequestErrorResponse": {
@@ -48392,12 +48475,39 @@
         "description": "Error response when the specified profile cannot be cloned."
       },
       "DeleteProfileInvalidIdErrorResponse": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ProfilesInvalidIdError"
-          }
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
         ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "enum": [
+              "INVALID_DATA"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error code."
+          },
+          "details": {
+            "$ref": "#/components/schemas/ProfilesInvalidIdErrorDetails"
+          },
+          "message": {
+            "maxLength": 1000,
+            "type": "string",
+            "description": "Human-readable error message."
+          },
+          "status": {
+            "enum": [
+              "error"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Error status indicator."
+          }
+        },
         "description": "Error response when the profile id in the delete profile request path is invalid or already deleted."
       },
       "DeleteProfileInvalidActionErrorResponse": {
@@ -52166,60 +52276,106 @@
         "description": "Root element for defining a scoring rule, including layout, fields, custom fields, and scoring configurations."
       },
       "ManualScoringRuleWrapper": {
+        "required": [
+          "module",
+          "name",
+          "manual_scoring_rule"
+        ],
         "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ScoringRulePOSTCommon"
-          },
-          {
-            "required": [
-              "manual_scoring_rule"
-            ],
-            "type": "object",
-            "properties": {
-              "scoring_type": {
-                "enum": [
-                  "manual_scoring"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Type of the scoring rule"
-              },
-              "manual_scoring_rule": {
-                "$ref": "#/components/schemas/ManualScoringRule"
-              }
+        "properties": {
+          "custom_fields": {
+            "maxItems": 6,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomFieldConfiguration"
             },
-            "description": "Wrapper for ManualScoringRule"
+            "description": "Custom fields can be configured for scoring rule. These fields will hold the referred scores.",
+            "nullable": true
+          },
+          "module": {
+            "$ref": "#/components/schemas/ModuleDetails"
+          },
+          "description": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "Rule configuration info can be added here.",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "It defined the status (active or inactive) of the rule. "
+          },
+          "layout": {
+            "$ref": "#/components/schemas/LayoutDetails"
+          },
+          "name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Scoring rule name (Required) (Unique)"
+          },
+          "scoring_type": {
+            "enum": [
+              "manual_scoring"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Type of the scoring rule"
+          },
+          "manual_scoring_rule": {
+            "$ref": "#/components/schemas/ManualScoringRule"
           }
-        ]
+        }
       },
       "ZiaScoringRuleWrapper": {
+        "required": [
+          "module",
+          "name",
+          "zia_scoring_rule"
+        ],
         "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ScoringRulePOSTCommon"
-          },
-          {
-            "required": [
-              "zia_scoring_rule"
-            ],
-            "type": "object",
-            "properties": {
-              "scoring_type": {
-                "enum": [
-                  "zia_scoring"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "Type of the scoring rule"
-              },
-              "zia_scoring_rule": {
-                "$ref": "#/components/schemas/ZiaScoringRule"
-              }
+        "properties": {
+          "custom_fields": {
+            "maxItems": 6,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomFieldConfiguration"
             },
-            "description": "Wrapper for ZiaScoringRule"
+            "description": "Custom fields can be configured for scoring rule. These fields will hold the referred scores.",
+            "nullable": true
+          },
+          "module": {
+            "$ref": "#/components/schemas/ModuleDetails"
+          },
+          "description": {
+            "maxLength": 500,
+            "type": "string",
+            "description": "Rule configuration info can be added here.",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "It defined the status (active or inactive) of the rule. "
+          },
+          "layout": {
+            "$ref": "#/components/schemas/LayoutDetails"
+          },
+          "name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Scoring rule name (Required) (Unique)"
+          },
+          "scoring_type": {
+            "enum": [
+              "zia_scoring"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Type of the scoring rule"
+          },
+          "zia_scoring_rule": {
+            "$ref": "#/components/schemas/ZiaScoringRule"
           }
-        ]
+        }
       },
       "ZiaScoringRule": {
         "type": "object",
@@ -55255,20 +55411,184 @@
       },
       "DataNestedV2": {
         "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/DataNestedBase"
+        "properties": {
+          "Job_Sheet_Required": {
+            "maxLength": 3,
+            "enum": [
+              "No"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "is job sheet required for the service",
+            "nullable": true
           },
-          {
-            "type": "object",
-            "properties": {
-              "Owner": {
-                "$ref": "#/components/schemas/OwnerNestedV2"
-              }
+          "Status": {
+            "maxLength": 100,
+            "enum": [
+              "Not in Use"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Record Status",
+            "nullable": true
+          },
+          "Owner": {
+            "$ref": "#/components/schemas/OwnerBase"
+          },
+          "Description": {
+            "maxLength": 32000,
+            "type": "string",
+            "description": "Represents the description of the service",
+            "nullable": true
+          },
+          "Available_Timings": {
+            "maxLength": 4,
+            "type": "string",
+            "description": "contains the service availability timing",
+            "nullable": true
+          },
+          "Service_Name": {
+            "maxLength": 120,
+            "type": "string",
+            "description": "name of the service",
+            "nullable": true
+          },
+          "Available_From": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "service availability start time (this field is mandatory when service availability type is specific date range)",
+            "nullable": true
+          },
+          "Available_Till": {
+            "maxLength": 100,
+            "enum": [
+              "2026-01-13",
+              "2026-01-29"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "service availability end time (this field is mandatory when service availability type is specific date range)",
+            "nullable": true
+          },
+          "Available_Days": {
+            "maxItems": 4,
+            "type": "array",
+            "items": {
+              "maxLength": 255,
+              "type": "string",
+              "description": "Array Fields"
             },
-            "description": "Nested object overrides"
+            "description": "contains days (this field is mandatory when availability type is set to specific days)",
+            "nullable": true
+          },
+          "Tax": {
+            "maxItems": 2,
+            "type": "array",
+            "items": {
+              "maxLength": 255,
+              "type": "string",
+              "description": "Tax details"
+            },
+            "description": "Contains the ID and value of the tax applied to the service cost",
+            "nullable": true
+          },
+          "Duration": {
+            "type": "integer",
+            "description": "duration of the service",
+            "format": "int32",
+            "nullable": true
+          },
+          "Job_Sheet_Section__s": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "contains job sheet section information",
+            "nullable": true
+          },
+          "Unavailable_From": {
+            "maxLength": 25,
+            "type": "string",
+            "description": "service unavailable from",
+            "nullable": true
+          },
+          "Record_Image": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "record image",
+            "nullable": true
+          },
+          "Price": {
+            "type": "integer",
+            "description": "price of the service",
+            "format": "int32",
+            "nullable": true
+          },
+          "id": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "id of the owner",
+            "nullable": true
+          },
+          "Tag": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "maxLength": 2000,
+              "type": "string",
+              "description": "tag names"
+            },
+            "description": "tags associated with this record",
+            "nullable": true
+          },
+          "Availability_Type": {
+            "maxLength": 19,
+            "enum": [
+              "Specific Day(s)",
+              "Specific Date Range",
+              "Every Business Days",
+              "Specific Date(s)"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "service availability type i.e specific date range or specific days ",
+            "nullable": true
+          },
+          "Available_Dates": {
+            "maxItems": 3,
+            "type": "array",
+            "items": {
+              "maxLength": 255,
+              "type": "string",
+              "description": "service available days"
+            },
+            "description": "contains available date (this field is mandatory when availability type is specific dates )",
+            "nullable": true
+          },
+          "Members": {
+            "maxItems": 5,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MembersitemBase"
+            },
+            "description": "members who does this service (contains multiple members)",
+            "nullable": true
+          },
+          "Location": {
+            "maxLength": 1000,
+            "enum": [
+              "Business Address"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Location where the service held",
+            "nullable": true
+          },
+          "Unavailable_Till": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "service unavailable till ",
+            "nullable": true
           }
-        ],
+        },
         "description": "Operation-specific schema for PUT",
         "x-jsonschema-unevaluatedProperties": false
       },
@@ -55605,9 +55925,6 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/components/schemas/OwnerBase"
-          },
-          {
             "required": [
               "email"
             ],
@@ -55615,6 +55932,38 @@
             "description": "Required fields for Owner in PUT"
           }
         ],
+        "properties": {
+          "name": {
+            "maxLength": 100,
+            "enum": [
+              "Madeshwaran G"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "name of the owner",
+            "nullable": true
+          },
+          "id": {
+            "maxLength": 100,
+            "enum": [
+              "4671651000000635001"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "id of the owner",
+            "nullable": true
+          },
+          "email": {
+            "maxLength": 100,
+            "enum": [
+              "madeshwaran.g@zohocorp.com"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "email",
+            "nullable": true
+          }
+        },
         "description": "Operation-specific schema for Owner in PUT"
       },
       "MandatoryNotFound": {
@@ -62487,9 +62836,6 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/components/schemas/GeneratedSchema2"
-          },
-          {
             "required": [
               "name",
               "page_type",
@@ -62499,6 +62845,48 @@
             "description": "Required fields for POST /crm/v9/settings/unsubscribe_links"
           }
         ],
+        "properties": {
+          "submission_message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: submission_message\u0022"
+          },
+          "submission_redirect_url": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: submission_redirect_url\u0022"
+          },
+          "page_type": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: page_type\u0022"
+          },
+          "custom_location_url": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: custom_location_url\u0022"
+          },
+          "name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: name\u0022"
+          },
+          "id": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: id\u0022"
+          },
+          "standard_page_message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: standard_page_message\u0022"
+          },
+          "submission_action_type": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: submission_action_type\u0022"
+          }
+        },
         "description": "Operation-specific schema for POST"
       },
       "UnsubscribeLinkSummaryRecord": {
@@ -62624,9 +63012,6 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/components/schemas/GeneratedSchema2"
-          },
-          {
             "required": [
               "id"
             ],
@@ -62634,6 +63019,48 @@
             "description": "Required fields for PUT /crm/v9/settings/unsubscribe_links"
           }
         ],
+        "properties": {
+          "submission_message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: submission_message\u0022"
+          },
+          "submission_redirect_url": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: submission_redirect_url\u0022"
+          },
+          "page_type": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: page_type\u0022"
+          },
+          "custom_location_url": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: custom_location_url\u0022"
+          },
+          "name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: name\u0022"
+          },
+          "id": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: id\u0022"
+          },
+          "standard_page_message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: standard_page_message\u0022"
+          },
+          "submission_action_type": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: submission_action_type\u0022"
+          }
+        },
         "description": "Operation-specific schema for PUT"
       },
       "GeneratedSchema2": {
@@ -62688,9 +63115,6 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/components/schemas/GeneratedSchema2"
-          },
-          {
             "required": [
               "id"
             ],
@@ -62698,6 +63122,48 @@
             "description": "Required fields for PUT /crm/v9/settings/unsubscribe_links/111111000000115722"
           }
         ],
+        "properties": {
+          "submission_message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: submission_message\u0022"
+          },
+          "submission_redirect_url": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: submission_redirect_url\u0022"
+          },
+          "page_type": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: page_type\u0022"
+          },
+          "custom_location_url": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: custom_location_url\u0022"
+          },
+          "name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: name\u0022"
+          },
+          "id": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: id\u0022"
+          },
+          "standard_page_message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: standard_page_message\u0022"
+          },
+          "submission_action_type": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: submission_action_type\u0022"
+          }
+        },
         "description": "Operation-specific schema for PUT"
       },
       "UnsubscribeLinkAssociationRecord": {
@@ -65148,9 +65614,6 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/components/schemas/VariablesGeneratedSchema"
-          },
-          {
             "required": [
               "api_name",
               "name"
@@ -65159,6 +65622,28 @@
             "description": "Required fields for variable_group in PUT"
           }
         ],
+        "properties": {
+          "api_name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: api_name\u0022"
+          },
+          "name": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: name\u0022"
+          },
+          "id": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: id\u0022"
+          },
+          "rid": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "\u0022Field: rid\u0022"
+          }
+        },
         "description": "Operation-specific schema for variable_group in PUT"
       },
       "VariablesGeneratedSchema": {
@@ -72629,7 +73114,12 @@
             "$ref": "#/components/schemas/InstantActionsUsageWithTagsSchema"
           },
           "scheduled_actions": {
-            "$ref": "#/components/schemas/ScheduledActionsForWorkflowUsageSchema"
+            "maxItems": 5,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScheduledActionsForWorkflowUsageSchemaItem"
+            },
+            "description": "List of scheduled actions associated with the workflow rule."
           },
           "usage_count": {
             "type": "integer",
@@ -87497,7 +87987,12 @@
             "description": "Criteria defining favourable situations based on field attributes."
           },
           "cross_filters": {
-            "$ref": "#/components/schemas/CrossFilters"
+            "maxItems": 50,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CrossFiltersItem"
+            },
+            "description": "List of cross-module filters that further refine favourable scoring conditions."
           }
         },
         "additionalProperties": false,
@@ -87512,7 +88007,12 @@
             "description": "Criteria defining unfavourable field attribute conditions."
           },
           "cross_filters": {
-            "$ref": "#/components/schemas/CrossFilters"
+            "maxItems": 50,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CrossFiltersItem"
+            },
+            "description": "List of cross-module filters that further refine favourable scoring conditions."
           }
         },
         "additionalProperties": false,
@@ -89469,19 +89969,65 @@
       },
       "AssociateEmailAssociateEmail200": {
         "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/ActionResponse"
+        "properties": {
+          "data": {
+            "maxItems": 50,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "maxLength": 50,
+                  "type": "string",
+                  "description": "Status code."
+                },
+                "details": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "description": "Contextual details."
+                },
+                "message": {
+                  "maxLength": 255,
+                  "type": "string",
+                  "description": "Result message."
+                },
+                "status": {
+                  "maxLength": 50,
+                  "type": "string",
+                  "description": "Operation status."
+                }
+              },
+              "additionalProperties": false,
+              "description": "Individual result for a specific record."
+            },
+            "description": "Array of result statuses."
           }
-        ]
+        }
       },
       "AssociateEmailAssociateEmail400": {
         "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/AssociateEmailErrorResponse"
+        "properties": {
+          "code": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Error code."
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Error message."
+          },
+          "status": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Error status."
+          },
+          "details": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Detailed error context."
           }
-        ]
+        }
       },
       "AttachmentsGetAttachmentById200": {
         "type": "string",
@@ -102193,7 +102739,39 @@
                   "$ref": "#/components/schemas/UserReference"
                 },
                 "fields": {
-                  "$ref": "#/components/schemas/CustomViewField"
+                  "maxItems": 250,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "api_name": {
+                        "type": "string",
+                        "description": "API name of the field",
+                        "nullable": true
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "field id",
+                        "nullable": true
+                      },
+                      "_pin": {
+                        "type": "boolean",
+                        "description": "Indicates if the field is pinned"
+                      },
+                      "_width": {
+                        "type": "integer",
+                        "description": "Width of the field in pixels",
+                        "format": "int32"
+                      },
+                      "_pin_order": {
+                        "type": "integer",
+                        "description": "Pin order of the field",
+                        "format": "int32"
+                      }
+                    },
+                    "description": "Field Object"
+                  },
+                  "description": "Fields included in the Custom View"
                 },
                 "sort_by": {
                   "type": "object",
@@ -134445,57 +135023,220 @@
         "type": "object",
         "oneOf": [
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CloneProfileInvalidIdErrorResponse"
-              }
+            "required": [
+              "code",
+              "details",
+              "message",
+              "status"
             ],
+            "type": "object",
+            "properties": {
+              "code": {
+                "enum": [
+                  "INVALID_DATA"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error code."
+              },
+              "details": {
+                "$ref": "#/components/schemas/ProfilesInvalidIdErrorDetails"
+              },
+              "message": {
+                "maxLength": 1000,
+                "type": "string",
+                "description": "Human-readable error message."
+              },
+              "status": {
+                "enum": [
+                  "error"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error status indicator."
+              }
+            },
             "description": "The profile id in the request path is invalid or points to a deleted resource."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CloneProfileInvalidCreateRequestErrorResponse"
-              }
+            "required": [
+              "profiles"
             ],
+            "type": "object",
+            "properties": {
+              "profiles": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MandatoryNotFoundProfileError"
+                },
+                "description": "Per-profile validation errors."
+              }
+            },
             "description": "Request body is missing mandatory fields for cloning."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CloneProfileDuplicateProfileNameErrorResponse"
-              }
+            "required": [
+              "profiles"
             ],
+            "type": "object",
+            "properties": {
+              "profiles": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DuplicateProfileNameError"
+                },
+                "description": "Per-profile duplicate name errors."
+              }
+            },
             "description": "Cloned profile name conflicts with an existing profile name."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CloneProfileLicenseLimitExceededErrorResponse"
-              }
+            "required": [
+              "profiles"
             ],
+            "type": "object",
+            "properties": {
+              "profiles": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/LicenseLimitExceededError"
+                },
+                "description": "Per-profile license limit exceeded errors."
+              }
+            },
             "description": "Cloning would exceed allowed limits."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CloneProfileInvalidProfileNameSpecialCharsErrorResponse"
-              }
+            "required": [
+              "profiles"
             ],
+            "type": "object",
+            "properties": {
+              "profiles": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "required": [
+                    "code",
+                    "details",
+                    "message",
+                    "status"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        "INVALID_DATA"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error code."
+                    },
+                    "details": {
+                      "required": [
+                        "api_name",
+                        "json_path"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "api_name": {
+                          "maxLength": 255,
+                          "minLength": 1,
+                          "type": "string",
+                          "description": "API name of the invalid field."
+                        },
+                        "json_path": {
+                          "maxLength": 500,
+                          "minLength": 1,
+                          "type": "string",
+                          "description": "JSONPath to the invalid field in the request payload."
+                        }
+                      },
+                      "additionalProperties": false,
+                      "description": "Details pointing to the invalid field."
+                    },
+                    "message": {
+                      "maxLength": 1000,
+                      "type": "string",
+                      "description": "Human-readable error message."
+                    },
+                    "status": {
+                      "enum": [
+                        "error"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error status indicator."
+                    }
+                  },
+                  "additionalProperties": false,
+                  "description": "Per-profile INVALID_DATA error pointing to an invalid \u0027name\u0027 value in the clone request."
+                },
+                "description": "Per-profile INVALID_DATA error pointing to an invalid \u0027name\u0027 value in the clone request."
+              }
+            },
             "description": "Cloned profile name contains disallowed characters."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/CloneProfileCannotBeClonedErrorResponse"
-              }
+            "required": [
+              "profiles"
             ],
+            "type": "object",
+            "properties": {
+              "profiles": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "required": [
+                    "code",
+                    "details",
+                    "message",
+                    "status"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        "INVALID_DATA"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error code."
+                    },
+                    "details": {
+                      "maxProperties": 0,
+                      "type": "object",
+                      "additionalProperties": false,
+                      "description": "Empty details object."
+                    },
+                    "message": {
+                      "maxLength": 1000,
+                      "type": "string",
+                      "description": "Human-readable error message."
+                    },
+                    "status": {
+                      "enum": [
+                        "error"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error status indicator."
+                    }
+                  },
+                  "additionalProperties": false,
+                  "description": "Per-profile INVALID_DATA error indicating the clone operation is not permitted."
+                },
+                "description": "Per-profile INVALID_DATA error indicating the clone operation is not permitted."
+              }
+            },
             "description": "Profile cannot be cloned due to business rules."
           }
         ],
@@ -134627,75 +135368,537 @@
         "type": "object",
         "oneOf": [
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UpdateProfileDuplicateDataErrorResponse"
-              }
+            "required": [
+              "profiles"
             ],
+            "type": "object",
+            "properties": {
+              "profiles": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "required": [
+                    "code",
+                    "details",
+                    "message",
+                    "status"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        "DUPLICATE_DATA"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error code."
+                    },
+                    "details": {
+                      "required": [
+                        "api_name",
+                        "json_path",
+                        "id"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "api_name": {
+                          "maxLength": 255,
+                          "minLength": 1,
+                          "type": "string",
+                          "description": "API name of the duplicated field."
+                        },
+                        "json_path": {
+                          "maxLength": 500,
+                          "minLength": 1,
+                          "type": "string",
+                          "description": "JSONPath to the duplicated field in the request payload."
+                        },
+                        "id": {
+                          "maxLength": 19,
+                          "pattern": "^[0-9]{1,19}$",
+                          "type": "string",
+                          "description": "Unique identifier (64-bit integer represented as string)",
+                          "format": "int64"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "description": "Details pointing to the duplicated field and existing record id."
+                    },
+                    "message": {
+                      "enum": [
+                        "duplicate data"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Human-readable error message."
+                    },
+                    "status": {
+                      "enum": [
+                        "error"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error status indicator."
+                    }
+                  },
+                  "additionalProperties": false,
+                  "description": "Per-profile DUPLICATE_DATA error indicating the profile name already exists."
+                },
+                "description": "Per-profile errors for the update request."
+              }
+            },
             "description": "Duplicate profile name in update request."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UpdateProfileInvalidProfileNameSpecialCharsErrorResponse"
-              }
+            "required": [
+              "profiles"
             ],
+            "type": "object",
+            "properties": {
+              "profiles": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "required": [
+                    "code",
+                    "details",
+                    "message",
+                    "status"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        "INVALID_DATA"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error code."
+                    },
+                    "details": {
+                      "required": [
+                        "api_name",
+                        "json_path"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "api_name": {
+                          "maxLength": 255,
+                          "minLength": 1,
+                          "type": "string",
+                          "description": "API name of the invalid field."
+                        },
+                        "json_path": {
+                          "maxLength": 500,
+                          "minLength": 1,
+                          "type": "string",
+                          "description": "JSONPath to the invalid field."
+                        }
+                      },
+                      "additionalProperties": false,
+                      "description": "Details pointing to the invalid field."
+                    },
+                    "message": {
+                      "enum": [
+                        "Profile name should not contain the following special character(s) : #, %, \u0026, (, ), *, ^"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Human-readable error message."
+                    },
+                    "status": {
+                      "enum": [
+                        "error"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error status indicator."
+                    }
+                  },
+                  "additionalProperties": false,
+                  "description": "Per-profile INVALID_DATA error for an invalid profile name value."
+                },
+                "description": "Per-profile errors for the update request."
+              }
+            },
             "description": "Profile name contains disallowed special characters."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UpdateProfileInvalidActionErrorResponse"
-              }
+            "required": [
+              "profiles"
             ],
+            "type": "object",
+            "properties": {
+              "profiles": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "required": [
+                    "code",
+                    "details",
+                    "message",
+                    "status"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        "INVALID_DATA"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error code."
+                    },
+                    "details": {
+                      "maxProperties": 0,
+                      "type": "object",
+                      "additionalProperties": false,
+                      "description": "Empty details object for invalid action error."
+                    },
+                    "message": {
+                      "enum": [
+                        "The action given is invalid"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Human-readable error message."
+                    },
+                    "status": {
+                      "enum": [
+                        "error"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error status indicator."
+                    }
+                  },
+                  "additionalProperties": false,
+                  "description": "Per-profile INVALID_DATA error indicating an invalid action."
+                },
+                "description": "Per-profile errors for the update request."
+              }
+            },
             "description": "The action given is invalid."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UpdateProfileInvalidPermissionIdErrorResponse"
-              }
+            "required": [
+              "profiles"
             ],
+            "type": "object",
+            "properties": {
+              "profiles": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "required": [
+                    "code",
+                    "details",
+                    "message",
+                    "status"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        "INVALID_DATA"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error code."
+                    },
+                    "details": {
+                      "required": [
+                        "api_name",
+                        "json_path"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "api_name": {
+                          "enum": [
+                            "id"
+                          ],
+                          "type": "string",
+                          "additionalProperties": false,
+                          "description": "API name of the invalid field."
+                        },
+                        "json_path": {
+                          "enum": [
+                            "$.profiles[0].permissions_details[0].id"
+                          ],
+                          "type": "string",
+                          "additionalProperties": false,
+                          "description": "JSONPath to the invalid permission id in the request payload."
+                        }
+                      },
+                      "additionalProperties": false,
+                      "description": "Details pointing to the invalid permission id field."
+                    },
+                    "message": {
+                      "enum": [
+                        "Invalid permission ID",
+                        "Permission is not customizable"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Human-readable error message."
+                    },
+                    "status": {
+                      "enum": [
+                        "error"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error status indicator."
+                    }
+                  },
+                  "additionalProperties": false,
+                  "description": "Per-profile INVALID_DATA error indicating an invalid permission id."
+                },
+                "description": "Per-profile errors for the update request."
+              }
+            },
             "description": "Invalid permission ID in permissions_details."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UpdateProfileInvalidPermissionsDetailsDatatypeErrorResponse"
-              }
+            "required": [
+              "code",
+              "details",
+              "message",
+              "status"
             ],
+            "type": "object",
+            "properties": {
+              "code": {
+                "enum": [
+                  "INVALID_DATA"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error code."
+              },
+              "details": {
+                "$ref": "#/components/schemas/UpdateProfileInvalidPermissionsDetailsDatatypeErrorResponseDetails"
+              },
+              "message": {
+                "enum": [
+                  "INVALID_DATA"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Human-readable error message."
+              },
+              "status": {
+                "enum": [
+                  "error"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error status indicator."
+              }
+            },
             "description": "permissions_details has an invalid datatype."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UpdateProfileChildPermissionParentDisabledErrorResponse"
-              }
+            "required": [
+              "profiles"
             ],
+            "type": "object",
+            "properties": {
+              "profiles": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "required": [
+                    "code",
+                    "details",
+                    "message",
+                    "status"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        "INVALID_DATA"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error code."
+                    },
+                    "details": {
+                      "required": [
+                        "api_name",
+                        "json_path"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "api_name": {
+                          "enum": [
+                            "id"
+                          ],
+                          "type": "string",
+                          "additionalProperties": false,
+                          "description": "API name of the invalid field."
+                        },
+                        "json_path": {
+                          "enum": [
+                            "$.profiles[0].permissions_details[0].id"
+                          ],
+                          "type": "string",
+                          "additionalProperties": false,
+                          "description": "JSONPath to the permission id in the request payload."
+                        }
+                      },
+                      "additionalProperties": false,
+                      "description": "Details pointing to the permission id causing the rule violation."
+                    },
+                    "message": {
+                      "enum": [
+                        "Child permission can not be enabled, since its parent permission is disabled"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Human-readable error message."
+                    },
+                    "status": {
+                      "enum": [
+                        "error"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error status indicator."
+                    }
+                  },
+                  "additionalProperties": false,
+                  "description": "Per-profile INVALID_DATA error indicating parent permission is disabled."
+                },
+                "description": "Per-profile errors for the update request."
+              }
+            },
             "description": "Child permission cannot be enabled when parent permission is disabled."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UpdateProfilePermissionNotAllowedErrorResponse"
-              }
+            "required": [
+              "permissions"
             ],
+            "type": "object",
+            "properties": {
+              "permissions": {
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "required": [
+                    "code",
+                    "details",
+                    "message",
+                    "status"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        "NOT_ALLOWED"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error code."
+                    },
+                    "details": {
+                      "required": [
+                        "api_name",
+                        "json_path"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "api_name": {
+                          "enum": [
+                            "id"
+                          ],
+                          "type": "string",
+                          "additionalProperties": false,
+                          "description": "API name of the field."
+                        },
+                        "json_path": {
+                          "enum": [
+                            "$.permissions[0].id"
+                          ],
+                          "type": "string",
+                          "additionalProperties": false,
+                          "description": "JSONPath to the field in the request payload."
+                        }
+                      },
+                      "additionalProperties": false,
+                      "description": "Details pointing to the permission id field."
+                    },
+                    "message": {
+                      "enum": [
+                        "This Permissionid cannot be updated"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Human-readable error message."
+                    },
+                    "status": {
+                      "enum": [
+                        "error"
+                      ],
+                      "type": "string",
+                      "additionalProperties": false,
+                      "description": "Error status indicator."
+                    }
+                  },
+                  "additionalProperties": false,
+                  "description": "Per-permission NOT_ALLOWED error indicating the permission id is not updatable."
+                },
+                "description": "Per-permission errors for the update request."
+              }
+            },
             "description": "A permission id in permissions cannot be updated."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UpdateProfileSystemProfileNotAllowedErrorResponse"
-              }
+            "required": [
+              "code",
+              "details",
+              "message",
+              "status"
             ],
+            "type": "object",
+            "properties": {
+              "code": {
+                "enum": [
+                  "NOT_ALLOWED",
+                  "INVALID_DATA"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error code."
+              },
+              "details": {
+                "$ref": "#/components/schemas/UpdateProfileSystemProfileNotAllowedErrorResponseDetails"
+              },
+              "message": {
+                "enum": [
+                  "System profile cannot be updated",
+                  "the id given seems to be invalid or already deleted"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Human-readable error message."
+              },
+              "status": {
+                "enum": [
+                  "error"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error status indicator."
+              }
+            },
             "description": "System profile cannot be updated."
           }
         ],
@@ -134808,12 +136011,26 @@
                         "type": "object",
                         "oneOf": [
                           {
-                            "type": "object",
-                            "allOf": [
-                              {
-                                "$ref": "#/components/schemas/ProfilePermissionModule"
-                              }
+                            "required": [
+                              "api_name",
+                              "id"
                             ],
+                            "type": "object",
+                            "properties": {
+                              "api_name": {
+                                "maxLength": 100,
+                                "minLength": 1,
+                                "type": "string",
+                                "description": "Module API name."
+                              },
+                              "id": {
+                                "maxLength": 19,
+                                "pattern": "^[0-9]{1,19}$",
+                                "type": "string",
+                                "description": "Unique identifier (64-bit integer represented as string)",
+                                "format": "int64"
+                              }
+                            },
                             "description": "Module reference."
                           },
                           {
@@ -135022,66 +136239,264 @@
         "type": "object",
         "oneOf": [
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/TransferToIdNotFoundError"
-              }
+            "required": [
+              "code",
+              "details",
+              "message",
+              "status"
             ],
+            "type": "object",
+            "properties": {
+              "code": {
+                "enum": [
+                  "MANDATORY_NOT_FOUND"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error code."
+              },
+              "details": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Additional error details."
+              },
+              "message": {
+                "maxLength": 1000,
+                "type": "string",
+                "description": "Human-readable error message."
+              },
+              "status": {
+                "enum": [
+                  "error"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error status indicator."
+              }
+            },
             "description": "transfer_to_id is mandatory but missing."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/InvalidTransferToIdError"
-              }
+            "required": [
+              "code",
+              "details",
+              "message",
+              "status"
             ],
+            "type": "object",
+            "properties": {
+              "code": {
+                "enum": [
+                  "INVALID_DATA"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error code."
+              },
+              "details": {
+                "$ref": "#/components/schemas/InvalidTransferToIdErrorDetails"
+              },
+              "message": {
+                "maxLength": 1000,
+                "type": "string",
+                "description": "Human-readable error message."
+              },
+              "status": {
+                "enum": [
+                  "error"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error status indicator."
+              }
+            },
             "description": "transfer_to_id is invalid or deleted."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/InvalidDeleteRequestError"
-              }
+            "required": [
+              "code",
+              "details",
+              "message",
+              "status"
             ],
+            "type": "object",
+            "properties": {
+              "code": {
+                "enum": [
+                  "CANNOT_DELETE"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error code."
+              },
+              "details": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Additional error details."
+              },
+              "message": {
+                "maxLength": 1000,
+                "type": "string",
+                "description": "Human-readable error message."
+              },
+              "status": {
+                "enum": [
+                  "error"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error status indicator."
+              }
+            },
             "description": "Deletion is not permitted for this profile due to business rules."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/ProfilesInvalidRequestMethodError"
-              }
+            "required": [
+              "code",
+              "details",
+              "message",
+              "status"
             ],
+            "type": "object",
+            "properties": {
+              "code": {
+                "enum": [
+                  "INVALID_REQUEST_METHOD"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error code."
+              },
+              "details": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Additional error details."
+              },
+              "message": {
+                "maxLength": 1000,
+                "type": "string",
+                "description": "Human-readable error message."
+              },
+              "status": {
+                "enum": [
+                  "error"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error status indicator."
+              }
+            },
             "description": "HTTP method is not supported for this endpoint."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/DeleteProfileInvalidIdErrorResponse"
-              }
+            "required": [
+              "code",
+              "details",
+              "message",
+              "status"
             ],
+            "type": "object",
+            "properties": {
+              "code": {
+                "enum": [
+                  "INVALID_DATA"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error code."
+              },
+              "details": {
+                "$ref": "#/components/schemas/ProfilesInvalidIdErrorDetails"
+              },
+              "message": {
+                "maxLength": 1000,
+                "type": "string",
+                "description": "Human-readable error message."
+              },
+              "status": {
+                "enum": [
+                  "error"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error status indicator."
+              }
+            },
             "description": "The profile id in the request path is invalid or already deleted."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/DeleteProfileInvalidActionErrorResponse"
-              }
+            "required": [
+              "code",
+              "details",
+              "message",
+              "status"
             ],
+            "type": "object",
+            "properties": {
+              "code": {
+                "enum": [
+                  "INVALID_DATA"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error code."
+              },
+              "details": {
+                "maxProperties": 0,
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Additional error details (empty for this error)."
+              },
+              "message": {
+                "maxLength": 1000,
+                "type": "string",
+                "description": "Human-readable error message."
+              },
+              "status": {
+                "enum": [
+                  "error"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error status indicator."
+              }
+            },
             "description": "The action given is invalid."
           },
           {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/DeleteProfileSystemProfileNotAllowedErrorResponse"
-              }
+            "required": [
+              "code",
+              "details",
+              "message",
+              "status"
             ],
+            "type": "object",
+            "properties": {
+              "code": {
+                "enum": [
+                  "NOT_ALLOWED"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error code."
+              },
+              "details": {
+                "$ref": "#/components/schemas/DeleteProfileSystemProfileNotAllowedErrorResponseDetails"
+              },
+              "message": {
+                "maxLength": 1000,
+                "type": "string",
+                "description": "Human-readable error message."
+              },
+              "status": {
+                "enum": [
+                  "error"
+                ],
+                "type": "string",
+                "additionalProperties": false,
+                "description": "Error status indicator."
+              }
+            },
             "description": "System profile cannot be deleted."
           }
         ],
@@ -168365,7 +169780,12 @@
                   "description": "Status field."
                 },
                 "input_data_field_mapping": {
-                  "$ref": "#/components/schemas/FieldMappingForRead"
+                  "maxItems": 50,
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FieldMappingForReadItem"
+                  },
+                  "description": "Fieldmappingforread field."
                 },
                 "created_time": {
                   "maxLength": 255,
@@ -169327,7 +170747,14 @@
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/ArrayValueNested"
+            "maxItems": 25,
+            "type": "array",
+            "items": {
+              "maxLength": 255,
+              "type": "string",
+              "description": "Array item value"
+            },
+            "description": "The actual value to insert into the field"
           }
         }
       }

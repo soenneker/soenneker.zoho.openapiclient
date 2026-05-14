@@ -5,7 +5,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>is job sheet required for the service</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum DataNestedBase_Job_Sheet_Required
+    public enum DataNestedV2_Job_Sheet_Required
     {
         [EnumMember(Value = "No")]
         #pragma warning disable CS1591

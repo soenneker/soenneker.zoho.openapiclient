@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Field reference for filter operations with minimal required properties
+    /// Field Object
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomViewsFilterFieldBase : IAdditionalDataHolder, IParsable
+    public partial class CustomViewsGetCustomViews200_custom_views_fields : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Field API name for filter application. Supports relationship notation (e.g., &apos;Deals__r.Stage&apos;)</summary>
+        /// <summary>API name of the field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>Field identifier (optional for filter operations)</summary>
+        /// <summary>field id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -31,22 +31,28 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Indicates if the field is pinned</summary>
+        public bool? Pin { get; set; }
+        /// <summary>Pin order of the field</summary>
+        public int? PinOrder { get; set; }
+        /// <summary>Width of the field in pixels</summary>
+        public int? Width { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterFieldBase"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViews200_custom_views_fields"/> and sets the default values.
         /// </summary>
-        public CustomViewsFilterFieldBase()
+        public CustomViewsGetCustomViews200_custom_views_fields()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterFieldBase"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViews200_custom_views_fields"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterFieldBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViews200_custom_views_fields CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterFieldBase();
+            return new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViews200_custom_views_fields();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +64,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "_pin", n => { Pin = n.GetBoolValue(); } },
+                { "_pin_order", n => { PinOrder = n.GetIntValue(); } },
+                { "_width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +78,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("_pin", Pin);
+            writer.WriteIntValue("_pin_order", PinOrder);
+            writer.WriteIntValue("_width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

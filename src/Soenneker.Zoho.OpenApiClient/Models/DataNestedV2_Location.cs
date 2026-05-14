@@ -5,7 +5,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>Location where the service held</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum DataNestedBase_Location
+    public enum DataNestedV2_Location
     {
         [EnumMember(Value = "Business Address")]
         #pragma warning disable CS1591

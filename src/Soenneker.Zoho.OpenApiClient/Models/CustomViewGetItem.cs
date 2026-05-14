@@ -58,10 +58,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Fields included in the Custom View</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views>? Fields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_fields>? Fields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views> Fields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_fields> Fields { get; set; }
 #endif
         /// <summary>ID of the Custom View</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -168,7 +168,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "default", n => { Default = n.GetBoolValue(); } },
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
                 { "favorite", n => { Favorite = n.GetIntValue(); } },
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views>(global::Soenneker.Zoho.OpenApiClient.Models.Custom_views.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_fields>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_fields.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_accessed_time", n => { LastAccessedTime = n.GetDateTimeOffsetValue(); } },
                 { "locked", n => { Locked = n.GetBoolValue(); } },
@@ -202,7 +202,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("default", Default);
             writer.WriteStringValue("display_value", DisplayValue);
             writer.WriteIntValue("favorite", Favorite);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.Custom_views>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItem_fields>("fields", Fields);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_accessed_time", LastAccessedTime);
             writer.WriteBoolValue("locked", Locked);

@@ -15,6 +15,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Module API name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApiName { get; set; }
+#nullable restore
+#else
+        public string ApiName { get; set; }
+#endif
+        /// <summary>Unique identifier (64-bit integer represented as string)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200_profiles_permissions_details_module"/> and sets the default values.
         /// </summary>
@@ -40,6 +56,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "api_name", n => { ApiName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +67,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("api_name", ApiName);
+            writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

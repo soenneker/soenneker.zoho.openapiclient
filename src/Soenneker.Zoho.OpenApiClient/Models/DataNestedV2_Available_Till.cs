@@ -5,7 +5,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>service availability end time (this field is mandatory when service availability type is specific date range)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum DataNestedBase_Available_Till
+    public enum DataNestedV2_Available_Till
     {
         [EnumMember(Value = "2026-01-13")]
         #pragma warning disable CS1591

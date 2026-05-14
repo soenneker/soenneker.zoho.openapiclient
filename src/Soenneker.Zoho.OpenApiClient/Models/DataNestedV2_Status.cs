@@ -5,7 +5,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>Record Status</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum DataNestedBase_Status
+    public enum DataNestedV2_Status
     {
         [EnumMember(Value = "Not in Use")]
         #pragma warning disable CS1591

@@ -45,7 +45,6 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile400">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PermissionErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse">When receiving a 404 status code</exception>
@@ -62,7 +61,6 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile400.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.PermissionErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse.CreateFromDiscriminatorValue },
@@ -106,7 +104,6 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item
         /// <param name="body">Update profiles request.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile400">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PermissionErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse">When receiving a 404 status code</exception>
@@ -124,7 +121,6 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile400.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.PermissionErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse.CreateFromDiscriminatorValue },
