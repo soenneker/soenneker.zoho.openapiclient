@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains pagination metadata such as number of items per page, total count, current page number, and whether more records are available.
+    /// Represents the pagination metadata returned with list responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaginationInfoResponse : IParsable
     {
-        /// <summary>&quot;Field: count&quot;</summary>
+        /// <summary>Represents the total number of webhooks returned in the current page.</summary>
         public int? Count { get; set; }
-        /// <summary>&quot;Field: max_limit&quot;</summary>
+        /// <summary>Represents the maximum number of records allowed per page for this resource.</summary>
         public int? MaxLimit { get; set; }
-        /// <summary>&quot;Field: more_records&quot;</summary>
+        /// <summary>Indicates whether additional pages of results are available.Possible values:**true** - More records exist beyond the current page.**false** - The current page contains the last records.</summary>
         public bool? MoreRecords { get; set; }
-        /// <summary>&quot;Field: page&quot;</summary>
+        /// <summary>Represents the current page number in the paginated response.</summary>
         public int? Page { get; set; }
-        /// <summary>&quot;Field: per_page&quot;</summary>
+        /// <summary>Represents the number of records returned per page in the paginated response.</summary>
         public int? PerPage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

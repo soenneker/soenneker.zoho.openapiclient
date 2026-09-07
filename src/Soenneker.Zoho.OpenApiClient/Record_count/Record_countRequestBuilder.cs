@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count
     public partial class Record_countRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.record_count.item collection</summary>
-        /// <param name="position">The API name of the module to retrieve the record count for.</param>
+        /// <param name="position">Specify the API name of the module for which you want to retrieve the record count. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Record_count.Item.WithModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Record_count.Item.WithModuleApiNameItemRequestBuilder this[string position]
         {

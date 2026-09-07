@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Download_inline_images.Item
     public partial class WithModuleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.download_inline_images.item.item collection</summary>
-        /// <param name="position">The unique ID of the record.</param>
+        /// <param name="position">Specify the unique ID of the record associated with the email containing the inline image.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

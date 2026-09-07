@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Actions;
 using Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pick_list_values;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithFieldItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The actions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Actions.ActionsRequestBuilder Actions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The pick_list_values property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pick_list_values.Pick_list_valuesRequestBuilder Pick_list_values
         {

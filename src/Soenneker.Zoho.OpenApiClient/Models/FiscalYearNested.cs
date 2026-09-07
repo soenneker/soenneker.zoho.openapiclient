@@ -2,37 +2,56 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Root key of the API
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomFiscalYearPartialUpdate"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdate"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.StandardFiscalYearUpdate"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdate"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SwitchToStandardFiscalYearUpdate"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FiscalYearNested : IParsable
+    public partial class FiscalYearNested : IComposedTypeWrapper, IParsable
     {
-        /// <summary>calendar_type of the fiscal_year can only be configured with &quot;gregorian&quot; or &quot;custom&quot; which indicates standard or custom fiscal year.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_calendar_type? CalendarType { get; set; }
-        /// <summary>Indicates whether the fiscal year label is based on the start month or end month</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_display_based_on? DisplayBasedOn { get; set; }
-        /// <summary>interval_display_option indicates the display format for which the periods should get displayed.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_interval_display_option? IntervalDisplayOption { get; set; }
-        /// <summary>It indicates the start_date for the custom fiscal year which can be configured only for the current year.</summary>
-        public Date? StartDate { get; set; }
-        /// <summary>start_month is the month when the fiscal year begins. It can be configured for standard fiscal year(calendar_type = &apos;gregorian&apos;).</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_start_month? StartMonth { get; set; }
-        /// <summary>Structure pattern for custom fiscal year configuration. It allows 7 structures 4-4-5, 4-5-4, 5-4-4 (quarter-based) and 3-3-3-4, 3-3-4-3, 3-4-3-3, 4-3-3-3 (year-based) -- describing how weeks are distributed across &quot;periods&quot; and &quot;quarters&quot;.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_structure? Structure { get; set; }
-        /// <summary>In Custom Fiscal Year, a surplus week is an extra week added to keep the fiscal calendar aligned with the actual calendar year.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomFiscalYearPartialUpdate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SurplusWeekNested? SurplusWeek { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomFiscalYearPartialUpdate? CustomFiscalYearPartialUpdate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SurplusWeekNested SurplusWeek { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomFiscalYearPartialUpdate CustomFiscalYearPartialUpdate { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdate"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdate? DisplayBasedOnFiscalYearUpdate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdate DisplayBasedOnFiscalYearUpdate { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.StandardFiscalYearUpdate"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.StandardFiscalYearUpdate? StandardFiscalYearUpdate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.StandardFiscalYearUpdate StandardFiscalYearUpdate { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdate"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdate? SwitchToCustomFiscalYearUpdate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdate SwitchToCustomFiscalYearUpdate { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SwitchToStandardFiscalYearUpdate"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.SwitchToStandardFiscalYearUpdate? SwitchToStandardFiscalYearUpdate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.SwitchToStandardFiscalYearUpdate SwitchToStandardFiscalYearUpdate { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +61,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested();
+            if("DisplayBasedOnFiscalYearUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DisplayBasedOnFiscalYearUpdate = new global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdate();
+            }
+            else if("StandardFiscalYearUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.StandardFiscalYearUpdate = new global::Soenneker.Zoho.OpenApiClient.Models.StandardFiscalYearUpdate();
+            }
+            else if("SwitchToCustomFiscalYearUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SwitchToCustomFiscalYearUpdate = new global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdate();
+            }
+            else if("SwitchToStandardFiscalYearUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SwitchToStandardFiscalYearUpdate = new global::Soenneker.Zoho.OpenApiClient.Models.SwitchToStandardFiscalYearUpdate();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,16 +87,27 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CustomFiscalYearPartialUpdate != null)
             {
-                { "calendar_type", n => { CalendarType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_calendar_type>(); } },
-                { "display_based_on", n => { DisplayBasedOn = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_display_based_on>(); } },
-                { "interval_display_option", n => { IntervalDisplayOption = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_interval_display_option>(); } },
-                { "start_date", n => { StartDate = n.GetDateValue(); } },
-                { "start_month", n => { StartMonth = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_start_month>(); } },
-                { "structure", n => { Structure = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_structure>(); } },
-                { "surplus_week", n => { SurplusWeek = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SurplusWeekNested>(global::Soenneker.Zoho.OpenApiClient.Models.SurplusWeekNested.CreateFromDiscriminatorValue); } },
-            };
+                return CustomFiscalYearPartialUpdate.GetFieldDeserializers();
+            }
+            else if(DisplayBasedOnFiscalYearUpdate != null)
+            {
+                return DisplayBasedOnFiscalYearUpdate.GetFieldDeserializers();
+            }
+            else if(StandardFiscalYearUpdate != null)
+            {
+                return StandardFiscalYearUpdate.GetFieldDeserializers();
+            }
+            else if(SwitchToCustomFiscalYearUpdate != null)
+            {
+                return SwitchToCustomFiscalYearUpdate.GetFieldDeserializers();
+            }
+            else if(SwitchToStandardFiscalYearUpdate != null)
+            {
+                return SwitchToStandardFiscalYearUpdate.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -68,13 +116,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_calendar_type>("calendar_type", CalendarType);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_display_based_on>("display_based_on", DisplayBasedOn);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_interval_display_option>("interval_display_option", IntervalDisplayOption);
-            writer.WriteDateValue("start_date", StartDate);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_start_month>("start_month", StartMonth);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested_structure>("structure", Structure);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SurplusWeekNested>("surplus_week", SurplusWeek);
+            if(CustomFiscalYearPartialUpdate != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomFiscalYearPartialUpdate>(null, CustomFiscalYearPartialUpdate);
+            }
+            else if(DisplayBasedOnFiscalYearUpdate != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdate>(null, DisplayBasedOnFiscalYearUpdate);
+            }
+            else if(StandardFiscalYearUpdate != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.StandardFiscalYearUpdate>(null, StandardFiscalYearUpdate);
+            }
+            else if(SwitchToCustomFiscalYearUpdate != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdate>(null, SwitchToCustomFiscalYearUpdate);
+            }
+            else if(SwitchToStandardFiscalYearUpdate != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SwitchToStandardFiscalYearUpdate>(null, SwitchToStandardFiscalYearUpdate);
+            }
         }
     }
 }

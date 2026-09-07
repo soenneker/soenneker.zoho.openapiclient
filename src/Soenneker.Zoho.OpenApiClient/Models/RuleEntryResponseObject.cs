@@ -13,7 +13,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RuleEntryResponseObject : IParsable
     {
-        /// <summary>Assign to response object schema</summary>
+        /// <summary>Indicates whether Digital Employee (agent) users are eligible for assignment in this rule entry.</summary>
+        public bool? AllowAgentUser { get; set; }
+        /// <summary>Assign to response object schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject? AssignTo { get; set; }
@@ -21,15 +23,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject AssignTo { get; set; }
 #endif
-        /// <summary>Defines the record criteria based on which records will be filtered and assignment logic defined for current rule entry will be applied. If criteria is not provided or is null, all records entering current rule entry will be assigned based on current rule entry&apos;s assignment logic.</summary>
+        /// <summary>Defines the record criteria based on which records is filtered and assignment logic defined for current rule entry is applied. If criteria is not provided or is null, all records entering current rule entry is assigned based on current rule entry&apos;s assignment logic. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject_criteria? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject_criteria Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty Criteria { get; set; }
 #endif
-        /// <summary>Defines the list of different actions to be executed after owner assignment</summary>
+        /// <summary>Defines the list of different actions to be executed after owner assignment. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject>? FollowupActions { get; set; }
@@ -37,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject> FollowupActions { get; set; }
 #endif
-        /// <summary>ID of the resource</summary>
+        /// <summary>ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -45,15 +47,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Field: sequence_number&quot;</summary>
+        /// <summary>Represents the sequence number returned for the Assignment Rule operation. </summary>
         public int? SequenceNumber { get; set; }
-        /// <summary>Defines additional availability checks to be performed before choosing a user as owner. A user will be assigned as owner only if it satisfies the mentioned availability conditions.</summary>
+        /// <summary>Defines additional availability checks to be performed before choosing a user as owner. A user is assigned as owner only if it satisfies the mentioned availability conditions. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject_user_availability_based_on?>? UserAvailabilityBasedOn { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem?>? UserAvailabilityBasedOn { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject_user_availability_based_on?> UserAvailabilityBasedOn { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem?> UserAvailabilityBasedOn { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,12 +75,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allow_agent_user", n => { AllowAgentUser = n.GetBoolValue(); } },
                 { "assign_to", n => { AssignTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject>(global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject.CreateFromDiscriminatorValue); } },
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject_criteria>(global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject_criteria.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty>(global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty.CreateFromDiscriminatorValue); } },
                 { "followup_actions", n => { FollowupActions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject>(global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "sequence_number", n => { SequenceNumber = n.GetIntValue(); } },
-                { "user_availability_based_on", n => { UserAvailabilityBasedOn = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject_user_availability_based_on>()?.AsList(); } },
+                { "user_availability_based_on", n => { UserAvailabilityBasedOn = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -88,12 +91,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allow_agent_user", AllowAgentUser);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject>("assign_to", AssignTo);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject_criteria>("criteria", Criteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty>("criteria", Criteria);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject>("followup_actions", FollowupActions);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("sequence_number", SequenceNumber);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject_user_availability_based_on>("user_availability_based_on", UserAvailabilityBasedOn);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem>("user_availability_based_on", UserAvailabilityBasedOn);
         }
     }
 }

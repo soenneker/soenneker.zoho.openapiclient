@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Specifies a related list to count and optional filtering criteria.
+    /// Represents a single related list count specification, including the target related list and optional filtering criteria to apply before counting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedRecordCountItem : IParsable
     {
-        /// <summary>Optional filtering and selection parameters to apply before counting records.</summary>
+        /// <summary>Represents optional filtering and selection parameters applied to related records before counting. Includes support for approval status, conversion status, category type, and field-level equality filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.CountParameters? Params { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.CountParameters Params { get; set; }
 #endif
-        /// <summary>Identifies a specific related list by its API name and unique identifier.</summary>
+        /// <summary>Represents a related list identified by its API name and unique ID. Used in both the request to specify the target related list and in the response to echo the queried related list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListReference? RelatedList { get; set; }

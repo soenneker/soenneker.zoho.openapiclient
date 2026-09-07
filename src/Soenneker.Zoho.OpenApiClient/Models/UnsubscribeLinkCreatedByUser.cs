@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// User who created the unsubscribe link, including name and id.
+    /// User who created the unsubscribe link, including the user name and ID. Refer to the [Get Users](users.yaml#$.paths./users.get) endpoint for details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnsubscribeLinkCreatedByUser : IParsable
     {
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique identifier of the user who created the unsubscribe link unsubscribe link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Field: name&quot;</summary>
+        /// <summary>Represents the name of the user who created the unsubscribe link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

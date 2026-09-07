@@ -13,7 +13,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariablesScopedBatchUpdateResponse : IParsable
     {
-        /// <summary>&quot;Field: variables&quot;</summary>
+        /// <summary>Array of variable update items to process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableOperationResult>? Variables { get; set; }

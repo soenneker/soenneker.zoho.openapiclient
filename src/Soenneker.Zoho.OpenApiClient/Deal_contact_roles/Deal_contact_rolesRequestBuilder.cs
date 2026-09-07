@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_contact_roles
     public partial class Deal_contact_rolesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.deal_contact_roles.item collection</summary>
-        /// <param name="position">The module name for the deal record</param>
+        /// <param name="position">Represents the module name for the deal record. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to get the required module API name.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.WithModuleItemRequestBuilder this[string position]
         {

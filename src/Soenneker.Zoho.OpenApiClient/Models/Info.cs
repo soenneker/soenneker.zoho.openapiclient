@@ -13,11 +13,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Info : IParsable
     {
-        /// <summary>Number of records returned in the current response</summary>
+        /// <summary>Represents the number of records returned in the current response</summary>
         public int? Count { get; set; }
         /// <summary>Indicates whether more records are available</summary>
         public bool? MoreRecords { get; set; }
-        /// <summary>Token to retrieve the next page of results</summary>
+        /// <summary>Represents the token to retrieve the next page of results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextPageToken { get; set; }
@@ -25,13 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string NextPageToken { get; set; }
 #endif
-        /// <summary>Current page number</summary>
+        /// <summary>Represents the current page number</summary>
         public int? Page { get; set; }
-        /// <summary>Expiry timestamp for the page tokens</summary>
+        /// <summary>Represents the expiry timestamp for the page tokens</summary>
         public DateTimeOffset? PageTokenExpiry { get; set; }
-        /// <summary>Number of records per page</summary>
+        /// <summary>Represents the number of records per page</summary>
         public int? PerPage { get; set; }
-        /// <summary>Token to retrieve the previous page of results</summary>
+        /// <summary>Represents the token to retrieve the previous page of results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreviousPageToken { get; set; }

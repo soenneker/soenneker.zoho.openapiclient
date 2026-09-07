@@ -13,21 +13,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TouchPointScoreConfiguration : IParsable
     {
-        /// <summary>Channel (Related record) object</summary>
+        /// <summary>used to delete the signal rule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationGroup? Group { get; set; }
+        public UntypedNode? Delete { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationGroup Group { get; set; }
+        public UntypedNode Delete { get; set; }
 #endif
-        /// <summary>score configurations in the mentioned channel</summary>
+        /// <summary>Signal rule primary key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_rules>? Rules { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_rules> Rules { get; set; }
+        public string Id { get; set; }
+#endif
+        /// <summary>Points that should be added for the signal (Required for CREATE)</summary>
+        public int? Score { get; set; }
+        /// <summary>Details about touch point signals used in scoring, including signal namespace and ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.SignalInformation? Signal { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.SignalInformation Signal { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,8 +57,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationGroup>(global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationGroup.CreateFromDiscriminatorValue); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_rules>(global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_rules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "_delete", n => { Delete = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "score", n => { Score = n.GetIntValue(); } },
+                { "signal", n => { Signal = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SignalInformation>(global::Soenneker.Zoho.OpenApiClient.Models.SignalInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,8 +70,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationGroup>("group", Group);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration_rules>("rules", Rules);
+            writer.WriteObjectValue<UntypedNode>("_delete", Delete);
+            writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("score", Score);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SignalInformation>("signal", Signal);
         }
     }
 }

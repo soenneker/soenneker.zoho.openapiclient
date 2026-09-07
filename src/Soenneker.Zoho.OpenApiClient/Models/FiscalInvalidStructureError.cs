@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Invalid structure
+    /// Represents the error returned when the structure field value is not one of the supported patterns.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FiscalInvalidStructureError : IParsable
     {
-        /// <summary>Error code</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureError_code? Code { get; set; }
-        /// <summary>Error details with validation information</summary>
+        /// <summary>Represents the error code for this response.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode? Code { get; set; }
+        /// <summary>Represents the error details with information about the field that caused the validation failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureErrorDetails? Details { get; set; }
@@ -23,10 +23,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureErrorDetails Details { get; set; }
 #endif
-        /// <summary>Error message</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureError_message? Message { get; set; }
-        /// <summary>Error status</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureError_status? Status { get; set; }
+        /// <summary>Represents the error message. Possible values: `Please give a valid structure`.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.PleaseGiveAValidStructureMessage? Message { get; set; }
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,10 +45,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureError_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureErrorDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureErrorDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureError_message>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureError_status>(); } },
+                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PleaseGiveAValidStructureMessage>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -58,10 +58,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureError_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureErrorDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureError_message>("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidStructureError_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PleaseGiveAValidStructureMessage>("message", Message);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

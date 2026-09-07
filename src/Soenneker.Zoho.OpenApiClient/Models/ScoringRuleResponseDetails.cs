@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response details for scoring rule operations, including status, code, and associated messages.
+    /// Represents the per-item operation result for a Scoring Rule action, including status, code, and message.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScoringRuleResponseDetails : IParsable
     {
-        /// <summary>&quot;Field: code&quot;</summary>
+        /// <summary>Represents the result code for this per-item Scoring Rule operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>Details of an operation, including the identifier of affected fields.</summary>
+        /// <summary>Represents the details returned in a successful Scoring Rule operation, including the affected rule ID and any unsaved custom fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetails? Details { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetails Details { get; set; }
 #endif
-        /// <summary>&quot;Field: message&quot;</summary>
+        /// <summary>Response message for the scoring rule operation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>&quot;Field: status&quot;</summary>
+        /// <summary>Response status for the scoring rule operation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

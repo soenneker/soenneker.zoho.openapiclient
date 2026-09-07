@@ -34,30 +34,30 @@ namespace Soenneker.Zoho.OpenApiClient.Features.Features.Item
         {
         }
         /// <summary>
-        /// To get the available feature specific details for the current edition
+        /// To retrieve the detailed information for a specific feature in your Zoho CRM organization, including its usage limits, consumption details, and sub-feature components.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSepcificDetails200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSepcificDetails400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSepcificDetails200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Features.Features.Item.WithFeatureItemRequestBuilder.WithFeatureItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Features.Features.Item.WithFeatureItemRequestBuilder.WithFeatureItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSepcificDetails200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Features.Features.Item.WithFeatureItemRequestBuilder.WithFeatureItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Features.Features.Item.WithFeatureItemRequestBuilder.WithFeatureItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSepcificDetails400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSepcificDetails200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSepcificDetails200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To get the available feature specific details for the current edition
+        /// To retrieve the detailed information for a specific feature in your Zoho CRM organization, including its usage limits, consumption details, and sub-feature components.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,12 +85,12 @@ namespace Soenneker.Zoho.OpenApiClient.Features.Features.Item
             return new global::Soenneker.Zoho.OpenApiClient.Features.Features.Item.WithFeatureItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To get the available feature specific details for the current edition
+        /// To retrieve the detailed information for a specific feature in your Zoho CRM organization, including its usage limits, consumption details, and sub-feature components.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithFeatureItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>module name</summary>
+            /// <summary>Specify the API name of the CRM module to filter features that are specific to that module. Refer to the [Get Modules](modules.json#$.paths./settings/modules.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

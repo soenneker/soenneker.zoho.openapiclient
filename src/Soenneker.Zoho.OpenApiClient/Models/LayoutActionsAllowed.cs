@@ -8,24 +8,24 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Permissions indicating which operations are allowed on a layout
+    /// Represents the set of Boolean permission flags indicating which operations are permitted on a layout, such as editing, renaming, cloning, deactivating, and deleting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutActionsAllowed : IParsable
     {
-        /// <summary>Permission to clone the layout</summary>
+        /// <summary>Indicates whether the layout can be duplicated to create a new layout with the same field and section configuration. Possible values: `true` — cloning the layout is permitted; `false` — the layout cannot be cloned.</summary>
         public bool? Clone { get; set; }
-        /// <summary>Permission to deactivate the layout</summary>
+        /// <summary>Indicates whether the layout can be deactivated, preventing it from being assigned to new records while preserving existing associations. Possible values: `true` — deactivating the layout is permitted; `false` — the layout cannot be deactivated.</summary>
         public bool? Deactivate { get; set; }
-        /// <summary>Permission to delete the layout</summary>
+        /// <summary>Indicates whether the layout can be permanently removed from the module configuration. Possible values: `true` — deleting the layout is permitted; `false` — the layout cannot be deleted.</summary>
         public bool? Delete { get; set; }
-        /// <summary>Permission to downgrade the layout</summary>
+        /// <summary>Indicates whether the layout can be downgraded to a lower-tier configuration or reverted to a previous edition-level feature set. Possible values: `true` — downgrading the layout is permitted; `false` — the layout cannot be downgraded.</summary>
         public bool? Downgrade { get; set; }
-        /// <summary>Permission to edit the layout</summary>
+        /// <summary>Indicates whether the layout&apos;s field arrangement, sections, and configuration can be modified. Possible values: `true` — editing the layout is permitted; `false` — the layout is locked against edits.</summary>
         public bool? Edit { get; set; }
-        /// <summary>Permission to rename the layout</summary>
+        /// <summary>Indicates whether the layout&apos;s display name can be changed. Possible values: `true` — renaming the layout is permitted; `false` — the layout name is locked.</summary>
         public bool? Rename { get; set; }
-        /// <summary>Permission to set layout-level permissions</summary>
+        /// <summary>Indicates whether profile-level permission assignments for the layout can be configured. Possible values: `true` — managing layout permissions is permitted; `false` — permission settings cannot be modified for this layout.</summary>
         public bool? SetLayoutPermissions { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

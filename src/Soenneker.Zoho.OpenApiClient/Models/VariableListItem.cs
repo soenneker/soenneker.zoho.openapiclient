@@ -13,7 +13,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariableListItem : IParsable
     {
-        /// <summary>&quot;Field: api_name&quot;</summary>
+        /// <summary>The API name of the CRM variable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>&quot;Field: description&quot;</summary>
+        /// <summary>The description of the variable, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>The unique ID of the variable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Field: name&quot;</summary>
+        /// <summary>The display name of the variable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -45,17 +45,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Field: read_only&quot;</summary>
+        /// <summary>Indicates whether the variable is read-only.</summary>
         public bool? ReadOnly { get; set; }
-        /// <summary>&quot;Field: rid&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Rid { get; set; }
-#nullable restore
-#else
-        public string Rid { get; set; }
-#endif
-        /// <summary>&quot;Field: source&quot;</summary>
+        /// <summary>The source of the variable (for example, crm).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }
@@ -63,7 +55,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
-        /// <summary>&quot;Field: type&quot;</summary>
+        /// <summary>The data type of the variable (for example, text, integer, percent, decimal, currency, date, datetime, email, phone, url, checkbox, textarea, long).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -71,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>&quot;Field: value&quot;</summary>
+        /// <summary>The current value of the variable, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -79,13 +71,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Value { get; set; }
 #endif
-        /// <summary>Brief reference to a variable group included in list responses, containing id and apiName.</summary>
+        /// <summary>Base schema for variable_group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupBrief? VariableGroup { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSchema? VariableGroup { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupBrief VariableGroup { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSchema VariableGroup { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -110,11 +102,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
-                { "rid", n => { Rid = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
-                { "variable_group", n => { VariableGroup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupBrief>(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupBrief.CreateFromDiscriminatorValue); } },
+                { "variable_group", n => { VariableGroup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSchema>(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSchema.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,11 +120,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("read_only", ReadOnly);
-            writer.WriteStringValue("rid", Rid);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("value", Value);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupBrief>("variable_group", VariableGroup);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSchema>("variable_group", VariableGroup);
         }
     }
 }

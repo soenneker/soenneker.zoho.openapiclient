@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details with validation information
+    /// Represents the error details containing additional context about the failed request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DependentFieldMissingSchemaDetails : IParsable
     {
-        /// <summary>&quot;Detail field: api_name&quot;</summary>
+        /// <summary>Represents the **api_name** value from the error detail object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>&quot;Detail field: dependee&quot;</summary>
+        /// <summary>Represents the **dependee** value from the error detail object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchemaDetailsDependee? Dependee { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchemaDetailsDependee Dependee { get; set; }
 #endif
-        /// <summary>&quot;Detail field: json_path&quot;</summary>
+        /// <summary>Represents the **json_path** value from the error detail object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JsonPath { get; set; }

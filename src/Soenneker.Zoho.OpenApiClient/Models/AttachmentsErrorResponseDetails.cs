@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional error details
+    /// Represents the additional error details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttachmentsErrorResponseDetails : IParsable
     {
-        /// <summary>Name of the parameter causing the error</summary>
+        /// <summary>Represents the name of the parameter causing the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParamName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ParamName { get; set; }
 #endif
-        /// <summary>Index of the resource path causing the error</summary>
+        /// <summary>Represents the index of the resource path causing the error</summary>
         public int? ResourcePathIndex { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

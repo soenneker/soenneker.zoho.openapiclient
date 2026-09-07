@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted
     public partial class DeletedRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.related_records.item.deleted.item collection</summary>
-        /// <param name="position">The unique identifier of the parent record. Must be a valid numeric record ID.</param>
+        /// <param name="position">Specify the unique numeric identifier of the parent record.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.WithParentRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.WithParentRecordItemRequestBuilder this[string position]
         {

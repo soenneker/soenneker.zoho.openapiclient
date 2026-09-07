@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Emails_sharing_details.Item
     public partial class WithModuleApiNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.emails_sharing_details.item.item collection</summary>
-        /// <param name="position">ID of the record whose email sharing details are to be fetched</param>
+        /// <param name="position">Specify the **ID** of the **record** for which you want to retrieve the email sharing details.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Emails_sharing_details.Item.Item.ModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Emails_sharing_details.Item.Item.ModuleApiNameItemRequestBuilder this[string position]
         {

@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         {
         }
         /// <summary>
-        /// To retrieve the total number of actions configured in the specified Workflow rules, including both instant and scheduled actions. The response includes a count of actions, categorized by action type.
+        /// To retrieve the total number of actions configured in the specified workflow rules in your Zoho CRM organization, including counts categorized by action type across both instant and scheduled actions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowActionCountsResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowActionCountsResponseSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowActionCountsResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the total number of actions configured in the specified Workflow rules, including both instant and scheduled actions. The response includes a count of actions, categorized by action type.
+        /// To retrieve the total number of actions configured in the specified workflow rules in your Zoho CRM organization, including counts categorized by action type across both instant and scheduled actions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,12 +87,12 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return new global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Actions.Actions_count.Actions_countRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To retrieve the total number of actions configured in the specified Workflow rules, including both instant and scheduled actions. The response includes a count of actions, categorized by action type.
+        /// To retrieve the total number of actions configured in the specified workflow rules in your Zoho CRM organization, including counts categorized by action type across both instant and scheduled actions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Actions_countRequestBuilderGetQueryParameters 
         {
-            /// <summary>Unique IDs of Workflow rule(s). Pass up to ten Workflow rule IDs, in a comma separated format.</summary>
+            /// <summary>Specifies one or more workflow rule IDs to filter the results. Provide multiple IDs as comma-separated values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]

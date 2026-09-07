@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories.
         {
         }
         /// <summary>
-        /// Remove Territory from a User
+        /// To remove a specific territory from a user in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories.
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get specific territory of a user
+        /// To retrieve a specific territory assigned to a user in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories.
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove Territory from a User
+        /// To remove a specific territory from a user in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,7 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories.
             return requestInfo;
         }
         /// <summary>
-        /// Get specific territory of a user
+        /// To retrieve a specific territory assigned to a user in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

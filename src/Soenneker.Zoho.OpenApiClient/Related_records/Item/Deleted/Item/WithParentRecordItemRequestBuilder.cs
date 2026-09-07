@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item
     public partial class WithParentRecordItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.related_records.item.deleted.item.item collection</summary>
-        /// <param name="position">The name of the related list (module) containing the records to retrieve or modify</param>
+        /// <param name="position">Specify the API name of the related list containing the records to retrieve or modify. Refer to the [Get Related Lists](https://www.zoho.com/crm/developer/docs/api/v8/related-list-meta.html) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.Item.WithRelatedListItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.Item.WithRelatedListItemRequestBuilder this[string position]
         {

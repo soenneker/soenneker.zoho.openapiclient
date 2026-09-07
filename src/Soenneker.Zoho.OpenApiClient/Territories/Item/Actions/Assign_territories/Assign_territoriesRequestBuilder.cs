@@ -34,45 +34,38 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Item.Actions.Assign_territori
         {
         }
         /// <summary>
-        /// Auto-generated description for operation `Asssign Territories To Records`.
+        /// To assign one or more territories to multiple records in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode"/></returns>
-        /// <param name="body">The `schema` field of type `object`.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssignSuccessResponse"/></returns>
+        /// <param name="body">Specify the records and territories to assign.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAsssignTerritoriesToRecords500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAsssignTerritoriesToRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssignSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAssignTerritoriesToRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAsssignTerritoriesToRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssignSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAssignTerritoriesToRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAsssignTerritoriesToRecords500.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssignSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssignSuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Auto-generated description for operation `Asssign Territories To Records`.
+        /// To assign one or more territories to multiple records in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The `schema` field of type `object`.</param>
+        /// <param name="body">Specify the records and territories to assign.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAsssignTerritoriesToRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAssignTerritoriesToRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAsssignTerritoriesToRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesAssignTerritoriesToRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

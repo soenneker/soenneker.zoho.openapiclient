@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Zoho.OpenApiClient.Models;
+using Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.Actions;
 using Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -18,8 +19,13 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Variable_groupsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The actions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.Actions.ActionsRequestBuilder Actions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.variable_groups.settings.variable_groups.item collection</summary>
-        /// <param name="position">variable groups id in url path</param>
+        /// <param name="position">Specifies the unique ID of the variable group to retrieve or update.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.Item.Variable_groupsItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.Item.Variable_groupsItemRequestBuilder this[string position]
         {
@@ -47,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups
         {
         }
         /// <summary>
-        /// To get the list variable groups created in crm org
+        /// To retrieve a list of all variable groups in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,10 +76,10 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update variable group details
+        /// To update the details of one or more variable groups in your Zoho CRM organization. The request accepts a maximum of 10 variable group items. When individual items succeed or fail independently, the API returns a 207 multi-status response with per-item results.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupCollectionResponse"/></returns>
-        /// <param name="body">Alternate request wrapper containing a variable_groups array of update items for batch processing.</param>
+        /// <param name="body">Represents the request body for the bulk update variable groups operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsPermissionDeniedError">When receiving a 403 status code</exception>
@@ -95,7 +101,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupCollectionResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To get the list variable groups created in crm org
+        /// To retrieve a list of all variable groups in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,10 +120,10 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups
             return requestInfo;
         }
         /// <summary>
-        /// Update variable group details
+        /// To update the details of one or more variable groups in your Zoho CRM organization. The request accepts a maximum of 10 variable group items. When individual items succeed or fail independently, the API returns a 207 multi-status response with per-item results.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Alternate request wrapper containing a variable_groups array of update items for batch processing.</param>
+        /// <param name="body">Represents the request body for the bulk update variable groups operation.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

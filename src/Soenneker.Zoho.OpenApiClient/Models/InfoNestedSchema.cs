@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested schema for info
+    /// Represents the pagination metadata included in list response payloads, including the current page, records per page, total count, and whether more records exist.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InfoNestedSchema : IParsable
     {
-        /// <summary>&quot;Field: count&quot;</summary>
+        /// <summary>Represents the total number of records matching the query.</summary>
         public int? Count { get; set; }
-        /// <summary>&quot;Field: more_records&quot;</summary>
+        /// <summary>Indicates whether more records exist beyond the current page.</summary>
         public bool? MoreRecords { get; set; }
-        /// <summary>&quot;Field: page&quot;</summary>
+        /// <summary>Represents the current page number in the paginated response.</summary>
         public int? Page { get; set; }
-        /// <summary>&quot;Field: per_page&quot;</summary>
+        /// <summary>Represents the number of records returned per page.</summary>
         public int? PerPage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

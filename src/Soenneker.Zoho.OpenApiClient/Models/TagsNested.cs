@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Root key
+    /// Represents the request body schema for creating or updating a tag.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TagsNested : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Tag color code</summary>
+        /// <summary>Specify the hex color code for the tag, such as **#FF0000**. Set to null to remove the assigned color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColorCode { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ColorCode { get; set; }
 #endif
-        /// <summary>Tag name (Required)</summary>
+        /// <summary>Specify the name of the tag. The maximum allowed length is 26 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

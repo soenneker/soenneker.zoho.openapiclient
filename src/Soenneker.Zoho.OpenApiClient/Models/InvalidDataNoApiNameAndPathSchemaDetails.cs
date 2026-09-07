@@ -8,12 +8,20 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details with validation information
+    /// Represents the error details containing additional context about the failed request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvalidDataNoApiNameAndPathSchemaDetails : IParsable
     {
-        /// <summary>&quot;Detail field: expected_data_type&quot;</summary>
+        /// <summary>Represents the API name of the field or parameter that caused the validation error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApiName { get; set; }
+#nullable restore
+#else
+        public string ApiName { get; set; }
+#endif
+        /// <summary>Represents the **expected_data_type** value from the error detail object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpectedDataType { get; set; }
@@ -21,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ExpectedDataType { get; set; }
 #endif
-        /// <summary>&quot;Detail field: id&quot;</summary>
+        /// <summary>Represents the **ID** value from the error detail object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,10 +37,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Detail field: maximum_length&quot;</summary>
+        /// <summary>Represents the **maximum_length** value from the error detail object.</summary>
         public int? MaximumLength { get; set; }
-        /// <summary>&quot;Detail field: ids&quot;</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetails_param_name? ParamName { get; set; }
+        /// <summary>Represents the **param_name** value from the error detail object.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetailsParamName? ParamName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,10 +59,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "expected_data_type", n => { ExpectedDataType = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "maximum_length", n => { MaximumLength = n.GetIntValue(); } },
-                { "param_name", n => { ParamName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetails_param_name>(); } },
+                { "param_name", n => { ParamName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetailsParamName>(); } },
             };
         }
         /// <summary>
@@ -64,10 +73,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("expected_data_type", ExpectedDataType);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("maximum_length", MaximumLength);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetails_param_name>("param_name", ParamName);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetailsParamName>("param_name", ParamName);
         }
     }
 }

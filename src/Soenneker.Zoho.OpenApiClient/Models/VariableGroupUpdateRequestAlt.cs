@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Alternate request wrapper containing a variable_groups array of update items for batch processing.
+    /// Represents the request body for the bulk update variable groups operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariableGroupUpdateRequestAlt : IParsable
     {
-        /// <summary>Root key name (Required)</summary>
+        /// <summary>Represents an array of variable group update items for batch processing. The array accepts 1 to 10 items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupUpdateItemAlt>? VariableGroups { get; set; }

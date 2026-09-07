@@ -8,24 +8,24 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Permissions indicating which operations are allowed on a section
+    /// Represents the set of Boolean permission flags indicating which modification operations are permitted on a layout section, such as adding fields, renaming, reordering, and deleting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActionsAllowed : IParsable
     {
-        /// <summary>Permission to add new fields</summary>
+        /// <summary>Indicates whether new fields may be introduced into the layout section. Possible values: `true` — adding fields to the section is permitted; `false` — adding fields to the section is not permitted.</summary>
         public bool? AddField { get; set; }
-        /// <summary>Permission to change column layout</summary>
+        /// <summary>Indicates whether the number of columns displayed within the layout section may be modified. Possible values: `true` — adjusting the column count for the section is permitted; `false` — adjusting the column count for the section is not permitted.</summary>
         public bool? ChangeColumnCount { get; set; }
-        /// <summary>Permission to change tab traversal order</summary>
+        /// <summary>Indicates whether the keyboard tab traversal order of fields within the layout section may be modified. Possible values: `true` — changing the tab traversal order is permitted; `false` — changing the tab traversal order is not permitted.</summary>
         public bool? ChangeTabTraversal { get; set; }
-        /// <summary>Permission to delete the section</summary>
+        /// <summary>Indicates whether the layout section may be permanently removed from the layout. Possible values: `true` — deleting the section is permitted; `false` — deleting the section is not permitted.</summary>
         public bool? Delete { get; set; }
-        /// <summary>Permission to remove fields</summary>
+        /// <summary>Indicates whether existing fields may be detached from the layout section. Possible values: `true` — removing fields from the section is permitted; `false` — removing fields from the section is not permitted.</summary>
         public bool? RemoveField { get; set; }
-        /// <summary>Permission to rename the section</summary>
+        /// <summary>Indicates whether the display name of the layout section may be changed. Possible values: `true` — renaming the section is permitted; `false` — renaming the section is not permitted.</summary>
         public bool? Rename { get; set; }
-        /// <summary>Permission to reorder items</summary>
+        /// <summary>Indicates whether the relative ordering of sections or fields within the layout may be changed. Possible values: `true` — reordering is permitted; `false` — reordering is not permitted.</summary>
         public bool? Reorder { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

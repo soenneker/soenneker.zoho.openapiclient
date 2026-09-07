@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Schema for creating scoring rules, containing an array of scoring rule definitions.
+    /// Represents the request body for the create Scoring Rules operation, containing an array of Scoring Rule definitions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateScoringRuleRequestBody : IParsable
     {
-        /// <summary>root element (Required)</summary>
+        /// <summary>Represents an array of Scoring Rule definitions to create. Required for POST operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePOST>? ScoringRules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePost>? ScoringRules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePOST> ScoringRules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePost> ScoringRules { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scoring_rules", n => { ScoringRules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePOST>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePOST.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "scoring_rules", n => { ScoringRules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePost>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePost.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePOST>("scoring_rules", ScoringRules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePost>("scoring_rules", ScoringRules);
         }
     }
 }

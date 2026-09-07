@@ -34,30 +34,30 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhook_fail
         {
         }
         /// <summary>
-        /// To retrieve detailed information about webhook execution failures in your Zoho CRM organization.
+        /// To retrieve detailed information about webhook execution failures in your Zoho CRM organization.Optionally filter results by module, webhook ID, and date range. If the **from** and **to** parameters are not specified, the API returns webhook failures from the last 30 days by default. The maximum allowed span between **from** and **to** is 90 days.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema13"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailuresResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGetWebhookFailures403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksNoPermissionErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema13?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhook_failures.Webhook_failuresRequestBuilder.Webhook_failuresRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailuresResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhook_failures.Webhook_failuresRequestBuilder.Webhook_failuresRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema13> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhook_failures.Webhook_failuresRequestBuilder.Webhook_failuresRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailuresResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhook_failures.Webhook_failuresRequestBuilder.Webhook_failuresRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGetWebhookFailures403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksNoPermissionErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema13>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema13.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailuresResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailuresResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve detailed information about webhook execution failures in your Zoho CRM organization.
+        /// To retrieve detailed information about webhook execution failures in your Zoho CRM organization.Optionally filter results by module, webhook ID, and date range. If the **from** and **to** parameters are not specified, the API returns webhook failures from the last 30 days by default. The maximum allowed span between **from** and **to** is 90 days.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,29 +85,43 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhook_fail
             return new global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhook_failures.Webhook_failuresRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To retrieve detailed information about webhook execution failures in your Zoho CRM organization.
+        /// To retrieve detailed information about webhook execution failures in your Zoho CRM organization.Optionally filter results by module, webhook ID, and date range. If the **from** and **to** parameters are not specified, the API returns webhook failures from the last 30 days by default. The maximum allowed span between **from** and **to** is 90 days.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Webhook_failuresRequestBuilderGetQueryParameters 
         {
-            /// <summary>The start date in YYYY-MM-DD format, from which webhook failure details are to be fetched.. </summary>
+            /// <summary>Specify the start date (inclusive) for the query window in YYYY-MM-DD format, evaluated in the organization&apos;s time zone. For webhook_failures, defaults to 30 days before **to**; earlier dates are clamped to that 30-day window. For usage_reports, defaults to 30 days before **to**. Future dates return 400 INVALID_DATA.</summary>
             [QueryParameter("from")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhook_failures.GetFromQueryParameterType? From { get; set; }
-            /// <summary>Represents the parent module that the webhook monitors</summary>
+            public Date? From { get; set; }
+            /// <summary>Specify the API name of the parent CRM module to filter webhooks. When omitted, webhooks across all modules are returned. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("module")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhook_failures.GetModuleQueryParameterType? Module { get; set; }
-            /// <summary>To get the list of webhooks from the respective pages. The default value is 1. Note that you cannot use this param with the &quot;page_token&quot; param.</summary>
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
+            /// <summary>Specify the page number for paginated results. Defaults to 1 when omitted. Use together with per_page to navigate large result sets.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Specify how many webhooks to return per page. The default and the maximum possible value is 200.</summary>
+            /// <summary>Specify the number of records to return per page. Default and maximum is **200**.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>The end date in YYYY-MM-DD format, up to which failure records are to be retrieved.</summary>
+            /// <summary>Specify the end date (inclusive) for the query window in YYYY-MM-DD format, evaluated in the organization&apos;s time zone. Defaults to the current date at 23:59:59 when omitted. Must be on or after the **from** date. Future dates are rejected.</summary>
             [QueryParameter("to")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhook_failures.GetToQueryParameterType? To { get; set; }
-            /// <summary>The unique ID of the webhook whose failure details you want to retrieve.</summary>
+            public Date? To { get; set; }
+            /// <summary>Specify the unique identifier of the webhook whose failure records to retrieve. Refer to the [Get Webhooks](webhooks.yaml#$.paths./settings/automation/webhooks.get) resource for valid values. When omitted, failure records for all webhooks are returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("webhook_id")]
-            public int? WebhookId { get; set; }
+            public string? WebhookId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("webhook_id")]
+            public string WebhookId { get; set; }
+#endif
         }
     }
 }

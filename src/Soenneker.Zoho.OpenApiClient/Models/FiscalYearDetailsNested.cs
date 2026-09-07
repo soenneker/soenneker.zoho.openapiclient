@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested schema for details
+    /// Represents the details of the updated fiscal year configuration, including its unique identifier.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FiscalYearDetailsNested : IParsable
     {
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique identifier of the updated fiscal year configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

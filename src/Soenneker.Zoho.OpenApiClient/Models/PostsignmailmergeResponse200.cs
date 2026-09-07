@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Upon successful initiation of sign mail merge the response as follows.
+    /// Represents the response body returned upon successful initiation of the sign mail merge operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostsignmailmergeResponse200 : IParsable
     {
-        /// <summary>&quot;Field: sign_mail_merge&quot;</summary>
+        /// <summary>Represents the list of sign mail merge response objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNested1>? SignMailMerge { get; set; }

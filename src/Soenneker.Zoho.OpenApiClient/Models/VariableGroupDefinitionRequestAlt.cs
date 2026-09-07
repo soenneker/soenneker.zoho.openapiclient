@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Alternate request wrapper containing the variable_groups array for defining or updating variable group metadata.
+    /// Represents the request body for updating a variable group by ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariableGroupDefinitionRequestAlt : IParsable
     {
-        /// <summary>Root key name (Required)</summary>
+        /// <summary>Represents an array containing a single variable group definition item for the update by ID operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupDefinitionInputAlt>? VariableGroups { get; set; }

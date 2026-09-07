@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Picklist option details
+    /// Represents a picklist option with its unique identifier, actual value, and display label.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PicklistOption : IParsable
     {
-        /// <summary>The actual value of the picklist option</summary>
+        /// <summary>Represents the actual stored value of the picklist option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActualValue { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ActualValue { get; set; }
 #endif
-        /// <summary>The display value of the picklist option</summary>
+        /// <summary>Represents the display label of the picklist option as shown in the CRM interface. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayValue { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayValue { get; set; }
 #endif
-        /// <summary>The unique identifier of the picklist option</summary>
+        /// <summary>Represents the unique identifier of the picklist option. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

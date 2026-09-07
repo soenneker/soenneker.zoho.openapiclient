@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested schema for details
+    /// Represents the detailed metadata of the tag, including timestamps, the tag name, color code, and the users who created and last modified it.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TagsDetailsNested : IParsable
     {
-        /// <summary>&quot;Field: color_code&quot;</summary>
+        /// <summary>Represents the hex color code assigned to the tag, such as **#FF0000**. The value is null when no color is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColorCode { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ColorCode { get; set; }
 #endif
-        /// <summary>Nested schema for created_by</summary>
+        /// <summary>Represents the user who created the tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.TagsCreatedByNested? CreatedBy { get; set; }
@@ -29,9 +29,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TagsCreatedByNested CreatedBy { get; set; }
 #endif
-        /// <summary>&quot;Field: created_time&quot;</summary>
+        /// <summary>Represents the creation date and time of the tag.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Nested schema for modified_by</summary>
+        /// <summary>Represents the user who last modified the tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.TagsModifiedByNested? ModifiedBy { get; set; }
@@ -47,9 +47,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TagsModifiedByNested ModifiedBy { get; set; }
 #endif
-        /// <summary>&quot;Field: modified_time&quot;</summary>
+        /// <summary>Represents the last modification date and time of the tag.</summary>
         public DateTimeOffset? ModifiedTime { get; set; }
-        /// <summary>&quot;Field: name&quot;</summary>
+        /// <summary>Represents the name of the tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

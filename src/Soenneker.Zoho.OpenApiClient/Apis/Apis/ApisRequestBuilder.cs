@@ -34,9 +34,9 @@ namespace Soenneker.Zoho.OpenApiClient.Apis.Apis
         {
         }
         /// <summary>
-        /// Returns the list of available REST API endpoints, grouped by module and feature, that the current user can access in this tenant.
+        /// To retrieve the list of available REST API endpoints in your Zoho CRM organization for a specific API version. You can filter the results by module, OAuth scope, or request method using the filters parameter.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponse">When receiving a 400 status code</exception>
@@ -47,11 +47,11 @@ namespace Soenneker.Zoho.OpenApiClient.Apis.Apis
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Apis.Apis.ApisRequestBuilder.ApisRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Apis.Apis.ApisRequestBuilder.ApisRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Apis.Apis.ApisRequestBuilder.ApisRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Apis.Apis.ApisRequestBuilder.ApisRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -64,10 +64,10 @@ namespace Soenneker.Zoho.OpenApiClient.Apis.Apis
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the list of available REST API endpoints, grouped by module and feature, that the current user can access in this tenant.
+        /// To retrieve the list of available REST API endpoints in your Zoho CRM organization for a specific API version. You can filter the results by module, OAuth scope, or request method using the filters parameter.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,12 +95,12 @@ namespace Soenneker.Zoho.OpenApiClient.Apis.Apis
             return new global::Soenneker.Zoho.OpenApiClient.Apis.Apis.ApisRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the list of available REST API endpoints, grouped by module and feature, that the current user can access in this tenant.
+        /// To retrieve the list of available REST API endpoints in your Zoho CRM organization for a specific API version. You can filter the results by module, OAuth scope, or request method using the filters parameter.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApisRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter APIs by OAuth scope.</summary>
+            /// <summary>This parameter allows you to filter the supported APIs for the version specified in the URL. You can filter based on three criteria: module, request method, and OAuth scope. The filter syntax is a JSON object with three fields: **field**, **comparator**, and **value**. The **field** can be one of the following: `module`, `operation_types.method`, or `operation_types.oauth_scope`. The **comparator** can be either `equals` or `contains`. The **value** is the value to filter by. Encode the filter while using it in any API platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]

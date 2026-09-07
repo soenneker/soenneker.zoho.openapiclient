@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error due to ambiguity in surplus week configuration
+    /// Represents the error returned when conflicting fields are sent in the same request — specifically when calendar_type is set to gregorian while also providing fields that are only valid for a custom calendar, such as structure, start_date, interval_display_option, or surplus_week.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AmbiguityError : IParsable
     {
-        /// <summary>Error code</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityError_code? Code { get; set; }
-        /// <summary>Error details with validation information</summary>
+        /// <summary>Error code.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDuringProcessingCode? Code { get; set; }
+        /// <summary>Represents the error details containing the fields that caused the ambiguity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityErrorDetails? Details { get; set; }
@@ -23,10 +23,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityErrorDetails Details { get; set; }
 #endif
-        /// <summary>Error message</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityError_message? Message { get; set; }
-        /// <summary>Error status</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityError_status? Status { get; set; }
+        /// <summary>Represents the error message. Possible values: `Ambiguity while processing`.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityWhileProcessingMessage? Message { get; set; }
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,10 +45,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityError_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDuringProcessingCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityErrorDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityErrorDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityError_message>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityError_status>(); } },
+                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityWhileProcessingMessage>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -58,10 +58,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityError_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDuringProcessingCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityErrorDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityError_message>("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityError_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityWhileProcessingMessage>("message", Message);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

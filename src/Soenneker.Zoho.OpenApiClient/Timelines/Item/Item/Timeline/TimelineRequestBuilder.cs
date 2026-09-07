@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimelineRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/timelines/{module}/{recordId}/__timeline{?filter*,include*,include_inner_details*,include_timeline_type*,page*,page_token*,per_page*,sort_by*,sort_order*}", pathParameters)
+        public TimelineRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/timelines/{module}/{recordId}/__timeline{?filters*,include*,include_inner_details*,include_timeline_types*,page*,page_token*,per_page*,sort_by*,sort_order*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,29 +30,34 @@ namespace Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimelineRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/timelines/{module}/{recordId}/__timeline{?filter*,include*,include_inner_details*,include_timeline_type*,page*,page_token*,per_page*,sort_by*,sort_order*}", rawUrl)
+        public TimelineRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/timelines/{module}/{recordId}/__timeline{?filters*,include*,include_inner_details*,include_timeline_types*,page*,page_token*,per_page*,sort_by*,sort_order*}", rawUrl)
         {
         }
         /// <summary>
-        /// Get Timelines
+        /// To retrieve a paginated list of timeline entries for a specific record in your Zoho CRM organization. Each timeline entry captures an audited event such as field changes, ownership transfers, workflow actions, Approval Process progressions, Scoring Rule updates, and signal events from extensions.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline.TimelineRequestBuilder.TimelineRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline.TimelineRequestBuilder.TimelineRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline.TimelineRequestBuilder.TimelineRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline.TimelineRequestBuilder.TimelineRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Timelines
+        /// To retrieve a paginated list of timeline entries for a specific record in your Zoho CRM organization. Each timeline entry captures an audited event such as field changes, ownership transfers, workflow actions, Approval Process progressions, Scoring Rule updates, and signal events from extensions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,22 +85,22 @@ namespace Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline
             return new global::Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline.TimelineRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Timelines
+        /// To retrieve a paginated list of timeline entries for a specific record in your Zoho CRM organization. Each timeline entry captures an audited event such as field changes, ownership transfers, workflow actions, Approval Process progressions, Scoring Rule updates, and signal events from extensions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimelineRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter criteria for timelines</summary>
+            /// <summary>**`filters` Parameter**The `filters` parameter is used to filter responses from the Timeline API based on specific conditions.Each filter condition consists of the following components:- field`- `comparator`- `value`**Supported `field.api_name` Values**The following values are supported for `field.api_name`:- `record.module.api_name`- `source`- `audited_time`- `done_by.id`**`record.module.api_name`**Use this field to filter timeline details related to the following record types:- `Notes`- `Attachments`- `Tasks`- `Calls`- `Events`- `Emails`**Allowed Comparators**- `equal`- `in`**Allowed Values**- `Notes`- `Attachments`- `Tasks`- `Calls`- `Events`- `Emails`**Example: Filter Notes**```json{  &quot;field&quot;: {    &quot;api_name&quot;: &quot;record.module.api_name&quot;  },  &quot;comparator&quot;: &quot;equal&quot;,  &quot;value&quot;: &quot;Notes&quot;}```**Example: Filter Notes and Tasks**```json{  &quot;field&quot;: {    &quot;api_name&quot;: &quot;record.module.api_name&quot;  },  &quot;comparator&quot;: &quot;in&quot;,  &quot;value&quot;: [&quot;Notes&quot;, &quot;Tasks&quot;]}```**`done_by.id`**Use this field to filter timeline details performed by a specific user.**Allowed Comparators**- `equal`- `in`**Allowed Values**- User IDs**Example**```json{  &quot;field&quot;: {    &quot;api_name&quot;: &quot;done_by.id&quot;  },  &quot;comparator&quot;: &quot;in&quot;,  &quot;value&quot;: [&quot;5843104000000424001&quot;]}```**`audited_time`**Use this field to filter timeline data based on the audit timestamp.**Allowed Comparator**- `between`**Allowed Values**- Time in ISO 8601 format**Example: Filter Timeline Details Between Two Dates**```json{  &quot;field&quot;: {    &quot;api_name&quot;: &quot;audited_time&quot;  },  &quot;comparator&quot;: &quot;between&quot;,  &quot;value&quot;: [    &quot;2023-10-25T00:00:00+12:00&quot;,    &quot;2023-10-30T23:59:59+12:00&quot;  ]}```**`source`**Use this field to filter timeline data based on its source.**Allowed Comparators**- `equal`- `in`**Allowed Values**- `crm_api`- `mass_delete_via_crm_api`- `bulkapi`- `approval_process`- `assignment_rules`- `blueprint`- `mass_update_via_blueprint`- `orchestration`- `convert`- `massconvert`- `custom_function`- `macro`- `crm_ui`- `mass_update`- `mass_update_via_scheduler`- `mass_delete_via_clean_up`- `bulk_action`- `change_owner`- `mass_change_owner_via_scheduler`- `review_process`- `scoringrule`- `wizard`- `workflow`**Example: Filter by a Single Source**```json{  &quot;field&quot;: {    &quot;api_name&quot;: &quot;source&quot;  },  &quot;comparator&quot;: &quot;equal&quot;,  &quot;value&quot;: &quot;crm_ui&quot;}```**Example: Filter by Multiple Sources**```json{  &quot;field&quot;: {    &quot;api_name&quot;: &quot;source&quot;  },  &quot;comparator&quot;: &quot;in&quot;,  &quot;value&quot;: [&quot;crm_api&quot;, &quot;crm_ui&quot;]}```---**Combining Multiple Conditions**Use `group_operator` and `group` to combine multiple filter conditions.**Example**```json{  &quot;group_operator&quot;: &quot;AND&quot;,  &quot;group&quot;: [    {      &quot;field&quot;: {        &quot;api_name&quot;: &quot;record.module.api_name&quot;      },      &quot;comparator&quot;: &quot;in&quot;,      &quot;value&quot;: [&quot;Notes&quot;]    },    {      &quot;field&quot;: {        &quot;api_name&quot;: &quot;source&quot;      },      &quot;comparator&quot;: &quot;in&quot;,      &quot;value&quot;: [&quot;crm_ui&quot;, &quot;crm_api&quot;]    }  ]}```You can also refer to the sample request for the complete structure.&gt; **Note:** The value of the `filters` parameter must be URL-encoded before sending the request.**URL Encoding Example**The following filter:```json{  &quot;comparator&quot;: &quot;between&quot;,  &quot;field&quot;: {    &quot;api_name&quot;: &quot;audited_time&quot;  },  &quot;value&quot;: [    &quot;2023-06-07T00:00:00+05:30&quot;,    &quot;2023-06-07T12:59:59+05:30&quot;  ]}```is encoded as:```textfilters=%7B%22comparator%22%3A%22between%22%2C%22field%22%3A%7B%22api_name%22%3A%22audited_time%22%7D%2C%22value%22%3A%5B%222023-06-07T00%3A00%3A00%2B05%3A30%22%2C%222023-06-07T12%3A59%3A59%2B05%3A30%22%5D%7D```You can use the **Encode URL** and **Decode URL** options in the [URL Encoder/Decoder tool](https://www.zoho.com/toolkit/encode-decode.html) to encode or decode this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("filter")]
-            public string? Filter { get; set; }
+            [QueryParameter("filters")]
+            public string? Filters { get; set; }
 #nullable restore
 #else
-            [QueryParameter("filter")]
-            public string Filter { get; set; }
+            [QueryParameter("filters")]
+            public string Filters { get; set; }
 #endif
-            /// <summary>Additional data to include</summary>
+            /// <summary>Use this parameter if you want to view the details of updates to the record through signals or any other means. The possible values are extension and type. For example, if the record was updated through a signal, then the response will have details of the extension as email insights, while the type of update will be signals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -105,7 +110,7 @@ namespace Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline
             [QueryParameter("include")]
             public string Include { get; set; }
 #endif
-            /// <summary>Flag to include inner details</summary>
+            /// <summary>Use this parameter if you want to retrieve additional details about updates made to a record in the `field_history` object of the response.**Possible Values**- field_history.data_type :  Gives the data type of the field that was updated.- `field_history.field_label` : Gives the label details of the fields that were updated.- field_history.pick_list_values : Represents the list of values available for a picklist field.- `field_history.enable_colour_code` : Indicates whether colour coding is enabled for the picklist values.- `done_by.profile` : Provides details of the user&apos;s profile who updated the record.- `done_by.type__s` : Indicates the type of user (for example, portal user or regular user) who modified the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include_inner_details")]
@@ -115,20 +120,20 @@ namespace Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline
             [QueryParameter("include_inner_details")]
             public string IncludeInnerDetails { get; set; }
 #endif
-            /// <summary>Type of timeline to include</summary>
+            /// <summary>To include extra types in the &quot;timeline&quot; object. You can get &quot;signals&quot; data through this to get signals-related timeline entries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("include_timeline_type")]
-            public string? IncludeTimelineType { get; set; }
+            [QueryParameter("include_timeline_types")]
+            public string? IncludeTimelineTypes { get; set; }
 #nullable restore
 #else
-            [QueryParameter("include_timeline_type")]
-            public string IncludeTimelineType { get; set; }
+            [QueryParameter("include_timeline_types")]
+            public string IncludeTimelineTypes { get; set; }
 #endif
-            /// <summary>Page number for pagination</summary>
+            /// <summary>Specifies the page number for retrieving timeline entries in paginated results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Token for pagination</summary>
+            /// <summary>Specify the **next_page_token** or the **previous_page_token** after you have paginated and retrieved 200 records. Note that you cannot give **per_page** parameter if you give **page_token** in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("page_token")]
@@ -138,15 +143,15 @@ namespace Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline
             [QueryParameter("page_token")]
             public string PageToken { get; set; }
 #endif
-            /// <summary>Number of records per page</summary>
+            /// <summary>Specifies the number of timeline entries to return per page. The value must be **3**.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Field to sort the timelines by</summary>
+            /// <summary>Specifies the field to sort timeline entries by. The only supported value is **audited_time**.</summary>
             [QueryParameter("sort_by")]
-            public global::Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline.GetSort_byQueryParameterType? SortBy { get; set; }
-            /// <summary>Sort order for the timelines</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.AuditedTimeSortBy? SortBy { get; set; }
+            /// <summary>Specifies the sort order for timeline entries. Possible values: **asc**, **desc**.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline.GetSort_orderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesSortOrder? SortOrder { get; set; }
         }
     }
 }

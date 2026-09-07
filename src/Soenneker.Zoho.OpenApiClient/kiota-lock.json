@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "1325C12ABA81CC60F8D81745AA50CE686BE4C84D86B7FE823406B1461B1E4DA7BFEBE66E78386C7A041AEC1DF7D2215E3CE99854B4E5F819661A618522A5E739",
+  "descriptionHash": "285FA8C0719935E9C725830E49594C3A231FB3EAF7B0AC02976B2D202B35B3F1EF985F5AE8C0FBB90A9AB3C173EC50B028C2C2824C5A90E9B406296CE77F7848",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.1",
+  "kiotaVersion": "1.35.0",
   "clientClassName": "ZohoOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Zoho.OpenApiClient",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

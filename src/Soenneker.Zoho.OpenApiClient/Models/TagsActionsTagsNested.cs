@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// root key
+    /// Nested schema for tag details in requests.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TagsActionsTagsNested : IParsable
     {
-        /// <summary>tag color</summary>
+        /// <summary>Color code of the tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColorCode { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ColorCode { get; set; }
 #endif
-        /// <summary>merged tag id</summary>
+        /// <summary>ID of the tag to be merged into the master tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConflictId { get; set; }
@@ -29,9 +29,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ConflictId { get; set; }
 #endif
-        /// <summary>merged time</summary>
+        /// <summary>Last modification timestamp of the tag</summary>
         public DateTimeOffset? ModifiedTime { get; set; }
-        /// <summary>tag name</summary>
+        /// <summary>Tag name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

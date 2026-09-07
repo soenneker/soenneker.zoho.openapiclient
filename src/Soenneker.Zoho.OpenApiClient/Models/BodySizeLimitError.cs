@@ -14,22 +14,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BodySizeLimitError : ApiException, IParsable
     {
-        /// <summary>Error code</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_code? Code { get; set; }
-        /// <summary>Additional error details</summary>
+        /// <summary>Represents the error code</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorCode? Code { get; set; }
+        /// <summary>Represents the additional error details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorDetailsProperty? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorDetailsProperty Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>Error message</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_message? MessageEscaped { get; set; }
-        /// <summary>Error status indicator</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_status? Status { get; set; }
+        /// <summary>Represents the error message</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorMessage? MessageEscaped { get; set; }
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,10 +48,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_code>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_details>(global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_details.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_message>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_status>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorCode>(); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorDetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorDetailsProperty.CreateFromDiscriminatorValue); } },
+                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorMessage>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -61,10 +61,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_details>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_message>("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitError_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorCode>("code", Code);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorDetailsProperty>("details", Details);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BodySizeLimitErrorMessage>("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Download_inline_images
     public partial class Download_inline_imagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.download_inline_images.item collection</summary>
-        /// <param name="position">The API name of the module.</param>
+        /// <param name="position">Specify the API name of the module to which the record belongs. Supported modules include Leads, Accounts, Contacts, Deals, Quotes, Invoices, Sales Orders, Purchase Orders, and custom modules.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.WithModuleItemRequestBuilder this[string position]
         {

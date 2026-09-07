@@ -34,75 +34,85 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Ma
         {
         }
         /// <summary>
-        /// Retrieve the status of a scheduled mass delete job using its job_id
+        /// To retrieve the current status, the scheduled time, and the success and failure counts for a previously scheduled mass delete tag job in your Zoho CRM organization, using the job ID returned by the Mass Delete Tags POST operation.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetStatus200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus401Response">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetStatus200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Mass_delete.Mass_deleteRequestBuilder.Mass_deleteRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetStatus200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Mass_delete.Mass_deleteRequestBuilder.Mass_deleteRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetStatus200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetStatus200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus401Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Schedules a job to delete multiple tags across modules in Zoho CRM.
+        /// To schedule a background job that deletes multiple tags in bulk from a single module in your Zoho CRM organization. You can delete tags in bulk from one module per API call. The response returns a job identifier that can be used with the Mass Delete Tags Status GET operation to track the progress of the deletion.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags202"/></returns>
-        /// <param name="body">Schema for scheduling mass delete tags job</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags202Response"/></returns>
+        /// <param name="body">Represents the request payload for scheduling a mass delete tag job, containing the target module and the tags to delete.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401Response">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags202?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags202Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTagsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags202> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags202Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTagsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags202>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags202.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags202Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the status of a scheduled mass delete job using its job_id
+        /// To retrieve the current status, the scheduled time, and the success and failure counts for a previously scheduled mass delete tag job in your Zoho CRM organization, using the job ID returned by the Mass Delete Tags POST operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Mass_delete.Mass_deleteRequestBuilder.Mass_deleteRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Mass_delete.Mass_deleteRequestBuilder.Mass_deleteRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/mass_delete_tags/settings/tags/actions/mass_delete?job_id={job_id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Schedules a job to delete multiple tags across modules in Zoho CRM.
+        /// To schedule a background job that deletes multiple tags in bulk from a single module in your Zoho CRM organization. You can delete tags in bulk from one module per API call. The response returns a job identifier that can be used with the Mass Delete Tags Status GET operation to track the progress of the deletion.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Schema for scheduling mass delete tags job</param>
+        /// <param name="body">Represents the request payload for scheduling a mass delete tag job, containing the target module and the tags to delete.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTagsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsCreateMassDeleteTags body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTagsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -120,6 +130,23 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Ma
         public global::Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Mass_delete.Mass_deleteRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Mass_delete.Mass_deleteRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// To retrieve the current status, the scheduled time, and the success and failure counts for a previously scheduled mass delete tag job in your Zoho CRM organization, using the job ID returned by the Mass Delete Tags POST operation.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Mass_deleteRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Specify the unique identifier of the mass delete tag job for which you want to retrieve the status. Use the job ID returned by the [Mass Delete Tags API](mass_delete_tags.yaml#$.paths./settings/tags/actions/mass_delete.post).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("job_id")]
+            public string? JobId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("job_id")]
+            public string JobId { get; set; }
+#endif
         }
     }
 }

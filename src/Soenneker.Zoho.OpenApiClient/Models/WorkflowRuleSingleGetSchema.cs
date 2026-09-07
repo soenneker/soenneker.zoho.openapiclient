@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Comprehensive workflow rule entity for automation settings, including metadata, execution timing, module, ownership, lock status, conditions, and activation state.
+    /// Represents the full configuration and metadata of a single workflow rule, including its trigger, conditions, actions, lock status, and audit timestamps.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRuleSingleGetSchema : IParsable
     {
-        /// <summary>&quot;Field: category&quot;</summary>
+        /// <summary>Represents the classification category of the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>An array of condition objects that define the criteria for executing the actions. (Required)</summary>
+        /// <summary>Represents the array of condition objects that define the criteria for executing the actions of the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>? Conditions { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema> Conditions { get; set; }
 #endif
-        /// <summary>&quot;Field: created_by&quot;</summary>
+        /// <summary>Represents the identity details of the CRM user who created or last modified the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.CreatedModifiedByObjectSchema? CreatedBy { get; set; }
@@ -37,13 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.CreatedModifiedByObjectSchema CreatedBy { get; set; }
 #endif
-        /// <summary>&quot;Field: created_time&quot;</summary>
+        /// <summary>Represents the ISO 8601 timestamp indicating when the system created this workflow rule.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
-        /// <summary>&quot;Field: deletable&quot;</summary>
+        /// <summary>Indicates whether the requesting user has permission to delete this workflow rule.</summary>
         public bool? Deletable { get; set; }
-        /// <summary>&quot;Field: deprecated&quot;</summary>
+        /// <summary>Indicates whether this workflow rule is deprecated and should be migrated to a newer configuration.</summary>
         public bool? Deprecated { get; set; }
-        /// <summary>&quot;Field: description&quot;</summary>
+        /// <summary>Represents the user-defined description of the workflow rule. Null if not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -51,9 +51,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot;Field: editable&quot;</summary>
+        /// <summary>Indicates whether the requesting user has permission to edit this workflow rule.</summary>
         public bool? Editable { get; set; }
-        /// <summary>The execute_when property</summary>
+        /// <summary>Represents the trigger configuration that defines when the workflow rule fires, including the trigger type and its associated details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema? ExecuteWhen { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema ExecuteWhen { get; set; }
 #endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -69,9 +69,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Field: last_executed_time&quot;</summary>
+        /// <summary>Represents the ISO 8601 timestamp of the last time this workflow rule was triggered. Null if the rule has never been triggered.</summary>
         public DateTimeOffset? LastExecutedTime { get; set; }
-        /// <summary>Details the lock status of the workflow, including information about who locked it, the message associated with the lock, and whether it is currently locked.</summary>
+        /// <summary>Represents the lock configuration of a workflow rule, including the lock state and the identity of the user who applied the lock.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.LockStatusSchema? Lock { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.LockStatusSchema Lock { get; set; }
 #endif
-        /// <summary>&quot;Field: created_by&quot;</summary>
+        /// <summary>Represents the identity details of the CRM user who created or last modified the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.CreatedModifiedByObjectSchema? ModifiedBy { get; set; }
@@ -87,9 +87,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.CreatedModifiedByObjectSchema ModifiedBy { get; set; }
 #endif
-        /// <summary>Time Object</summary>
+        /// <summary>Represents a time offset specification combining a period label and a numeric magnitude, used in time-based workflow trigger configurations.</summary>
         public DateTimeOffset? ModifiedTime { get; set; }
-        /// <summary>Specify the module/field to which the workflow rule applies</summary>
+        /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? Module { get; set; }
@@ -97,7 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema Module { get; set; }
 #endif
-        /// <summary>&quot;Field: name&quot;</summary>
+        /// <summary>Represents the name of the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -105,7 +105,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Field: source&quot;</summary>
+        /// <summary>Represents the origin of the workflow rule. For example, **crm** for rules created through the CRM UI, or **API** for rules created through the API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }
@@ -113,7 +113,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
-        /// <summary>Indicates whether the workflow is currently active, represented by a boolean value.</summary>
+        /// <summary>Represents the activation state of a workflow rule, indicating whether the rule is currently active.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ActivationStatusSchema? Status { get; set; }

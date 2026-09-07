@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// User&apos;s UI theme preferences.
+    /// Represents the user&apos;s UI theme preferences.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserTheme : IParsable
     {
-        /// <summary>Overall background color.</summary>
+        /// <summary>Represents the overall background color of the theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Background { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Background { get; set; }
 #endif
-        /// <summary>New background color (optional).</summary>
+        /// <summary>Represents the new background color of the theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NewBackground { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string NewBackground { get; set; }
 #endif
-        /// <summary>Normal tab theme.</summary>
+        /// <summary>Represents the normal tab theme settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserThemeNormalTab? NormalTab { get; set; }
@@ -37,9 +37,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserThemeNormalTab NormalTab { get; set; }
 #endif
-        /// <summary>Screen layout.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserTheme_screen? Screen { get; set; }
-        /// <summary>Selected tab theme.</summary>
+        /// <summary>Represents the screen layout preference.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserThemeScreen? Screen { get; set; }
+        /// <summary>Represents the selected tab theme settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserThemeSelectedTab? SelectedTab { get; set; }
@@ -47,8 +47,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserThemeSelectedTab SelectedTab { get; set; }
 #endif
-        /// <summary>Theme type.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserTheme_type? Type { get; set; }
+        /// <summary>Represents the type of theme applied.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserThemeType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,9 +70,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "background", n => { Background = n.GetStringValue(); } },
                 { "new_background", n => { NewBackground = n.GetStringValue(); } },
                 { "normal_tab", n => { NormalTab = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeNormalTab>(global::Soenneker.Zoho.OpenApiClient.Models.UserThemeNormalTab.CreateFromDiscriminatorValue); } },
-                { "screen", n => { Screen = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTheme_screen>(); } },
+                { "screen", n => { Screen = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeScreen>(); } },
                 { "selected_tab", n => { SelectedTab = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeSelectedTab>(global::Soenneker.Zoho.OpenApiClient.Models.UserThemeSelectedTab.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTheme_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeType>(); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("background", Background);
             writer.WriteStringValue("new_background", NewBackground);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeNormalTab>("normal_tab", NormalTab);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTheme_screen>("screen", Screen);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeScreen>("screen", Screen);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeSelectedTab>("selected_tab", SelectedTab);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTheme_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeType>("type", Type);
         }
     }
 }

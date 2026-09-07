@@ -8,42 +8,42 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Input schema for create, update, or upsert record requests.
+    /// Represents the RecordsInputSchema data structure.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordsInputSchema : IParsable
     {
-        /// <summary>List of features that should be executed on demand during record processing.</summary>
+        /// <summary>Use the &quot;apply_feature_execution&quot; array to trigger supported CRM features when creating or updating a record through the API. Specify &quot;layout_rules&quot; to apply layout rules or &quot;criteria_validation_rule&quot; to trigger validation rules. For &quot;layout_rules&quot;, ensure the request includes all fields required by the layout rule criteria; otherwise, the API returns an error. For &quot;criteria_validation_rule&quot;, all applicable validation rules are evaluated, and the API returns &quot;MULTIPLE_OR_MULTI_ERRORS&quot; if multiple rules fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_apply_feature_execution>? ApplyFeatureExecution { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaApplyFeatureExecutionItem>? ApplyFeatureExecution { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_apply_feature_execution> ApplyFeatureExecution { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaApplyFeatureExecutionItem> ApplyFeatureExecution { get; set; }
 #endif
-        /// <summary>Request body containing one or more records to be created or updated.</summary>
+        /// <summary>Represents the data value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_data>? Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItem>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_data> Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItem> Data { get; set; }
 #endif
-        /// <summary>List of features that should be skipped during record processing.</summary>
+        /// <summary>Use the &quot;skip_feature_execution&quot; array to skip Cadences execution when creating a record through the API. Specify &quot;cadences&quot; as the value of the &quot;name&quot; key and include this key alongside &quot;data&quot; in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_skip_feature_execution>? SkipFeatureExecution { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaSkipFeatureExecutionItem>? SkipFeatureExecution { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_skip_feature_execution> SkipFeatureExecution { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaSkipFeatureExecutionItem> SkipFeatureExecution { get; set; }
 #endif
-        /// <summary>List of automation triggers to invoke during the record operation.</summary>
+        /// <summary>Specifies the CRM features to execute for the API request. Supported values are &quot;workflow&quot;, &quot;approval&quot;, and &quot;blueprint&quot;. If the &quot;trigger&quot; parameter is not specified, workflows, approvals, and blueprints related to the API are executed. Specify an empty array [] to prevent these features from executing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_trigger?>? Trigger { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaTriggerItem?>? Trigger { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_trigger?> Trigger { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaTriggerItem?> Trigger { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,10 +63,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "apply_feature_execution", n => { ApplyFeatureExecution = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_apply_feature_execution>(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_apply_feature_execution.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_data>(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_data.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "skip_feature_execution", n => { SkipFeatureExecution = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_skip_feature_execution>(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_skip_feature_execution.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "trigger", n => { Trigger = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_trigger>()?.AsList(); } },
+                { "apply_feature_execution", n => { ApplyFeatureExecution = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaApplyFeatureExecutionItem>(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaApplyFeatureExecutionItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItem>(global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "skip_feature_execution", n => { SkipFeatureExecution = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaSkipFeatureExecutionItem>(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaSkipFeatureExecutionItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "trigger", n => { Trigger = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaTriggerItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,10 +76,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_apply_feature_execution>("apply_feature_execution", ApplyFeatureExecution);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_data>("data", Data);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_skip_feature_execution>("skip_feature_execution", SkipFeatureExecution);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema_trigger>("trigger", Trigger);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaApplyFeatureExecutionItem>("apply_feature_execution", ApplyFeatureExecution);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItem>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaSkipFeatureExecutionItem>("skip_feature_execution", SkipFeatureExecution);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchemaTriggerItem>("trigger", Trigger);
         }
     }
 }

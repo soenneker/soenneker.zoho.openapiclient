@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts
     public partial class LayoutsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.map_dependency.settings.layouts.item collection</summary>
-        /// <param name="position">The unique identifier of the layout</param>
+        /// <param name="position">Specify the unique identifier of the layout. Use the [Get Layouts API](layouts.yaml#$./settings/layouts.get) to get the ID of the layout.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.WithLayoutItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.WithLayoutItemRequestBuilder this[string position]
         {

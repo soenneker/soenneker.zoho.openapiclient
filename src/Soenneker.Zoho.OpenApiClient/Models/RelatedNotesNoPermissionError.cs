@@ -9,21 +9,29 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error response when user lacks required permissions
+    /// Error response schema returned when the user does not have the required permission to perform the operation, such as the Crm_Implied_Create_Attachments permission.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedNotesNoPermissionError : ApiException, IParsable
     {
-        /// <summary>Array of error results</summary>
+        /// <summary>Represents the list of error objects for each note in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionError_data>? DataEscaped { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionErrorDataItem>? DataEscaped { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionError_data> DataEscaped { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionErrorDataItem> DataEscaped { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>The primary error message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +50,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { DataEscaped = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionError_data>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionError_data.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { DataEscaped = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionErrorDataItem>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionErrorDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +61,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionError_data>("data", DataEscaped);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesNoPermissionErrorDataItem>("data", DataEscaped);
+            writer.WriteStringValue("message", MessageEscaped);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Timelines
     public partial class TimelinesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.timelines.item collection</summary>
-        /// <param name="position">The API module name (e.g., Leads, Contacts, etc.)</param>
+        /// <param name="position">Specifies the API name of the CRM module to retrieve timeline entries from. Use the value from the **api_name** field returned by [Get Modules](https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html).</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Timelines.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Timelines.Item.WithModuleItemRequestBuilder this[string position]
         {

@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.users.item collection</summary>
-        /// <param name="position">user Id</param>
+        /// <param name="position">Specify the unique ID of the user to retrieve, update, or delete.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Users.Item.WithUserItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users{?page*,per_page*,type*,type__s}", pathParameters)
+        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users{?child_data*,fields,ids,include_lite_users*,page*,per_page*,query_id*,role_id*,type*,type__s}", pathParameters)
         {
         }
         /// <summary>
@@ -43,83 +43,83 @@ namespace Soenneker.Zoho.OpenApiClient.Users
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users{?page*,per_page*,type*,type__s}", rawUrl)
+        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users{?child_data*,fields,ids,include_lite_users*,page*,per_page*,query_id*,role_id*,type*,type__s}", rawUrl)
         {
         }
         /// <summary>
-        /// To get all users based on the provided parameters.
+        /// To retrieve all users in your Zoho CRM organization based on the specified filter parameters, including type, role, query criteria, and field selection.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsers200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsers200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsers200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsers200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsers200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsers200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsers200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsers200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsers200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsers200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new user in the organization. API exposed to customers
+        /// To create a new user record in your Zoho CRM organization. The request body must contain a `users` array with one user object including the required fields such as email, role, profile, and first name.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser201"/></returns>
-        /// <param name="body">List of user details</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser201Response"/></returns>
+        /// <param name="body">Represents the request payload schema for creating a user in Zoho CRM. Contains the `users` array with user detail objects.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update multiple users. API exposed to customers
+        /// To update the details of one or more users in your Zoho CRM organization. The request must include a users array with up to 10 user records, each identified by a unique user ID. You can update user profile settings, role assignments, locale preferences, and other account details.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser200"/></returns>
-        /// <param name="body">List of user details</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser200Response"/></returns>
+        /// <param name="body">Contains the list of user objects to update in this request.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To get all users based on the provided parameters.
+        /// To retrieve all users in your Zoho CRM organization based on the specified filter parameters, including type, role, query criteria, and field selection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,18 +138,18 @@ namespace Soenneker.Zoho.OpenApiClient.Users
             return requestInfo;
         }
         /// <summary>
-        /// Create a new user in the organization. API exposed to customers
+        /// To create a new user record in your Zoho CRM organization. The request body must contain a `users` array with one user object including the required fields such as email, role, profile, and first name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">List of user details</param>
+        /// <param name="body">Represents the request payload schema for creating a user in Zoho CRM. Contains the `users` array with user detail objects.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersCreateUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -160,18 +160,18 @@ namespace Soenneker.Zoho.OpenApiClient.Users
             return requestInfo;
         }
         /// <summary>
-        /// Update multiple users. API exposed to customers
+        /// To update the details of one or more users in your Zoho CRM organization. The request must include a users array with up to 10 user records, each identified by a unique user ID. You can update user profile settings, role assignments, locale preferences, and other account details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">List of user details</param>
+        /// <param name="body">Contains the list of user objects to update in this request.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -191,23 +191,76 @@ namespace Soenneker.Zoho.OpenApiClient.Users
             return new global::Soenneker.Zoho.OpenApiClient.Users.UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To get all users based on the provided parameters.
+        /// To retrieve all users in your Zoho CRM organization based on the specified filter parameters, including type, role, query criteria, and field selection.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 
         {
-            /// <summary>Current page number</summary>
+            /// <summary>Specify the child data object containing the record ID of the module with a user lookup field. This is required only if the user lookup field has criteria based on the dynamic value of a record. The **query_id** parameter is required when this parameter is provided.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("child_data")]
+            public string? ChildData { get; set; }
+#nullable restore
+#else
+            [QueryParameter("child_data")]
+            public string ChildData { get; set; }
+#endif
+            /// <summary>Specify the comma-separated list of field API names to include in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public string? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public string Fields { get; set; }
+#endif
+            /// <summary>Specify a comma-separated list of user IDs to retrieve. If not provided, the API retrieves all users based on the other parameters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ids")]
+            public string[]? Ids { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ids")]
+            public string[] Ids { get; set; }
+#endif
+            /// <summary>Specify whether to include lite users in the result set.\n\nPossible values:\ntrue - Lite users are included.\nfalse - Lite users are not included.</summary>
+            [QueryParameter("include_lite_users")]
+            public bool? IncludeLiteUsers { get; set; }
+            /// <summary>Specify the page number to retrieve in the paginated response.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of records per page</summary>
+            /// <summary>Specify the number of user records to return per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>type of users</summary>
+            /// <summary>Specify the query ID of the user lookup field. Used to retrieve users based on the filter criteria of the lookup field.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("query_id")]
+            public string? QueryId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("query_id")]
+            public string QueryId { get; set; }
+#endif
+            /// <summary>Specify the role ID to filter users. The API retrieves users with the specified role and higher or lower roles based on the value of the **type** parameter. Applicable only for **ParentRoleUsers**, **ChildRoleUsers**, and **SubordinateRoleUsers** types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("role_id")]
+            public string? RoleId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("role_id")]
+            public string RoleId { get; set; }
+#endif
+            /// <summary>Specify the type of users to retrieve.Possible values:CurrentUser - Retrieves the currently authenticated user.DeletedUsers - Retrieves only deleted users.DeactiveUsers - Retrieves only deactivated users.NotConfirmedUsers - Retrieves only unconfirmed users.ConfirmedUsers - Retrieves only confirmed users.ActiveUsers - Retrieves only active users.AdminUsers - Retrieves only administrator users.ActiveConfirmedAdmins - Retrieves active, confirmed, and administrator users.ActiveConfirmedUsers - Retrieves active and confirmed users.DeveloperUsers - Retrieves only developer users.AllUsers - Retrieves all users.AllActiveUsers - Retrieves all active users.ActiveLiteUser - Retrieves active lite users.ActiveAndDeactive - Retrieves both active and deactivated users.ChildRoleUsers - Retrieves users belonging to child roles.ParentRoleUsers - Retrieves users belonging to the parent role.SubordinateRoleUsers - Retrieves users in subordinate roles.ConfirmedReportingUsers - Retrieves confirmed users who have reporting relationships.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Users.GetTypeQueryParameterType? Type { get; set; }
-            /// <summary>type</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.UsersTypeEnum? Type { get; set; }
+            /// <summary>Filter users by their account type.Possible values:**Regular User** - Standard CRM user with full access to the organization.**Sandbox Developer User** - User with access to the sandbox environment for development and testing.**Team User** - User operating as part of a team account.**Digital Employee** - Automated or bot-type user representing a digital workforce entity.**Support User** - User with access granted for support purposes.**Client Portal User** - User with limited access via the client-facing portal.</summary>
             [QueryParameter("type__s")]
-            public global::Soenneker.Zoho.OpenApiClient.Users.GetType__sQueryParameterType? TypeS { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.UsersGetUsersTypeSParameter? TypeS { get; set; }
         }
     }
 }

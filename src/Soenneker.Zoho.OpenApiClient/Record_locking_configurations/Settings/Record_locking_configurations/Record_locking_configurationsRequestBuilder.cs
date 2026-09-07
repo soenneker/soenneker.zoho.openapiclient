@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
     public partial class Record_locking_configurationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.record_locking_configurations.settings.record_locking_configurations.item collection</summary>
-        /// <param name="position">Record Locking Configuration ID</param>
+        /// <param name="position">Unique identifier of the record locking configuration. This ID is returned in the response when a configuration is created or retrieved.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Item.Record_locking_configurationsItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Item.Record_locking_configurationsItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Record_locking_configurationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_locking_configurations/settings/record_locking_configurations?ids={ids}&module={module}", pathParameters)
+        public Record_locking_configurationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_locking_configurations/settings/record_locking_configurations?module={module}", pathParameters)
         {
         }
         /// <summary>
@@ -43,97 +43,107 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Record_locking_configurationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_locking_configurations/settings/record_locking_configurations?ids={ids}&module={module}", rawUrl)
+        public Record_locking_configurationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_locking_configurations/settings/record_locking_configurations?module={module}", rawUrl)
         {
         }
         /// <summary>
-        /// To delete the record locking configuration for different modules.
+        /// Deletes the record locking configuration(s) for the specified module using the provided configuration IDs.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the record locking configuration for different modules.
+        /// Retrieves the existing record locking configuration for the specified module.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To add record locking configuration for different modules.
+        /// Creates a new record locking configuration for the specified module. You can define locking rules, restricted actions, excluded fields, and other settings.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration201"/></returns>
-        /// <param name="body">Request object for  creating of record locking configuration.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration201Response"/></returns>
+        /// <param name="body">Request body for creating a record locking configuration.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfigurationRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfigurationRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To update the record locking configuration for different modules.
+        /// Updates an existing record locking configuration for the specified module. You can modify any of the configuration settings.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200"/></returns>
-        /// <param name="body">Request body for updating record locking configurations.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200Response"/></returns>
+        /// <param name="body">Request body for updating a record locking configuration.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To delete the record locking configuration for different modules.
+        /// Deletes the record locking configuration(s) for the specified module using the provided configuration IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,13 +156,13 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/record_locking_configurations/settings/record_locking_configurations?ids={ids}&module={module}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// To retrieve the record locking configuration for different modules.
+        /// Retrieves the existing record locking configuration for the specified module.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,50 +175,50 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/record_locking_configurations/settings/record_locking_configurations?module={module}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// To add record locking configuration for different modules.
+        /// Creates a new record locking configuration for the specified module. You can define locking rules, restricted actions, excluded fields, and other settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request object for  creating of record locking configuration.</param>
+        /// <param name="body">Request body for creating a record locking configuration.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfigurationRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfigurationRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/record_locking_configurations/settings/record_locking_configurations?module={module}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
-        /// To update the record locking configuration for different modules.
+        /// Updates an existing record locking configuration for the specified module. You can modify any of the configuration settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for updating record locking configurations.</param>
+        /// <param name="body">Request body for updating a record locking configuration.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder.Record_locking_configurationsRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/record_locking_configurations/settings/record_locking_configurations?module={module}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -224,12 +234,12 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
             return new global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Record_locking_configurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To delete the record locking configuration for different modules.
+        /// Deletes the record locking configuration(s) for the specified module using the provided configuration IDs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Record_locking_configurationsRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Comma-separated IDs of the record locking configurations to be deleted.</summary>
+            /// <summary>Comma-separated list of record locking configuration IDs to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
@@ -239,7 +249,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
             [QueryParameter("ids")]
             public string Ids { get; set; }
 #endif
-            /// <summary>The name of the module for which the record locking configuration is to be deleted.</summary>
+            /// <summary>The API name of the module for which the configuration should be deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -251,12 +261,12 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
 #endif
         }
         /// <summary>
-        /// To retrieve the record locking configuration for different modules.
+        /// Retrieves the existing record locking configuration for the specified module.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Record_locking_configurationsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The API name of the module for which the record locking configuration is to be retrieved.</summary>
+            /// <summary>The API name of the module for which the record locking configuration is being managed. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -268,12 +278,12 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
 #endif
         }
         /// <summary>
-        /// To add record locking configuration for different modules.
+        /// Creates a new record locking configuration for the specified module. You can define locking rules, restricted actions, excluded fields, and other settings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Record_locking_configurationsRequestBuilderPostQueryParameters 
         {
-            /// <summary>The API name of the module for which the record locking configuration is to be retrieved.</summary>
+            /// <summary>The API name of the module for which the record locking configuration is being managed. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -285,12 +295,12 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
 #endif
         }
         /// <summary>
-        /// To update the record locking configuration for different modules.
+        /// Updates an existing record locking configuration for the specified module. You can modify any of the configuration settings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Record_locking_configurationsRequestBuilderPutQueryParameters 
         {
-            /// <summary>The API name of the module for which the record locking configuration is to be retrieved.</summary>
+            /// <summary>The API name of the module for which the record locking configuration is being managed. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

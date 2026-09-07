@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Describes a related module, with details about its labels, API name, and ID.
+    /// Related module metadata for automation contexts that operate on related records. Null when no related module context applies.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedModuleDetails : IParsable
     {
-        /// <summary>&quot;Field: api_name&quot;</summary>
+        /// <summary>CRM related-module API name used in automation configuration (e.g., Notes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,37 +21,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Unique identifier of the related CRM module corresponding to api_name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
 #nullable restore
 #else
         public string Id { get; set; }
-#endif
-        /// <summary>&quot;Field: module_name&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModuleName { get; set; }
-#nullable restore
-#else
-        public string ModuleName { get; set; }
-#endif
-        /// <summary>&quot;Field: plural_label&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PluralLabel { get; set; }
-#nullable restore
-#else
-        public string PluralLabel { get; set; }
-#endif
-        /// <summary>&quot;Field: singular_label&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SingularLabel { get; set; }
-#nullable restore
-#else
-        public string SingularLabel { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,9 +49,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "module_name", n => { ModuleName = n.GetStringValue(); } },
-                { "plural_label", n => { PluralLabel = n.GetStringValue(); } },
-                { "singular_label", n => { SingularLabel = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,9 +60,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("module_name", ModuleName);
-            writer.WriteStringValue("plural_label", PluralLabel);
-            writer.WriteStringValue("singular_label", SingularLabel);
         }
     }
 }

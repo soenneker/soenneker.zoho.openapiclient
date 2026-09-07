@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the lock status of a resource, indicating whether it is currently locked or not.
+    /// Indicates whether a particular component is locked, affecting its editability and deletability.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LockStatus : IParsable
     {
-        /// <summary>&quot;Field: locked&quot;</summary>
+        /// <summary>True when the action is locked and cannot be edited or deleted.</summary>
         public bool? Locked { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

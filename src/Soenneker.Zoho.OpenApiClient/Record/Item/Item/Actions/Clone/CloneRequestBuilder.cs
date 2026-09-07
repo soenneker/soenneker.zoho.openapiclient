@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item.Actions.Clone
 {
     /// <summary>
-    /// Builds and executes requests for operations under \record\{module}\{recordID}\actions\clone
+    /// Builds and executes requests for operations under \record\{module}\{recordId}\actions\clone
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloneRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item.Actions.Clone
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloneRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record/{module}/{recordID}/actions/clone", pathParameters)
+        public CloneRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record/{module}/{recordId}/actions/clone", pathParameters)
         {
         }
         /// <summary>
@@ -30,20 +30,18 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item.Actions.Clone
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloneRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record/{module}/{recordID}/actions/clone", rawUrl)
+        public CloneRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record/{module}/{recordId}/actions/clone", rawUrl)
         {
         }
         /// <summary>
-        /// To clone a record in a module.
+        /// Clones a record in the specified module.  Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and API names.By default, the field values of the parent record are copied to the cloned record. To modify or add field values, specify the field API names and their corresponding values in the input body. If no field values need to be modified, the input body can be omitted.Mandatory fields specified in the input must not be null. The Sample Inputs, Sample Responses, and Possible Errors documented for the [Insert Records API](record.yaml#$.paths./module.post) also apply to the [Record Clone API](record.yaml#$.paths./{module}/{recordId}/actions/clone.post).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse"/></returns>
-        /// <param name="body">Input schema for create, update, or upsert record requests.</param>
+        /// <param name="body">Represents the RecordsInputSchema data structure.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordsErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,19 +56,17 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item.Actions.Clone
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordsErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To clone a record in a module.
+        /// Clones a record in the specified module.  Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and API names.By default, the field values of the parent record are copied to the cloned record. To modify or add field values, specify the field API names and their corresponding values in the input body. If no field values need to be modified, the input body can be omitted.Mandatory fields specified in the input must not be null. The Sample Inputs, Sample Responses, and Possible Errors documented for the [Insert Records API](record.yaml#$.paths./module.post) also apply to the [Record Clone API](record.yaml#$.paths./{module}/{recordId}/actions/clone.post).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Input schema for create, update, or upsert record requests.</param>
+        /// <param name="body">Represents the RecordsInputSchema data structure.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

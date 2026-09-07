@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s.Item
         {
         }
         /// <summary>
-        /// services record delete by id
+        /// To delete a service record from your Zoho CRM organization by its unique ID. When a service record is removed, all appointments associated with that service are also removed; however, deals created upon completion of an appointment under the service are not affected.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteservicessResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,45 +52,50 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteservicessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteservicessResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// services record get by id
+        /// To retrieve the full details of a single service record from your Zoho CRM organization using its unique ID, including its availability configuration, members, pricing, tax details, and subform data.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetServiceByIdResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetServiceByIdResponse200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetServiceByIdResponse200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetServiceByIdResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetServiceByIdResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// update services api
+        /// To update a single service record in your Zoho CRM organization, identified by its unique ID. Only the fields supplied in the request payload are modified on the targeted service.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutServiceByIdResponse200"/></returns>
+        /// <param name="body">Request body schema for updating a single service. Contains a data array with exactly one service object that carries the fields to be updated.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PutservicesByIdError400Wrapper">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Item.Services__sItemRequestBuilder.Services__sItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutServiceByIdResponse200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Item.Services__sItemRequestBuilder.Services__sItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Item.Services__sItemRequestBuilder.Services__sItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutServiceByIdResponse200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Item.Services__sItemRequestBuilder.Services__sItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PutservicesByIdError400Wrapper.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutServiceByIdResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutServiceByIdResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// services record delete by id
+        /// To delete a service record from your Zoho CRM organization by its unique ID. When a service record is removed, all appointments associated with that service are also removed; however, deals created upon completion of an appointment under the service are not affected.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +114,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s.Item
             return requestInfo;
         }
         /// <summary>
-        /// services record get by id
+        /// To retrieve the full details of a single service record from your Zoho CRM organization using its unique ID, including its availability configuration, members, pricing, tax details, and subform data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,10 +133,10 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s.Item
             return requestInfo;
         }
         /// <summary>
-        /// update services api
+        /// To update a single service record in your Zoho CRM organization, identified by its unique ID. Only the fields supplied in the request payload are modified on the targeted service.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Request body schema for updating a single service. Contains a data array with exactly one service object that carries the fields to be updated.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -159,12 +164,12 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s.Item
             return new global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Item.Services__sItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// update services api
+        /// To update a single service record in your Zoho CRM organization, identified by its unique ID. Only the fields supplied in the request payload are modified on the targeted service.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Services__sItemRequestBuilderPutQueryParameters 
         {
-            /// <summary>adds the affected data in response</summary>
+            /// <summary>Specify whether to include the affected_data details in the response. Set to true to receive the IDs of records whose process flows were affected by the update.</summary>
             [QueryParameter("affected_data")]
             public bool? AffectedData { get; set; }
         }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body schema
+    /// Represents the request body for updating the fiscal year settings of the Zoho CRM organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PutfiscalyearRequest : IParsable
     {
-        /// <summary>Root key of the API</summary>
+        /// <summary>Represents the fiscal year settings to update. Use one of the supported request structures based on the type of fiscal year update being performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested? FiscalYear { get; set; }

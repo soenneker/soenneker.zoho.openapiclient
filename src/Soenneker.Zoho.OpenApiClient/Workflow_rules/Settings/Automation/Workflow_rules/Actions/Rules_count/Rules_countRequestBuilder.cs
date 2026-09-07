@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         {
         }
         /// <summary>
-        /// To fetch the limit and usage details of workflow rules and actions in your Zoho CRM account. Use this API to track how many rules and actions are configured and how many more you can create.
+        /// To retrieve the organization-level quota and current usage counts for workflow rules and actions in your Zoho CRM organization. The response includes the total and active rule limits (both organization-wide and per module), the number of rules currently configured, and the per-rule limits for actions and scheduled action groups.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To fetch the limit and usage details of workflow rules and actions in your Zoho CRM account. Use this API to track how many rules and actions are configured and how many more you can create.
+        /// To retrieve the organization-level quota and current usage counts for workflow rules and actions in your Zoho CRM organization. The response includes the total and active rule limits (both organization-wide and per module), the number of rules currently configured, and the per-rule limits for actions and scheduled action groups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

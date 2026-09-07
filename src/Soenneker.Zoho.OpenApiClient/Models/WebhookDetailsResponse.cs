@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested details about a webhook, providing a unique identifier to distinguish it within the system.
+    /// Represents the nested object containing the unique identifier of the webhook returned by a mutation operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookDetailsResponse : IParsable
     {
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique identifier of the webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

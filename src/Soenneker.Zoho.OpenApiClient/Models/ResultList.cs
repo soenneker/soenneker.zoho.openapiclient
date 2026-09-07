@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// List of results from the operation.
+    /// Wrapper that returns the per-item results of a recycle-bin operation under the **recycle_bin** array.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResultList : IParsable
     {
-        /// <summary>Array of result items.</summary>
+        /// <summary>List of per-item results for the operation. Each entry is either a success result or a scheduled-job result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ResultItem>? RecycleBin { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ResultListRecycleBinItem>? RecycleBin { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ResultItem> RecycleBin { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ResultListRecycleBinItem> RecycleBin { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "recycle_bin", n => { RecycleBin = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ResultItem>(global::Soenneker.Zoho.OpenApiClient.Models.ResultItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "recycle_bin", n => { RecycleBin = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ResultListRecycleBinItem>(global::Soenneker.Zoho.OpenApiClient.Models.ResultListRecycleBinItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ResultItem>("recycle_bin", RecycleBin);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ResultListRecycleBinItem>("recycle_bin", RecycleBin);
         }
     }
 }

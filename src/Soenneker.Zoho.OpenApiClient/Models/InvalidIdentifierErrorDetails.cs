@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details with validation information
+    /// Represents the validation details indicating the path segment that contains the invalid identifier.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvalidIdentifierErrorDetails : IParsable
     {
-        /// <summary>&quot;Detail field: resource_path_index&quot;</summary>
+        /// <summary>Represents the index of the resource path element that contains the invalid ID.</summary>
         public int? ResourcePathIndex { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

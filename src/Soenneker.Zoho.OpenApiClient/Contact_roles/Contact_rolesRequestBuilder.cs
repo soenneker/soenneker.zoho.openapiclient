@@ -15,7 +15,7 @@ namespace Soenneker.Zoho.OpenApiClient.Contact_roles
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Contact_rolesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The contacts property</summary>
+        /// <summary>The Contacts property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Contact_roles.Contacts.ContactsRequestBuilder Contacts
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Contact_roles.Contacts.ContactsRequestBuilder(PathParameters, RequestAdapter);

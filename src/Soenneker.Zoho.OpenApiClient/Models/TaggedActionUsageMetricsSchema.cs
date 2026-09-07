@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Usage metrics for an action that includes an associated tag ID, along with success/failure counts, identifiers, type, and time.
+    /// Represents usage metrics for a single tagged workflow action, including its identifier, tag ID, action type, and success and failure counts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TaggedActionUsageMetricsSchema : IParsable
     {
-        /// <summary>&quot;Field: associated_time&quot;</summary>
+        /// <summary>Represents the ISO 8601 timestamp indicating when this tagged action was last associated with or modified on a workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssociatedTime { get; set; }
@@ -21,9 +21,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string AssociatedTime { get; set; }
 #endif
-        /// <summary>&quot;Field: failure_count&quot;</summary>
+        /// <summary>Represents the total number of failed executions recorded for this tagged action within the queried date range.</summary>
         public int? FailureCount { get; set; }
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the TaggedActionUsageMetrics within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Field: name&quot;</summary>
+        /// <summary>Represents the display name of the workflow rule or its associated tagged action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -39,9 +39,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Field: success_count&quot;</summary>
+        /// <summary>Represents the total number of successful executions recorded for this tagged action within the queried date range.</summary>
         public int? SuccessCount { get; set; }
-        /// <summary>&quot;Field: tag_id&quot;</summary>
+        /// <summary>Represents the unique ID of the tag associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TagId { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string TagId { get; set; }
 #endif
-        /// <summary>&quot;Field: type&quot;</summary>
+        /// <summary>Represents the category of tagged workflow action executed by the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

@@ -8,90 +8,66 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenAppointment"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateEditOrEdit"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateOrDelete"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenDateTime"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenEmail"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRecommendation"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRepeatMatchAll"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRollupSummary"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSectionUpdate"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSelectiveScoring"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1Simple"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdate"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT3SectionUpdate"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBased"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffset"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdate"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithin"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExecuteWhenNestedSchema : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenAppointment"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1Simple"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenAppointment? ExecuteWhenAppointment { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1Simple? ExecuteWhenT1Simple { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenAppointment ExecuteWhenAppointment { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1Simple ExecuteWhenT1Simple { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateEditOrEdit"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateEditOrEdit? ExecuteWhenCreateEditOrEdit { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdate? ExecuteWhenT2FieldUpdate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateEditOrEdit ExecuteWhenCreateEditOrEdit { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdate ExecuteWhenT2FieldUpdate { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateOrDelete"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT3SectionUpdate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateOrDelete? ExecuteWhenCreateOrDelete { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT3SectionUpdate? ExecuteWhenT3SectionUpdate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateOrDelete ExecuteWhenCreateOrDelete { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT3SectionUpdate ExecuteWhenT3SectionUpdate { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenDateTime"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBased"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenDateTime? ExecuteWhenDateTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBased? ExecuteWhenT4DateBased { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenDateTime ExecuteWhenDateTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBased ExecuteWhenT4DateBased { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenEmail"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffset"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenEmail? ExecuteWhenEmail { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffset? ExecuteWhenT5TimeOffset { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenEmail ExecuteWhenEmail { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffset ExecuteWhenT5TimeOffset { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRecommendation"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRecommendation? ExecuteWhenRecommendation { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdate? ExecuteWhenT6ScoreUpdate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRecommendation ExecuteWhenRecommendation { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdate ExecuteWhenT6ScoreUpdate { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRepeatMatchAll"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithin"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRepeatMatchAll? ExecuteWhenRepeatMatchAll { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithin? ExecuteWhenT7EmailRepliedWithin { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRepeatMatchAll ExecuteWhenRepeatMatchAll { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRollupSummary"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRollupSummary? ExecuteWhenRollupSummary { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRollupSummary ExecuteWhenRollupSummary { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSectionUpdate"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSectionUpdate? ExecuteWhenSectionUpdate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSectionUpdate ExecuteWhenSectionUpdate { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSelectiveScoring"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSelectiveScoring? ExecuteWhenSelectiveScoring { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSelectiveScoring ExecuteWhenSelectiveScoring { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithin ExecuteWhenT7EmailRepliedWithin { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -103,45 +79,33 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema();
-            if("ExecuteWhenAppointment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("activate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExecuteWhenAppointment = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenAppointment();
+                result.ExecuteWhenT1Simple = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1Simple();
             }
-            else if("ExecuteWhenCreateEditOrEdit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ExecuteWhenT2FieldUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExecuteWhenCreateEditOrEdit = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateEditOrEdit();
+                result.ExecuteWhenT2FieldUpdate = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdate();
             }
-            else if("ExecuteWhenCreateOrDelete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ExecuteWhenT3SectionUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExecuteWhenCreateOrDelete = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateOrDelete();
+                result.ExecuteWhenT3SectionUpdate = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT3SectionUpdate();
             }
-            else if("ExecuteWhenDateTime".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("date_or_datetime".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExecuteWhenDateTime = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenDateTime();
+                result.ExecuteWhenT4DateBased = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBased();
             }
-            else if("ExecuteWhenEmail".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("email_received_notreplied".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExecuteWhenEmail = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenEmail();
+                result.ExecuteWhenT5TimeOffset = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffset();
             }
-            else if("ExecuteWhenRecommendation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ExecuteWhenT6ScoreUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExecuteWhenRecommendation = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRecommendation();
+                result.ExecuteWhenT6ScoreUpdate = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdate();
             }
-            else if("ExecuteWhenRepeatMatchAll".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ExecuteWhenT7EmailRepliedWithin".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExecuteWhenRepeatMatchAll = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRepeatMatchAll();
-            }
-            else if("ExecuteWhenRollupSummary".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ExecuteWhenRollupSummary = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRollupSummary();
-            }
-            else if("ExecuteWhenSectionUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ExecuteWhenSectionUpdate = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSectionUpdate();
-            }
-            else if("ExecuteWhenSelectiveScoring".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ExecuteWhenSelectiveScoring = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSelectiveScoring();
+                result.ExecuteWhenT7EmailRepliedWithin = new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithin();
             }
             return result;
         }
@@ -151,45 +115,33 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ExecuteWhenAppointment != null)
+            if(ExecuteWhenT1Simple != null)
             {
-                return ExecuteWhenAppointment.GetFieldDeserializers();
+                return ExecuteWhenT1Simple.GetFieldDeserializers();
             }
-            else if(ExecuteWhenCreateEditOrEdit != null)
+            else if(ExecuteWhenT2FieldUpdate != null)
             {
-                return ExecuteWhenCreateEditOrEdit.GetFieldDeserializers();
+                return ExecuteWhenT2FieldUpdate.GetFieldDeserializers();
             }
-            else if(ExecuteWhenCreateOrDelete != null)
+            else if(ExecuteWhenT3SectionUpdate != null)
             {
-                return ExecuteWhenCreateOrDelete.GetFieldDeserializers();
+                return ExecuteWhenT3SectionUpdate.GetFieldDeserializers();
             }
-            else if(ExecuteWhenDateTime != null)
+            else if(ExecuteWhenT4DateBased != null)
             {
-                return ExecuteWhenDateTime.GetFieldDeserializers();
+                return ExecuteWhenT4DateBased.GetFieldDeserializers();
             }
-            else if(ExecuteWhenEmail != null)
+            else if(ExecuteWhenT5TimeOffset != null)
             {
-                return ExecuteWhenEmail.GetFieldDeserializers();
+                return ExecuteWhenT5TimeOffset.GetFieldDeserializers();
             }
-            else if(ExecuteWhenRecommendation != null)
+            else if(ExecuteWhenT6ScoreUpdate != null)
             {
-                return ExecuteWhenRecommendation.GetFieldDeserializers();
+                return ExecuteWhenT6ScoreUpdate.GetFieldDeserializers();
             }
-            else if(ExecuteWhenRepeatMatchAll != null)
+            else if(ExecuteWhenT7EmailRepliedWithin != null)
             {
-                return ExecuteWhenRepeatMatchAll.GetFieldDeserializers();
-            }
-            else if(ExecuteWhenRollupSummary != null)
-            {
-                return ExecuteWhenRollupSummary.GetFieldDeserializers();
-            }
-            else if(ExecuteWhenSectionUpdate != null)
-            {
-                return ExecuteWhenSectionUpdate.GetFieldDeserializers();
-            }
-            else if(ExecuteWhenSelectiveScoring != null)
-            {
-                return ExecuteWhenSelectiveScoring.GetFieldDeserializers();
+                return ExecuteWhenT7EmailRepliedWithin.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -200,45 +152,33 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ExecuteWhenAppointment != null)
+            if(ExecuteWhenT1Simple != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenAppointment>(null, ExecuteWhenAppointment);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1Simple>(null, ExecuteWhenT1Simple);
             }
-            else if(ExecuteWhenCreateEditOrEdit != null)
+            else if(ExecuteWhenT2FieldUpdate != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateEditOrEdit>(null, ExecuteWhenCreateEditOrEdit);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdate>(null, ExecuteWhenT2FieldUpdate);
             }
-            else if(ExecuteWhenCreateOrDelete != null)
+            else if(ExecuteWhenT3SectionUpdate != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenCreateOrDelete>(null, ExecuteWhenCreateOrDelete);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT3SectionUpdate>(null, ExecuteWhenT3SectionUpdate);
             }
-            else if(ExecuteWhenDateTime != null)
+            else if(ExecuteWhenT4DateBased != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenDateTime>(null, ExecuteWhenDateTime);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBased>(null, ExecuteWhenT4DateBased);
             }
-            else if(ExecuteWhenEmail != null)
+            else if(ExecuteWhenT5TimeOffset != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenEmail>(null, ExecuteWhenEmail);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffset>(null, ExecuteWhenT5TimeOffset);
             }
-            else if(ExecuteWhenRecommendation != null)
+            else if(ExecuteWhenT6ScoreUpdate != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRecommendation>(null, ExecuteWhenRecommendation);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdate>(null, ExecuteWhenT6ScoreUpdate);
             }
-            else if(ExecuteWhenRepeatMatchAll != null)
+            else if(ExecuteWhenT7EmailRepliedWithin != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRepeatMatchAll>(null, ExecuteWhenRepeatMatchAll);
-            }
-            else if(ExecuteWhenRollupSummary != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenRollupSummary>(null, ExecuteWhenRollupSummary);
-            }
-            else if(ExecuteWhenSectionUpdate != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSectionUpdate>(null, ExecuteWhenSectionUpdate);
-            }
-            else if(ExecuteWhenSelectiveScoring != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenSelectiveScoring>(null, ExecuteWhenSelectiveScoring);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithin>(null, ExecuteWhenT7EmailRepliedWithin);
             }
         }
     }

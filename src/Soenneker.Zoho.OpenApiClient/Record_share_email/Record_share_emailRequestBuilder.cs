@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_share_email
     public partial class Record_share_emailRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.record_share_email.item collection</summary>
-        /// <param name="position">Module  Api Name of the record</param>
+        /// <param name="position">Specify the API name of the module that contains the record whose emails you want to share. Refer to [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve available module API names.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Record_share_email.Item.WithModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Record_share_email.Item.WithModuleApiNameItemRequestBuilder this[string position]
         {

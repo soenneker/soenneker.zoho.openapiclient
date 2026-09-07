@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response payload for send mail merge operation.
+    /// Represents the response payload for a send mail merge operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SendMailMergeNested1 : IParsable
     {
-        /// <summary>Response code indicating the result of the operation</summary>
+        /// <summary>Represents the response code indicating the result of the send mail merge operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>Response details for send mail merge operation.</summary>
+        /// <summary>Represents the response details returned upon successful initiation of the send mail merge operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.MailMergeDetailsNested? Details { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.MailMergeDetailsNested Details { get; set; }
 #endif
-        /// <summary>Human-readable message describing the result</summary>
+        /// <summary>Represents the message describing the result of the send mail merge operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -37,8 +37,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>Status of the operation</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNested1_status? Status { get; set; }
+        /// <summary>Represents the status of the send mail merge operation.Possible values:**success** - The mail merge email was initiated successfully.**error** - The mail merge email failed to initiate.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNested1Status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MailMergeDetailsNested>(global::Soenneker.Zoho.OpenApiClient.Models.MailMergeDetailsNested.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNested1_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNested1Status>(); } },
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MailMergeDetailsNested>("details", Details);
             writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNested1_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNested1Status>("status", Status);
         }
     }
 }

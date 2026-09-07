@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body schema
+    /// Request body schema for updating a single service. Contains a data array with exactly one service object that carries the fields to be updated.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PutservicessRequest : IParsable
     {
-        /// <summary>a (Required)</summary>
+        /// <summary>Specify the array containing the single service object to be updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2>? Data { get; set; }

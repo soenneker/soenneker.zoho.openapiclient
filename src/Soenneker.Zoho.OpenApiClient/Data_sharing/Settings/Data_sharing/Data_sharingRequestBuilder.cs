@@ -34,55 +34,57 @@ namespace Soenneker.Zoho.OpenApiClient.Data_sharing.Settings.Data_sharing
         {
         }
         /// <summary>
-        /// Get the data sharing settings configured.API exposed to customers
+        /// To retrieve your organization&apos;s default data-sharing permissions for modules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the data sharing settings configured.API exposed to customers
+        /// To update your organization&apos;s default data-sharing permissions for modules. You can modify data-sharing access for both system-defined and custom modules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing200"/></returns>
-        /// <param name="body">Update Data Sharing Request Body</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing200Response"/></returns>
+        /// <param name="body">Root request body for updating data sharing settings.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the data sharing settings configured.API exposed to customers
+        /// To retrieve your organization&apos;s default data-sharing permissions for modules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,18 +103,18 @@ namespace Soenneker.Zoho.OpenApiClient.Data_sharing.Settings.Data_sharing
             return requestInfo;
         }
         /// <summary>
-        /// Update the data sharing settings configured.API exposed to customers
+        /// To update your organization&apos;s default data-sharing permissions for modules. You can modify data-sharing access for both system-defined and custom modules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Update Data Sharing Request Body</param>
+        /// <param name="body">Root request body for updating data sharing settings.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

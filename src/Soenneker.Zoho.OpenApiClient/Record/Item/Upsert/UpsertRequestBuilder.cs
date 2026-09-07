@@ -34,53 +34,51 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Upsert
         {
         }
         /// <summary>
-        /// The Upsert API allows you to insert a new record or update an existing one based on duplicate check field values.
+        /// The Upsert API inserts a new record or updates an existing record based on duplicate check field values. If a matching record is found, it is updated; otherwise, a new record is inserted.When using the Upsert API, the system checks for duplicate records based on the duplicate check fields. There are two types of duplicate check fields: system-defined duplicate check fields and user-defined unique fields.System-defined duplicate check fields are predefined unique fields for each module. The system automatically checks these fields to prevent duplicate records. Refer to the System-defined Duplicate Check Fields section for module-specific details.User-defined unique fields are fields for which the &quot;Do not allow duplicate values&quot; option is enabled. These fields allow users to define custom fields for duplicate checking. For more information, refer to [Mark a Field as Unique](https://help.zoho.com/portal/en/kb/crm/customize-crm-account/customizing-fields/articles/use-custom-fields#Mark_a_Field_as_Unique). When a record is upserted, the system first checks for duplicates in these fields. If a matching record exists, it gets updated; otherwise, a new record is inserted.You can specify the order in which the system checks for duplicate records using the &quot;duplicate_check_fields&quot; array in the API request. The array can contain system-defined duplicate check fields, such as &quot;Email&quot; for the Leads module, and user-defined unique fields, such as &quot;Phone&quot; and &quot;Fax&quot;.For example, in the Leads module, you can specify: &quot;duplicate_check_fields&quot;: [&quot;Email&quot;, &quot;Phone&quot;, &quot;Fax&quot;].If &quot;duplicate_check_fields&quot; is not specified, the system checks duplicate records in the following order: 1. System-defined duplicate check fields. 2. User-defined unique fields.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertSuccessResponse"/></returns>
         /// <param name="body">Request body schema for upsert operations, allowing creation or update of records based on duplicate fields.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordsErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords412">When receiving a 412 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords412Response">When receiving a 412 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordsErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse.CreateFromDiscriminatorValue },
-                { "412", global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords412.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
+                { "412", global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords412Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Upsert API allows you to insert a new record or update an existing one based on duplicate check field values.
+        /// The Upsert API inserts a new record or updates an existing record based on duplicate check field values. If a matching record is found, it is updated; otherwise, a new record is inserted.When using the Upsert API, the system checks for duplicate records based on the duplicate check fields. There are two types of duplicate check fields: system-defined duplicate check fields and user-defined unique fields.System-defined duplicate check fields are predefined unique fields for each module. The system automatically checks these fields to prevent duplicate records. Refer to the System-defined Duplicate Check Fields section for module-specific details.User-defined unique fields are fields for which the &quot;Do not allow duplicate values&quot; option is enabled. These fields allow users to define custom fields for duplicate checking. For more information, refer to [Mark a Field as Unique](https://help.zoho.com/portal/en/kb/crm/customize-crm-account/customizing-fields/articles/use-custom-fields#Mark_a_Field_as_Unique). When a record is upserted, the system first checks for duplicates in these fields. If a matching record exists, it gets updated; otherwise, a new record is inserted.You can specify the order in which the system checks for duplicate records using the &quot;duplicate_check_fields&quot; array in the API request. The array can contain system-defined duplicate check fields, such as &quot;Email&quot; for the Leads module, and user-defined unique fields, such as &quot;Phone&quot; and &quot;Fax&quot;.For example, in the Leads module, you can specify: &quot;duplicate_check_fields&quot;: [&quot;Email&quot;, &quot;Phone&quot;, &quot;Fax&quot;].If &quot;duplicate_check_fields&quot; is not specified, the system checks duplicate records in the following order: 1. System-defined duplicate check fields. 2. User-defined unique fields.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body schema for upsert operations, allowing creation or update of records based on duplicate fields.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

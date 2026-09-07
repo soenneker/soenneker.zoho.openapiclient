@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Module field.
+    /// CRM module metadata with ID and API name.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Module : IParsable
     {
-        /// <summary>Api name field.</summary>
+        /// <summary>API name of the CRM module (e.g., Leads, Contacts, Accounts). Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to get module API names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>Id field.</summary>
+        /// <summary>Unique identifier of the CRM module. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to get module IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

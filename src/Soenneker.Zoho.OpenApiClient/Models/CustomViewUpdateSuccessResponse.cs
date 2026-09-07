@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Bulk update success response schema
+    /// Represents the bulk update success response containing a list of updated Custom View items.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomViewUpdateSuccessResponse : IParsable
     {
-        /// <summary>Array of custom views with success details</summary>
+        /// <summary>Represents the list of Custom View update success items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccess>? CustomViews { get; set; }

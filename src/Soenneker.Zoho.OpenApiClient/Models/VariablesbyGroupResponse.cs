@@ -13,13 +13,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariablesbyGroupResponse : IParsable
     {
-        /// <summary>&quot;Field: variables&quot;</summary>
+        /// <summary>Array of variable operation results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableResource>? Variables { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableListItem>? Variables { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableResource> Variables { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableListItem> Variables { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "variables", n => { Variables = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableResource>(global::Soenneker.Zoho.OpenApiClient.Models.VariableResource.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "variables", n => { Variables = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableListItem>(global::Soenneker.Zoho.OpenApiClient.Models.VariableListItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableResource>("variables", Variables);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableListItem>("variables", Variables);
         }
     }
 }

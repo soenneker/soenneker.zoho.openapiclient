@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// module_selection should be specific
+    /// Represents the error response returned when **module_selection** is set to a value that requires a specific module but no module is provided.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DependentMisMatchSchema : IParsable
     {
-        /// <summary>Error code</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchema_code? Code { get; set; }
-        /// <summary>Error details with validation information</summary>
+        /// <summary>Represents the error code for this response.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchCode? Code { get; set; }
+        /// <summary>Represents the error details containing additional context about the failed request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchemaDetails? Details { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchemaDetails Details { get; set; }
 #endif
-        /// <summary>Error message</summary>
+        /// <summary>Represents the error message describing the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -31,8 +31,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>Error status</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchema_status? Status { get; set; }
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,10 +51,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchema_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchemaDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchema_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -64,10 +64,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchema_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchemaDetails>("details", Details);
             writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMisMatchSchema_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

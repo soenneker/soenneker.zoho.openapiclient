@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_transfer.Users
             get => new global::Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.users_transfer.users.item collection</summary>
-        /// <param name="position">User ID to be transferred and deleted</param>
+        /// <param name="position">Represents the unique identifier of the user whose data is to be transferred and whose account is to be deleted. Use the [Get Users API](users.yaml#$.paths./users.get) API to get the valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Item.WithUserItemRequestBuilder this[string position]
         {

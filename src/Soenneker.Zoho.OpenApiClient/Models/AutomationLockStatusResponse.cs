@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the lock status property of an automation assignment rule, indicating whether the rule is currently locked.
+    /// Represents the lock status of the webhook. Locked webhooks cannot be edited or deleted.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationLockStatusResponse : IParsable
     {
-        /// <summary>&quot;Field: locked&quot;</summary>
+        /// <summary>Indicates whether the webhook is currently locked. Locked webhooks cannot be edited or deleted.Possible values:**true** - The webhook is locked.**false** - The webhook is not locked.</summary>
         public bool? Locked { get; set; }
-        /// <summary>&quot;Field: message&quot;</summary>
+        /// <summary>Represents the reason the webhook is locked. Returns null when the webhook is not locked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }

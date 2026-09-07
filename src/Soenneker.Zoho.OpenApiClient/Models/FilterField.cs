@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Specifies the field to filter on when counting related records.
+    /// Represents the field to use when filtering related records before counting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FilterField : IParsable
     {
-        /// <summary>The API name of the field to filter on.</summary>
+        /// <summary>Represents the API name of the field to filter on when counting related records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }

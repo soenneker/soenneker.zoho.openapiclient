@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.Conversion_o
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Conversion_optionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversion_option/Leads/{leadId}/__conversion_options", pathParameters)
+        public Conversion_optionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversion_option/Leads/{leadId}/__conversion_options{?include_inner_details}", pathParameters)
         {
         }
         /// <summary>
@@ -30,31 +30,31 @@ namespace Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.Conversion_o
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Conversion_optionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversion_option/Leads/{leadId}/__conversion_options", rawUrl)
+        public Conversion_optionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversion_option/Leads/{leadId}/__conversion_options{?include_inner_details}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves available conversion options for a lead including matching contacts, accounts, field mappings, and layout preferences. This endpoint helps determine what conversion paths are available before performing the actual lead conversion.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.Conversion_options.Conversion_optionsRequestBuilder.Conversion_optionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.Conversion_options.Conversion_optionsRequestBuilder.Conversion_optionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves available conversion options for a lead including matching contacts, accounts, field mappings, and layout preferences. This endpoint helps determine what conversion paths are available before performing the actual lead conversion.
@@ -63,11 +63,11 @@ namespace Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.Conversion_o
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.Conversion_options.Conversion_optionsRequestBuilder.Conversion_optionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.Conversion_options.Conversion_optionsRequestBuilder.Conversion_optionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,6 +83,23 @@ namespace Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.Conversion_o
         public global::Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.Conversion_options.Conversion_optionsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.Conversion_options.Conversion_optionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Retrieves available conversion options for a lead including matching contacts, accounts, field mappings, and layout preferences. This endpoint helps determine what conversion paths are available before performing the actual lead conversion.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Conversion_optionsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Fetches additional details of lookup or referenced inner resources within the same API call, avoiding separate dependent requests. Accepts a comma-separated list of inner resource paths starting from the root key of the response (the root key itself must not be included). Supports dot notation and JSONPath-style notation (e.g. $..key.sub_key). Invalid or non-permitted paths are silently ignored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("include_inner_details")]
+            public string? IncludeInnerDetails { get; set; }
+#nullable restore
+#else
+            [QueryParameter("include_inner_details")]
+            public string IncludeInnerDetails { get; set; }
+#endif
         }
     }
 }

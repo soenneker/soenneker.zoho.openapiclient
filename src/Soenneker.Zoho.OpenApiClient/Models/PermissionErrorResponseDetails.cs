@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Details about the required permissions.
+    /// Details object listing the permissions required for the operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PermissionErrorResponseDetails : IParsable
     {
-        /// <summary>List of permissions required to perform this operation.</summary>
+        /// <summary>List of permission identifiers required to perform this operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Permissions { get; set; }

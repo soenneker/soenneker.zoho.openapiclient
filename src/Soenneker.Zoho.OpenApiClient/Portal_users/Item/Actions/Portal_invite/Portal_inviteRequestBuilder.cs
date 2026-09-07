@@ -34,50 +34,57 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.Portal_invite
         {
         }
         /// <summary>
-        /// Send invitations to portal users for a specific module.
+        /// To retrieve the status of a scheduled portal invitation job in your Zoho CRM organization using the job identifier returned when invitations were scheduled.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.Portal_invite.Portal_inviteRequestBuilder.Portal_inviteRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.Portal_invite.Portal_inviteRequestBuilder.Portal_inviteRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.Portal_invite.Portal_inviteRequestBuilder.Portal_inviteRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.Portal_invite.Portal_inviteRequestBuilder.Portal_inviteRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send invitations to portal users for a specific module.
+        /// To send portal invitations in bulk to CRM records in your Zoho CRM organization for the specified module, scheduling them as asynchronous invitation jobs.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200Response"/></returns>
         /// <param name="body">Request body for inviting portal users</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsersRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsersRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send invitations to portal users for a specific module.
+        /// To retrieve the status of a scheduled portal invitation job in your Zoho CRM organization using the job identifier returned when invitations were scheduled.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,18 +103,18 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.Portal_invite
             return requestInfo;
         }
         /// <summary>
-        /// Send invitations to portal users for a specific module.
+        /// To send portal invitations in bulk to CRM records in your Zoho CRM organization for the specified module, scheduling them as asynchronous invitation jobs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body for inviting portal users</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsersRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsersRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -127,12 +134,12 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.Portal_invite
             return new global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.Portal_invite.Portal_inviteRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Send invitations to portal users for a specific module.
+        /// To retrieve the status of a scheduled portal invitation job in your Zoho CRM organization using the job identifier returned when invitations were scheduled.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Portal_inviteRequestBuilderGetQueryParameters 
         {
-            /// <summary>Job ID to fetch the status of the portal user invitations</summary>
+            /// <summary>The ID of the job you received in the response of the [Bulk Invite Users to a Portal API](https://www.zoho.com/crm/developer/docs/api/v8/portal-bulk-invite-users.html). When you do not include this parameter, the response will contain an array of all the jobs that were scheduled previously. If you give an incorrect job_id, you will get an empty response(HTTP 204).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("job_id")]

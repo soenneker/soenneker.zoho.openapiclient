@@ -34,10 +34,10 @@ namespace Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.Actions.Send_mail_me
         {
         }
         /// <summary>
-        /// Send mail merge API to use a mail merge template and send emails to users. You can also attach files either as inline images or separate attachments with the email through the API.
+        /// To send a personalized email to one or more recipients using a mail merge template associated with a specific record in your Zoho CRM organization. You can include recipients in the To, CC, and BCC fields, and optionally attach the merged document either as an inline image or a separate file.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PostsendmailmergeResponse200"/></returns>
-        /// <param name="body">Request body schema for send mail merge operation.</param>
+        /// <param name="body">Represents the request body schema for the send mail merge operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,10 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.Actions.Send_mail_me
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostsendmailmergeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostsendmailmergeResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send mail merge API to use a mail merge template and send emails to users. You can also attach files either as inline images or separate attachments with the email through the API.
+        /// To send a personalized email to one or more recipients using a mail merge template associated with a specific record in your Zoho CRM organization. You can include recipients in the To, CC, and BCC fields, and optionally attach the merged document either as an inline image or a separate file.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema for send mail merge operation.</param>
+        /// <param name="body">Represents the request body schema for the send mail merge operation.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

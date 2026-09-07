@@ -16,15 +16,15 @@ namespace Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.cancel_meetings.Events.item collection</summary>
-        /// <param name="position">This refers to the Event&apos;s id that need to be cancel</param>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.WithEventItemRequestBuilder"/></returns>
-        public global::Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.WithEventItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.WithEventValueItemRequestBuilder"/></returns>
+        public global::Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.WithEventValueItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("event", position);
-                return new global::Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.WithEventItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("eventValue", position);
+                return new global::Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.WithEventValueItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

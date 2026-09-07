@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
     public partial class LayoutsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.layouts_activate_deactivate.settings.layouts.item collection</summary>
-        /// <param name="position">The unique identifier of the layout to activate or deactivate. Must be a valid layout ID that exists within the specified module. Layout ID values are data center-specific.</param>
+        /// <param name="position">Specify the unique identifier of the layout to activate or deactivate. Refer to the [Get Layouts](layouts.yaml#$.paths./settings/layouts.get) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.LayoutsItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.LayoutsItemRequestBuilder this[string position]
         {

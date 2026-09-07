@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response for successful association of territories to a user
+    /// Represents the response containing the per-territory operation results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsersTerritoriesSuccessResponse : IParsable
     {
-        /// <summary>List of per-territory result items</summary>
+        /// <summary>Represents the list of per-territory operation results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse_territories>? Territories { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponseTerritoriesItem>? Territories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse_territories> Territories { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponseTerritoriesItem> Territories { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "territories", n => { Territories = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse_territories>(global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse_territories.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "territories", n => { Territories = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponseTerritoriesItem>(global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponseTerritoriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse_territories>("territories", Territories);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponseTerritoriesItem>("territories", Territories);
         }
     }
 }

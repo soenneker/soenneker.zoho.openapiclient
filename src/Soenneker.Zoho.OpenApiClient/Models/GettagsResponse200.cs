@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Success Response of Tags Get api
+    /// Represents the response body for a successful tag list retrieval.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GettagsResponse200 : IParsable
     {
-        /// <summary>Nested schema for info</summary>
+        /// <summary>Represents pagination and limit information for the tag list response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GETInfoNested? Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested? Info { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GETInfoNested Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested Info { get; set; }
 #endif
-        /// <summary>&quot;Field: tags&quot;</summary>
+        /// <summary>Represents an array of tag objects returned for the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GETTagsNested>? Tags { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetTagsNested>? Tags { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GETTagsNested> Tags { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetTagsNested> Tags { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,8 +47,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GETInfoNested>(global::Soenneker.Zoho.OpenApiClient.Models.GETInfoNested.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GETTagsNested>(global::Soenneker.Zoho.OpenApiClient.Models.GETTagsNested.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetTagsNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetTagsNested.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,8 +58,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GETInfoNested>("info", Info);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GETTagsNested>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested>("info", Info);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetTagsNested>("tags", Tags);
         }
     }
 }

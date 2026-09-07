@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags
     public partial class TagsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.tags_actions.settings.tags.item collection</summary>
-        /// <param name="position">&quot;Path parameter: id&quot;</param>
+        /// <param name="position">Unique identifier of the record or tag. Use the [Get Tags API](tags.yaml#$.paths./settings/tags.get) to retrieve tag IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.TagsItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.TagsItemRequestBuilder this[string position]
         {

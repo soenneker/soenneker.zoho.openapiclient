@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Pagination information for the response
+    /// Represents the pagination metadata for the email templates list response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InfoBlock : IParsable
     {
-        /// <summary>Number of items returned in `email_templates` for this response</summary>
+        /// <summary>Represents the number of Email Template records returned in the current page. </summary>
         public int? Count { get; set; }
-        /// <summary>True if there are more pages available after this one</summary>
+        /// <summary>Indicates whether additional pages of results are available. Possible values:**true** - More records are available on subsequent pages.**false** - The current page contains the last available records.</summary>
         public bool? MoreRecords { get; set; }
-        /// <summary>Current page number</summary>
+        /// <summary>Represents the current page number of the paginated response. </summary>
         public int? Page { get; set; }
-        /// <summary>Items per page (requested or default)</summary>
+        /// <summary>Represents the number of Email Template records returned per page. </summary>
         public int? PerPage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

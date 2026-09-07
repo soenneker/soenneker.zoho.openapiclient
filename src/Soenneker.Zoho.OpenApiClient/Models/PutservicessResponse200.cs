@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// services put success response
+    /// Wrapped response for a bulk service update request. Contains a per-record status array with the success code and audit metadata for each processed service.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PutservicessResponse200 : IParsable
     {
-        /// <summary>&quot;Field: data&quot;</summary>
+        /// <summary>Represents the per-record status array, with one entry for each service record processed in the bulk update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested1>? Data { get; set; }

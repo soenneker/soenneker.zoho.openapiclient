@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// A successful response for a PUT request outlining the modified unsubscribe link configuration details.
+    /// Success response for a PUT request that returns the action status of each updated unsubscribe link.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateUnsubscribeLinksSuccessResponse : IParsable
     {
-        /// <summary>&quot;Field: unsubscribe_links&quot;</summary>
+        /// <summary>Array containing the status of the update operation for each link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkActionStatus>? UnsubscribeLinks { get; set; }

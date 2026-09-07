@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Successful API operation completed
+    /// Represents the successful response body for a Cadence enrollment or un-enrollment operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostcadencesResponse200 : IParsable
     {
-        /// <summary>root element json</summary>
+        /// <summary>Represents the list of operation results for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.SuccessDataNested>? Data { get; set; }

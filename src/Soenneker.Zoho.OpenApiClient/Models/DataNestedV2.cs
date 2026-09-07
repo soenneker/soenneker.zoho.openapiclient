@@ -8,16 +8,16 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Operation-specific schema for PUT
+    /// Service object schema used in update requests. Extends the base service object with update-specific overrides on the Owner field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DataNestedV2 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>service availability type i.e specific date range or specific days </summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Availability_Type? AvailabilityType { get; set; }
-        /// <summary>contains available date (this field is mandatory when availability type is specific dates )</summary>
+        /// <summary>Specify how the service availability is defined. **Possible values**:  Specific Day(s), Specific Date Range, EveryBusiness Days, Specific Date(s).</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseAvailabilityType? AvailabilityType { get; set; }
+        /// <summary>Specify the list of dates on which the service is available. The key is mandatory when Availability_Type is Specific Date(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AvailableDates { get; set; }
@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<string> AvailableDates { get; set; }
 #endif
-        /// <summary>contains days (this field is mandatory when availability type is set to specific days)</summary>
+        /// <summary>Specify the list of business days on which the service is available. The key is mandatory when Availability_Type is Specific Day(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AvailableDays { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<string> AvailableDays { get; set; }
 #endif
-        /// <summary>service availability start time (this field is mandatory when service availability type is specific date range)</summary>
+        /// <summary>Specify the date from which the service is available, in YYYY-MM-DD format. The key is mandatory when Availability_Type is Specific Date Range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AvailableFrom { get; set; }
@@ -41,9 +41,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string AvailableFrom { get; set; }
 #endif
-        /// <summary>service availability end time (this field is mandatory when service availability type is specific date range)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Available_Till? AvailableTill { get; set; }
-        /// <summary>contains the service availability timing</summary>
+        /// <summary>Specify the date until which the service is available, in YYYY-MM-DD format. The key is mandatory when Availability_Type is Specific Date Range.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseAvailableTill? AvailableTill { get; set; }
+        /// <summary>Specify the available time windows for the service. The total available time must be at least equal to the service Duration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AvailableTimings { get; set; }
@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string AvailableTimings { get; set; }
 #endif
-        /// <summary>Represents the description of the service</summary>
+        /// <summary>Specify a description of the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -59,9 +59,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>duration of the service</summary>
+        /// <summary>Specify the duration of the service, in minutes. Must be greater than 5 minutes and less than 24 hours.</summary>
         public int? Duration { get; set; }
-        /// <summary>id of the owner</summary>
+        /// <summary>Specify the unique ID of the service record being updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -69,9 +69,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>is job sheet required for the service</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Job_Sheet_Required? JobSheetRequired { get; set; }
-        /// <summary>contains job sheet section information</summary>
+        /// <summary>Specify whether a job sheet is required for the service. **Possible values**: Yes, No.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseJobSheetRequired? JobSheetRequired { get; set; }
+        /// <summary>Specify the job sheet section associated with the service. It can be set only when Job_Sheet_Required is Yes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobSheetSectionS { get; set; }
@@ -79,9 +79,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JobSheetSectionS { get; set; }
 #endif
-        /// <summary>Location where the service held</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Location? Location { get; set; }
-        /// <summary>members who does this service (contains multiple members)</summary>
+        /// <summary>Specify where the service is delivered. **Possible values**: Client Address, Business Address, BusinessAddress and Client Address.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseLocation? Location { get; set; }
+        /// <summary>Specify the users who deliver the service. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.MembersitemBase>? Members { get; set; }
@@ -89,7 +89,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.MembersitemBase> Members { get; set; }
 #endif
-        /// <summary>Base schema for Owner</summary>
+        /// <summary>Base schema for the service owner. Identifies the user who owns the service record by name, ID, and email. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.OwnerBase? Owner { get; set; }
@@ -97,9 +97,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.OwnerBase Owner { get; set; }
 #endif
-        /// <summary>price of the service</summary>
+        /// <summary>Specify the price charged for the service in the organization currency.</summary>
         public int? Price { get; set; }
-        /// <summary>record image</summary>
+        /// <summary>Specify the record image to associate with the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecordImage { get; set; }
@@ -107,7 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string RecordImage { get; set; }
 #endif
-        /// <summary>name of the service</summary>
+        /// <summary>Specify the name of the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceName { get; set; }
@@ -115,9 +115,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ServiceName { get; set; }
 #endif
-        /// <summary>Record Status</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Status? Status { get; set; }
-        /// <summary>tags associated with this record</summary>
+        /// <summary>Specify the operational status of the service. **Possible values**: - Available - service is active and accepting bookings.- Not in Use - service is currently inactive.- Scheduled - service is queued to become Available onAvailable_From.- Temporarily Unavailable - service is paused for theUnavailable_From-to-Unavailable_Till window.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseStatus? Status { get; set; }
+        /// <summary>Specify the tag names to associate with the service record. Refer to the [Get tags](tags.yaml#$.paths./settings/tags.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tag { get; set; }
@@ -125,7 +125,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<string> Tag { get; set; }
 #endif
-        /// <summary>Contains the ID and value of the tax applied to the service cost</summary>
+        /// <summary>Specify the taxes applied to the service cost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tax { get; set; }
@@ -133,7 +133,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<string> Tax { get; set; }
 #endif
-        /// <summary>service unavailable from</summary>
+        /// <summary>Specify the date and time from which the service becomes unavailable. Must fall within the service availability window.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnavailableFrom { get; set; }
@@ -141,7 +141,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string UnavailableFrom { get; set; }
 #endif
-        /// <summary>service unavailable till </summary>
+        /// <summary>Specify the date and time until which the service remains unavailable. Must fall within the service availability window.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnavailableTill { get; set; }
@@ -174,24 +174,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Availability_Type", n => { AvailabilityType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Availability_Type>(); } },
+                { "Availability_Type", n => { AvailabilityType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseAvailabilityType>(); } },
                 { "Available_Dates", n => { AvailableDates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "Available_Days", n => { AvailableDays = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "Available_From", n => { AvailableFrom = n.GetStringValue(); } },
-                { "Available_Till", n => { AvailableTill = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Available_Till>(); } },
+                { "Available_Till", n => { AvailableTill = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseAvailableTill>(); } },
                 { "Available_Timings", n => { AvailableTimings = n.GetStringValue(); } },
                 { "Description", n => { Description = n.GetStringValue(); } },
                 { "Duration", n => { Duration = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "Job_Sheet_Required", n => { JobSheetRequired = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Job_Sheet_Required>(); } },
+                { "Job_Sheet_Required", n => { JobSheetRequired = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseJobSheetRequired>(); } },
                 { "Job_Sheet_Section__s", n => { JobSheetSectionS = n.GetStringValue(); } },
-                { "Location", n => { Location = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Location>(); } },
+                { "Location", n => { Location = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseLocation>(); } },
                 { "Members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.MembersitemBase>(global::Soenneker.Zoho.OpenApiClient.Models.MembersitemBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Owner", n => { Owner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerBase>(global::Soenneker.Zoho.OpenApiClient.Models.OwnerBase.CreateFromDiscriminatorValue); } },
                 { "Price", n => { Price = n.GetIntValue(); } },
                 { "Record_Image", n => { RecordImage = n.GetStringValue(); } },
                 { "Service_Name", n => { ServiceName = n.GetStringValue(); } },
-                { "Status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Status>(); } },
+                { "Status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseStatus>(); } },
                 { "Tag", n => { Tag = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "Tax", n => { Tax = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "Unavailable_From", n => { UnavailableFrom = n.GetStringValue(); } },
@@ -205,24 +205,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Availability_Type>("Availability_Type", AvailabilityType);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseAvailabilityType>("Availability_Type", AvailabilityType);
             writer.WriteCollectionOfPrimitiveValues<string>("Available_Dates", AvailableDates);
             writer.WriteCollectionOfPrimitiveValues<string>("Available_Days", AvailableDays);
             writer.WriteStringValue("Available_From", AvailableFrom);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Available_Till>("Available_Till", AvailableTill);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseAvailableTill>("Available_Till", AvailableTill);
             writer.WriteStringValue("Available_Timings", AvailableTimings);
             writer.WriteStringValue("Description", Description);
             writer.WriteIntValue("Duration", Duration);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Job_Sheet_Required>("Job_Sheet_Required", JobSheetRequired);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseJobSheetRequired>("Job_Sheet_Required", JobSheetRequired);
             writer.WriteStringValue("Job_Sheet_Section__s", JobSheetSectionS);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Location>("Location", Location);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseLocation>("Location", Location);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.MembersitemBase>("Members", Members);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerBase>("Owner", Owner);
             writer.WriteIntValue("Price", Price);
             writer.WriteStringValue("Record_Image", RecordImage);
             writer.WriteStringValue("Service_Name", ServiceName);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedV2_Status>("Status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedBaseStatus>("Status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("Tag", Tag);
             writer.WriteCollectionOfPrimitiveValues<string>("Tax", Tax);
             writer.WriteStringValue("Unavailable_From", UnavailableFrom);

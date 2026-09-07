@@ -34,13 +34,13 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.Actions.M
         {
         }
         /// <summary>
-        /// This endpoint is used to merge two tags
+        /// Merges two tags into one, combining their associated records and metadata. The tag specified in the path parameter (id) is the master tag that will remain after the merge. The conflict_id in the request body specifies the tag to be merged into the master tag.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PostmergeResponse200"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Request body schema for merging tags.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.Actions.Merge.PostmergeResponse200403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsMergeTags403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostmergeResponse200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostmergeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,15 +54,15 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.Actions.M
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.Actions.Merge.PostmergeResponse200403Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsMergeTags403Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostmergeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostmergeResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint is used to merge two tags
+        /// Merges two tags into one, combining their associated records and metadata. The tag specified in the path parameter (id) is the master tag that will remain after the merge. The conflict_id in the request body specifies the tag to be merged into the master tag.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Request body schema for merging tags.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

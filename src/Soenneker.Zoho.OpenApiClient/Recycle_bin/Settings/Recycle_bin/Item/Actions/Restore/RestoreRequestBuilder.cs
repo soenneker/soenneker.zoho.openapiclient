@@ -34,12 +34,11 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Item.Act
         {
         }
         /// <summary>
-        /// Restores a single recycle-bin record identified by the path parameter `record_id`.
+        /// To restore a single deleted record from the Recycle Bin in your Zoho CRM account. The record is moved back to its original module along with all its associated child records, such as Notes and Attachments. When the total number of restored records, including child records, is 1000 or fewer, the restoration completes immediately and returns a 200 response. When the total exceeds 1000, the operation is scheduled as a background job. Admin users can restore any record; non-admin users can restore only the records they own unless their profile grants broader access.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ResultList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecord400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ResultList?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,14 +49,10 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Item.Act
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecord400.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ResultList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ResultList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Restores a single recycle-bin record identified by the path parameter `record_id`.
+        /// To restore a single deleted record from the Recycle Bin in your Zoho CRM account. The record is moved back to its original module along with all its associated child records, such as Notes and Attachments. When the total number of restored records, including child records, is 1000 or fewer, the restoration completes immediately and returns a 200 response. When the total exceeds 1000, the operation is scheduled as a background job. Admin users can restore any record; non-admin users can restore only the records they own unless their profile grants broader access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

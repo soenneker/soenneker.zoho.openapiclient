@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records
     public partial class Share_recordsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.share_records.item collection</summary>
-        /// <param name="position">API name of the module</param>
+        /// <param name="position">Specify the API name of the module that owns the record. Refer to the [Get Modules API](modules.yaml#$.paths./settings/modules.get) for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Share_records.Item.WithModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Share_records.Item.WithModuleApiNameItemRequestBuilder this[string position]
         {

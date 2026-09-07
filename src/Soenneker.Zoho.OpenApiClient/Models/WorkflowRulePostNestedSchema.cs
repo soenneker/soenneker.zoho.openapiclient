@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Root Element of the workflow rule
+    /// Represents the configuration object for a new workflow rule, including required fields such as name, target module, and trigger configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRulePostNestedSchema : IParsable
     {
-        /// <summary>An array of condition objects that define the criteria for executing the actions. (Required)</summary>
+        /// <summary>Specify the conditions that define the branching logic of the workflow rule. Each condition evaluates records against criteria and executes its own set of actions. At least one condition is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>? Conditions { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema> Conditions { get; set; }
 #endif
-        /// <summary>Specify the Workflow description.</summary>
+        /// <summary>Specify an optional description for the workflow rule. Set to null to clear an existing description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The execute_when property</summary>
+        /// <summary>Represents the trigger configuration that defines when the workflow rule fires, including the trigger type and its associated details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema? ExecuteWhen { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema ExecuteWhen { get; set; }
 #endif
-        /// <summary>Specify whether the workflow rule should be locked for editing by other users.</summary>
+        /// <summary>Specify the lock configuration to prevent other users from editing the rule. Only administrators can lock or unlock rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock? Lock { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock Lock { get; set; }
 #endif
-        /// <summary>Specify the module/field to which the workflow rule applies</summary>
+        /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? Module { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema Module { get; set; }
 #endif
-        /// <summary>Specify the Workflow name. (Required)</summary>
+        /// <summary>Specify the workflow rule name. Required. Cannot exceed 100 characters. Special characters are not allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

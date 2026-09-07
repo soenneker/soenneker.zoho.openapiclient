@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Normal tab theme
+    /// Specify the theme settings for the normal (unselected) tab in the user&apos;s CRM interface, including background color and font color.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserDetailsThemeNormalTab : IParsable
     {
-        /// <summary>Background color of normal tab</summary>
+        /// <summary>Specify the background color for the normal tab in the user&apos;s theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Background { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Background { get; set; }
 #endif
-        /// <summary>Font color of normal tab</summary>
+        /// <summary>Specify the font color for the normal tab in the user&apos;s theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FontColor { get; set; }

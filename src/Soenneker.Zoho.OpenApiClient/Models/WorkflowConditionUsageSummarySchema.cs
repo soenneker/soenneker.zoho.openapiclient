@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Summarizes usage for a workflow condition, combining instant action usage, scheduled action usage groups, total usage count, and condition ID.
+    /// Represents the execution usage summary for a single workflow rule condition, including total execution count and breakdowns for instant and scheduled action groups.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowConditionUsageSummarySchema : IParsable
     {
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the WorkflowConditionUsageSummary within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Container for a list of instant actions executed within a condition, each with usage metrics.</summary>
+        /// <summary>Represents a container for the list of instant action usage detail objects associated with a workflow rule condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageListSchema? InstantActions { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageListSchema InstantActions { get; set; }
 #endif
-        /// <summary>&quot;Field: scheduled_actions&quot;</summary>
+        /// <summary>Represents the array of scheduled action groups configured for this condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsUsageGroupSchema>? ScheduledActions { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsUsageGroupSchema> ScheduledActions { get; set; }
 #endif
-        /// <summary>&quot;Field: usage_count&quot;</summary>
+        /// <summary>Represents the total number of times the actions in this condition were executed.</summary>
         public int? UsageCount { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

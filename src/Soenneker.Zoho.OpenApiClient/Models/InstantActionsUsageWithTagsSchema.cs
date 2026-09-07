@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Container for instant actions that carry tag information, listing each tagged action&apos;s usage metrics.
+    /// Represents a container for instant action usage details that include tag-based metrics, grouped within a workflow rule condition.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstantActionsUsageWithTagsSchema : IParsable
     {
-        /// <summary>&quot;Field: actions&quot;</summary>
+        /// <summary>Represents the array of action usage detail objects, including those associated with tags, for the instant actions configured in this condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TaggedActionUsageMetricsSchema>? Actions { get; set; }

@@ -34,11 +34,12 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_configurations
         {
         }
         /// <summary>
-        /// To retrieve the complete configuration metadata details for workflows.This includes the list of available triggers for the module, the actions supported for each trigger, and their limits and properties.&amp;nbsp;
+        /// Retrieves the available triggers, actions, and related trigger details for a specific module. Use this endpoint before creating or updating workflow rules to discover which triggers and actions are supported, their per-type limits, scheduling compatibility, and related module triggers. The response includes three sections: triggers (events that fire the rule), actions (operations executed when the rule fires), and related_triggers_details (child/related modules like Notes or Calls that can also trigger rules on the parent module).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsNoPermissionError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_configurations.Workflow_configurationsRequestBuilder.Workflow_configurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,10 +50,14 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_configurations
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsNoPermissionError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the complete configuration metadata details for workflows.This includes the list of available triggers for the module, the actions supported for each trigger, and their limits and properties.&amp;nbsp;
+        /// Retrieves the available triggers, actions, and related trigger details for a specific module. Use this endpoint before creating or updating workflow rules to discover which triggers and actions are supported, their per-type limits, scheduling compatibility, and related module triggers. The response includes three sections: triggers (events that fire the rule), actions (operations executed when the rule fires), and related_triggers_details (child/related modules like Notes or Calls that can also trigger rules on the parent module).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,14 +85,21 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_configurations
             return new global::Soenneker.Zoho.OpenApiClient.Workflow_configurations.Workflow_configurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To retrieve the complete configuration metadata details for workflows.This includes the list of available triggers for the module, the actions supported for each trigger, and their limits and properties.&amp;nbsp;
+        /// Retrieves the available triggers, actions, and related trigger details for a specific module. Use this endpoint before creating or updating workflow rules to discover which triggers and actions are supported, their per-type limits, scheduling compatibility, and related module triggers. The response includes three sections: triggers (events that fire the rule), actions (operations executed when the rule fires), and related_triggers_details (child/related modules like Notes or Calls that can also trigger rules on the parent module).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workflow_configurationsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specify the API name of the module whose workflow configuration metadata you want to retrieve.</summary>
+            /// <summary>Specify the API name of the CRM module for which you want to retrieve workflow configuration metadata. Must be a workflow-supported module (for example, Leads, Contacts, Deals, Accounts, Tasks, Cases, Products, Quotes, Sales_Orders, Purchase_Orders, Invoices, Campaigns, Vendors). Refer to the [Get Modules Metadata API](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("module")]
-            public global::Soenneker.Zoho.OpenApiClient.Workflow_configurations.GetModuleQueryParameterType? Module { get; set; }
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
         }
     }
 }

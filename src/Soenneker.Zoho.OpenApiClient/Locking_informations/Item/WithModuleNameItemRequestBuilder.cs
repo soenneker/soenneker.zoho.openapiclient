@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item
     public partial class WithModuleNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.locking_informations.item.item collection</summary>
-        /// <param name="position">The ID of the record from which the lock is to be removed.</param>
+        /// <param name="position">Specify the unique identifier of the record for which you want to manage the lock.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

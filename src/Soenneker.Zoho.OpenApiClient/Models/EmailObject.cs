@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Detailed email metadata object.
+    /// Detailed email metadata object for association.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailObject : IParsable
     {
-        /// <summary>List of associated attachments.</summary>
+        /// <summary>List of attachments associated with the email. Use the [Files API](files.yaml#$.paths./files.get) to retrieve attachment IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentRef>? Attachments { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentRef> Attachments { get; set; }
 #endif
-        /// <summary>Blind carbon copy recipients.</summary>
+        /// <summary>Blind carbon copy recipients of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailAddress>? Bcc { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailAddress> Bcc { get; set; }
 #endif
-        /// <summary>Carbon copy recipients.</summary>
+        /// <summary>Carbon copy recipients of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailAddress>? Cc { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>Timestamp of the email.</summary>
+        /// <summary>The timestamp of the email (ISO 8601 format).</summary>
         public DateTimeOffset? DateTime { get; set; }
         /// <summary>Object representing an email address and display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,9 +55,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.EmailAddress From { get; set; }
 #endif
-        /// <summary>Email content format.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailObject_mail_format? MailFormat { get; set; }
-        /// <summary>Unique identifier from the mail server.</summary>
+        /// <summary>The format of the email content.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailObjectMailFormat? MailFormat { get; set; }
+        /// <summary>The unique identifier of the email from the mail server. This is used to prevent duplicate email associations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginalMessageId { get; set; }
@@ -65,9 +65,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string OriginalMessageId { get; set; }
 #endif
-        /// <summary>Whether the email was sent or received.</summary>
+        /// <summary>Indicates whether the email was sent (true) or received (false) by the CRM user.</summary>
         public bool? Sent { get; set; }
-        /// <summary>The subject of the email.</summary>
+        /// <summary>The subject line of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Subject { get; set; }
 #endif
-        /// <summary>Primary recipients.</summary>
+        /// <summary>Primary recipients of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailAddress>? To { get; set; }
@@ -83,13 +83,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailAddress> To { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailObject"/> and sets the default values.
-        /// </summary>
-        public EmailObject()
-        {
-            MailFormat = global::Soenneker.Zoho.OpenApiClient.Models.EmailObject_mail_format.Text;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -114,7 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "date_time", n => { DateTime = n.GetDateTimeOffsetValue(); } },
                 { "from", n => { From = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailAddress>(global::Soenneker.Zoho.OpenApiClient.Models.EmailAddress.CreateFromDiscriminatorValue); } },
-                { "mail_format", n => { MailFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailObject_mail_format>(); } },
+                { "mail_format", n => { MailFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailObjectMailFormat>(); } },
                 { "original_message_id", n => { OriginalMessageId = n.GetStringValue(); } },
                 { "sent", n => { Sent = n.GetBoolValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
@@ -134,7 +127,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteDateTimeOffsetValue("date_time", DateTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailAddress>("from", From);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailObject_mail_format>("mail_format", MailFormat);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailObjectMailFormat>("mail_format", MailFormat);
             writer.WriteStringValue("original_message_id", OriginalMessageId);
             writer.WriteBoolValue("sent", Sent);
             writer.WriteStringValue("subject", Subject);

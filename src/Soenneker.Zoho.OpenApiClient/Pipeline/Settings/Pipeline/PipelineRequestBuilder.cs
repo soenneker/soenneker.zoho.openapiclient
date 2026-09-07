@@ -25,15 +25,15 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
             get => new global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.pipeline.settings.pipeline.item collection</summary>
-        /// <param name="position">Pipeline Id</param>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder"/></returns>
-        public global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder this[string position]
+        /// <param name="position">Specify the Pipeline ID. Use the [Get Pipeline API](pipeline.yaml#$.paths./settings/pipeline.get) to get the Pipeline ID.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.WithPipelineIdentifierItemRequestBuilder"/></returns>
+        public global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.WithPipelineIdentifierItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("id", position);
-                return new global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.PipelineItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("pipelineIdentifier", position);
+                return new global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Item.WithPipelineIdentifierItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
         {
         }
         /// <summary>
-        /// Get pipelines for a given layout
+        /// Retrieve all pipelines available for the specified Deals layout. Use the required layout_id query parameter to identify the layout.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update/Delete an pipeline
+        /// Update or delete a pipeline for the specified layout using a request body that identifies the pipeline and its stage mappings.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PipelineSuccessResponse"/></returns>
         /// <param name="body">Request body for updating or creating pipeline configurations with custom picklist values and stage mappings.</param>
@@ -101,10 +101,10 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PipelineSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PipelineSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new pipeline for a given layout
+        /// Create a new pipeline for the specified Deals layout by providing a pipeline display label and one or more mapped stages.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PipelineSuccessResponse"/></returns>
-        /// <param name="body">Request body for updating or creating pipeline configurations with custom picklist values and stage mappings.</param>
+        /// <param name="body">Request body for creating a pipeline configuration with a custom pipeline label and mapped stage values for a specific Deals layout.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionErrorResponse">When receiving a 403 status code</exception>
@@ -126,7 +126,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PipelineSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PipelineSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update/Delete an pipeline
+        /// Update, or delete a pipeline for the specified layout using the supplied pipeline configuration in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PipelineSuccessResponse"/></returns>
         /// <param name="body">Request body for updating or creating pipeline configurations with custom picklist values and stage mappings.</param>
@@ -151,7 +151,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PipelineSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PipelineSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get pipelines for a given layout
+        /// Retrieve all pipelines available for the specified Deals layout. Use the required layout_id query parameter to identify the layout.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -170,7 +170,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
             return requestInfo;
         }
         /// <summary>
-        /// Update/Delete an pipeline
+        /// Update or delete a pipeline for the specified layout using a request body that identifies the pipeline and its stage mappings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body for updating or creating pipeline configurations with custom picklist values and stage mappings.</param>
@@ -192,10 +192,10 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
             return requestInfo;
         }
         /// <summary>
-        /// Create a new pipeline for a given layout
+        /// Create a new pipeline for the specified Deals layout by providing a pipeline display label and one or more mapped stages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for updating or creating pipeline configurations with custom picklist values and stage mappings.</param>
+        /// <param name="body">Request body for creating a pipeline configuration with a custom pipeline label and mapped stage values for a specific Deals layout.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -214,7 +214,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
             return requestInfo;
         }
         /// <summary>
-        /// Update/Delete an pipeline
+        /// Update, or delete a pipeline for the specified layout using the supplied pipeline configuration in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body for updating or creating pipeline configurations with custom picklist values and stage mappings.</param>
@@ -245,12 +245,12 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
             return new global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.PipelineRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get pipelines for a given layout
+        /// Retrieve all pipelines available for the specified Deals layout. Use the required layout_id query parameter to identify the layout.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PipelineRequestBuilderGetQueryParameters 
         {
-            /// <summary>Layout Id</summary>
+            /// <summary>Specify the Layout ID of the Deals module. Use the [Get Layouts Metadata API](layouts.yaml#$.paths./settings/layouts.get) to retrieve the Layout ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("layout_id")]
@@ -262,12 +262,12 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
 #endif
         }
         /// <summary>
-        /// Update/Delete an pipeline
+        /// Update or delete a pipeline for the specified layout using a request body that identifies the pipeline and its stage mappings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PipelineRequestBuilderPatchQueryParameters 
         {
-            /// <summary>Layout Id</summary>
+            /// <summary>Specify the Layout ID of the Deals module. Use the [Get Layouts Metadata API](layouts.yaml#$.paths./settings/layouts.get) to retrieve the Layout ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("layout_id")]
@@ -279,12 +279,12 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
 #endif
         }
         /// <summary>
-        /// Create a new pipeline for a given layout
+        /// Create a new pipeline for the specified Deals layout by providing a pipeline display label and one or more mapped stages.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PipelineRequestBuilderPostQueryParameters 
         {
-            /// <summary>Layout Id</summary>
+            /// <summary>Specify the Layout ID of the Deals module. Use the [Get Layouts Metadata API](layouts.yaml#$.paths./settings/layouts.get) to retrieve the Layout ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("layout_id")]
@@ -296,12 +296,12 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline
 #endif
         }
         /// <summary>
-        /// Update/Delete an pipeline
+        /// Update, or delete a pipeline for the specified layout using the supplied pipeline configuration in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PipelineRequestBuilderPutQueryParameters 
         {
-            /// <summary>Layout Id</summary>
+            /// <summary>Specify the Layout ID of the Deals module. Use the [Get Layouts Metadata API](layouts.yaml#$.paths./settings/layouts.get) to retrieve the Layout ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("layout_id")]

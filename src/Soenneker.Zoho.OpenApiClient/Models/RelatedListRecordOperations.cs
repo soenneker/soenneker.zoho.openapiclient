@@ -8,22 +8,22 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Flags indicating the record operations allowed on the related list.
+    /// Represents the set of record operations permitted for a related list.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedListRecordOperations : IParsable
     {
-        /// <summary>Whether assign operation is allowed on related list records.</summary>
+        /// <summary>Indicates whether the assign operation is allowed on records in the related list. Possible values: **true**, **false**. </summary>
         public bool? Assign { get; set; }
-        /// <summary>Whether bulk edit operation is allowed on related list records.</summary>
+        /// <summary>Indicates whether the bulk edit operation is allowed on records in the related list. Possible values: **true**, **false**. </summary>
         public bool? BulkEdit { get; set; }
-        /// <summary>Whether create operation is allowed on related list records.</summary>
+        /// <summary>Indicates whether the create operation is allowed on records in the related list. Possible values: **true**, **false**. </summary>
         public bool? Create { get; set; }
-        /// <summary>Whether delete operation is allowed on related list records.</summary>
+        /// <summary>Indicates whether the delete operation is allowed on records in the related list. Possible values: **true**, **false**. </summary>
         public bool? Delete { get; set; }
-        /// <summary>Whether disassociate operation is allowed on related list records.</summary>
+        /// <summary>Indicates whether records can be disassociated from the related list. Possible values: **true**, **false**. </summary>
         public bool? Disassociate { get; set; }
-        /// <summary>Whether edit operation is allowed on related list records.</summary>
+        /// <summary>Indicates whether the edit operation is allowed on records in the related list. Possible values: **true**, **false**. </summary>
         public bool? Edit { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -31,14 +31,14 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             get => new global::Soenneker.Zoho.OpenApiClient.Record.Item.Upsert.UpsertRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.record.item.item collection</summary>
-        /// <param name="position">This ID is used to uniquely identify a record</param>
+        /// <param name="position">Specify the unique ID of the record. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Record.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Record.Item.Item.WithRecordItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("recordID", position);
+                urlTplParams.Add("recordId", position);
                 return new global::Soenneker.Zoho.OpenApiClient.Record.Item.Item.WithRecordItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithModuleItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record/{module}{?converted*,cvid*,fields*,ids*,include_child*,page*,page_token*,per_page*,sort_by*,sort_order*,territory_id*}", pathParameters)
+        public WithModuleItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record/{module}{?converted*,cross_filters*,cvid*,filterId*,filters*,ids,include_child*,page*,page_token*,per_page*,sort_by*,sort_order*,territory_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,78 +55,77 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithModuleItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record/{module}{?converted*,cvid*,fields*,ids*,include_child*,page*,page_token*,per_page*,sort_by*,sort_order*,territory_id*}", rawUrl)
+        public WithModuleItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record/{module}{?converted*,cross_filters*,cvid*,filterId*,filters*,ids,include_child*,page*,page_token*,per_page*,sort_by*,sort_order*,territory_id*}", rawUrl)
         {
         }
         /// <summary>
-        /// Permanently deletes one or more records from the specified module using comma-separated record IDs. Returns per-item results for bulk operations.
+        /// To permanently delete more records from the specified module in your Zoho CRM organization, use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record IDs. A maximum of 100 records can be deleted per API call. By default, all workflows related to this API are executed. All subforms related to the deleted records are also deleted.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteUnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeletePermissionResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInvalidUrlResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords401.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords403.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords500.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteUnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeletePermissionResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInvalidUrlResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInternalErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecords200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To get the list of available records from a module
+        /// Retrieves records from the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name. Use &quot;sort_by&quot; and &quot;sort_order&quot; to control the sorting of records. To fetch up to 2000 records, use &quot;page&quot; (1-10) and &quot;per_page&quot; (maximum 200). To fetch more than 2000 records, use the &quot;page_token&quot; returned in the response. Consecutive page tokens can be used to navigate through up to 100,000 records. The &quot;$has_more&quot; key is returned when fetching a specific record and indicates whether more records are available in subforms, multi-select lookup fields, and multi-user lookup fields. To retrieve details of a related list, use the [Get Related Records API](related_records.yaml#$.paths./{parentRecordModule}/{parentRecord}/{relatedList}.get).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGETErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordGETErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordGETSucessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a Record in a specific module
+        /// Creates one or more records in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the available field API names and data types. You can create up to 100 records in a single API call. Specify the required field API names and their corresponding values in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse"/></returns>
-        /// <param name="body">Input schema for create, update, or upsert record requests.</param>
+        /// <param name="body">Represents the RecordsInputSchema data structure.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordsErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,51 +140,48 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordsErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To update existing entities or records in a specified module.
+        /// Updates one or more existing records in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name and the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field API names.A maximum of 100 records can be updated per API call. Use only Field API names in the input. You can update all fields supported by the Insert Records API operation.When updating multiple records, the response array maintains the same order as the input records, allowing each response to be mapped to its corresponding input record. To update multiple subform records, specify the subform API name as a key within the record and provide the subform records as a JSON array. Use the subform field API names as keys within each subform record. For detailed information on subforms, refer to the [Manipulating Subform using Zoho CRM APIs](https://help.zoho.com/portal/en/community/topic/kaizen-124-accessing-subform-using-zoho-crm-apis).Use the [Modules API](modules.yaml#$.paths./settings/modules.get) and [Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the API names of the subform and its fields. To update an existing subform record, include its record ID in the subform JSON array. Use the [Get Records API](record.yaml#$.paths./module.get) with the subform API name to retrieve subform record IDs.When adding a new subform record, it is appended to the existing records. Passing an empty JSON array for a subform deletes all its records. To delete a specific subform record, specify its record ID and set &quot;_delete&quot; to &quot;null&quot;. Deleting the parent record also deletes all its subform records.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse"/></returns>
-        /// <param name="body">Input schema for create, update, or upsert record requests.</param>
+        /// <param name="body">Represents the RecordsPutInputSchema data structure.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordsErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecords412">When receiving a 412 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecords412Response">When receiving a 412 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordsErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnathorizedResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidURLResponse.CreateFromDiscriminatorValue },
-                { "412", global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecords412.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
+                { "412", global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecords412Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Permanently deletes one or more records from the specified module using comma-separated record IDs. Returns per-item results for bulk operations.
+        /// To permanently delete more records from the specified module in your Zoho CRM organization, use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record IDs. A maximum of 100 records can be deleted per API call. By default, all workflows related to this API are executed. All subforms related to the deleted records are also deleted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -204,7 +200,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             return requestInfo;
         }
         /// <summary>
-        /// To get the list of available records from a module
+        /// Retrieves records from the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name. Use &quot;sort_by&quot; and &quot;sort_order&quot; to control the sorting of records. To fetch up to 2000 records, use &quot;page&quot; (1-10) and &quot;per_page&quot; (maximum 200). To fetch more than 2000 records, use the &quot;page_token&quot; returned in the response. Consecutive page tokens can be used to navigate through up to 100,000 records. The &quot;$has_more&quot; key is returned when fetching a specific record and indicates whether more records are available in subforms, multi-select lookup fields, and multi-user lookup fields. To retrieve details of a related list, use the [Get Related Records API](related_records.yaml#$.paths./{parentRecordModule}/{parentRecord}/{relatedList}.get).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -217,16 +213,16 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/record/{module}?fields={fields}{&converted*,cross_filters*,cvid*,filterId*,filters*,ids,include_child*,page*,page_token*,per_page*,sort_by*,sort_order*,territory_id*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Create a Record in a specific module
+        /// Creates one or more records in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the available field API names and data types. You can create up to 100 records in a single API call. Specify the required field API names and their corresponding values in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Input schema for create, update, or upsert record requests.</param>
+        /// <param name="body">Represents the RecordsInputSchema data structure.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -245,18 +241,18 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             return requestInfo;
         }
         /// <summary>
-        /// To update existing entities or records in a specified module.
+        /// Updates one or more existing records in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name and the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field API names.A maximum of 100 records can be updated per API call. Use only Field API names in the input. You can update all fields supported by the Insert Records API operation.When updating multiple records, the response array maintains the same order as the input records, allowing each response to be mapped to its corresponding input record. To update multiple subform records, specify the subform API name as a key within the record and provide the subform records as a JSON array. Use the subform field API names as keys within each subform record. For detailed information on subforms, refer to the [Manipulating Subform using Zoho CRM APIs](https://help.zoho.com/portal/en/community/topic/kaizen-124-accessing-subform-using-zoho-crm-apis).Use the [Modules API](modules.yaml#$.paths./settings/modules.get) and [Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the API names of the subform and its fields. To update an existing subform record, include its record ID in the subform JSON array. Use the [Get Records API](record.yaml#$.paths./module.get) with the subform API name to retrieve subform record IDs.When adding a new subform record, it is appended to the existing records. Passing an empty JSON array for a subform deletes all its records. To delete a specific subform record, specify its record ID and set &quot;_delete&quot; to &quot;null&quot;. Deleting the parent record also deletes all its subform records.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Input schema for create, update, or upsert record requests.</param>
+        /// <param name="body">Represents the RecordsPutInputSchema data structure.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -276,32 +272,42 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             return new global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Permanently deletes one or more records from the specified module using comma-separated record IDs. Returns per-item results for bulk operations.
+        /// To permanently delete more records from the specified module in your Zoho CRM organization, use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record IDs. A maximum of 100 records can be deleted per API call. By default, all workflows related to this API are executed. All subforms related to the deleted records are also deleted.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithModuleItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>To retrieve specific records based on their unique ID.</summary>
+            /// <summary>Specify a comma-separated list of record IDs. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
-            public string? Ids { get; set; }
+            public string[]? Ids { get; set; }
 #nullable restore
 #else
             [QueryParameter("ids")]
-            public string Ids { get; set; }
+            public string[] Ids { get; set; }
 #endif
         }
         /// <summary>
-        /// To get the list of available records from a module
+        /// Retrieves records from the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name. Use &quot;sort_by&quot; and &quot;sort_order&quot; to control the sorting of records. To fetch up to 2000 records, use &quot;page&quot; (1-10) and &quot;per_page&quot; (maximum 200). To fetch more than 2000 records, use the &quot;page_token&quot; returned in the response. Consecutive page tokens can be used to navigate through up to 100,000 records. The &quot;$has_more&quot; key is returned when fetching a specific record and indicates whether more records are available in subforms, multi-select lookup fields, and multi-user lookup fields. To retrieve details of a related list, use the [Get Related Records API](related_records.yaml#$.paths./{parentRecordModule}/{parentRecord}/{relatedList}.get).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithModuleItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>To get the list of converted records</summary>
+            /// <summary>Specify whether to retrieve converted, unconverted, or both types of records.  Possible values:**false** - Returns only unconverted records.  **true** - Returns only converted records.  **both** - Returns both converted and unconverted records.</summary>
             [QueryParameter("converted")]
-            public global::Soenneker.Zoho.OpenApiClient.Record.Item.GetConvertedQueryParameterType? Converted { get; set; }
-            /// <summary>Specify the custom view ID to get the list of records based on custom views</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.RecordConverted? Converted { get; set; }
+            /// <summary>Specify the filter criteria for retrieving specific Custom Views. Accepts a filter object to narrow down results based on Custom View properties.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cross_filters")]
+            public string[]? CrossFilters { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cross_filters")]
+            public string[] CrossFilters { get; set; }
+#endif
+            /// <summary>Specify the unique ID of the Custom View. Use the [Get Custom Views Metadata API](custom_views.yaml#$.paths./settings/custom_views.get) to retrieve the Custom View IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("cvid")]
@@ -311,7 +317,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             [QueryParameter("cvid")]
             public string Cvid { get; set; }
 #endif
-            /// <summary>Specify the API names of the fields you want to retrieve when fetching the records.</summary>
+            /// <summary>Specify a comma-separated list of field API names to include in the response. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and API names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -321,23 +327,43 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             [QueryParameter("fields")]
             public string Fields { get; set; }
 #endif
-            /// <summary>To retrieve specific records based on their unique ID.</summary>
+            /// <summary>The filter identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filterId")]
+            public string? FilterId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filterId")]
+            public string FilterId { get; set; }
+#endif
+            /// <summary>Specify the filter criteria for retrieving specific Custom Views. Accepts a filter object to narrow down results based on Custom View properties.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filters")]
+            public string? Filters { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filters")]
+            public string Filters { get; set; }
+#endif
+            /// <summary>Specify a comma-separated list of record IDs. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
-            public string? Ids { get; set; }
+            public string[]? Ids { get; set; }
 #nullable restore
 #else
             [QueryParameter("ids")]
-            public string Ids { get; set; }
+            public string[] Ids { get; set; }
 #endif
-            /// <summary>To include records from the child territories</summary>
+            /// <summary>Specify whether to include records assigned to child territories of the specified territory.</summary>
             [QueryParameter("include_child")]
             public bool? IncludeChild { get; set; }
-            /// <summary>To get the list of records from the respective pages</summary>
+            /// <summary>Specify the page number to retrieve. Starts at 1.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>To fetch more than 2000 records, you must include the &quot;page_token&quot; param in the request</summary>
+            /// <summary>Specify the page token to retrieve records beyond the first 2,000 results. Use the **next_page_token** value from a previous response to access the next page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("page_token")]
@@ -347,16 +373,16 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             [QueryParameter("page_token")]
             public string PageToken { get; set; }
 #endif
-            /// <summary>Specify how many records to return per page</summary>
+            /// <summary>Specify the number of records to return per page. Maximum is 200.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>To sort the records based on the fields id, Created_Time, and Modified_Time. The default value is &apos;id&apos;</summary>
+            /// <summary>Specify the field to sort records by.  Possible values:**id** - Sorts by record ID.  **Created_Time** - Sorts by creation timestamp.  **Modified_Time** - Sorts by last modification timestamp.</summary>
             [QueryParameter("sort_by")]
-            public global::Soenneker.Zoho.OpenApiClient.Record.Item.GetSort_byQueryParameterType? SortBy { get; set; }
-            /// <summary>To sort the available list of records in either ascending or descending order</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.RecordSortBy? SortBy { get; set; }
+            /// <summary>Specify the sort order for the records.&lt;br/&gt; &lt;b&gt;Possible values:&lt;/b&gt; &lt;br/&gt;desc - Returns records in descending order.&lt;br/&gt; asc - Returns records in ascending order.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Record.Item.GetSort_orderQueryParameterType? SortOrder { get; set; }
-            /// <summary>Specify the territory ID to get the list of records that belongs to a specific territory</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.RecordSortOrder? SortOrder { get; set; }
+            /// <summary>Specify the unique ID of the territory. Use the [Get Territories API](territories.yaml#$.paths./settings/territories.get) to retrieve the territory ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("territory_id")]

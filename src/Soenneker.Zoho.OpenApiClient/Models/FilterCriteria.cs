@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Field-based filter criteria to apply before counting records.
+    /// Represents the field-based filter criteria applied to related records before counting. Contains the field to evaluate, the comparison operator, and the value to compare against.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FilterCriteria : IParsable
     {
-        /// <summary>The comparison operator to use for filtering.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FilterCriteria_comparator? Comparator { get; set; }
-        /// <summary>Specifies the field to filter on when counting related records.</summary>
+        /// <summary>Represents the equal comparison operator applied to the criterion.Possible values:equal - Matches records where the field value equals the specified filter value.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.EqualComparator? Comparator { get; set; }
+        /// <summary>Represents the field to use when filtering related records before counting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FilterField? Field { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FilterField Field { get; set; }
 #endif
-        /// <summary>The value to compare the field against.</summary>
+        /// <summary>Represents the value to compare the specified field against when filtering related records before counting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comparator", n => { Comparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterCriteria_comparator>(); } },
+                { "comparator", n => { Comparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EqualComparator>(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterField>(global::Soenneker.Zoho.OpenApiClient.Models.FilterField.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterCriteria_comparator>("comparator", Comparator);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EqualComparator>("comparator", Comparator);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterField>("field", Field);
             writer.WriteStringValue("value", Value);
         }

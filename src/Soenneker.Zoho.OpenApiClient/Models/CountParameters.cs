@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Optional filtering and selection parameters to apply before counting records.
+    /// Represents optional filtering and selection parameters applied to related records before counting. Includes support for approval status, conversion status, category type, and field-level equality filters.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CountParameters : IParsable
     {
-        /// <summary>Filter by approval workflow state.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CountParameters_approval_state? ApprovalState { get; set; }
-        /// <summary>Filter to include only approved records when counting.</summary>
+        /// <summary>Represents the approval workflow state used to filter related records before counting.Possible values:**approved** - Count only records in the approved workflow state.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ApprovedApprovalState? ApprovalState { get; set; }
+        /// <summary>Indicates whether to restrict the count to approved records only.Possible values:**true** - Count only approved records.**false** - Count only records that are not approved.</summary>
         public bool? Approved { get; set; }
-        /// <summary>Filter by record category type.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CountParameters_category? Category { get; set; }
-        /// <summary>Filter to include only converted records when counting (applicable to Leads).</summary>
+        /// <summary>Represents the category type used to filter related records before counting.Possible values:**link** - Count only link-type related records.**files** - Count only file-attachment related records.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.CountParametersCategory? Category { get; set; }
+        /// <summary>Indicates whether to restrict the count to converted records only. Applicable to the Leads module.Possible values:**true** - Count only converted records.**false** - Count only records that have not been converted.</summary>
         public bool? Converted { get; set; }
-        /// <summary>Field-based filter criteria to apply before counting records.</summary>
+        /// <summary>Represents the field-based filter criteria applied to related records before counting. Contains the field to evaluate, the comparison operator, and the value to compare against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FilterCriteria? Filters { get; set; }
@@ -47,9 +47,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "approval_state", n => { ApprovalState = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CountParameters_approval_state>(); } },
+                { "approval_state", n => { ApprovalState = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ApprovedApprovalState>(); } },
                 { "approved", n => { Approved = n.GetBoolValue(); } },
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CountParameters_category>(); } },
+                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CountParametersCategory>(); } },
                 { "converted", n => { Converted = n.GetBoolValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.FilterCriteria.CreateFromDiscriminatorValue); } },
             };
@@ -61,9 +61,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CountParameters_approval_state>("approval_state", ApprovalState);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ApprovedApprovalState>("approval_state", ApprovalState);
             writer.WriteBoolValue("approved", Approved);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CountParameters_category>("category", Category);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CountParametersCategory>("category", Category);
             writer.WriteBoolValue("converted", Converted);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterCriteria>("filters", Filters);
         }

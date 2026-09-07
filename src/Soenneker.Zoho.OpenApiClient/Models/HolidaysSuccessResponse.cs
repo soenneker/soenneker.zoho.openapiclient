@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// The Holidayssuccessresponse of the object.
+    /// Represents the success response body the API returns after creating holidays.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HolidaysSuccessResponse : IParsable
     {
-        /// <summary>The Holidays of the object.</summary>
+        /// <summary>Contains the result for each holiday included in the create request. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse_holidays>? Holidays { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponseHolidaysItem>? Holidays { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse_holidays> Holidays { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponseHolidaysItem> Holidays { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "holidays", n => { Holidays = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse_holidays>(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse_holidays.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "holidays", n => { Holidays = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponseHolidaysItem>(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponseHolidaysItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse_holidays>("holidays", Holidays);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponseHolidaysItem>("holidays", Holidays);
         }
     }
 }

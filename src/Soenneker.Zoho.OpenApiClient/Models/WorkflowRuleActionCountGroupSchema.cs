@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Encapsulates a workflow rule and its associated list of conditions with action counts. Includes the workflow rule ID and conditions array.
+    /// Represents the action count breakdown for a single workflow rule, encapsulating the rule ID and its associated condition-level action count groups.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRuleActionCountGroupSchema : IParsable
     {
-        /// <summary>&quot;Field: conditions&quot;</summary>
+        /// <summary>Represents array of condition objects containing criteria and actions for this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConditionActionCountSummarySchema>? Conditions { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConditionActionCountSummarySchema> Conditions { get; set; }
 #endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the WorkflowRuleActionCountGroup within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

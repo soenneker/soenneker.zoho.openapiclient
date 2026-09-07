@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.Us
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUserTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/portal_user_type/settings/portals/{portal}/user_type/{userTypeId}", pathParameters)
+        public WithUserTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/portal_user_type/settings/portals/{portal}/user_type/{userTypeId}{?include_inner_details*,transfer_To*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,87 +30,77 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.Us
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUserTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/portal_user_type/settings/portals/{portal}/user_type/{userTypeId}", rawUrl)
+        public WithUserTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/portal_user_type/settings/portals/{portal}/user_type/{userTypeId}{?include_inner_details*,transfer_To*}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete the specified portal user type.
+        /// Deletes the specified portal user type from the portal. If portal users are assigned to this user type, provide `transfer_To` with the ID of another user type to transfer them before deletion.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeDeletePortalUserType200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteusertypeResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeDeletePortalUserType200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DeleteusertypeResponse200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder.WithUserTypeItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeDeletePortalUserType200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DeleteusertypeResponse200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder.WithUserTypeItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeErrorResponse.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeDeletePortalUserType200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeDeletePortalUserType200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteusertypeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteusertypeResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve details for the specified portal user type.
+        /// Retrieves the full configuration of a single portal user type, including identity fields, active status, user counts, audit metadata, personality module, invitation field, and per-module access permissions.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeGetPortalUserType200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeByIdResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeGetPortalUserType200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeByIdResponse200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder.WithUserTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeGetPortalUserType200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeByIdResponse200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder.WithUserTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeErrorResponse.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeGetPortalUserType200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeGetPortalUserType200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeByIdResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeByIdResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the specified portal user type. Request body must include user_type array with items containing the fields to update.
+        /// Updates the configuration of an existing portal user type. You can modify module-level access settings, including shared type, allowed layouts, filter fields, and field-level permissions.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeUpdatePortalUserType200"/></returns>
-        /// <param name="body">Request schema for updating portal user types.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutusertypeResponse200"/></returns>
+        /// <param name="body">The request body schema for the update portal user type operation. Contains the `user_type` array with the fields to be updated.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeUpdatePortalUserType200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeUpdatePortalUserType body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutusertypeResponse200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutusertypeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeUpdatePortalUserType200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeUpdatePortalUserType body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutusertypeResponse200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutusertypeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeUpdatePortalUserType200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeUpdatePortalUserType200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutusertypeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutusertypeResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the specified portal user type.
+        /// Deletes the specified portal user type from the portal. If portal users are assigned to this user type, provide `transfer_To` with the ID of another user type to transfer them before deletion.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder.WithUserTypeItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder.WithUserTypeItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -119,17 +109,17 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.Us
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve details for the specified portal user type.
+        /// Retrieves the full configuration of a single portal user type, including identity fields, active status, user counts, audit metadata, personality module, invitation field, and per-module access permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder.WithUserTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder.WithUserTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -138,18 +128,18 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.Us
             return requestInfo;
         }
         /// <summary>
-        /// Update the specified portal user type. Request body must include user_type array with items containing the fields to update.
+        /// Updates the configuration of an existing portal user type. You can modify module-level access settings, including shared type, allowed layouts, filter fields, and field-level permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request schema for updating portal user types.</param>
+        /// <param name="body">The request body schema for the update portal user type operation. Contains the `user_type` array with the fields to be updated.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeUpdatePortalUserType body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PutusertypeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeUpdatePortalUserType body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PutusertypeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -167,6 +157,33 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.Us
         public global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Deletes the specified portal user type from the portal. If portal users are assigned to this user type, provide `transfer_To` with the ID of another user type to transfer them before deletion.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithUserTypeItemRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>The ID of the portal user type to transfer existing users to before deleting. Required when the user type being deleted has active users assigned to it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("transfer_To")]
+            public string? TransferTo { get; set; }
+#nullable restore
+#else
+            [QueryParameter("transfer_To")]
+            public string TransferTo { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Retrieves the full configuration of a single portal user type, including identity fields, active status, user counts, audit metadata, personality module, invitation field, and per-module access permissions.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithUserTypeItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>When set to `fields` or another resource key, the response includes the detailed fields or sub-resource properties for the included modules.</summary>
+            [QueryParameter("include_inner_details")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.FieldFieldLabelIncludeInnerDetails? IncludeInnerDetails { get; set; }
         }
     }
 }

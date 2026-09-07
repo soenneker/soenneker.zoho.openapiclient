@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Details identifying the field (api_name) and its json_path within the payload for context in per-item results.
+    /// Represents the field path details returned in per-item operation results, providing context about which field the result pertains to.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariableGroupFieldPathDetails : IParsable
     {
-        /// <summary>&quot;Field: api_name&quot;</summary>
+        /// <summary>Represents the API name of the variable group field that the operation result refers to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,21 +21,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the variable group field that the operation result refers to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
 #nullable restore
 #else
         public string Id { get; set; }
-#endif
-        /// <summary>&quot;Field: rid&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Rid { get; set; }
-#nullable restore
-#else
-        public string Rid { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +49,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "rid", n => { Rid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +60,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("rid", Rid);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Users
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.user_groups.users.item collection</summary>
-        /// <param name="position">The unique identifier of the user</param>
+        /// <param name="position">Specifies the unique ID of the user whose associated groups you want to retrieve. Use the [Get Users](users#$.paths./users.get) API to obtain user IDs. From API v9 onwards, UUID format is also accepted.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.WithUserItemRequestBuilder this[string position]
         {

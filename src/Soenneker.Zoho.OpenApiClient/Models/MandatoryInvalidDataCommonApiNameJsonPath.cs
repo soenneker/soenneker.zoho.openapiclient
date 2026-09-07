@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Details of field not found error
+    /// Represents error details when a mandatory field contains invalid data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MandatoryInvalidDataCommonApiNameJsonPath : IParsable
     {
-        /// <summary>API name of field</summary>
+        /// <summary>Represents the API name of the mandatory field with invalid data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>JSON path of the field</summary>
+        /// <summary>Represents the JSON path of the mandatory field with invalid data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JsonPath { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JsonPath { get; set; }
 #endif
-        /// <summary>Parameter name where the error occurred</summary>
+        /// <summary>Represents the parameter name of the mandatory field with invalid data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParamName { get; set; }

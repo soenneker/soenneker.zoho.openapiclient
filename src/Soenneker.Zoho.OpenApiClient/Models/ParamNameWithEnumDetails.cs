@@ -8,13 +8,13 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Details with param_name
+    /// Represents error details containing the parameter name associated with the error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ParamNameWithEnumDetails : IParsable
     {
-        /// <summary>&quot;Detail field: param_name&quot;</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ParamNameWithEnumDetails_param_name? ParamName { get; set; }
+        /// <summary>Represents the parameter name associated with the error detail.Possible values:ids - The ids query parameter.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.IdsParamName? ParamName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "param_name", n => { ParamName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ParamNameWithEnumDetails_param_name>(); } },
+                { "param_name", n => { ParamName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.IdsParamName>(); } },
             };
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ParamNameWithEnumDetails_param_name>("param_name", ParamName);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.IdsParamName>("param_name", ParamName);
         }
     }
 }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested schema for details
+    /// Represents the details object within a success response, containing the unique ID of the created or updated resource.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuccessResponseDetailsSchema : IParsable
     {
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the SuccessResponseDetails within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

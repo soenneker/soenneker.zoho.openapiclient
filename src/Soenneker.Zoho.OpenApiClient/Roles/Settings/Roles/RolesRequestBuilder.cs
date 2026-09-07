@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles
     public partial class RolesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.roles.settings.roles.item collection</summary>
-        /// <param name="position">Role identifier</param>
+        /// <param name="position">Specify the unique ID of the role for which you want to retrieve the details. Refer to the [Get Roles](roles.yaml#$.paths./settings/roles.get) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles.Item.WithRoleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles.Item.WithRoleItemRequestBuilder this[string position]
         {
@@ -47,65 +47,75 @@ namespace Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles
         {
         }
         /// <summary>
-        /// Retrieve a list of all CRM roles in the organization
+        /// Returns the list of all roles configured in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create one or more new CRM roles in the organization
+        /// Creates a new role in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles201"/></returns>
-        /// <param name="body">Request body for creating roles</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles201Response"/></returns>
+        /// <param name="body">Represents the request body for creating one or more CRM roles.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update multiple CRM roles in the organization
+        /// Updates an existing role in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles200"/></returns>
-        /// <param name="body">Request body for updating multiple roles</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles200Response"/></returns>
+        /// <param name="body">Represents the request body for updating a role.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of all CRM roles in the organization
+        /// Returns the list of all roles configured in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,18 +134,18 @@ namespace Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles
             return requestInfo;
         }
         /// <summary>
-        /// Create one or more new CRM roles in the organization
+        /// Creates a new role in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for creating roles</param>
+        /// <param name="body">Represents the request body for creating one or more CRM roles.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRoles body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RolesCreateRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -146,18 +156,18 @@ namespace Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles
             return requestInfo;
         }
         /// <summary>
-        /// Update multiple CRM roles in the organization
+        /// Updates an existing role in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for updating multiple roles</param>
+        /// <param name="body">Represents the request body for updating a role.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoles body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

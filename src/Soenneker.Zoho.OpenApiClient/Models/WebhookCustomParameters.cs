@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains static header names and values that are always included in webhook requests for customization.
+    /// Represents a static key-value parameter for webhook requests. Used in headers, URL query parameters, or form data fields. The value is a fixed literal sent unchanged with every webhook execution.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookCustomParameters : IParsable
     {
-        /// <summary>Specify a name to the custom header.</summary>
+        /// <summary>Represents the parameter key sent in the webhook request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Specify a value to the custom header.</summary>
+        /// <summary>Represents the static literal value sent with every webhook execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

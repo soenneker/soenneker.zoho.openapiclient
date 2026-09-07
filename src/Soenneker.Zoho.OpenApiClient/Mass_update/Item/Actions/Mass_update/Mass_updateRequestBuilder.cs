@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_update.Item.Actions.Mass_update
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Mass_updateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_update/{module}/actions/mass_update?job_id={job_id}", pathParameters)
+        public Mass_updateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_update/{module}/actions/mass_update", pathParameters)
         {
         }
         /// <summary>
@@ -30,49 +30,59 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_update.Item.Actions.Mass_update
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Mass_updateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_update/{module}/actions/mass_update?job_id={job_id}", rawUrl)
+        public Mass_updateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_update/{module}/actions/mass_update", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves the current status and progress metrics of an asynchronous mass update job initiated via POST /crm/v8/\{module\}/actions/mass_update. Returns record counts and current job state.
+        /// To retrieve the current status and record-processing counts of an asynchronous mass update job that was previously scheduled in your Zoho CRM organization. The job is identified by the `job_id` returned in the response of the scheduler-type mass update request. The response reports the job state along with the total, updated, not-updated, and failed record counts so that the caller can track progress until the job completes.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_update.Item.Actions.Mass_update.Mass_updateRequestBuilder.Mass_updateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_update.Item.Actions.Mass_update.Mass_updateRequestBuilder.Mass_updateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_update.Item.Actions.Mass_update.Mass_updateRequestBuilder.Mass_updateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_update.Item.Actions.Mass_update.Mass_updateRequestBuilder.Mass_updateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Enables users to update a specific field value across multiple records within a CRM module.
+        /// To update a specific field value across multiple records of a module in your Zoho CRM organization in a single API call. The operation supports two modes. In the non-scheduler mode, the caller supplies a list of record IDs in the `ids` array and the system updates those records synchronously, with a maximum of 500 records per request. In the scheduler mode, the caller supplies a Custom View ID in `cvid` and the request schedules an asynchronous background job that processes up to 50,000 records matching the view; the response returns a `job_id` that can be passed to the corresponding GET endpoint to track the job&apos;s progress. The Deals module accepts up to three fields per request; all other supported modules accept only one field per request. Email, lookup, multi-line, layout, and line item fields cannot be mass updated.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateIdsUpdate200"/></returns>
-        /// <param name="body">The request body must include `ids`, a list of record identifiers, and `data`, an array of objects mapping field API names to their new values.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200Response"/></returns>
+        /// <param name="body">Represents the mass update request payload. The payload must include the `data` array along with either `ids` for a synchronous update or `cvid` for an asynchronous scheduled update. `ids` and `cvid` are mutually exclusive.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateIdsUpdate200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateIdsUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateIdsUpdate200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateIdsUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateIdsUpdate200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateIdsUpdate200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the current status and progress metrics of an asynchronous mass update job initiated via POST /crm/v8/\{module\}/actions/mass_update. Returns record counts and current job state.
+        /// To retrieve the current status and record-processing counts of an asynchronous mass update job that was previously scheduled in your Zoho CRM organization. The job is identified by the `job_id` returned in the response of the scheduler-type mass update request. The response reports the job state along with the total, updated, not-updated, and failed record counts so that the caller can track progress until the job completes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,28 +95,28 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_update.Item.Actions.Mass_update
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_update.Item.Actions.Mass_update.Mass_updateRequestBuilder.Mass_updateRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/mass_update/{module}/actions/mass_update?job_id={job_id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Enables users to update a specific field value across multiple records within a CRM module.
+        /// To update a specific field value across multiple records of a module in your Zoho CRM organization in a single API call. The operation supports two modes. In the non-scheduler mode, the caller supplies a list of record IDs in the `ids` array and the system updates those records synchronously, with a maximum of 500 records per request. In the scheduler mode, the caller supplies a Custom View ID in `cvid` and the request schedules an asynchronous background job that processes up to 50,000 records matching the view; the response returns a `job_id` that can be passed to the corresponding GET endpoint to track the job&apos;s progress. The Deals module accepts up to three fields per request; all other supported modules accept only one field per request. Email, lookup, multi-line, layout, and line item fields cannot be mass updated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body must include `ids`, a list of record identifiers, and `data`, an array of objects mapping field API names to their new values.</param>
+        /// <param name="body">Represents the mass update request payload. The payload must include the `data` array along with either `ids` for a synchronous update or `cvid` for an asynchronous scheduled update. `ids` and `cvid` are mutually exclusive.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateIdsUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateIdsUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/mass_update/{module}/actions/mass_update", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -122,12 +132,12 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_update.Item.Actions.Mass_update
             return new global::Soenneker.Zoho.OpenApiClient.Mass_update.Item.Actions.Mass_update.Mass_updateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the current status and progress metrics of an asynchronous mass update job initiated via POST /crm/v8/\{module\}/actions/mass_update. Returns record counts and current job state.
+        /// To retrieve the current status and record-processing counts of an asynchronous mass update job that was previously scheduled in your Zoho CRM organization. The job is identified by the `job_id` returned in the response of the scheduler-type mass update request. The response reports the job state along with the total, updated, not-updated, and failed record counts so that the caller can track progress until the job completes.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Mass_updateRequestBuilderGetQueryParameters 
         {
-            /// <summary>Job identifier for the asynchronous mass update operation initiated via POST. Used to retrieve operation status and result counts.</summary>
+            /// <summary>Specify the unique ID of the mass update job whose status must be retrieved. This is the `job_id` returned in the response of the [Mass Update API](mass_update.yaml#$/{module}/actions/mass_update.post) request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("job_id")]

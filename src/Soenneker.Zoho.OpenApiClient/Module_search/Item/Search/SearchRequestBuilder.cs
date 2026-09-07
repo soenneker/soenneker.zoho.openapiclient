@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/module_search/{module}/search{?approval_state*,converted*,criteria*,email*,fields*,page*,per_page*,phone*,sort_by*,sort_order*,type*,word*}", pathParameters)
+        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/module_search/{module}/search{?approval_state*,converted*,criteria*,email*,fields*,include_lite_users*,page*,per_page*,phone*,role_id*,sort_by*,sort_order*,type*,word*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/module_search/{module}/search{?approval_state*,converted*,criteria*,email*,fields*,page*,per_page*,phone*,sort_by*,sort_order*,type*,word*}", rawUrl)
+        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/module_search/{module}/search{?approval_state*,converted*,criteria*,email*,fields*,include_lite_users*,page*,per_page*,phone*,role_id*,sort_by*,sort_order*,type*,word*}", rawUrl)
         {
         }
         /// <summary>
-        /// Searches records matching your criteria within a CRM module. Supports criteria queries, email/phone/word searches. At least one search parameter required. Max 2,000 records, 15 criteria conditions. Newly created records may have indexing delays.
+        /// To search for records within a specified module in your Zoho CRM organization using criteria-based conditions, full-text word search, or lookup by email or phone number.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 401 status code</exception>
@@ -48,11 +48,11 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -66,10 +66,10 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
                 { "502", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSearchRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Searches records matching your criteria within a CRM module. Supports criteria queries, email/phone/word searches. At least one search parameter required. Max 2,000 records, 15 criteria conditions. Newly created records may have indexing delays.
+        /// To search for records within a specified module in your Zoho CRM organization using criteria-based conditions, full-text word search, or lookup by email or phone number.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,18 +97,18 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
             return new global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Searches records matching your criteria within a CRM module. Supports criteria queries, email/phone/word searches. At least one search parameter required. Max 2,000 records, 15 criteria conditions. Newly created records may have indexing delays.
+        /// To search for records within a specified module in your Zoho CRM organization using criteria-based conditions, full-text word search, or lookup by email or phone number.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter records by their approval status. This parameter is particularly useful for modules with approval workflows or data validation processes.</summary>
+            /// <summary>Specify the approval state to filter records by. The search returns only records in the specified approval state.Possible values: **approval_process_pending**, **webform_invalid**, **review_process_pending**, **webform_invalid_approval**, **zia_vision_validation**, **review_process_rejected**, **webform_unapproved**, **email_parser_waiting**, **approved**, **merge_pending**, **email_parser_rejected**, **zia_vision_rejected**, **zia_vision_pending**, **approval_process_rejected**, **webform_double_optin**.</summary>
             [QueryParameter("approval_state")]
-            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetApproval_stateQueryParameterType? ApprovalState { get; set; }
-            /// <summary>Filter records by their conversion status. Primarily used with Leads module to distinguish between converted and non-converted leads. Also applicable to other modules with conversion workflows.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.ApprovalState? ApprovalState { get; set; }
+            /// <summary>Specify whether to filter records by their conversion status. Applicable only for the Leads module.Possible values:**true** - Returns only converted leads.**false** - Returns only unconverted leads.**both** - Returns all leads regardless of conversion status.Defaults to **false**.</summary>
             [QueryParameter("converted")]
-            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetConvertedQueryParameterType? Converted { get; set; }
-            /// <summary>Complex query string to search for records using field-specific conditions and operators. Supports up to 15 conditions combined with AND/OR operators. **Format:** `(field_name:operator:value)` with logical operators.*Mandatory if email, phone, and word are not present.*</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.Converted? Converted { get; set; }
+            /// <summary>Specify a criteria string to filter records using field-specific conditions and operators.Performs a search using the following format:`(({field_API_name}:{operator}:{value}) and/or ({field_API_name}:{operator}:{value}))`Replace `{field_API_name}`, `{operator}`, and `{value}` with theappropriate field API name, condition, and value.-   You can search using a maximum of 10 criteria, with the same or    different fields.-   The only operator supported for encrypted fields is `equals`.When using the `equals` operator in the Search API, it behaves like`contains`, retrieving records that include the specified value.For a single condition, if the condition is:`(Company:equals:ABC)`the response includes records with `ABC` as well as `ABC Inc.` in the`Company` field.For multiple conditions, `equals` continues to behave like `contains`.**For example:**`((Company:equals:ABC) and (First_Name:starts_with:M))`This retrieves records where:-   `First_Name` starts with `M`-   `Company` contains `ABC` (for example, `ABC` or `ABC Inc.`)** Note**: This behavior does not apply to picklist fields.The `in` operator checks whether a field value matches any value in a given list.**For example:**`(Full_Name:in:Patricia,Boyle,Kate)`This retrieves records where the `Full_Name` is `Patricia`, `Boyle`, or`Kate`.When a single-line field value contains characters such as:`{ } [ ] ^ : - / ! ? * _ @` or spaces,the Search API may return records with similar-looking values, even whenthe characters are not an exact match.For example:-   Record A: `sales-team@zoho.com`-   Record B: `sales_team@zoho.com`A search using:`equals:sales-team@zoho.com`may return both records.**Escaping Special Characters**When using parentheses `(` `)`, commas `,`, or a backslash `\` as thelast character in a search value:1.  Escape special characters using a backslash (`\`).2.  Encode the value before making the API request.3.  Select the value of the criteria, right-click the value, and choose    the `EncodeURIComponent` option.**Example 1: Escaping Parentheses and Commas**Search term:`((Last_Name:equals:Burns,B) and (First_Name:starts_with:M))`Escape the comma:`((Last_Name:equals:Burns\,B) and (First_Name:starts_with:M))`Encode the value:`((Last_Name:equals:Burns%5C%2CB) and (First_Name:starts_with:M))`**Example 2: Escaping a Backslash at the End**Search term:`(Last_Name:equals:K\)`Escape the backslash:`(Last_Name:equals:K\\)`Encode the value:`(Last_Name:equals:K%5C%5C)`**Supported Data Types**-   `picklist`-   `owner_lookup`-   `user_lookup`-   `lookup`-   `phone`-   `email`-   `date`-   `datetime`-   `text`-   `textarea`-   `integer`-   `currency`-   `decimal`-   `multiselectpicklist`-   `bigint`-   `percent`-   `formula`-   `website`-   `boolean`-   `double`**Supported Operators**-   `equals`-   `starts_with`-   `in`-   `not_equal`-   `greater_equal`-   `greater_than`-   `less_equal`-   `less_than`-   `between`Refer to the following note for operator support by field type.* **Date, DateTime:** `equals`, `not_equal`, `greater_equal`, `greater_than`, `less_equal`, `less_than`, `between`, `in`* **Integer, Currency, Decimal:** `equals`, `not_equal`, `greater_equal`, `greater_than`, `less_equal`, `less_than`, `between`, `in`* **Boolean:** `equals`, `not_equal`* **textarea:** `equals`, `not_equal`, `starts_with`* **Lookup (user/owner):** `equals`, `not_equal`, `in`* **Picklist, Autonumber:** `equals`, `not_equal`, `in`* **Text, Email, Phone, Website:** `equals`, `not_equal`, `starts_with`, `in`* **multiselectpicklist:** `equals`, `not_equal`, `in`, `starts_with`* **bigint:** `equals`, `not_equal`, `greater_than`, `greater_equal`, `less_than`, `less_equal`, `between`, `in`* **percent:** `equals`, `not_equal`, `greater_than`, `greater_equal`, `less_than`, `less_equal`, `between`, `in`* **formula:** Operators depend on the formula return type. Check the corresponding data type&apos;s supported operators.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("criteria")]
@@ -118,7 +118,7 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
             [QueryParameter("criteria")]
             public string Criteria { get; set; }
 #endif
-            /// <summary>Search records by email address across all email fields in the module. Supports partial matches and searches multiple email fields simultaneously.*Mandatory if criteria, phone, and word are not present.*</summary>
+            /// <summary>Specify the email address to search for across all email-type fields in the module. Partial matches are supported and searches multiple email fields simultaneously.  *Mandatory if criteria, phone, and word are not present.*</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("email")]
@@ -128,7 +128,7 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
             [QueryParameter("email")]
             public string Email { get; set; }
 #endif
-            /// <summary>Comma-separated list of field API names to retrieve in the response. If not specified, all accessible fields are returned. Use this to optimize response size and improve performance.</summary>
+            /// <summary>Specify a comma-separated list of field API names to include in the response. If omitted, the response includes all fields accessible to the current user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -138,13 +138,16 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
             [QueryParameter("fields")]
             public string Fields { get; set; }
 #endif
-            /// <summary>The page number to retrieve for paginated results. Use in combination with per_page to navigate through large result sets.</summary>
+            /// <summary>Indicates whether lite users should be included in the search results.</summary>
+            [QueryParameter("include_lite_users")]
+            public bool? IncludeLiteUsers { get; set; }
+            /// <summary>Specify the page number to retrieve for paginated results. The minimum value is 1. Defaults to 1.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>The number of records to return per page. Higher values reduce the number of API calls needed but increase response size and processing time.</summary>
+            /// <summary>Specify the number of records to return per page. The minimum value is 1, the maximum is 200, and the default is 200.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Search records by phone number across all phone fields in the module. Supports various phone number formats including international, national, and partial numbers.*Mandatory if criteria, email, and word are not present.*</summary>
+            /// <summary>Specify the phone number to search for across all phone-type fields in the module. The value must be at least three characters long and may include digits, spaces, hyphens, parentheses, and the plus sign. Supports various phone number formats including international, national, and partial numbers.*Mandatory if criteria, email, and word are not present.*</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("phone")]
@@ -154,7 +157,17 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
             [QueryParameter("phone")]
             public string Phone { get; set; }
 #endif
-            /// <summary>The field API name to sort the search results by. Choose a field that exists in the target module for consistent sorting behavior.</summary>
+            /// <summary>Filter users by role ID. This parameter is supported only for the Users module.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("role_id")]
+            public string? RoleId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("role_id")]
+            public string RoleId { get; set; }
+#endif
+            /// <summary>Specify the API name of the field to sort the search results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort_by")]
@@ -164,13 +177,13 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Search
             [QueryParameter("sort_by")]
             public string SortBy { get; set; }
 #endif
-            /// <summary>The sorting direction for the results. Use &apos;asc&apos; for ascending (A-Z, 1-9, oldest first) or &apos;desc&apos; for descending (Z-A, 9-1, newest first).</summary>
+            /// <summary>Specify the direction in which to sort the results. Defaults to **desc**.Possible values:**asc** - Ascending order (A-Z, 1-9).**desc** - Descending order (Z-A, 9-1).</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetSort_orderQueryParameterType? SortOrder { get; set; }
-            /// <summary>Filter users by their status, role, or confirmation state</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchSortOrder? SortOrder { get; set; }
+            /// <summary>Specify the user type to filter the search results by.Possible values: **ActiveAndDeactive**, **CurrentUser**, **DeletedUsers**, **ParentRoleUsers**, **ChildRoleUsers**, **DeactiveUsers**, **NotConfirmedUsers**, **ConfirmedUsers**, **ActiveUsers**, **AdminUsers**, **ActiveConfirmedAdmins**, **ActiveConfirmedUsers**, **DeveloperUsers**, **SubordinateRoleUsers**, **AllUsers**, **AllActiveUsers**.**Note**- Only one of the mandatory parameters (`criteria`, `email`, `phone`, or `word`) can be used in a single request.- If multiple parameters are provided, the API processes them in the following priority order:   1. `criteria`   2. `email`   3. `phone`   4. `word`- Only the highest-priority parameter in the request is processed.- The `page` and `per_page` parameters help retrieve records based on their position in Zoho CRM.- A single API call can fetch a maximum of 200 records.- To retrieve more records, adjust the `page` and `per_page` values.   Example: To fetch 400 records:   - First API call: `page=1&amp;per_page=200` -&gt; Fetches records 1-200   - Second API call: `page=2&amp;per_page=200` -&gt; Fetches records 201-400   By making two API calls, all 400 records can be retrieved.- The Search API allows you to search for and retrieve a maximum of 2,000 records. If the search exceeds 2,000 records, the API returns a `LIMIT_REACHED` error.- Values of fields containing sensitive health data are retrieved only when the **Restrict Data Access through API** option in the compliance settings is disabled. If the option is enabled, the field value is returned as `null`. Refer to [HIPAA compliance documentation](https://www.zoho.com/crm/developer/docs/api/v8/hipaa-compliance.html) for more details.- When you create or edit a record and search for it immediately, you may receive a `204 NO CONTENT` response due to indexing delays. To fetch records without delay, use the [Query API](https://www.zoho.com/crm/developer/docs/api/v8/Get-Records-through-COQL-Query.html).- The `in` operator supports up to 100 values.- The `full_name` field contains the concatenated values of the `First Name` and `Last Name` fields.- `full_name` is a read-only field available only in the `Leads`, `Contacts`, and `Users` modules.To retrieve subform records that match your search criteria, use the API name of the corresponding subform module.To retrieve multi-select lookup (MxN) records that match your search criteria, use the API name of the corresponding linking module.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.GetTypeQueryParameterType? Type { get; set; }
-            /// <summary>A simple word or phrase to search across all supported text fields in the module. Performs a global search with minimum 2 characters required. This is the broadest search method but may be slower than specific field searches.*Mandatory if criteria, email, and phone are not present.*</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchType? Type { get; set; }
+            /// <summary>Specify the word or phrase to search for across all searchable text fields in the module. The value must be at least two characters long. Performs a global search with minimum 2 characters required. This is the broadest search method but may be slower than specific field searches.*Mandatory if criteria, email, and phone are not present.*</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("word")]

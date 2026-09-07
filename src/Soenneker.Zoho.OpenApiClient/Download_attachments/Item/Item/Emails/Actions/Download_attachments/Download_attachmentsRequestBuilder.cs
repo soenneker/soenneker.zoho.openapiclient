@@ -34,11 +34,12 @@ namespace Soenneker.Zoho.OpenApiClient.Download_attachments.Item.Item.Emails.Act
         {
         }
         /// <summary>
-        /// Fetches the binary content of an email attachment for a specific record.
+        /// To download the binary content of an attachment that belongs to an email associated with a record in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DownloadAttachmentsDownloadEmailAttachments400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DownloadAttachmentsErrorResponse">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,12 +53,13 @@ namespace Soenneker.Zoho.OpenApiClient.Download_attachments.Item.Item.Emails.Act
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DownloadAttachmentsDownloadEmailAttachments400Response.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.DownloadAttachmentsErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches the binary content of an email attachment for a specific record.
+        /// To download the binary content of an attachment that belongs to an email associated with a record in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,12 +87,12 @@ namespace Soenneker.Zoho.OpenApiClient.Download_attachments.Item.Item.Emails.Act
             return new global::Soenneker.Zoho.OpenApiClient.Download_attachments.Item.Item.Emails.Actions.Download_attachments.Download_attachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetches the binary content of an email attachment for a specific record.
+        /// To download the binary content of an attachment that belongs to an email associated with a record in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Download_attachmentsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The attachment ID.</summary>
+            /// <summary>Specify the unique ID of the attachment to download.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("id")]
@@ -100,7 +102,7 @@ namespace Soenneker.Zoho.OpenApiClient.Download_attachments.Item.Item.Emails.Act
             [QueryParameter("id")]
             public string Id { get; set; }
 #endif
-            /// <summary>The ID of the email message.</summary>
+            /// <summary>The message ID you get in the response when you send an email. Refer to the &quot;message_id&quot; key in the response of [Send Mail API](send_mail.yaml#$.paths.//{moduleName}/{id}/actions/send_mail.post) or [Get Emails](emails.yaml#$.paths./{moduleApiName}/{id}/Emails.get) of a Record API to get the message ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("message_id")]
@@ -110,7 +112,7 @@ namespace Soenneker.Zoho.OpenApiClient.Download_attachments.Item.Item.Emails.Act
             [QueryParameter("message_id")]
             public string MessageId { get; set; }
 #endif
-            /// <summary>The attachment name.</summary>
+            /// <summary>Specify the file name of the attachment to download. You can get this from the response of [Get Emails API](emails.yaml#$.paths./{moduleApiName}/{id}/Emails.get).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -120,16 +122,9 @@ namespace Soenneker.Zoho.OpenApiClient.Download_attachments.Item.Item.Emails.Act
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
-            /// <summary>The ID of the user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>Specify the unique ID of the user who sent the email. Refer to the [Get Users](users.yaml#$.paths./users.get) resource for valid values.</summary>
             [QueryParameter("user_id")]
-            public string? UserId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("user_id")]
-            public string UserId { get; set; }
-#endif
+            public long? UserId { get; set; }
         }
     }
 }

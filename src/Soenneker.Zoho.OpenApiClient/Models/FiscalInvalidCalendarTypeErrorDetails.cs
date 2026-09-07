@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details with validation information
+    /// Represents the error details. Contains either `expected_data_type` when the value has non-alphabetic characters, or `supported_values` when the value is not one of the allowed calendar types.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FiscalInvalidCalendarTypeErrorDetails : IParsable
     {
-        /// <summary>&quot;Detail field: api_name&quot;</summary>
+        /// <summary>Represents the API name of the field that caused the validation failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>&quot;Detail field: json_path&quot;</summary>
+        /// <summary>Represents the expected data type for the field. Present when the value contains non-alphabetic characters. Possible values: `text`.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.TextExpectedDataType? ExpectedDataType { get; set; }
+        /// <summary>Represents the JSON path of the field that caused the validation failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JsonPath { get; set; }
@@ -29,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JsonPath { get; set; }
 #endif
-        /// <summary>&quot;Detail field: supported_values&quot;</summary>
+        /// <summary>Represents the list of supported calendar type values. Present when the value is alphabetic but not a recognized calendar type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SupportedValues { get; set; }
@@ -56,6 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
+                { "expected_data_type", n => { ExpectedDataType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TextExpectedDataType>(); } },
                 { "json_path", n => { JsonPath = n.GetStringValue(); } },
                 { "supported_values", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -68,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TextExpectedDataType>("expected_data_type", ExpectedDataType);
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteCollectionOfPrimitiveValues<string>("supported_values", SupportedValues);
         }

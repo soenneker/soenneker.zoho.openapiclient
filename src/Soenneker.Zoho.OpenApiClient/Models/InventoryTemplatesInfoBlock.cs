@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Pagination metadata for list responses (per_page, page, count, more_records).
+    /// Represents the pagination metadata for list responses, including page number, items per page, total count, and whether more records are available.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InventoryTemplatesInfoBlock : IParsable
     {
-        /// <summary>Number of items returned in `inventory_templates` for this response</summary>
+        /// <summary>Represents the number of inventory template records returned in the current page. </summary>
         public int? Count { get; set; }
-        /// <summary>True if there are more pages available after this one</summary>
+        /// <summary>Indicates whether additional pages of inventory template records are available beyond the current page. Possible values:**true** - More records are available on subsequent pages.**false** - The current page is the last page.</summary>
         public bool? MoreRecords { get; set; }
-        /// <summary>Current page number</summary>
+        /// <summary>Represents the current page number in the paginated response. </summary>
         public int? Page { get; set; }
-        /// <summary>Items per page (requested or default)</summary>
+        /// <summary>Represents the number of inventory template records returned per page. </summary>
         public int? PerPage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

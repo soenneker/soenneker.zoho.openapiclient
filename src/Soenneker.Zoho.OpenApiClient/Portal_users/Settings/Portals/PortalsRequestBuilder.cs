@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals
     public partial class PortalsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.portal_users.settings.portals.item collection</summary>
-        /// <param name="position">The unique identifier of the portal</param>
+        /// <param name="position">Specify the unique identifier of the portal. Refer to the [Get Portals](https://www.zoho.com/crm/developer/docs/api/v8/get-portals.html) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.WithPortalItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.WithPortalItemRequestBuilder this[string position]
         {

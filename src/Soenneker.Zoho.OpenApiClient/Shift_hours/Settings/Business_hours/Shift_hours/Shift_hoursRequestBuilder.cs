@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
     public partial class Shift_hoursRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.shift_hours.settings.business_hours.shift_hours.item collection</summary>
-        /// <param name="position">Unique identifier of the shift hour</param>
+        /// <param name="position">Represents the unique identifier of the shift hour to retrieve, update, or delete.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift_hours.Item.WithShiftItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift_hours.Item.WithShiftItemRequestBuilder this[string position]
         {
@@ -47,82 +47,84 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
         {
         }
         /// <summary>
-        /// Retrieves all configured shift hours including shift timing, break hours, users, and holidays for each shift.
+        /// Retrieves every shift hour configured for the organization, along with the timing, break hours, holidays, time zone, and assigned users of each shift, and an aggregate count of shifts that have at least one user assigned.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200403Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates one or more new shift hour configurations with timing, break hours, and timezone settings.
+        /// Creates one or more shift hour configurations for the organization. Each shift hour specifies the name, time zone, active days, timing, optional break windows, optional holidays, and optional user assignments. The shift hour timing must fall within the configured business hours, and the request is rejected if business hours are not enabled for the org.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse"/></returns>
-        /// <param name="body">Error scenario</param>
+        /// <param name="body">Represents the request body for creating one or more shift hour configurations. Each entry in `shift_hours` defines a shift with its timing, break hours, optional holidays, and assigned users.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse403Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates one or more existing shift hour configurations with new timing, break hours, or timezone settings.
+        /// Updates one or more shift hour configurations for the organization. Each entry in `shift_hours` identifies the shift hour to update and the fields to change, such as the time zone, active days, timing, break windows, holidays, or user assignments. The updated timing must fall within the configured business hours.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse"/></returns>
-        /// <param name="body">Error scenario</param>
+        /// <param name="body">Represents the request body for updating one or more shift hour configurations. Each entry in `shift_hours` updates an existing shift with its timing, break hours, optional holidays, and assigned users.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse403Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves all configured shift hours including shift timing, break hours, users, and holidays for each shift.
+        /// Retrieves every shift hour configured for the organization, along with the timing, break hours, holidays, time zone, and assigned users of each shift, and an aggregate count of shifts that have at least one user assigned.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,18 +143,18 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
             return requestInfo;
         }
         /// <summary>
-        /// Creates one or more new shift hour configurations with timing, break hours, and timezone settings.
+        /// Creates one or more shift hour configurations for the organization. Each shift hour specifies the name, time zone, active days, timing, optional break windows, optional holidays, and optional user assignments. The shift hour timing must fall within the configured business hours, and the request is rejected if business hours are not enabled for the org.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Error scenario</param>
+        /// <param name="body">Represents the request body for creating one or more shift hour configurations. Each entry in `shift_hours` defines a shift with its timing, break hours, optional holidays, and assigned users.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -163,18 +165,18 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
             return requestInfo;
         }
         /// <summary>
-        /// Updates one or more existing shift hour configurations with new timing, break hours, or timezone settings.
+        /// Updates one or more shift hour configurations for the organization. Each entry in `shift_hours` identifies the shift hour to update and the fields to change, such as the time zone, active days, timing, break windows, holidays, or user assignments. The updated timing must fall within the configured business hours.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Error scenario</param>
+        /// <param name="body">Represents the request body for updating one or more shift hour configurations. Each entry in `shift_hours` updates an existing shift with its timing, break hours, optional holidays, and assigned users.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

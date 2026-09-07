@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Delete configuration object.
+    /// Represents the configuration object used to specify the deletion mode when removing a layout or resource, indicating whether the deletion is permanent or a soft delete to the recycle bin.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeleteObject : IParsable
     {
-        /// <summary>If true, permanently deletes the resource. If false, moves it to unused section (for fields).</summary>
+        /// <summary>Indicates whether the resource is removed irrecoverably or placed in the recycle bin for potential recovery. Possible values: `true` — the resource is permanently destroyed and cannot be restored; `false` — the resource is moved to trash and may be recovered before final purge.</summary>
         public bool? Permanent { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

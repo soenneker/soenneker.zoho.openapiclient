@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Schema for getting duplicate check preference
+    /// Schema for getting duplicate check preference.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDuplicateCheckPreference : IParsable
     {
-        /// <summary>Duplicate check preference details</summary>
+        /// <summary>Duplicate check preference details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference? DuplicateCheckPreference { get; set; }

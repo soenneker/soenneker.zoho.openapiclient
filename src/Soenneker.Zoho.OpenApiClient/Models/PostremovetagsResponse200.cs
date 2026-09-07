@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// success response when tags removed from records successfully
+    /// Success response when tags are removed from records successfully.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostremovetagsResponse200 : IParsable
     {
-        /// <summary>&quot;Field: data&quot;</summary>
+        /// <summary>Array of operation results for each record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>? Data { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested> Data { get; set; }
 #endif
-        /// <summary>&quot;Field: locked_count&quot;</summary>
+        /// <summary>Number of records that were locked and could not be updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LockedCount { get; set; }

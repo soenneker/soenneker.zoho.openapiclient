@@ -8,59 +8,70 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember4"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember5"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember6"/>
+    /// Contains additional context-specific details accompanying an API error response, providing structured diagnostics such as the offending parameter name, expected data type, supported values, or dependency information.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ErrorDetails : IComposedTypeWrapper, IParsable
+    public partial class ErrorDetails : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Contains structured information about the controlling parameter whose presence or value is required before the missing dependent parameter becomes valid or applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember1? ErrorDetailsMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsDependee? Dependee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember1 ErrorDetailsMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsDependee Dependee { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember2"/></summary>
+        /// <summary>Indicates the data type that the API expects for the parameter that failed validation, enabling callers to correct the value format before retrying the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember2? ErrorDetailsMember2 { get; set; }
+        public string? ExpectedDataType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember2 ErrorDetailsMember2 { get; set; }
+        public string ExpectedDataType { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember3"/></summary>
+        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember3? ErrorDetailsMember3 { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember3 ErrorDetailsMember3 { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember4"/></summary>
+        /// <summary>Identifies the specific request parameter whose value or absence triggered the error, enabling targeted correction of the offending input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember4? ErrorDetailsMember4 { get; set; }
+        public string? ParamName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember4 ErrorDetailsMember4 { get; set; }
+        public string ParamName { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember5"/></summary>
+        /// <summary>Contains the set of OAuth permission scopes that must be granted to the authenticating user or application before the requested action can be completed. Returned when the request is denied due to insufficient permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember5? ErrorDetailsMember5 { get; set; }
+        public List<string>? Permissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember5 ErrorDetailsMember5 { get; set; }
+        public List<string> Permissions { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember6"/></summary>
+        /// <summary>Indicates the zero-based position within a multi-segment URL path at which the invalid or unrecognised segment was detected, helping to locate the exact portion of the resource path that caused the error.</summary>
+        public int? ResourcePathIndex { get; set; }
+        /// <summary>Contains the discrete values accepted for the parameter identified in the error, providing a reference set to correct the offending request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember6? ErrorDetailsMember6 { get; set; }
+        public List<string>? SupportedValues { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember6 ErrorDetailsMember6 { get; set; }
+        public List<string> SupportedValues { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetails"/> and sets the default values.
+        /// </summary>
+        public ErrorDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,33 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetails();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ErrorDetailsMember1 = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ErrorDetailsMember2 = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember2();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ErrorDetailsMember3 = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember3();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ErrorDetailsMember4 = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember4();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ErrorDetailsMember5 = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember5();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ErrorDetailsMember6 = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember6();
-            }
-            return result;
+            return new global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,31 +88,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ErrorDetailsMember1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ErrorDetailsMember1.GetFieldDeserializers();
-            }
-            else if(ErrorDetailsMember2 != null)
-            {
-                return ErrorDetailsMember2.GetFieldDeserializers();
-            }
-            else if(ErrorDetailsMember3 != null)
-            {
-                return ErrorDetailsMember3.GetFieldDeserializers();
-            }
-            else if(ErrorDetailsMember4 != null)
-            {
-                return ErrorDetailsMember4.GetFieldDeserializers();
-            }
-            else if(ErrorDetailsMember5 != null)
-            {
-                return ErrorDetailsMember5.GetFieldDeserializers();
-            }
-            else if(ErrorDetailsMember6 != null)
-            {
-                return ErrorDetailsMember6.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "dependee", n => { Dependee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsDependee>(global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsDependee.CreateFromDiscriminatorValue); } },
+                { "expected_data_type", n => { ExpectedDataType = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "param_name", n => { ParamName = n.GetStringValue(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "resource_path_index", n => { ResourcePathIndex = n.GetIntValue(); } },
+                { "supported_values", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -136,30 +106,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ErrorDetailsMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember1>(null, ErrorDetailsMember1);
-            }
-            else if(ErrorDetailsMember2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember2>(null, ErrorDetailsMember2);
-            }
-            else if(ErrorDetailsMember3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember3>(null, ErrorDetailsMember3);
-            }
-            else if(ErrorDetailsMember4 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember4>(null, ErrorDetailsMember4);
-            }
-            else if(ErrorDetailsMember5 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember5>(null, ErrorDetailsMember5);
-            }
-            else if(ErrorDetailsMember6 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsMember6>(null, ErrorDetailsMember6);
-            }
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetailsDependee>("dependee", Dependee);
+            writer.WriteStringValue("expected_data_type", ExpectedDataType);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("param_name", ParamName);
+            writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
+            writer.WriteIntValue("resource_path_index", ResourcePathIndex);
+            writer.WriteCollectionOfPrimitiveValues<string>("supported_values", SupportedValues);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

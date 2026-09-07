@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Details of dependency field missing error
+    /// Represents error details when a required dependency field is missing from the request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DependencyFieldMissingDetails : IParsable
     {
-        /// <summary>&quot;Detail field: api_name&quot;</summary>
+        /// <summary>Represents the API name of the field with the missing dependency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>&quot;Detail field: dependee&quot;</summary>
+        /// <summary>Represents the dependee field that is required but missing from the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.DependencyFieldMissingDetailsDependee? Dependee { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DependencyFieldMissingDetailsDependee Dependee { get; set; }
 #endif
-        /// <summary>&quot;Detail field: json_path&quot;</summary>
+        /// <summary>Represents the JSON path of the field with the missing dependency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JsonPath { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JsonPath { get; set; }
 #endif
-        /// <summary>&quot;Detail field: param_name&quot;</summary>
+        /// <summary>Represents the parameter name associated with the field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParamName { get; set; }

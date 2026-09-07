@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments
     public partial class AttachmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.attachments.item.item.Attachments.item collection</summary>
-        /// <param name="position">The unique identifier of the attachment</param>
+        /// <param name="position">Specify the unique identifier of the attachment. Use the [Get Attachments](attachments.yaml#$.paths./{moduleApiName}/{recordId}/Attachments.get) resource to retrieve attachment IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments.Item.AttachmentsItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments.Item.AttachmentsItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments
         {
         }
         /// <summary>
-        /// Retrieve all attachments associated with a specific record.
+        /// Retrieves all attachments associated with a specific record in a module.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,10 +82,10 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AttachmentListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Upload an attachment by providing either a file or a valid URL. Maximum request body size: 100MB.&quot;
+        /// Uploads an attachment by providing either a file or a valid URL. Maximum request body size: 100MB.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentSuccessResponse"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Schema used by uploadAttachment.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 400 status code</exception>
@@ -121,7 +121,7 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AttachmentSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all attachments associated with a specific record.
+        /// Retrieves all attachments associated with a specific record in a module.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,10 +140,10 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Upload an attachment by providing either a file or a valid URL. Maximum request body size: 100MB.&quot;
+        /// Uploads an attachment by providing either a file or a valid URL. Maximum request body size: 100MB.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Schema used by uploadAttachment.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -171,12 +171,12 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments
             return new global::Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments.AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve all attachments associated with a specific record.
+        /// Retrieves all attachments associated with a specific record in a module.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specify the fields to retrieve</summary>
+            /// <summary>Specify the fields to retrieve. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]

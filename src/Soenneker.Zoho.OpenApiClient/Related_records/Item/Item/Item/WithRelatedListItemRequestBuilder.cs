@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
     public partial class WithRelatedListItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.related_records.item.item.item.item collection</summary>
-        /// <param name="position">The unique identifier of the specific related record. Must be a valid numeric record ID.</param>
+        /// <param name="position">Specify the unique numeric identifier of the specific related record.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.Item.WithRecordItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRelatedListItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/related_records/{parentRecordModule}/{parentRecord}/{relatedList}?fields={fields}{&converted*,ids*,page*,page_token*,perPage*,sort_by*,sort_order*}", pathParameters)
+        public WithRelatedListItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/related_records/{parentRecordModule}/{parentRecord}/{relatedList}{?approval_state*,approved*,converted*,filters*,ids*,page*,page_token*,perPage*,sort_by*,sort_order*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,17 +43,17 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRelatedListItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/related_records/{parentRecordModule}/{parentRecord}/{relatedList}?fields={fields}{&converted*,ids*,page*,page_token*,perPage*,sort_by*,sort_order*}", rawUrl)
+        public WithRelatedListItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/related_records/{parentRecordModule}/{parentRecord}/{relatedList}{?approval_state*,approved*,converted*,filters*,ids*,page*,page_token*,perPage*,sort_by*,sort_order*}", rawUrl)
         {
         }
         /// <summary>
-        /// Removes relationships between a parent record and multiple records in a specified related list, identified by their IDs in the query parameter. This operation deletes only the relationship links, not the actual records themselves. The target records remain intact in their respective modules.
+        /// To delink multiple records from a parent record&apos;s related list in your Zoho CRM organization. This operation removes only the relationship links - the related records themselves remain intact in their respective modules.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,51 +67,51 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a paginated list of records from a specific related list of a parent record in a CRM module. Supports filtering by fields and conditional requests using If-Modified-Since header.
+        /// To retrieve the list of records associated with a parent record from a specified related list in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates multiple related records&apos; specific properties in a specified related list.
+        /// To update multiple records associated with a parent record in a specified related list in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse"/></returns>
-        /// <param name="body">Request payload for updating multiple related records</param>
+        /// <param name="body">Represents the request payload for updating multiple related records in a related list.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -119,12 +119,12 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes relationships between a parent record and multiple records in a specified related list, identified by their IDs in the query parameter. This operation deletes only the relationship links, not the actual records themselves. The target records remain intact in their respective modules.
+        /// To delink multiple records from a parent record&apos;s related list in your Zoho CRM organization. This operation removes only the relationship links - the related records themselves remain intact in their respective modules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +143,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieves a paginated list of records from a specific related list of a parent record in a CRM module. Supports filtering by fields and conditional requests using If-Modified-Since header.
+        /// To retrieve the list of records associated with a parent record from a specified related list in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,28 +156,28 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/related_records/{parentRecordModule}/{parentRecord}/{relatedList}?fields={fields}{&approval_state*,approved*,converted*,filters*,ids*,page*,page_token*,perPage*,sort_by*,sort_order*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Updates multiple related records&apos; specific properties in a specified related list.
+        /// To update multiple records associated with a parent record in a specified related list in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for updating multiple related records</param>
+        /// <param name="body">Represents the request payload for updating multiple related records in a related list.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/related_records/{parentRecordModule}/{parentRecord}/{relatedList}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -193,12 +193,12 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             return new global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Removes relationships between a parent record and multiple records in a specified related list, identified by their IDs in the query parameter. This operation deletes only the relationship links, not the actual records themselves. The target records remain intact in their respective modules.
+        /// To delink multiple records from a parent record&apos;s related list in your Zoho CRM organization. This operation removes only the relationship links - the related records themselves remain intact in their respective modules.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithRelatedListItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Comma-separated list of record IDs to delink from the parent record. Each ID must be numeric.</summary>
+            /// <summary>Specify the unique identifiers of the records to delink from the parent record as a comma-separated list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
@@ -210,15 +210,21 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
 #endif
         }
         /// <summary>
-        /// Retrieves a paginated list of records from a specific related list of a parent record in a CRM module. Supports filtering by fields and conditional requests using If-Modified-Since header.
+        /// To retrieve the list of records associated with a parent record from a specified related list in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithRelatedListItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter for converted records.</summary>
+            /// <summary>Filter records by their current approval state.</summary>
+            [QueryParameter("approval_state")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsApprovalState? ApprovalState { get; set; }
+            /// <summary>Filter records by approval status. When set to true, returns only approved records; when false, returns only unapproved records.</summary>
+            [QueryParameter("approved")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsApproved? Approved { get; set; }
+            /// <summary>Specify whether to filter records by conversion status. Possible values: **true**, **false**, **both**.</summary>
             [QueryParameter("converted")]
-            public global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.GetConvertedQueryParameterType? Converted { get; set; }
-            /// <summary>Comma-separated list of field names to include in the response. Field names must follow API naming conventions.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsConverted? Converted { get; set; }
+            /// <summary>Specify the API names of the fields to include in the response as a comma-separated list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -228,7 +234,17 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             [QueryParameter("fields")]
             public string Fields { get; set; }
 #endif
-            /// <summary>Comma-separated list of record IDs to retrieve.</summary>
+            /// <summary>Filter for fetching specific related records based on criteria</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filters")]
+            public string? Filters { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filters")]
+            public string Filters { get; set; }
+#endif
+            /// <summary>Specify the unique identifiers of the records to retrieve as a comma-separated list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
@@ -238,10 +254,10 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             [QueryParameter("ids")]
             public string Ids { get; set; }
 #endif
-            /// <summary>Page number for pagination (starting from 1)</summary>
+            /// <summary>Specify the page number for paginating results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Token for fetching the next set of records after 2000. Use the value from &apos;next_page_token&apos; in the previous response.</summary>
+            /// <summary>Specify the token to retrieve the next set of records beyond the first 2,000 results. Use the **next_page_token** value from the previous response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("page_token")]
@@ -251,15 +267,15 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             [QueryParameter("page_token")]
             public string PageToken { get; set; }
 #endif
-            /// <summary>Number of records to return per page</summary>
+            /// <summary>Specify the number of records to return per page.The page and per_page parameter is used to fetch records according to their position in the CRM. Let us assume that the user has to fetch 400 records. The maximum number of records that one can get for an API call is 200. So, for records above the 200th position, they cannot be fetched. By using the page (1 and 2) and per_page (200) parameter, the user can fetch all 400 records using 2 API calls.If the requested related list is not present or hidden in a layout, the system will return an INVALID_DATA response.</summary>
             [QueryParameter("perPage")]
             public int? PerPage { get; set; }
-            /// <summary>&quot;Field to sort records by. Allowed: id, Created_Time, Modified_Time.&quot;</summary>
+            /// <summary>Specify the field to sort the related records by. Possible values: **ID**, **Created_Time**, **Modified_Time**.</summary>
             [QueryParameter("sort_by")]
-            public global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.GetSort_byQueryParameterType? SortBy { get; set; }
-            /// <summary>Sort order for records.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsSortBy? SortBy { get; set; }
+            /// <summary>Specify the sort direction for the related records. Possible values: **asc**, **desc**.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.GetSort_orderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsSortOrder? SortOrder { get; set; }
         }
     }
 }

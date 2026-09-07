@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShareRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/share_records/{moduleApiName}/{recordId}/actions/share{?sharedTo*,view*}", pathParameters)
+        public ShareRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/share_records/{moduleApiName}/{recordId}/actions/share{?approved*,current_user*,sharedTo*,view*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,23 +30,23 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShareRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/share_records/{moduleApiName}/{recordId}/actions/share{?sharedTo*,view*}", rawUrl)
+        public ShareRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/share_records/{moduleApiName}/{recordId}/actions/share{?approved*,current_user*,sharedTo*,view*}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete Share Records. API exposed to customers
+        /// To revoke all sharing on a specific record in a module of your Zoho CRM organization. Use this operation to remove access that was previously granted to users, roles, or groups through record-level sharing.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -54,68 +54,68 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Share Records. API exposed to customers
+        /// To retrieve the share details of a specific record in a module of your Zoho CRM organization. The response lists each entry with the recipient, the access level, and the sharing metadata.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.ShareRequestBuilder.ShareRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.ShareRequestBuilder.ShareRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.ShareRequestBuilder.ShareRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.ShareRequestBuilder.ShareRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create Share Records. API exposed to customers
+        /// To share a specific record in a module with one or more users, roles, or groups. A record can be shared with up to 10 users, 5 roles, and 5 groups.&gt; **Note**:&gt; - The records can be shared to other users in the organization only if certain conditions are met. For simplicity, let us assume that User A shares a record with User B. Now, User A can share the record successfully only if:&gt;    - User B is a **confirmed** and **active** user.&gt;    - User B **does not already have access** to that particular record.&gt;    - User B has access to that particular module. For instance, to share a contact, User B must have access to the Contacts module.&gt; - You cannot share the records in Calls, Meetings, Tasks, and Linking modules directly. They can be shared as related lists.&gt; - The users who have profiles with **share** permission can share any records that they have access to, except the records that are shared to them. To check the same, go to Setup &gt; Users and Control &gt; Security Control &gt; Choose the profile &gt; Tool Permissions. Check if **share** is enabled. It is enabled by default for Standard and Administrator Profiles.&gt; - The details of the records that form many-to-many relationships (with multi-select lookup) cannot be shared.&gt; - A record can be shared only with **10 users**, **5 groups**, and **5 roles**.&gt; - Once the record gets shared successfully, the user who initiated the share operation can be notified via email.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201"/></returns>
-        /// <param name="body">Create Share Records Request</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201Response"/></returns>
+        /// <param name="body">Represents the request body.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update Share Records. API exposed to customers
+        /// To update the sharing permissions of a specific record in a module of your Zoho CRM organization. The update can change the access level, change the visibility between private and public, or alter whether related records are shared along with the record.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201"/></returns>
-        /// <param name="body">Update Share Records Request</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201Response"/></returns>
+        /// <param name="body">Represents the request body.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Share Records. API exposed to customers
+        /// To revoke all sharing on a specific record in a module of your Zoho CRM organization. Use this operation to remove access that was previously granted to users, roles, or groups through record-level sharing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +134,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
             return requestInfo;
         }
         /// <summary>
-        /// Get Share Records. API exposed to customers
+        /// To retrieve the share details of a specific record in a module of your Zoho CRM organization. The response lists each entry with the recipient, the access level, and the sharing metadata.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,18 +153,18 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
             return requestInfo;
         }
         /// <summary>
-        /// Create Share Records. API exposed to customers
+        /// To share a specific record in a module with one or more users, roles, or groups. A record can be shared with up to 10 users, 5 roles, and 5 groups.&gt; **Note**:&gt; - The records can be shared to other users in the organization only if certain conditions are met. For simplicity, let us assume that User A shares a record with User B. Now, User A can share the record successfully only if:&gt;    - User B is a **confirmed** and **active** user.&gt;    - User B **does not already have access** to that particular record.&gt;    - User B has access to that particular module. For instance, to share a contact, User B must have access to the Contacts module.&gt; - You cannot share the records in Calls, Meetings, Tasks, and Linking modules directly. They can be shared as related lists.&gt; - The users who have profiles with **share** permission can share any records that they have access to, except the records that are shared to them. To check the same, go to Setup &gt; Users and Control &gt; Security Control &gt; Choose the profile &gt; Tool Permissions. Check if **share** is enabled. It is enabled by default for Standard and Administrator Profiles.&gt; - The details of the records that form many-to-many relationships (with multi-select lookup) cannot be shared.&gt; - A record can be shared only with **10 users**, **5 groups**, and **5 roles**.&gt; - Once the record gets shared successfully, the user who initiated the share operation can be notified via email.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Create Share Records Request</param>
+        /// <param name="body">Represents the request body.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -175,18 +175,18 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
             return requestInfo;
         }
         /// <summary>
-        /// Update Share Records. API exposed to customers
+        /// To update the sharing permissions of a specific record in a module of your Zoho CRM organization. The update can change the access level, change the visibility between private and public, or alter whether related records are shared along with the record.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Update Share Records Request</param>
+        /// <param name="body">Represents the request body.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -206,12 +206,18 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
             return new global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.ShareRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Share Records. API exposed to customers
+        /// To retrieve the share details of a specific record in a module of your Zoho CRM organization. The response lists each entry with the recipient, the access level, and the sharing metadata.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ShareRequestBuilderGetQueryParameters 
         {
-            /// <summary>To specify to whom the record is shared</summary>
+            /// <summary>Filters sharing records by approval status.- `true`  - return only approved sharing entries- `false`  - return only unapproved (pending) sharing entries- `both`  - return all sharing entries regardless of approval status</summary>
+            [QueryParameter("approved")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsApproved? Approved { get; set; }
+            /// <summary>Specify whether to return only the share entries for the current user. When set to **true**, the response returns only the share entries for the user making the API call.</summary>
+            [QueryParameter("current_user")]
+            public bool? CurrentUser { get; set; }
+            /// <summary>Specify the unique ID of the user whose share entries you want to retrieve. When set, the response returns only the share entries for that user. Use the [Get Users API](users.yaml#$paths./users.get) to get the valid IDs for the users. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sharedTo")]
@@ -221,9 +227,9 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
             [QueryParameter("sharedTo")]
             public string SharedTo { get; set; }
 #endif
-            /// <summary>To get the summary of share records</summary>
+            /// <summary>Specify the level of detail to include in the response. **Possible values**:  summary, manage.</summary>
             [QueryParameter("view")]
-            public global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.GetViewQueryParameterType? View { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.View? View { get; set; }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records
     public partial class Related_recordsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.related_records.item collection</summary>
-        /// <param name="position">The module name of the parent record (e.g., Contacts, Leads, Deals, Accounts, Services__s, Price_Books)</param>
+        /// <param name="position">Specify the API name of the module the parent record belongs to. Refer to the [Get Modules](https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Related_records.Item.WithParentRecordModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Related_records.Item.WithParentRecordModuleItemRequestBuilder this[string position]
         {

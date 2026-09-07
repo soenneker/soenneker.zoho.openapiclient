@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the status information of a webhook including operational code, message, and status details.
+    /// Represents the operation result for a webhook create, update, or delete action. On success, code is success, status is success, and details contains the webhook ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookStatusResponse : IParsable
     {
-        /// <summary>&quot;Field: code&quot;</summary>
+        /// <summary>Represents the success or error code of the webhook operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>Nested details about a webhook, providing a unique identifier to distinguish it within the system.</summary>
+        /// <summary>Represents the nested object containing the unique identifier of the webhook returned by a mutation operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.WebhookDetailsResponse? Details { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.WebhookDetailsResponse Details { get; set; }
 #endif
-        /// <summary>&quot;Field: message&quot;</summary>
+        /// <summary>Represents the description of the operation result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>&quot;Field: status&quot;</summary>
+        /// <summary>Represents the operation status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

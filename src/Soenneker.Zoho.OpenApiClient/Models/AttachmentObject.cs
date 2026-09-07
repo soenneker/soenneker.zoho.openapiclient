@@ -13,7 +13,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttachmentObject : IParsable
     {
-        /// <summary>User who created the attachment</summary>
+        /// <summary>User who created the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy? CreatedBy { get; set; }
@@ -21,19 +21,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy CreatedBy { get; set; }
 #endif
-        /// <summary>Timestamp when the attachment was created (ISO 8601 with timezone)</summary>
+        /// <summary>Represents the timestamp when the attachment was created (ISO 8601 with timezone)</summary>
         public DateTimeOffset? CreatedTime { get; set; }
         /// <summary>Indicates if the attachment is editable</summary>
         public bool? Editable { get; set; }
-        /// <summary>Field states metadata</summary>
+        /// <summary>Represents the field states metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Field_states? FieldStates { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectFieldStatesProperty? FieldStates { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Field_states FieldStates { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectFieldStatesProperty FieldStates { get; set; }
 #endif
-        /// <summary>File identifier for the attachment</summary>
+        /// <summary>Represents the file identifier for the attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileId { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FileId { get; set; }
 #endif
-        /// <summary>Name of the attached file</summary>
+        /// <summary>Represents the name of the attached file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileName { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FileName { get; set; }
 #endif
-        /// <summary>The unique numeric identifier of the attachment</summary>
+        /// <summary>Represents the unique numeric identifier of the attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>URL for link-type attachments. Null for file attachments.</summary>
+        /// <summary>Represents the URL for link-type attachments. Null for file attachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LinkUrl { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string LinkUrl { get; set; }
 #endif
-        /// <summary>User who last modified the attachment</summary>
+        /// <summary>User who last modified the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectModifiedBy? ModifiedBy { get; set; }
@@ -73,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectModifiedBy ModifiedBy { get; set; }
 #endif
-        /// <summary>Timestamp when the attachment was last modified (ISO 8601 with timezone)</summary>
+        /// <summary>Represents the timestamp when the attachment was last modified (ISO 8601 with timezone)</summary>
         public DateTimeOffset? ModifiedTime { get; set; }
         /// <summary>Owner of the attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectParentId ParentId { get; set; }
 #endif
-        /// <summary>Source module name</summary>
+        /// <summary>Represents the source module name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SeModule { get; set; }
@@ -99,7 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string SeModule { get; set; }
 #endif
-        /// <summary>Sharing permission level for the attachment</summary>
+        /// <summary>Represents the sharing permission level for the attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SharingPermission { get; set; }
@@ -107,7 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string SharingPermission { get; set; }
 #endif
-        /// <summary>Size of the attachment in bytes</summary>
+        /// <summary>Represents the size of the attachment in bytes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Size { get; set; }
@@ -115,7 +115,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Size { get; set; }
 #endif
-        /// <summary>Current state of the attachment</summary>
+        /// <summary>Represents the current state of the attachment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -123,7 +123,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string State { get; set; }
 #endif
-        /// <summary>Type of the attachment</summary>
+        /// <summary>Represents the type of the attachment. Possible values: `File` for uploaded files, or `Link URL` for URL-based attachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -152,7 +152,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "Created_By", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy.CreateFromDiscriminatorValue); } },
                 { "Created_Time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "$editable", n => { Editable = n.GetBoolValue(); } },
-                { "$field_states", n => { FieldStates = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Field_states>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Field_states.CreateFromDiscriminatorValue); } },
+                { "$field_states", n => { FieldStates = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectFieldStatesProperty>(global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectFieldStatesProperty.CreateFromDiscriminatorValue); } },
                 { "$file_id", n => { FileId = n.GetStringValue(); } },
                 { "File_Name", n => { FileName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -178,7 +178,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectCreatedBy>("Created_By", CreatedBy);
             writer.WriteDateTimeOffsetValue("Created_Time", CreatedTime);
             writer.WriteBoolValue("$editable", Editable);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObject_Field_states>("$field_states", FieldStates);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentObjectFieldStatesProperty>("$field_states", FieldStates);
             writer.WriteStringValue("$file_id", FileId);
             writer.WriteStringValue("File_Name", FileName);
             writer.WriteStringValue("id", Id);

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// A place where the unsubscribe link is associated, including the linked resource, details, and type.
+    /// A place where the unsubscribe link is associated, including the linked resource, module details, and association type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnsubscribeLinkAssociatedPlace : IParsable
     {
-        /// <summary>Additional details for an unsubscribe link association, such as module context.</summary>
+        /// <summary>Additional details for an unsubscribe link association, including the associated module context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationDetails? Details { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationDetails Details { get; set; }
 #endif
-        /// <summary>Resource associated with an unsubscribe link, including its id and name.</summary>
+        /// <summary>Represents the resource associated with an unsubscribe link, including its name and unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationResource? Resource { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationResource Resource { get; set; }
 #endif
-        /// <summary>&quot;Field: type&quot;</summary>
+        /// <summary>The type of associated place (e.g., email_templates)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

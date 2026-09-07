@@ -8,34 +8,22 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// license details
+    /// Represents the license and subscription details for the organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrgDetailsLicenseDetails : IParsable
     {
-        /// <summary>is paid edition account</summary>
+        /// <summary>Indicates whether the organization has a paid subscription.Possible values:**true** - The organization has a paid subscription.**false** - The organization does not have a paid subscription.</summary>
         public bool? Paid { get; private set; }
-        /// <summary>license expiry date</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? PaidExpiry { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch PaidExpiry { get; private set; }
-#endif
-        /// <summary>actual license type</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsLicenseDetails_paid_type? PaidType { get; private set; }
-        /// <summary>no of portal users can be added based on the purchased licenses</summary>
+        /// <summary>Represents the expiry date of the paid license for the organization.</summary>
+        public DateTimeOffset? PaidExpiry { get; private set; }
+        /// <summary>Represents the license type for the organization.Possible values:**free** - Free edition.**standard** - Standard edition.**professional** - Professional edition.**enterprise** - Enterprise edition.**ultimate** - Ultimate edition.**crmplus** - CRM Plus edition.**zohoone** - Zoho One edition.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsLicenseDetailsPaidType? PaidType { get; private set; }
+        /// <summary>Represents the number of portal user licenses purchased for the organization.</summary>
         public int? PortalUsersLicensePurchased { get; private set; }
-        /// <summary>trial expiry date</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TrialExpiry { get; set; }
-#nullable restore
-#else
-        public string TrialExpiry { get; set; }
-#endif
-        /// <summary>trial type</summary>
+        /// <summary>Represents the expiry date of the trial subscription for the organization.</summary>
+        public DateTimeOffset? TrialExpiry { get; set; }
+        /// <summary>Represents the type of trial subscription for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrialType { get; private set; }
@@ -43,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string TrialType { get; private set; }
 #endif
-        /// <summary>no of users can be added based on the purchased licenses</summary>
+        /// <summary>Represents the number of user licenses purchased for the organization.</summary>
         public int? UsersLicensePurchased { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -64,10 +52,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "paid", n => { Paid = n.GetBoolValue(); } },
-                { "paid_expiry", n => { PaidExpiry = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "paid_type", n => { PaidType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsLicenseDetails_paid_type>(); } },
+                { "paid_expiry", n => { PaidExpiry = n.GetDateTimeOffsetValue(); } },
+                { "paid_type", n => { PaidType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsLicenseDetailsPaidType>(); } },
                 { "portal_users_license_purchased", n => { PortalUsersLicensePurchased = n.GetIntValue(); } },
-                { "trial_expiry", n => { TrialExpiry = n.GetStringValue(); } },
+                { "trial_expiry", n => { TrialExpiry = n.GetDateTimeOffsetValue(); } },
                 { "trial_type", n => { TrialType = n.GetStringValue(); } },
                 { "users_license_purchased", n => { UsersLicensePurchased = n.GetIntValue(); } },
             };
@@ -79,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("trial_expiry", TrialExpiry);
+            writer.WriteDateTimeOffsetValue("trial_expiry", TrialExpiry);
         }
     }
 }

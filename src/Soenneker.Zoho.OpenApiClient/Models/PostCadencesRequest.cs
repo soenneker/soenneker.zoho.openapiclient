@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body schema
+    /// Represents the request payload for enrolling or un-enrolling records in one or more Cadences.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostCadencesRequest : IParsable
     {
-        /// <summary>Cadence ids has to be given here (Required)</summary>
+        /// <summary>A list of Cadence IDs to use for the enrollment or un-enrollment operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CadencesIds { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<string> CadencesIds { get; set; }
 #endif
-        /// <summary>records ids to be enroll (Required)</summary>
+        /// <summary>Specify the list of record IDs to enroll in or un-enroll from the specified Cadences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ids { get; set; }

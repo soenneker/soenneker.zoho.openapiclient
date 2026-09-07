@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body schema
+    /// Represents the request body wrapper for updating an existing workflow rule. Contains a single-element array with the updated rule configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateWorkflowRuleSchema : IParsable
     {
-        /// <summary>The request body must contain a workflow_rules array. You can include only one object in this array per request. (Required)</summary>
+        /// <summary>The request body must contain a **workflow_rules** array with one object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchema>? WorkflowRules { get; set; }

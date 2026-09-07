@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Actions;
 using Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Item;
 using Soenneker.Zoho.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -18,8 +19,13 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Assignment_rulesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The actions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Actions.ActionsRequestBuilder Actions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.assignment_rules.settings.automation.assignment_rules.item collection</summary>
-        /// <param name="position">Unique numeric identifier of assignment rule(long datatype)</param>
+        /// <param name="position">Specify the request path param ID value for the request. Use the [Assignment Rule API](assignment_rules.yaml#$.paths./settings/automation/assignment_rules.get) to retrieve the Assignment Rule ID.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Item.Assignment_rulesItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Item.Assignment_rulesItemRequestBuilder this[string position]
         {
@@ -47,12 +53,12 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
         {
         }
         /// <summary>
-        /// To get all assignment rules
+        /// To retrieve all Assignment Rules configured in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetAllAssignmentRulesSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseNoPermissionToAccessAPI">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseNoPermissionToAccessApi">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetAllAssignmentRulesSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Assignment_rulesRequestBuilder.Assignment_rulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,12 +71,32 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseNoPermissionToAccessAPI.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseNoPermissionToAccessApi.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetAllAssignmentRulesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetAllAssignmentRulesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To get all assignment rules
+        /// To create a single Assignment Rule in your Zoho CRM organization.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse"/></returns>
+        /// <param name="body">Request body for creating Assignment Rule.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RequestBodySchemaForCreate body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Assignment_rulesRequestBuilder.Assignment_rulesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RequestBodySchemaForCreate body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Assignment_rulesRequestBuilder.Assignment_rulesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// To retrieve all Assignment Rules configured in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,6 +115,28 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
             return requestInfo;
         }
         /// <summary>
+        /// To create a single Assignment Rule in your Zoho CRM organization.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Request body for creating Assignment Rule.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RequestBodySchemaForCreate body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Assignment_rulesRequestBuilder.Assignment_rulesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RequestBodySchemaForCreate body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Assignment_rulesRequestBuilder.Assignment_rulesRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/assignment_rules/settings/automation/assignment_rules?module={module}", PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Assignment_rulesRequestBuilder"/></returns>
@@ -98,15 +146,32 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
             return new global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Assignment_rulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To get all assignment rules
+        /// To retrieve all Assignment Rules configured in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Assignment_rulesRequestBuilderGetQueryParameters 
         {
-            /// <summary>To include the fields or keys of the another resource</summary>
+            /// <summary>Specify the param query include inner details value for the request.Possible values:**created_by.zuid** - Represents created by.zuid.**modified_by.zuid** - Represents modified by.zuid.</summary>
             [QueryParameter("include_inner_details")]
-            public global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.GetInclude_inner_detailsQueryParameterType? IncludeInnerDetails { get; set; }
-            /// <summary>API name of the module</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.ParamQueryIncludeInnerDetails? IncludeInnerDetails { get; set; }
+            /// <summary>Specify the param query module schema value for the request. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module ID and API name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("module")]
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
+        }
+        /// <summary>
+        /// To create a single Assignment Rule in your Zoho CRM organization.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Assignment_rulesRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Specify the param query module required schema value for the request. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module ID and API name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_count/{moduleApiName}/actions/count{?approved*,converted*,criteria*,cvid*,email*,page*,per_page*,phone*,type*,word*}", pathParameters)
+        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_count/{moduleApiName}/actions/count{?approved*,converted*,criteria*,cross_filters*,cvid*,email*,filters*,include_filters*,page*,per_page*,phone*,type*,word*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,36 +30,38 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_count/{moduleApiName}/actions/count{?approved*,converted*,criteria*,cvid*,email*,page*,per_page*,phone*,type*,word*}", rawUrl)
+        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_count/{moduleApiName}/actions/count{?approved*,converted*,criteria*,cross_filters*,cvid*,email*,filters*,include_filters*,page*,per_page*,phone*,type*,word*}", rawUrl)
         {
         }
         /// <summary>
-        /// Fetches the total number of records in a specified module.The count can be filtered using `cvid` (Custom View ID) or one of the search parameters (`criteria`, `phone`, `email`, `word`).**Important Constraint (Zoho Documentation):**You can only include **either** `cvid` **or** one of the search parameters (`criteria`, `phone`, `email`, `word`) in a single request. Combining `cvid` with any search parameter will result in an `AMBIGUITY_DURING_PROCESSING` error (HTTP 400).
+        /// To retrieve the total number of records in a specified Zoho CRM module, optionally filtered by a Custom View or search criteria. The count can be filtered using `cvid` (Custom View ID) or search parameters (`criteria`, `email`, `phone`, or `word`). These two filter groups are mutually exclusive - they cannot be combined in the same request. The `converted` and `approved` parameters apply only to the Leads module. The `type` parameter applies only to the Users module. Note: The record count may take 1-10 minutes to reflect the latest changes in Zoho CRM.The count can be filtered using `cvid` (Custom View ID) or one of the search parameters (`criteria`, `phone`, `email`, `word`).**Important Constraint (Zoho Documentation):**You can only include **either** `cvid` **or** one of the search parameters (`criteria`, `phone`, `email`, `word`) in a single request. Combining `cvid` with any search parameter will result in an `AMBIGUITY_DURING_PROCESSING` error (HTTP 400).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetCount200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetCount200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetCount200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount400Response.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetCount200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetCount200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches the total number of records in a specified module.The count can be filtered using `cvid` (Custom View ID) or one of the search parameters (`criteria`, `phone`, `email`, `word`).**Important Constraint (Zoho Documentation):**You can only include **either** `cvid` **or** one of the search parameters (`criteria`, `phone`, `email`, `word`) in a single request. Combining `cvid` with any search parameter will result in an `AMBIGUITY_DURING_PROCESSING` error (HTTP 400).
+        /// To retrieve the total number of records in a specified Zoho CRM module, optionally filtered by a Custom View or search criteria. The count can be filtered using `cvid` (Custom View ID) or search parameters (`criteria`, `email`, `phone`, or `word`). These two filter groups are mutually exclusive - they cannot be combined in the same request. The `converted` and `approved` parameters apply only to the Leads module. The `type` parameter applies only to the Users module. Note: The record count may take 1-10 minutes to reflect the latest changes in Zoho CRM.The count can be filtered using `cvid` (Custom View ID) or one of the search parameters (`criteria`, `phone`, `email`, `word`).**Important Constraint (Zoho Documentation):**You can only include **either** `cvid` **or** one of the search parameters (`criteria`, `phone`, `email`, `word`) in a single request. Combining `cvid` with any search parameter will result in an `AMBIGUITY_DURING_PROCESSING` error (HTTP 400).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,18 +89,18 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count
             return new global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.CountRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetches the total number of records in a specified module.The count can be filtered using `cvid` (Custom View ID) or one of the search parameters (`criteria`, `phone`, `email`, `word`).**Important Constraint (Zoho Documentation):**You can only include **either** `cvid` **or** one of the search parameters (`criteria`, `phone`, `email`, `word`) in a single request. Combining `cvid` with any search parameter will result in an `AMBIGUITY_DURING_PROCESSING` error (HTTP 400).
+        /// To retrieve the total number of records in a specified Zoho CRM module, optionally filtered by a Custom View or search criteria. The count can be filtered using `cvid` (Custom View ID) or search parameters (`criteria`, `email`, `phone`, or `word`). These two filter groups are mutually exclusive - they cannot be combined in the same request. The `converted` and `approved` parameters apply only to the Leads module. The `type` parameter applies only to the Users module. Note: The record count may take 1-10 minutes to reflect the latest changes in Zoho CRM.The count can be filtered using `cvid` (Custom View ID) or one of the search parameters (`criteria`, `phone`, `email`, `word`).**Important Constraint (Zoho Documentation):**You can only include **either** `cvid` **or** one of the search parameters (`criteria`, `phone`, `email`, `word`) in a single request. Combining `cvid` with any search parameter will result in an `AMBIGUITY_DURING_PROCESSING` error (HTTP 400).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CountRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filters leads based on their approval status.</summary>
+            /// <summary>Specify the approval status to filter the count to lead records. This parameter is supported only for the **Leads** module. Possible values:**true** - Count only approved leads.**false** - Count only unapproved leads.**both** - Count leads regardless of approval status.</summary>
             [QueryParameter("approved")]
-            public global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.GetApprovedQueryParameterType? Approved { get; set; }
-            /// <summary>Filters leads based on their conversion status.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.Approved? Approved { get; set; }
+            /// <summary>Specify the conversion status to filter the count to lead records. This parameter is supported only for the **Leads** module. Possible values:**true** - Count only converted leads.**false** - Count only unconverted leads.**both** - Count leads regardless of conversion status.</summary>
             [QueryParameter("converted")]
-            public global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.GetConvertedQueryParameterType? Converted { get; set; }
-            /// <summary>&quot;Performs search by following the shown criteria: `(({api_name}:{operator}:{value}) and/or ({api_name}:{operator}:{value}))`Performs a search based on the following format:`(({field_API_name}:{operator}:{value}) and/or ({field_API_name}:{operator}:{value}))`Replace `{field_API_name}`, `{operator}`, and `{value}` with the appropriate field API name, condition, and value.**Key Points:**- You can search for a maximum of **10 criteria** (with same or different columns)- The only operator that is supported for **encrypted fields** is `equals`- When using the `equals` operator in the Search API, it behaves like `contains`, retrieving records that include the specified value**Single Condition:**If the condition is `(Company:equals:ABC)`, the response will include records with \&quot;ABC\&quot; as well as \&quot;ABC Inc\&quot; in the Company field.**Multiple Conditions:**`equals` still behaves like `contains`. For example, `((Company:equals:ABC) and (First_Name:starts_with:M))`, it retrieves records where the \&quot;First Name\&quot; starts with \&quot;M\&quot; and the \&quot;Company\&quot; contains \&quot;ABC\&quot; (e.g., \&quot;ABC\&quot; or \&quot;ABC Inc.\&quot;).**Note:** The above behaviour does not apply to the **picklist field type**.**IN Operator:**The `in` operator checks if a field&apos;s value matches any value in a given list.For example, `(Full_Name:in:Patricia,Boyle,Kate)`, it retrieves records where the Full Name is Patricia, Boyle, or Kate.**Special Character Handling:**When a single-line field value contains characters such as `{`, `}`, `[`, `]`, `^`, `:`, `-`, `/`, `!`, `?`, `*`, `_`, `@`, space, the Search API returns records with similar-looking values, even if the characters are not an exact match.For example, if Record A has the field value `sales-team@zoho.com` and Record B has `sales_team@zoho.com`, a search using `equals:sales-team@zoho.com` may return both records.**Escaping Special Characters:**When using parentheses `()`, commas `,`, or a backslash `\` as the last character in a search value, follow these steps:1. Escape special characters using a backslash `\`2. Encode the value before making the API request. Select the value of the criteria, right-click the value, and choose the EncodeURIComponent option.**Example 1: Escaping Parentheses and Commas**- Search term: `((Last_Name:equals:Burns,B) and (First_Name:starts_with:M))`- Escape the comma `\,`: `((Last_Name:equals:Burns\,B) and (First_Name:starts_with:M))`- Encode the value: `((Last_Name:equals:Burns%5C%2CB) and (First_Name:starts_with:M))`**Example 2: Escaping a Backslash at the End**- Search term: `(Last_Name:equals:K\)`- Escape the backslash `\\`: `(Last_Name:equals:K\\)`- Encode the value: `(Last_Name:equals:K%5C%5C)`**Supported Data Types:**`picklist`, `owner_lookup`, `user_lookup`, `lookup`, `phone`, `email`, `date`, `datetime`, `text`, `textarea`, `integer`, `currency`, `decimal`, `multiselectpicklist`, `bigint`, `percent`, `formula`, `website`, `boolean`, `double`**Supported Operators:**`equals`, `starts_with`, `in`, `not_equal`, `greater_equal`, `greater_than`, `less_equal`, `less_than`, `between`**Operator Compatibility by Data Type:**| Data Type | equals | starts_with | in | not_equal | greater_equal | greater_than | less_equal | less_than | between ||---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|| **text** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **textarea** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **email** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **phone** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **website** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **picklist** | ✓ | ✗ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **multiselectpicklist** | ✓ | ✗ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **lookup** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **owner_lookup** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **user_lookup** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **boolean** | ✓ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **integer** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **bigint** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **currency** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **decimal** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **double** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **percent** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **date** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **datetime** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **formula** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |**Legend:** ✓ = Supported, ✗ = Not Supported**Note:** Refer to the Zoho CRM API documentation for the most up-to-date operator compatibility information.&quot;</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.RecordCountConverted? Converted { get; set; }
+            /// <summary>Performs search by following the shown criteria: `(({api_name}:{operator}:{value}) and/or ({api_name}:{operator}:{value}))`Performs a search based on the following format:`(({field_API_name}:{operator}:{value}) and/or ({field_API_name}:{operator}:{value}))`Replace `{field_API_name}`, `{operator}`, and `{value}` with the appropriate field API name, condition, and value.**Key Points:**- You can search for a maximum of **10 criteria** (with same or different columns)- The only operator that is supported for **encrypted fields** is `equals`- When using the `equals` operator in the Search API, it behaves like `contains`, retrieving records that include the specified value**Single Condition:**If the condition is `(Company:equals:ABC)`, the response will include records with &quot;ABC&quot; as well as &quot;ABC Inc&quot; in the Company field.**Multiple Conditions:**`equals` still behaves like `contains`. For example, `((Company:equals:ABC) and (First_Name:starts_with:M))`, it retrieves records where the &quot;First Name&quot; starts with &quot;M&quot; and the &quot;Company&quot; contains &quot;ABC&quot; (e.g., &quot;ABC&quot; or &quot;ABC Inc.&quot;).**Note:** The above behaviour does not apply to the **picklist field type**.**IN Operator:**The `in` operator checks if a field&apos;s value matches any value in a given list.For example, `(Full_Name:in:Patricia,Boyle,Kate)`, it retrieves records where the Full Name is Patricia, Boyle, or Kate.**Special Character Handling:**When a single-line field value contains characters such as `{`, `}`, `[`, `]`, `^`, `:`, `-`, `/`, `!`, `?`, `*`, `_`, `@`, space, the Search API returns records with similar-looking values, even if the characters are not an exact match.For example, if Record A has the field value `sales-team@zoho.com` and Record B has `sales_team@zoho.com`, a search using `equals:sales-team@zoho.com` may return both records.**Escaping Special Characters:**When using parentheses `()`, commas `,`, or a backslash `\` as the last character in a search value, follow these steps:1. Escape special characters using a backslash `\`2. Encode the value before making the API request. Select the value of the criteria, right-click the value, and choose the EncodeURIComponent option.**Example 1: Escaping Parentheses and Commas**- Search term: `((Last_Name:equals:Burns,B) and (First_Name:starts_with:M))`- Escape the comma `\,`: `((Last_Name:equals:Burns\,B) and (First_Name:starts_with:M))`- Encode the value: `((Last_Name:equals:Burns%5C%2CB) and (First_Name:starts_with:M))`**Example 2: Escaping a Backslash at the End**- Search term: `(Last_Name:equals:K\)`- Escape the backslash `\\`: `(Last_Name:equals:K\\)`- Encode the value: `(Last_Name:equals:K%5C%5C)`**Supported Data Types:**`picklist`, `owner_lookup`, `user_lookup`, `lookup`, `phone`, `email`, `date`, `datetime`, `text`, `textarea`, `integer`, `currency`, `decimal`, `multiselectpicklist`, `bigint`, `percent`, `formula`, `website`, `boolean`, `double`**Supported Operators:**`equals`, `starts_with`, `in`, `not_equal`, `greater_equal`, `greater_than`, `less_equal`, `less_than`, `between`**Operator Compatibility by Data Type:**| Data Type | equals | starts_with | in | not_equal | greater_equal | greater_than | less_equal | less_than | between ||---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|| **text** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **textarea** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **email** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **phone** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **website** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **picklist** | ✓ | ✗ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **multiselectpicklist** | ✓ | ✗ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **lookup** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **owner_lookup** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **user_lookup** | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **boolean** | ✓ | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ || **integer** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **bigint** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **currency** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **decimal** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **double** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **percent** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **date** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **datetime** | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ || **formula** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |**Legend:** ✓ = Supported, ✗ = Not Supported**Note:** Refer to the Zoho CRM API documentation for the most up-to-date operator compatibility information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("criteria")]
@@ -108,7 +110,17 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count
             [QueryParameter("criteria")]
             public string Criteria { get; set; }
 #endif
-            /// <summary>The ID of the custom view from which to get the record count.</summary>
+            /// <summary>Cross filter criteria for related module records</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cross_filters")]
+            public string? CrossFilters { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cross_filters")]
+            public string CrossFilters { get; set; }
+#endif
+            /// <summary>Specify the ID of the Custom View from which to retrieve the record count. Refer to the [Get Custom Views](custom_views.yaml#$.paths./settings/custom_views.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("cvid")]
@@ -118,7 +130,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count
             [QueryParameter("cvid")]
             public string Cvid { get; set; }
 #endif
-            /// <summary>Searches for records using an email address. The API searches across all email fields in the specified module and returns matching records. (e.g., `p%2Bboyle@abc.com` for `p+boyle@abc.com`).</summary>
+            /// <summary>Specify an email address to filter the count to records that contain this value in any email field of the specified module. Encode special characters before submitting (for example, use `p%2Bboyle@abc.com` for `p+boyle@abc.com`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("email")]
@@ -128,13 +140,33 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count
             [QueryParameter("email")]
             public string Email { get; set; }
 #endif
-            /// <summary>The page number to retrieve.</summary>
+            /// <summary>Filter for fetching specific custom views based on criteria</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filters")]
+            public string? Filters { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filters")]
+            public string Filters { get; set; }
+#endif
+            /// <summary>To include inner details of criteria and cross filters</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("include_filters")]
+            public string? IncludeFilters { get; set; }
+#nullable restore
+#else
+            [QueryParameter("include_filters")]
+            public string IncludeFilters { get; set; }
+#endif
+            /// <summary>Specify the page number to retrieve when paginating through results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>The number of records to return per page.</summary>
+            /// <summary>Specify the number of records to include per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Searches for records using a phone number. The API searches across all phone fields in the specified module and returns matching records. (e.g., `9876543210`).</summary>
+            /// <summary>Specify a phone number to filter the count to records that contain this value in any phone field of the specified module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("phone")]
@@ -144,10 +176,10 @@ namespace Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count
             [QueryParameter("phone")]
             public string Phone { get; set; }
 #endif
-            /// <summary>Filters users based on their type. This parameter is supported **only for the Users module**.</summary>
+            /// <summary>Specify the type of user records to count. This parameter is supported only for the **Users** module. Possible values:**AllUsers** - All users.**ActiveUsers** - Active users.**DeactiveUsers** - Deactivated users.**ConfirmedUsers** - Confirmed users.**ConfirmedReportingUsers** - Confirmed users with reporting access.**NotConfirmedUsers** - Unconfirmed users.**DeletedUsers** - Deleted users.**ActiveConfirmedUsers** - Active and confirmed users.**AdminUsers** - Users with administrator privileges.**ActiveConfirmedAdmins** - Active, confirmed users with administrator privileges.**CurrentUser** - The currently authenticated user.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Record_count.Item.Actions.Count.GetTypeQueryParameterType? Type { get; set; }
-            /// <summary>Performs a global search within the specified module using the given word. The matchable records across multiple fields based on the search term. (e.g., `fin` to match records containing &apos;fin&apos; in any searchable field).</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.RecordCountType? Type { get; set; }
+            /// <summary>Specify a search term to filter the count to records that contain this word in any searchable field within the specified module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("word")]

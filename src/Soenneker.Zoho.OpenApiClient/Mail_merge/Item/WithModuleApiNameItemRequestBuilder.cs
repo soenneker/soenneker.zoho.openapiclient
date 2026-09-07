@@ -16,9 +16,9 @@ namespace Soenneker.Zoho.OpenApiClient.Mail_merge.Item
     public partial class WithModuleApiNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.mail_merge.item.item collection</summary>
-        /// <param name="position">&quot;Path parameter: recordId&quot;</param>
+        /// <param name="position">Specify the unique ID of the record for which you want to perform the mail merge action.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.WithRecordItemRequestBuilder"/></returns>
-        public global::Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.WithRecordItemRequestBuilder this[string position]
+        public global::Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.WithRecordItemRequestBuilder this[long position]
         {
             get
             {

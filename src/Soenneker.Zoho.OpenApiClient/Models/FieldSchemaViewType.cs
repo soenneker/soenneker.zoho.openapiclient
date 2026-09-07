@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// View type details of the field
+    /// Represents the view-mode availability settings for this field, specifying in which CRM interaction contexts — such as record creation, editing, viewing, or quick-create — the field is shown or editable.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchemaViewType : IParsable
     {
-        /// <summary>Indicates if the field supports create</summary>
+        /// <summary>Indicates whether this field is presented in the record creation form. Possible values: `true` — the field is shown when creating a new record; `false` — the field does not appear in the create form.</summary>
         public bool? Create { get; set; }
-        /// <summary>Indicates if the field is editable</summary>
+        /// <summary>Indicates whether this field is presented and editable in the record edit form. Possible values: `true` — the field is shown in edit mode; `false` — the field is hidden or read-only during editing.</summary>
         public bool? Edit { get; set; }
-        /// <summary>Indicates if the field supports quick create</summary>
+        /// <summary>Indicates whether this field is included in the abbreviated quick-create form. Possible values: `true` — the field appears in the quick-create panel; `false` — the field is excluded from quick-create.</summary>
         public bool? QuickCreate { get; set; }
-        /// <summary>Indicates if the field is viewable</summary>
+        /// <summary>Indicates whether this field is visible when a record is viewed in detail mode. Possible values: `true` — the field is displayed on the record detail page; `false` — the field is hidden from the detail view.</summary>
         public bool? View { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

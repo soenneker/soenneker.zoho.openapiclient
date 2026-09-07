@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Success response of Tags delete
+    /// Represents the response body for a successful tag deletion.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeletetagsResponse200 : IParsable
     {
-        /// <summary>&quot;Field: tags&quot;</summary>
+        /// <summary>Represents an array containing the result of the tag deletion operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsNested1>? Tags { get; set; }

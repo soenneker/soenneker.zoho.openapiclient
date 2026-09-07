@@ -13,7 +13,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RoleGroupProfileTypeAssignToResponseObject : IParsable
     {
-        /// <summary>Resource details</summary>
+        /// <summary>Resource details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject? Resource { get; set; }
@@ -21,8 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject Resource { get; set; }
 #endif
-        /// <summary>Defines which set of users should be considered for assignment.  (Required)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObject_type? Type { get; set; }
+        /// <summary>Defines which set of users should be considered for assignment.Possible values:**role** - Represents role.**group** - Represents group.**profile** - Represents profile. </summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>(global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObject_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectType>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>("resource", Resource);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObject_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectType>("type", Type);
         }
     }
 }

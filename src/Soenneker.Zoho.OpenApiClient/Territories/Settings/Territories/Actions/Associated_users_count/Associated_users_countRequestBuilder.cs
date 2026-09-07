@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Associated_users_countRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/territories/settings/territories/actions/associated_users_count", pathParameters)
+        public Associated_users_countRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/territories/settings/territories/actions/associated_users_count{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,46 +30,46 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Associated_users_countRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/territories/settings/territories/actions/associated_users_count", rawUrl)
+        public Associated_users_countRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/territories/settings/territories/actions/associated_users_count{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
-        /// Auto-generated description for operation `Get Associated Users Count`.
+        /// To retrieve the number of users associated with each territory in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGetAssociatedUsersCount200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGetAssociatedUsersCount500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryFeatureNotEnabledError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGetAssociatedUsersCount200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Associated_users_count.Associated_users_countRequestBuilder.Associated_users_countRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGetAssociatedUsersCount200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Associated_users_count.Associated_users_countRequestBuilder.Associated_users_countRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGetAssociatedUsersCount500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryFeatureNotEnabledError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGetAssociatedUsersCount200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGetAssociatedUsersCount200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Auto-generated description for operation `Get Associated Users Count`.
+        /// To retrieve the number of users associated with each territory in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Associated_users_count.Associated_users_countRequestBuilder.Associated_users_countRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Associated_users_count.Associated_users_countRequestBuilder.Associated_users_countRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -85,6 +85,19 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.
         public global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Associated_users_count.Associated_users_countRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Associated_users_count.Associated_users_countRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// To retrieve the number of users associated with each territory in your Zoho CRM organization.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Associated_users_countRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Represents the page query parameter, which specifies the page number for paginated results.</summary>
+            [QueryParameter("page")]
+            public int? Page { get; set; }
+            /// <summary>Represents the per_page query parameter, which specifies the number of records to return per page.</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
         }
     }
 }

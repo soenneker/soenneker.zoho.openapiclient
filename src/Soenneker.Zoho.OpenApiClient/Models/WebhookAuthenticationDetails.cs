@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Specifies the authentication method and related details for securing a webhook endpoint, ensuring authorized access.
+    /// Represents the authentication configuration for the webhook endpoint. Use type **general** for endpoints that do not require credentials. Use type **connection** with a valid connection_name for endpoints that require authenticated access via a pre-configured Zoho connection.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookAuthenticationDetails : IParsable
     {
-        /// <summary>&quot;Field: connection_name&quot;</summary>
+        /// <summary>Represents the name of the Zoho connection used for authentication. This field is required only when **type** is **connection**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConnectionName { get; set; }
@@ -21,8 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ConnectionName { get; set; }
 #endif
-        /// <summary>Specify the authentication method. (Required)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetails_type? Type { get; set; }
+        /// <summary>Specify the authentication method for the webhook endpoint.Possible values:**general** - No credentials required.**connection** - Uses a pre-configured Zoho connection.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "connection_name", n => { ConnectionName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetailsType>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connection_name", ConnectionName);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetailsType>("type", Type);
         }
     }
 }

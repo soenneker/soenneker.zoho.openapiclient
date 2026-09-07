@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Mass_convertRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_convert/Leads/actions/mass_convert?job_id={job_id}", pathParameters)
+        public Mass_convertRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_convert/Leads/actions/mass_convert", pathParameters)
         {
         }
         /// <summary>
@@ -30,65 +30,65 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Mass_convertRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_convert/Leads/actions/mass_convert?job_id={job_id}", rawUrl)
+        public Mass_convertRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_convert/Leads/actions/mass_convert", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve the status and counts of a previously scheduled mass convert job using job_id query parameter.
+        /// To retrieve the current status and conversion counts of a previously scheduled mass convert job in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert.Mass_convertRequestBuilder.Mass_convertRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert.Mass_convertRequestBuilder.Mass_convertRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert.Mass_convertRequestBuilder.Mass_convertRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert.Mass_convertRequestBuilder.Mass_convertRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetJobStatus200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Start a scheduled mass-convert job that converts multiple leads into other modules (Deals/Contacts/Accounts) according to provided options. Max 50 lead IDs per request.
+        /// To submit a mass convert job that converts lead records into Contacts, Accounts, or Deals in your Zoho CRM organization. The job runs asynchronously and returns a job identifier for status tracking.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202"/></returns>
-        /// <param name="body">Request payload for mass convert operation.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202Response"/></returns>
+        /// <param name="body">Represents the request payload for a mass convert operation, containing the lead IDs to convert and optional configuration fields.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvertRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvertRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert403.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert403Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the status and counts of a previously scheduled mass convert job using job_id query parameter.
+        /// To retrieve the current status and conversion counts of a previously scheduled mass convert job in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,28 +101,28 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert.Mass_convertRequestBuilder.Mass_convertRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/mass_convert/Leads/actions/mass_convert?job_id={job_id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Start a scheduled mass-convert job that converts multiple leads into other modules (Deals/Contacts/Accounts) according to provided options. Max 50 lead IDs per request.
+        /// To submit a mass convert job that converts lead records into Contacts, Accounts, or Deals in your Zoho CRM organization. The job runs asynchronously and returns a job identifier for status tracking.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for mass convert operation.</param>
+        /// <param name="body">Represents the request payload for a mass convert operation, containing the lead IDs to convert and optional configuration fields.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvertRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvertRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/mass_convert/Leads/actions/mass_convert", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -138,12 +138,12 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert
             return new global::Soenneker.Zoho.OpenApiClient.Mass_convert.Leads.Actions.Mass_convert.Mass_convertRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the status and counts of a previously scheduled mass convert job using job_id query parameter.
+        /// To retrieve the current status and conversion counts of a previously scheduled mass convert job in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Mass_convertRequestBuilderGetQueryParameters 
         {
-            /// <summary>Identifier of the mass convert job to fetch status for.</summary>
+            /// <summary>Specify the identifier of the mass convert job to retrieve the status for. You can get the Job ID from the response of the [Mass Convert API](mass_convert.yaml#$.paths./Leads/actions/mass_convert.get).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("job_id")]

@@ -9,12 +9,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// A standard error response from the Zoho CRM API.
+    /// Represents a standard error response returned by the Zoho CRM API when a request fails.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordCountErrorResponse : ApiException, IParsable
     {
-        /// <summary>The unique error code.</summary>
+        /// <summary>Represents the unique error code that identifies the type of failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -22,17 +22,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>Additional details about the error, often containing the field API name.</summary>
+        /// <summary>Represents additional details about the error, which may include the field API name or parameter name associated with the failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponseDetailsProperty? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponseDetailsProperty Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>A human-readable description of the error.</summary>
+        /// <summary>Represents the error message describing the reason for the failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessageEscaped { get; set; }
@@ -40,8 +40,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Indicates the response is an error.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse_status? Status { get; set; }
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,9 +61,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse_details>(global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse_details.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponseDetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponseDetailsProperty.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -74,9 +74,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse_details>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponseDetailsProperty>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountErrorResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

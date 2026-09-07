@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body for updating a layout. Only a single layout can be updated per request.
+    /// Represents the request body for updating a layout, containing exactly one layout object with the configuration changes to apply.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateLayoutRequest : IParsable
     {
-        /// <summary>Array containing exactly one layout object with update properties. Only single layout updates are supported per request.</summary>
+        /// <summary>Contains exactly one layout object defining the update operations to be applied, including sections, profiles, and display settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateObject>? Layouts { get; set; }

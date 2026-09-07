@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for activating a single layout with optional profile associations. Only one layout can be activated per request.
+    /// Represents the request payload for activating a layout, including the layout identifier and optional profile associations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutActivateRequest : IParsable
     {
-        /// <summary>Array containing exactly one layout object to activate. The layout includes its unique identifier and optionally the profiles to associate or disassociate. Profile associations can be added (default) or removed (using _delete flag). The array must contain exactly one item.</summary>
+        /// <summary>Specify the array containing exactly one layout object to activate. The layout includes its unique identifier and optionally the profiles to associate or disassociate. Profile associations can be added (default) or removed (using _delete flag). The array must contain exactly one item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequest_layouts>? Layouts { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequestLayoutsItem>? Layouts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequest_layouts> Layouts { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequestLayoutsItem> Layouts { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "layouts", n => { Layouts = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequest_layouts>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequest_layouts.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "layouts", n => { Layouts = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequestLayoutsItem>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequestLayoutsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequest_layouts>("layouts", Layouts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequestLayoutsItem>("layouts", Layouts);
         }
     }
 }

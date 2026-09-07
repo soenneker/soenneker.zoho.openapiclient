@@ -16,9 +16,9 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_t
     public partial class User_typeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.portal_users.settings.portals.item.user_type.item collection</summary>
-        /// <param name="position">The type of portal user to filter by</param>
+        /// <param name="position">Specify the user type of the portal users. Refer to the [Get Portal User Types](https://www.zoho.com/crm/developer/docs/api/v8/get-user-types.html) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder"/></returns>
-        public global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder this[string position]
+        public global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.WithUserTypeItemRequestBuilder this[long position]
         {
             get
             {

@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
     public partial class Map_dependencyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.map_dependency.settings.layouts.item.map_dependency.item collection</summary>
-        /// <param name="position">The unique identifier of the map dependency</param>
+        /// <param name="position">Specify the unique identifier of the map dependency to retrieve, update, or delete.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Item.WithDependencyItemRequestBuilder this[string position]
         {
@@ -47,65 +47,65 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
         {
         }
         /// <summary>
-        /// Retrieves the list of field dependencies for a specific layout in a module. The response includes parent and child field relationships and its additional metadata.
+        /// To retrieve the list of field dependencies configured for a specific layout in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotFoundErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyInternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.NotFoundErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyInternalServerErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependency200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new field dependency mapping between parent and child fields in a specific layout. The dependency defines how child field values are controlled based on parent field selections.
+        /// To create a field dependency between a parent picklist field and a child picklist field for a specific layout in your Zoho CRM organization.**Prerequisites**- The selected layout must contain at least two option-based fields.- Supported field types are Picklist, Radio Button, and Multi-select Picklist.- Multi-select Picklist fields can be used only as child fields.- Parent and child fields must belong to the selected layout.- When using subform fields, the parent and child fields must belong to the same subform.To create a field dependency between a parent picklist field and a child picklist field for a specific layout in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyPostResponse"/></returns>
-        /// <param name="body">Request body for creating a field dependency</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency201Response"/></returns>
+        /// <param name="body">Represents the request body for creating a field dependency between picklist fields in a layout.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotFoundErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyInternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyPostResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyPostResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency404Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.Map_dependency500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.NotFoundErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyInternalServerErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyPostResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the list of field dependencies for a specific layout in a module. The response includes parent and child field relationships and its additional metadata.
+        /// To retrieve the list of field dependencies configured for a specific layout in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,22 +124,22 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new field dependency mapping between parent and child fields in a specific layout. The dependency defines how child field values are controlled based on parent field selections.
+        /// To create a field dependency between a parent picklist field and a child picklist field for a specific layout in your Zoho CRM organization.**Prerequisites**- The selected layout must contain at least two option-based fields.- Supported field types are Picklist, Radio Button, and Multi-select Picklist.- Multi-select Picklist fields can be used only as child fields.- Parent and child fields must belong to the selected layout.- When using subform fields, the parent and child fields must belong to the same subform.To create a field dependency between a parent picklist field and a child picklist field for a specific layout in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for creating a field dependency</param>
+        /// <param name="body">Represents the request body for creating a field dependency between picklist fields in a layout.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder.Map_dependencyRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/map_dependency/settings/layouts/{layoutId}/map_dependency?module={module}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -155,12 +155,12 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
             return new global::Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_dependency.Map_dependencyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the list of field dependencies for a specific layout in a module. The response includes parent and child field relationships and its additional metadata.
+        /// To retrieve the list of field dependencies configured for a specific layout in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Map_dependencyRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter criteria for field dependencies in JSON format. Maximum length is 100 characters.</summary>
+            /// <summary>Specify the filter criteria for field dependencies in JSON format. Supported filters allow narrowing results by specific field attributes using **comparator** and **field** attributes. Supported comparator values: **equal**, **in**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]
@@ -170,7 +170,7 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
             [QueryParameter("filters")]
             public string Filters { get; set; }
 #endif
-            /// <summary>API name of the module to which the layout belongs</summary>
+            /// <summary>Specify the API name of the module. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to get the valid API names. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -180,20 +180,20 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
             [QueryParameter("module")]
             public string Module { get; set; }
 #endif
-            /// <summary>The page number to retrieve. Defaults to 1 if not specified.</summary>
+            /// <summary>Specify the page number to retrieve in the paginated response.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>The number of records to retrieve per page. Defaults to 20 if not specified.</summary>
+            /// <summary>Specify the number of records to include on each page of the response.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }
         /// <summary>
-        /// Creates a new field dependency mapping between parent and child fields in a specific layout. The dependency defines how child field values are controlled based on parent field selections.
+        /// To create a field dependency between a parent picklist field and a child picklist field for a specific layout in your Zoho CRM organization.**Prerequisites**- The selected layout must contain at least two option-based fields.- Supported field types are Picklist, Radio Button, and Multi-select Picklist.- Multi-select Picklist fields can be used only as child fields.- Parent and child fields must belong to the selected layout.- When using subform fields, the parent and child fields must belong to the same subform.To create a field dependency between a parent picklist field and a child picklist field for a specific layout in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Map_dependencyRequestBuilderPostQueryParameters 
         {
-            /// <summary>API name of the module to which the layout belongs</summary>
+            /// <summary>Specify the API name of the module. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to get the valid API names. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

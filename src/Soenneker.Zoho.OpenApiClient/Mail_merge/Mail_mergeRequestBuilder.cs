@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mail_merge
     public partial class Mail_mergeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.mail_merge.item collection</summary>
-        /// <param name="position">&quot;Path parameter: moduleApiName&quot;</param>
+        /// <param name="position">Specify the API name of the CRM module for which you want to perform the mail merge action. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Mail_merge.Item.WithModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Mail_merge.Item.WithModuleApiNameItemRequestBuilder this[string position]
         {

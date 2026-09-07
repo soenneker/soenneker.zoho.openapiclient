@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Add_tags
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Add_tagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tags_actions/{module}/actions/add_tags?module={module}", pathParameters)
+        public Add_tagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tags_actions/{module}/actions/add_tags", pathParameters)
         {
         }
         /// <summary>
@@ -30,47 +30,47 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Add_tags
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Add_tagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tags_actions/{module}/actions/add_tags?module={module}", rawUrl)
+        public Add_tagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tags_actions/{module}/actions/add_tags", rawUrl)
         {
         }
         /// <summary>
-        /// This endpoint is used to associate tags to records
+        /// Associates tags to one or more records in the specified module.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Request body schema for adding tags to records.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsPostAddTags403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsNoPermissionError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Add_tags.Add_tagsRequestBuilder.Add_tagsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Add_tags.Add_tagsRequestBuilder.Add_tagsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsPostAddTags403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsNoPermissionError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint is used to associate tags to records
+        /// Associates tags to one or more records in the specified module.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Request body schema for adding tags to records.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Add_tags.Add_tagsRequestBuilder.Add_tagsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Add_tags.Add_tagsRequestBuilder.Add_tagsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -88,16 +88,6 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Add_tags
         public global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Add_tags.Add_tagsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Add_tags.Add_tagsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// This endpoint is used to associate tags to records
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Add_tagsRequestBuilderPostQueryParameters 
-        {
-            /// <summary>module api name</summary>
-            [QueryParameter("module")]
-            public global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.Add_tags.PostModuleQueryParameterType? Module { get; set; }
         }
     }
 }

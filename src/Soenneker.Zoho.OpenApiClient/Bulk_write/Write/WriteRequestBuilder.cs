@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_write.Write
     public partial class WriteRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.bulk_write.write.item collection</summary>
-        /// <param name="position">Unique identifier of the bulk write job</param>
+        /// <param name="position">Specify the unique identifier of the bulk write job whose details you want to retrieve.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Bulk_write.Write.Item.WithJobItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Bulk_write.Write.Item.WithJobItemRequestBuilder this[string position]
         {
@@ -47,38 +47,43 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_write.Write
         {
         }
         /// <summary>
-        /// Creates a new bulk write job to insert or update records in bulk
+        /// To create a bulk write job in your Zoho CRM organization that creates, updates, or upserts records in a target module from a previously uploaded file. The job is processed asynchronously; the response returns the job identifier that the get job details operation uses to poll job status, and an optional callback URL is notified on completion or failure.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201"/></returns>
-        /// <param name="body">Bulk write job creation request</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response"/></returns>
+        /// <param name="body">Defines the payload for creating a bulk write job, including the operation type, optional callback configuration, and the list of resource configurations.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new bulk write job to insert or update records in bulk
+        /// To create a bulk write job in your Zoho CRM organization that creates, updates, or upserts records in a target module from a previously uploaded file. The job is processed asynchronously; the response returns the job identifier that the get job details operation uses to poll job status, and an optional callback URL is notified on completion or failure.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Bulk write job creation request</param>
+        /// <param name="body">Defines the payload for creating a bulk write job, including the operation type, optional callback configuration, and the list of resource configurations.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

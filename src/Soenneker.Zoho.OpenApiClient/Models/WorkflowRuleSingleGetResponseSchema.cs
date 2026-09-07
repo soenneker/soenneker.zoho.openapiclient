@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Single Workflow Rule Response Body.
+    /// Represents the response body for a single workflow rule retrieval, containing a single-element array with the full rule details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRuleSingleGetResponseSchema : IParsable
     {
-        /// <summary>&quot;Field: workflow_rules&quot;</summary>
+        /// <summary>Represents the array containing the single workflow rule retrieved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleSingleGetSchema>? WorkflowRules { get; set; }

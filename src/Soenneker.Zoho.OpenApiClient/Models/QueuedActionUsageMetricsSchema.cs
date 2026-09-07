@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Usage metrics for an action, including queue count, success and failure counts, related email engagement metrics (if applicable), and action identifiers.
+    /// Represents usage metrics for a single queued workflow action, including success, failure, and queue counts within a queried date range.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueuedActionUsageMetricsSchema : IParsable
     {
-        /// <summary>&quot;Field: associated_time&quot;</summary>
+        /// <summary>Represents the ISO 8601 timestamp indicating when this queued action was last associated with or modified on a workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssociatedTime { get; set; }
@@ -21,9 +21,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string AssociatedTime { get; set; }
 #endif
-        /// <summary>&quot;Field: failure_count&quot;</summary>
+        /// <summary>Represents the total number of failed executions recorded for this queued action within the queried date range.</summary>
         public int? FailureCount { get; set; }
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the QueuedActionUsageMetrics within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Field: name&quot;</summary>
+        /// <summary>Represents the display name of the workflow rule or its associated queued action as configured in Zoho CRM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -39,9 +39,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Field: queue_count&quot;</summary>
+        /// <summary>Represents the number of executions currently queued and pending for this action.</summary>
         public int? QueueCount { get; set; }
-        /// <summary>Metrics related to email-based actions, including sent, delivered, opened, clicked, bounced, unsent, unopened counts, and sent percentage. Used in workflow action usage.</summary>
+        /// <summary>Represents email engagement metrics for an email notification action, including sent, delivered, opened, clicked, bounced, and unsent counts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.EmailEngagementMetricsSchema? RelatedDetails { get; set; }
@@ -49,9 +49,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.EmailEngagementMetricsSchema RelatedDetails { get; set; }
 #endif
-        /// <summary>&quot;Field: success_count&quot;</summary>
+        /// <summary>Represents the total number of successful executions recorded for this queued action within the queried date range.</summary>
         public int? SuccessCount { get; set; }
-        /// <summary>&quot;Field: type&quot;</summary>
+        /// <summary>Represents the category of queued workflow action. Possible values include **email_notifications**, **field_updates**, **tasks**, **webhooks**, **functions**, **assign_owner**, **add_tags**, **remove_tags**, **create_record**, **add_meeting**, **schedule_call**, and **convert**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks
             get => new global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.webhooks.settings.automation.webhooks.item collection</summary>
-        /// <param name="position">The ID of the webhook to retrieve.</param>
+        /// <param name="position">Specify the ID of the webhook to retrieve. Refer to the [Get Webhooks](webhooks.yaml#$.paths./settings/automation/webhooks.get) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Item.WithWebhookItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Item.WithWebhookItemRequestBuilder this[string position]
         {
@@ -41,7 +41,7 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WebhooksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/webhooks/settings/automation/webhooks?ids={ids}{&feature_type*,filters*,module*,page*,per_page*,related_module*,sort_by*,sort_order*}", pathParameters)
+        public WebhooksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/webhooks/settings/automation/webhooks{?feature_type*,filters*,module*,page*,per_page*,related_module*,sort_by*,sort_order*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,39 +49,39 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WebhooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/webhooks/settings/automation/webhooks?ids={ids}{&feature_type*,filters*,module*,page*,per_page*,related_module*,sort_by*,sort_order*}", rawUrl)
+        public WebhooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/webhooks/settings/automation/webhooks{?feature_type*,filters*,module*,page*,per_page*,related_module*,sort_by*,sort_order*}", rawUrl)
         {
         }
         /// <summary>
-        /// To delete one or more webhooks configured in your Zoho CRM account. You can delete up to 10 webhooks in a single API call.
+        /// To delete one or more webhook actions configured in your Zoho CRM account.Up to 10 webhooks can be deleted in a single API call using the **ids** query parameter. Read-only webhooks created by Zoho extensions cannot be deleted. Webhooks associated with active Workflow Rules, Approval Processes, or Blueprints cannot be deleted.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema4"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteWebhooksSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksDeleteWebhooks403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksNoPermissionErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema4?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteWebhooksSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema4> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteWebhooksSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksDeleteWebhooks403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksNoPermissionErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema4>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema4.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteWebhooksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteWebhooksSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all available&amp;nbsp;webhooks&amp;nbsp;configured in your Zoho CRM account.
+        /// To retrieve the list of all webhook action configurations available in your Zoho CRM organization. The response contains summary-level data for each webhook, including the module, URL, HTTP method, feature type, and audit metadata. Use the [Get Webhooks API using ID](webhooks.yaml#$.paths./settings/automation/webhooks/{webhook_ID}.get) to retrieve the full configuration of a specific webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetWebhooksSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGetWebhooks403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksNoPermissionErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetWebhooksSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -94,18 +94,17 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGetWebhooks403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksNoPermissionErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetWebhooksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetWebhooksSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Webhooks in Zoho CRM allow you to send real-time data from Zoho CRM to external applications or services when specific events occur such as Record creation, update, or deletion.
+        /// To create a webhook action that fires an HTTP request to an external URL in your Zoho CRM organization when an automation trigger fires. The `http_method` value controls which optional request fields are accepted. - POST and PUT accept `headers` and `body`- GET and DELETE methods accept `url_parameters`- DELETE also accepts `headers` To retrieve valid module API names, refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateWebhooksSuccessResponse"/></returns>
-        /// <param name="body">Request body structure for creating new webhooks, including an array of webhook objects with all necessary details.</param>
+        /// <param name="body">Represents the request body wrapper for creating a webhook. The webhooks array must contain exactly one webhook object.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksPostWebhooks403">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CreateWebhooksSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CreateWebhooksRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -117,39 +116,35 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksPostWebhooks403.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CreateWebhooksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CreateWebhooksSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CreateWebhooksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CreateWebhooksSuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To update an existing webhook available in your Zoho CRM account.
+        /// To update the configuration of an existing webhook in your Zoho CRM organization.The module field cannot be changed after creation. The request body must contain a webhooks array with exactly one webhook object.To retrieve valid module API names, refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema20"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UpdateWebhookSuccessResponse"/></returns>
+        /// <param name="body">Represents the request body wrapper for updating a webhook. The webhooks array must contain exactly one webhook object.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksPutWebhooks403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksNoPermissionErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema20?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema7 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UpdateWebhookSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UpdateWebhookRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema20> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema7 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UpdateWebhookSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UpdateWebhookRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksPutWebhooks403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksNoPermissionErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema20>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GeneratedSchema20.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateWebhookSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateWebhookSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To delete one or more webhooks configured in your Zoho CRM account. You can delete up to 10 webhooks in a single API call.
+        /// To delete one or more webhook actions configured in your Zoho CRM account.Up to 10 webhooks can be deleted in a single API call using the **ids** query parameter. Read-only webhooks created by Zoho extensions cannot be deleted. Webhooks associated with active Workflow Rules, Approval Processes, or Blueprints cannot be deleted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -168,7 +163,7 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve all available&amp;nbsp;webhooks&amp;nbsp;configured in your Zoho CRM account.
+        /// To retrieve the list of all webhook action configurations available in your Zoho CRM organization. The response contains summary-level data for each webhook, including the module, URL, HTTP method, feature type, and audit metadata. Use the [Get Webhooks API using ID](webhooks.yaml#$.paths./settings/automation/webhooks/{webhook_ID}.get) to retrieve the full configuration of a specific webhook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,16 +176,16 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/webhooks/settings/automation/webhooks{?feature_type*,filters*,module*,page*,per_page*,related_module*,sort_by*,sort_order*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Webhooks in Zoho CRM allow you to send real-time data from Zoho CRM to external applications or services when specific events occur such as Record creation, update, or deletion.
+        /// To create a webhook action that fires an HTTP request to an external URL in your Zoho CRM organization when an automation trigger fires. The `http_method` value controls which optional request fields are accepted. - POST and PUT accept `headers` and `body`- GET and DELETE methods accept `url_parameters`- DELETE also accepts `headers` To retrieve valid module API names, refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body structure for creating new webhooks, including an array of webhook objects with all necessary details.</param>
+        /// <param name="body">Represents the request body wrapper for creating a webhook. The webhooks array must contain exactly one webhook object.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -202,29 +197,29 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/webhooks/settings/automation/webhooks", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
-        /// To update an existing webhook available in your Zoho CRM account.
+        /// To update the configuration of an existing webhook in your Zoho CRM organization.The module field cannot be changed after creation. The request body must contain a webhooks array with exactly one webhook object.To retrieve valid module API names, refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body wrapper for updating a webhook. The webhooks array must contain exactly one webhook object.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema7 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UpdateWebhookRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema7 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UpdateWebhookRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/webhooks/settings/automation/webhooks", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -240,25 +235,32 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks
             return new global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.WebhooksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To delete one or more webhooks configured in your Zoho CRM account. You can delete up to 10 webhooks in a single API call.
+        /// To delete one or more webhook actions configured in your Zoho CRM account.Up to 10 webhooks can be deleted in a single API call using the **ids** query parameter. Read-only webhooks created by Zoho extensions cannot be deleted. Webhooks associated with active Workflow Rules, Approval Processes, or Blueprints cannot be deleted.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WebhooksRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>pecify the webhook IDs that need to be deleted. Use the Get Webhooks API to retrieve all available webhook IDs. A maximum of 10 webhooks can be deleted in a single API call.</summary>
+            /// <summary>Specify the comma-separated list of webhook IDs to delete. Accepts comma-separated values. Refer to the [Get Webhooks](webhooks.yaml#$.paths./settings/automation/webhooks.get) resource for valid values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("ids")]
-            public int? Ids { get; set; }
+            public string? Ids { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
+#endif
         }
         /// <summary>
-        /// Retrieve all available&amp;nbsp;webhooks&amp;nbsp;configured in your Zoho CRM account.
+        /// To retrieve the list of all webhook action configurations available in your Zoho CRM organization. The response contains summary-level data for each webhook, including the module, URL, HTTP method, feature type, and audit metadata. Use the [Get Webhooks API using ID](webhooks.yaml#$.paths./settings/automation/webhooks/{webhook_ID}.get) to retrieve the full configuration of a specific webhook.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WebhooksRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;o filter webhooks by their automation feature type. Possible values: workflow , assignmentrules , connectedworkflow&quot;</summary>
+            /// <summary>Specify the automation feature type to filter webhooks. When omitted, webhooks of all feature types are returned.Possible values:**workflow** - Workflow Rule.**approval_process** - Approval Process.**blueprint_transition** - Blueprint transition.**blueprint_state** - Blueprint state.**assignment_rules** - Assignment Rules.**kiosk** - Kiosk feature.**commandcenter_service** - CommandCenter service.</summary>
             [QueryParameter("feature_type")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.GetFeature_typeQueryParameterType? FeatureType { get; set; }
-            /// <summary>This parameter allows you to filter the webhooks available in your organization by their name.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksParamQueryFeatureType? FeatureType { get; set; }
+            /// <summary>Specify the JSON filter expression to narrow webhook results by name. The object must include field (with api_name), comparator, and value keys. The only supported comparator is contains, which performs a case-insensitive partial match on the webhook name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]
@@ -268,24 +270,38 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks
             [QueryParameter("filters")]
             public string Filters { get; set; }
 #endif
-            /// <summary>Represents the parent module that the webhook monitors</summary>
+            /// <summary>Specify the API name of the parent CRM module to filter webhooks. When omitted, webhooks across all modules are returned. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("module")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.GetModuleQueryParameterType? Module { get; set; }
-            /// <summary>To get the list of webhooks from the respective pages. The default value is 1. Note that you cannot use this param with the &quot;page_token&quot; param.</summary>
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
+            /// <summary>Specify the page number for paginated results. Defaults to 1 when omitted. Use together with per_page to navigate large result sets.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Specify how many webhooks to return per page. The default and the maximum possible value is 200.</summary>
+            /// <summary>Specify the number of records to return per page. Default and maximum is **200**.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>To filter webhooks triggered by a child or dependent module linked to a parent module. For example, the webhook will be triggered whenever a note (child) is created under a lead (Parent).</summary>
+            /// <summary>Specify the API name of a child or dependent module linked to the parent module (for example, Notes or Attachments). When omitted, webhooks across all related modules are returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("related_module")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.GetRelated_moduleQueryParameterType? RelatedModule { get; set; }
-            /// <summary>To sort the webhooks based on the Modified_Time field.</summary>
+            public string? RelatedModule { get; set; }
+#nullable restore
+#else
+            [QueryParameter("related_module")]
+            public string RelatedModule { get; set; }
+#endif
+            /// <summary>Specify the field used to sort the webhook list. Currently only Modified_Time is accepted.Possible values:**Modified_Time** - Sort by the last modified timestamp.</summary>
             [QueryParameter("sort_by")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.GetSort_byQueryParameterType? SortBy { get; set; }
-            /// <summary>To sort the available list of webhooks in either ascending or descending order, based on the value of sort_by parameter.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksParamQuerySortBy? SortBy { get; set; }
+            /// <summary>Specify the sort direction for list results. Defaults to desc when omitted.Possible values:**asc** - Ascending order.**desc** - Descending order.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.GetSort_orderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksParamQuerySortOrder? SortOrder { get; set; }
         }
     }
 }

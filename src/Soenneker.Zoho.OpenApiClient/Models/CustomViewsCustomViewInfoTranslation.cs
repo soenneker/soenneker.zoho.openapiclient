@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// translations for different view categories
+    /// Represents the localized display labels for the Custom View category names.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomViewsCustomViewInfoTranslation : IParsable
     {
-        /// <summary>translation for public views</summary>
+        /// <summary>Represents the display label for the created by me category of Custom Views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedByMe { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string CreatedByMe { get; set; }
 #endif
-        /// <summary>translation for public views</summary>
+        /// <summary>Represents the display label for the other users&apos; views category of Custom Views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OtherUsersViews { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string OtherUsersViews { get; set; }
 #endif
-        /// <summary>translation for public views</summary>
+        /// <summary>Represents the display label for the public views category of Custom Views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublicViews { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string PublicViews { get; set; }
 #endif
-        /// <summary>translation for public views</summary>
+        /// <summary>Represents the display label for the shared with me category of Custom Views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SharedWithMe { get; set; }

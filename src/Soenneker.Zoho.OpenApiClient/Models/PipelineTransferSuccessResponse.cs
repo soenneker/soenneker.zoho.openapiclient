@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of pipeline transfer scheduling results maintaining 1:1 correspondence with request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponse_transfer_pipeline>? TransferPipeline { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponseTransferPipelineItem>? TransferPipeline { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponse_transfer_pipeline> TransferPipeline { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponseTransferPipelineItem> TransferPipeline { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "transfer_pipeline", n => { TransferPipeline = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponse_transfer_pipeline>(global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponse_transfer_pipeline.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "transfer_pipeline", n => { TransferPipeline = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponseTransferPipelineItem>(global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponseTransferPipelineItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponse_transfer_pipeline>("transfer_pipeline", TransferPipeline);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponseTransferPipelineItem>("transfer_pipeline", TransferPipeline);
         }
     }
 }

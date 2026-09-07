@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// The successful response structure for retrieving tasks, including lists of tasks and pagination info.
+    /// Paginated response containing automation tasks and pagination metadata.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetTasksSuccessResponse : IParsable
@@ -16,12 +16,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Details about pagination for resource listings, such as count, page number, and if more records are available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo? Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksPaginationInfo? Info { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksPaginationInfo Info { get; set; }
 #endif
-        /// <summary>&quot;Field: tasks&quot;</summary>
+        /// <summary>List of automation task definitions for the current query page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TaskDetails>? Tasks { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo>(global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksPaginationInfo>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksPaginationInfo.CreateFromDiscriminatorValue); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TaskDetails>(global::Soenneker.Zoho.OpenApiClient.Models.TaskDetails.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo>("info", Info);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksPaginationInfo>("info", Info);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TaskDetails>("tasks", Tasks);
         }
     }

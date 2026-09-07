@@ -8,14 +8,22 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details specific to layout update operations.
+    /// Represents the structured error details for a layout update failure, providing diagnostic information such as the offending field&apos;s JSON path and API name, dependency violations, ambiguity sources, limit breaches, and expected field constraints.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutUpdateErrorDetails : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>API name of the field that caused the error.</summary>
+        /// <summary>Contains the list of fields that caused an ambiguity error during layout update processing, identifying conflicting or duplicate field references in the request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem>? AmbiguityDueTo { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem> AmbiguityDueTo { get; set; }
+#endif
+        /// <summary>Represents the API name of the field whose value or configuration caused the layout update error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -23,7 +31,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>Expected data type for the field.</summary>
+        /// <summary>Contains information about the dependent field that caused a mismatch or dependency violation during the layout update operation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee? Dependee { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee Dependee { get; set; }
+#endif
+        /// <summary>Indicates the data type that the API expected for the field that failed validation during the layout update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpectedDataType { get; set; }
@@ -31,7 +47,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ExpectedDataType { get; set; }
 #endif
-        /// <summary>JSON path to the field that caused the error.</summary>
+        /// <summary>Contains the list of fields of which at least one must be provided for the layout update to proceed, describing a conditional required field constraint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem>? ExpectedFields { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem> ExpectedFields { get; set; }
+#endif
+        /// <summary>Represents the JSON path to the field within the layout update request payload that caused the error, enabling precise identification of the offending input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JsonPath { get; set; }
@@ -39,9 +63,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JsonPath { get; set; }
 #endif
-        /// <summary>Maximum limit exceeded.</summary>
+        /// <summary>Indicates the maximum allowed value or count that was exceeded during the layout update, providing the threshold value for the violated constraint.</summary>
         public int? Limit { get; set; }
-        /// <summary>Maximum allowed length for the field.</summary>
+        /// <summary>Contains the list of fields responsible for causing a limit to be exceeded during the layout update, identifying which fields contributed to the constraint violation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem>? LimitDueTo { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem> LimitDueTo { get; set; }
+#endif
+        /// <summary>Indicates the maximum character length allowed for the field that failed validation during the layout update.</summary>
         public int? MaximumLength { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetails"/> and sets the default values.
@@ -68,10 +100,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ambiguity_due_to", n => { AmbiguityDueTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
+                { "dependee", n => { Dependee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee.CreateFromDiscriminatorValue); } },
                 { "expected_data_type", n => { ExpectedDataType = n.GetStringValue(); } },
+                { "expected_fields", n => { ExpectedFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "json_path", n => { JsonPath = n.GetStringValue(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
+                { "limit_due_to", n => { LimitDueTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "maximum_length", n => { MaximumLength = n.GetIntValue(); } },
             };
         }
@@ -82,10 +118,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem>("ambiguity_due_to", AmbiguityDueTo);
             writer.WriteStringValue("api_name", ApiName);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee>("dependee", Dependee);
             writer.WriteStringValue("expected_data_type", ExpectedDataType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem>("expected_fields", ExpectedFields);
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteIntValue("limit", Limit);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem>("limit_due_to", LimitDueTo);
             writer.WriteIntValue("maximum_length", MaximumLength);
             writer.WriteAdditionalData(AdditionalData);
         }

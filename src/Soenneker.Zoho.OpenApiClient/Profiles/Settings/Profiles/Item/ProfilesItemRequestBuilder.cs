@@ -28,7 +28,7 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/profiles/settings/profiles/{id}?transfer_to_id={transfer_to_id}", pathParameters)
+        public ProfilesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/profiles/settings/profiles/{id}", pathParameters)
         {
         }
         /// <summary>
@@ -36,100 +36,131 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/profiles/settings/profiles/{id}?transfer_to_id={transfer_to_id}", rawUrl)
+        public ProfilesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/profiles/settings/profiles/{id}", rawUrl)
         {
         }
         /// <summary>
-        /// Deletes an existing CRM profile by ID.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.delete
+        /// Transfers all users of the profile identified by `{id}` to the profile specified by the `transfer_to` query parameter, then permanently deletes the source profile. System profiles (Administrator, Standard) cannot be deleted. See [Transfer Users and Delete a Profile](https://www.zoho.com/crm/developer/docs/api/v8/transfer-delete-profile.html).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PermissionErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.ProfilesItemRequestBuilder.ProfilesItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.ProfilesItemRequestBuilder.ProfilesItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.ProfilesItemRequestBuilder.ProfilesItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.ProfilesItemRequestBuilder.ProfilesItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PermissionErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerError.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ProfilesDeleteProfile200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the details of a specific CRM profile by ID.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.read
+        /// Retrieves the full details of the CRM profile identified by `{id}`, including its complete permission tree organized by sections and categories. See [Get Profiles](https://www.zoho.com/crm/developer/docs/api/v8/get-profiles.html).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PermissionErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PermissionErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerError.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an existing CRM profile by ID.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.read
+        /// Partially updates the name, description, and permission enablement for the profile identified by `{id}`. System profiles (Administrator, Standard) cannot be updated. See [Update Profile Permission](https://www.zoho.com/crm/developer/docs/api/v8/update-profile-permission.html).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile200"/></returns>
-        /// <param name="body">Update profiles request.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfile200Response"/></returns>
+        /// <param name="body">Request body for the partial profile update operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PermissionErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfile400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfile200Response?> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfileRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfile200Response> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfileRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfile400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfile200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfile200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Replaces the name, description, and permission enablement for the profile identified by `{id}`. System profiles (Administrator, Standard) cannot be updated. See [Update Profile Permission](https://www.zoho.com/crm/developer/docs/api/v8/update-profile-permission.html).
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile200Response"/></returns>
+        /// <param name="body">Request body for the profile update operation.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse">When receiving a 500 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfileRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfileRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PermissionErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerError.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an existing CRM profile by ID.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.delete
+        /// Transfers all users of the profile identified by `{id}` to the profile specified by the `transfer_to` query parameter, then permanently deletes the source profile. System profiles (Administrator, Standard) cannot be deleted. See [Transfer Users and Delete a Profile](https://www.zoho.com/crm/developer/docs/api/v8/transfer-delete-profile.html).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,13 +173,13 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.ProfilesItemRequestBuilder.ProfilesItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/profiles/settings/profiles/{id}?transfer_to={transfer_to}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Retrieves the details of a specific CRM profile by ID.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.read
+        /// Retrieves the full details of the CRM profile identified by `{id}`, including its complete permission tree organized by sections and categories. See [Get Profiles](https://www.zoho.com/crm/developer/docs/api/v8/get-profiles.html).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,28 +192,50 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/profiles/settings/profiles/{id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Updates an existing CRM profile by ID.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.read
+        /// Partially updates the name, description, and permission enablement for the profile identified by `{id}`. System profiles (Administrator, Standard) cannot be updated. See [Update Profile Permission](https://www.zoho.com/crm/developer/docs/api/v8/update-profile-permission.html).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Update profiles request.</param>
+        /// <param name="body">Request body for the partial profile update operation.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfileRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesPatchProfileRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/profiles/settings/profiles/{id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
+        /// Replaces the name, description, and permission enablement for the profile identified by `{id}`. System profiles (Administrator, Standard) cannot be updated. See [Update Profile Permission](https://www.zoho.com/crm/developer/docs/api/v8/update-profile-permission.html).
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Request body for the profile update operation.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfileRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUpdateProfileRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -198,20 +251,20 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item
             return new global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.ProfilesItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Deletes an existing CRM profile by ID.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.delete
+        /// Transfers all users of the profile identified by `{id}` to the profile specified by the `transfer_to` query parameter, then permanently deletes the source profile. System profiles (Administrator, Standard) cannot be deleted. See [Transfer Users and Delete a Profile](https://www.zoho.com/crm/developer/docs/api/v8/transfer-delete-profile.html).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProfilesItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Profile ID to which users of the deleted profile will be transferred.</summary>
+            /// <summary>Specify the unique identifier of the profile to which users of the deleted profile will be transferred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("transfer_to_id")]
-            public string? TransferToId { get; set; }
+            [QueryParameter("transfer_to")]
+            public string? TransferTo { get; set; }
 #nullable restore
 #else
-            [QueryParameter("transfer_to_id")]
-            public string TransferToId { get; set; }
+            [QueryParameter("transfer_to")]
+            public string TransferTo { get; set; }
 #endif
         }
     }

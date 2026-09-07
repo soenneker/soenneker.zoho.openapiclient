@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts
     public partial class Email_draftsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.email_drafts.item.item.email_drafts.item collection</summary>
-        /// <param name="position">Unique draft identifier</param>
+        /// <param name="position">Specifies the unique encrypted draft identifier. Use the [Get Email Drafts](email_drafts.yaml#$.paths./{module}/{record}/__email_drafts.get) resource to retrieve draft IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Item.WithDraftItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Item.WithDraftItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Email_draftsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/email_drafts/{module}/{record}/__email_drafts{?page*,per_page*}", pathParameters)
+        public Email_draftsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/email_drafts/{module}/{record}/__email_drafts{?page*,per_page*,sort_by*,sort_order*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,56 +43,87 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Email_draftsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/email_drafts/{module}/{record}/__email_drafts{?page*,per_page*}", rawUrl)
+        public Email_draftsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/email_drafts/{module}/{record}/__email_drafts{?page*,per_page*,sort_by*,sort_order*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the list of email drafts associated with the specified record in the given module.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionForbiddenResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Email_draftsRequestBuilder.Email_draftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Email_draftsRequestBuilder.Email_draftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Email_draftsRequestBuilder.Email_draftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Email_draftsRequestBuilder.Email_draftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionForbiddenResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates one or more email drafts associated with the specified record in the given module.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201Response"/></returns>
         /// <param name="body">Request body for creating email drafts.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionForbiddenResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDraftsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDraftsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionForbiddenResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Updates one or more email drafts associated with the specified record in the given module.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecord200Response"/></returns>
+        /// <param name="body">Request body for updating email drafts.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecord400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionForbiddenResponse">When receiving a 403 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecord200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecord200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecord400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionForbiddenResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the list of email drafts associated with the specified record in the given module.
@@ -121,15 +152,37 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDraftsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDrafts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsCreateEmailDraftsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
+        /// Updates one or more email drafts associated with the specified record in the given module.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Request body for updating email drafts.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -150,12 +203,18 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Email_draftsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Page number for pagination</summary>
+            /// <summary>Specifies the page number for pagination. Default:1.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of records per page</summary>
+            /// <summary>Specifies the number of records per page. Default:200.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Field to sort the email drafts by. Default:created_time.</summary>
+            [QueryParameter("sort_by")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraftsSortByParameter? SortBy { get; set; }
+            /// <summary>Sort direction. Default:asc.</summary>
+            [QueryParameter("sort_order")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraftsSortOrderParameter? SortOrder { get; set; }
         }
     }
 }

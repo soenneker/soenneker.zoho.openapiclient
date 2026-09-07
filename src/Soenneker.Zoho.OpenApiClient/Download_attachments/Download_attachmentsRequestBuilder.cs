@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Download_attachments
     public partial class Download_attachmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.download_attachments.item collection</summary>
-        /// <param name="position">The API name of the CRM module.</param>
+        /// <param name="position">Specify the API name of the CRM module that contains the record associated with the email. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for module details.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Download_attachments.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Download_attachments.Item.WithModuleItemRequestBuilder this[string position]
         {

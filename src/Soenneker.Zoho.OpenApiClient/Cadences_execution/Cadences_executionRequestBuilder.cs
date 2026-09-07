@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences_execution
     public partial class Cadences_executionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.cadences_execution.item collection</summary>
-        /// <param name="position">Specifies the module name</param>
+        /// <param name="position">Specify the API name of the module. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Cadences_execution.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Cadences_execution.Item.WithModuleItemRequestBuilder this[string position]
         {

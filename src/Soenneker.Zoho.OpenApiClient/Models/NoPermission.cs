@@ -9,24 +9,24 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error response returned when the user does not have permission to access this feature.
+    /// Error envelope returned when the authenticated user does not have permission to access the data enrichment feature.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NoPermission : ApiException, IParsable
     {
-        /// <summary>Error code indicating that the user lacks the required permissions to perform the operation.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_code? Code { get; set; }
-        /// <summary>Contains additional information about missing permissions. This object may be empty</summary>
+        /// <summary>Represents the error code returned for the permission-denied failure.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode? Code { get; set; }
+        /// <summary>Contains additional context about the permission failure. This object remains empty for this error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionDetailsProperty? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionDetailsProperty Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>Human-readable message explaining that the user does not have permission to access this feature</summary>
+        /// <summary>You do not have the Manage or View Data Enrichment permission to access this feature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessageEscaped { get; set; }
@@ -34,8 +34,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Indicates that the response represents an error</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_status? Status { get; set; }
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,10 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_code>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_details>(global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_details.CreateFromDiscriminatorValue); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>(); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionDetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionDetailsProperty.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -67,10 +67,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_details>("details", Details);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>("code", Code);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionDetailsProperty>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermission_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

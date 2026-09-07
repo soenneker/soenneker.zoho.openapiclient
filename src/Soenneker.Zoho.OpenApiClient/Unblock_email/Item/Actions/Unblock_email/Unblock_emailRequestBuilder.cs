@@ -34,38 +34,43 @@ namespace Soenneker.Zoho.OpenApiClient.Unblock_email.Item.Actions.Unblock_email
         {
         }
         /// <summary>
-        /// Unblock emails for multiple records in a module.
+        /// To unblock soft-bounced email addresses for multiple records in your Zoho CRM organization. When emails sent from CRM bounce temporarily, the Email field on the affected records is blocked. This operation removes those blocks in bulk so email communication with the records can resume.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule200"/></returns>
-        /// <param name="body">Request body for unblocking emails in bulk</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule200Response"/></returns>
+        /// <param name="body">Specify the record IDs and email fields to unblock in bulk.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Unblock emails for multiple records in a module.
+        /// To unblock soft-bounced email addresses for multiple records in your Zoho CRM organization. When emails sent from CRM bounce temporarily, the Email field on the affected records is blocked. This operation removes those blocks in bulk so email communication with the records can resume.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for unblocking emails in bulk</param>
+        /// <param name="body">Specify the record IDs and email fields to unblock in bulk.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByModuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

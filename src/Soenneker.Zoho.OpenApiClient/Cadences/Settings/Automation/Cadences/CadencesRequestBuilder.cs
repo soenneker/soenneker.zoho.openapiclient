@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Actions;
+using Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Item;
 using Soenneker.Zoho.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +19,23 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CadencesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The actions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Actions.ActionsRequestBuilder Actions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.cadences.settings.automation.cadences.item collection</summary>
+        /// <param name="position">Specify the unique identifier of the Cadence.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Item.CadencesItemRequestBuilder"/></returns>
+        public global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Item.CadencesItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Item.CadencesItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.CadencesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -34,32 +53,82 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences
         {
         }
         /// <summary>
-        /// Get all cadences
+        /// To retrieve the list of Cadences in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.CadencesRequestBuilder.CadencesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.CadencesRequestBuilder.CadencesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.CadencesRequestBuilder.CadencesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.CadencesRequestBuilder.CadencesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all cadences
+        /// Creates a new cadence (initially in draft status) with its follow-up tree and optional un-enrollment rules in a single call. custom_view cadences require a custom_view.id; manual_enrollment cadences must omit custom_view. Follow-ups reference each other via reference_id (a client-chosen string) so that parent/child links can be expressed in a single request before server ids are assigned. The cadence must be published and activated before it will enroll records.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200"/></returns>
+        /// <param name="body">Represents the request body schema for creating a new Cadence with follow-up steps and action configurations.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse">When receiving a 403 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Partial-update form that takes the cadence id inside the request body (cadences[0].id). Updates only the provided fields; module / type / custom_view cannot be changed after creation. Editing a currently-published cadence creates a draft on the first save. Follow-up add/update is expressed inline via the follow_ups array.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200"/></returns>
+        /// <param name="body">Represents the request body schema for updating the configuration of one or more existing Cadences.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse">When receiving a 403 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CadencesUpdateRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CadencesUpdateRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// To retrieve the list of Cadences in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,6 +147,50 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences
             return requestInfo;
         }
         /// <summary>
+        /// Creates a new cadence (initially in draft status) with its follow-up tree and optional un-enrollment rules in a single call. custom_view cadences require a custom_view.id; manual_enrollment cadences must omit custom_view. Follow-ups reference each other via reference_id (a client-chosen string) so that parent/child links can be expressed in a single request before server ids are assigned. The cadence must be published and activated before it will enroll records.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Represents the request body schema for creating a new Cadence with follow-up steps and action configurations.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
+        /// Partial-update form that takes the cadence id inside the request body (cadences[0].id). Updates only the provided fields; module / type / custom_view cannot be changed after creation. Editing a currently-published cadence creates a draft on the first save. Follow-up add/update is expressed inline via the follow_ups array.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Represents the request body schema for updating the configuration of one or more existing Cadences.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CadencesUpdateRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CadencesUpdateRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.CadencesRequestBuilder"/></returns>
@@ -87,18 +200,18 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences
             return new global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.CadencesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all cadences
+        /// To retrieve the list of Cadences in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CadencesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filters by cadence active status. Use true or false</summary>
+            /// <summary>Specify whether to filter Cadences by their active status.Possible values: **true** - Retrieve only active Cadences. **false** - Retrieve only inactive Cadences.</summary>
             [QueryParameter("active")]
             public bool? Active { get; set; }
-            /// <summary>Filters by fields. Use name</summary>
+            /// <summary>Specify the field to include in the Cadence response.Possible values: **name** - Include only the name field in the response.</summary>
             [QueryParameter("fields")]
-            public global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.GetFieldsQueryParameterType? Fields { get; set; }
-            /// <summary>Cadence supported modules like Leads, Contacts, Accounts, Deals, Quotes, Vendors or custom module</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.NameFields? Fields { get; set; }
+            /// <summary>Specify the API name of the CRM module to filter Cadences.Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -108,7 +221,7 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences
             [QueryParameter("module")]
             public string Module { get; set; }
 #endif
-            /// <summary>Filters by cadence name</summary>
+            /// <summary>Specify the name of the Cadence to filter the results. Supported comparators: `equal`, `not_equal`, `contains`, `not_contains`, `starts_with`, `ends_with`. The filter value must be URL-encoded before being sent in the query parameter. Non-encoded example: ```json { &quot;field&quot;: { &quot;api_name&quot;: &quot;name&quot; }, &quot;comparator&quot;: &quot;contains&quot;, &quot;value&quot;: &quot;qwerty&quot; }</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -118,10 +231,10 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
-            /// <summary>Page number to be accessed</summary>
+            /// <summary>Specify the page number for paginated results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of items per page</summary>
+            /// <summary>Specify the number of Cadence records to retrieve per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

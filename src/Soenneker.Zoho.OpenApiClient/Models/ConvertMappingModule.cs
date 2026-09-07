@@ -8,43 +8,60 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember4"/>
+    /// Represents the convert mapping configuration that defines how record field values are transferred across modules during a record conversion operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConvertMappingModule : IComposedTypeWrapper, IParsable
+    public partial class ConvertMappingModule : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember1"/></summary>
+        /// <summary>Represents the target layout configuration for a module involved in a record conversion operation, identifying the layout by its API name and display label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember1? ConvertMappingModuleMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule? Accounts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember1 ConvertMappingModuleMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule Accounts { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember2"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the target layout configuration for a module involved in a record conversion operation, identifying the layout by its API name and display label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember2? ConvertMappingModuleMember2 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule? Contacts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember2 ConvertMappingModuleMember2 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule Contacts { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember3"/></summary>
+        /// <summary>Represents the target layout configuration for a module involved in a record conversion, including field-level mapping details that define how source field values are transferred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember3? ConvertMappingModuleMember3 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFields? Deals { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember3 ConvertMappingModuleMember3 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFields Deals { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember4"/></summary>
+        /// <summary>Represents the target layout configuration for a module involved in a record conversion operation, identifying the layout by its API name and display label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember4? ConvertMappingModuleMember4 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule? Invoices { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember4 ConvertMappingModuleMember4 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule Invoices { get; set; }
 #endif
+        /// <summary>Represents the target layout configuration for a module involved in a record conversion operation, identifying the layout by its API name and display label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule? SalesOrders { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule SalesOrders { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModule"/> and sets the default values.
+        /// </summary>
+        public ConvertMappingModule()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,25 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModule();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ConvertMappingModuleMember1 = new global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ConvertMappingModuleMember2 = new global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember2();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ConvertMappingModuleMember3 = new global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember3();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ConvertMappingModuleMember4 = new global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember4();
-            }
-            return result;
+            return new global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,23 +78,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ConvertMappingModuleMember1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ConvertMappingModuleMember1.GetFieldDeserializers();
-            }
-            else if(ConvertMappingModuleMember2 != null)
-            {
-                return ConvertMappingModuleMember2.GetFieldDeserializers();
-            }
-            else if(ConvertMappingModuleMember3 != null)
-            {
-                return ConvertMappingModuleMember3.GetFieldDeserializers();
-            }
-            else if(ConvertMappingModuleMember4 != null)
-            {
-                return ConvertMappingModuleMember4.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "Accounts", n => { Accounts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule.CreateFromDiscriminatorValue); } },
+                { "Contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule.CreateFromDiscriminatorValue); } },
+                { "Deals", n => { Deals = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFields>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFields.CreateFromDiscriminatorValue); } },
+                { "Invoices", n => { Invoices = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule.CreateFromDiscriminatorValue); } },
+                { "SalesOrders", n => { SalesOrders = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule.CreateFromDiscriminatorValue); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -104,22 +94,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ConvertMappingModuleMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember1>(null, ConvertMappingModuleMember1);
-            }
-            else if(ConvertMappingModuleMember2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember2>(null, ConvertMappingModuleMember2);
-            }
-            else if(ConvertMappingModuleMember3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember3>(null, ConvertMappingModuleMember3);
-            }
-            else if(ConvertMappingModuleMember4 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingModuleMember4>(null, ConvertMappingModuleMember4);
-            }
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule>("Accounts", Accounts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule>("Contacts", Contacts);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFields>("Deals", Deals);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule>("Invoices", Invoices);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModule>("SalesOrders", SalesOrders);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

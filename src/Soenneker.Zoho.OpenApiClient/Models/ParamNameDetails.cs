@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Details with param_name
+    /// Represents error details containing the parameter name associated with the error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ParamNameDetails : IParsable
     {
-        /// <summary>&quot;Detail field: param_name&quot;</summary>
+        /// <summary>Represents the parameter name associated with the error detail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParamName { get; set; }

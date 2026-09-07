@@ -40,59 +40,50 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Item
         {
         }
         /// <summary>
-        /// Permanently deletes the recycle-bin record identified by `record_id`. This is irreversible.
+        /// To permanently delete a single record from the Recycle Bin in your Zoho CRM account using its unique ID. Deleting a parent record also removes all its associated child records from the Recycle Bin, such as Notes and Attachments. This operation is irreversible - the record cannot be restored after deletion. When the total number of records to delete, including child records, exceeds 1000, the operation runs as a background job.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord400.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a single recycle-bin record identified by the path parameter `record_id`. The record_id in the URL takes precedence over any filters or ids given in query parameters.
+        /// To retrieve metadata for a single record from the Recycle Bin in your Zoho CRM account using its unique ID. The response includes the display name, source module, deletion timestamp, original owner, and the user who deleted the record.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord401.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord500.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord401Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Permanently deletes the recycle-bin record identified by `record_id`. This is irreversible.
+        /// To permanently delete a single record from the Recycle Bin in your Zoho CRM account using its unique ID. Deleting a parent record also removes all its associated child records from the Recycle Bin, such as Notes and Attachments. This operation is irreversible - the record cannot be restored after deletion. When the total number of records to delete, including child records, exceeds 1000, the operation runs as a background job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +102,7 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns a single recycle-bin record identified by the path parameter `record_id`. The record_id in the URL takes precedence over any filters or ids given in query parameters.
+        /// To retrieve metadata for a single record from the Recycle Bin in your Zoho CRM account using its unique ID. The response includes the display name, source module, deletion timestamp, original owner, and the user who deleted the record.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

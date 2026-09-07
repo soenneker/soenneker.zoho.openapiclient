@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge.Item
     public partial class WithModuleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.find_and_merge.item.item collection</summary>
-        /// <param name="position">Unique identifier of the master record that will be retained after merge</param>
+        /// <param name="position">Specify the unique identifier of the master record to be retained after the merge operation. </param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.WithMasterRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.WithMasterRecordItemRequestBuilder this[string position]
         {

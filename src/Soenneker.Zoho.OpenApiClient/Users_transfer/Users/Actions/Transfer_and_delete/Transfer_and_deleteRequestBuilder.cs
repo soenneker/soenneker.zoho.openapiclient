@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Transfer_and_deleteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users_transfer/users/actions/transfer_and_delete?job_id={job_id}", pathParameters)
+        public Transfer_and_deleteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users_transfer/users/actions/transfer_and_delete", pathParameters)
         {
         }
         /// <summary>
@@ -30,59 +30,61 @@ namespace Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Transfer_and_deleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users_transfer/users/actions/transfer_and_delete?job_id={job_id}", rawUrl)
+        public Transfer_and_deleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users_transfer/users/actions/transfer_and_delete", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve the status of a user transfer operation using the job ID
+        /// Retrieves the current status of a transfer and delete operation using the job ID returned by the POST request. The response indicates whether the job is scheduled, in progress, completed, or failed.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and_delete.Transfer_and_deleteRequestBuilder.Transfer_and_deleteRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and_delete.Transfer_and_deleteRequestBuilder.Transfer_and_deleteRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and_delete.Transfer_and_deleteRequestBuilder.Transfer_and_deleteRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and_delete.Transfer_and_deleteRequestBuilder.Transfer_and_deleteRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetTransferStatus200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Transfer user records, assignments, and criteria to another user
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200Response"/></returns>
         /// <param name="body">Request body for transferring and deleting user data</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the status of a user transfer operation using the job ID
+        /// Retrieves the current status of a transfer and delete operation using the job ID returned by the POST request. The response indicates whether the job is scheduled, in progress, completed, or failed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and_delete.Transfer_and_deleteRequestBuilder.Transfer_and_deleteRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/users_transfer/users/actions/transfer_and_delete?job_id={job_id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -108,15 +110,15 @@ namespace Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/users_transfer/users/actions/transfer_and_delete", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -132,12 +134,12 @@ namespace Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and
             return new global::Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Actions.Transfer_and_delete.Transfer_and_deleteRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the status of a user transfer operation using the job ID
+        /// Retrieves the current status of a transfer and delete operation using the job ID returned by the POST request. The response indicates whether the job is scheduled, in progress, completed, or failed.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Transfer_and_deleteRequestBuilderGetQueryParameters 
         {
-            /// <summary>Unique identifier for the transfer job to check status</summary>
+            /// <summary>Indicates the ID of the job scheduled previously through the [Transfer Records and Delete User API](users_transfer.yaml#$.paths./users/{userId}/actions/transfer_and_delete.post).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("job_id")]

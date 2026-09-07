@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Standard success response schema for single or bulk record operations.
+    /// Represents the response schema for the recordsuccess operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordSuccessResponse : IParsable
     {
-        /// <summary>List of successfully processed records with detailed metadata.</summary>
+        /// <summary>Represents the data value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse_data>? Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordPostSuccessDataItem>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse_data> Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordPostSuccessDataItem> Data { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse_data>(global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse_data.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordPostSuccessDataItem>(global::Soenneker.Zoho.OpenApiClient.Models.RecordPostSuccessDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse_data>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordPostSuccessDataItem>("data", Data);
         }
     }
 }

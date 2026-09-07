@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Conversion_option.Leads
     public partial class LeadsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.conversion_option.Leads.item collection</summary>
-        /// <param name="position">Unique identifier of the Lead record to retrieve conversion options for</param>
+        /// <param name="position">The unique identifier of the Lead record (int64 as string) for which you want to retrieve conversion options. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the lead record ID.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.WithLeadItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Conversion_option.Leads.Item.WithLeadItemRequestBuilder this[string position]
         {

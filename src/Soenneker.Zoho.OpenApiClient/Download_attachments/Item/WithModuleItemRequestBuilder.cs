@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Download_attachments.Item
     public partial class WithModuleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.download_attachments.item.item collection</summary>
-        /// <param name="position">The unique record ID.</param>
+        /// <param name="position">Specify the unique ID of the record that the email is associated with.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Download_attachments.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Download_attachments.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_notes.Item
     public partial class WithParentRecordModuleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.related_notes.item.item collection</summary>
-        /// <param name="position">The unique identifier of the parent record. Must be a valid numeric record ID.</param>
+        /// <param name="position">Specify the unique numeric ID of the parent record.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.WithParentRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.Item.WithParentRecordItemRequestBuilder this[string position]
         {

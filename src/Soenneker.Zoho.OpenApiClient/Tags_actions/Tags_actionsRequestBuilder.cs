@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions
             get => new global::Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.tags_actions.item collection</summary>
-        /// <param name="position">&quot;Path parameter: module&quot;</param>
+        /// <param name="position">The API name of the module to perform the operation on. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API names.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.WithModuleItemRequestBuilder this[string position]
         {

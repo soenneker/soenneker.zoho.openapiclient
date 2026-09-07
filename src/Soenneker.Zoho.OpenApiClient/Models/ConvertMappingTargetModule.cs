@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Target layout configuration for a module during record conversion.
+    /// Represents the target layout configuration for a module involved in a record conversion operation, identifying the layout by its API name and display label.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConvertMappingTargetModule : IParsable
     {
-        /// <summary>Display label of the target layout shown in the UI.</summary>
+        /// <summary>Represents the label of the target module&apos;s layout as it appears in the CRM interface during record conversion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayLabel { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayLabel { get; set; }
 #endif
-        /// <summary>Unique identifier (64-bit integer represented as string)</summary>
+        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>API name of the target layout.</summary>
+        /// <summary>Represents the unique API name that programmatically identifies the target layout within the conversion mapping configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

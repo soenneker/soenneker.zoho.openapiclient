@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_read.Read
     public partial class ReadRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.bulk_read.read.item collection</summary>
-        /// <param name="position">The jobId</param>
+        /// <param name="position">Specify the unique identifier of the bulk read job.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Bulk_read.Read.Item.WithJobItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Bulk_read.Read.Item.WithJobItemRequestBuilder this[string position]
         {
@@ -47,38 +47,43 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_read.Read
         {
         }
         /// <summary>
-        /// Createbulkreadjob
+        /// To create a bulk read job in Zoho CRM. A bulk read job exports records from a specified CRM module to a CSV or ICS file. The job runs asynchronously; use the Get Bulk Read Job Details API to monitor the job status, and use the Download Bulk Read Result API to retrieve the exported file once the job is complete.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201"/></returns>
-        /// <param name="body">The request body</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response"/></returns>
+        /// <param name="body">Represents the request payload used to configure and create a bulk read job in Zoho CRM.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Createbulkreadjob
+        /// To create a bulk read job in Zoho CRM. A bulk read job exports records from a specified CRM module to a CSV or ICS file. The job runs asynchronously; use the Get Bulk Read Job Details API to monitor the job status, and use the Download Bulk Read Result API to retrieve the exported file once the job is complete.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents the request payload used to configure and create a bulk read job in Zoho CRM.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

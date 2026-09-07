@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Container for results of a targeted variable group retrieval, exposing a variable_groups array of lookup summaries.
+    /// Represents the response body for the get variable group by ID operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariableGroupQueryResponse : IParsable
     {
-        /// <summary>&quot;Field: variable_groups&quot;</summary>
+        /// <summary>Represents an array containing the variable group matching the specified ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSummaryLookup>? VariableGroups { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSummary>? VariableGroups { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSummaryLookup> VariableGroups { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSummary> VariableGroups { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "variable_groups", n => { VariableGroups = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSummaryLookup>(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSummaryLookup.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "variable_groups", n => { VariableGroups = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSummary>(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSummary.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSummaryLookup>("variable_groups", VariableGroups);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSummary>("variable_groups", VariableGroups);
         }
     }
 }

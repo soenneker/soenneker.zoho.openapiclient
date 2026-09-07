@@ -34,30 +34,32 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_t
         {
         }
         /// <summary>
-        /// Transferring portal user from one user group to another user group within the same portal.
+        /// To transfer one or more portal users from one user type group to another within the same portal in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers200?> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.Users.ActionNamespace.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers200Response?> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.Users.ActionNamespace.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers200> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.Users.ActionNamespace.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers200Response> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.Users.ActionNamespace.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersTransferPortalUsers200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Transferring portal user from one user group to another user group within the same portal.
+        /// To transfer one or more portal users from one user type group to another within the same portal in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,12 +87,12 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_t
             return new global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.Users.ActionNamespace.Transfer.TransferRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Transferring portal user from one user group to another user group within the same portal.
+        /// To transfer one or more portal users from one user type group to another within the same portal in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TransferRequestBuilderPostQueryParameters 
         {
-            /// <summary>Comma separated Record ids of portal user with encoded format</summary>
+            /// <summary>The ID of the user type to which you want to transfer the users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("personality_ids")]
@@ -100,7 +102,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_t
             [QueryParameter("personality_ids")]
             public string PersonalityIds { get; set; }
 #endif
-            /// <summary>User type identifier</summary>
+            /// <summary>The ID of the user type to which you want to transfer the users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("transfer_To")]

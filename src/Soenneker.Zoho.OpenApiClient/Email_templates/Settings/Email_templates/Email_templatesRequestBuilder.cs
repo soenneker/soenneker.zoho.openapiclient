@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Email_templatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/email_templates/settings/email_templates{?category*,filters*,module*,page*,per_page*,sort_by*,sort_order*}", pathParameters)
+        public Email_templatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/email_templates/settings/email_templates{?module*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,29 +30,29 @@ namespace Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Email_templatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/email_templates/settings/email_templates{?category*,filters*,module*,page*,per_page*,sort_by*,sort_order*}", rawUrl)
+        public Email_templatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/email_templates/settings/email_templates{?module*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
-        /// Fetches a paginated list of email templates with support for filtering, sorting, and pagination. Use page/per_page for pagination (default per_page=20, max=100), sort_by and sort_order for sorting, and filters parameter for advanced filtering.
+        /// To retrieve a paginated list of email templates accessible to the authenticated user in your Zoho CRM organization. The list can be scoped to a specific CRM module using the module parameter, filtered by category (such as favorite, draft, or created_by_me), and refined using a structured filter expression. Results are sortable by last_usage_time, modified_time, or name, and paginated using the page and per_page parameters.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplatesSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplatesSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates.Email_templatesRequestBuilder.Email_templatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates.Email_templatesRequestBuilder.Email_templatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplatesSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates.Email_templatesRequestBuilder.Email_templatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates.Email_templatesRequestBuilder.Email_templatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplatesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplatesSuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches a paginated list of email templates with support for filtering, sorting, and pagination. Use page/per_page for pagination (default per_page=20, max=100), sort_by and sort_order for sorting, and filters parameter for advanced filtering.
+        /// To retrieve a paginated list of email templates accessible to the authenticated user in your Zoho CRM organization. The list can be scoped to a specific CRM module using the module parameter, filtered by category (such as favorite, draft, or created_by_me), and refined using a structured filter expression. Results are sortable by last_usage_time, modified_time, or name, and paginated using the page and per_page parameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,32 +80,12 @@ namespace Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates
             return new global::Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates.Email_templatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetches a paginated list of email templates with support for filtering, sorting, and pagination. Use page/per_page for pagination (default per_page=20, max=100), sort_by and sort_order for sorting, and filters parameter for advanced filtering.
+        /// To retrieve a paginated list of email templates accessible to the authenticated user in your Zoho CRM organization. The list can be scoped to a specific CRM module using the module parameter, filtered by category (such as favorite, draft, or created_by_me), and refined using a structured filter expression. Results are sortable by last_usage_time, modified_time, or name, and paginated using the page and per_page parameters.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Email_templatesRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Template category filter. Note: Allowed values are favorite | created_by_me | shared_with_me | associated | draft.&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("category")]
-            public string? Category { get; set; }
-#nullable restore
-#else
-            [QueryParameter("category")]
-            public string Category { get; set; }
-#endif
-            /// <summary>JSON-stringified filter expression. See operation description for supported comparators and group_operator.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("filters")]
-            public string? Filters { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filters")]
-            public string Filters { get; set; }
-#endif
-            /// <summary>Module API name for filtering</summary>
+            /// <summary>Provide the API name of the CRM module to filter Email Templates by. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for module API name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -115,25 +95,12 @@ namespace Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates
             [QueryParameter("module")]
             public string Module { get; set; }
 #endif
-            /// <summary>Page number, starting at 1</summary>
+            /// <summary>Specify the page number to retrieve in a paginated response. The default value is &lt;b&gt;1&lt;/b&gt;.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of items per page (default = 20, max = 100)</summary>
+            /// <summary>Provide the maximum number of Email Template records to return per page. Default value is **200** and the maximum value is **200.**</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Field name to sort by</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("sort_by")]
-            public string? SortBy { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort_by")]
-            public string SortBy { get; set; }
-#endif
-            /// <summary>Sort order (ascending or descending)</summary>
-            [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates.GetSort_orderQueryParameterType? SortOrder { get; set; }
         }
     }
 }

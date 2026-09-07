@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_photo
     public partial class Record_photoRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.record_photo.item collection</summary>
-        /// <param name="position">The API name of the module</param>
+        /// <param name="position">Specify the API name of the module for which you want to manage the record photo. Refer to the [Get Modules Metadata API](modules.yaml#$.paths./settings/modules.get) to retrieve the module&apos;s API name.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.WithModuleItemRequestBuilder this[string position]
         {

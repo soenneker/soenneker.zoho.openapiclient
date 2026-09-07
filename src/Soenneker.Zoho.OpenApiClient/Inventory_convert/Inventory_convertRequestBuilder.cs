@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_convert
     public partial class Inventory_convertRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.inventory_convert.item collection</summary>
-        /// <param name="position">Module API of the source module</param>
+        /// <param name="position">Specify the API name of the source inventory module. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module&apos;s API name.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Inventory_convert.Item.WithModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Inventory_convert.Item.WithModuleApiNameItemRequestBuilder this[string position]
         {

@@ -34,36 +34,32 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Actions.
         {
         }
         /// <summary>
-        /// Permanently deletes all records from the Recycle Bin. This action is irreversible, as deleted records cannot be restored after this operation. When the number of records in the Recycle Bin exceeds 1000 (including child records), the deletion will be scheduled as a background job (202 status). If the count is 1000 or fewer, the records are deleted immediately (200 status). Only users with the Admin profile can empty the Recycle Bin.
+        /// To permanently delete every record from the Recycle Bin in your Zoho CRM account. This action is irreversible - the records cannot be restored after this operation completes. When the Recycle Bin contains 1000 or fewer records, including child records such as Notes and Attachments, Zoho CRM deletes the records immediately and returns a 200 response. When the count exceeds 1000, the deletion runs as a background job and returns a 202 response. Only users with the Admin profile can empty the Recycle Bin.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin401.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin404.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin500.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin401Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Permanently deletes all records from the Recycle Bin. This action is irreversible, as deleted records cannot be restored after this operation. When the number of records in the Recycle Bin exceeds 1000 (including child records), the deletion will be scheduled as a background job (202 status). If the count is 1000 or fewer, the records are deleted immediately (200 status). Only users with the Admin profile can empty the Recycle Bin.
+        /// To permanently delete every record from the Recycle Bin in your Zoho CRM account. This action is irreversible - the records cannot be restored after this operation completes. When the Recycle Bin contains 1000 or fewer records, including child records such as Notes and Attachments, Zoho CRM deletes the records immediately and returns a 200 response. When the count exceeds 1000, the deletion runs as a background job and returns a 202 response. Only users with the Admin profile can empty the Recycle Bin.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

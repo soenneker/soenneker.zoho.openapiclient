@@ -34,45 +34,38 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Item.Item.Actions.Remove_terr
         {
         }
         /// <summary>
-        /// Auto-generated description for operation `Remove Territories To Record`.
+        /// To remove one or more territories from a single record in your Zoho CRM organization. This operation is supported for records in the Leads, Accounts, Contacts, and Deals modules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode"/></returns>
-        /// <param name="body">The `schema` field of type `object`.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRemoveRecordSuccessResponse"/></returns>
+        /// <param name="body">Specify the territories and the record from which they are to be removed.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRemoveRecordSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRemoveRecordSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord500.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritorySchedueledSuccessCode.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRemoveRecordSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRemoveRecordSuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Auto-generated description for operation `Remove Territories To Record`.
+        /// To remove one or more territories from a single record in your Zoho CRM organization. This operation is supported for records in the Leads, Accounts, Contacts, and Deals modules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The `schema` field of type `object`.</param>
+        /// <param name="body">Specify the territories and the record from which they are to be removed.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesToRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Parent picklist value with its mapped child values for create/update operations
+    /// Represents a parent picklist option and its mapped child picklist values for dependency creation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PicklistMappingCreate : IParsable
     {
-        /// <summary>The actual value of the parent picklist option</summary>
+        /// <summary>Represents the actual stored value of the parent picklist option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActualValue { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ActualValue { get; set; }
 #endif
-        /// <summary>The display value of the parent picklist option</summary>
+        /// <summary>Represents the display label of the parent picklist option as shown in the CRM interface.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayValue { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayValue { get; set; }
 #endif
-        /// <summary>The unique identifier of the parent picklist option</summary>
+        /// <summary>Represents the unique identifier of the parent picklist option. Use the [Get Fields API](fields.yaml#$.paths./settings/fields.get) to get the ID of the picklist. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -37,13 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Child picklist values mapped to this parent value</summary>
+        /// <summary>Lists the child picklist options associated with this parent picklist value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate_maps>? Maps { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreateMapsItem>? Maps { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate_maps> Maps { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreateMapsItem> Maps { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,7 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "actual_value", n => { ActualValue = n.GetStringValue(); } },
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "maps", n => { Maps = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate_maps>(global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate_maps.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "maps", n => { Maps = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreateMapsItem>(global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreateMapsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("actual_value", ActualValue);
             writer.WriteStringValue("display_value", DisplayValue);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate_maps>("maps", Maps);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreateMapsItem>("maps", Maps);
         }
     }
 }

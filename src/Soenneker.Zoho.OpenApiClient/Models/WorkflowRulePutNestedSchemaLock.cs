@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Specify whether the workflow rule should be locked for editing by other users.
+    /// Specify whether the workflow rule should be locked to prevent editing by other users.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRulePutNestedSchemaLock : IParsable
     {
-        /// <summary>A note or label to indicate the reason or context for locking the rule.</summary>
+        /// <summary>Specify a note or label indicating the reason or context for locking the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>Specify whether the workflow rule should be locked or not. </summary>
+        /// <summary>Specify whether to lock or unlock the workflow rule.Possible values:true - Locks the rule to prevent editing.false - Unlocks the rule.</summary>
         public bool? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

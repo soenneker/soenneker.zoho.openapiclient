@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for sending documents for signature.
+    /// Represents the request payload for a sign mail merge operation, including the template reference, file name, signing order, and the list of signers.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SignMailMergeNested : IParsable
     {
-        /// <summary>The name of the file you want to send for signing and approval.</summary>
+        /// <summary>Represents the name of the file to send for signing or approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FileName { get; set; }
 #endif
-        /// <summary>Mailmerge Object to pass Template details</summary>
+        /// <summary>Represents the mail merge template reference, identified by the template name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested? MailMergeTemplate { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested MailMergeTemplate { get; set; }
 #endif
-        /// <summary>The details of the users you want to sign the document.</summary>
+        /// <summary>The details of the users you want to sign the document.- recipient_name **string, mandatory** - the name of the user who has to sign or approve the document.- **action_type** string, mandatory - the type of action you want the user to perform. The possible values are sign to **sign** the document, and **approve** to approve the document.- **recipient** JSON object, mandatory    - **value** string, mandatory - the email ID of the user who has to sign or approve the document.&gt; **Note**&gt; The values for the fields **recipient_name** and **recipient.value** will be taken from the mail merge template. If you want to override the values in the template, you must specify the values of these fields in the input body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested>? Signers { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested> Signers { get; set; }
 #endif
-        /// <summary>The value true indicates that the document will first be sent for approval and then for signing.</summary>
+        /// <summary>Indicates whether recipients must act on the document in a specified sequence.Possible values:**true** - The document first goes for approval, then for signing in the defined order.**false** - Zoho Sign sends the document to all recipients simultaneously.</summary>
         public bool? SignInOrder { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

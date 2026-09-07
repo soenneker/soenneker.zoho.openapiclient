@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Parent related list reference required for contextual dependencies.
+    /// Represents a reference to a parent related list that this related list depends on for contextual display.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedListParentReference : IParsable

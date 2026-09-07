@@ -8,42 +8,42 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// User&apos;s customization preferences.
+    /// Represents the user&apos;s customization preferences.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserCustomizeInfo : IParsable
     {
-        /// <summary>Business card view.</summary>
+        /// <summary>Represents the business card view preference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_bc_view? BcView { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty? BcView { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_bc_view BcView { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty BcView { get; set; }
 #endif
-        /// <summary>Notes description.</summary>
+        /// <summary>Indicates whether the notes description is visible.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_notes_desc? NotesDesc { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty? NotesDesc { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_notes_desc NotesDesc { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty NotesDesc { get; set; }
 #endif
-        /// <summary>Show detail view.</summary>
+        /// <summary>Indicates whether the detail view is visible.</summary>
         public bool? ShowDetailView { get; set; }
-        /// <summary>Show home page.</summary>
+        /// <summary>Indicates whether the home page is visible.</summary>
         public bool? ShowHome { get; set; }
-        /// <summary>Show left panel.</summary>
+        /// <summary>Indicates whether the left panel is visible.</summary>
         public bool? ShowLeftPanel { get; set; }
-        /// <summary>Show right panel.</summary>
+        /// <summary>Indicates whether the right panel is visible.</summary>
         public bool? ShowRightPanel { get; set; }
-        /// <summary>Unpin recent items.</summary>
+        /// <summary>Indicates whether recent items are unpinned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_unpin_recent_item? UnpinRecentItem { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty? UnpinRecentItem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_unpin_recent_item UnpinRecentItem { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty UnpinRecentItem { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,13 +63,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bc_view", n => { BcView = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_bc_view>(global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_bc_view.CreateFromDiscriminatorValue); } },
-                { "notes_desc", n => { NotesDesc = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_notes_desc>(global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_notes_desc.CreateFromDiscriminatorValue); } },
+                { "bc_view", n => { BcView = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty.CreateFromDiscriminatorValue); } },
+                { "notes_desc", n => { NotesDesc = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty.CreateFromDiscriminatorValue); } },
                 { "show_detail_view", n => { ShowDetailView = n.GetBoolValue(); } },
                 { "show_home", n => { ShowHome = n.GetBoolValue(); } },
                 { "show_left_panel", n => { ShowLeftPanel = n.GetBoolValue(); } },
                 { "show_right_panel", n => { ShowRightPanel = n.GetBoolValue(); } },
-                { "unpin_recent_item", n => { UnpinRecentItem = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_unpin_recent_item>(global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_unpin_recent_item.CreateFromDiscriminatorValue); } },
+                { "unpin_recent_item", n => { UnpinRecentItem = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,13 +79,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_bc_view>("bc_view", BcView);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_notes_desc>("notes_desc", NotesDesc);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty>("bc_view", BcView);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty>("notes_desc", NotesDesc);
             writer.WriteBoolValue("show_detail_view", ShowDetailView);
             writer.WriteBoolValue("show_home", ShowHome);
             writer.WriteBoolValue("show_left_panel", ShowLeftPanel);
             writer.WriteBoolValue("show_right_panel", ShowRightPanel);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo_unpin_recent_item>("unpin_recent_item", UnpinRecentItem);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty>("unpin_recent_item", UnpinRecentItem);
         }
     }
 }

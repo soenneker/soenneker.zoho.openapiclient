@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item
     public partial class WithModuleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.email_drafts.item.item collection</summary>
-        /// <param name="position">Entity id of the record</param>
+        /// <param name="position">Specifies the unique identifier of the record. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve record IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

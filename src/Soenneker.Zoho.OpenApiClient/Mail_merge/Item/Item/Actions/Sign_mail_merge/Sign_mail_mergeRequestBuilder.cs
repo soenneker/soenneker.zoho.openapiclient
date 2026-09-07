@@ -34,10 +34,10 @@ namespace Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.Actions.Sign_mail_me
         {
         }
         /// <summary>
-        /// To send a mail merge document for signing and approval.To use this API, you must initially access&amp;nbsp;the Merge and Sign dialogue&amp;nbsp;from the Writer UI once. Please note that you need to do this only once.
+        /// To send a merged document to one or more recipients for signing or approval using a mail merge template associated with a specific record in your Zoho CRM organization. Before using this operation for the first time, you must access the Merge and Sign dialog in the Zoho Writer UI once.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200"/></returns>
-        /// <param name="body">Request body schema for sign mail merge operation.</param>
+        /// <param name="body">Represents the request body schema for the sign mail merge operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,10 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.Actions.Sign_mail_me
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To send a mail merge document for signing and approval.To use this API, you must initially access&amp;nbsp;the Merge and Sign dialogue&amp;nbsp;from the Writer UI once. Please note that you need to do this only once.
+        /// To send a merged document to one or more recipients for signing or approval using a mail merge template associated with a specific record in your Zoho CRM organization. Before using this operation for the first time, you must access the Merge and Sign dialog in the Zoho Writer UI once.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema for sign mail merge operation.</param>
+        /// <param name="body">Represents the request body schema for the sign mail merge operation.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

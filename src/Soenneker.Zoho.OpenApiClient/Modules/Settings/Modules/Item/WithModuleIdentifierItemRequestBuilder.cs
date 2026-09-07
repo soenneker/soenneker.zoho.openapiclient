@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithModuleIdentifierItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/modules/settings/modules/{moduleIdentifier}", pathParameters)
+        public WithModuleIdentifierItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/modules/settings/modules/{moduleIdentifier}{?fields,include_inner_details}", pathParameters)
         {
         }
         /// <summary>
@@ -30,59 +30,69 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithModuleIdentifierItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/modules/settings/modules/{moduleIdentifier}", rawUrl)
+        public WithModuleIdentifierItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/modules/settings/modules/{moduleIdentifier}{?fields,include_inner_details}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves complete metadata for a specific CRM module identified by its API name. Returns comprehensive configuration including fields, layouts, profiles, related lists, custom views, and module capabilities.
+        /// Retrieves complete metadata for a specific CRM module identified by its API name, including fields, layouts, profiles, related lists, and feature capabilities. Returns 204 when the module is not available through this endpoint, or 400 when the identifier is invalid or the module is unsupported
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item.WithModuleIdentifierItemRequestBuilder.WithModuleIdentifierItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item.WithModuleIdentifierItemRequestBuilder.WithModuleIdentifierItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Partially updates a module&apos;s display labels (singular and plural) and associated profile permissions. This operation only modifies the specified fields without affecting other module configuration. The operation is idempotent - calling it multiple times with the same payload produces the same result.
+        /// Updates the singular label, plural label, and profile assignments for the module identified by {moduleIdentifier}. Immutable fields such as access_type and api_name cannot be changed; attempting to include them returns a NOT_ALLOWED error
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200"/></returns>
-        /// <param name="body">Request payload for updating module configuration including labels and profile associations.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response"/></returns>
+        /// <param name="body">Request body schema for updating a module. Contains a single-element modules array with the module ID, updated labels, and profile assignments</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves complete metadata for a specific CRM module identified by its API name. Returns comprehensive configuration including fields, layouts, profiles, related lists, custom views, and module capabilities.
+        /// Retrieves complete metadata for a specific CRM module identified by its API name, including fields, layouts, profiles, related lists, and feature capabilities. Returns 204 when the module is not available through this endpoint, or 400 when the identifier is invalid or the module is unsupported
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item.WithModuleIdentifierItemRequestBuilder.WithModuleIdentifierItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item.WithModuleIdentifierItemRequestBuilder.WithModuleIdentifierItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -91,18 +101,18 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item
             return requestInfo;
         }
         /// <summary>
-        /// Partially updates a module&apos;s display labels (singular and plural) and associated profile permissions. This operation only modifies the specified fields without affecting other module configuration. The operation is idempotent - calling it multiple times with the same payload produces the same result.
+        /// Updates the singular label, plural label, and profile assignments for the module identified by {moduleIdentifier}. Immutable fields such as access_type and api_name cannot be changed; attempting to include them returns a NOT_ALLOWED error
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for updating module configuration including labels and profile associations.</param>
+        /// <param name="body">Request body schema for updating a module. Contains a single-element modules array with the module ID, updated labels, and profile assignments</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -120,6 +130,33 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item
         public global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item.WithModuleIdentifierItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item.WithModuleIdentifierItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Retrieves complete metadata for a specific CRM module identified by its API name, including fields, layouts, profiles, related lists, and feature capabilities. Returns 204 when the module is not available through this endpoint, or 400 when the identifier is invalid or the module is unsupported
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithModuleIdentifierItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Specify the module property names to include in the response. Accepts an array of property names to filter the returned module fields.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public string[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public string[] Fields { get; set; }
+#endif
+            /// <summary>Specify the nested field paths to include additional inner details in the module response. Accepts comma-separated values. Allows requesting extra metadata beyond the default module fields(for example fields.lookup.query_details.criteria.)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("include_inner_details")]
+            public string? IncludeInnerDetails { get; set; }
+#nullable restore
+#else
+            [QueryParameter("include_inner_details")]
+            public string IncludeInnerDetails { get; set; }
+#endif
         }
     }
 }

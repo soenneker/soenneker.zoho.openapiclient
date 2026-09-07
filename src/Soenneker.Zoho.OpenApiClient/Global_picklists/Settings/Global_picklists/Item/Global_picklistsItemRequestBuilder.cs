@@ -28,7 +28,7 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Global_picklistsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/global_picklists/settings/global_picklists/{id}{?include,include_inner_details*}", pathParameters)
+        public Global_picklistsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/global_picklists/settings/global_picklists/{id}{?fields,include,include_inner_details*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,90 +36,92 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Global_picklistsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/global_picklists/settings/global_picklists/{id}{?include,include_inner_details*}", rawUrl)
+        public Global_picklistsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/global_picklists/settings/global_picklists/{id}{?fields,include,include_inner_details*}", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;Deletes a single global picklist identified by the path parameter \{id\}. This request is asynchronous: a 202 Accepted indicates deletion has been scheduled and the response contains a job_id in details. There is no status-check endpoint. A 400 Bad Request is returned for invalid id, deletion already scheduled, conversion in progress, association limits, or system-defined restrictions. When an error refers to a position in a multi-resource request/path, details.resource_path_index is provided.&quot;
+        /// Deletes a single global picklist identified by the path parameter \{id\}. This request is asynchronous: a 202 Accepted indicates deletion has been scheduled and the response contains a job_id in details. There is no status-check endpoint. A 400 Bad Request is returned for invalid id, deletion already scheduled, conversion in progress, association limits, or system-defined restrictions. When an error refers to a position in a multi-resource request/path, details.resource_path_index is provided.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsInternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202403Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsInternalServerErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsDeleteGlobalPicklist202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches the global picklist for given id along with their pick_list_values. used_in_modules, and associated_fields_count can be included in the response based on the &apos;include&apos; query parameter. A 204 is returned when no global picklists exist.
+        /// Fetches the global picklist for given id along with their pick_list_values. used_in_modules, and associated_fields_count can be included in the response based on the &apos;include&apos; query parameter. Use the `fields` query parameter to filter the response by key, so that only the requested keys along with `id` are returned. A 204 is returned when no global picklists exist.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsInternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Global_picklistsItemRequestBuilder.Global_picklistsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Global_picklistsItemRequestBuilder.Global_picklistsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Global_picklistsItemRequestBuilder.Global_picklistsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Global_picklistsItemRequestBuilder.Global_picklistsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200403Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200500Error.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsInternalServerErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Updates an existing global picklist identified by the path parameter \{id\}. You can update display_label, api_name, description, pick_list_values_sorted_lexically, and pick_list_values. Backend-generated properties (actual_label, customizable, modified_by, created_by, presence) cannot be updated. For pick_list_values, you can add new values, update existing values (using id), move values between used/unused (one at a time), or delete values (one at a time using _delete: true). Bulk operations for moving to unused or deletion are not allowed.&quot;
+        /// Updates an existing global picklist identified by the path parameter \{id\}. You can update display_label, api_name, description, pick_list_values_sorted_lexically, and pick_list_values. Backend-generated properties (actual_label, customizable, modified_by, created_by, presence) cannot be updated. For pick_list_values, you can add new values, update existing values (using id), move values between used/unused (one at a time), or delete values (one at a time using _delete: true). Bulk operations for moving to unused or deletion are not allowed.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200Response"/></returns>
         /// <param name="body">Request body for updating a global picklist.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsInternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200?> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200Response?> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistByIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200Response> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistByIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200403Error.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsInternalServerErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deletes a single global picklist identified by the path parameter \{id\}. This request is asynchronous: a 202 Accepted indicates deletion has been scheduled and the response contains a job_id in details. There is no status-check endpoint. A 400 Bad Request is returned for invalid id, deletion already scheduled, conversion in progress, association limits, or system-defined restrictions. When an error refers to a position in a multi-resource request/path, details.resource_path_index is provided.&quot;
+        /// Deletes a single global picklist identified by the path parameter \{id\}. This request is asynchronous: a 202 Accepted indicates deletion has been scheduled and the response contains a job_id in details. There is no status-check endpoint. A 400 Bad Request is returned for invalid id, deletion already scheduled, conversion in progress, association limits, or system-defined restrictions. When an error refers to a position in a multi-resource request/path, details.resource_path_index is provided.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +140,7 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
             return requestInfo;
         }
         /// <summary>
-        /// Fetches the global picklist for given id along with their pick_list_values. used_in_modules, and associated_fields_count can be included in the response based on the &apos;include&apos; query parameter. A 204 is returned when no global picklists exist.
+        /// Fetches the global picklist for given id along with their pick_list_values. used_in_modules, and associated_fields_count can be included in the response based on the &apos;include&apos; query parameter. Use the `fields` query parameter to filter the response by key, so that only the requested keys along with `id` are returned. A 204 is returned when no global picklists exist.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,18 +159,18 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Updates an existing global picklist identified by the path parameter \{id\}. You can update display_label, api_name, description, pick_list_values_sorted_lexically, and pick_list_values. Backend-generated properties (actual_label, customizable, modified_by, created_by, presence) cannot be updated. For pick_list_values, you can add new values, update existing values (using id), move values between used/unused (one at a time), or delete values (one at a time using _delete: true). Bulk operations for moving to unused or deletion are not allowed.&quot;
+        /// Updates an existing global picklist identified by the path parameter \{id\}. You can update display_label, api_name, description, pick_list_values_sorted_lexically, and pick_list_values. Backend-generated properties (actual_label, customizable, modified_by, created_by, presence) cannot be updated. For pick_list_values, you can add new values, update existing values (using id), move values between used/unused (one at a time), or delete values (one at a time using _delete: true). Bulk operations for moving to unused or deletion are not allowed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body for updating a global picklist.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistByIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistById body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistByIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -188,24 +190,34 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
             return new global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.Global_picklistsItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetches the global picklist for given id along with their pick_list_values. used_in_modules, and associated_fields_count can be included in the response based on the &apos;include&apos; query parameter. A 204 is returned when no global picklists exist.
+        /// Fetches the global picklist for given id along with their pick_list_values. used_in_modules, and associated_fields_count can be included in the response based on the &apos;include&apos; query parameter. Use the `fields` query parameter to filter the response by key, so that only the requested keys along with `id` are returned. A 204 is returned when no global picklists exist.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Global_picklistsItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Comma-separated list of related resources to include. Allowed values: \&quot;used_in_modules\&quot;, \&quot;pick_list_values\&quot;, \&quot;associated_fields_count\&quot;. Use CSV encoding (style=form, explode=false) for multiple values, e.g. include=used_in_modules,pick_list_values.&quot;</summary>
+            /// <summary>Comma-separated list of the api_names of the global picklist keys to be returned in the response, which lets you filter the response by key. Only the requested keys along with `id` are returned. Keys need not be unique — a key repeated in the list is processed once and the duplicates are ignored. Use CSV encoding (style=form, explode=false) for multiple values, e.g. fields=display_label,api_name,customizable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public string[]? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public string[] Fields { get; set; }
+#endif
+            /// <summary>Comma-separated list of related resources to include. Allowed values: &quot;used_in_modules&quot;, &quot;pick_list_values&quot;, &quot;associated_fields_count&quot;. Use CSV encoding (style=form, explode=false) for multiple values, e.g. include=used_in_modules,pick_list_values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
-            public global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.GetIncludeQueryParameterType[]? Include { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsIncludeItem[]? Include { get; set; }
 #nullable restore
 #else
             [QueryParameter("include")]
-            public global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.GetIncludeQueryParameterType[] Include { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsIncludeItem[] Include { get; set; }
 #endif
-            /// <summary>&quot;Optional detailed expansion keys. Currently only allowed when `used_in_modules` is present in `include`. Allowed value: used_in_modules.plural_label.&quot;</summary>
+            /// <summary>Optional detailed expansion keys. Currently only allowed when `used_in_modules` is present in `include`. Allowed value: used_in_modules.plural_label.</summary>
             [QueryParameter("include_inner_details")]
-            public global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Item.GetInclude_inner_detailsQueryParameterType? IncludeInnerDetails { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.UsedInModulesPluralLabelIncludeInnerDetails? IncludeInnerDetails { get; set; }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields
     public partial class FieldsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.pick_list_values.settings.fields.item collection</summary>
-        /// <param name="position">Unique numeric identifier for the field. Must be a valid field ID belonging to the specified module.</param>
+        /// <param name="position">Specify the unique numeric identifier of the field. Refer to the [Get Fields Metadata](fields.json#$.paths./settings/fields/{fieldId}.get) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.WithFieldItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.WithFieldItemRequestBuilder this[string position]
         {

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Emails_sharing_details
     public partial class Emails_sharing_detailsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.emails_sharing_details.item collection</summary>
-        /// <param name="position">Module  Api Name of the record</param>
+        /// <param name="position">Specifies the **API name** of the module for which you want to retrieve the email sharing details. Possible values: **Leads**, **Contacts**, **Accounts**, **Deals**, **CustomModule1**. Refer to the [Retrieve CRM module metadata](modules.json#$.paths./settings/modules.get) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Emails_sharing_details.Item.WithModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Emails_sharing_details.Item.WithModuleApiNameItemRequestBuilder this[string position]
         {

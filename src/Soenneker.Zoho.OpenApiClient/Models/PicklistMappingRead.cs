@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Parent picklist value with complete mapped child values for read operations
+    /// Represents a parent picklist option with its complete set of mapped child picklist values, as returned in GET responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PicklistMappingRead : IParsable
     {
-        /// <summary>The actual value of the parent picklist option</summary>
+        /// <summary>Represents the actual stored value of the parent picklist option. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActualValue { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ActualValue { get; set; }
 #endif
-        /// <summary>The display value of the parent picklist option</summary>
+        /// <summary>Represents the display label of the parent picklist option as shown in the CRM interface. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayValue { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayValue { get; set; }
 #endif
-        /// <summary>The unique identifier of the parent picklist option</summary>
+        /// <summary>Represents the unique identifier of the parent picklist option. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Child picklist values mapped to this parent value</summary>
+        /// <summary>Lists the child picklist options associated with this parent picklist value. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistOption>? Maps { get; set; }

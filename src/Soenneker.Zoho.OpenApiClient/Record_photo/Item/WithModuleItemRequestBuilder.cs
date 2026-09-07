@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_photo.Item
     public partial class WithModuleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.record_photo.item.item collection</summary>
-        /// <param name="position">The record ID</param>
+        /// <param name="position">Specify the unique identifier of the record for which you want to manage the photo. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

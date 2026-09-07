@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Schema representing a field in the module.
+    /// Represents a comprehensive schema for a CRM field in a module layout, encapsulating all field-level configuration including data type, display settings, permissions, lookup relationships, formula definitions, and audit metadata.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchema : IParsable
@@ -16,12 +16,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The additional_column property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? AdditionalColumn { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAdditionalColumn? AdditionalColumn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch AdditionalColumn { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAdditionalColumn AdditionalColumn { get; set; }
 #endif
-        /// <summary>The address property</summary>
+        /// <summary>Contains the address sub-field configuration applicable when the field represents a composite address type, such as mailing or billing address, grouping individual components like street, city, state, and country into a structured object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAddress? Address { get; set; }
@@ -29,7 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAddress Address { get; set; }
 #endif
-        /// <summary>API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.</summary>
+        /// <summary>Represents the set of permission levels that can be actively assigned to this field across profiles, indicating which visibility and access states are eligible for modification. Returned only when the query parameter `include_inner_details=fields.allowed_permissions_to_update` is specified in the request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAllowedPermissionsToUpdate? AllowedPermissionsToUpdate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAllowedPermissionsToUpdate AllowedPermissionsToUpdate { get; set; }
+#endif
+        /// <summary>Represents an API identifier string composed of alphanumeric characters and underscores, used as a programmatic reference for fields, modules, and other CRM entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -37,7 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>The associated_module property</summary>
+        /// <summary>Contains the details of the CRM module linked to this field when the field represents a subform, identifying the related module and the layout governing how its records are embedded and displayed within the parent module&apos;s layout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModule? AssociatedModule { get; set; }
@@ -45,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModule AssociatedModule { get; set; }
 #endif
-        /// <summary>The association_details property</summary>
+        /// <summary>Contains the relationship metadata for fields connected to other records through lookup associations, describing the linked module, the nature of the relationship, and any constraints governing how related records appear or display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociationDetails? AssociationDetails { get; set; }
@@ -61,21 +69,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumber AutoNumber { get; set; }
 #endif
-        /// <summary>Indicates if the field supports blueprint</summary>
+        /// <summary>Indicates whether the field can participate in Blueprint process definitions, enabling it to be referenced in transition conditions and actions within automated workflow stages. Possible values: `true` — the field is eligible for use in Blueprint configurations; `false` — the field cannot be included in Blueprint process logic.</summary>
         public bool? BlueprintSupported { get; set; }
-        /// <summary>Wether business card is supported for the field</summary>
+        /// <summary>Indicates whether the field is eligible to appear on the business card view, which surfaces key record details in compact preview panels across Zoho CRM. Possible values: `true` — the field can be included in the business card layout; `false` — the field is excluded from business card display.</summary>
         public bool? BusinesscardSupported { get; set; }
-        /// <summary>The child_fields property</summary>
+        /// <summary>Indicates the classification category of the field, used to group fields by their functional role or origin within the module layout, such as standard, custom, or system-defined categories.</summary>
+        public int? Category { get; set; }
+        /// <summary>Contains the ordered collection of sub-fields that compose a composite field, such as the individual address components (street, city, state, country, zip) grouped under a single parent field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ChildFields { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaChildFields? ChildFields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ChildFields { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaChildFields ChildFields { get; set; }
 #endif
-        /// <summary>Wether any colour code is enabled by system</summary>
+        /// <summary>Indicates whether color-code functionality has been activated for this field by the system platform rather than by a user or administrator. Possible values: `true` — the system has enabled color coding for this field; `false` — color coding on this field is not system-activated.</summary>
         public bool? ColourCodeEnabledBySystem { get; set; }
-        /// <summary>The column name of the field</summary>
+        /// <summary>Represents the underlying database column identifier mapped to this field, used for direct data-layer references and query construction within the CRM storage layer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColumnName { get; set; }
@@ -83,7 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ColumnName { get; set; }
 #endif
-        /// <summary>Convert mapping details of the field</summary>
+        /// <summary>Contains the cross-module field mapping configuration that governs how this field&apos;s value is transferred to corresponding fields in target modules (such as Accounts, Contacts, Deals, Invoices, or Sales Orders) when a record conversion is performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMapping? ConvertMapping { get; set; }
@@ -91,31 +101,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMapping ConvertMapping { get; set; }
 #endif
-        /// <summary>The source from which the field was created</summary>
+        /// <summary>Indicates the origin channel through which this field originates in the module. Possible values: `default` — the field is part of the standard CRM module definition; `extension` — the field was added through a CRM extension or plug-in package; `integration` — the field was provisioned via a third-party integration.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCreatedSource? CreatedSource { get; set; }
+        /// <summary>Represents the date and time at which the field definition was first created in the CRM, recorded for audit and chronological tracking purposes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedSource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCreatedTime? CreatedTime { get; set; }
 #nullable restore
 #else
-        public string CreatedSource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCreatedTime CreatedTime { get; set; }
 #endif
-        /// <summary>The created_time property</summary>
+        /// <summary>Contains the encryption settings applied to this field, specifying how sensitive data stored in the field is protected at rest within the CRM platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? CreatedTime { get; set; }
+        public UntypedNode? Crypt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch CreatedTime { get; set; }
+        public UntypedNode Crypt { get; set; }
 #endif
-        /// <summary>The crypt property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCrypt? Crypt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCrypt Crypt { get; set; }
-#endif
-        /// <summary>The currency property</summary>
+        /// <summary>Contains the currency-specific display and calculation settings for the field, including the number of decimal places to retain and the rounding strategy applied when storing or presenting monetary values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCurrency? Currency { get; set; }
@@ -123,17 +127,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCurrency Currency { get; set; }
 #endif
-        /// <summary>Indicates if the field is a custom field</summary>
+        /// <summary>Indicates whether this field was defined by an administrator or developer beyond the standard module schema, rather than being a built-in system field. Possible values: `true` — the field is user-created and does not belong to the default module definition; `false` — the field is a standard, system-defined field.</summary>
         public bool? CustomField { get; set; }
-        /// <summary>The customizable_properties property</summary>
+        /// <summary>Contains the set of field attributes that administrators are permitted to modify through the CRM layout editor, such as label, required status, or visibility, reflecting which aspects of the field definition are not locked by the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? CustomizableProperties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCustomizableProperties? CustomizableProperties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch CustomizableProperties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCustomizableProperties CustomizableProperties { get; set; }
 #endif
-        /// <summary>The data type of the field</summary>
+        /// <summary>Identifies the data category assigned to the field, such as text, integer, decimal, date, Boolean, picklist, or lookup, which governs validation rules, storage format, and applicable UI controls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DataType { get; set; }
@@ -144,22 +148,30 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The decimal_place property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? DecimalPlace { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDecimalPlace? DecimalPlace { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch DecimalPlace { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDecimalPlace DecimalPlace { get; set; }
 #endif
-        /// <summary>Indicates if the field is a display field</summary>
-        public bool? DisplayField { get; set; }
-        /// <summary>The display_format property</summary>
+        /// <summary>Represents the pre-populated value automatically applied to this field when a new record is saved, serving as a baseline entry that users can override during data entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? DisplayFormat { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDefaultValue? DefaultValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch DisplayFormat { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDefaultValue DefaultValue { get; set; }
 #endif
-        /// <summary>The display_format_properties property</summary>
+        /// <summary>Indicates whether this field is designated as the primary display field for the module, used to represent the record in lookups, related lists, and search results. Possible values: `true` — the field serves as the record&apos;s display identifier; `false` — the field is not the primary display field.</summary>
+        public bool? DisplayField { get; set; }
+        /// <summary>Specifies the presentation pattern applied when rendering the field&apos;s value in the UI, such as a date format string, a time pattern, or a number format template controlling separators and symbol placement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormat? DisplayFormat { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormat DisplayFormat { get; set; }
+#endif
+        /// <summary>Contains supplementary rendering configuration for field types that require additional display directives beyond a simple format string, such as phone number dial-code positioning or the orientation and layout style of radio button groups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormatProperties? DisplayFormatProperties { get; set; }
@@ -167,7 +179,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormatProperties DisplayFormatProperties { get; set; }
 #endif
-        /// <summary>Display label of the field.</summary>
+        /// <summary>Represents the name of the field displayed in the module layout, used as the visible title in forms, list views, and detail pages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayLabel { get; set; }
@@ -175,27 +187,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayLabel { get; set; }
 #endif
-        /// <summary>The display type of the field</summary>
+        /// <summary>Indicates the internal numeric code that controls how the field is rendered in the CRM UI, mapping to predefined display modes such as text box, drop-down, or date picker.</summary>
         public int? DisplayType { get; set; }
-        /// <summary>Email parser details of the field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaEmailParser? EmailParser { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaEmailParser EmailParser { get; set; }
-#endif
-        /// <summary>Indicates if colour code is enabled for the field</summary>
+        /// <summary>Represents the structural element type of this entry in the layout, distinguishing standard data fields from mirror fields. Possible values: `field` — a standard data field that accepts or displays a value. `mirror_field` — a field that reflects a value from a related module through a lookup relationship.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaElementType? ElementType { get; set; }
+        /// <summary>Indicates whether color coding is currently active for this field, allowing field values to be visually differentiated by color in list views and kanban boards. Possible values: `true` — color coding is enabled for the field; `false` — color coding is not active.</summary>
         public bool? EnableColourCode { get; set; }
-        /// <summary>The external property</summary>
+        /// <summary>Indicates if the record category feature is enabled for this picklist field. Only returned when the record category feature is available.</summary>
+        public bool? EnableRecordCategory { get; set; }
+        /// <summary>Indicates if transitions between record categories are enabled. Only returned when enable_record_category is true.</summary>
+        public bool? EnableTransitionForRecordCategory { get; set; }
+        /// <summary>Contains the integration configuration for fields that receive or expose values through external systems, such as third-party connectors or Zoho marketplace extensions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaExternal? External { get; set; }
+        public UntypedNode? External { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaExternal External { get; set; }
+        public UntypedNode External { get; set; }
 #endif
-        /// <summary>Plural label of the module.</summary>
+        /// <summary>Represents the label assigned to the field, displayed in forms, detail views, and list columns within the module layout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FieldLabel { get; set; }
@@ -203,11 +213,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FieldLabel { get; set; }
 #endif
-        /// <summary>Wether field is read only</summary>
+        /// <summary>Indicates whether the field is locked against user edits at the field level, independent of profile-based permissions. Possible values: `true` — the field value cannot be modified by users; `false` — the field is editable subject to applicable profile permissions.</summary>
         public bool? FieldReadOnly { get; set; }
-        /// <summary>Indicates if the field is filterable</summary>
+        /// <summary>Contains the list of permitted file source options for file-upload fields, defining where users may select files from when populating the field.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFileUpoladOptionlist? FileUpoladOptionlist { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFileUpoladOptionlist FileUpoladOptionlist { get; set; }
+#endif
+        /// <summary>Indicates whether the field can be used as a filter criterion in record search, list view filtering, and report conditions. Possible values: `true` — the field is available as a filter option; `false` — the field cannot be used for filtering.</summary>
         public bool? Filterable { get; set; }
-        /// <summary>The formula property</summary>
+        /// <summary>Contains the formula configuration for fields whose values are automatically calculated from expressions referencing other fields or functions, rather than being entered directly by users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormula? Formula { get; set; }
@@ -215,7 +233,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormula Formula { get; set; }
 #endif
-        /// <summary>The global_picklist property</summary>
+        /// <summary>Represents the global map dependency linked to this field, which governs how the field&apos;s available values or behavior are influenced by a shared mapping configuration defined at the organization level. Contains identifying metadata for the associated global map dependency, or is absent when no such dependency applies.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaGlobalMapDependency? GlobalMapDependency { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaGlobalMapDependency GlobalMapDependency { get; set; }
+#endif
+        /// <summary>Represents the organization-level picklist configuration shared across multiple modules that this field draws its allowed values from. When present, the field&apos;s pick options are centrally managed through the referenced global picklist rather than defined locally on the field itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaGlobalPicklist? GlobalPicklist { get; set; }
@@ -231,9 +257,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHipaaCompliance HipaaCompliance { get; set; }
 #endif
-        /// <summary>Indicates if HIPAA compliance is enabled for the field</summary>
+        /// <summary>Indicates whether HIPAA compliance enforcement is active for this field, determining whether the associated HIPAA access and export restrictions are applied at runtime. Possible values: `true` — HIPAA compliance rules are enforced for this field; `false` — HIPAA compliance is not enforced and the field is treated as non-PHI data.</summary>
         public bool? HipaaComplianceEnabled { get; set; }
-        /// <summary>The history_tracking property</summary>
+        /// <summary>Represents the history tracking configuration for this field, capturing how and for how long changes to the field&apos;s value are recorded in the audit trail. Includes details about tracked duration, associated modules, related list linkage, and the specific fields whose changes are followed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTracking? HistoryTracking { get; set; }
@@ -241,9 +267,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTracking HistoryTracking { get; set; }
 #endif
-        /// <summary>Indicates if history tracking is enabled for the field</summary>
+        /// <summary>Indicates whether change history recording is active for this field, controlling whether updates to the field&apos;s value are logged in the audit trail. Possible values: `true` — field value changes are captured and retained in history tracking; `false` — changes to this field are not recorded in the audit trail.</summary>
         public bool? HistoryTrackingEnabled { get; set; }
-        /// <summary>Id of the resource.</summary>
+        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -251,25 +277,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>JSON type of the field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? JsonType { get; set; }
-#nullable restore
-#else
-        public string JsonType { get; set; }
-#endif
-        /// <summary>List of layout associations for the field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchema_layout_associations>? LayoutAssociations { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchema_layout_associations> LayoutAssociations { get; set; }
-#endif
-        /// <summary>The length of the field</summary>
+        /// <summary>Represents the primitive JSON data type used to serialize this field&apos;s value in API request and response payloads. Possible values: `string` — a text value. `integer` — a whole number. `boolean` — a true or false value. `double` — a decimal number. `long` — a large integer. `jsonobject` — a structured object. `jsonarray` — an array of values.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaJsonType? JsonType { get; set; }
+        /// <summary>Represents the maximum number of characters or digits permitted for this field&apos;s value, defining the storage and input boundary enforced by the CRM when records are saved.</summary>
         public int? Length { get; set; }
-        /// <summary>The lookup property</summary>
+        /// <summary>Represents the lookup configuration that links this field to records in another CRM module, encapsulating the target module reference, the field&apos;s API name and display label within that module, and the unique identifier of the lookup relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup? Lookup { get; set; }
@@ -277,17 +289,33 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup Lookup { get; set; }
 #endif
-        /// <summary>Indicates if mass update is enabled for the field</summary>
-        public bool? MassUpdate { get; set; }
-        /// <summary>The modified_time property</summary>
+        /// <summary>Represents the source lookup field on which a mirror field is based, identifying the cross-module lookup relationship from which this field&apos;s value is derived.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupField? LookupField { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupField LookupField { get; set; }
 #endif
-        /// <summary>The multi_module_lookup property</summary>
+        /// <summary>Represents the field masking configuration that controls how the field&apos;s stored value is partially or fully hidden from users who do not have permission to view sensitive data, including rules for how many characters are revealed and which profiles can bypass masking.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMaskDetails? MaskDetails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMaskDetails MaskDetails { get; set; }
+#endif
+        /// <summary>Indicates whether this field can be updated simultaneously across multiple records using the mass update operation. Possible values: `true` — the field is available for mass update; `false` — the field cannot be modified through bulk update actions.</summary>
+        public bool? MassUpdate { get; set; }
+        /// <summary>Represents the date and time at which the field&apos;s definition or configuration was most recently changed in the CRM, recorded for audit and change-tracking purposes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaModifiedTime? ModifiedTime { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaModifiedTime ModifiedTime { get; set; }
+#endif
+        /// <summary>Represents the multi-module lookup configuration for fields that can reference records from more than one CRM module within a single lookup relationship, including the participating modules and dynamic addition settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiModuleLookup? MultiModuleLookup { get; set; }
@@ -303,7 +331,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookup Multiselectlookup { get; set; }
 #endif
-        /// <summary>Multi-user lookup details of the field</summary>
+        /// <summary>Represents the configuration of a multi-user lookup field, which enables associating a record with multiple CRM users through a linking module rather than a single user reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookup? Multiuserlookup { get; set; }
@@ -311,7 +339,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookup Multiuserlookup { get; set; }
 #endif
-        /// <summary>Operation types allowed for the field</summary>
+        /// <summary>Represents the set of operations permitted on this field, specifying independently whether values can be supplied or modified through API-based create/update calls and through the CRM web interface create/update forms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaOperationType? OperationType { get; set; }
@@ -319,7 +347,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaOperationType OperationType { get; set; }
 #endif
-        /// <summary>The parent_field property</summary>
+        /// <summary>Represents the parent field reference for nested or composite fields such as address components, identifying the field under which this field is grouped in the module layout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaParentField? ParentField { get; set; }
@@ -327,16 +355,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaParentField ParentField { get; set; }
 #endif
-        /// <summary>The pick_list_values property</summary>
+        /// <summary>Contains the list of selectable options defined for a picklist field, each representing a distinct choice that users can select when populating the field on a record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? PickListValues { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPickListValues? PickListValues { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch PickListValues { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPickListValues PickListValues { get; set; }
 #endif
-        /// <summary>Indicates if the pick list values are sorted lexically</summary>
+        /// <summary>Indicates whether the picklist options for this field are automatically sorted in alphabetical order for display, rather than in the administrator-defined sequence order. Possible values: `true` — options are sorted alphabetically; `false` — options appear in the order defined by the administrator.</summary>
         public bool? PickListValuesSortedLexically { get; set; }
+        /// <summary>Contains the list of portal user type permission configurations for this field, specifying which portal user type categories can view or edit the field&apos;s value when accessing records through a customer or partner portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPortalUserTypesItem>? PortalUserTypes { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPortalUserTypesItem> PortalUserTypes { get; set; }
+#endif
         /// <summary>The private property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -345,17 +381,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPrivate Private { get; set; }
 #endif
-        /// <summary>List of profiles associated with the field</summary>
+        /// <summary>Contains the list of profile-level permission entries for this field, each describing the access level a specific CRM profile has to view or edit the field&apos;s value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchema_profiles>? Profiles { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaProfilesItem>? Profiles { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchema_profiles> Profiles { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaProfilesItem> Profiles { get; set; }
 #endif
-        /// <summary>Indicates if the field is public</summary>
+        /// <summary>Indicates whether this field&apos;s value is accessible to external users or public-facing integrations. Possible values: `true` — the field is marked as public and may be exposed through portals or external APIs; `false` — the field is restricted to internal CRM users.</summary>
         public bool? Public { get; set; }
-        /// <summary>The quick sequence number of the field</summary>
+        /// <summary>Contains the query configuration applied to filter the selectable records in this field&apos;s lookup or dependent logic, using either custom query identifiers or field-level criteria expressions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaQueryDetails? QueryDetails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaQueryDetails QueryDetails { get; set; }
+#endif
+        /// <summary>Represents the ordinal position of this field in the quick-create form layout, determining the display order of fields when users create records through abbreviated entry panels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QuickSequenceNumber { get; set; }
@@ -363,7 +407,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string QuickSequenceNumber { get; set; }
 #endif
-        /// <summary>The range property</summary>
+        /// <summary>Represents the numeric range constraint applied to this field, specifying the minimum and maximum values that the field accepts when a record is saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRange? Range { get; set; }
@@ -371,9 +415,35 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRange Range { get; set; }
 #endif
-        /// <summary>Wether field is read only</summary>
+        /// <summary>Indicates whether this field is locked against user edits through the CRM interface and API, preventing any modification of its value after it has been set. Possible values: `true` — the field cannot be modified; `false` — the field is editable subject to applicable permissions.</summary>
         public bool? ReadOnly { get; set; }
-        /// <summary>The rollup_summary property</summary>
+        /// <summary>Reference to the field used to track record category changes over time in the timeline view. Only present when enable_record_category is true and a tracking field is configured.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryTrackingField? RecordCategoryTrackingField { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryTrackingField RecordCategoryTrackingField { get; set; }
+#endif
+        /// <summary>List of record category values defined for this picklist field. Only returned when enable_record_category is true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryValuesItem>? RecordCategoryValues { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryValuesItem> RecordCategoryValues { get; set; }
+#endif
+        /// <summary>Represents the source field from which this mirror or derived field obtains its value, establishing a read-through relationship where the field reflects data from another field in a related module.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaReferFromField? ReferFromField { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaReferFromField ReferFromField { get; set; }
+#endif
+        /// <summary>Indicates whether this field must contain a value before a record can be saved. Possible values: `true` — the field is mandatory and a value must be supplied; `false` — the field is optional.</summary>
+        public bool? Required { get; set; }
+        /// <summary>Represents the rollup summary configuration for this field, defining how aggregated values from related records in a child module are calculated and displayed in the parent record&apos;s field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary? RollupSummary { get; set; }
@@ -381,11 +451,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary RollupSummary { get; set; }
 #endif
-        /// <summary>Indicates if the field is searchable</summary>
+        /// <summary>Indicates whether this field&apos;s value can be used as a search term in the CRM&apos;s global and module-level search functionality. Possible values: `true` — the field is indexed for search and returns results when matched; `false` — the field is excluded from search indexing.</summary>
         public bool? Searchable { get; set; }
-        /// <summary>Indicates if the field is a separator</summary>
+        /// <summary>Indicates the numeric identifier of the section within the module layout that contains this field, used to group fields and determine their organizational placement on record forms.</summary>
+        public int? SectionId { get; set; }
+        /// <summary>Indicates whether this field functions as a visual separator element in the layout rather than a data-entry field. Possible values: `true` — the element is a layout separator that creates a visual break between sections or field groups; `false` — the element is a standard data field.</summary>
         public bool? Separator { get; set; }
-        /// <summary>Sharing properties of the field</summary>
+        /// <summary>Represents the ordinal position of this field within its containing section, controlling the order in which fields are rendered on record forms. Sequence numbering generally starts from one but may contain gaps.</summary>
+        public int? SequenceNumber { get; set; }
+        /// <summary>Contains the sharing configuration for this field, defining how its value participates in record-level sharing rules and whether specific sharing preferences are active.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingProperties? SharingProperties { get; set; }
@@ -393,11 +467,39 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingProperties SharingProperties { get; set; }
 #endif
-        /// <summary>Indicates if the field is sortable</summary>
+        /// <summary>Represents the internal numeric code that controls the display behavior or rendering mode of the field in the CRM UI, supplementing the data_type classification with additional display context.</summary>
+        public int? ShowType { get; set; }
+        /// <summary>Indicates whether records can be sorted by this field&apos;s value in list views, reports, and search results. Possible values: `true` — the field is available as a sort key; `false` — the field cannot be used for sorting.</summary>
         public bool? Sortable { get; set; }
-        /// <summary>Indicates if the field is system mandatory</summary>
+        /// <summary>Indicates whether this field is a static layout element with a fixed value that does not accept user input. Possible values: `true` — the field is a static display-only element; `false` — the field accepts dynamic user-entered or system-computed values.</summary>
+        public bool? StaticField { get; set; }
+        /// <summary>Contains the predefined option list for fields with a fixed set of choices, such as static picklists and radio button fields, where the available values are defined at layout configuration time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaStaticValues? StaticValues { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaStaticValues StaticValues { get; set; }
+#endif
+        /// <summary>Represents the subform configuration for fields that embed a related module&apos;s records inline within the parent module&apos;s layout, including the API name of the associated subform module and its subform tab identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSubform? Subform { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSubform Subform { get; set; }
+#endif
+        /// <summary>Contains the display configuration settings for this field when it appears within a subform section, such as custom column width and column pinning behavior.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSubformProperties? SubformProperties { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSubformProperties SubformProperties { get; set; }
+#endif
+        /// <summary>Indicates whether this field is enforced as mandatory by the CRM system itself, as opposed to being made required through an administrator&apos;s layout configuration. Possible values: `true` — the field is system-level mandatory and cannot be made optional; `false` — the mandatory status is controlled by layout configuration.</summary>
         public bool? SystemMandatory { get; set; }
-        /// <summary>Textarea field details</summary>
+        /// <summary>Contains the textarea-specific configuration for fields that render as multi-line text input areas, including details about the text area subtype.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTextarea? Textarea { get; set; }
@@ -405,7 +507,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTextarea Textarea { get; set; }
 #endif
-        /// <summary>The tooltip property</summary>
+        /// <summary>Represents the tooltip configuration attached to this field, defining contextual help text displayed to users when they hover over or focus on the field in a record form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTooltip? Tooltip { get; set; }
@@ -413,17 +515,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTooltip Tooltip { get; set; }
 #endif
-        /// <summary>Type of the field used or unused.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>The UI type of the field</summary>
+        /// <summary>Indicates the field&apos;s layout usage status, determining whether the field appears in layout sections. Possible values: `used` — the field is placed in at least one layout section. `unused` — the field exists in the module but has no assignment to any section. `all` — the field appears regardless of layout placement status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaType? Type { get; set; }
+        /// <summary>Represents the internal numeric code that identifies the UI component type used to render and interact with this field in the CRM interface, such as a text input, date picker, or reference selector.</summary>
         public int? UiType { get; set; }
-        /// <summary>Uniqueness details of the field</summary>
+        /// <summary>Represents the uniqueness constraint configuration for this field, controlling whether duplicate values are permitted across records in the module and whether the check is case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaUnique? Unique { get; set; }
@@ -431,7 +527,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaUnique Unique { get; set; }
 #endif
-        /// <summary>View type details of the field</summary>
+        /// <summary>Represents the Validation Rule configuration applied to this field, referencing the rule that governs acceptable input formats, value ranges, or logical conditions evaluated when a record is saved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaValidationRule? ValidationRule { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaValidationRule ValidationRule { get; set; }
+#endif
+        /// <summary>Represents the view-mode availability settings for this field, specifying in which CRM interaction contexts — such as record creation, editing, viewing, or quick-create — the field is shown or editable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaViewType? ViewType { get; set; }
@@ -439,11 +543,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaViewType ViewType { get; set; }
 #endif
-        /// <summary>Indicates if the field is a virtual field</summary>
+        /// <summary>Indicates whether this field is a computed or transient field that exists only at the API layer and does not map to a persistent database column. Possible values: `true` — the field is virtual and its value is derived at runtime; `false` — the field is backed by a database column.</summary>
         public bool? VirtualField { get; set; }
-        /// <summary>Indicates if the field is visible</summary>
+        /// <summary>Indicates whether this field is currently displayed in the module layout. Possible values: `true` — the field is shown in the layout and visible to users with appropriate permissions; `false` — the field is hidden from the layout.</summary>
         public bool? Visible { get; set; }
-        /// <summary>Wether webhook is enabled for the field</summary>
+        /// <summary>Indicates whether webhook notifications are triggered when this field&apos;s value changes on a record. Possible values: `true` — changes to this field trigger configured webhook endpoints; `false` — field changes do not initiate webhook notifications.</summary>
         public bool? Webhook { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -463,74 +567,96 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additional_column", n => { AdditionalColumn = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "additional_column", n => { AdditionalColumn = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAdditionalColumn>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAdditionalColumn.CreateFromDiscriminatorValue); } },
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAddress>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAddress.CreateFromDiscriminatorValue); } },
+                { "allowed_permissions_to_update", n => { AllowedPermissionsToUpdate = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAllowedPermissionsToUpdate>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAllowedPermissionsToUpdate.CreateFromDiscriminatorValue); } },
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "associated_module", n => { AssociatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModule>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModule.CreateFromDiscriminatorValue); } },
                 { "association_details", n => { AssociationDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociationDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociationDetails.CreateFromDiscriminatorValue); } },
                 { "auto_number", n => { AutoNumber = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumber>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumber.CreateFromDiscriminatorValue); } },
                 { "blueprint_supported", n => { BlueprintSupported = n.GetBoolValue(); } },
                 { "businesscard_supported", n => { BusinesscardSupported = n.GetBoolValue(); } },
-                { "child_fields", n => { ChildFields = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetIntValue(); } },
+                { "child_fields", n => { ChildFields = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaChildFields>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaChildFields.CreateFromDiscriminatorValue); } },
                 { "colour_code_enabled_by_system", n => { ColourCodeEnabledBySystem = n.GetBoolValue(); } },
                 { "column_name", n => { ColumnName = n.GetStringValue(); } },
                 { "convert_mapping", n => { ConvertMapping = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMapping>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMapping.CreateFromDiscriminatorValue); } },
-                { "created_source", n => { CreatedSource = n.GetStringValue(); } },
-                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "crypt", n => { Crypt = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCrypt>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCrypt.CreateFromDiscriminatorValue); } },
+                { "created_source", n => { CreatedSource = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCreatedSource>(); } },
+                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCreatedTime>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCreatedTime.CreateFromDiscriminatorValue); } },
+                { "crypt", n => { Crypt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCurrency>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCurrency.CreateFromDiscriminatorValue); } },
                 { "custom_field", n => { CustomField = n.GetBoolValue(); } },
-                { "customizable_properties", n => { CustomizableProperties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "customizable_properties", n => { CustomizableProperties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCustomizableProperties>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCustomizableProperties.CreateFromDiscriminatorValue); } },
                 { "data_type", n => { DataType = n.GetStringValue(); } },
-                { "decimal_place", n => { DecimalPlace = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "decimal_place", n => { DecimalPlace = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDecimalPlace>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDecimalPlace.CreateFromDiscriminatorValue); } },
+                { "default_value", n => { DefaultValue = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDefaultValue>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDefaultValue.CreateFromDiscriminatorValue); } },
                 { "display_field", n => { DisplayField = n.GetBoolValue(); } },
-                { "display_format", n => { DisplayFormat = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "display_format", n => { DisplayFormat = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormat>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormat.CreateFromDiscriminatorValue); } },
                 { "display_format_properties", n => { DisplayFormatProperties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormatProperties>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormatProperties.CreateFromDiscriminatorValue); } },
                 { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
                 { "display_type", n => { DisplayType = n.GetIntValue(); } },
-                { "email_parser", n => { EmailParser = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaEmailParser>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaEmailParser.CreateFromDiscriminatorValue); } },
+                { "element_type", n => { ElementType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaElementType>(); } },
                 { "enable_colour_code", n => { EnableColourCode = n.GetBoolValue(); } },
-                { "external", n => { External = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaExternal>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaExternal.CreateFromDiscriminatorValue); } },
+                { "enable_record_category", n => { EnableRecordCategory = n.GetBoolValue(); } },
+                { "enable_transition_for_record_category", n => { EnableTransitionForRecordCategory = n.GetBoolValue(); } },
+                { "external", n => { External = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "field_label", n => { FieldLabel = n.GetStringValue(); } },
                 { "field_read_only", n => { FieldReadOnly = n.GetBoolValue(); } },
+                { "file_upolad_optionlist", n => { FileUpoladOptionlist = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFileUpoladOptionlist>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFileUpoladOptionlist.CreateFromDiscriminatorValue); } },
                 { "filterable", n => { Filterable = n.GetBoolValue(); } },
                 { "formula", n => { Formula = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormula>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormula.CreateFromDiscriminatorValue); } },
+                { "global_map_dependency", n => { GlobalMapDependency = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaGlobalMapDependency>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaGlobalMapDependency.CreateFromDiscriminatorValue); } },
                 { "global_picklist", n => { GlobalPicklist = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaGlobalPicklist>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaGlobalPicklist.CreateFromDiscriminatorValue); } },
                 { "hipaa_compliance", n => { HipaaCompliance = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHipaaCompliance>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHipaaCompliance.CreateFromDiscriminatorValue); } },
                 { "hipaa_compliance_enabled", n => { HipaaComplianceEnabled = n.GetBoolValue(); } },
                 { "history_tracking", n => { HistoryTracking = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTracking>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTracking.CreateFromDiscriminatorValue); } },
                 { "history_tracking_enabled", n => { HistoryTrackingEnabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "json_type", n => { JsonType = n.GetStringValue(); } },
-                { "layout_associations", n => { LayoutAssociations = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchema_layout_associations>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchema_layout_associations.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "json_type", n => { JsonType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaJsonType>(); } },
                 { "length", n => { Length = n.GetIntValue(); } },
                 { "lookup", n => { Lookup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup.CreateFromDiscriminatorValue); } },
+                { "lookup_field", n => { LookupField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupField>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupField.CreateFromDiscriminatorValue); } },
+                { "mask_details", n => { MaskDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMaskDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMaskDetails.CreateFromDiscriminatorValue); } },
                 { "mass_update", n => { MassUpdate = n.GetBoolValue(); } },
-                { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaModifiedTime>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaModifiedTime.CreateFromDiscriminatorValue); } },
                 { "multi_module_lookup", n => { MultiModuleLookup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiModuleLookup>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiModuleLookup.CreateFromDiscriminatorValue); } },
                 { "multiselectlookup", n => { Multiselectlookup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookup>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookup.CreateFromDiscriminatorValue); } },
                 { "multiuserlookup", n => { Multiuserlookup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookup>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookup.CreateFromDiscriminatorValue); } },
                 { "operation_type", n => { OperationType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaOperationType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaOperationType.CreateFromDiscriminatorValue); } },
                 { "parent_field", n => { ParentField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaParentField>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaParentField.CreateFromDiscriminatorValue); } },
-                { "pick_list_values", n => { PickListValues = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "pick_list_values", n => { PickListValues = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPickListValues>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPickListValues.CreateFromDiscriminatorValue); } },
                 { "pick_list_values_sorted_lexically", n => { PickListValuesSortedLexically = n.GetBoolValue(); } },
+                { "portal_user_types", n => { PortalUserTypes = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPortalUserTypesItem>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPortalUserTypesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "private", n => { Private = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPrivate>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPrivate.CreateFromDiscriminatorValue); } },
-                { "profiles", n => { Profiles = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchema_profiles>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchema_profiles.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "profiles", n => { Profiles = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaProfilesItem>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaProfilesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "public", n => { Public = n.GetBoolValue(); } },
+                { "query_details", n => { QueryDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaQueryDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaQueryDetails.CreateFromDiscriminatorValue); } },
                 { "quick_sequence_number", n => { QuickSequenceNumber = n.GetStringValue(); } },
                 { "range", n => { Range = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRange>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRange.CreateFromDiscriminatorValue); } },
                 { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
+                { "record_category_tracking_field", n => { RecordCategoryTrackingField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryTrackingField>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryTrackingField.CreateFromDiscriminatorValue); } },
+                { "record_category_values", n => { RecordCategoryValues = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryValuesItem>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "refer_from_field", n => { ReferFromField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaReferFromField>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaReferFromField.CreateFromDiscriminatorValue); } },
+                { "required", n => { Required = n.GetBoolValue(); } },
                 { "rollup_summary", n => { RollupSummary = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary.CreateFromDiscriminatorValue); } },
                 { "searchable", n => { Searchable = n.GetBoolValue(); } },
+                { "section_id", n => { SectionId = n.GetIntValue(); } },
                 { "separator", n => { Separator = n.GetBoolValue(); } },
+                { "sequence_number", n => { SequenceNumber = n.GetIntValue(); } },
                 { "sharing_properties", n => { SharingProperties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingProperties>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingProperties.CreateFromDiscriminatorValue); } },
+                { "show_type", n => { ShowType = n.GetIntValue(); } },
                 { "sortable", n => { Sortable = n.GetBoolValue(); } },
+                { "static_field", n => { StaticField = n.GetBoolValue(); } },
+                { "static_values", n => { StaticValues = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaStaticValues>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaStaticValues.CreateFromDiscriminatorValue); } },
+                { "subform", n => { Subform = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSubform>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSubform.CreateFromDiscriminatorValue); } },
+                { "subform_properties", n => { SubformProperties = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSubformProperties>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSubformProperties.CreateFromDiscriminatorValue); } },
                 { "system_mandatory", n => { SystemMandatory = n.GetBoolValue(); } },
                 { "textarea", n => { Textarea = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTextarea>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTextarea.CreateFromDiscriminatorValue); } },
                 { "tooltip", n => { Tooltip = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTooltip>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTooltip.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaType>(); } },
                 { "ui_type", n => { UiType = n.GetIntValue(); } },
                 { "unique", n => { Unique = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaUnique>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaUnique.CreateFromDiscriminatorValue); } },
+                { "validation_rule", n => { ValidationRule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaValidationRule>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaValidationRule.CreateFromDiscriminatorValue); } },
                 { "view_type", n => { ViewType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaViewType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaViewType.CreateFromDiscriminatorValue); } },
                 { "virtual_field", n => { VirtualField = n.GetBoolValue(); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
@@ -544,74 +670,96 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("additional_column", AdditionalColumn);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAdditionalColumn>("additional_column", AdditionalColumn);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAddress>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAllowedPermissionsToUpdate>("allowed_permissions_to_update", AllowedPermissionsToUpdate);
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModule>("associated_module", AssociatedModule);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociationDetails>("association_details", AssociationDetails);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumber>("auto_number", AutoNumber);
             writer.WriteBoolValue("blueprint_supported", BlueprintSupported);
             writer.WriteBoolValue("businesscard_supported", BusinesscardSupported);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("child_fields", ChildFields);
+            writer.WriteIntValue("category", Category);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaChildFields>("child_fields", ChildFields);
             writer.WriteBoolValue("colour_code_enabled_by_system", ColourCodeEnabledBySystem);
             writer.WriteStringValue("column_name", ColumnName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMapping>("convert_mapping", ConvertMapping);
-            writer.WriteStringValue("created_source", CreatedSource);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCrypt>("crypt", Crypt);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCreatedSource>("created_source", CreatedSource);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCreatedTime>("created_time", CreatedTime);
+            writer.WriteObjectValue<UntypedNode>("crypt", Crypt);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCurrency>("currency", Currency);
             writer.WriteBoolValue("custom_field", CustomField);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("customizable_properties", CustomizableProperties);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCustomizableProperties>("customizable_properties", CustomizableProperties);
             writer.WriteStringValue("data_type", DataType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("decimal_place", DecimalPlace);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDecimalPlace>("decimal_place", DecimalPlace);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDefaultValue>("default_value", DefaultValue);
             writer.WriteBoolValue("display_field", DisplayField);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("display_format", DisplayFormat);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormat>("display_format", DisplayFormat);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormatProperties>("display_format_properties", DisplayFormatProperties);
             writer.WriteStringValue("display_label", DisplayLabel);
             writer.WriteIntValue("display_type", DisplayType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaEmailParser>("email_parser", EmailParser);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaElementType>("element_type", ElementType);
             writer.WriteBoolValue("enable_colour_code", EnableColourCode);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaExternal>("external", External);
+            writer.WriteBoolValue("enable_record_category", EnableRecordCategory);
+            writer.WriteBoolValue("enable_transition_for_record_category", EnableTransitionForRecordCategory);
+            writer.WriteObjectValue<UntypedNode>("external", External);
             writer.WriteStringValue("field_label", FieldLabel);
             writer.WriteBoolValue("field_read_only", FieldReadOnly);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFileUpoladOptionlist>("file_upolad_optionlist", FileUpoladOptionlist);
             writer.WriteBoolValue("filterable", Filterable);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormula>("formula", Formula);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaGlobalMapDependency>("global_map_dependency", GlobalMapDependency);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaGlobalPicklist>("global_picklist", GlobalPicklist);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHipaaCompliance>("hipaa_compliance", HipaaCompliance);
             writer.WriteBoolValue("hipaa_compliance_enabled", HipaaComplianceEnabled);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTracking>("history_tracking", HistoryTracking);
             writer.WriteBoolValue("history_tracking_enabled", HistoryTrackingEnabled);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("json_type", JsonType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchema_layout_associations>("layout_associations", LayoutAssociations);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaJsonType>("json_type", JsonType);
             writer.WriteIntValue("length", Length);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup>("lookup", Lookup);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupField>("lookup_field", LookupField);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMaskDetails>("mask_details", MaskDetails);
             writer.WriteBoolValue("mass_update", MassUpdate);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("modified_time", ModifiedTime);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaModifiedTime>("modified_time", ModifiedTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiModuleLookup>("multi_module_lookup", MultiModuleLookup);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookup>("multiselectlookup", Multiselectlookup);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookup>("multiuserlookup", Multiuserlookup);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaOperationType>("operation_type", OperationType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaParentField>("parent_field", ParentField);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("pick_list_values", PickListValues);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPickListValues>("pick_list_values", PickListValues);
             writer.WriteBoolValue("pick_list_values_sorted_lexically", PickListValuesSortedLexically);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPortalUserTypesItem>("portal_user_types", PortalUserTypes);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPrivate>("private", Private);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchema_profiles>("profiles", Profiles);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaProfilesItem>("profiles", Profiles);
             writer.WriteBoolValue("public", Public);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaQueryDetails>("query_details", QueryDetails);
             writer.WriteStringValue("quick_sequence_number", QuickSequenceNumber);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRange>("range", Range);
             writer.WriteBoolValue("read_only", ReadOnly);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryTrackingField>("record_category_tracking_field", RecordCategoryTrackingField);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryValuesItem>("record_category_values", RecordCategoryValues);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaReferFromField>("refer_from_field", ReferFromField);
+            writer.WriteBoolValue("required", Required);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary>("rollup_summary", RollupSummary);
             writer.WriteBoolValue("searchable", Searchable);
+            writer.WriteIntValue("section_id", SectionId);
             writer.WriteBoolValue("separator", Separator);
+            writer.WriteIntValue("sequence_number", SequenceNumber);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingProperties>("sharing_properties", SharingProperties);
+            writer.WriteIntValue("show_type", ShowType);
             writer.WriteBoolValue("sortable", Sortable);
+            writer.WriteBoolValue("static_field", StaticField);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaStaticValues>("static_values", StaticValues);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSubform>("subform", Subform);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSubformProperties>("subform_properties", SubformProperties);
             writer.WriteBoolValue("system_mandatory", SystemMandatory);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTextarea>("textarea", Textarea);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTooltip>("tooltip", Tooltip);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaType>("type", Type);
             writer.WriteIntValue("ui_type", UiType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaUnique>("unique", Unique);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaValidationRule>("validation_rule", ValidationRule);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaViewType>("view_type", ViewType);
             writer.WriteBoolValue("virtual_field", VirtualField);
             writer.WriteBoolValue("visible", Visible);

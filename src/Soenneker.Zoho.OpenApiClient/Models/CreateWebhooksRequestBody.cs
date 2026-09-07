@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body structure for creating new webhooks, including an array of webhook objects with all necessary details.
+    /// Represents the request body wrapper for creating a webhook. The webhooks array must contain exactly one webhook object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateWebhooksRequestBody : IParsable
     {
-        /// <summary>Root element (Required)</summary>
+        /// <summary>Represents the list containing exactly one webhook object to create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponse>? Webhooks { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInput>? Webhooks { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponse> Webhooks { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInput> Webhooks { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "webhooks", n => { Webhooks = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponse>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponse.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "webhooks", n => { Webhooks = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInput>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInput.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponse>("webhooks", Webhooks);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInput>("webhooks", Webhooks);
         }
     }
 }

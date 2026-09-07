@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// User&apos;s customize information
+    /// Specify user interface customization preferences for the user&apos;s account.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserDetailsCustomizeInfo : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates whether notes description is enabled</summary>
+        /// <summary>Specify whether notes should be displayed in descending order for the user.\n\nPossible values:\ntrue - Notes are displayed in descending order.\nfalse - Notes are not displayed in descending order.</summary>
         public bool? NotesDesc { get; set; }
-        /// <summary>Indicates whether detail view is shown</summary>
+        /// <summary>Specify whether the detail view panel is displayed for the user.\n\nPossible values:\ntrue - The detail view panel is displayed.\nfalse - The detail view panel is not displayed.</summary>
         public bool? ShowDetailView { get; set; }
-        /// <summary>Indicates whether left panel is shown</summary>
+        /// <summary>Specify whether the left panel is displayed in the user interface.\n\nPossible values:\ntrue - The left panel is shown.\nfalse - The left panel is hidden.</summary>
         public bool? ShowLeftPanel { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCustomizeInfo"/> and sets the default values.

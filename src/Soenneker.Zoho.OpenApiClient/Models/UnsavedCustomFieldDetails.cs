@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains detailed information about custom fields that could not be saved during an operation.
+    /// Represents the details of a custom field that could not be saved during the operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnsavedCustomFieldDetails : IParsable
     {
-        /// <summary>&quot;Field: field_label&quot;</summary>
+        /// <summary>Represents the display name of the custom field that could not be saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FieldLabel { get; set; }

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_update
     public partial class Mass_updateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.mass_update.item collection</summary>
-        /// <param name="position">&quot;Specifies the CRM module for the mass update operation. Note: Module names are case-sensitive.&quot;</param>
+        /// <param name="position">Specify the API name of the CRM module on which the mass update operation must be performed. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to fetch the valid API name of the module. </param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Mass_update.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Mass_update.Item.WithModuleItemRequestBuilder this[string position]
         {

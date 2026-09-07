@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Specify the module/field to which the workflow rule applies
+    /// Represents a CRM module or field reference using its API name and unique numeric ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ModuleOrFieldNestedSchema : IParsable
     {
-        /// <summary>Specify the api name of the module/field</summary>
+        /// <summary>Represents the API name of the module or field, such as **Leads**, **Contacts**, or a custom field API name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>Specify the unique id of the module/field</summary>
+        /// <summary>Represents the unique numeric ID of the module or field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

@@ -9,14 +9,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// No permission to access the feature/module
+    /// Represents the error response returned when the authenticated user does not have permission to access the requested feature or module.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NoPermissionSchema : ApiException, IParsable
     {
-        /// <summary>Error code</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema_code? Code { get; set; }
-        /// <summary>List of permissions needed to access the feature</summary>
+        /// <summary>Represents the error code that identifies the specific error condition.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchemaCode? Code { get; set; }
+        /// <summary>Represents error details. For NO_PERMISSION, contains the list of permissions needed. For FEATURE_NOT_SUPPORTED, empty object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchemaDetails? Details { get; set; }
@@ -25,11 +25,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchemaDetails Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
-        /// <summary>Error message</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema_message? MessageEscaped { get; set; }
-        /// <summary>Error status</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema_status? Status { get; set; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>Represents the error message describing the issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,10 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchemaCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchemaDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema_message>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema_status>(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -61,10 +67,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchemaCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchemaDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema_message>("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema_status>("status", Status);
+            writer.WriteStringValue("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

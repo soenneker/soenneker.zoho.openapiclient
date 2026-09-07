@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// The `info` property.
+    /// Represents the pagination details for the response, including the current page, per-page count, total count, and whether more records are available.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InfoSchema : IParsable
     {
-        /// <summary>The `count` property.</summary>
+        /// <summary>Represents the total number of records returned in the current page.</summary>
         public int? Count { get; set; }
-        /// <summary>The `more_records` property.</summary>
+        /// <summary>Indicates whether more records are available in subsequent pages.</summary>
         public bool? MoreRecords { get; set; }
-        /// <summary>The `page` property.</summary>
+        /// <summary>Represents the current page number of the paginated results.</summary>
         public int? Page { get; set; }
-        /// <summary>The `per_page` property.</summary>
+        /// <summary>Represents the number of records returned per page.</summary>
         public int? PerPage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

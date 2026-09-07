@@ -9,21 +9,33 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema returned when a user lacks the necessary permissions to perform a record operation.
+    /// Represents the response schema for the record permission operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordPermissionResponse : ApiException, IParsable
     {
-        /// <summary>List of error objects indicating insufficient user permissions.</summary>
+        /// <summary>Represents the error code returned for the permission-denied failure.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode? Code { get; set; }
+        /// <summary>Contains additional context about the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse_data>? DataEscaped { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponseDetails? Details { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse_data> DataEscaped { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponseDetails Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>Represents the error message describing why the operation failed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { DataEscaped = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse_data>(global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse_data.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>(); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponseDetails.CreateFromDiscriminatorValue); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -52,7 +67,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse_data>("data", DataEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>("code", Code);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponseDetails>("details", Details);
+            writer.WriteStringValue("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

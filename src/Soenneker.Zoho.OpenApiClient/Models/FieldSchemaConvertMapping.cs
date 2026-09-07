@@ -8,34 +8,42 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Convert mapping details of the field
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingLeadsFieldConvertMapping"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingQuotesFieldConvertMapping"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingSalesOrdersFieldConvertMapping"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaConvertMapping : IParsable
+    public partial class FieldSchemaConvertMapping : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The Accounts property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingLeadsFieldConvertMapping"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingLeadsFieldConvertMapping? FieldSchemaConvertMappingLeadsFieldConvertMapping { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingLeadsFieldConvertMapping FieldSchemaConvertMappingLeadsFieldConvertMapping { get; set; }
 #endif
-        /// <summary>The Contacts property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingMember1? FieldSchemaConvertMappingMember1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingMember1 FieldSchemaConvertMappingMember1 { get; set; }
 #endif
-        /// <summary>The Deals property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingQuotesFieldConvertMapping"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Deals { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingQuotesFieldConvertMapping? FieldSchemaConvertMappingQuotesFieldConvertMapping { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Deals { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingQuotesFieldConvertMapping FieldSchemaConvertMappingQuotesFieldConvertMapping { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingSalesOrdersFieldConvertMapping"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingSalesOrdersFieldConvertMapping? FieldSchemaConvertMappingSalesOrdersFieldConvertMapping { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingSalesOrdersFieldConvertMapping FieldSchemaConvertMappingSalesOrdersFieldConvertMapping { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +53,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMapping CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMapping();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMapping();
+            if("FieldSchemaConvertMappingLeadsFieldConvertMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FieldSchemaConvertMappingLeadsFieldConvertMapping = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingLeadsFieldConvertMapping();
+            }
+            else if("FieldSchemaConvertMappingQuotesFieldConvertMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FieldSchemaConvertMappingQuotesFieldConvertMapping = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingQuotesFieldConvertMapping();
+            }
+            else if("FieldSchemaConvertMappingSalesOrdersFieldConvertMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FieldSchemaConvertMappingSalesOrdersFieldConvertMapping = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingSalesOrdersFieldConvertMapping();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,12 +75,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(FieldSchemaConvertMappingLeadsFieldConvertMapping != null)
             {
-                { "Accounts", n => { Accounts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "Contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "Deals", n => { Deals = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-            };
+                return FieldSchemaConvertMappingLeadsFieldConvertMapping.GetFieldDeserializers();
+            }
+            else if(FieldSchemaConvertMappingMember1 != null)
+            {
+                return FieldSchemaConvertMappingMember1.GetFieldDeserializers();
+            }
+            else if(FieldSchemaConvertMappingQuotesFieldConvertMapping != null)
+            {
+                return FieldSchemaConvertMappingQuotesFieldConvertMapping.GetFieldDeserializers();
+            }
+            else if(FieldSchemaConvertMappingSalesOrdersFieldConvertMapping != null)
+            {
+                return FieldSchemaConvertMappingSalesOrdersFieldConvertMapping.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -67,9 +100,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Accounts", Accounts);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Contacts", Contacts);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Deals", Deals);
+            if(FieldSchemaConvertMappingLeadsFieldConvertMapping != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingLeadsFieldConvertMapping>(null, FieldSchemaConvertMappingLeadsFieldConvertMapping);
+            }
+            else if(FieldSchemaConvertMappingMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingMember1>(null, FieldSchemaConvertMappingMember1);
+            }
+            else if(FieldSchemaConvertMappingQuotesFieldConvertMapping != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingQuotesFieldConvertMapping>(null, FieldSchemaConvertMappingQuotesFieldConvertMapping);
+            }
+            else if(FieldSchemaConvertMappingSalesOrdersFieldConvertMapping != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaConvertMappingSalesOrdersFieldConvertMapping>(null, FieldSchemaConvertMappingSalesOrdersFieldConvertMapping);
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Send_mail.Item
     public partial class WithModuleNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.send_mail.item.item collection</summary>
-        /// <param name="position">The unique ID of the record</param>
+        /// <param name="position">Specify the unique ID of the record to send the email to.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Send_mail.Item.Item.ModuleNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Send_mail.Item.Item.ModuleNameItemRequestBuilder this[string position]
         {

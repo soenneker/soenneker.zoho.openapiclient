@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Successful API operation completed
+    /// Represents the response body for a successful fiscal year settings update.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateFiscalYearResponse : IParsable
     {
-        /// <summary>Nested schema for fiscal_year</summary>
+        /// <summary>Represents the response body for a successful fiscal year settings update, including the status code, message, and updated record details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearNested1? FiscalYear { get; set; }

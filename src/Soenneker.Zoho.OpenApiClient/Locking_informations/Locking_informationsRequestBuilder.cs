@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations
     public partial class Locking_informationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.locking_informations.item collection</summary>
-        /// <param name="position">The API name of the module to which the locked record belongs.</param>
+        /// <param name="position">The API name of the module to which the locked record belongs. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module ID and API name.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.WithModuleNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.WithModuleNameItemRequestBuilder this[string position]
         {

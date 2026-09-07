@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// success response when tags merged successfully
+    /// Success response when tags are merged successfully.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostmergeResponse200 : IParsable
     {
-        /// <summary>&quot;Field: tags&quot;</summary>
+        /// <summary>Array containing the merged tag details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsNested2>? Tags { get; set; }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response output highlighting associated places compiled upon DELETE request execution on outlined setting routes.
+    /// Response containing the list of places where unsubscribe links are currently associated in the Zoho CRM organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FetchAssociatedPlacesResponse : IParsable
     {
-        /// <summary>&quot;Field: associations&quot;</summary>
+        /// <summary>Array of association records showing where unsubscribe links are being used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationRecord>? Associations { get; set; }

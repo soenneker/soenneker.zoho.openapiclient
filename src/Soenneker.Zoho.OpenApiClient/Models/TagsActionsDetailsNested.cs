@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested schema for details
+    /// Nested schema for operation details in responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TagsActionsDetailsNested : IParsable
     {
-        /// <summary>&quot;Field: affected_data&quot;</summary>
+        /// <summary>Affected data in the operation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? AffectedData { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public UntypedNode AffectedData { get; set; }
 #endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Unique identifier of the record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -37,7 +37,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ModifiedTime { get; set; }
 #endif
-        /// <summary>&quot;Field: tags&quot;</summary>
+        /// <summary>Tags that were not added to the record</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested1>? NotAddedTags { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested1> NotAddedTags { get; set; }
+#endif
+        /// <summary>Tags associated with the record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested1>? Tags { get; set; }
@@ -66,6 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "affected_data", n => { AffectedData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modifiedTime", n => { ModifiedTime = n.GetStringValue(); } },
+                { "not_added_tags", n => { NotAddedTags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested1>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested1.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested1>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested1.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -79,6 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("affected_data", AffectedData);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("modifiedTime", ModifiedTime);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested1>("not_added_tags", NotAddedTags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested1>("tags", Tags);
         }
     }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload containing an array of related list count specifications.
+    /// Represents the request payload for counting related records. Contains an array of related list count specifications, each identifying a related list and optional filtering criteria.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetRelatedRecordsCountRequest : IParsable
     {
-        /// <summary>Array of related list count requests. Each item specifies a related list and optional filtering criteria.</summary>
+        /// <summary>Represents the array of related list count request objects. Each object specifies a related list to query and optional filtering criteria to apply before counting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountItem>? GetRelatedRecordsCount { get; set; }

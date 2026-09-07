@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.users_territories.users.item collection</summary>
-        /// <param name="position">The ID of the user</param>
+        /// <param name="position">Specify the unique ID of the user. Valid user IDs can be retrieved using the [Get Users](users.json#$.paths./{users}.get) API.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.WithUserItemRequestBuilder this[string position]
         {

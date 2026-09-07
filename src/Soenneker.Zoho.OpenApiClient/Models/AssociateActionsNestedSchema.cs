@@ -8,20 +8,30 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// An array of action objects
+    /// Represents an associate action that references a pre-configured action entity by its unique ID. Use the appropriate entity API to retrieve valid IDs.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AssociateActionsNestedSchema : IParsable
+    public partial class AssociateActionsNestedSchema : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Module Details</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates that this action should be removed from the workflow rule when set in a PUT request. Provide a null value to signal deletion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchemaDetails? Details { get; set; }
+        public UntypedNode? Delete { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchemaDetails Details { get; set; }
+        public UntypedNode Delete { get; set; }
 #endif
-        /// <summary>Specify the unique id of any associate action (Required)</summary>
+        /// <summary>Represents the read-only details of the associated email notification. Returned in GET responses and not required in POST or PUT requests.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaDetails? Details { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaDetails Details { get; set; }
+#endif
+        /// <summary>Represents the unique ID of the email notification. Required when associating an existing email notification with the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Specify the action name</summary>
+        /// <summary>Represents the display name of the EmailNotificationAssociate action. Returned in GET responses and derived from the associated action configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -37,16 +47,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The related_details property</summary>
+        /// <summary>Represents the optional related configuration details for email notification actions, including best-time delivery settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema? RelatedDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationRelatedDetailsSchema? RelatedDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema RelatedDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationRelatedDetailsSchema RelatedDetails { get; set; }
 #endif
-        /// <summary>Specify the type of action (Required)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchema_type? Type { get; set; }
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchema"/> and sets the default values.
+        /// </summary>
+        public AssociateActionsNestedSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,11 +88,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchemaDetails.CreateFromDiscriminatorValue); } },
+                { "_delete", n => { Delete = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "related_details", n => { RelatedDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchema_type>(); } },
+                { "related_details", n => { RelatedDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationRelatedDetailsSchema>(global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationRelatedDetailsSchema.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -79,11 +103,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchemaDetails>("details", Details);
+            writer.WriteObjectValue<UntypedNode>("_delete", Delete);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaDetails>("details", Details);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema>("related_details", RelatedDetails);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AssociateActionsNestedSchema_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationRelatedDetailsSchema>("related_details", RelatedDetails);
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

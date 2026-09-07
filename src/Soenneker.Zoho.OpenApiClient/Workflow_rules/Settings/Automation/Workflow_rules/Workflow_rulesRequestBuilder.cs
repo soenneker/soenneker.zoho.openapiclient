@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             get => new global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.workflow_rules.settings.automation.workflow_rules.item collection</summary>
-        /// <param name="position">Single ID of a workflow rule.</param>
+        /// <param name="position">Represents the unique 19-digit numeric ID of the workflow rule. Obtain valid IDs from the List Workflow Rules endpoint.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Item.ItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Item.ItemRequestBuilder this[string position]
         {
@@ -41,7 +41,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Workflow_rulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_rules/settings/automation/workflow_rules?ids={ids}{&execute_on*,filter*,include_inner_details*,module*,page*,per_page*,sort_by*,sort_order*,status_active*}", pathParameters)
+        public Workflow_rulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_rules/settings/automation/workflow_rules{?execute_on*,filter*,include_inner_details*,module*,page*,per_page*,sort_by*,sort_order*,status_active*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,11 +49,11 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Workflow_rulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_rules/settings/automation/workflow_rules?ids={ids}{&execute_on*,filter*,include_inner_details*,module*,page*,per_page*,sort_by*,sort_order*,status_active*}", rawUrl)
+        public Workflow_rulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_rules/settings/automation/workflow_rules{?execute_on*,filter*,include_inner_details*,module*,page*,per_page*,sort_by*,sort_order*,status_active*}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete Multiple Workflow Rules
+        /// To delete one or more workflow rules from your Zoho CRM organization. You can delete up to ten workflow rules in a single API call; when some deletions succeed and others fail, the API responds with a 207 Multi-Status.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSuccessSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSuccessSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSuccessSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the list of Workflow rules
+        /// To retrieve the list of workflow rules configured in your Zoho CRM organization, including their trigger conditions, module associations, and action configurations. By default, each rule includes only summary-level data; set the `include_inner_details` parameter to `true` to include full condition criteria and action configurations in the response. Results are paginated and can be filtered by module, activation status, trigger type, or rule name.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGetResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,13 +101,13 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGetResponseSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGetResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To configure a Workflow rule
+        /// To create a workflow rule for a specified module in your Zoho CRM organization. Each request accepts exactly one rule, defined within the workflow_rules array.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSuccessSchema"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body wrapper for creating a new workflow rule. Contains a single-element array with the workflow rule configuration.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,19 +122,19 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSuccessSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSuccessSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an existing workflow rule with partial data.
+        /// To update one or more existing workflow rules in your Zoho CRM organization, submit a `workflow_rules` array in the request body with each entry containing the rule&apos;s `id`. You can modify a rule&apos;s name, description, criteria, conditions, actions, and active status. Triggers may be updated only within the same trigger type — changing from one trigger category to another (for example, from a Record Action trigger to a Score-based trigger) is not supported. The module associated with a workflow rule cannot be changed after creation. To remove an existing condition or action, include it in the request with `_delete` set to `null`. Use the [Get Workflow Rules API](workflow_rules.yaml#$.paths./settings/automation/workflow_rules.get) to retrieve rule IDs before calling this operation.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSuccessSchema"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body wrapper for updating an existing workflow rule. Contains a single-element array with the updated rule configuration.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesUpdateWorkflowRule400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesUpdateWorkflowRule400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,13 +149,13 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesUpdateWorkflowRule400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesUpdateWorkflowRule400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSuccessSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSuccessSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Multiple Workflow Rules
+        /// To delete one or more workflow rules from your Zoho CRM organization. You can delete up to ten workflow rules in a single API call; when some deletions succeed and others fail, the API responds with a 207 Multi-Status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -174,7 +174,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return requestInfo;
         }
         /// <summary>
-        /// To retrieve the list of Workflow rules
+        /// To retrieve the list of workflow rules configured in your Zoho CRM organization, including their trigger conditions, module associations, and action configurations. By default, each rule includes only summary-level data; set the `include_inner_details` parameter to `true` to include full condition criteria and action configurations in the response. Results are paginated and can be filtered by module, activation status, trigger type, or rule name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -187,16 +187,16 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Workflow_rulesRequestBuilder.Workflow_rulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/workflow_rules/settings/automation/workflow_rules{?execute_on*,filter*,include_inner_details*,module*,page*,per_page*,sort_by*,sort_order*,status_active*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// To configure a Workflow rule
+        /// To create a workflow rule for a specified module in your Zoho CRM organization. Each request accepts exactly one rule, defined within the workflow_rules array.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body wrapper for creating a new workflow rule. Contains a single-element array with the workflow rule configuration.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -208,17 +208,17 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/workflow_rules/settings/automation/workflow_rules", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
-        /// Updates an existing workflow rule with partial data.
+        /// To update one or more existing workflow rules in your Zoho CRM organization, submit a `workflow_rules` array in the request body with each entry containing the rule&apos;s `id`. You can modify a rule&apos;s name, description, criteria, conditions, actions, and active status. Triggers may be updated only within the same trigger type — changing from one trigger category to another (for example, from a Record Action trigger to a Score-based trigger) is not supported. The module associated with a workflow rule cannot be changed after creation. To remove an existing condition or action, include it in the request with `_delete` set to `null`. Use the [Get Workflow Rules API](workflow_rules.yaml#$.paths./settings/automation/workflow_rules.get) to retrieve rule IDs before calling this operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body wrapper for updating an existing workflow rule. Contains a single-element array with the updated rule configuration.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -230,7 +230,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/workflow_rules/settings/automation/workflow_rules", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -246,12 +246,12 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return new global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Workflow_rulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete Multiple Workflow Rules
+        /// To delete one or more workflow rules from your Zoho CRM organization. You can delete up to ten workflow rules in a single API call; when some deletions succeed and others fail, the API responds with a 207 Multi-Status.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workflow_rulesRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Unique IDs of Workflow rule(s). Pass up to ten Workflow rule IDs, in a comma separated format.</summary>
+            /// <summary>Specifies one or more workflow rule IDs to filter the results. Provide multiple IDs as comma-separated values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
@@ -263,12 +263,12 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
 #endif
         }
         /// <summary>
-        /// To retrieve the list of Workflow rules
+        /// To retrieve the list of workflow rules configured in your Zoho CRM organization, including their trigger conditions, module associations, and action configurations. By default, each rule includes only summary-level data; set the `include_inner_details` parameter to `true` to include full condition criteria and action configurations in the response. Results are paginated and can be filtered by module, activation status, trigger type, or rule name.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workflow_rulesRequestBuilderGetQueryParameters 
         {
-            /// <summary>To filter the Workflow rules based on the record action that triggers them</summary>
+            /// <summary>Specifies the trigger type to filter workflow rules by, such as create, edit, or delete events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("execute_on")]
@@ -278,7 +278,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             [QueryParameter("execute_on")]
             public string ExecuteOn { get; set; }
 #endif
-            /// <summary>To filter the Workflow rules by their name</summary>
+            /// <summary>Specifies a JSON filter expression to search workflow rules by name. Supports only contains-type matching on the rule name field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]
@@ -288,10 +288,10 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             [QueryParameter("filter")]
             public string Filter { get; set; }
 #endif
-            /// <summary>To include the inner details of the Workflow rules in the response</summary>
+            /// <summary>When set to true, includes full condition details, criteria, and action configurations in the response. Defaults to false.</summary>
             [QueryParameter("include_inner_details")]
             public bool? IncludeInnerDetails { get; set; }
-            /// <summary>The module for which the rule counts should be provided.</summary>
+            /// <summary>Specifies the CRM module API name to filter workflow rules by, such as Leads, Contacts, or Deals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -301,19 +301,19 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             [QueryParameter("module")]
             public string Module { get; set; }
 #endif
-            /// <summary>To get the list of Workflow from a specific page</summary>
+            /// <summary>Specifies the page number for paginated results. Page numbering starts at 1.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>To fetch a limited number of Workflow rules per page</summary>
+            /// <summary>Specifies the number of workflow rules to return per page. The default and maximum value is 200.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>To sort the Workflow rules based on a specific field.</summary>
+            /// <summary>Specifies the field to sort workflow rules by. Only `modified_time` is supported.</summary>
             [QueryParameter("sort_by")]
-            public global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.GetSort_byQueryParameterType? SortBy { get; set; }
-            /// <summary>To sort the Workflow rules in ascending or descending order, based on the modified_field value</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.ModifiedTimeSortBy? SortBy { get; set; }
+            /// <summary>Specifies the sort direction for the workflow rule list. Accepted values are `asc` and `desc`.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.GetSort_orderQueryParameterType? SortOrder { get; set; }
-            /// <summary>To filter the Workflow rules based on whether they are active or inactive</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.ParamQuerySortOrderSchema? SortOrder { get; set; }
+            /// <summary>Filters workflow rules by activation status. Set to true to return only active rules, or false to return only inactive rules.</summary>
             [QueryParameter("status_active")]
             public bool? StatusActive { get; set; }
         }

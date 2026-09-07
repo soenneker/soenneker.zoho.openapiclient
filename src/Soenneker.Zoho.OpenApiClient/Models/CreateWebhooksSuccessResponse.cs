@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Successful response for a webhook creation request, confirming the status and relevant details of each created webhook.
+    /// Represents the success response for a webhook creation request, including the operation result and the new webhook ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateWebhooksSuccessResponse : IParsable
     {
-        /// <summary>&quot;Field: webhooks&quot;</summary>
+        /// <summary>Represents the list containing the operation result for the created webhook, including the new webhook ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookStatusResponse>? Webhooks { get; set; }

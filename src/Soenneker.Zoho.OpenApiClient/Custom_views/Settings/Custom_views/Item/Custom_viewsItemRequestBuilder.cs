@@ -40,32 +40,50 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item
         {
         }
         /// <summary>
-        /// Get a specific custom view of a module using custom view ID
+        /// To retrieve the details of a specific Custom View for a module in your Zoho CRM organization, using the Custom View ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewByIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById401">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewByIdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewByIdResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById401.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewByIdResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewByIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a specific custom view of a module using custom view ID
+        /// To update the configuration of a specific Custom View in a module of your Zoho CRM organization, using the Custom View ID. Use the [Get Custom Views API](custom_views.yaml#$.paths./settings/custom_views.get) to retrieve the custom view IDs.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse"/></returns>
+        /// <param name="body">Represents the request body envelope for updating a specific Custom View by its ID.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomViewRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomViewRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// To retrieve the details of a specific Custom View for a module in your Zoho CRM organization, using the Custom View ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,6 +102,28 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item
             return requestInfo;
         }
         /// <summary>
+        /// To update the configuration of a specific Custom View in a module of your Zoho CRM organization, using the Custom View ID. Use the [Get Custom Views API](custom_views.yaml#$.paths./settings/custom_views.get) to retrieve the custom view IDs.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Represents the request body envelope for updating a specific Custom View by its ID.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomViewRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomViewRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder"/></returns>
@@ -93,15 +133,39 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item
             return new global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a specific custom view of a module using custom view ID
+        /// To retrieve the details of a specific Custom View for a module in your Zoho CRM organization, using the Custom View ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Custom_viewsItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>To include inner details of criteria and cross filters</summary>
+            /// <summary>Specify whether to include the inner details of criteria and cross filters in the response.Possible values:**inner_details** - Includes the full criteria and cross filter details in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("include_inner_details")]
-            public global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.GetInclude_inner_detailsQueryParameterType? IncludeInnerDetails { get; set; }
-            /// <summary>module name</summary>
+            public string? IncludeInnerDetails { get; set; }
+#nullable restore
+#else
+            [QueryParameter("include_inner_details")]
+            public string IncludeInnerDetails { get; set; }
+#endif
+            /// <summary>Specify the API name of the module for which to manage Custom Views. Refer to the Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module IDs.resource for valid values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("module")]
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
+        }
+        /// <summary>
+        /// To update the configuration of a specific Custom View in a module of your Zoho CRM organization, using the Custom View ID. Use the [Get Custom Views API](custom_views.yaml#$.paths./settings/custom_views.get) to retrieve the custom view IDs.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Custom_viewsItemRequestBuilderPutQueryParameters 
+        {
+            /// <summary>Specify the API name of the module for which to manage Custom Views. Refer to the Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module IDs.resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

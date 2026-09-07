@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
     public partial class Unsubscribe_linksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.unsubscribe_links.settings.unsubscribe_links.item collection</summary>
-        /// <param name="position">unsubscribe links id in url path</param>
+        /// <param name="position">The unique ID of the unsubscribe link to retrieve, update, or delete. This ID is returned in the response when creating or fetching unsubscribe links.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_links.Item.Unsubscribe_linksItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_links.Item.Unsubscribe_linksItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
         {
         }
         /// <summary>
-        /// To get all unsubscribe links
+        /// To retrieve the details of all unsubscribe links configured in your CRM account. This API returns a list of unsubscribe links with their complete configuration, including page type, submission behavior, timestamps, and creator information.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,13 +70,13 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To create an unsubscribe link
+        /// To create an unsubscribe link that can be used in email templates or email footers. You can configure the link to display a standard Zoho CRM unsubscribe page or redirect to a custom webpage.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateUnsubscribeLinksSuccessResponse"/></returns>
         /// <param name="body">Request payload to create one or more unsubscribe links.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPostUnsubscribeLinks403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPostUnsubscribeLinks403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CreateUnsubscribeLinksSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.InitiateUnsubscribeLinksRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,15 +90,15 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPostUnsubscribeLinks403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPostUnsubscribeLinks403Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CreateUnsubscribeLinksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CreateUnsubscribeLinksSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To update an unsubscribe link.
+        /// To update one or more unsubscribe links in bulk. You can modify the link&apos;s name, page type, custom URL, standard page message, submission action type, redirect URL, or submission message.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkModificationResultList"/></returns>
-        /// <param name="body">Body schema for PUT requests proposing updates to unsubscribe link configurations, demanding detailed entries across fields.</param>
+        /// <param name="body">Request payload for bulk PUT requests to update unsubscribe link configurations.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkModificationResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkModificationResultList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To get all unsubscribe links
+        /// To retrieve the details of all unsubscribe links configured in your CRM account. This API returns a list of unsubscribe links with their complete configuration, including page type, submission behavior, timestamps, and creator information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +134,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             return requestInfo;
         }
         /// <summary>
-        /// To create an unsubscribe link
+        /// To create an unsubscribe link that can be used in email templates or email footers. You can configure the link to display a standard Zoho CRM unsubscribe page or redirect to a custom webpage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request payload to create one or more unsubscribe links.</param>
@@ -156,10 +156,10 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             return requestInfo;
         }
         /// <summary>
-        /// To update an unsubscribe link.
+        /// To update one or more unsubscribe links in bulk. You can modify the link&apos;s name, page type, custom URL, standard page message, submission action type, redirect URL, or submission message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Body schema for PUT requests proposing updates to unsubscribe link configurations, demanding detailed entries across fields.</param>
+        /// <param name="body">Request payload for bulk PUT requests to update unsubscribe link configurations.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

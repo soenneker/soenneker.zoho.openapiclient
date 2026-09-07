@@ -9,12 +9,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error response for layout update operation.
+    /// Represents the error response returned for layout update operations that fail, containing either a wrapped per-layout error array or a top-level error code and message.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateLayoutErrorResponse : ApiException, IParsable
     {
-        /// <summary>Error code for non-layout-wrapped errors.</summary>
+        /// <summary>Represents the error classification code returned for layout update failures that are not wrapped in a layout-specific error array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -22,15 +22,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>Additional context-specific error details. Properties vary based on error type.</summary>
+        /// <summary>Contains additional context-specific details accompanying an API error response, providing structured diagnostics such as the offending parameter name, expected data type, supported values, or dependency information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetails? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetails Details { get; set; }
 #endif
-        /// <summary>Array containing the error result of the layout update operation.</summary>
+        /// <summary>Contains the array of layout-specific error results for batch layout update operations that encountered failures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorResult>? Layouts { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>Error message.</summary>
+        /// <summary>Contains a descriptive explanation of the layout update error that occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessageEscaped { get; set; }
@@ -48,8 +48,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Status indicator.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutErrorResponse_status? Status { get; set; }
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,10 +69,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorDetails>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorDetails.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetails.CreateFromDiscriminatorValue); } },
                 { "layouts", n => { Layouts = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorResult>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutErrorResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -83,10 +83,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorDetails>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetails>("details", Details);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorResult>("layouts", Layouts);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutErrorResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

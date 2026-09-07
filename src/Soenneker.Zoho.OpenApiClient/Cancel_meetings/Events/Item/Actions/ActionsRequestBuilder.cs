@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.Actions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \cancel_meetings\Events\{event}\actions
+    /// Builds and executes requests for operations under \cancel_meetings\Events\{eventValue}\actions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActionsRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.Actions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cancel_meetings/Events/{event}/actions", pathParameters)
+        public ActionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cancel_meetings/Events/{eventValue}/actions", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.Actions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cancel_meetings/Events/{event}/actions", rawUrl)
+        public ActionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cancel_meetings/Events/{eventValue}/actions", rawUrl)
         {
         }
     }

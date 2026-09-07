@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Actions.Transf
         {
         }
         /// <summary>
-        /// Transfer and delete pipelines
+        /// Transfer records and stage mappings from one pipeline to another in the specified layout, and delete the source pipeline after the transfer is scheduled.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponse"/></returns>
         /// <param name="body">Response confirming pipeline transfer operation with source-to-target mappings for pipeline and stages.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Actions.Transf
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Transfer and delete pipelines
+        /// Transfer records and stage mappings from one pipeline to another in the specified layout, and delete the source pipeline after the transfer is scheduled.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Response confirming pipeline transfer operation with source-to-target mappings for pipeline and stages.</param>
@@ -90,12 +90,12 @@ namespace Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Actions.Transf
             return new global::Soenneker.Zoho.OpenApiClient.Pipeline.Settings.Pipeline.Actions.Transfer.TransferRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Transfer and delete pipelines
+        /// Transfer records and stage mappings from one pipeline to another in the specified layout, and delete the source pipeline after the transfer is scheduled.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TransferRequestBuilderPostQueryParameters 
         {
-            /// <summary>Layout Id</summary>
+            /// <summary>Specify the Layout ID of the Deals module. Use the [Get Layouts Metadata API](layouts.yaml#$.paths./settings/layouts.get) to retrieve the Layout ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("layout_id")]

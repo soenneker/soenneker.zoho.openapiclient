@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Item
             get => new global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.tags_actions.item.item collection</summary>
-        /// <param name="position">&quot;Path parameter: id&quot;</param>
+        /// <param name="position">Unique identifier of the record or tag. Use the [Get Tags API](tags.yaml#$.paths./settings/tags.get) to retrieve tag IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Item.ModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Item.ModuleItemRequestBuilder this[string position]
         {

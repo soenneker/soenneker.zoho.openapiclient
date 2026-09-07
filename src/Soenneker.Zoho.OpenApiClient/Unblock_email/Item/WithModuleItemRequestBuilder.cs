@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unblock_email.Item
             get => new global::Soenneker.Zoho.OpenApiClient.Unblock_email.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.unblock_email.item.item collection</summary>
-        /// <param name="position">The record ID</param>
+        /// <param name="position">Represents the unique ID of the record. Use the [Get Records API](record.yaml#$.paths./{module}.get) to get valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Unblock_email.Item.Item.ModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Unblock_email.Item.Item.ModuleItemRequestBuilder this[string position]
         {

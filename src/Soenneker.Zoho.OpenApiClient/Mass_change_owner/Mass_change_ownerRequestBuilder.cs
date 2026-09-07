@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner
     public partial class Mass_change_ownerRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.mass_change_owner.item collection</summary>
-        /// <param name="position">The API name of the module</param>
+        /// <param name="position">Specify the API name of the CRM module. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.WithModuleItemRequestBuilder this[string position]
         {

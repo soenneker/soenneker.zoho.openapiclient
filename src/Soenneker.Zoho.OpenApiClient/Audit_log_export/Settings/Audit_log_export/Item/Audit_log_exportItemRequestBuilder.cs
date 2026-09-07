@@ -34,30 +34,32 @@ namespace Soenneker.Zoho.OpenApiClient.Audit_log_export.Settings.Audit_log_expor
         {
         }
         /// <summary>
-        /// Retrieves the details of a specific audit log export job by its ID.
+        /// Retrieves the details of a specific audit log export job in your Zoho CRM organization by its ID, including its status, filter criteria, and download link(s).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById404.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportForbiddenResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the details of a specific audit log export job by its ID.
+        /// Retrieves the details of a specific audit log export job in your Zoho CRM organization by its ID, including its status, filter criteria, and download link(s).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

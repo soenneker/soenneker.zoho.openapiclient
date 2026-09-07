@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Zoho.OpenApiClient.Models;
+using Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,18 @@ namespace Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WizardsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.wizards.settings.wizards.item collection</summary>
+        /// <param name="position">Specify the unique ID of the wizard to retrieve or delete.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.Item.WizardsItemRequestBuilder"/></returns>
+        public global::Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.Item.WizardsItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.Item.WizardsItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.WizardsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -34,32 +47,36 @@ namespace Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards
         {
         }
         /// <summary>
-        /// This API is used to get all the wizards&apos; basic information available in the CRM account. You can filter the response by providing the module name as a query parameter.
+        /// To retrieve the wizard configurations available in your Zoho CRM organization. The response can be filtered by module using the `**module**` query parameter. When you set up conditional rules for a wizard, the response contains the keys execute_on and type. execute_on represents when the conditional rule is executed. The values are create, edit, and create_edit. type represents the action you want to take when the condition is met. The values are set_values, set_lock, show_component, and show_widget. When type=set_lock, the response contains the key exempted_profiles. This array contains the list of profiles that allow edits even after locking specific fields. The color_palette key is added that displays the colors available for a button on a screen. Note that this key is available in the response only if you have chosen at least one custom color for the button on a screen. Changes made to this API from version 5 when you fetch a specific wizard in a layout: - A new JSON array portal_user_types is added to the response that displays the list of portal user types that have access to the wizard. - A new JSON array exempted_portal_user_types is added to the response that represents the list of portal user types that have access to wizards that are blocked for other user types. - Under the segments, for buttons, the Profiles JSON array is added. This indicates the profiles that have access to that button in that screen. - In the Screens JSON array, the &quot;type&quot; of segments JSON object is changed from fields to composite. - In the segments JSON array, the fields JSON array is renamed to elements. - Each object in the elements JSON array contains the sequence number, resource, and type keys. Resource includes the &quot;name&quot; and &quot;id&quot; of the field or the query component on the screen. type indicates whether the resource is a field or query component. From V6, you can get the list of available screens in Wizards. See the sample response for reference.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.WizardsRequestBuilder.WizardsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.WizardsRequestBuilder.WizardsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.WizardsRequestBuilder.WizardsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.WizardsRequestBuilder.WizardsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards404.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards401Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This API is used to get all the wizards&apos; basic information available in the CRM account. You can filter the response by providing the module name as a query parameter.
+        /// To retrieve the wizard configurations available in your Zoho CRM organization. The response can be filtered by module using the `**module**` query parameter. When you set up conditional rules for a wizard, the response contains the keys execute_on and type. execute_on represents when the conditional rule is executed. The values are create, edit, and create_edit. type represents the action you want to take when the condition is met. The values are set_values, set_lock, show_component, and show_widget. When type=set_lock, the response contains the key exempted_profiles. This array contains the list of profiles that allow edits even after locking specific fields. The color_palette key is added that displays the colors available for a button on a screen. Note that this key is available in the response only if you have chosen at least one custom color for the button on a screen. Changes made to this API from version 5 when you fetch a specific wizard in a layout: - A new JSON array portal_user_types is added to the response that displays the list of portal user types that have access to the wizard. - A new JSON array exempted_portal_user_types is added to the response that represents the list of portal user types that have access to wizards that are blocked for other user types. - Under the segments, for buttons, the Profiles JSON array is added. This indicates the profiles that have access to that button in that screen. - In the Screens JSON array, the &quot;type&quot; of segments JSON object is changed from fields to composite. - In the segments JSON array, the fields JSON array is renamed to elements. - Each object in the elements JSON array contains the sequence number, resource, and type keys. Resource includes the &quot;name&quot; and &quot;id&quot; of the field or the query component on the screen. type indicates whether the resource is a field or query component. From V6, you can get the list of available screens in Wizards. See the sample response for reference.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,12 +104,12 @@ namespace Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards
             return new global::Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.WizardsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This API is used to get all the wizards&apos; basic information available in the CRM account. You can filter the response by providing the module name as a query parameter.
+        /// To retrieve the wizard configurations available in your Zoho CRM organization. The response can be filtered by module using the `**module**` query parameter. When you set up conditional rules for a wizard, the response contains the keys execute_on and type. execute_on represents when the conditional rule is executed. The values are create, edit, and create_edit. type represents the action you want to take when the condition is met. The values are set_values, set_lock, show_component, and show_widget. When type=set_lock, the response contains the key exempted_profiles. This array contains the list of profiles that allow edits even after locking specific fields. The color_palette key is added that displays the colors available for a button on a screen. Note that this key is available in the response only if you have chosen at least one custom color for the button on a screen. Changes made to this API from version 5 when you fetch a specific wizard in a layout: - A new JSON array portal_user_types is added to the response that displays the list of portal user types that have access to the wizard. - A new JSON array exempted_portal_user_types is added to the response that represents the list of portal user types that have access to wizards that are blocked for other user types. - Under the segments, for buttons, the Profiles JSON array is added. This indicates the profiles that have access to that button in that screen. - In the Screens JSON array, the &quot;type&quot; of segments JSON object is changed from fields to composite. - In the segments JSON array, the fields JSON array is renamed to elements. - Each object in the elements JSON array contains the sequence number, resource, and type keys. Resource includes the &quot;name&quot; and &quot;id&quot; of the field or the query component on the screen. type indicates whether the resource is a field or query component. From V6, you can get the list of available screens in Wizards. See the sample response for reference.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WizardsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Module in which the wizard has been created.</summary>
+            /// <summary>Specify the API name of the module for which you want to retrieve wizards. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

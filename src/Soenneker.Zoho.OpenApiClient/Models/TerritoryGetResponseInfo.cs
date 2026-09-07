@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Pagination information
+    /// Represents the pagination details for the response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerritoryGetResponseInfo : IParsable
     {
-        /// <summary>Number of records returned</summary>
+        /// <summary>Represents the number of territory records returned in the current page. </summary>
         public int? Count { get; set; }
-        /// <summary>Whether more records exist</summary>
+        /// <summary>Indicates whether more territory records are available beyond the current page. Possible values: true - More records are available. false - No more records are available.</summary>
         public bool? MoreRecords { get; set; }
-        /// <summary>Current page number</summary>
+        /// <summary>Represents the current page number in the paginated response.</summary>
         public int? Page { get; set; }
-        /// <summary>Records per page</summary>
+        /// <summary>Represents the maximum number of records returned per page.</summary>
         public int? PerPage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Root response object containing an array of pipeline configurations from Zoho CRM.
+    /// Root response object containing all pipeline configurations configured for a given Deals layout in Zoho CRM.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PipelineGetResponse : IParsable
@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of pipeline configuration items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponse_pipeline>? Pipeline { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponsePipelineItem>? Pipeline { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponse_pipeline> Pipeline { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponsePipelineItem> Pipeline { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pipeline", n => { Pipeline = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponse_pipeline>(global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponse_pipeline.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pipeline", n => { Pipeline = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponsePipelineItem>(global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponsePipelineItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponse_pipeline>("pipeline", Pipeline);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineGetResponsePipelineItem>("pipeline", Pipeline);
         }
     }
 }

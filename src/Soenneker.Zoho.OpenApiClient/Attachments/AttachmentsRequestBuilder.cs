@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments
     public partial class AttachmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.attachments.item collection</summary>
-        /// <param name="position">The API name of the module</param>
+        /// <param name="position">Specify the API name of the module (e.g., `Leads`, `Contacts`, `Accounts`). Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API names.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Attachments.Item.WithModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Attachments.Item.WithModuleApiNameItemRequestBuilder this[string position]
         {

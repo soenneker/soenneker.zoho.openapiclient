@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Associate_email.Item
     public partial class WithModuleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.associate_email.item.item collection</summary>
-        /// <param name="position">The unique ID of the record to associate the email with.</param>
+        /// <param name="position">The unique ID of the record to associate the email with. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve record IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Associate_email.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Associate_email.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

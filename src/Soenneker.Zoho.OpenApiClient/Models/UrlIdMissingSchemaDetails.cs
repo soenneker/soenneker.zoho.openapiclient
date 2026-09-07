@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details with validation information
+    /// Represents the error details containing additional context about the failed request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UrlIdMissingSchemaDetails : IParsable
     {
-        /// <summary>&quot;Detail field: resource_path_index&quot;</summary>
+        /// <summary>Represents the **resource_path_index** value from the error detail object.</summary>
         public int? ResourcePathIndex { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

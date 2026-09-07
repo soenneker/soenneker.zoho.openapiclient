@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// services records delete , success response
+    /// Wrapped response for a service DELETE request. Contains a data array with one status object carrying the success code and the deleted service ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeleteservicessResponse200 : IParsable
     {
-        /// <summary>&quot;Field: data&quot;</summary>
+        /// <summary>Represents the per-record status array containing the result for each deleted service record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested1>? Data { get; set; }

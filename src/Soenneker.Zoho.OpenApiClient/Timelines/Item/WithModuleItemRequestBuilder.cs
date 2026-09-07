@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Timelines.Item
     public partial class WithModuleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.timelines.item.item collection</summary>
-        /// <param name="position">The ID of the record for which timelines are to be fetched</param>
+        /// <param name="position">Specifies the unique ID of the CRM record to retrieve timeline entries for.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

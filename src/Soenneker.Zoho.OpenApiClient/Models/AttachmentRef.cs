@@ -13,7 +13,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttachmentRef : IParsable
     {
-        /// <summary>The attachment ID.</summary>
+        /// <summary>The attachment ID. Use the [Files API](files.yaml#$.paths./files.get) to retrieve attachment IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

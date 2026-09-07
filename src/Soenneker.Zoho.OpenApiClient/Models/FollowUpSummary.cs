@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// A summary of follow-up actions including counts of WhatsApp, task, call, and email follow-ups.
+    /// Represents a summary of follow-up action counts in a Cadence, broken down by action type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FollowUpSummary : IParsable
     {
-        /// <summary>Number of call follow-ups</summary>
+        /// <summary>Represents the number of scheduled call follow-up actions in the Cadence.</summary>
         public int? CallFollowUpCount { get; set; }
-        /// <summary>Number of email follow-ups</summary>
+        /// <summary>Represents the number of email notification follow-up actions in the Cadence.</summary>
         public int? EmailFollowUpCount { get; set; }
-        /// <summary>Number of task follow-ups</summary>
+        /// <summary>Represents the number of task follow-up actions in the Cadence.</summary>
         public int? TaskFollowUpCount { get; set; }
-        /// <summary>Number of WhatsApp follow-ups</summary>
+        /// <summary>Represents the number of WhatsApp message follow-up actions in the Cadence.</summary>
         public int? WhatsappFollowUpCount { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

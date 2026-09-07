@@ -34,12 +34,12 @@ namespace Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.Emails.A
         {
         }
         /// <summary>
-        /// Download inline images embedded in an email related to a record.
+        /// To download an inline image embedded in an email associated with a record in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DownloadInlineImagesGetDownloadInlineImages400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DownloadInlineImagesGetDownloadInlineImages400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.Emails.Actions.Download_inline_images.Download_inline_imagesRequestBuilder.Download_inline_imagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,12 +52,12 @@ namespace Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.Emails.A
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DownloadInlineImagesGetDownloadInlineImages400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DownloadInlineImagesGetDownloadInlineImages400Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Download inline images embedded in an email related to a record.
+        /// To download an inline image embedded in an email associated with a record in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,12 +85,12 @@ namespace Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.Emails.A
             return new global::Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.Emails.Actions.Download_inline_images.Download_inline_imagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Download inline images embedded in an email related to a record.
+        /// To download an inline image embedded in an email associated with a record in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Download_inline_imagesRequestBuilderGetQueryParameters 
         {
-            /// <summary>The unique ID of the inline image attachment.</summary>
+            /// <summary>Specify the unique ID of the inline image to download. Refer to the **img_id** property in the **content** key of the [Get Emails API](emails.yaml#$.paths./{moduleApiName}/{id}/Emails.get) response to obtain this ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("id")]
@@ -100,7 +100,7 @@ namespace Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.Emails.A
             [QueryParameter("id")]
             public string Id { get; set; }
 #endif
-            /// <summary>The message ID from the email response.</summary>
+            /// <summary>Specify the message ID of the email containing the inline image. Refer to the **message_id** key in the response of [Send Mail API](send_mail.yaml#$.paths./{moduleName}/{id}/actions/send_mail.post) or [Get Emails API](emails.yaml#$.paths./{moduleApiName}/{id}/Emails.get) to obtain this ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("message_id")]
@@ -110,16 +110,9 @@ namespace Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.Emails.A
             [QueryParameter("message_id")]
             public string MessageId { get; set; }
 #endif
-            /// <summary>The unique ID of the record owner.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>The unique ID of the record owner whose email you want to retrieve. Use the [Get Users API](users.yaml#$.paths./users.get) to get the user&apos;s ID.</summary>
             [QueryParameter("user_id")]
-            public string? UserId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("user_id")]
-            public string UserId { get; set; }
-#endif
+            public long? UserId { get; set; }
         }
     }
 }

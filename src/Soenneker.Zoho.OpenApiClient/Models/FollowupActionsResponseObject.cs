@@ -13,7 +13,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FollowupActionsResponseObject : IParsable
     {
-        /// <summary>List of action details of the given type</summary>
+        /// <summary>Represents the list of action details of the given type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>? Resources { get; set; }
@@ -21,8 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject> Resources { get; set; }
 #endif
-        /// <summary>Type of the action (Required)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject_type? Type { get; set; }
+        /// <summary>Represents the type of the action.Possible values:**tasks** - Represents tasks. </summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.TasksType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>(global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TasksType>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>("resources", Resources);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TasksType>("type", Type);
         }
     }
 }

@@ -8,16 +8,16 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Base schema for Members
+    /// Base schema for a member of the service. Identifies the user by module, name, and ID. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MembersBase : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>id of the owner</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.MembersBase_id? Id { get; set; }
-        /// <summary>member module</summary>
+        /// <summary>Specify the unique ID of the user who delivers the service. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.Value4671651000000635001Id? Id { get; set; }
+        /// <summary>Specify the source module of the member. Typically set to the module Users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Module { get; set; }
@@ -25,8 +25,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Module { get; set; }
 #endif
-        /// <summary>name of the owner</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.MembersBase_name? Name { get; set; }
+        /// <summary>Specify the display name of the user who delivers the service.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGName? Name { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MembersBase"/> and sets the default values.
         /// </summary>
@@ -52,9 +52,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MembersBase_id>(); } },
+                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.Value4671651000000635001Id>(); } },
                 { "module", n => { Module = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MembersBase_name>(); } },
+                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGName>(); } },
             };
         }
         /// <summary>
@@ -64,9 +64,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MembersBase_id>("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.Value4671651000000635001Id>("id", Id);
             writer.WriteStringValue("module", Module);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MembersBase_name>("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGName>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

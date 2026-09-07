@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Object used to update a variable&apos;s value within a scoped resource context; accepts id or rid and the new value.
+    /// Object used to update a variable&apos;s value within a scoped resource context; accepts id and the new value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScopedVariableUpdateItem : IParsable
@@ -16,18 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Id of variables</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
-#endif
-        /// <summary>uuid for variables</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Rid { get; set; }
-#nullable restore
-#else
-        public string Rid { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>describes value for the variables</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +48,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "rid", n => { Rid = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -67,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("rid", Rid);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("value", Value);
         }
     }

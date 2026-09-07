@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Alternate root payload listing workflow rules and their updated execution order within the module.
+    /// Represents the reorder payload containing the list of workflow rules and their updated execution order.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReorderWorkflowRulesRequestSchemaReorder : IParsable
     {
-        /// <summary>An array containing the list of Workflow rules whose execution order you want to update. Each object in this array specifies the Workflow rule ID and its new position in the execution order for the given module. (Required)</summary>
+        /// <summary>Represents the array of workflow rule objects for which you want to update the execution order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder_workflow_rules>? WorkflowRules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorderWorkflowRulesItem>? WorkflowRules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder_workflow_rules> WorkflowRules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorderWorkflowRulesItem> WorkflowRules { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "workflow_rules", n => { WorkflowRules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder_workflow_rules>(global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder_workflow_rules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "workflow_rules", n => { WorkflowRules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorderWorkflowRulesItem>(global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorderWorkflowRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder_workflow_rules>("workflow_rules", WorkflowRules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorderWorkflowRulesItem>("workflow_rules", WorkflowRules);
         }
     }
 }

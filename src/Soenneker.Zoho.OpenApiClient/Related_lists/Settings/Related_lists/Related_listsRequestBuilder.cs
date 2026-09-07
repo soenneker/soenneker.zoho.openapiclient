@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Zoho.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Related_listsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/related_lists/settings/related_lists?module={module}{&layout_id*,status*}", pathParameters)
+        public Related_listsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/related_lists/settings/related_lists?module={module}{&extra_properties*,include_inner_details*,layout_id*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,29 +30,29 @@ namespace Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Related_listsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/related_lists/settings/related_lists?module={module}{&layout_id*,status*}", rawUrl)
+        public Related_listsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/related_lists/settings/related_lists?module={module}{&extra_properties*,include_inner_details*,layout_id*,status*}", rawUrl)
         {
         }
         /// <summary>
-        /// Get the configuration of related lists for a specific module and layout
+        /// To retrieve the configuration of related list panels for a specific module in your Zoho CRM organization, including display metadata, available record operations, and layout-specific settings.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.Related_listsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListsGetRelatedLists200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.Related_listsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.Related_listsRequestBuilder.Related_listsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListsGetRelatedLists200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.Related_listsRequestBuilder.Related_listsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.Related_listsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.Related_listsRequestBuilder.Related_listsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListsGetRelatedLists200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.Related_listsRequestBuilder.Related_listsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.Related_listsGetResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.Related_listsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListsGetRelatedLists200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedListsGetRelatedLists200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the configuration of related lists for a specific module and layout
+        /// To retrieve the configuration of related list panels for a specific module in your Zoho CRM organization, including display metadata, available record operations, and layout-specific settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,12 +80,25 @@ namespace Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists
             return new global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.Related_listsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the configuration of related lists for a specific module and layout
+        /// To retrieve the configuration of related list panels for a specific module in your Zoho CRM organization, including display metadata, available record operations, and layout-specific settings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Related_listsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Unique identifier of the layout for which to retrieve related lists</summary>
+            /// <summary>Set to **true** to include additional metadata properties for each related list entry beyond the default set. Possible values: **true**, **false**.</summary>
+            [QueryParameter("extra_properties")]
+            public bool? ExtraProperties { get; set; }
+            /// <summary>Specify a comma-separated list of detail keys to embed in each related list object. Controls which nested detail blocks are included in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("include_inner_details")]
+            public string? IncludeInnerDetails { get; set; }
+#nullable restore
+#else
+            [QueryParameter("include_inner_details")]
+            public string IncludeInnerDetails { get; set; }
+#endif
+            /// <summary>Specify the unique identifier of the layout to scope the related lists response. Refer to the [Layouts API](https://www.zoho.com/crm/developer/docs/api/v8/layouts-meta.html) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("layout_id")]
@@ -94,12 +108,19 @@ namespace Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists
             [QueryParameter("layout_id")]
             public string LayoutId { get; set; }
 #endif
-            /// <summary>API name of the CRM module (e.g., Leads, Contacts, Accounts)</summary>
+            /// <summary>Specify the API name of the CRM module for which to retrieve related lists. Refer to the [Get Modules](https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html) resource for valid values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("module")]
-            public global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.GetModuleQueryParameterType? Module { get; set; }
-            /// <summary>Filter related lists by visibility status</summary>
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
+            /// <summary>Specify the visibility status to filter related lists. Possible values: **visible**, **scheduled_for_deletion**, **user_hidden**.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Zoho.OpenApiClient.Related_lists.Settings.Related_lists.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListsStatus? Status { get; set; }
         }
     }
 }

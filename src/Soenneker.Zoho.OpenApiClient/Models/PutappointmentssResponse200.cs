@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// appointment update success response
+    /// Represents the success response for the request to update appointment records.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PutappointmentssResponse200 : IParsable
     {
-        /// <summary>&quot;Field: data&quot;</summary>
+        /// <summary>Represents the list of result objects for each updated appointment record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.DataNested1>? Data { get; set; }

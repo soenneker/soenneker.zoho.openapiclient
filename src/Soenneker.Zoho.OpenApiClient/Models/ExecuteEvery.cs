@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// cadence execute_every
+    /// Represents the recurring execution interval for a Cadence, specifying the frequency period and numeric value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExecuteEvery : IParsable
     {
-        /// <summary>Cadence execute_every period (Required)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEvery_period? Period { get; set; }
-        /// <summary>Cadence execute_every unit</summary>
+        /// <summary>Represents the frequency interval for recurring Cadence execution.Possible values:immediately - Execute immediately after each enrollment trigger.hours - Execute at the specified number of hours interval.days - Execute at the specified number of days interval.weeks - Execute at the specified number of weeks interval.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEveryPeriod? Period { get; set; }
+        /// <summary>Represents the numeric value of the execution interval, expressed in the specified period unit.</summary>
         public int? Unit { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "period", n => { Period = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEvery_period>(); } },
+                { "period", n => { Period = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEveryPeriod>(); } },
                 { "unit", n => { Unit = n.GetIntValue(); } },
             };
         }
@@ -46,7 +46,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEvery_period>("period", Period);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEveryPeriod>("period", Period);
             writer.WriteIntValue("unit", Unit);
         }
     }

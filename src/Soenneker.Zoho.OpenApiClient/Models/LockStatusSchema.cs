@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Details the lock status of the workflow, including information about who locked it, the message associated with the lock, and whether it is currently locked.
+    /// Represents the lock configuration of a workflow rule, including the lock state and the identity of the user who applied the lock.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LockStatusSchema : IParsable
     {
-        /// <summary>&quot;Field: locked_by&quot;</summary>
+        /// <summary>Represents the details of the CRM user who locked the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.LockedByObjectSchema? LockedBy { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.LockedByObjectSchema LockedBy { get; set; }
 #endif
-        /// <summary>A note or label to indicate the reason or context for locking the rule.</summary>
+        /// <summary>Represents the note or label indicating the reason or context for locking the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>&quot;Field: status&quot;</summary>
+        /// <summary>Indicates whether the workflow rule is locked.Possible values:true - The rule is locked.false - The rule is not locked.</summary>
         public bool? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

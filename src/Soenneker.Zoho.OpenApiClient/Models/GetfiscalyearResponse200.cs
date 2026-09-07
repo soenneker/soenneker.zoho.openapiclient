@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Successful API operation completed
+    /// Represents the response body containing the fiscal year settings configured for the organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetfiscalyearResponse200 : IParsable
     {
-        /// <summary>Nested schema for fiscal_year</summary>
+        /// <summary>Represents the fiscal year settings configured for the organization, including the calendar type, start month, structure, and surplus week information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GETFiscalYearNested? FiscalYear { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested? FiscalYear { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GETFiscalYearNested FiscalYear { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested FiscalYear { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fiscal_year", n => { FiscalYear = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GETFiscalYearNested>(global::Soenneker.Zoho.OpenApiClient.Models.GETFiscalYearNested.CreateFromDiscriminatorValue); } },
+                { "fiscal_year", n => { FiscalYear = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GETFiscalYearNested>("fiscal_year", FiscalYear);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested>("fiscal_year", FiscalYear);
         }
     }
 }

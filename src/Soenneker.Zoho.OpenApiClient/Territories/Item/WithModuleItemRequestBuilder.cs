@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Item
             get => new global::Soenneker.Zoho.OpenApiClient.Territories.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.territories.item.item collection</summary>
-        /// <param name="position">Parameter `record` in `path`.</param>
+        /// <param name="position">Represents the record path parameter, which specifies the unique identifier of the record for the territory operation.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Territories.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Territories.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

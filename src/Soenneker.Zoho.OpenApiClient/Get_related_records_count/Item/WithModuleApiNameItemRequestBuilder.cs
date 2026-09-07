@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Get_related_records_count.Item
     public partial class WithModuleApiNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.get_related_records_count.item.item collection</summary>
-        /// <param name="position">The unique identifier of the parent record for which to count related records. This is typically a numeric ID or UUID depending on the CRM configuration.</param>
+        /// <param name="position">Specify the unique ID of the parent record for which you want to count related records. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record ID.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Get_related_records_count.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Get_related_records_count.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

@@ -34,50 +34,55 @@ namespace Soenneker.Zoho.OpenApiClient.Call_preferences.Settings.Call_preference
         {
         }
         /// <summary>
-        /// This will return the user preferred Call preference details that is used to display the from number / to number field in CRM
+        /// To retrieve the current Call Preferences configuration for your Zoho CRM organization. The response reports whether the **From Number** and **To Number** fields are currently enabled on records in the Calls module.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences400.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This will update the user&apos;s Call preference
+        /// To update the Call Preferences configuration for your Zoho CRM organization by enabling or disabling the **From Number** and **To Number** fields on records in the Calls module. A preference cannot be disabled when the corresponding field is marked as mandatory, when it is referenced by a Validation Rule, Layout Rule, Blueprint, or Workflow, or when the organization has an active telephony integration or active calendar booking for calls that depends on it.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200"/></returns>
-        /// <param name="body">These properties will decide whether the show_from_number and show_to_number need to visible or not </param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200Response"/></returns>
+        /// <param name="body">Specify the new visibility setting for the **From Number** field, the **To Number** field, or both.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferencesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferencesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This will return the user preferred Call preference details that is used to display the from number / to number field in CRM
+        /// To retrieve the current Call Preferences configuration for your Zoho CRM organization. The response reports whether the **From Number** and **To Number** fields are currently enabled on records in the Calls module.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,18 +101,18 @@ namespace Soenneker.Zoho.OpenApiClient.Call_preferences.Settings.Call_preference
             return requestInfo;
         }
         /// <summary>
-        /// This will update the user&apos;s Call preference
+        /// To update the Call Preferences configuration for your Zoho CRM organization by enabling or disabling the **From Number** and **To Number** fields on records in the Calls module. A preference cannot be disabled when the corresponding field is marked as mandatory, when it is referenced by a Validation Rule, Layout Rule, Blueprint, or Workflow, or when the organization has an active telephony integration or active calendar booking for calls that depends on it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">These properties will decide whether the show_from_number and show_to_number need to visible or not </param>
+        /// <param name="body">Specify the new visibility setting for the **From Number** field, the **To Number** field, or both.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferencesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferencesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -14,13 +14,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     public partial class PipelineGetErrorResponseDetails : IParsable
     {
         /// <summary>Name of the parameter that caused the validation error.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ParamName { get; set; }
-#nullable restore
-#else
-        public string ParamName { get; set; }
-#endif
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutIdParamName? ParamName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +33,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "param_name", n => { ParamName = n.GetStringValue(); } },
+                { "param_name", n => { ParamName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutIdParamName>(); } },
             };
         }
         /// <summary>
@@ -49,7 +43,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("param_name", ParamName);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutIdParamName>("param_name", ParamName);
         }
     }
 }

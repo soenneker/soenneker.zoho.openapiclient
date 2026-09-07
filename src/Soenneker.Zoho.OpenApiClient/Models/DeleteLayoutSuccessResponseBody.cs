@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response body for successful layout deletion.
+    /// Represents the response body returned when one or more layouts are successfully deleted, containing per-layout deletion results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeleteLayoutSuccessResponseBody : IParsable
     {
-        /// <summary>Array containing the result of the layout deletion operation.</summary>
+        /// <summary>Contains one entry per layout included in the deletion request, each reporting the individual outcome — such as success or failure — for that specific layout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult>? Layouts { get; set; }

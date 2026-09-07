@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Successful response containing the workflow rules quota summary for the organization.
+    /// Represents the response body containing the organization-level workflow rule quota and current usage counts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRulesCountResponseSchema : IParsable
     {
-        /// <summary>Rules with actions and conditions limit</summary>
+        /// <summary>Represents the workflow rule count and limit details for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount? RulesCount { get; set; }

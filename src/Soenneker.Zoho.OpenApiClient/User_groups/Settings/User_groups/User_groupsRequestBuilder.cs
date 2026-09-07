@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups
             get => new global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.user_groups.settings.user_groups.item collection</summary>
-        /// <param name="position">The unique identifier of the user group</param>
+        /// <param name="position">Specify the unique ID of the user group to operate on. From API v9 onwards, UUID format is also accepted. Example: `1234567890`.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Item.WithGroupItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Item.WithGroupItemRequestBuilder this[string position]
         {
@@ -41,7 +41,7 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public User_groupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user_groups/settings/user_groups{?filters*,include*,page*,per_page*}", pathParameters)
+        public User_groupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user_groups/settings/user_groups{?filters*,ids*,include*,name*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,61 +49,61 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public User_groupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user_groups/settings/user_groups{?filters*,include*,page*,per_page*}", rawUrl)
+        public User_groupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user_groups/settings/user_groups{?filters*,ids*,include*,name*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
-        /// Get the list of user groups available in your organization.
+        /// To retrieve a paginated list of user groups configured in your Zoho CRM organization, with optional filtering by name or criteria, and optional inclusion of member source counts.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetGroups200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetGroups400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetGroups403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetGroups200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.User_groupsRequestBuilder.User_groupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.User_groupsRequestBuilder.User_groupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetGroups200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.User_groupsRequestBuilder.User_groupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.User_groupsRequestBuilder.User_groupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetGroups400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetGroups403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetGroups200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetGroups200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new user group in your organization.
+        /// To create a new user group in your Zoho CRM organization with a specified name, optional description, and member sources (users, roles, or territories).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201"/></returns>
-        /// <param name="body">Request body for creating a user group</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201Response"/></returns>
+        /// <param name="body">Request body schema for creating a user group.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of user groups available in your organization.
+        /// To retrieve a paginated list of user groups configured in your Zoho CRM organization, with optional filtering by name or criteria, and optional inclusion of member source counts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,18 +122,18 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups
             return requestInfo;
         }
         /// <summary>
-        /// Create a new user group in your organization.
+        /// To create a new user group in your Zoho CRM organization with a specified name, optional description, and member sources (users, roles, or territories).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for creating a user group</param>
+        /// <param name="body">Request body schema for creating a user group.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -153,12 +153,12 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups
             return new global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.User_groupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of user groups available in your organization.
+        /// To retrieve a paginated list of user groups configured in your Zoho CRM organization, with optional filtering by name or criteria, and optional inclusion of member source counts.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class User_groupsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter criteria for user groups</summary>
+            /// <summary>Filter criteria to narrow the results. Specify conditions as a structured filter expression. Maximum 250 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]
@@ -168,13 +168,33 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups
             [QueryParameter("filters")]
             public string Filters { get; set; }
 #endif
-            /// <summary>Additional data to include in the response</summary>
+            /// <summary>Specify a comma-separated list of unique user group IDs to filter the results by.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ids")]
+            public string? Ids { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
+#endif
+            /// <summary>Specify additional related data to include in the response.Possible values:**sources** - Include the list of sources for each group.**sources_count** - Include the count of sources for each group.</summary>
             [QueryParameter("include")]
-            public global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.GetIncludeQueryParameterType? Include { get; set; }
-            /// <summary>Page number to retrieve</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsInclude? Include { get; set; }
+            /// <summary>Specify the name of the user group to filter the results by.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string Name { get; set; }
+#endif
+            /// <summary>Specify the page number to retrieve paginated results. Default is 1. Minimum value is 1.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of items to return per page</summary>
+            /// <summary>Specify the number of records to return per page. Default is 200. Maximum value is 200.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

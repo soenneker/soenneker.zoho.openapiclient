@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item
         {
         }
         /// <summary>
-        /// appointment module record delete by id
+        /// To delete a single appointment record from your Zoho CRM organization by its unique ID. Note that this operation will not delete any deals created upon completion of the appointment.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteidResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,12 +52,12 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteidResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteidResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// appointment mode record get by id
+        /// To retrieve the details of a single appointment record from your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsGetAppointmentById400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseCore2271053024">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -70,15 +70,15 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsGetAppointmentById400.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseCore2271053024.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// appointment module records update by appointment id
+        /// To update a single appointment record by its ID in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body schema for updating appointment records.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// appointment module record delete by id
+        /// To delete a single appointment record from your Zoho CRM organization by its unique ID. Note that this operation will not delete any deals created upon completion of the appointment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item
             return requestInfo;
         }
         /// <summary>
-        /// appointment mode record get by id
+        /// To retrieve the details of a single appointment record from your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,10 +133,10 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item
             return requestInfo;
         }
         /// <summary>
-        /// appointment module records update by appointment id
+        /// To update a single appointment record by its ID in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body schema for updating appointment records.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,12 +164,12 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item
             return new global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item.WithAppointmentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// appointment module records update by appointment id
+        /// To update a single appointment record by its ID in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithAppointmentItemRequestBuilderPutQueryParameters 
         {
-            /// <summary>holds the appointment id , which is going to be deleted</summary>
+            /// <summary>Specify the ID of the appointment record to update. Use the [Get Appointments API](appointments.yaml#$.paths./Appointments__s.get) to get the ID.</summary>
             [QueryParameter("id")]
             public double? Id { get; set; }
         }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body schema
+    /// Request body schema for creating services. Contains a data array of service objects to be created and an optional skip_mandatory flag.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostservicessRequest : IParsable
     {
-        /// <summary>data array  (Required)</summary>
+        /// <summary>Specify the array of service objects to be created. You can include up to 100 objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested>? Data { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested> Data { get; set; }
 #endif
-        /// <summary>boolean</summary>
+        /// <summary>Specify whether to skip mandatory-field validation when creating service records.</summary>
         public bool? SkipMandatory { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

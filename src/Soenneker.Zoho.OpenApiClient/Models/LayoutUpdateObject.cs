@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Layout object containing the fields to update. At least one property must be provided. Maximum 5 sections and 5 fields (total across all sections) can be modified per request.
+    /// Represents the layout configuration object supplied in an update request, containing at least one of the updatable attributes: name, sections, profiles, or business card display setting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutUpdateObject : IParsable
     {
-        /// <summary>New name for the layout. Must be unique within the module.</summary>
+        /// <summary>Represents the new display name for the layout. Must be unique within the module&apos;s layout configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Array of profile objects to add or remove from the layout.</summary>
+        /// <summary>Contains the array of profile objects to be added to or removed from the layout&apos;s profile associations in this update operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ProfileUpdateObject>? Profiles { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ProfileUpdateObject> Profiles { get; set; }
 #endif
-        /// <summary>Array of section objects to create, update, or delete. Maximum 5 sections allowed per request. Total fields across all sections must not exceed 5.</summary>
+        /// <summary>Contains the array of section objects to be created, modified, or deleted as part of this layout update, defining the field and configuration changes within each section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObject>? Sections { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObject> Sections { get; set; }
 #endif
-        /// <summary>Enable or disable the business card display for this layout.</summary>
+        /// <summary>Specifies whether the business card view is enabled or disabled for this layout as part of the update.</summary>
         public bool? ShowBusinessCard { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

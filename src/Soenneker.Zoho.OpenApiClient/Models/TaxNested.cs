@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains the ID and value of the tax applied to the service cost
+    /// Represents a tax entry applied to the service cost, identified by its tax ID and value label.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TaxNested : IParsable
     {
-        /// <summary>id</summary>
+        /// <summary>Specify the unique ID of the tax applied to the service cost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Id { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public UntypedNode Id { get; set; }
 #endif
-        /// <summary>value to be applied</summary>
+        /// <summary>Specify the display label of the tax applied to the service cost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

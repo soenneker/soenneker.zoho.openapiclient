@@ -7,70 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class FieldSchemaLookup : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class FieldSchemaLookup : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1? FieldSchemaLookupOneOf1 { get; set; }
 #nullable restore
 #else
-        public string ApiName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1 FieldSchemaLookupOneOf1 { get; set; }
 #endif
-        /// <summary>Display label of the lookup field</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayLabel { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull? TypeNull { get; set; }
 #nullable restore
 #else
-        public string DisplayLabel { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull TypeNull { get; set; }
 #endif
-        /// <summary>Id of the resource.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>Module details for the lookup field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup_module? Module { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup_module Module { get; set; }
-#endif
-        /// <summary>Query details for the lookup field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup_query_details? QueryDetails { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup_query_details QueryDetails { get; set; }
-#endif
-        /// <summary>Indicates if the filter should be revalidated during edit</summary>
-        public bool? RevalidateFilterDuringEdit { get; set; }
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup"/> and sets the default values.
-        /// </summary>
-        public FieldSchemaLookup()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,7 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup();
+            if("FieldSchemaLookupOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FieldSchemaLookupOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,16 +51,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(FieldSchemaLookupOneOf1 != null)
             {
-                { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup_module>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup_module.CreateFromDiscriminatorValue); } },
-                { "query_details", n => { QueryDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup_query_details>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup_query_details.CreateFromDiscriminatorValue); } },
-                { "revalidate_filter_during_edit", n => { RevalidateFilterDuringEdit = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return FieldSchemaLookupOneOf1.GetFieldDeserializers();
+            }
+            else if(TypeNull != null)
+            {
+                return TypeNull.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -105,14 +68,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("api_name", ApiName);
-            writer.WriteStringValue("display_label", DisplayLabel);
-            writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup_module>("module", Module);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookup_query_details>("query_details", QueryDetails);
-            writer.WriteBoolValue("revalidate_filter_during_edit", RevalidateFilterDuringEdit);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(FieldSchemaLookupOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1>(null, FieldSchemaLookupOneOf1);
+            }
+            else if(TypeNull != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TypeNull>(null, TypeNull);
+            }
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
     public partial class Locking_Information__sRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.locking_informations.item.item.Locking_Information__s.item collection</summary>
-        /// <param name="position">The ID of the lock to be removed from the locked record.</param>
+        /// <param name="position">Specify the unique identifier of the lock record to be removed or updated.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_Information__s.Item.WithLockItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_Information__s.Item.WithLockItemRequestBuilder this[string position]
         {
@@ -47,50 +47,57 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
         {
         }
         /// <summary>
-        /// Use the Get Record Locking Information API to retrieve the locking information details of locked records in different modules.
+        /// To retrieve the locking information details of a locked record in your Zoho CRM account, including the user who locked the record, the lock source, reason, and timestamp.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_Information__s.Locking_Information__sRequestBuilder.Locking_Information__sRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_Information__s.Locking_Information__sRequestBuilder.Locking_Information__sRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_Information__s.Locking_Information__sRequestBuilder.Locking_Information__sRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_Information__s.Locking_Information__sRequestBuilder.Locking_Information__sRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use the Lock Record API to lock records in different modules.
+        /// To lock a record in the specified module of your Zoho CRM account with a reason for locking.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201"/></returns>
-        /// <param name="body">A JSON object containing the reason for locking the record.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201Response"/></returns>
+        /// <param name="body">Specify the request payload for the locking operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use the Get Record Locking Information API to retrieve the locking information details of locked records in different modules.
+        /// To retrieve the locking information details of a locked record in your Zoho CRM account, including the user who locked the record, the lock source, reason, and timestamp.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,18 +116,18 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
             return requestInfo;
         }
         /// <summary>
-        /// Use the Lock Record API to lock records in different modules.
+        /// To lock a record in the specified module of your Zoho CRM account with a reason for locking.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">A JSON object containing the reason for locking the record.</param>
+        /// <param name="body">Specify the request payload for the locking operation.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -140,12 +147,12 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
             return new global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_Information__s.Locking_Information__sRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Use the Get Record Locking Information API to retrieve the locking information details of locked records in different modules.
+        /// To retrieve the locking information details of a locked record in your Zoho CRM account, including the user who locked the record, the lock source, reason, and timestamp.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Locking_Information__sRequestBuilderGetQueryParameters 
         {
-            /// <summary>A comma-separated list of field API names to be included in the response.</summary>
+            /// <summary>Specify the field API names to include in the response. Accepts comma-separated values. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]

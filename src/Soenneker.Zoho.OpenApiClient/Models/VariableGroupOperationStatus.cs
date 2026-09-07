@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Per-item result for a variable group operation, including code, message, status, and contextual details.
+    /// Represents the per-item operation result for a variable group action, including the status code, message, and optional field path details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariableGroupOperationStatus : IParsable
     {
-        /// <summary>&quot;Field: code&quot;</summary>
+        /// <summary>Represents the status code for the individual variable group operation result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>Details identifying the field (api_name) and its json_path within the payload for context in per-item results.</summary>
+        /// <summary>Represents the field path details returned in per-item operation results, providing context about which field the result pertains to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupFieldPathDetails? Details { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupFieldPathDetails Details { get; set; }
 #endif
-        /// <summary>&quot;Field: message&quot;</summary>
+        /// <summary>Represents the message describing the result of the individual variable group operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>&quot;Field: status&quot;</summary>
+        /// <summary>Represents the status of the individual variable group operation result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

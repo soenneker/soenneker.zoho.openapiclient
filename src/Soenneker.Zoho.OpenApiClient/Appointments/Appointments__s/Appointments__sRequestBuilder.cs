@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
     public partial class Appointments__sRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.appointments.Appointments__s.item collection</summary>
-        /// <param name="position">&quot;Path parameter: appointmentId&quot;</param>
+        /// <param name="position">Specify the unique identifier of the appointment record. Use the [Get Appointments API](appointments.yaml#$.paths./Appointments__s.get) to retrieve all appointment records and obtain the ID of the required appointment record.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item.WithAppointmentItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item.WithAppointmentItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Appointments__sRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/appointments/Appointments__s{?ids*}", pathParameters)
+        public Appointments__sRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/appointments/Appointments__s{?cvid*,ids*,page*,page_token*,per_page*,sort_by*,sort_order*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Appointments__sRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/appointments/Appointments__s{?ids*}", rawUrl)
+        public Appointments__sRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/appointments/Appointments__s{?cvid*,ids*,page*,page_token*,per_page*,sort_by*,sort_order*}", rawUrl)
         {
         }
         /// <summary>
-        /// appointment module record delete
+        /// To delete one or more appointment records in your Zoho CRM organization. Note that this API will not delete any deals created on the completion of the deleted appointments.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteappointmentssResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,28 +65,28 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteappointmentssResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// appointment records get
+        /// To retrieve appointment records from your Zoho CRM organization. Use the `page` and `per_page` parameters to paginate up to 2,000 records, or use the `page_token` received in a prior response to paginate beyond 2,000 records up to a maximum of 100,000. Each request returns a maximum of 200 records. Subform data is not included when retrieving multiple appointments. The API returns field values containing sensitive health data only when the Restrict Data access through API option is disabled in compliance settings.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder.Appointments__sRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder.Appointments__sRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// appointment module records creation
+        /// To create one or more appointment records in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssResponse200"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body schema for creating appointment records.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,12 +103,13 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// appointment module records update
+        /// To update one or more appointment records in your Zoho CRM organization. You can update a maximum of 100 appointments per API call.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body schema for updating appointment records.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsS403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -120,10 +121,14 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsS403Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// appointment module record delete
+        /// To delete one or more appointment records in your Zoho CRM organization. Note that this API will not delete any deals created on the completion of the deleted appointments.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,29 +147,29 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
             return requestInfo;
         }
         /// <summary>
-        /// appointment records get
+        /// To retrieve appointment records from your Zoho CRM organization. Use the `page` and `per_page` parameters to paginate up to 2,000 records, or use the `page_token` received in a prior response to paginate beyond 2,000 records up to a maximum of 100,000. Each request returns a maximum of 200 records. Subform data is not included when retrieving multiple appointments. The API returns field values containing sensitive health data only when the Restrict Data access through API option is disabled in compliance settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder.Appointments__sRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder.Appointments__sRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/appointments/Appointments__s?fields={fields}{&cvid*,page*,page_token*,per_page*,sort_by*,sort_order*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// appointment module records creation
+        /// To create one or more appointment records in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body schema for creating appointment records.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,10 +188,10 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
             return requestInfo;
         }
         /// <summary>
-        /// appointment module records update
+        /// To update one or more appointment records in your Zoho CRM organization. You can update a maximum of 100 appointments per API call.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body schema for updating appointment records.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -214,14 +219,63 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
             return new global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// appointment module record delete
+        /// To delete one or more appointment records in your Zoho CRM organization. Note that this API will not delete any deals created on the completion of the deleted appointments.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Appointments__sRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>contains appointment record ids , which are going to be deleted</summary>
+            /// <summary>Specify the IDs of the appointment records to delete. Accepts comma-separated record IDs. Use the [Get Appointments API](appointments.yaml#$.paths./Appointments__s.get) to get the IDs.</summary>
             [QueryParameter("ids")]
             public double? Ids { get; set; }
+        }
+        /// <summary>
+        /// To retrieve appointment records from your Zoho CRM organization. Use the `page` and `per_page` parameters to paginate up to 2,000 records, or use the `page_token` received in a prior response to paginate beyond 2,000 records up to a maximum of 100,000. Each request returns a maximum of 200 records. Subform data is not included when retrieving multiple appointments. The API returns field values containing sensitive health data only when the Restrict Data access through API option is disabled in compliance settings.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Appointments__sRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Specify the unique ID of the Custom View. Use the [Get Custom Views Metadata API](custom_views.yaml#$.paths./settings/custom_views.get) to retrieve the Custom View IDs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cvid")]
+            public string? Cvid { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cvid")]
+            public string Cvid { get; set; }
+#endif
+            /// <summary>Specify a comma-separated list of field API names to include in the response. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and API names.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public string? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public string Fields { get; set; }
+#endif
+            /// <summary>Specify the page number to retrieve. Starts at 1.</summary>
+            [QueryParameter("page")]
+            public int? Page { get; set; }
+            /// <summary>Specify the page token to retrieve records beyond the first 2,000 results. Use the **next_page_token** value from a previous response to access the next page of results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("page_token")]
+            public string? PageToken { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page_token")]
+            public string PageToken { get; set; }
+#endif
+            /// <summary>Specify the number of records to return per page. Maximum is 200.</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
+            /// <summary>Specify the field to sort records by.  Possible values:**id** - Sorts by record ID.  **Created_Time** - Sorts by creation timestamp.  **Modified_Time** - Sorts by last modification timestamp.</summary>
+            [QueryParameter("sort_by")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.SortBy? SortBy { get; set; }
+            /// <summary>Specify the sort order for the records.&lt;br/&gt; &lt;b&gt;Possible values:&lt;/b&gt; &lt;br/&gt;desc - Returns records in descending order.&lt;br/&gt; asc - Returns records in ascending order.</summary>
+            [QueryParameter("sort_order")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.SortOrder? SortOrder { get; set; }
         }
     }
 }

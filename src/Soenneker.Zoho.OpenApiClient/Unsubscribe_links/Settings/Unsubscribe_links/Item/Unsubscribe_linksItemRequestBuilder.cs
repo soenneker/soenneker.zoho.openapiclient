@@ -34,12 +34,11 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
         {
         }
         /// <summary>
-        /// To delete an unsubscribe link.
+        /// To delete a specific unsubscribe link. Note that the default unsubscribe link cannot be deleted.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkRemovalResultList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidUnsubscribeLinkIdError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PermissionDeniedError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,13 +52,12 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.InvalidUnsubscribeLinkIdError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.PermissionDeniedError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkRemovalResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkRemovalResultList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To get unsubscribe link by id
+        /// To retrieve the complete configuration details of a specific unsubscribe link using its ID. This includes page settings, submission behavior, timestamps, and creator information.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RetrieveUnsubscribeLinksResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,10 +80,10 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RetrieveUnsubscribeLinksResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RetrieveUnsubscribeLinksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To update an unsubscribe link.
+        /// To update a specific unsubscribe link. You can modify the link&apos;s name, page type, custom URL, standard page message, submission action type, redirect URL, or submission message.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UpdateUnsubscribeLinksSuccessResponse"/></returns>
-        /// <param name="body">Request payload to modify an unsubscribe link identified by its id.</param>
+        /// <param name="body">Request payload to update an unsubscribe link identified by its ID.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,7 +100,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateUnsubscribeLinksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateUnsubscribeLinksSuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To delete an unsubscribe link.
+        /// To delete a specific unsubscribe link. Note that the default unsubscribe link cannot be deleted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +119,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             return requestInfo;
         }
         /// <summary>
-        /// To get unsubscribe link by id
+        /// To retrieve the complete configuration details of a specific unsubscribe link using its ID. This includes page settings, submission behavior, timestamps, and creator information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,10 +138,10 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             return requestInfo;
         }
         /// <summary>
-        /// To update an unsubscribe link.
+        /// To update a specific unsubscribe link. You can modify the link&apos;s name, page type, custom URL, standard page message, submission action type, redirect URL, or submission message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload to modify an unsubscribe link identified by its id.</param>
+        /// <param name="body">Request payload to update an unsubscribe link identified by its ID.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body for updating or creating pipeline configurations with custom picklist values and stage mappings.
+    /// Request body for creating a pipeline configuration with a custom pipeline label and mapped stage values for a specific Deals layout.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PipelineCreateRequest : IParsable
@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of pipeline picklist configurations to create or update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequest_pipeline>? Pipeline { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequestPipelineItem>? Pipeline { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequest_pipeline> Pipeline { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequestPipelineItem> Pipeline { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pipeline", n => { Pipeline = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequest_pipeline>(global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequest_pipeline.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pipeline", n => { Pipeline = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequestPipelineItem>(global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequestPipelineItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequest_pipeline>("pipeline", Pipeline);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequestPipelineItem>("pipeline", Pipeline);
         }
     }
 }

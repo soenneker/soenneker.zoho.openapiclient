@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Specific details about the error, often including which parameter or value caused the issue.
+    /// Represents the detailed error information associated with a specific parameter or field that caused the request to fail.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NotificationsErrorDetails : IParsable
     {
-        /// <summary>List of fields causing ambiguity during processing.</summary>
+        /// <summary>Represents the list of fields that caused ambiguity during request processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails_ambiguity_due_to>? AmbiguityDueTo { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsAmbiguityDueToItem>? AmbiguityDueTo { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails_ambiguity_due_to> AmbiguityDueTo { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsAmbiguityDueToItem> AmbiguityDueTo { get; set; }
 #endif
-        /// <summary>The API name of the parameter or field related to the error.</summary>
+        /// <summary>Represents the API name of the parameter or field that caused the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>Details of the dependee field that is missing.</summary>
+        /// <summary>Represents the details of a required dependent field that was missing from the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsDependee? Dependee { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsDependee Dependee { get; set; }
 #endif
-        /// <summary>The expected data type for a parameter or field.</summary>
+        /// <summary>Represents the expected data type for the parameter or field that caused the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpectedDataType { get; set; }
@@ -45,15 +45,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ExpectedDataType { get; set; }
 #endif
-        /// <summary>List of expected fields when multiple fields are required.</summary>
+        /// <summary>Represents the list of fields required when at least one of several expected fields is missing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails_expected_fields>? ExpectedFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsExpectedFieldsItem>? ExpectedFields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails_expected_fields> ExpectedFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsExpectedFieldsItem> ExpectedFields { get; set; }
 #endif
-        /// <summary>The JSON path indicating the location of the error in the request payload.</summary>
+        /// <summary>Represents the JSON path indicating the location of the error in the request payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JsonPath { get; set; }
@@ -61,9 +61,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JsonPath { get; set; }
 #endif
-        /// <summary>The maximum allowed length for a parameter or field.</summary>
+        /// <summary>Represents the maximum allowed length for the parameter or field that caused the error.</summary>
         public int? MaximumLength { get; set; }
-        /// <summary>List of supported values for a parameter or field.</summary>
+        /// <summary>Represents the list of supported values for the parameter or field that caused the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SupportedValues { get; set; }
@@ -89,11 +89,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ambiguity_due_to", n => { AmbiguityDueTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails_ambiguity_due_to>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails_ambiguity_due_to.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ambiguity_due_to", n => { AmbiguityDueTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsAmbiguityDueToItem>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsAmbiguityDueToItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "dependee", n => { Dependee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsDependee>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsDependee.CreateFromDiscriminatorValue); } },
                 { "expected_data_type", n => { ExpectedDataType = n.GetStringValue(); } },
-                { "expected_fields", n => { ExpectedFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails_expected_fields>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails_expected_fields.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "expected_fields", n => { ExpectedFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsExpectedFieldsItem>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsExpectedFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "json_path", n => { JsonPath = n.GetStringValue(); } },
                 { "maximum_length", n => { MaximumLength = n.GetIntValue(); } },
                 { "supported_values", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -106,11 +106,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails_ambiguity_due_to>("ambiguity_due_to", AmbiguityDueTo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsAmbiguityDueToItem>("ambiguity_due_to", AmbiguityDueTo);
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsDependee>("dependee", Dependee);
             writer.WriteStringValue("expected_data_type", ExpectedDataType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails_expected_fields>("expected_fields", ExpectedFields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetailsExpectedFieldsItem>("expected_fields", ExpectedFields);
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteIntValue("maximum_length", MaximumLength);
             writer.WriteCollectionOfPrimitiveValues<string>("supported_values", SupportedValues);

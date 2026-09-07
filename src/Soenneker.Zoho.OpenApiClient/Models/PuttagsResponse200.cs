@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Success Response when Tags update success
+    /// Represents the response body returned when a tag update operation completes successfully.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PuttagsResponse200 : IParsable
     {
-        /// <summary>&quot;Field: tags&quot;</summary>
+        /// <summary>Represents an array containing the result of the tag update operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsNested1>? Tags { get; set; }

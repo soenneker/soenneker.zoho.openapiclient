@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details with validation information
+    /// Represents the error details containing additional context about the failed request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExpectedFieldMissingSchemaDetails : IParsable
     {
-        /// <summary>&quot;Detail field: expected_fields&quot;</summary>
+        /// <summary>Represents the **expected_fields** value from the error detail object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingSchemaDetails_expected_fields>? ExpectedFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingSchemaDetailsExpectedFieldsItem>? ExpectedFields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingSchemaDetails_expected_fields> ExpectedFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingSchemaDetailsExpectedFieldsItem> ExpectedFields { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expected_fields", n => { ExpectedFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingSchemaDetails_expected_fields>(global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingSchemaDetails_expected_fields.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "expected_fields", n => { ExpectedFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingSchemaDetailsExpectedFieldsItem>(global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingSchemaDetailsExpectedFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingSchemaDetails_expected_fields>("expected_fields", ExpectedFields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingSchemaDetailsExpectedFieldsItem>("expected_fields", ExpectedFields);
         }
     }
 }

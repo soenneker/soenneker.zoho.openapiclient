@@ -22,9 +22,9 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item
             get => new global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.portal_users.item.item collection</summary>
-        /// <param name="position">The unique identifier of the record</param>
+        /// <param name="position">Specify the unique identifier of the CRM record for which you want to perform the portal action.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.WithRecordItemRequestBuilder"/></returns>
-        public global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.WithRecordItemRequestBuilder this[string position]
+        public global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.WithRecordItemRequestBuilder this[long position]
         {
             get
             {

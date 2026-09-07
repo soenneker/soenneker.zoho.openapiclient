@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Profile that has permission to view the unmasked field value.
+    /// Represents a CRM profile that is permitted to view the unmasked value of a masked field, exempting users of this profile from the field&apos;s masking rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MaskDetailsProfile : IParsable
     {
-        /// <summary>Unique identifier (64-bit integer represented as string)</summary>
+        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Name of the profile.</summary>
+        /// <summary>Represents the name of the CRM profile that is permitted to view the unmasked field value, identifying which user group is exempt from the field&apos;s masking rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

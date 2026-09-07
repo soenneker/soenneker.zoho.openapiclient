@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals
     public partial class PortalsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.portal_user_type.settings.portals.item collection</summary>
-        /// <param name="position">Portal unique name (path parameter). Provide the portal identifier as defined in the account.</param>
+        /// <param name="position">Specify the API name of the portal whose user types are being managed. This is the unique identifier for the portal in Zoho CRM.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.WithPortalItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.WithPortalItemRequestBuilder this[string position]
         {

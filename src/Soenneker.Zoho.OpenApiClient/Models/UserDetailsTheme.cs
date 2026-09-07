@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// User&apos;s theme information
+    /// Specify the theme configuration for the user&apos;s CRM interface, including color and display settings for the background, screen, header, normal tab, and selected tab elements.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserDetailsTheme : IParsable
     {
-        /// <summary>Background color</summary>
+        /// <summary>Specify the background color for the user&apos;s theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Background { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Background { get; set; }
 #endif
-        /// <summary>Header theme</summary>
+        /// <summary>Specify the theme settings for the header area of the user&apos;s CRM interface, including background color and font color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeHeader? Header { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeHeader Header { get; set; }
 #endif
-        /// <summary>New background color</summary>
+        /// <summary>Specify the updated background color for the user&apos;s theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NewBackground { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string NewBackground { get; set; }
 #endif
-        /// <summary>Normal tab theme</summary>
+        /// <summary>Specify the theme settings for the normal (unselected) tab in the user&apos;s CRM interface, including background color and font color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeNormalTab? NormalTab { get; set; }
@@ -45,9 +45,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeNormalTab NormalTab { get; set; }
 #endif
-        /// <summary>screen type</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTheme_screen? Screen { get; set; }
-        /// <summary>Selected tab theme</summary>
+        /// <summary>Specify the screen type or layout for the user&apos;s CRM interface.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.FixedValueScreen? Screen { get; set; }
+        /// <summary>Specify the theme settings for the selected tab in the user&apos;s CRM interface, including background color and font color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeSelectedTab? SelectedTab { get; set; }
@@ -55,8 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeSelectedTab SelectedTab { get; set; }
 #endif
-        /// <summary>Theme type</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTheme_type? Type { get; set; }
+        /// <summary>Specify the type of theme to apply to the user&apos;s CRM interface.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,9 +79,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "header", n => { Header = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeHeader>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeHeader.CreateFromDiscriminatorValue); } },
                 { "new_background", n => { NewBackground = n.GetStringValue(); } },
                 { "normal_tab", n => { NormalTab = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeNormalTab>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeNormalTab.CreateFromDiscriminatorValue); } },
-                { "screen", n => { Screen = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTheme_screen>(); } },
+                { "screen", n => { Screen = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FixedValueScreen>(); } },
                 { "selected_tab", n => { SelectedTab = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeSelectedTab>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeSelectedTab.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTheme_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeType>(); } },
             };
         }
         /// <summary>
@@ -95,9 +95,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeHeader>("header", Header);
             writer.WriteStringValue("new_background", NewBackground);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeNormalTab>("normal_tab", NormalTab);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTheme_screen>("screen", Screen);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FixedValueScreen>("screen", Screen);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeSelectedTab>("selected_tab", SelectedTab);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTheme_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsThemeType>("type", Type);
         }
     }
 }

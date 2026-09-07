@@ -9,33 +9,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Unauthorized error response.
+    /// Represents the error response when authentication fails for the request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnauthorizedError : ApiException, IParsable
     {
-        /// <summary>Authentication or scope error code.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_code? Code { get; set; }
-        /// <summary>Additional error details.</summary>
+        /// <summary>Represents the error code for the authentication failure.Possible values:**AUTHENTICATION_FAILURE** - The authentication ticket is invalid or missing.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailureCode? Code { get; set; }
+        /// <summary>Represents additional details about the authentication error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorDetailsProperty? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorDetailsProperty Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>Human-readable error message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageEscaped { get; set; }
-#nullable restore
-#else
-        public string MessageEscaped { get; set; }
-#endif
-        /// <summary>Error status indicator.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_status? Status { get; set; }
+        public override string Message { get => base.Message; }
+        /// <summary>Represents the error message for the authentication failure.Possible values:**Authentication failed** - The provided authentication credentials are invalid or missing.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailedMessage? MessageEscaped { get; set; }
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,10 +48,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_code>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_details>(global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_details.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_status>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailureCode>(); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorDetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorDetailsProperty.CreateFromDiscriminatorValue); } },
+                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailedMessage>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -67,10 +61,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_details>("details", Details);
-            writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailureCode>("code", Code);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorDetailsProperty>("details", Details);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailedMessage>("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

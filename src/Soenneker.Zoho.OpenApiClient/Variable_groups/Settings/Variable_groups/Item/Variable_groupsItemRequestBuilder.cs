@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.
         {
         }
         /// <summary>
-        /// To get the particular variable group
+        /// To retrieve the details of a specific variable group by its ID in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupQueryResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,10 +59,10 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupQueryResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupQueryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update variable group details
+        /// To update the details of a specific variable group by its ID in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationResponse"/></returns>
-        /// <param name="body">Alternate request wrapper containing the variable_groups array for defining or updating variable group metadata.</param>
+        /// <param name="body">Represents the request body for updating a variable group by ID.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsPermissionDeniedError">When receiving a 403 status code</exception>
@@ -84,7 +84,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To get the particular variable group
+        /// To retrieve the details of a specific variable group by its ID in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,10 +103,10 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups.
             return requestInfo;
         }
         /// <summary>
-        /// Update variable group details
+        /// To update the details of a specific variable group by its ID in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Alternate request wrapper containing the variable_groups array for defining or updating variable group metadata.</param>
+        /// <param name="body">Represents the request body for updating a variable group by ID.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

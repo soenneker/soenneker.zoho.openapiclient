@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a scheduled action group with its ID and an array of action usage entries.
+    /// Represents a single scheduled action group within a workflow rule, containing the group ID and usage metrics for each action in the group.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScheduledActionsUsageGroupSchema : IParsable
     {
-        /// <summary>&quot;Field: actions&quot;</summary>
+        /// <summary>Represents the array of action usage detail objects within this scheduled action group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.QueuedActionUsageMetricsSchema>? Actions { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.QueuedActionUsageMetricsSchema> Actions { get; set; }
 #endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the ScheduledActionsUsageGroup within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

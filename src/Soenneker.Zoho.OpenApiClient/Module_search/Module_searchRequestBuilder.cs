@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search
     public partial class Module_searchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.module_search.item collection</summary>
-        /// <param name="position">The API name of the CRM module to search within.</param>
+        /// <param name="position">Specify the API name of the module to search within. Refer to [Get Modules](https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html) to retrieve a list of available modules.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Module_search.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.WithModuleItemRequestBuilder this[string position]
         {

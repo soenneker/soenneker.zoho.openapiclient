@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portals.Settings.Portals
     public partial class PortalsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.portals.settings.portals.item collection</summary>
-        /// <param name="position">Portal identifier</param>
+        /// <param name="position">Specify the API name of the portal to retrieve or update. Use the Get Portals operation to retrieve the list of available portals and their names.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Portals.Settings.Portals.Item.WithPortalItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Portals.Settings.Portals.Item.WithPortalItemRequestBuilder this[string position]
         {
@@ -47,57 +47,59 @@ namespace Soenneker.Zoho.OpenApiClient.Portals.Settings.Portals
         {
         }
         /// <summary>
-        /// Retrieve a details of portals data.
+        /// To retrieve the list of all portals configured for the Zoho CRM organization. A 204 response indicates no portal has been created yet.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create portals for the organization to provide access for end customer.
+        /// To create a Client Portal for the Zoho CRM organization. Only one portal can be created per organization. The portal name must be unique across Zoho, between 6 and 30 characters.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200"/></returns>
-        /// <param name="body">Request body schema for creating portals</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200Response"/></returns>
+        /// <param name="body">Represents the request body schema for creating a portal, containing the portal name.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortalRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortalRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal403.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a details of portals data.
+        /// To retrieve the list of all portals configured for the Zoho CRM organization. A 204 response indicates no portal has been created yet.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,18 +118,18 @@ namespace Soenneker.Zoho.OpenApiClient.Portals.Settings.Portals
             return requestInfo;
         }
         /// <summary>
-        /// Create portals for the organization to provide access for end customer.
+        /// To create a Client Portal for the Zoho CRM organization. Only one portal can be created per organization. The portal name must be unique across Zoho, between 6 and 30 characters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema for creating portals</param>
+        /// <param name="body">Represents the request body schema for creating a portal, containing the portal name.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortalRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortalRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

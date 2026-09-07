@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Profile object for adding or removing profile permissions.
+    /// Represents a profile operation object used in layout update requests to add a profile to or remove a profile from the layout&apos;s permission associations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProfileUpdateObject : IParsable
     {
-        /// <summary>Set to true to remove this profile&apos;s access to the layout.</summary>
+        /// <summary>Indicates whether this profile&apos;s association with the layout should be removed. Possible values: `true` — the profile is disassociated from the layout; `false` — the profile association is retained or added.</summary>
         public bool? Delete { get; set; }
-        /// <summary>Unique identifier (64-bit integer represented as string)</summary>
+        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response details for sign mail merge operation.
+    /// Represents the response details returned upon successful initiation of the sign mail merge operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DetailsNested1 : IParsable
     {
-        /// <summary>URL link to the signature report</summary>
+        /// <summary>Represents the URL of the sign mail merge job report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportLink { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ReportLink { get; set; }
 #endif
-        /// <summary>Unique identifier for the signature request resource</summary>
+        /// <summary>Represents the unique ID of the sign request resource created for the sign mail merge operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignResourceId { get; set; }

@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional details for an unsubscribe link association, such as module context.
+    /// Additional details for an unsubscribe link association, including the associated module context.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnsubscribeLinkAssociationDetails : IParsable
     {
-        /// <summary>Module information relevant to an unsubscribe link association, including API name and id.</summary>
+        /// <summary>Represents the module information associated with an unsubscribe link, including the module API name and ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationModule? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationResourceModule? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationModule Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationResourceModule Module { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationModule>(global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationModule.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationResourceModule>(global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationResourceModule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationModule>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociationResourceModule>("module", Module);
         }
     }
 }

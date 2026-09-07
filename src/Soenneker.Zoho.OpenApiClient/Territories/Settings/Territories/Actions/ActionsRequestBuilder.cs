@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Associated_users_count;
+using Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Run_rules;
+using Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Scheduled_run_rule_jobs;
 using Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Transfer_and_delete;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +22,16 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions
         public global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Associated_users_count.Associated_users_countRequestBuilder Associated_users_count
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Associated_users_count.Associated_users_countRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The run_rules property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Run_rules.Run_rulesRequestBuilder Run_rules
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Run_rules.Run_rulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scheduled_run_rule_jobs property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Scheduled_run_rule_jobs.Scheduled_run_rule_jobsRequestBuilder Scheduled_run_rule_jobs
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Scheduled_run_rule_jobs.Scheduled_run_rule_jobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transfer_and_delete property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Transfer_and_delete.Transfer_and_deleteRequestBuilder Transfer_and_delete

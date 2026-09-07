@@ -2,80 +2,55 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// User details
+    /// Represents the user details object used to create or update a Zoho CRM user, including personal information, preferences, role, profile, and account settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserDetails : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alias property</summary>
+        /// <summary>Specify an alias or short name for the user. Set to null to remove an existing alias.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Alias { get; set; }
+        public string? Alias { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Alias { get; set; }
+        public string Alias { get; set; }
 #endif
-        /// <summary>The city property</summary>
+        /// <summary>Specify the city for the user&apos;s address. Set to null to clear an existing city value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? City { get; set; }
+        public string? City { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch City { get; set; }
+        public string City { get; set; }
 #endif
-        /// <summary>Indicates whether the user has accepted the invitation</summary>
-        public bool? Confirm { get; private set; }
-        /// <summary>The country property</summary>
+        /// <summary>Specify the country for the user&apos;s address. Set to null to clear an existing country value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Country { get; set; }
+        public string? Country { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Country { get; set; }
+        public string Country { get; set; }
 #endif
-        /// <summary>User&apos;s country locale</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_country_locale? CountryLocale { get; set; }
-        /// <summary>The created_by property</summary>
+        /// <summary>Specify the locale associated with the user&apos;s country.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCountryLocale? CountryLocale { get; set; }
+        /// <summary>Specify the current shift assigned to the user. Set to null to clear the assigned shift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCurrentShift? CurrentShift { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCurrentShift CurrentShift { get; set; }
 #endif
-        /// <summary>The created_time property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? CreatedTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch CreatedTime { get; set; }
-#endif
-        /// <summary>Current shift assigned to the user</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCurrentShift? CurrentShift { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCurrentShift CurrentShift { get; private set; }
-#endif
-        /// <summary>To update current shift for the user</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? CurrentShiftS { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch CurrentShiftS { get; set; }
-#endif
-        /// <summary>User&apos;s customize information</summary>
+        /// <summary>Specify user interface customization preferences for the user&apos;s account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCustomizeInfo? CustomizeInfo { get; set; }
@@ -83,29 +58,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCustomizeInfo CustomizeInfo { get; set; }
 #endif
-        /// <summary>User&apos;s preferred date format</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_date_format? DateFormat { get; set; }
-        /// <summary>User&apos;s preferred decimal separator</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_decimal_separator? DecimalSeparator { get; set; }
-        /// <summary>Default tab group for the user. </summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DefaultTabGroup { get; set; }
-#nullable restore
-#else
-        public string DefaultTabGroup { get; set; }
-#endif
-        /// <summary>Distance preference</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_distance_preference__s? DistancePreferenceS { get; set; }
-        /// <summary>The dob property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Dob { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Dob { get; set; }
-#endif
-        /// <summary>User&apos;s email address</summary>
+        /// <summary>Specify the user&apos;s preferred date format for displaying date values.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsDateFormat? DateFormat { get; set; }
+        /// <summary>Specify the user&apos;s preferred decimal separator character for displaying numerical values.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsDecimalSeparator? DecimalSeparator { get; set; }
+        /// <summary>Specify the default tab group for the user, determining which group of tabs is shown upon login.</summary>
+        public int? DefaultTabGroup { get; set; }
+        /// <summary>Specify the user&apos;s preferred unit of measurement for displaying distance values.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsDistancePreferenceS? DistancePreferenceS { get; set; }
+        /// <summary>Specify the user&apos;s date of birth in YYYY-MM-DD format. Set to null to clear an existing date of birth.</summary>
+        public Date? Dob { get; set; }
+        /// <summary>Specify the email address for the user&apos;s account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -113,23 +76,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>encrypted zuid</summary>
+        /// <summary>Specify the user&apos;s fax number. Set to null to clear an existing fax number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ezuid { get; private set; }
+        public string? Fax { get; set; }
 #nullable restore
 #else
-        public string Ezuid { get; private set; }
+        public string Fax { get; set; }
 #endif
-        /// <summary>The fax property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Fax { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Fax { get; set; }
-#endif
-        /// <summary>User&apos;s first name</summary>
+        /// <summary>Specify the user&apos;s first name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -137,7 +92,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>User&apos;s full name</summary>
+        /// <summary>Specify the user&apos;s full name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullName { get; private set; }
@@ -145,7 +100,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FullName { get; private set; }
 #endif
-        /// <summary>User&apos;s id</summary>
+        /// <summary>Represents the unique identifier of the user record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; private set; }
@@ -153,7 +108,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>IAM image URL</summary>
+        /// <summary>Specify the URL of the user&apos;s profile image from the Identity and Access Management (IAM) system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImageLink { get; set; }
@@ -161,23 +116,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ImageLink { get; set; }
 #endif
-        /// <summary>imap status</summary>
-        public bool? ImapStatus { get; set; }
-        /// <summary>User&apos;s language. Can be updated only by the same user</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_language? Language { get; set; }
-        /// <summary>The last_name property</summary>
+        /// <summary>Specify the preferred language for the user. This value can be updated only by the user themselves.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsLanguage? Language { get; set; }
+        /// <summary>Specify the user&apos;s last name. Set to null if no last name is to be stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? LastName { get; set; }
+        public string? LastName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch LastName { get; set; }
+        public string LastName { get; set; }
 #endif
-        /// <summary>User&apos;s locale.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_locale? Locale { get; set; }
-        /// <summary>Indicates whether the user is a Microsoft user</summary>
-        public bool? Microsoft { get; set; }
-        /// <summary>User&apos;s mobile</summary>
+        /// <summary>Specify the locale for the user.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsLocale? Locale { get; set; }
+        /// <summary>Specify the user&apos;s mobile phone number. Set to null to clear an existing mobile number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Mobile { get; set; }
@@ -185,25 +136,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Mobile { get; set; }
 #endif
-        /// <summary>The Modified_By property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsModifiedBy? ModifiedBy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsModifiedBy ModifiedBy { get; set; }
-#endif
-        /// <summary>The Modified_Time property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ModifiedTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ModifiedTime { get; set; }
-#endif
-        /// <summary>name format</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_name_format__s? NameFormatS { get; set; }
-        /// <summary>Next shift assigned to the user</summary>
+        /// <summary>Specify the format to use when displaying the user&apos;s name.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNameFormatS? NameFormatS { get; set; }
+        /// <summary>Specify the upcoming shift to be assigned to the user. Set to null to clear the upcoming shift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNextShift? NextShift { get; set; }
@@ -211,11 +146,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNextShift NextShift { get; set; }
 #endif
-        /// <summary>number seperator-(no case sensitive)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_number_separator? NumberSeparator { get; set; }
-        /// <summary>Indicates whether the user has a personal account</summary>
-        public bool? PersonalAccount { get; set; }
-        /// <summary>User&apos;s phone number</summary>
+        /// <summary>Specify the character to use as a separator when formatting numbers for the user. This field is case-insensitive.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNumberSeparator? NumberSeparator { get; set; }
+        /// <summary>Specify the user&apos;s phone number. Set to null to clear an existing phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Phone { get; set; }
@@ -223,7 +156,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Phone { get; set; }
 #endif
-        /// <summary>Profile details</summary>
+        /// <summary>Specify the profile to assign to the user, including the profile&apos;s unique identifier and display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsProfile? Profile { get; set; }
@@ -231,15 +164,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsProfile Profile { get; set; }
 #endif
-        /// <summary>The Reporting_To property</summary>
+        /// <summary>Specify the user to whom this user reports. Set to null to remove the reporting relationship. Refer to the [Get Users](users.yaml#$.paths./users.get) endpoint for valid user IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ReportingTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsReportingTo? ReportingTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ReportingTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsReportingTo ReportingTo { get; set; }
 #endif
-        /// <summary>Role details</summary>
+        /// <summary>Specify the role to assign to the user, including the role&apos;s unique identifier and display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsRole? Role { get; set; }
@@ -247,19 +180,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsRole Role { get; set; }
 #endif
-        /// <summary>Indicates whether the user is a sandbox developer</summary>
-        public bool? SandboxDeveloper { get; set; }
-        /// <summary>Indicates whether to share records with subordinates</summary>
+        /// <summary>Specify whether the user&apos;s records should be shared with their subordinates.\n\nPossible values:\ntrue - Records are shared with subordinates.\nfalse - Records are not shared with subordinates.</summary>
         public bool? ShareAmongSubordinates { get; set; }
-        /// <summary>Next shift effective from date</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? ShiftEffectiveFrom { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch ShiftEffectiveFrom { get; set; }
-#endif
-        /// <summary>User&apos;s email signature</summary>
+        /// <summary>Specify the date on which the upcoming shift assignment becomes effective.</summary>
+        public Date? ShiftEffectiveFrom { get; set; }
+        /// <summary>Specify the email signature for the user. Set to null to remove an existing signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Signature { get; set; }
@@ -267,41 +192,27 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Signature { get; set; }
 #endif
-        /// <summary>sort order preference</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_sort_order_preference__s? SortOrderPreferenceS { get; set; }
-        /// <summary>The state property</summary>
+        /// <summary>Specify the user&apos;s preferred sort order for displaying records.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsSortOrderPreferenceS? SortOrderPreferenceS { get; set; }
+        /// <summary>Specify the state or province for the user&apos;s address. Set to null to clear an existing state value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? State { get; set; }
+        public string? State { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch State { get; set; }
+        public string State { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Specify the status of the user account.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsStatus? Status { get; set; }
+        /// <summary>Specify the street address for the user. Set to null to clear an existing street address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Status { get; set; }
+        public string? Street { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Status { get; set; }
+        public string Street { get; set; }
 #endif
-        /// <summary>The status_reason__s property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? StatusReasonS { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch StatusReasonS { get; set; }
-#endif
-        /// <summary>The street property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Street { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Street { get; set; }
-#endif
-        /// <summary>User&apos;s theme information</summary>
+        /// <summary>Specify the theme configuration for the user&apos;s CRM interface, including color and display settings for the background, screen, header, normal tab, and selected tab elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTheme? Theme { get; private set; }
@@ -309,9 +220,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTheme Theme { get; private set; }
 #endif
-        /// <summary>Time format</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_time_format? TimeFormat { get; set; }
-        /// <summary>User&apos;s time zone. Can only be updated by the same user </summary>
+        /// <summary>Specify the time format to use for displaying time values for the user.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTimeFormat? TimeFormat { get; set; }
+        /// <summary>Specify the time zone for the user. This value can be updated only by the user themselves.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeZone { get; set; }
@@ -319,31 +230,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string TimeZone { get; set; }
 #endif
-        /// <summary>Type of user</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_type__s? TypeS { get; private set; }
-        /// <summary>The website property</summary>
+        /// <summary>Specify the user&apos;s website URL. Set to null to clear an existing website URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Website { get; set; }
+        public string? Website { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Website { get; set; }
+        public string Website { get; set; }
 #endif
-        /// <summary>The zip property</summary>
+        /// <summary>Specify the user&apos;s postal code or ZIP code. Set to null to clear an existing postal code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Zip { get; set; }
+        public string? Zip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Zip { get; set; }
-#endif
-        /// <summary>User&apos;s ZUID</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? Zuid { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch Zuid { get; private set; }
+        public string Zip { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserDetails"/> and sets the default values.
@@ -370,60 +271,46 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alias", n => { Alias = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "city", n => { City = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "confirm", n => { Confirm = n.GetBoolValue(); } },
-                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "country_locale", n => { CountryLocale = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_country_locale>(); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCreatedBy.CreateFromDiscriminatorValue); } },
-                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "alias", n => { Alias = n.GetStringValue(); } },
+                { "city", n => { City = n.GetStringValue(); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "country_locale", n => { CountryLocale = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCountryLocale>(); } },
                 { "$current_shift", n => { CurrentShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCurrentShift>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCurrentShift.CreateFromDiscriminatorValue); } },
-                { "Current_Shift__s", n => { CurrentShiftS = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "customize_info", n => { CustomizeInfo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCustomizeInfo>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCustomizeInfo.CreateFromDiscriminatorValue); } },
-                { "date_format", n => { DateFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_date_format>(); } },
-                { "decimal_separator", n => { DecimalSeparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_decimal_separator>(); } },
-                { "default_tab_group", n => { DefaultTabGroup = n.GetStringValue(); } },
-                { "distance_preference__s", n => { DistancePreferenceS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_distance_preference__s>(); } },
-                { "dob", n => { Dob = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "date_format", n => { DateFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsDateFormat>(); } },
+                { "decimal_separator", n => { DecimalSeparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsDecimalSeparator>(); } },
+                { "default_tab_group", n => { DefaultTabGroup = n.GetIntValue(); } },
+                { "distance_preference__s", n => { DistancePreferenceS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsDistancePreferenceS>(); } },
+                { "dob", n => { Dob = n.GetDateValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "ezuid", n => { Ezuid = n.GetStringValue(); } },
-                { "fax", n => { Fax = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "fax", n => { Fax = n.GetStringValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "full_name", n => { FullName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_link", n => { ImageLink = n.GetStringValue(); } },
-                { "imap_status", n => { ImapStatus = n.GetBoolValue(); } },
-                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_language>(); } },
-                { "last_name", n => { LastName = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "locale", n => { Locale = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_locale>(); } },
-                { "microsoft", n => { Microsoft = n.GetBoolValue(); } },
+                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsLanguage>(); } },
+                { "last_name", n => { LastName = n.GetStringValue(); } },
+                { "locale", n => { Locale = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsLocale>(); } },
                 { "mobile", n => { Mobile = n.GetStringValue(); } },
-                { "Modified_By", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsModifiedBy.CreateFromDiscriminatorValue); } },
-                { "Modified_Time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "name_format__s", n => { NameFormatS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_name_format__s>(); } },
+                { "name_format__s", n => { NameFormatS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNameFormatS>(); } },
                 { "$next_shift", n => { NextShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNextShift>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNextShift.CreateFromDiscriminatorValue); } },
-                { "number_separator", n => { NumberSeparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_number_separator>(); } },
-                { "personal_account", n => { PersonalAccount = n.GetBoolValue(); } },
+                { "number_separator", n => { NumberSeparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNumberSeparator>(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "profile", n => { Profile = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsProfile>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsProfile.CreateFromDiscriminatorValue); } },
-                { "Reporting_To", n => { ReportingTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "Reporting_To", n => { ReportingTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsReportingTo>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsReportingTo.CreateFromDiscriminatorValue); } },
                 { "role", n => { Role = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsRole>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsRole.CreateFromDiscriminatorValue); } },
-                { "sandboxDeveloper", n => { SandboxDeveloper = n.GetBoolValue(); } },
                 { "share_among_subordinates", n => { ShareAmongSubordinates = n.GetBoolValue(); } },
-                { "$shift_effective_from", n => { ShiftEffectiveFrom = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "$shift_effective_from", n => { ShiftEffectiveFrom = n.GetDateValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
-                { "sort_order_preference__s", n => { SortOrderPreferenceS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_sort_order_preference__s>(); } },
-                { "state", n => { State = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "status_reason__s", n => { StatusReasonS = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "street", n => { Street = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "sort_order_preference__s", n => { SortOrderPreferenceS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsSortOrderPreferenceS>(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsStatus>(); } },
+                { "street", n => { Street = n.GetStringValue(); } },
                 { "theme", n => { Theme = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTheme>(global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTheme.CreateFromDiscriminatorValue); } },
-                { "time_format", n => { TimeFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_time_format>(); } },
+                { "time_format", n => { TimeFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTimeFormat>(); } },
                 { "time_zone", n => { TimeZone = n.GetStringValue(); } },
-                { "type__s", n => { TypeS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_type__s>(); } },
-                { "website", n => { Website = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "zip", n => { Zip = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "zuid", n => { Zuid = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "website", n => { Website = n.GetStringValue(); } },
+                { "zip", n => { Zip = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -433,52 +320,43 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("alias", Alias);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("city", City);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("country", Country);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_country_locale>("country_locale", CountryLocale);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCreatedBy>("created_by", CreatedBy);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Current_Shift__s", CurrentShiftS);
+            writer.WriteStringValue("alias", Alias);
+            writer.WriteStringValue("city", City);
+            writer.WriteStringValue("country", Country);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCountryLocale>("country_locale", CountryLocale);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCurrentShift>("$current_shift", CurrentShift);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsCustomizeInfo>("customize_info", CustomizeInfo);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_date_format>("date_format", DateFormat);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_decimal_separator>("decimal_separator", DecimalSeparator);
-            writer.WriteStringValue("default_tab_group", DefaultTabGroup);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_distance_preference__s>("distance_preference__s", DistancePreferenceS);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("dob", Dob);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsDateFormat>("date_format", DateFormat);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsDecimalSeparator>("decimal_separator", DecimalSeparator);
+            writer.WriteIntValue("default_tab_group", DefaultTabGroup);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsDistancePreferenceS>("distance_preference__s", DistancePreferenceS);
+            writer.WriteDateValue("dob", Dob);
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("fax", Fax);
+            writer.WriteStringValue("fax", Fax);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("image_link", ImageLink);
-            writer.WriteBoolValue("imap_status", ImapStatus);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_language>("language", Language);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("last_name", LastName);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_locale>("locale", Locale);
-            writer.WriteBoolValue("microsoft", Microsoft);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsLanguage>("language", Language);
+            writer.WriteStringValue("last_name", LastName);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsLocale>("locale", Locale);
             writer.WriteStringValue("mobile", Mobile);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsModifiedBy>("Modified_By", ModifiedBy);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Modified_Time", ModifiedTime);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_name_format__s>("name_format__s", NameFormatS);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNameFormatS>("name_format__s", NameFormatS);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNextShift>("$next_shift", NextShift);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_number_separator>("number_separator", NumberSeparator);
-            writer.WriteBoolValue("personal_account", PersonalAccount);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsNumberSeparator>("number_separator", NumberSeparator);
             writer.WriteStringValue("phone", Phone);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsProfile>("profile", Profile);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("Reporting_To", ReportingTo);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsReportingTo>("Reporting_To", ReportingTo);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsRole>("role", Role);
-            writer.WriteBoolValue("sandboxDeveloper", SandboxDeveloper);
             writer.WriteBoolValue("share_among_subordinates", ShareAmongSubordinates);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("$shift_effective_from", ShiftEffectiveFrom);
+            writer.WriteDateValue("$shift_effective_from", ShiftEffectiveFrom);
             writer.WriteStringValue("signature", Signature);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_sort_order_preference__s>("sort_order_preference__s", SortOrderPreferenceS);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("state", State);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("status_reason__s", StatusReasonS);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("street", Street);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetails_time_format>("time_format", TimeFormat);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsSortOrderPreferenceS>("sort_order_preference__s", SortOrderPreferenceS);
+            writer.WriteStringValue("state", State);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsStatus>("status", Status);
+            writer.WriteStringValue("street", Street);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDetailsTimeFormat>("time_format", TimeFormat);
             writer.WriteStringValue("time_zone", TimeZone);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("website", Website);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("zip", Zip);
+            writer.WriteStringValue("website", Website);
+            writer.WriteStringValue("zip", Zip);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

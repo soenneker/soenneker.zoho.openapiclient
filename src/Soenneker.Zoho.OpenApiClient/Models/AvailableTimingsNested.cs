@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// contains the service availability timing
+    /// Represents a single availability time window for the service, defined by a start time (From) and an end time (To).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AvailableTimingsNested : IParsable
     {
-        /// <summary>service starts from time</summary>
+        /// <summary>Specify the start of the availability time window in HH:MM (24-hour) format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? From { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string From { get; set; }
 #endif
-        /// <summary>service end time </summary>
+        /// <summary>Specify the end of the availability time window in HH:MM (24-hour) format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? To { get; set; }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedDetailsNestedSchema : IComposedTypeWrapper, IParsable
@@ -21,13 +21,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember1 RelatedDetailsNestedSchemaMember1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember2? RelatedDetailsNestedSchemaMember2 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf1? RelatedDetailsNestedSchemaOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember2 RelatedDetailsNestedSchemaMember2 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf1 RelatedDetailsNestedSchemaOneOf1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2? RelatedDetailsNestedSchemaOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2 RelatedDetailsNestedSchemaOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3? RelatedDetailsNestedSchemaOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3 RelatedDetailsNestedSchemaOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +53,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RelatedDetailsNestedSchemaOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RelatedDetailsNestedSchemaMember1 = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember1();
+                result.RelatedDetailsNestedSchemaOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RelatedDetailsNestedSchemaOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RelatedDetailsNestedSchemaMember2 = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember2();
+                result.RelatedDetailsNestedSchemaOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2();
+            }
+            else if("RelatedDetailsNestedSchemaOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RelatedDetailsNestedSchemaOneOf3 = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3();
             }
             return result;
         }
@@ -59,9 +79,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 return RelatedDetailsNestedSchemaMember1.GetFieldDeserializers();
             }
-            else if(RelatedDetailsNestedSchemaMember2 != null)
+            else if(RelatedDetailsNestedSchemaOneOf1 != null)
             {
-                return RelatedDetailsNestedSchemaMember2.GetFieldDeserializers();
+                return RelatedDetailsNestedSchemaOneOf1.GetFieldDeserializers();
+            }
+            else if(RelatedDetailsNestedSchemaOneOf2 != null)
+            {
+                return RelatedDetailsNestedSchemaOneOf2.GetFieldDeserializers();
+            }
+            else if(RelatedDetailsNestedSchemaOneOf3 != null)
+            {
+                return RelatedDetailsNestedSchemaOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -76,9 +104,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember1>(null, RelatedDetailsNestedSchemaMember1);
             }
-            else if(RelatedDetailsNestedSchemaMember2 != null)
+            else if(RelatedDetailsNestedSchemaOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaMember2>(null, RelatedDetailsNestedSchemaMember2);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf1>(null, RelatedDetailsNestedSchemaOneOf1);
+            }
+            else if(RelatedDetailsNestedSchemaOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2>(null, RelatedDetailsNestedSchemaOneOf2);
+            }
+            else if(RelatedDetailsNestedSchemaOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3>(null, RelatedDetailsNestedSchemaOneOf3);
             }
         }
     }

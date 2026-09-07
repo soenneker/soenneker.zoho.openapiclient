@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Successful response containing a list of workflow rules with their condition-level instant and scheduled action counts.
+    /// Represents the response body containing the action count breakdown for one or more workflow rules, grouped by condition.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowActionCountsResponseSchema : IParsable
     {
-        /// <summary>&quot;Field: workflow_rules&quot;</summary>
+        /// <summary>Represents the array of workflow rule objects with their action count details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleActionCountGroupSchema>? WorkflowRules { get; set; }

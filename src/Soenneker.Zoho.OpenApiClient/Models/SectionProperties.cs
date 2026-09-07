@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional properties for subform sections
+    /// Represents the additional configuration properties for subform sections, including row-level interaction settings, tooltip configuration, and conditional display preferences.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SectionProperties : IParsable
@@ -16,22 +16,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The bulk_addition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? BulkAddition { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition? BulkAddition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch BulkAddition { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition BulkAddition { get; set; }
 #endif
-        /// <summary>Maximum number of rows allowed in the subform</summary>
+        /// <summary>Indicates the maximum number of rows that can be added to the subform section, controlling how many related records can be embedded in a single parent record&apos;s layout.</summary>
         public int? MaximumRows { get; set; }
-        /// <summary>Filter preference criteria for the section. Defines conditions that must be met for the section to be displayed or for certain behaviors to apply.</summary>
+        /// <summary>Contains the conditional display criteria for the section, defining the field conditions that must be satisfied for the section to be shown or for certain section behaviors to be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference>? Preference { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem>? Preference { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference> Preference { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem> Preference { get; set; }
 #endif
-        /// <summary>Allows reordering of subform rows</summary>
+        /// <summary>Indicates whether users are permitted to reorder existing rows within the subform section by dragging them to a new position. Possible values: `true` — row reordering is allowed; `false` — rows cannot be reordered.</summary>
         public bool? ReorderRows { get; set; }
         /// <summary>The tooltip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,9 +59,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bulk_addition", n => { BulkAddition = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "bulk_addition", n => { BulkAddition = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition>(global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition.CreateFromDiscriminatorValue); } },
                 { "maximum_rows", n => { MaximumRows = n.GetIntValue(); } },
-                { "preference", n => { Preference = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference>(global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "preference", n => { Preference = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem>(global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reorder_rows", n => { ReorderRows = n.GetBoolValue(); } },
                 { "tooltip", n => { Tooltip = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip>(global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip.CreateFromDiscriminatorValue); } },
             };
@@ -73,9 +73,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>("bulk_addition", BulkAddition);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition>("bulk_addition", BulkAddition);
             writer.WriteIntValue("maximum_rows", MaximumRows);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties_preference>("preference", Preference);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem>("preference", Preference);
             writer.WriteBoolValue("reorder_rows", ReorderRows);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip>("tooltip", Tooltip);
         }

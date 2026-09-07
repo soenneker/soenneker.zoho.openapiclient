@@ -34,30 +34,32 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_f
         {
         }
         /// <summary>
-        /// Fetches the full content of rich text fields for a specific record. If the &apos;fields&apos; parameter is not provided, all rich text fields in the module will be fetched.
+        /// Retrieves the full content of rich text multi-line fields for a specific record identified by its record ID in the path. The &apos;fields&apos; query parameter is optional for this endpoint - if omitted, all rich text fields of the record are returned. When specified, only the listed rich text fields are fetched. This API exclusively fetches rich text fields - other field types are not supported. Only data from rich text multi-line fields can be retrieved; multi-line fields of other types (small, large) are not supported.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataInternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord400Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataInternalServerErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches the full content of rich text fields for a specific record. If the &apos;fields&apos; parameter is not provided, all rich text fields in the module will be fetched.
+        /// Retrieves the full content of rich text multi-line fields for a specific record identified by its record ID in the path. The &apos;fields&apos; query parameter is optional for this endpoint - if omitted, all rich text fields of the record are returned. When specified, only the listed rich text fields are fetched. This API exclusively fetches rich text fields - other field types are not supported. Only data from rich text multi-line fields can be retrieved; multi-line fields of other types (small, large) are not supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,12 +87,12 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_f
             return new global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetches the full content of rich text fields for a specific record. If the &apos;fields&apos; parameter is not provided, all rich text fields in the module will be fetched.
+        /// Retrieves the full content of rich text multi-line fields for a specific record identified by its record ID in the path. The &apos;fields&apos; query parameter is optional for this endpoint - if omitted, all rich text fields of the record are returned. When specified, only the listed rich text fields are fetched. This API exclusively fetches rich text fields - other field types are not supported. Only data from rich text multi-line fields can be retrieved; multi-line fields of other types (small, large) are not supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Fetch_full_dataRequestBuilderGetQueryParameters 
         {
-            /// <summary>A single string containing a comma-separated list of rich text field API names to fetch.</summary>
+            /// <summary>A comma-separated list of rich text field API names whose values you want to retrieve. Mandatory when retrieving rich text fields for multiple records (maximum 8 field API names). Optional when retrieving rich text fields for a specific record - if omitted, all rich text fields of the record are returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]

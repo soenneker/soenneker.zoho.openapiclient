@@ -8,16 +8,16 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Section object for creating, updating, or deleting sections. For creating a new section, provide name, display_label, sequence_number, tab_traversal, and column_count. For updating an existing section, provide id along with properties to update. For deleting a section, provide id and _delete object.
+    /// Represents a section operation object used in layout update requests to create, modify, or delete a section within the layout, including its label, field assignments, column count, and sequence.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SectionUpdateObject : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Number of columns in the section layout.</summary>
+        /// <summary>Indicates the number of columns in which fields are arranged within this section when the layout is rendered on record forms.</summary>
         public int? ColumnCount { get; set; }
-        /// <summary>Delete configuration object.</summary>
+        /// <summary>Represents the configuration object used to specify the deletion mode when removing a layout or resource, indicating whether the deletion is permanent or a soft delete to the recycle bin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject? Delete { get; set; }
@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject Delete { get; set; }
 #endif
-        /// <summary>Display label shown in the UI for the section. Required when creating a new section.</summary>
+        /// <summary>Represents the heading label of the section as displayed in the CRM interface. Required when creating a new section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayLabel { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayLabel { get; set; }
 #endif
-        /// <summary>&quot;Array of field objects to add, update, create, or remove from this section. Note: Total fields across all sections in the request must not exceed 5.&quot;</summary>
+        /// <summary>Contains the array of field operations to perform within this section, including adding, updating, creating, or removing field entries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject>? Fields { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject> Fields { get; set; }
 #endif
-        /// <summary>Unique identifier (64-bit integer represented as string)</summary>
+        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Internal API name of the section. Required when creating a new section. Should be unique within the layout.</summary>
+        /// <summary>Represents the internal API name of the section. Required when creating a new section through a layout update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -57,10 +57,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Position/order of the section in the layout (1-based). Required when creating a new section. Lower numbers appear first.</summary>
+        /// <summary>Indicates the one-based ordinal position of the section within the layout, controlling the order in which sections are rendered.</summary>
         public int? SequenceNumber { get; set; }
-        /// <summary>Tab traversal mode for the section. Defines how tab key navigation works within the section. 1 = column-wise, 2 = row-wise.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObject_tab_traversal? TabTraversal { get; set; }
+        /// <summary>Specifies the tab key navigation direction within the section. Defines how focus moves between fields when users press Tab. Possible values: `left_to_right` — focus moves horizontally across columns first. `top_to_bottom` — focus moves vertically down each column first.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectTabTraversal? TabTraversal { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObject"/> and sets the default values.
         /// </summary>
@@ -93,7 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "sequence_number", n => { SequenceNumber = n.GetIntValue(); } },
-                { "tab_traversal", n => { TabTraversal = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObject_tab_traversal>(); } },
+                { "tab_traversal", n => { TabTraversal = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectTabTraversal>(); } },
             };
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("sequence_number", SequenceNumber);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObject_tab_traversal>("tab_traversal", TabTraversal);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectTabTraversal>("tab_traversal", TabTraversal);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

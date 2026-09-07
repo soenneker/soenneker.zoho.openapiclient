@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details with validation information
+    /// Represents error details when a field at a specific JSON path exceeds its maximum allowed count.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiNameLimitJsonPath : IParsable
     {
-        /// <summary>&quot;Detail field: api_name&quot;</summary>
+        /// <summary>Represents the API name of the field that exceeded the limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>&quot;Nested detail field: json_path&quot;</summary>
+        /// <summary>Represents the JSON path of the field that exceeded the limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JsonPath { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JsonPath { get; set; }
 #endif
-        /// <summary>&quot;Detail field: limit&quot;</summary>
+        /// <summary>Represents the maximum allowed count for the field.</summary>
         public int? Limit { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

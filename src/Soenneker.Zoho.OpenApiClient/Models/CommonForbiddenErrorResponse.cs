@@ -9,27 +9,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Common Forbidden Error Response
+    /// Represents the forbidden error response returned when the user does not have permission to access the API.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CommonForbiddenErrorResponse : ApiException, IParsable
     {
-        /// <summary>response code</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_code? Code { get; set; }
-        /// <summary>additional information</summary>
+        /// <summary>Represents the error code returned for the permission-denied failure.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode? Code { get; set; }
+        /// <summary>Represents the additional information about the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_details? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponseDetailsProperty? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_details Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponseDetailsProperty Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>response message</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_message? MessageEscaped { get; set; }
-        /// <summary>response status</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_status? Status { get; set; }
+        /// <summary>Represents the response message returned by the API. </summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponseMessage? MessageEscaped { get; set; }
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,10 +48,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_code>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_details>(global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_details.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_message>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_status>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>(); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponseDetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponseDetailsProperty.CreateFromDiscriminatorValue); } },
+                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponseMessage>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -61,10 +61,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_details>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_message>("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>("code", Code);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponseDetailsProperty>("details", Details);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponseMessage>("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

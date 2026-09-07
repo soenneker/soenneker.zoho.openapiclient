@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Identifies a specific related list by its API name and unique identifier.
+    /// Represents a related list identified by its API name and unique ID. Used in both the request to specify the target related list and in the response to echo the queried related list.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedListReference : IParsable
     {
-        /// <summary>The API name of the related list (e.g., &apos;Contacts&apos;, &apos;Deals&apos;, &apos;Tasks&apos;).</summary>
+        /// <summary>Represents the API name of the related list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>The unique identifier of the related list definition.</summary>
+        /// <summary>Represents the unique ID of the related list.  Use the  [Get Related Records API](related_records.yaml#$.paths./{parentRecordModule}/{parentRecord}/{relatedList}.get) to get the ID of the related list in the key ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

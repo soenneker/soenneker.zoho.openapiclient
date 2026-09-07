@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_share_email.Item
             get => new global::Soenneker.Zoho.OpenApiClient.Record_share_email.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.record_share_email.item.item collection</summary>
-        /// <param name="position">The ID of the record</param>
+        /// <param name="position">Specify the unique identifier of the record whose emails you want to manage. The ID must belong to a record in the specified module. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Record_share_email.Item.Item.ModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Record_share_email.Item.Item.ModuleApiNameItemRequestBuilder this[string position]
         {

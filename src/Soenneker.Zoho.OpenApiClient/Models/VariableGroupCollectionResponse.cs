@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Successful response containing the current collection of variable groups after processing the request.
+    /// Represents the response body for a successful variable group update operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariableGroupCollectionResponse : IParsable
     {
-        /// <summary>&quot;Field: variable_groups&quot;</summary>
+        /// <summary>Represents an array of per-item operation status objects returned after processing the update request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationStatus>? VariableGroups { get; set; }

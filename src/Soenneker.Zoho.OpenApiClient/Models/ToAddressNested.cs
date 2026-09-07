@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// The email ID you want to use to send emails to.
+    /// Represents a recipient address entry for a mail merge email, containing the address type and email value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ToAddressNested : IParsable
     {
-        /// <summary>Type of the address. Must be &apos;email&apos;.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested_type? Type { get; set; }
-        /// <summary>The email ID you want to use to send emails to.</summary>
+        /// <summary>Represents the type of the address.Possible values:**email** - Indicates that the value is an email address.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailType? Type { get; set; }
+        /// <summary>Represents the recipient email address for the mail merge email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -52,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailType>("type", Type);
             writer.WriteStringValue("value", Value);
         }
     }

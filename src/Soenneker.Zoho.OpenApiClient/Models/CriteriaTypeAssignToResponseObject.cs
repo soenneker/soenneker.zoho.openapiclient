@@ -13,16 +13,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CriteriaTypeAssignToResponseObject : IParsable
     {
-        /// <summary>Defines the criteria of the users who will be considered for owner assignment for records entering the current rule entry</summary>
+        /// <summary>Defines the criteria of the users who is considered for owner assignment for records entering the current rule entry. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObject_criteria? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectCriteriaProperty? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObject_criteria Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectCriteriaProperty Criteria { get; set; }
 #endif
-        /// <summary>Defines which set of users should be considered for assignment.  (Required)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObject_type? Type { get; set; }
+        /// <summary>Defines which set of users should be considered for assignment.Possible values:**criteria** - Represents criteria.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,8 +41,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObject_criteria>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObject_criteria.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObject_type>(); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectCriteriaProperty>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectCriteriaProperty.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaType>(); } },
             };
         }
         /// <summary>
@@ -52,8 +52,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObject_criteria>("criteria", Criteria);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObject_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectCriteriaProperty>("criteria", Criteria);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaType>("type", Type);
         }
     }
 }

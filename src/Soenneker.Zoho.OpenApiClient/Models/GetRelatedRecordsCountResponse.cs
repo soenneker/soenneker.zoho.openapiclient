@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Successful response containing count results for the requested related lists.
+    /// Represents the response returned when the count operation succeeds. Contains an array of count results, one entry for each related list requested.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetRelatedRecordsCountResponse : IParsable
     {
-        /// <summary>Array of count result arrays, one entry per requested related list.</summary>
+        /// <summary>Represents the array of count results, one entry for each related list requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? GetRelatedRecordsCount { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountResult>? GetRelatedRecordsCount { get; set; }
 #nullable restore
 #else
-        public UntypedNode GetRelatedRecordsCount { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountResult> GetRelatedRecordsCount { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "get_related_records_count", n => { GetRelatedRecordsCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "get_related_records_count", n => { GetRelatedRecordsCount = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountResult>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountResult.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("get_related_records_count", GetRelatedRecordsCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountResult>("get_related_records_count", GetRelatedRecordsCount);
         }
     }
 }

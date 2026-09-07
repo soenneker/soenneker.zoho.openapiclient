@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhotoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_photo/{module}/{record}/photo", pathParameters)
+        public PhotoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_photo/{module}/{record}/photo{?restrict_triggers*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,92 +30,95 @@ namespace Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhotoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_photo/{module}/{record}/photo", rawUrl)
+        public PhotoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/record_photo/{module}/{record}/photo{?restrict_triggers*}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete a photo for a record
+        /// To delete the photo associated with a specific record in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeletePhoto200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeleteRecordPhoto200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeletePhoto400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeleteRecordPhoto400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeletePhoto200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeleteRecordPhoto200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeletePhoto200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeleteRecordPhoto200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeletePhoto400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeleteRecordPhoto400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeletePhoto200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeletePhoto200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeleteRecordPhoto200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoDeleteRecordPhoto200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a photo for a record
+        /// To retrieve the photo associated with a specific record in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoGetPhoto400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoGetRecordPhoto400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoGetPhoto400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoGetRecordPhoto400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload a photo for a record
+        /// To upload a photo for a specific record in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadPhoto200"/></returns>
-        /// <param name="body">Request body for uploading a photo file</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto200Response"/></returns>
+        /// <param name="body">Represents the schema for the photo upload request, containing the photo file in multipart/form-data format.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadPhoto400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto413Response">When receiving a 413 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415Response">When receiving a 415 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadPhoto200?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto200Response?> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadPhoto200> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto200Response> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadPhoto400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto400Response.CreateFromDiscriminatorValue },
+                { "413", global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto413Response.CreateFromDiscriminatorValue },
+                { "415", global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadPhoto200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadPhoto200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a photo for a record
+        /// To delete the photo associated with a specific record in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -124,7 +127,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a photo for a record
+        /// To retrieve the photo associated with a specific record in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,18 +146,18 @@ namespace Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo
             return requestInfo;
         }
         /// <summary>
-        /// Upload a photo for a record
+        /// To upload a photo for a specific record in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for uploading a photo file</param>
+        /// <param name="body">Represents the schema for the photo upload request, containing the photo file in multipart/form-data format.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo.PhotoRequestBuilder.PhotoRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -172,6 +175,40 @@ namespace Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo
         public global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo.PhotoRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Zoho.OpenApiClient.Record_photo.Item.Item.Photo.PhotoRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// To delete the photo associated with a specific record in your Zoho CRM organization.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class PhotoRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>(Optional) Comma-separated list of automation triggers to suppress during the operation. Accepted values are `workflow`, `approval`, `blueprint`, `pathfinder`, and `orchestration`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("restrict_triggers")]
+            public string? RestrictTriggers { get; set; }
+#nullable restore
+#else
+            [QueryParameter("restrict_triggers")]
+            public string RestrictTriggers { get; set; }
+#endif
+        }
+        /// <summary>
+        /// To upload a photo for a specific record in your Zoho CRM organization.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class PhotoRequestBuilderPostQueryParameters 
+        {
+            /// <summary>(Optional) Comma-separated list of automation triggers to suppress during the operation. Accepted values are `workflow`, `approval`, `blueprint`, `pathfinder`, and `orchestration`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("restrict_triggers")]
+            public string? RestrictTriggers { get; set; }
+#nullable restore
+#else
+            [QueryParameter("restrict_triggers")]
+            public string RestrictTriggers { get; set; }
+#endif
         }
     }
 }

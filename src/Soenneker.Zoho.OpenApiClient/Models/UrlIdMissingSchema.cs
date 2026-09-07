@@ -9,14 +9,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// the id given seems to be invalid
+    /// Represents the error response returned when the workflow rule ID provided in the URL path is invalid or does not match an existing record.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UrlIdMissingSchema : ApiException, IParsable
     {
-        /// <summary>Error code</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchema_code? Code { get; set; }
-        /// <summary>Error details with validation information</summary>
+        /// <summary>Represents the error code that identifies the specific error condition.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchemaCode? Code { get; set; }
+        /// <summary>Represents the error details containing additional context about the failed request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchemaDetails? Details { get; set; }
@@ -25,11 +25,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchemaDetails Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
-        /// <summary>Error message</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchema_message? MessageEscaped { get; set; }
-        /// <summary>Error status</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchema_status? Status { get; set; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>Represents the error message describing the issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,10 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchema_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchemaCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchemaDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchema_message>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchema_status>(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -61,10 +67,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchema_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchemaCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchemaDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchema_message>("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UrlIdMissingSchema_status>("status", Status);
+            writer.WriteStringValue("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

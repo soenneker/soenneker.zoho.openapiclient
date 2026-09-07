@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories
     public partial class TerritoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.territory_users.settings.territories.item collection</summary>
-        /// <param name="position">The ID of the territory.</param>
+        /// <param name="position">Specify the unique ID of the territory for which you want to retrieve the list of users. Use the [Get Territories API](territories.yaml#$.paths./settings/territories.get) to retrieve the territory ID.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item.WithTerritoryItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item.WithTerritoryItemRequestBuilder this[string position]
         {

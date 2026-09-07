@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// services post response
+    /// Wrapped response for a service create request. Contains a per-record status array with the success code, persisted ID, and audit metadata for each service record processed.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostservicessResponse201 : IParsable
     {
-        /// <summary>&quot;Field: data&quot;</summary>
+        /// <summary>Represents the per-record status array, with one entry for each service record processed in the create request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested1>? Data { get; set; }

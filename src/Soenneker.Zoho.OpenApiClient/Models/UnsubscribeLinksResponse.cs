@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Envelope containing a collection of unsubscribe link records returned by the settings listing endpoint.
+    /// Response envelope containing a collection of unsubscribe link records returned by the settings listing endpoint.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnsubscribeLinksResponse : IParsable
     {
-        /// <summary>&quot;Field: unsubscribe_links&quot;</summary>
+        /// <summary>Array of unsubscribe link summary records</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkSummaryRecord>? UnsubscribeLinks { get; set; }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Single Workflow Rule Response Body.
+    /// Represents the paginated list response for workflow rules, containing an array of workflow rule objects and pagination metadata.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRulesGetResponseSchema : IParsable
     {
-        /// <summary>Nested schema for info</summary>
+        /// <summary>Represents the pagination metadata included in list response payloads, including the current page, records per page, total count, and whether more records exist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.InfoNestedSchema? Info { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.InfoNestedSchema Info { get; set; }
 #endif
-        /// <summary>&quot;Field: workflow_rules&quot;</summary>
+        /// <summary>Represents the array of workflow rule objects returned in the list response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleSingleGetSchema>? WorkflowRules { get; set; }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for getting territories of a user
+    /// Represents the response containing territories assigned to a user and pagination details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerritoryGetResponse : IParsable
     {
-        /// <summary>Pagination information</summary>
+        /// <summary>Represents the pagination details for the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseInfo? Info { get; set; }
@@ -21,13 +21,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseInfo Info { get; set; }
 #endif
-        /// <summary>List of territories assigned to the user</summary>
+        /// <summary>The JSON array representing the list of territories assigned to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_territories>? Territories { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItem>? Territories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_territories> Territories { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItem> Territories { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseInfo>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseInfo.CreateFromDiscriminatorValue); } },
-                { "territories", n => { Territories = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_territories>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_territories.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "territories", n => { Territories = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItem>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseInfo>("info", Info);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse_territories>("territories", Territories);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItem>("territories", Territories);
         }
     }
 }

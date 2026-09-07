@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Details of the assignment rule
+    /// Details of the Assignment Rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssignmentRuleResponseObjectWithRuleEntries : IParsable
     {
-        /// <summary>API name of the rule (Unique)</summary>
+        /// <summary>Represents the aPI name of the rule. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>Resource details</summary>
+        /// <summary>Resource details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject? CreatedBy { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject CreatedBy { get; set; }
 #endif
-        /// <summary>Date and time of assignment rule creation</summary>
+        /// <summary>Represents the date and time of Assignment Rule creation. </summary>
         public DateTimeOffset? CreatedTime { get; set; }
         /// <summary>Details of the fallback user for record assignment in cases where the owner cannot be assigned through rule entries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject DefaultAssignee { get; set; }
 #endif
-        /// <summary>Explains of the purpose of the assignment rule</summary>
+        /// <summary>Purpose of the Assignment Rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>ID of the resource</summary>
+        /// <summary>ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Resource details</summary>
+        /// <summary>Resource details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject? ModifiedBy { get; set; }
@@ -63,9 +63,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject ModifiedBy { get; set; }
 #endif
-        /// <summary>Date and time of assignment rule recent modification</summary>
+        /// <summary>Represents the date and time of Assignment Rule recent modification. </summary>
         public DateTimeOffset? ModifiedTime { get; set; }
-        /// <summary>Resource details</summary>
+        /// <summary>Resource details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject? Module { get; set; }
@@ -73,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject Module { get; set; }
 #endif
-        /// <summary>Name to be displayed for the assignment rule (Required) (Unique)</summary>
+        /// <summary>Represents the name to be displayed for the Assignment Rule. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -81,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Defines the list of rules entries with record matching logic and assignment logic</summary>
+        /// <summary>Defines the list of rules entries with record matching logic and assignment logic. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject>? RuleEntries { get; set; }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Successful response structure for fetching a list of webhooks, including webhook data and pagination information.
+    /// Represents the paginated success response for listing webhooks. Contains summary-level webhook objects without headers, body, authentication, or date_time_format details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetWebhooksSuccessResponse : IParsable
     {
-        /// <summary>Contains pagination metadata such as number of items per page, total count, current page number, and whether more records are available.</summary>
+        /// <summary>Represents the pagination metadata returned with list responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfoResponse? Info { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfoResponse Info { get; set; }
 #endif
-        /// <summary>&quot;Field: webhooks&quot;</summary>
+        /// <summary>Represents the list of webhook summary objects returned by the list operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponse>? Webhooks { get; set; }

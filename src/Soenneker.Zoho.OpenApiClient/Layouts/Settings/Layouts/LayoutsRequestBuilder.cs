@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts
     public partial class LayoutsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.layouts.settings.layouts.item collection</summary>
-        /// <param name="position">Unique identifier of the layout. Must be a valid 64-bit integer represented as a string. Can be obtained from the Get Layouts API.</param>
+        /// <param name="position">Specify the unique identifier of the layout. Refer to the [Get Layouts](layouts.yaml#$.paths./settings/layouts.get) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LayoutsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts/settings/layouts?module={module}{&include*,include_inner_details*,mode*}", pathParameters)
+        public LayoutsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts/settings/layouts?module={module}{&include*,include_element_types*,include_inner_details*,mode*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,40 +43,40 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LayoutsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts/settings/layouts?module={module}{&include*,include_inner_details*,mode*}", rawUrl)
+        public LayoutsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts/settings/layouts?module={module}{&include*,include_element_types*,include_inner_details*,mode*}", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;Retrieves comprehensive details of all layouts associated with a specified module in your Zoho CRM account. Returns layout configuration including sections, fields, profiles, and permissions in a single response without pagination.**Important Notes:**- The `profiles` array will be `null` if the user does not have \&quot;Module Customization\&quot; permission in their profile.- For Deals module: When the pipeline feature is enabled, multiple layouts exist per pipeline. Each pipeline can have its own set of layouts.- The `mode` parameter supports different values based on module type. Common modes include `business_card` and `quick_create`.- Score and Visit Summary sections are system-generated and read-only.- All layouts for the module are returned in a single response; pagination is not supported.&quot;
+        /// To retrieve the layout configurations for a specified module in your Zoho CRM organization.  **Note:** - The **profiles** array is **null** if the user does not have the Module Customization permission in their profile. - For the Deals module, when the pipeline feature is enabled, multiple layouts exist per pipeline, each with its own set of layouts. - Score and Visit Summary sections are system-generated and read-only. - The API returns all layouts for the module in a single response; pagination is not supported.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsBadRequestResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsNotFoundResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.LayoutsRequestBuilder.LayoutsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.LayoutsRequestBuilder.LayoutsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.LayoutsRequestBuilder.LayoutsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.LayoutsRequestBuilder.LayoutsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema400Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsBadRequestResponse.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema404Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsNotFoundResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieves comprehensive details of all layouts associated with a specified module in your Zoho CRM account. Returns layout configuration including sections, fields, profiles, and permissions in a single response without pagination.**Important Notes:**- The `profiles` array will be `null` if the user does not have \&quot;Module Customization\&quot; permission in their profile.- For Deals module: When the pipeline feature is enabled, multiple layouts exist per pipeline. Each pipeline can have its own set of layouts.- The `mode` parameter supports different values based on module type. Common modes include `business_card` and `quick_create`.- Score and Visit Summary sections are system-generated and read-only.- All layouts for the module are returned in a single response; pagination is not supported.&quot;
+        /// To retrieve the layout configurations for a specified module in your Zoho CRM organization.  **Note:** - The **profiles** array is **null** if the user does not have the Module Customization permission in their profile. - For the Deals module, when the pipeline feature is enabled, multiple layouts exist per pipeline, each with its own set of layouts. - Score and Visit Summary sections are system-generated and read-only. - The API returns all layouts for the module in a single response; pagination is not supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,15 +104,18 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts
             return new global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.LayoutsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieves comprehensive details of all layouts associated with a specified module in your Zoho CRM account. Returns layout configuration including sections, fields, profiles, and permissions in a single response without pagination.**Important Notes:**- The `profiles` array will be `null` if the user does not have \&quot;Module Customization\&quot; permission in their profile.- For Deals module: When the pipeline feature is enabled, multiple layouts exist per pipeline. Each pipeline can have its own set of layouts.- The `mode` parameter supports different values based on module type. Common modes include `business_card` and `quick_create`.- Score and Visit Summary sections are system-generated and read-only.- All layouts for the module are returned in a single response; pagination is not supported.&quot;
+        /// To retrieve the layout configurations for a specified module in your Zoho CRM organization.  **Note:** - The **profiles** array is **null** if the user does not have the Module Customization permission in their profile. - For the Deals module, when the pipeline feature is enabled, multiple layouts exist per pipeline, each with its own set of layouts. - Score and Visit Summary sections are system-generated and read-only. - The API returns all layouts for the module in a single response; pagination is not supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LayoutsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specifies additional data to include in the response.</summary>
+            /// <summary>Specify additional data to include in the response beyond the default layout structure. Possible values: `total_profiles` — include the total count of profiles associated with each layout. `portal_user_types` — include portal user type associations for each layout.</summary>
             [QueryParameter("include")]
-            public global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.GetIncludeQueryParameterType? Include { get; set; }
-            /// <summary>Specifies additional inner details to include in the response. Accepts a comma-separated list of dot-notation paths indicating which nested properties should return extended information.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.Includes? Include { get; set; }
+            /// <summary>Specify the type of field component in the layout, distinguishing standard fields from mirror fields that derive their value from a lookup source. Possible values: `field` — a standard data field in the layout. `mirror_field` — a field that reflects a value from a related module lookup.</summary>
+            [QueryParameter("include_element_types")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.MirrorComponentParameter? IncludeElementTypes { get; set; }
+            /// <summary>Specify additional inner details to include in the response for each field. Possible values: `fields.allowed_permissions_to_update` - Include the set of permissions eligible for update per field. `fields.portal_user_types` - Include portal user type permission entries per field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include_inner_details")]
@@ -122,10 +125,10 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts
             [QueryParameter("include_inner_details")]
             public string IncludeInnerDetails { get; set; }
 #endif
-            /// <summary>&quot;Filter layouts by mode. Available modes vary by module type:- `business_card`: Business card layout view- `quick_create`: Quick create form layout- `all`: Request all available modesIf not provided, the default mode for the module will be applied. Note: Mode availability depends on the module and its configuration.&quot;</summary>
+            /// <summary>Specify the layout mode to filter the response. Available modes vary by module type. Possible values: `all` - Request all available layout modes. `business_card` - Business card layout view. `quick_create` - Quick create form layout.</summary>
             [QueryParameter("mode")]
-            public global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.GetModeQueryParameterType? Mode { get; set; }
-            /// <summary>Specify the API name of the required module. Supports both standard modules (Leads, Accounts, Contacts, Deals, Campaigns, Tasks, Cases, Events, Calls, Solutions, Products, Vendors, Price_Books, Quotes, Sales_Orders, Purchase_Orders, Invoices, Appointments, Services) and custom modules. Module API names are case-insensitive, can contain alphanumeric characters and underscores, must not contain spaces, and have a maximum length of 50 characters. Use the GET - Modules Metadata API to retrieve all available module API names.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.ModeParameter? Mode { get; set; }
+            /// <summary>Specify the API name of the required module. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

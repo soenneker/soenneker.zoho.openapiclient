@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Zoho.OpenApiClient.Module_search.Item.Bulk;
 using Soenneker.Zoho.OpenApiClient.Module_search.Item.Search;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithModuleItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The bulk property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Bulk.BulkRequestBuilder Bulk
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Bulk.BulkRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The search property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Search.SearchRequestBuilder Search
         {

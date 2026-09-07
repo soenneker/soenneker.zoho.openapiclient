@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.Convert_mapping;
 using Soenneker.Zoho.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,12 +18,17 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutsItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The convert_mapping property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.Convert_mapping.Convert_mappingRequestBuilder Convert_mapping
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.Convert_mapping.Convert_mappingRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LayoutsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts/settings/layouts/{id}?module={module}{&include*,include_inner_details*,mode*,pipeline*,stage*,transfer_to*}", pathParameters)
+        public LayoutsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts/settings/layouts/{id}?module={module}{&include*,include_element_types*,include_inner_details*,mode*,pipeline*,stage*,transfer_to*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +36,11 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LayoutsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts/settings/layouts/{id}?module={module}{&include*,include_inner_details*,mode*,pipeline*,stage*,transfer_to*}", rawUrl)
+        public LayoutsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts/settings/layouts/{id}?module={module}{&include*,include_element_types*,include_inner_details*,mode*,pipeline*,stage*,transfer_to*}", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;Deletes a custom layout from a module in Zoho CRM. When deleting a layout that has associated records, you must specify a `transfer_to` layout ID to transfer those records. If the layout has an associated pipeline, you must also provide `pipeline` and `stage` parameters. The `transfer_to` parameter is only optional when the layout is deactivated and has no records associated with it. Note: The standard layout cannot be deleted.&quot;
+        /// To delete a custom layout from a module in your Zoho CRM organization. When the layout being deleted has associated records, a target layout must be specified to receive the transferred records and profile associations. If the layout has an associated pipeline, the target pipeline and stage must also be provided. Specifying a transfer target is optional only when the layout is deactivated and has no associated records. Only one custom layout can be deleted per API call, and the standard layout cannot be deleted.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutSuccessResponseBody"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,37 +67,37 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutSuccessResponseBody>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutSuccessResponseBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieves comprehensive details of a specific layout by its unique identifier for a specified module in your Zoho CRM account. Returns layout configuration including sections, fields, profiles, and permissions.**Important Notes:**- The `profiles` array will be `null` if the user does not have \&quot;Module Customization\&quot; permission in their profile.- For Deals module: When the pipeline feature is enabled, multiple layouts exist per pipeline. Each pipeline can have its own set of layouts.- The `mode` parameter supports different values based on module type. Common modes include `business_card` and `quick_create`.- Score and Visit Summary sections are system-generated and read-only.**Prerequisite:** The Layout ID can be obtained from the Get All Layouts API.&quot;
+        /// To retrieve the details of a specific layout by its layout ID for a specified module in your Zoho CRM account.  **Important Notes:** - The `profiles` array is `null` when the user does not have &quot;Module Customization&quot; permission in their profile. - For Deals module: When the pipeline feature is enabled, multiple layouts exist per pipeline. Each pipeline can have its own set of layouts. - The `mode` parameter filters the layout by mode. Possible values: **all**, **business_card**, **quick_create**. - Score and Visit Summary sections are system-generated and read-only.  **Prerequisite:** The layout ID can be obtained from the Get All Layouts API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsBadRequestResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder.LayoutsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder.LayoutsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder.LayoutsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder.LayoutsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema400Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsBadRequestResponse.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Update a custom layout in Zoho CRM. You can rename the layout, add/remove profile permissions, enable/disable business card, create/update/delete sections, and add/update/delete/move fields within sections. Limits: Maximum 5 sections per request and maximum 5 fields total across all sections per request.&quot;
+        /// To update a custom layout in your Zoho CRM organization, including renaming it, modifying profile permissions, enabling or disabling the business card display, and creating, updating, or deleting sections and fields within sections.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutSuccessResponse"/></returns>
-        /// <param name="body">Request body for updating a layout. Only a single layout can be updated per request.</param>
+        /// <param name="body">Represents the request body for updating a layout, containing exactly one layout object with the configuration changes to apply.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutErrorResponse">When receiving a 400 status code</exception>
@@ -121,7 +127,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateLayoutSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deletes a custom layout from a module in Zoho CRM. When deleting a layout that has associated records, you must specify a `transfer_to` layout ID to transfer those records. If the layout has an associated pipeline, you must also provide `pipeline` and `stage` parameters. The `transfer_to` parameter is only optional when the layout is deactivated and has no records associated with it. Note: The standard layout cannot be deleted.&quot;
+        /// To delete a custom layout from a module in your Zoho CRM organization. When the layout being deleted has associated records, a target layout must be specified to receive the transferred records and profile associations. If the layout has an associated pipeline, the target pipeline and stage must also be provided. Specifying a transfer target is optional only when the layout is deactivated and has no associated records. Only one custom layout can be deleted per API call, and the standard layout cannot be deleted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,13 +140,13 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder.LayoutsItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/layouts/settings/layouts/{id}?module={module}{&pipeline*,stage*,transfer_to*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Retrieves comprehensive details of a specific layout by its unique identifier for a specified module in your Zoho CRM account. Returns layout configuration including sections, fields, profiles, and permissions.**Important Notes:**- The `profiles` array will be `null` if the user does not have \&quot;Module Customization\&quot; permission in their profile.- For Deals module: When the pipeline feature is enabled, multiple layouts exist per pipeline. Each pipeline can have its own set of layouts.- The `mode` parameter supports different values based on module type. Common modes include `business_card` and `quick_create`.- Score and Visit Summary sections are system-generated and read-only.**Prerequisite:** The Layout ID can be obtained from the Get All Layouts API.&quot;
+        /// To retrieve the details of a specific layout by its layout ID for a specified module in your Zoho CRM account.  **Important Notes:** - The `profiles` array is `null` when the user does not have &quot;Module Customization&quot; permission in their profile. - For Deals module: When the pipeline feature is enabled, multiple layouts exist per pipeline. Each pipeline can have its own set of layouts. - The `mode` parameter filters the layout by mode. Possible values: **all**, **business_card**, **quick_create**. - Score and Visit Summary sections are system-generated and read-only.  **Prerequisite:** The layout ID can be obtained from the Get All Layouts API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,16 +159,16 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder.LayoutsItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/layouts/settings/layouts/{id}?module={module}{&include*,include_inner_details*,mode*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Update a custom layout in Zoho CRM. You can rename the layout, add/remove profile permissions, enable/disable business card, create/update/delete sections, and add/update/delete/move fields within sections. Limits: Maximum 5 sections per request and maximum 5 fields total across all sections per request.&quot;
+        /// To update a custom layout in your Zoho CRM organization, including renaming it, modifying profile permissions, enabling or disabling the business card display, and creating, updating, or deleting sections and fields within sections.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for updating a layout. Only a single layout can be updated per request.</param>
+        /// <param name="body">Represents the request body for updating a layout, containing exactly one layout object with the configuration changes to apply.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,7 +180,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/layouts/settings/layouts/{id}?module={module}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -190,12 +196,12 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             return new global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.LayoutsItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Deletes a custom layout from a module in Zoho CRM. When deleting a layout that has associated records, you must specify a `transfer_to` layout ID to transfer those records. If the layout has an associated pipeline, you must also provide `pipeline` and `stage` parameters. The `transfer_to` parameter is only optional when the layout is deactivated and has no records associated with it. Note: The standard layout cannot be deleted.&quot;
+        /// To delete a custom layout from a module in your Zoho CRM organization. When the layout being deleted has associated records, a target layout must be specified to receive the transferred records and profile associations. If the layout has an associated pipeline, the target pipeline and stage must also be provided. Specifying a transfer target is optional only when the layout is deactivated and has no associated records. Only one custom layout can be deleted per API call, and the standard layout cannot be deleted.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LayoutsItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Specify the API name of the required module. Supports both standard modules (Leads, Accounts, Contacts, Deals, Campaigns, Tasks, Cases, Events, Calls, Solutions, Products, Vendors, Price_Books, Quotes, Sales_Orders, Purchase_Orders, Invoices, Appointments, Services) and custom modules. Module API names are case-insensitive, can contain alphanumeric characters and underscores, must not contain spaces, and have a maximum length of 50 characters. Use the GET - Modules Metadata API to retrieve all available module API names.</summary>
+            /// <summary>Specify the API name of the required module. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -205,7 +211,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             [QueryParameter("module")]
             public string Module { get; set; }
 #endif
-            /// <summary>The ID of the pipeline to transfer records to. This parameter is conditionally mandatory - it must be provided along with the `stage` parameter when the layout being deleted has an associated pipeline. Required for modules like Deals that support pipeline stages.</summary>
+            /// <summary>Specify the ID of the pipeline to transfer records to when deleting or deactivating a layout. Refer to the [Get Pipelines](pipeline.yaml#$.paths./settings/pipeline.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pipeline")]
@@ -215,7 +221,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             [QueryParameter("pipeline")]
             public string Pipeline { get; set; }
 #endif
-            /// <summary>The ID of the stage within the pipeline to transfer records to. This parameter is conditionally mandatory - it must be provided along with the `pipeline` parameter when the layout being deleted has an associated pipeline. The stage must be a valid stage within the specified pipeline.</summary>
+            /// <summary>Specify the ID of the stage within the pipeline to assign transferred records when deleting or deactivating a layout. Refer to the [Get Pipelines](pipeline.yaml#$.paths./settings/pipeline.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("stage")]
@@ -225,7 +231,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             [QueryParameter("stage")]
             public string Stage { get; set; }
 #endif
-            /// <summary>The ID of the layout to which records associated with the layout being deleted should be transferred. This parameter is conditionally mandatory - it is required when the layout has records associated with it. It is only optional when the layout is deactivated and has no records associated. The target layout must be an active layout; transferring to a deactivated layout is not allowed.</summary>
+            /// <summary>Specify the ID of the layout to which records associated with the current layout move upon layout deletion or deactivation. Refer to the [Get Layouts](layouts.yaml#$.paths./settings/layouts.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("transfer_to")]
@@ -237,15 +243,18 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
 #endif
         }
         /// <summary>
-        /// &quot;Retrieves comprehensive details of a specific layout by its unique identifier for a specified module in your Zoho CRM account. Returns layout configuration including sections, fields, profiles, and permissions.**Important Notes:**- The `profiles` array will be `null` if the user does not have \&quot;Module Customization\&quot; permission in their profile.- For Deals module: When the pipeline feature is enabled, multiple layouts exist per pipeline. Each pipeline can have its own set of layouts.- The `mode` parameter supports different values based on module type. Common modes include `business_card` and `quick_create`.- Score and Visit Summary sections are system-generated and read-only.**Prerequisite:** The Layout ID can be obtained from the Get All Layouts API.&quot;
+        /// To retrieve the details of a specific layout by its layout ID for a specified module in your Zoho CRM account.  **Important Notes:** - The `profiles` array is `null` when the user does not have &quot;Module Customization&quot; permission in their profile. - For Deals module: When the pipeline feature is enabled, multiple layouts exist per pipeline. Each pipeline can have its own set of layouts. - The `mode` parameter filters the layout by mode. Possible values: **all**, **business_card**, **quick_create**. - Score and Visit Summary sections are system-generated and read-only.  **Prerequisite:** The layout ID can be obtained from the Get All Layouts API.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LayoutsItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specifies additional data to include in the response.</summary>
+            /// <summary>Specify additional data to include in the response beyond the default layout structure. Possible values: `total_profiles` — include the total count of profiles associated with each layout. `portal_user_types` — include portal user type associations for each layout.</summary>
             [QueryParameter("include")]
-            public global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.GetIncludeQueryParameterType? Include { get; set; }
-            /// <summary>Specifies additional inner details to include in the response. Accepts a comma-separated list of dot-notation paths indicating which nested properties should return extended information.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.Includes? Include { get; set; }
+            /// <summary>Specify the type of field component in the layout, distinguishing standard fields from mirror fields that derive their value from a lookup source. Possible values: `field` — a standard data field in the layout. `mirror_field` — a field that reflects a value from a related module lookup.</summary>
+            [QueryParameter("include_element_types")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.MirrorComponentParameter? IncludeElementTypes { get; set; }
+            /// <summary>Specify additional inner details to include in the response for each field. Possible values: `fields.allowed_permissions_to_update` - Include the set of permissions eligible for update per field. `fields.portal_user_types` - Include portal user type permission entries per field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include_inner_details")]
@@ -255,10 +264,10 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             [QueryParameter("include_inner_details")]
             public string IncludeInnerDetails { get; set; }
 #endif
-            /// <summary>&quot;Filter layouts by mode. Available modes vary by module type:- `business_card`: Business card layout view- `quick_create`: Quick create form layout- `all`: Request all available modesIf not provided, the default mode for the module will be applied. Note: Mode availability depends on the module and its configuration.&quot;</summary>
+            /// <summary>Specify the layout mode to filter the response. Available modes vary by module type. Possible values: `all` - Request all available layout modes. `business_card` - Business card layout view. `quick_create` - Quick create form layout.</summary>
             [QueryParameter("mode")]
-            public global::Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item.GetModeQueryParameterType? Mode { get; set; }
-            /// <summary>Specify the API name of the required module. Supports both standard modules (Leads, Accounts, Contacts, Deals, Campaigns, Tasks, Cases, Events, Calls, Solutions, Products, Vendors, Price_Books, Quotes, Sales_Orders, Purchase_Orders, Invoices, Appointments, Services) and custom modules. Module API names are case-insensitive, can contain alphanumeric characters and underscores, must not contain spaces, and have a maximum length of 50 characters. Use the GET - Modules Metadata API to retrieve all available module API names.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.ModeParameter? Mode { get; set; }
+            /// <summary>Specify the API name of the required module. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -270,12 +279,12 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
 #endif
         }
         /// <summary>
-        /// &quot;Update a custom layout in Zoho CRM. You can rename the layout, add/remove profile permissions, enable/disable business card, create/update/delete sections, and add/update/delete/move fields within sections. Limits: Maximum 5 sections per request and maximum 5 fields total across all sections per request.&quot;
+        /// To update a custom layout in your Zoho CRM organization, including renaming it, modifying profile permissions, enabling or disabling the business card display, and creating, updating, or deleting sections and fields within sections.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LayoutsItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>Specify the API name of the required module. Supports both standard modules (Leads, Accounts, Contacts, Deals, Campaigns, Tasks, Cases, Events, Calls, Solutions, Products, Vendors, Price_Books, Quotes, Sales_Orders, Purchase_Orders, Invoices, Appointments, Services) and custom modules. Module API names are case-insensitive, can contain alphanumeric characters and underscores, must not contain spaces, and have a maximum length of 50 characters. Use the GET - Modules Metadata API to retrieve all available module API names.</summary>
+            /// <summary>Specify the API name of the required module. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

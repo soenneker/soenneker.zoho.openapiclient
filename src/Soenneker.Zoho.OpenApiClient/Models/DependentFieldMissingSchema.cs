@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Action details are missing
+    /// Error code DEPENDENT_FIELD_MISSING occurs when: action details are missing or empty, assign_owner resource is omitted, scheduled_actions execute_after lacks period or unit, or field_update lookup_field is not provided. To fix, check the action type&apos;s required companion fields and include all of them.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DependentFieldMissingSchema : IParsable
     {
-        /// <summary>Error code</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchema_code? Code { get; set; }
-        /// <summary>Error details with validation information</summary>
+        /// <summary>Represents the error code for this response.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingCode? Code { get; set; }
+        /// <summary>Represents the error details containing additional context about the failed request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchemaDetails? Details { get; set; }
@@ -23,10 +23,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchemaDetails Details { get; set; }
 #endif
-        /// <summary>Error message</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchema_message? Message { get; set; }
-        /// <summary>Error status</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchema_status? Status { get; set; }
+        /// <summary>Represents the error message describing the issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Message { get; set; }
+#nullable restore
+#else
+        public string Message { get; set; }
+#endif
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,10 +51,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchema_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchemaDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchema_message>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchema_status>(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -58,10 +64,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchema_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchemaDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchema_message>("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldMissingSchema_status>("status", Status);
+            writer.WriteStringValue("message", Message);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

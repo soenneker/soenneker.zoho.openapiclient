@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the success response of Field Update creation.
+    /// Success response returned when a field update action is created. Contains an array with a single result object indicating the outcome and the server-generated ID of the new field update.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostfieldupdatesResponse201 : IParsable
     {
-        /// <summary>&quot;Field: field_updates&quot;</summary>
+        /// <summary>Array containing the result of the create operation. Always contains exactly one item since only one field update can be created per request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested1>? FieldUpdates { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult>? FieldUpdates { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested1> FieldUpdates { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult> FieldUpdates { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "field_updates", n => { FieldUpdates = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested1>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested1.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "field_updates", n => { FieldUpdates = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesNested1>("field_updates", FieldUpdates);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult>("field_updates", FieldUpdates);
         }
     }
 }

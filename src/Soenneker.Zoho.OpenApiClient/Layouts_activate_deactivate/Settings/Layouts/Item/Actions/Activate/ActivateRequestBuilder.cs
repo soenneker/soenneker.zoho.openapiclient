@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActivateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts_activate_deactivate/settings/layouts/{id}/actions/activate?module={module}&transfer_to={transfer_to}", pathParameters)
+        public ActivateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts_activate_deactivate/settings/layouts/{id}/actions/activate?module={module}", pathParameters)
         {
         }
         /// <summary>
@@ -30,56 +30,64 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActivateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts_activate_deactivate/settings/layouts/{id}/actions/activate?module={module}&transfer_to={transfer_to}", rawUrl)
+        public ActivateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/layouts_activate_deactivate/settings/layouts/{id}/actions/activate?module={module}", rawUrl)
         {
         }
         /// <summary>
         /// Deactivates an active layout and transfers its configuration (profile associations, permissions, field mappings) to another active layout within the same module. At least one active layout must remain in the module. This operation is idempotent - attempting to deactivate an already deactivated layout returns an error (ALREADY_DEACTIVATED).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.Actions.Activate.ActivateRequestBuilder.ActivateRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.Actions.Activate.ActivateRequestBuilder.ActivateRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.Actions.Activate.ActivateRequestBuilder.ActivateRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.Actions.Activate.ActivateRequestBuilder.ActivateRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate403Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Activates a single deactivated layout, making it available for use within the specified module. Optionally allows adding or removing profile associations during activation. Only one layout can be activated per request. This operation is idempotent - attempting to activate an already active layout returns an error (ALREADY_ACTIVATED).
+        /// Activates a single deactivated layout, making it available for use within the specified module. Optionally allows adding or removing profile associations during activation. Only one layout can be activated per request. This operation is idempotent - attempting to activate an already active layout returns an error (ALREADY_ACTIVATED).  The status key in the response from the [Get Layouts API](layouts.yaml#$.paths./settings/layouts.get) indicates whether the layout is active or inactive.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutActivate200"/></returns>
-        /// <param name="body">Request payload for activating a single layout with optional profile associations. Only one layout can be activated per request.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout200Response"/></returns>
+        /// <param name="body">Represents the request payload for activating a layout, including the layout identifier and optional profile associations.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutActivate500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutActivate200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.Actions.Activate.ActivateRequestBuilder.ActivateRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.Actions.Activate.ActivateRequestBuilder.ActivateRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutActivate200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.Actions.Activate.ActivateRequestBuilder.ActivateRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.Actions.Activate.ActivateRequestBuilder.ActivateRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutActivate500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout403Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutActivate200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutActivate200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deactivates an active layout and transfers its configuration (profile associations, permissions, field mappings) to another active layout within the same module. At least one active layout must remain in the module. This operation is idempotent - attempting to deactivate an already deactivated layout returns an error (ALREADY_DEACTIVATED).
@@ -95,16 +103,16 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layouts.Item.Actions.Activate.ActivateRequestBuilder.ActivateRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/layouts_activate_deactivate/settings/layouts/{id}/actions/activate?module={module}&transfer_to={transfer_to}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Activates a single deactivated layout, making it available for use within the specified module. Optionally allows adding or removing profile associations during activation. Only one layout can be activated per request. This operation is idempotent - attempting to activate an already active layout returns an error (ALREADY_ACTIVATED).
+        /// Activates a single deactivated layout, making it available for use within the specified module. Optionally allows adding or removing profile associations during activation. Only one layout can be activated per request. This operation is idempotent - attempting to activate an already active layout returns an error (ALREADY_ACTIVATED).  The status key in the response from the [Get Layouts API](layouts.yaml#$.paths./settings/layouts.get) indicates whether the layout is active or inactive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for activating a single layout with optional profile associations. Only one layout can be activated per request.</param>
+        /// <param name="body">Represents the request payload for activating a layout, including the layout identifier and optional profile associations.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,7 +124,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/layouts_activate_deactivate/settings/layouts/{id}/actions/activate?module={module}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -137,7 +145,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActivateRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>The CRM module API name that contains the layout. Supports both standard Zoho CRM modules (e.g., Leads, Contacts, Deals) and custom modules created in the organization. Module names follow PascalCase convention and may contain underscores for custom modules.</summary>
+            /// <summary>Specify the API name of the module that contains the layout. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -147,7 +155,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
             [QueryParameter("module")]
             public string Module { get; set; }
 #endif
-            /// <summary>The ID of an active layout within the same module to transfer the configuration to. Must be different from the layout being deactivated. The target layout must not have any conflicting configurations.</summary>
+            /// <summary>Specify the unique identifier of an active layout within the same module to which the deactivated layout&apos;s profile associations and configuration will be transferred. The target layout must be different from the layout being deactivated. Refer to the [Get Layouts](layouts.yaml#$.paths./settings/layouts.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("transfer_to")]
@@ -159,12 +167,12 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
 #endif
         }
         /// <summary>
-        /// Activates a single deactivated layout, making it available for use within the specified module. Optionally allows adding or removing profile associations during activation. Only one layout can be activated per request. This operation is idempotent - attempting to activate an already active layout returns an error (ALREADY_ACTIVATED).
+        /// Activates a single deactivated layout, making it available for use within the specified module. Optionally allows adding or removing profile associations during activation. Only one layout can be activated per request. This operation is idempotent - attempting to activate an already active layout returns an error (ALREADY_ACTIVATED).  The status key in the response from the [Get Layouts API](layouts.yaml#$.paths./settings/layouts.get) indicates whether the layout is active or inactive.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActivateRequestBuilderPostQueryParameters 
         {
-            /// <summary>The CRM module API name that contains the layout. Supports both standard Zoho CRM modules (e.g., Leads, Contacts, Deals) and custom modules created in the organization. Module names follow PascalCase convention and may contain underscores for custom modules.</summary>
+            /// <summary>Specify the API name of the module that contains the layout. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

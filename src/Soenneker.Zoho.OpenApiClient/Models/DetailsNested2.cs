@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested schema for details
+    /// Nested schema for details in merge response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DetailsNested2 : IParsable
     {
-        /// <summary>&quot;Field: color_code&quot;</summary>
+        /// <summary>Color code of the tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColorCode { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ColorCode { get; set; }
 #endif
-        /// <summary>Nested schema for created_by</summary>
+        /// <summary>Nested schema for created_by user details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsCreatedByNested? CreatedBy { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsCreatedByNested CreatedBy { get; set; }
 #endif
-        /// <summary>&quot;Field: created_time&quot;</summary>
+        /// <summary>Creation timestamp of the tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedTime { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string CreatedTime { get; set; }
 #endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Unique identifier of the tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Nested schema for modified_by</summary>
+        /// <summary>Nested schema for modified_by user details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested? ModifiedBy { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested ModifiedBy { get; set; }
 #endif
-        /// <summary>&quot;Field: modified_time&quot;</summary>
+        /// <summary>Last modification timestamp of the tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifiedTime { get; set; }
@@ -61,6 +61,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ModifiedTime { get; set; }
 #endif
+        /// <summary>Resource ID</summary>
+        public Guid? Rid { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,6 +87,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
+                { "rid", n => { Rid = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -100,6 +103,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested>("modified_by", ModifiedBy);
             writer.WriteStringValue("modified_time", ModifiedTime);
+            writer.WriteGuidValue("rid", Rid);
         }
     }
 }

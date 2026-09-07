@@ -34,30 +34,32 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_inv
         {
         }
         /// <summary>
-        /// Send invitations to portal users for a specific module.
+        /// To send a portal invitation to a single CRM record in your Zoho CRM organization, inviting or re-inviting the record as a portal user for the specified user type.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200?> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_invite.Portal_inviteRequestBuilder.Portal_inviteRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response?> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_invite.Portal_inviteRequestBuilder.Portal_inviteRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_invite.Portal_inviteRequestBuilder.Portal_inviteRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_invite.Portal_inviteRequestBuilder.Portal_inviteRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send invitations to portal users for a specific module.
+        /// To send a portal invitation to a single CRM record in your Zoho CRM organization, inviting or re-inviting the record as a portal user for the specified user type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,18 +87,18 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_inv
             return new global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_invite.Portal_inviteRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Send invitations to portal users for a specific module.
+        /// To send a portal invitation to a single CRM record in your Zoho CRM organization, inviting or re-inviting the record as a portal user for the specified user type.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Portal_inviteRequestBuilderPostQueryParameters 
         {
             /// <summary>Preferred language for the invitation</summary>
             [QueryParameter("language")]
-            public global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_invite.PostLanguageQueryParameterType? Language { get; set; }
-            /// <summary>Invitation type</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUserLanguageParameter? Language { get; set; }
+            /// <summary>Represents whether the user is invited the first time or is re-invited. The possible values are invite and reinvite.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_invite.PostTypeQueryParameterType? Type { get; set; }
-            /// <summary>User type identifier</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUserTypeParameter? Type { get; set; }
+            /// <summary>The ID of the user type you want to assign this user with. Use the [Get User Types API](https://www.zoho.com/crm/developer/docs/api/v8/get-user-types.html) for this ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user_type_id")]

@@ -34,32 +34,32 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated
         {
         }
         /// <summary>
-        /// Get the list of user groups associated with the specified user.
+        /// To retrieve the paginated list of user groups associated with a specific user in your Zoho CRM organization, with optional inclusion of member sources and source counts.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.Associated_groupsRequestBuilder.Associated_groupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.Associated_groupsRequestBuilder.Associated_groupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.Associated_groupsRequestBuilder.Associated_groupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.Associated_groupsRequestBuilder.Associated_groupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser404.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetAssociatedGroupsForUser200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of user groups associated with the specified user.
+        /// To retrieve the paginated list of user groups associated with a specific user in your Zoho CRM organization, with optional inclusion of member sources and source counts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,18 +87,18 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated
             return new global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.Associated_groupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of user groups associated with the specified user.
+        /// To retrieve the paginated list of user groups associated with a specific user in your Zoho CRM organization, with optional inclusion of member sources and source counts.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Associated_groupsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Additional data to include in the response</summary>
+            /// <summary>Specify additional related data to include in the response.Possible values:**sources** - Include the list of sources for each group.**sources_count** - Include the count of sources for each group.</summary>
             [QueryParameter("include")]
-            public global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.GetIncludeQueryParameterType? Include { get; set; }
-            /// <summary>Page number to retrieve</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsInclude? Include { get; set; }
+            /// <summary>Specify the page number to retrieve paginated results. Default is 1. Minimum value is 1.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of items to return per page</summary>
+            /// <summary>Specify the number of records to return per page. Default is 200. Maximum value is 200.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// success response of records_count api
+    /// Success response for tag records count API.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetrecordscountResponse200 : IParsable
     {
-        /// <summary>Nested schema for configured_areas</summary>
+        /// <summary>Nested schema for configured_areas in records count response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GETConfiguredAreasNested? ConfiguredAreas { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested? ConfiguredAreas { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GETConfiguredAreasNested ConfiguredAreas { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested ConfiguredAreas { get; set; }
 #endif
-        /// <summary>&quot;Field: count&quot;</summary>
+        /// <summary>Total count of records associated with the tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Count { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configured_areas", n => { ConfiguredAreas = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GETConfiguredAreasNested>(global::Soenneker.Zoho.OpenApiClient.Models.GETConfiguredAreasNested.CreateFromDiscriminatorValue); } },
+                { "configured_areas", n => { ConfiguredAreas = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested.CreateFromDiscriminatorValue); } },
                 { "count", n => { Count = n.GetStringValue(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GETConfiguredAreasNested>("configured_areas", ConfiguredAreas);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested>("configured_areas", ConfiguredAreas);
             writer.WriteStringValue("count", Count);
         }
     }

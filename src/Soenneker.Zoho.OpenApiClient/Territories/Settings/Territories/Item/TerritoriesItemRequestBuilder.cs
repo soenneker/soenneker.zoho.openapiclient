@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TerritoriesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/territories/settings/territories/{id}{?delete_previous_forecasts*,include_inner_details*}", pathParameters)
+        public TerritoriesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/territories/settings/territories/{id}{?delete_previous_forecasts*,include*,include_inner_details*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,90 +42,84 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TerritoriesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/territories/settings/territories/{id}{?delete_previous_forecasts*,include_inner_details*}", rawUrl)
+        public TerritoriesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/territories/settings/territories/{id}{?delete_previous_forecasts*,include*,include_inner_details*}", rawUrl)
         {
         }
         /// <summary>
-        /// Auto-generated description for operation `Update Territory`.
+        /// To delete a specific territory from your Zoho CRM organization using its unique ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryDeleteSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryInternalServerErrorSchema">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder.TerritoriesItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryDeleteSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder.TerritoriesItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder.TerritoriesItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryDeleteSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder.TerritoriesItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryInternalServerErrorSchema.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryDeleteSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryDeleteSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        ///  `Get Territory By Id`
+        /// To retrieve the details of a specific territory in your Zoho CRM organization using its unique ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdSchema"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryInvalidUrlPathErrorSchema">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryInternalServerErrorSchema">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryFeatureNotEnabledError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdSchema?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder.TerritoriesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder.TerritoriesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdSchema> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder.TerritoriesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder.TerritoriesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryInvalidUrlPathErrorSchema.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryInternalServerErrorSchema.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryFeatureNotEnabledError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Auto-generated description for operation `Update Territory`.
+        /// To update the details of a specific territory by its unique ID in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse"/></returns>
-        /// <param name="body">The `schema` field of type `object`.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUpdateSuccessResponse"/></returns>
+        /// <param name="body">Specify the territory to update.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryInternalServerErrorSchema">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUpdateSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUpdateSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryErrorPermissionDenied.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryInternalServerErrorSchema.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritorySuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUpdateSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUpdateSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Auto-generated description for operation `Update Territory`.
+        /// To delete a specific territory from your Zoho CRM organization using its unique ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +138,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
             return requestInfo;
         }
         /// <summary>
-        ///  `Get Territory By Id`
+        /// To retrieve the details of a specific territory in your Zoho CRM organization using its unique ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,18 +157,18 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
             return requestInfo;
         }
         /// <summary>
-        /// Auto-generated description for operation `Update Territory`.
+        /// To update the details of a specific territory by its unique ID in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The `schema` field of type `object`.</param>
+        /// <param name="body">Specify the territory to update.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryById body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -194,24 +188,27 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
             return new global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Auto-generated description for operation `Update Territory`.
+        /// To delete a specific territory from your Zoho CRM organization using its unique ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TerritoriesItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Parameter `delete_previous_forecasts` in `query`.</summary>
+            /// <summary>Represents the delete_previous_forecasts query parameter, which specifies whether to delete previous forecast data when transferring and deleting a territory.</summary>
             [QueryParameter("delete_previous_forecasts")]
             public bool? DeletePreviousForecasts { get; set; }
         }
         /// <summary>
-        ///  `Get Territory By Id`
+        /// To retrieve the details of a specific territory in your Zoho CRM organization using its unique ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TerritoriesItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Parameter `include_inner_details` in `query`.</summary>
+            /// <summary>Represents the include query parameter, which specifies the rule criteria to include in the response. Possible values: **account_rule_criteria**, **lead_rule_criteria**, **deal_rule_criteria**, **account_rule_criteria,lead_rule_criteria**, **account_rule_criteria,deal_rule_criteria**, **lead_rule_criteria,deal_rule_criteria**, **account_rule_criteria,lead_rule_criteria,deal_rule_criteria**.</summary>
+            [QueryParameter("include")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesInclude? Include { get; set; }
+            /// <summary>Represents the include_inner_details query parameter, which specifies the additional manager fields to include in the response. Possible values: **manager.zuid,manager.status**, **manager.zuid**, **manager.status**.</summary>
             [QueryParameter("include_inner_details")]
-            public global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.GetInclude_inner_detailsQueryParameterType? IncludeInnerDetails { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesIncludeInnerDetails? IncludeInnerDetails { get; set; }
         }
     }
 }

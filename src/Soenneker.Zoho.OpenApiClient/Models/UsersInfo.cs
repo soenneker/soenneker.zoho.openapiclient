@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Pagination information
+    /// Represents the pagination metadata returned with the user list response, including the current page, records per page, total count, and whether additional pages are available.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsersInfo : IParsable
     {
-        /// <summary>Total number of records</summary>
+        /// <summary>Represents the total number of user records returned in the current response.</summary>
         public int? Count { get; set; }
-        /// <summary>Indicates if more records are available</summary>
+        /// <summary>Indicates whether additional records are available beyond the current page.\n\nPossible values:\ntrue - More records are available on subsequent pages.\nfalse - No more records are available.</summary>
         public bool? MoreRecords { get; set; }
-        /// <summary>Current page number</summary>
+        /// <summary>Represents the current page number in the paginated response.</summary>
         public int? Page { get; set; }
-        /// <summary>Number of records per page</summary>
+        /// <summary>Represents the number of user records returned per page.</summary>
         public int? PerPage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

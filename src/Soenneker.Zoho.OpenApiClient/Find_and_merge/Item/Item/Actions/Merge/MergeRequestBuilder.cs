@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MergeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/find_and_merge/{module}/{masterRecordId}/actions/merge{?job_id*}", pathParameters)
+        public MergeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/find_and_merge/{module}/{masterRecordId}/actions/merge{?feature*,job_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,49 +30,59 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MergeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/find_and_merge/{module}/{masterRecordId}/actions/merge{?job_id*}", rawUrl)
+        public MergeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/find_and_merge/{module}/{masterRecordId}/actions/merge{?feature*,job_id*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves the status of merge jobs for finding and tracking record merge operations in Zoho CRM modules.
+        /// To retrieve the status of a scheduled merge job in your Zoho CRM organization. Use the optional job_id query parameter to filter results to a specific job.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Merges duplicate records in Zoho CRM modules with field mapping and validation. Supports synchronous and asynchronous merge operations.
+        /// To merge duplicate records in your Zoho CRM organization into a single master record. Supports field-level value selection from child records and file attachment management. If a child record has more than 1000 related records, the merge processes asynchronously and returns a job_id for status tracking.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords200"/></returns>
-        /// <param name="body">Request body for merging records with field mapping and validation</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201Response"/></returns>
+        /// <param name="body">Specify the merge configuration for the records to be consolidated.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the status of merge jobs for finding and tracking record merge operations in Zoho CRM modules.
+        /// To retrieve the status of a scheduled merge job in your Zoho CRM organization. Use the optional job_id query parameter to filter results to a specific job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,18 +101,18 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge
             return requestInfo;
         }
         /// <summary>
-        /// Merges duplicate records in Zoho CRM modules with field mapping and validation. Supports synchronous and asynchronous merge operations.
+        /// To merge duplicate records in your Zoho CRM organization into a single master record. Supports field-level value selection from child records and file attachment management. If a child record has more than 1000 related records, the merge processes asynchronously and returns a job_id for status tracking.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for merging records with field mapping and validation</param>
+        /// <param name="body">Specify the merge configuration for the records to be consolidated.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -122,12 +132,12 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge
             return new global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge.MergeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the status of merge jobs for finding and tracking record merge operations in Zoho CRM modules.
+        /// To retrieve the status of a scheduled merge job in your Zoho CRM organization. Use the optional job_id query parameter to filter results to a specific job.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MergeRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional job ID to track specific merge operation status</summary>
+            /// <summary>The ID represents the unique identifier of your scheduled merge job, which you get from the response of the [Merge Records API](find_and_merge.yaml#$.paths./{module}/{masterRecordId}/actions/merge.get). </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("job_id")]
@@ -137,6 +147,16 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge
             [QueryParameter("job_id")]
             public string JobId { get; set; }
 #endif
+        }
+        /// <summary>
+        /// To merge duplicate records in your Zoho CRM organization into a single master record. Supports field-level value selection from child records and file attachment management. If a child record has more than 1000 related records, the merge processes asynchronously and returns a job_id for status tracking.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class MergeRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Triggers the web record approval flow instead of the standard merge flow.</summary>
+            [QueryParameter("feature")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.WebRecordApprovalFeature? Feature { get; set; }
         }
     }
 }

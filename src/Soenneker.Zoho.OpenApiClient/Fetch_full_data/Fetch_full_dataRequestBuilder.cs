@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data
     public partial class Fetch_full_dataRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.fetch_full_data.item collection</summary>
-        /// <param name="position">The module API name of the record (e.g. Leads, Contacts, Deals, Accounts, Services__s, Price_Books)</param>
+        /// <param name="position">The API name of the CRM module containing the record(s) whose rich text fields you want to retrieve (e.g., Leads, Contacts, Deals, Accounts). This is a mandatory path parameter.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.WithModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.WithModuleApiNameItemRequestBuilder this[string position]
         {

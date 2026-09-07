@@ -8,31 +8,19 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Standard success response structure
+    /// Successful API operation completed.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuccessResponse : IParsable
     {
-        /// <summary>Success code</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse_code? Code { get; set; }
-        /// <summary>Details of an operation, including the identifier of affected fields.</summary>
+        /// <summary>Represents the Assignment Rules returned for the Assignment Rule operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetails? Details { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SuccessObject>? AssignmentRules { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetails Details { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SuccessObject> AssignmentRules { get; set; }
 #endif
-        /// <summary>Success message</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Message { get; set; }
-#nullable restore
-#else
-        public string Message { get; set; }
-#endif
-        /// <summary>Status of the operation</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,10 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse_code>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse_status>(); } },
+                { "assignment_rules", n => { AssignmentRules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SuccessObject>(global::Soenneker.Zoho.OpenApiClient.Models.SuccessObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -64,10 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetails>("details", Details);
-            writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse_status>("status", Status);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SuccessObject>("assignment_rules", AssignmentRules);
         }
     }
 }

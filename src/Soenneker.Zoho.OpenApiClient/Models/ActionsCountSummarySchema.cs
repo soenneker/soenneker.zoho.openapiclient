@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Collection of count entries for instant (immediate) actions in a workflow rule condition. Contains an array of action-type and count pairs.
+    /// Represents a summary of execution count entries for instant actions in a workflow rule condition, categorized by action type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActionsCountSummarySchema : IParsable
     {
-        /// <summary>&quot;Field: actions_count&quot;</summary>
+        /// <summary>Represents the list of action count entries, each categorized by action type, for the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema_actions_count>? ActionsCount { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem>? ActionsCount { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema_actions_count> ActionsCount { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem> ActionsCount { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions_count", n => { ActionsCount = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema_actions_count>(global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema_actions_count.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "actions_count", n => { ActionsCount = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem>(global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema_actions_count>("actions_count", ActionsCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem>("actions_count", ActionsCount);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record
     public partial class RecordRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.record.item collection</summary>
-        /// <param name="position">Specifies the module name</param>
+        /// <param name="position">Specify the API name of the module. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder this[string position]
         {

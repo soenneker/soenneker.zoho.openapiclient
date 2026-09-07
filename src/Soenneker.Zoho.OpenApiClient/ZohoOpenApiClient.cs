@@ -24,8 +24,6 @@ using Soenneker.Zoho.OpenApiClient.Change_owner;
 using Soenneker.Zoho.OpenApiClient.Composite_requests;
 using Soenneker.Zoho.OpenApiClient.Contact_roles;
 using Soenneker.Zoho.OpenApiClient.Conversion_option;
-using Soenneker.Zoho.OpenApiClient.ConvertNamespace;
-using Soenneker.Zoho.OpenApiClient.Coql;
 using Soenneker.Zoho.OpenApiClient.Currencies;
 using Soenneker.Zoho.OpenApiClient.Custom_views;
 using Soenneker.Zoho.OpenApiClient.Data_sharing;
@@ -40,7 +38,6 @@ using Soenneker.Zoho.OpenApiClient.Emails_sharing_details;
 using Soenneker.Zoho.OpenApiClient.Features;
 using Soenneker.Zoho.OpenApiClient.Fetch_full_data;
 using Soenneker.Zoho.OpenApiClient.Field_updates;
-using Soenneker.Zoho.OpenApiClient.Fields;
 using Soenneker.Zoho.OpenApiClient.Files;
 using Soenneker.Zoho.OpenApiClient.Find_and_merge;
 using Soenneker.Zoho.OpenApiClient.Fiscal_year;
@@ -57,7 +54,7 @@ using Soenneker.Zoho.OpenApiClient.Mail_merge;
 using Soenneker.Zoho.OpenApiClient.Map_dependency;
 using Soenneker.Zoho.OpenApiClient.Mass_change_owner;
 using Soenneker.Zoho.OpenApiClient.Mass_convert;
-using Soenneker.Zoho.OpenApiClient.Mass_delete_cvid;
+using Soenneker.Zoho.OpenApiClient.Mass_delete;
 using Soenneker.Zoho.OpenApiClient.Mass_delete_tags;
 using Soenneker.Zoho.OpenApiClient.Mass_update;
 using Soenneker.Zoho.OpenApiClient.Module_search;
@@ -211,16 +208,6 @@ namespace Soenneker.Zoho.OpenApiClient
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Conversion_option.Conversion_optionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The convert property</summary>
-        public global::Soenneker.Zoho.OpenApiClient.ConvertNamespace.ConvertRequestBuilder Convert
-        {
-            get => new global::Soenneker.Zoho.OpenApiClient.ConvertNamespace.ConvertRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The coql property</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Coql.CoqlRequestBuilder Coql
-        {
-            get => new global::Soenneker.Zoho.OpenApiClient.Coql.CoqlRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The currencies property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Currencies.CurrenciesRequestBuilder Currencies
         {
@@ -290,11 +277,6 @@ namespace Soenneker.Zoho.OpenApiClient
         public global::Soenneker.Zoho.OpenApiClient.Field_updates.Field_updatesRequestBuilder Field_updates
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Field_updates.Field_updatesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The fields property</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Fields.FieldsRequestBuilder Fields
-        {
-            get => new global::Soenneker.Zoho.OpenApiClient.Fields.FieldsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The files property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder Files
@@ -376,10 +358,10 @@ namespace Soenneker.Zoho.OpenApiClient
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Mass_convert.Mass_convertRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The mass_delete_cvid property</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Mass_delete_cvid.Mass_delete_cvidRequestBuilder Mass_delete_cvid
+        /// <summary>The mass_delete property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Mass_delete.Mass_deleteRequestBuilder Mass_delete
         {
-            get => new global::Soenneker.Zoho.OpenApiClient.Mass_delete_cvid.Mass_delete_cvidRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Zoho.OpenApiClient.Mass_delete.Mass_deleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mass_delete_tags property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Mass_delete_tagsRequestBuilder Mass_delete_tags

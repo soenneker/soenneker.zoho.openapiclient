@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Associated_users_count;
+using Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Get_assigned;
+using Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Get_unassigned;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +21,16 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions
         public global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Associated_users_count.Associated_users_countRequestBuilder Associated_users_count
         {
             get => new global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Associated_users_count.Associated_users_countRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The get_assigned property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Get_assigned.Get_assignedRequestBuilder Get_assigned
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Get_assigned.Get_assignedRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The get_unassigned property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Get_unassigned.Get_unassignedRequestBuilder Get_unassigned
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.Get_unassigned.Get_unassignedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.ActionsRequestBuilder"/> and sets the default values.

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Invalid data error response
+    /// Represents error details when a field value exceeds the maximum allowed length.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MaximumLengthApiNameJsonPath : IParsable
     {
-        /// <summary>&quot;Detail field: api_name&quot;</summary>
+        /// <summary>Represents the API name of the field that exceeded the maximum length.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>JSON path of the field</summary>
+        /// <summary>Represents the JSON path of the field that exceeded the maximum length.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JsonPath { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JsonPath { get; set; }
 #endif
-        /// <summary>&quot;Detail field: maximum_length&quot;</summary>
+        /// <summary>Represents the maximum allowed length for the field.</summary>
         public int? MaximumLength { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

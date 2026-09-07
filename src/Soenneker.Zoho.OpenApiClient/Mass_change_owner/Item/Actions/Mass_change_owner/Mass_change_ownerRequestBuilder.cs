@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Mass_change_ownerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_change_owner/{module}/actions/mass_change_owner?job_id={job_id}", pathParameters)
+        public Mass_change_ownerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_change_owner/{module}/actions/mass_change_owner", pathParameters)
         {
         }
         /// <summary>
@@ -30,54 +30,63 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Mass_change_ownerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_change_owner/{module}/actions/mass_change_owner?job_id={job_id}", rawUrl)
+        public Mass_change_ownerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mass_change_owner/{module}/actions/mass_change_owner", rawUrl)
         {
         }
         /// <summary>
-        /// Check the status of a mass change owner job using the job ID
+        /// To retrieve the status of a previously scheduled mass change owner job in your Zoho CRM organization. The OAuth scope enforced is specific to the target module (for example, **ZohoCRM.change_owner.leads.READ** for Leads); modules without a dedicated scope fall back to a generic custom-module scope.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerCheckStatus200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerCheckStatus400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerCheckStatus200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder.Mass_change_ownerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder.Mass_change_ownerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerCheckStatus200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder.Mass_change_ownerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder.Mass_change_ownerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerCheckStatus400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerCheckStatus200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerCheckStatus200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mass change the owner of records in a module based on a custom view
+        /// To bulk update the ownership of records in a specified module based on a Custom View, territory, or field-based criteria in your Zoho CRM organization. You cannot change the owner of related records using this API. You can change the owner of up to 50,000 records in a custom view. This API schedules the operation as a job and returns a job ID, which you can use to check the job status. Job statuses are available for up to 60 days. The Mass Change Owner API is available only in the Enterprise and Ultimate editions. The OAuth scope enforced is specific to the target module (for example, **ZohoCRM.change_owner.leads.CREATE** for Leads); modules without a dedicated scope fall back to a generic custom-module scope.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202"/></returns>
-        /// <param name="body">Request body for mass changing owner of records</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202Response"/></returns>
+        /// <param name="body">Specify the details for the mass change owner operation, including the target Custom View, the new owner, an optional territory, and an optional criteria filter.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner403Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Check the status of a mass change owner job using the job ID
+        /// To retrieve the status of a previously scheduled mass change owner job in your Zoho CRM organization. The OAuth scope enforced is specific to the target module (for example, **ZohoCRM.change_owner.leads.READ** for Leads); modules without a dedicated scope fall back to a generic custom-module scope.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,28 +99,28 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder.Mass_change_ownerRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/mass_change_owner/{module}/actions/mass_change_owner?job_id={job_id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Mass change the owner of records in a module based on a custom view
+        /// To bulk update the ownership of records in a specified module based on a Custom View, territory, or field-based criteria in your Zoho CRM organization. You cannot change the owner of related records using this API. You can change the owner of up to 50,000 records in a custom view. This API schedules the operation as a job and returns a job ID, which you can use to check the job status. Job statuses are available for up to 60 days. The Mass Change Owner API is available only in the Enterprise and Ultimate editions. The OAuth scope enforced is specific to the target module (for example, **ZohoCRM.change_owner.leads.CREATE** for Leads); modules without a dedicated scope fall back to a generic custom-module scope.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for mass changing owner of records</param>
+        /// <param name="body">Specify the details for the mass change owner operation, including the target Custom View, the new owner, an optional territory, and an optional criteria filter.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/mass_change_owner/{module}/actions/mass_change_owner", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -127,12 +136,12 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
             return new global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Check the status of a mass change owner job using the job ID
+        /// To retrieve the status of a previously scheduled mass change owner job in your Zoho CRM organization. The OAuth scope enforced is specific to the target module (for example, **ZohoCRM.change_owner.leads.READ** for Leads); modules without a dedicated scope fall back to a generic custom-module scope.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Mass_change_ownerRequestBuilderGetQueryParameters 
         {
-            /// <summary>The unique identifier of the mass change owner job</summary>
+            /// <summary>Specify the unique ID of the mass change owner job returned in the response of [Mass Change Owner API](mass_change_owner.yaml#$.paths./{module}/actions/mass_change_owner.post).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("job_id")]

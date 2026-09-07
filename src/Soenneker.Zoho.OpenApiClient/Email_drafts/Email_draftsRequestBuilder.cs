@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts
     public partial class Email_draftsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.email_drafts.item collection</summary>
-        /// <param name="position">module of the record</param>
+        /// <param name="position">Specifies the module of the record. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the API names of modules.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Email_drafts.Item.WithModuleItemRequestBuilder this[string position]
         {

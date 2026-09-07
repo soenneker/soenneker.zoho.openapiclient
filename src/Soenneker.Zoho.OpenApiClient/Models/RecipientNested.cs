@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Recipient details for signature or approval
+    /// Represents the recipient details for a signing or approval action, including the identifier type and value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecipientNested : IParsable
     {
-        /// <summary>Type of recipient identifier. Use &apos;email&apos; for direct email addresses or &apos;merge_field&apos; for mail merge field references.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecipientNested_type? Type { get; set; }
-        /// <summary>The email ID of the user or a merge field reference (e.g., ${!Leads.Email}) who has to sign or approve the document.</summary>
+        /// <summary>Represents the type of recipient identifier.Possible values:**email** - The recipient is identified by a direct email address.**merge_field** - The recipient is identified by a mail merge field reference.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecipientNestedType? Type { get; set; }
+        /// <summary>Represents the email address or mail merge field reference for the recipient. When **type** is **email**, provide a valid email address. When **type** is **merge_field**, provide a merge field reference such as **${!Leads.Email}**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecipientNested_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecipientNestedType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -52,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecipientNested_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecipientNestedType>("type", Type);
             writer.WriteStringValue("value", Value);
         }
     }

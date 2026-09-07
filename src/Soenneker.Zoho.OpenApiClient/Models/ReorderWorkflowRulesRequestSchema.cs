@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Alternate request body wrapper containing the reorder payload for adjusting workflow rule execution order.
+    /// Represents the request body for reordering workflow rules, containing the new position assignments for each rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReorderWorkflowRulesRequestSchema : IParsable
     {
-        /// <summary>Alternate root payload listing workflow rules and their updated execution order within the module.</summary>
+        /// <summary>Represents the reorder payload containing the list of workflow rules and their updated execution order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder? Reorder { get; set; }

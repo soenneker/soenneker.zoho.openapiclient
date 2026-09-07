@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Result of a single layout deletion operation.
+    /// Represents the outcome of a single layout deletion attempt within a batch operation, including a status code and descriptive message for that layout.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeleteLayoutResult : IParsable
     {
-        /// <summary>Response code indicating the result of the operation.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult_code? Code { get; set; }
-        /// <summary>Details of the deleted layout.</summary>
+        /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**SUCCESS** - Represents success.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode? Code { get; set; }
+        /// <summary>Represents the identifying details of a layout that has been successfully deleted, returned in the deletion response to confirm which layout was removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutDetails? Details { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutDetails Details { get; set; }
 #endif
-        /// <summary>Human-readable message describing the result.</summary>
+        /// <summary>Contains a descriptive message summarising the outcome of the layout deletion operation, providing context for both successful completions and failure conditions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -31,8 +31,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>Status of the operation.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult_status? Status { get; set; }
+        /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,10 +51,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutDetails>(global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
             };
         }
         /// <summary>
@@ -64,10 +64,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutDetails>("details", Details);
             writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
         }
     }
 }

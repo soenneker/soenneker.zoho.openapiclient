@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// success response when tags associated successfully to records
+    /// Success response when tags are associated successfully to records.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostaddtagsResponse200 : IParsable
     {
-        /// <summary>&quot;Field: data&quot;</summary>
+        /// <summary>Array of operation results for each record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>? Data { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested> Data { get; set; }
 #endif
-        /// <summary>record ids</summary>
+        /// <summary>Record IDs that were processed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ids { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Ids { get; set; }
 #endif
-        /// <summary>&quot;Field: locked_count&quot;</summary>
+        /// <summary>Number of records that were locked and could not be updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LockedCount { get; set; }
@@ -37,9 +37,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string LockedCount { get; set; }
 #endif
-        /// <summary>over write tags value</summary>
+        /// <summary>Indicates whether tags were replaced or appended</summary>
         public bool? OverWrite { get; set; }
-        /// <summary>&quot;Field: success_count&quot;</summary>
+        /// <summary>Number of records that were successfully updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SuccessCount { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string SuccessCount { get; set; }
 #endif
-        /// <summary>root key</summary>
+        /// <summary>Root key for tags</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Tags { get; set; }

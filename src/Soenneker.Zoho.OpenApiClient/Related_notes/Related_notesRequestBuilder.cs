@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_notes
     public partial class Related_notesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.related_notes.item collection</summary>
-        /// <param name="position">The module API name of the parent record (e.g., Contacts, Leads, Deals, Accounts)</param>
+        /// <param name="position">Specify the API name of the parent record module. Refer to [Get Modules](modules.yaml#$.paths./settings/modules.get) for the list of supported modules.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.WithParentRecordModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Related_notes.Item.WithParentRecordModuleItemRequestBuilder this[string position]
         {

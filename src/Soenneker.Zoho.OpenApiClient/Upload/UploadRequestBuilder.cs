@@ -34,35 +34,35 @@ namespace Soenneker.Zoho.OpenApiClient.Upload
         {
         }
         /// <summary>
-        /// Allows uploading a file to the CRM system using multipart/form-data.
+        /// To upload a CSV file in ZIP format for bulk write API. The response contains the **file_id**. Use this ID while making the bulk write request.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200"/></returns>
-        /// <param name="body">Schema for the multipart/form-data request body containing the file to upload.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200Response"/></returns>
+        /// <param name="body">Specify the multipart/form-data payload containing the ZIP file to upload for the bulk write operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200Response?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200Response> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Allows uploading a file to the CRM system using multipart/form-data.
+        /// To upload a CSV file in ZIP format for bulk write API. The response contains the **file_id**. Use this ID while making the bulk write request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Schema for the multipart/form-data request body containing the file to upload.</param>
+        /// <param name="body">Specify the multipart/form-data payload containing the ZIP file to upload for the bulk write operation.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

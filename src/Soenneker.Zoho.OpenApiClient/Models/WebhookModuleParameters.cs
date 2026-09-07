@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Defines headers with unique names and values for sending additional information via webhook requests, such as API keys or tokens.
+    /// Represents a module merge-field parameter for webhook requests. Used in headers, URL query parameters, or form data fields. The value is resolved at runtime from the field of the triggering CRM record.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookModuleParameters : IParsable
     {
-        /// <summary>Specify a unique header name. Please note that if you choose Headers, you must add at least one module parameter with a value. If you do not add it, the system will show an error when you try to save the webhook.</summary>
+        /// <summary>Represents the parameter key sent in the webhook request. The name must be unique within the parameter collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Specify a value of the module header, specified using the merge field format. Example, ${!Leads.Email}.</summary>
+        /// <summary>Represents the merge-field token resolved at runtime from the triggering CRM record. Use the API field names and not display names (for example, use ${!Leads.Last_Name}, not ${!Leads.Last Name}). Invalid API names return INVALID_DATA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

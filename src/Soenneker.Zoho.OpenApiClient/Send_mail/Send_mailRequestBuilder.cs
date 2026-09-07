@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Send_mail
     public partial class Send_mailRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.send_mail.item collection</summary>
-        /// <param name="position">The API name of the module</param>
+        /// <param name="position">Specify the API name of the Zoho CRM module for which the record exists. Refer to the [Get Modules](modules.yaml#$.paths./settings/modules.get) resource for valid values. Supported modules: Leads, Contacts, Deals, Accounts, Sales Orders, Purchase Orders, Invoices, Quotes, Cases, Vendors, and Custom Modules.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Send_mail.Item.WithModuleNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Send_mail.Item.WithModuleNameItemRequestBuilder this[string position]
         {

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional details about the clone operation.
+    /// Represents the additional details returned with the clone operation result.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloneProfileActionResponseDetails : IParsable
     {
-        /// <summary>Unique identifier (64-bit integer represented as string)</summary>
+        /// <summary>Unique record identifier - a 64-bit integer encoded as a string of 1 to 19 decimal digits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response containing layout configurations
+    /// Represents the response schema for layout retrieval operations, containing an array of layout objects each with complete configuration details including sections, profiles, and portal user type associations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutResponseSchema : IParsable
     {
-        /// <summary>Array containing all layout objects for the specified module. Ordered by layout name.</summary>
+        /// <summary>Contains the array of layout objects returned for the specified module, each representing a complete layout configuration including sections, fields, profiles, and portal user type associations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts>? Layouts { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem>? Layouts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts> Layouts { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem> Layouts { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "layouts", n => { Layouts = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "layouts", n => { Layouts = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchema_layouts>("layouts", Layouts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem>("layouts", Layouts);
         }
     }
 }

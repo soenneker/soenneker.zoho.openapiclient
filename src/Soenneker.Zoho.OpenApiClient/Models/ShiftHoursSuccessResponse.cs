@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error scenario
+    /// Represents the response body that contains the shift hour configurations and the aggregate count of shifts with assigned users.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShiftHoursSuccessResponse : IParsable
     {
-        /// <summary>List of shift hours</summary>
+        /// <summary>Lists the shift hour configurations in the request or response. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse_shift_hours>? ShiftHours { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponseShiftHoursItem>? ShiftHours { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse_shift_hours> ShiftHours { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponseShiftHoursItem> ShiftHours { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "shift_hours", n => { ShiftHours = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse_shift_hours>(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse_shift_hours.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "shift_hours", n => { ShiftHours = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponseShiftHoursItem>(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponseShiftHoursItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse_shift_hours>("shift_hours", ShiftHours);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponseShiftHoursItem>("shift_hours", ShiftHours);
         }
     }
 }

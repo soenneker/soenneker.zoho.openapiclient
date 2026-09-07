@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details with validation information
+    /// Represents error details containing the resource path index where the validation error occurred.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourcePathIndex : IParsable
     {
-        /// <summary>&quot;Detail field: resource_path_index&quot;</summary>
+        /// <summary>Represents the index of the resource path where the validation error occurred.</summary>
         public int? ResourcePathIndexProp { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

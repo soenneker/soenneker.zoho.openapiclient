@@ -8,13 +8,13 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// If assign to type is zia suggested user
+    /// If assign to type is zia suggested user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZiaSuggestedUsersTypeAssignToObject : IParsable
     {
-        /// <summary>Defines the type or users to associate as owner during execution</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersTypeAssignToObject_type? Type { get; set; }
+        /// <summary>Defines the type or users to associate as owner during execution.Possible values:**zia_suggested_users** - Represents zia suggested users. </summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersTypeAssignToObject_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersType>(); } },
             };
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersTypeAssignToObject_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersType>("type", Type);
         }
     }
 }

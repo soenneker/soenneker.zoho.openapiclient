@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Summarized unsubscribe link configuration with timestamps, page settings, submission behavior, and creator/modifier references as returned by the listing endpoint.
+    /// Summarized unsubscribe link configuration with timestamps, page settings, submission behavior, and creator or modifier references as returned by the listing endpoint.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnsubscribeLinkSummaryRecord : IParsable
     {
-        /// <summary>User who created the unsubscribe link, including name and id.</summary>
+        /// <summary>User who created the unsubscribe link, including the user name and ID. Refer to the [Get Users](users.yaml#$.paths./users.get) endpoint for details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkCreatedByUser? CreatedBy { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkCreatedByUser CreatedBy { get; set; }
 #endif
-        /// <summary>&quot;Field: created_time&quot;</summary>
+        /// <summary>The date and time when the unsubscribe link was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedTime { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string CreatedTime { get; set; }
 #endif
-        /// <summary>&quot;Field: custom_location_url&quot;</summary>
+        /// <summary>The custom webpage URL where the unsubscribe link is hosted. Null if page_type is standard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomLocationUrl { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string CustomLocationUrl { get; set; }
 #endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique identifier for an unsubscribe link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>User who last modified the unsubscribe link, including name and id.</summary>
+        /// <summary>User who last modified the unsubscribe link, including the user name and ID. Refer to the [Get Users](users.yaml#$.paths./users.get) endpoint for details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkModifiedByUser? ModifiedBy { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkModifiedByUser ModifiedBy { get; set; }
 #endif
-        /// <summary>&quot;Field: modified_time&quot;</summary>
+        /// <summary>The date and time when the unsubscribe link was last modified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifiedTime { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ModifiedTime { get; set; }
 #endif
-        /// <summary>&quot;Field: name&quot;</summary>
+        /// <summary>Represents the unique name of the unsubscribe link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Field: page_type&quot;</summary>
+        /// <summary>Indicates whether the unsubscribe page is hosted on Zoho&apos;s standard page (standard) or a custom webpage (custom)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageType { get; set; }
@@ -77,15 +77,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string PageType { get; set; }
 #endif
-        /// <summary>&quot;Field: standard_page_message&quot;</summary>
+        /// <summary>Represents the message displayed on the standard unsubscribe page. Null if page_type is custom. Null if page_type is custom.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? StandardPageMessage { get; set; }
+        public string? StandardPageMessage { get; set; }
 #nullable restore
 #else
-        public UntypedNode StandardPageMessage { get; set; }
+        public string StandardPageMessage { get; set; }
 #endif
-        /// <summary>&quot;Field: submission_action_type&quot;</summary>
+        /// <summary>Represents the action performed after unsubscribe display_message (show a message) or redirect (redirect to a URL) a message) or redirect (redirect to a URL) a message) or redirect (redirect to a URL)&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubmissionActionType { get; set; }
@@ -93,7 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string SubmissionActionType { get; set; }
 #endif
-        /// <summary>&quot;Field: submission_message&quot;</summary>
+        /// <summary>The message displayed when the user clicks the unsubscribe button (for display_message action type). Null if not configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubmissionMessage { get; set; }
@@ -101,7 +101,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string SubmissionMessage { get; set; }
 #endif
-        /// <summary>&quot;Field: submission_redirect_url&quot;</summary>
+        /// <summary>The URL to which the user is redirected after unsubscribing (for redirect action type). Null if not configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubmissionRedirectUrl { get; set; }
@@ -135,7 +135,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "page_type", n => { PageType = n.GetStringValue(); } },
-                { "standard_page_message", n => { StandardPageMessage = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "standard_page_message", n => { StandardPageMessage = n.GetStringValue(); } },
                 { "submission_action_type", n => { SubmissionActionType = n.GetStringValue(); } },
                 { "submission_message", n => { SubmissionMessage = n.GetStringValue(); } },
                 { "submission_redirect_url", n => { SubmissionRedirectUrl = n.GetStringValue(); } },
@@ -156,7 +156,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("page_type", PageType);
-            writer.WriteObjectValue<UntypedNode>("standard_page_message", StandardPageMessage);
+            writer.WriteStringValue("standard_page_message", StandardPageMessage);
             writer.WriteStringValue("submission_action_type", SubmissionActionType);
             writer.WriteStringValue("submission_message", SubmissionMessage);
             writer.WriteStringValue("submission_redirect_url", SubmissionRedirectUrl);

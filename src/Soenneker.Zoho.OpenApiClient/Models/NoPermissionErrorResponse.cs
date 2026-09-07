@@ -9,13 +9,13 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// No permission for create/update/delete pipeline error response
+    /// Error response when the user lacks required permissions to perform the operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NoPermissionErrorResponse : ApiException, IParsable
     {
-        /// <summary>Machine-readable error code indicating the type of error (e.g., &apos;NO_PERMISSION&apos;).</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionErrorResponse_code? Code { get; set; }
+        /// <summary>Represents the error code returned for the permission-denied failure.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode? Code { get; set; }
         /// <summary>Additional context about the specific error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,7 +26,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>Human-readable explanation of the error suitable for display to end users.</summary>
+        /// <summary>Represents the explanation of the error suitable for display to end users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessageEscaped { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionErrorResponse_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionErrorResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionErrorResponseDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -73,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionErrorResponse_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionErrorResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteStringValue("status", Status);

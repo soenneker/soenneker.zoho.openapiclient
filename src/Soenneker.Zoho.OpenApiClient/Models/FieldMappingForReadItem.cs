@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Items field.
+    /// Field mapping item for read operations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldMappingForReadItem : IParsable
     {
-        /// <summary>Crm field object</summary>
+        /// <summary>CRM field object with additional display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemCrmField? CrmField { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemCrmField CrmField { get; set; }
 #endif
-        /// <summary>Enrich field field.</summary>
+        /// <summary>Zia enrichment field metadata with display label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemEnrichField? EnrichField { get; set; }

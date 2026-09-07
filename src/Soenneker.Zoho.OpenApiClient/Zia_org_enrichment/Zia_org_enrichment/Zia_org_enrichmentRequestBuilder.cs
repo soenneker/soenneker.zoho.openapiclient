@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment
     public partial class Zia_org_enrichmentRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.zia_org_enrichment.zia_org_enrichment.item collection</summary>
-        /// <param name="position">The unique identifier of the Zia Org Enrichment record</param>
+        /// <param name="position">Specify the unique identifier of the Zia organization enrichment job to retrieve. Obtain this value from the response of POST `/__zia_org_enrichment` or from the listing returned by GET `/__zia_org_enrichment`.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Item.Zia_org_enrichmentItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Item.Zia_org_enrichmentItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Zia_org_enrichmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zia_org_enrichment/__zia_org_enrichment?module={module}{&page*,per_page*,record_id*,sort_by*,sort_order*,status*}", pathParameters)
+        public Zia_org_enrichmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zia_org_enrichment/__zia_org_enrichment{?page*,per_page*,record_id*,sort_by*,sort_order*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,23 +43,23 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Zia_org_enrichmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zia_org_enrichment/__zia_org_enrichment?module={module}{&page*,per_page*,record_id*,sort_by*,sort_order*,status*}", rawUrl)
+        public Zia_org_enrichmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zia_org_enrichment/__zia_org_enrichment{?page*,per_page*,record_id*,sort_by*,sort_order*,status*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve the Zia Org Enrichment records with pagination and filtering options
+        /// To retrieve the paginated list of Zia organization enrichment jobs that have been scheduled in your Zoho CRM organization. Each entry includes the job identifier, current status, creation timestamp, and the user who triggered the job.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetZiaOrgEnrichment200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetZiaOrgEnrichment200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermission">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetZiaOrgEnrichment200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetZiaOrgEnrichment200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetZiaOrgEnrichment200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetZiaOrgEnrichment200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermission.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetZiaOrgEnrichment200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetZiaOrgEnrichment200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetZiaOrgEnrichment200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetZiaOrgEnrichment200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Initiates the ZIA organization enrichment process for a specific CRM record. Accepts module name, record ID, and supported fields (name, email, website).
+        /// To submit a request that schedules a Zia organization enrichment job in your Zoho CRM organization. The job runs asynchronously and uses the supplied name, email, or website to retrieve publicly available details such as address, primary contact, industries, and social media handles, and to populate the configured fields of the target module or record.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202"/></returns>
-        /// <param name="body">Request body for organization enrichment.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202Response"/></returns>
+        /// <param name="body">Defines the body of a Zia organization enrichment request. Wraps the list of enrichment inputs under the `__zia_org_enrichment` key.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermission">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -92,10 +92,10 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermission.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the Zia Org Enrichment records with pagination and filtering options
+        /// To retrieve the paginated list of Zia organization enrichment jobs that have been scheduled in your Zoho CRM organization. Each entry includes the job identifier, current status, creation timestamp, and the user who triggered the job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,24 +108,24 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/zia_org_enrichment/__zia_org_enrichment{?page*,per_page*,sort_by*,sort_order*,status*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Initiates the ZIA organization enrichment process for a specific CRM record. Accepts module name, record ID, and supported fields (name, email, website).
+        /// To submit a request that schedules a Zia organization enrichment job in your Zoho CRM organization. The job runs asynchronously and uses the supplied name, email, or website to retrieve publicly available details such as address, primary contact, industries, and social media handles, and to populate the configured fields of the target module or record.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for organization enrichment.</param>
+        /// <param name="body">Defines the body of a Zia organization enrichment request. Wraps the list of enrichment inputs under the `__zia_org_enrichment` key.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder.Zia_org_enrichmentRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -145,34 +145,34 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment
             return new global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.Zia_org_enrichmentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the Zia Org Enrichment records with pagination and filtering options
+        /// To retrieve the paginated list of Zia organization enrichment jobs that have been scheduled in your Zoho CRM organization. Each entry includes the job identifier, current status, creation timestamp, and the user who triggered the job.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Zia_org_enrichmentRequestBuilderGetQueryParameters 
         {
-            /// <summary>The page number for pagination.</summary>
+            /// <summary>Specify the page number to retrieve the list of records from the paginated results. Default value is 1. Accepts only positive integer values.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of records per page.</summary>
+            /// <summary>Specify the number of records to retrieve per page. Default and maximum value is 100.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Field to sort by.</summary>
+            /// <summary>Specify the field to use for sorting the response based on created time. Accepts the literal value `created_time`.</summary>
             [QueryParameter("sort_by")]
-            public global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.GetSort_byQueryParameterType? SortBy { get; set; }
-            /// <summary>Sort order (ascending or descending).</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.CreatedTimeSortBy? SortBy { get; set; }
+            /// <summary>Specify the direction(ascending or descending) in which to sort the response.Possible values:**asc** - Sort results in ascending order.**desc** - Sort results in descending order.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.GetSort_orderQueryParameterType? SortOrder { get; set; }
-            /// <summary>Filter records by enrichment status.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.SortorderEnum? SortOrder { get; set; }
+            /// <summary>Filter the response by the status of the scheduled enrichment job, using the create org enrichment API.Possible values:**COMPLETED** - Returns jobs that finished and produced enriched data.**FAILED** - Returns jobs that ended with a failure.**DATA_NOT_FOUND** - Returns jobs that completed but could not locate any public data to enrich.**SCHEDULED** - Returns jobs that are queued and yet to run.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentStatus? Status { get; set; }
         }
         /// <summary>
-        /// Initiates the ZIA organization enrichment process for a specific CRM record. Accepts module name, record ID, and supported fields (name, email, website).
+        /// To submit a request that schedules a Zia organization enrichment job in your Zoho CRM organization. The job runs asynchronously and uses the supplied name, email, or website to retrieve publicly available details such as address, primary contact, industries, and social media handles, and to populate the configured fields of the target module or record.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Zia_org_enrichmentRequestBuilderPostQueryParameters 
         {
-            /// <summary>CRM module name from which enrichment is triggered.</summary>
+            /// <summary>Specify the API name of the CRM module for which enrichment is to be triggered. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the list of valid module API names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -182,7 +182,7 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment
             [QueryParameter("module")]
             public string Module { get; set; }
 #endif
-            /// <summary>Unique CRM record ID for which enrichment is requested.</summary>
+            /// <summary>Specify the unique identifier of the record for which enrichment is to be triggered. When omitted, the job runs at the module level. Use the records API of the target module to retrieve record identifiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("record_id")]

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Get_related_records_count
     public partial class Get_related_records_countRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.get_related_records_count.item collection</summary>
-        /// <param name="position">The API name of the CRM module containing the parent record. Common values include &apos;Contacts&apos;, &apos;Leads&apos;, &apos;Deals&apos;, &apos;Accounts&apos;, &apos;Services__s&apos;, etc.</param>
+        /// <param name="position">Specify the API name of the CRM module that contains the parent record. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name and its unique ID.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Get_related_records_count.Item.WithModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Get_related_records_count.Item.WithModuleApiNameItemRequestBuilder this[string position]
         {

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Zoho.OpenApiClient.Models;
+using Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Actions;
 using Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -18,8 +19,13 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProfilesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The actions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Actions.ActionsRequestBuilder Actions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.profiles.settings.profiles.item collection</summary>
-        /// <param name="position">Profile identifier.</param>
+        /// <param name="position">Represents the unique identifier of the profile (64-bit integer represented as a string, 1-19 digits).</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.ProfilesItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.ProfilesItemRequestBuilder this[string position]
         {
@@ -35,7 +41,7 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/profiles/settings/profiles{?filters*,include_types*,type*}", pathParameters)
+        public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/profiles/settings/profiles{?filters*,include_types*,page*,per_page*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,38 +49,40 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/profiles/settings/profiles{?filters*,include_types*,type*}", rawUrl)
+        public ProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/profiles/settings/profiles{?filters*,include_types*,page*,per_page*,type*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves the list of CRM profiles with metadata.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.read
+        /// Retrieves the paginated list of all profiles in the organization, including each profile&apos;s name, type, permission details, and section groupings. Use the `type` query parameter to filter by profile type, and `include_types` to include Lite or Support profiles alongside the default set. See [Get Profiles](https://www.zoho.com/crm/developer/docs/api/v8/get-profiles.html).**Scopes:*** ZohoCRM.settings.profiles.ALL* ZohoCRM.settings.profiles.READ
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerError.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the list of CRM profiles with metadata.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.read
+        /// Retrieves the paginated list of all profiles in the organization, including each profile&apos;s name, type, permission details, and section groupings. Use the `type` query parameter to filter by profile type, and `include_types` to include Lite or Support profiles alongside the default set. See [Get Profiles](https://www.zoho.com/crm/developer/docs/api/v8/get-profiles.html).**Scopes:*** ZohoCRM.settings.profiles.ALL* ZohoCRM.settings.profiles.READ
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,12 +110,12 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles
             return new global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.ProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the list of CRM profiles with metadata.**Scopes:*** ZohoCRM.settings.profiles.all* ZohoCRM.settings.profiles.read
+        /// Retrieves the paginated list of all profiles in the organization, including each profile&apos;s name, type, permission details, and section groupings. Use the `type` query parameter to filter by profile type, and `include_types` to include Lite or Support profiles alongside the default set. See [Get Profiles](https://www.zoho.com/crm/developer/docs/api/v8/get-profiles.html).**Scopes:*** ZohoCRM.settings.profiles.ALL* ZohoCRM.settings.profiles.READ
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProfilesRequestBuilderGetQueryParameters 
         {
-            /// <summary>JSON-encoded filters to apply when listing profiles.</summary>
+            /// <summary>JSON-encoded filter criteria to narrow the profiles returned. Accepts a `Filters` object with `group` conditions and a `group_operator`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]
@@ -117,7 +125,7 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles
             [QueryParameter("filters")]
             public string Filters { get; set; }
 #endif
-            /// <summary>Comma-separated list to include additional profile types along with Administrator, Standard, and all custom profiles.</summary>
+            /// <summary>Comma-separated list of additional profile types to include alongside the default Administrator, Standard, and custom profiles. Accepted pattern: `(Lite|Support)(,(Lite|Support))*`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include_types")]
@@ -127,9 +135,15 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles
             [QueryParameter("include_types")]
             public string IncludeTypes { get; set; }
 #endif
-            /// <summary>Filter profiles by type.</summary>
+            /// <summary>Page number for paginated results. Defaults to 1.</summary>
+            [QueryParameter("page")]
+            public int? Page { get; set; }
+            /// <summary>Maximum number of profiles to return per page. Minimum 1, maximum 200. Defaults to 200.</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
+            /// <summary>Filters the returned profiles by profile type. Use `private_profile` to retrieve profiles used exclusively with team modules - private profiles are not allowed for normal custom modules, and non-private profiles are not allowed for team modules. **Possible values:****`private_profile`**, **`normal_profile`**, **`portal_profile`**.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.GetTypeQueryParameterType? Type { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesType? Type { get; set; }
         }
     }
 }

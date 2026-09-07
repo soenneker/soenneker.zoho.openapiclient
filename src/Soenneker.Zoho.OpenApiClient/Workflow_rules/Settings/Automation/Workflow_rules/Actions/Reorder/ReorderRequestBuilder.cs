@@ -34,10 +34,10 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         {
         }
         /// <summary>
-        /// To update the execution order of Workflow rules in a specific module in Zoho CRM. By default, workflow rules are executed in the order in which they are created.
+        /// To update the execution order of workflow rules for a specific module in your Zoho CRM organization. By default, rules execute in the order in which they were created. If any of the specified rule IDs are invalid, the entire request fails and no partial updates are applied.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ReOrderSuccessResponseSchema"/></returns>
-        /// <param name="body">Alternate request body wrapper containing the reorder payload for adjusting workflow rule execution order.</param>
+        /// <param name="body">Represents the request body for reordering workflow rules, containing the new position assignments for each rule.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema">When receiving a 403 status code</exception>
@@ -59,10 +59,10 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ReOrderSuccessResponseSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ReOrderSuccessResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To update the execution order of Workflow rules in a specific module in Zoho CRM. By default, workflow rules are executed in the order in which they are created.
+        /// To update the execution order of workflow rules for a specific module in your Zoho CRM organization. By default, rules execute in the order in which they were created. If any of the specified rule IDs are invalid, the entire request fails and no partial updates are applied.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Alternate request body wrapper containing the reorder payload for adjusting workflow rule execution order.</param>
+        /// <param name="body">Represents the request body for reordering workflow rules, containing the new position assignments for each rule.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,12 +90,12 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return new global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Actions.Reorder.ReorderRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To update the execution order of Workflow rules in a specific module in Zoho CRM. By default, workflow rules are executed in the order in which they are created.
+        /// To update the execution order of workflow rules for a specific module in your Zoho CRM organization. By default, rules execute in the order in which they were created. If any of the specified rule IDs are invalid, the entire request fails and no partial updates are applied.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReorderRequestBuilderPutQueryParameters 
         {
-            /// <summary>The module for which the rule counts should be provided.</summary>
+            /// <summary>Specifies the CRM module API name to filter workflow rules by, such as Leads, Contacts, or Deals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

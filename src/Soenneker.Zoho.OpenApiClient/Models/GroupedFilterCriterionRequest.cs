@@ -8,21 +8,21 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Grouped filter criterion containing multiple filter conditions with logical operators for complex filtering logic
+    /// Represents a grouped filter criterion containing multiple filter conditions evaluated with a logical operator. Supports recursive nesting for complex filtering logic.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GroupedFilterCriterionRequest : IParsable
     {
-        /// <summary>Array of filter conditions to be grouped together with the specified logical operator</summary>
+        /// <summary>Contains an array of filter conditions grouped together and evaluated with the specified logical operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest.GroupedFilterCriterionRequest_group>? Group { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequestGroupItem>? Group { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest.GroupedFilterCriterionRequest_group> Group { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequestGroupItem> Group { get; set; }
 #endif
-        /// <summary>Logical operator to apply between filter conditions in the group</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest_group_operator? GroupOperator { get; set; }
+        /// <summary>Represents the logical operator applied between the filter conditions in the group.Possible values:AND - All conditions in the group must be satisfied.OR - At least one condition in the group must be satisfied.and - Equivalent to AND; all conditions in the group must be satisfied.or - Equivalent to OR; at least one condition in the group must be satisfied.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequestGroupOperator? GroupOperator { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,8 +41,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group", n => { Group = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest.GroupedFilterCriterionRequest_group>(global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest.GroupedFilterCriterionRequest_group.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "group_operator", n => { GroupOperator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest_group_operator>(); } },
+                { "group", n => { Group = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequestGroupItem>(global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequestGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "group_operator", n => { GroupOperator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequestGroupOperator>(); } },
             };
         }
         /// <summary>
@@ -52,83 +52,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest.GroupedFilterCriterionRequest_group>("group", Group);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest_group_operator>("group_operator", GroupOperator);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionRequest"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class GroupedFilterCriterionRequest_group : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest? GroupedFilterCriterionRequest { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest GroupedFilterCriterionRequest { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionRequest"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionRequest? SimpleFilterCriterionRequest { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionRequest SimpleFilterCriterionRequest { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest.GroupedFilterCriterionRequest_group"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest.GroupedFilterCriterionRequest_group CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest.GroupedFilterCriterionRequest_group();
-                if("GroupedFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GroupedFilterCriterionRequest = new global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest();
-                }
-                else if("SimpleFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.SimpleFilterCriterionRequest = new global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionRequest();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(GroupedFilterCriterionRequest != null)
-                {
-                    return GroupedFilterCriterionRequest.GetFieldDeserializers();
-                }
-                else if(SimpleFilterCriterionRequest != null)
-                {
-                    return SimpleFilterCriterionRequest.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(GroupedFilterCriterionRequest != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest>(null, GroupedFilterCriterionRequest);
-                }
-                else if(SimpleFilterCriterionRequest != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionRequest>(null, SimpleFilterCriterionRequest);
-                }
-            }
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequestGroupItem>("group", Group);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequestGroupOperator>("group_operator", GroupOperator);
         }
     }
 }

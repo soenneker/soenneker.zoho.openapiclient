@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// The details of the users you want to sign the document.
+    /// Represents a signer entry for a sign mail merge operation, including the recipient details, the recipient name, and the required action type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SignersNested : IParsable
     {
-        /// <summary>The type of action you want the user to perform. The possible values are sign to sign the document, and approve to approve the document.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SignersNested_action_type? ActionType { get; set; }
-        /// <summary>Recipient details for signature or approval</summary>
+        /// <summary>Represents the action the recipient must perform on the mail merge document.Possible values:**sign** - The recipient must sign the document.**approve** - The recipient must approve the document.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedActionType? ActionType { get; set; }
+        /// <summary>Represents the recipient details for a signing or approval action, including the identifier type and value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.RecipientNested? Recipient { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.RecipientNested Recipient { get; set; }
 #endif
-        /// <summary>The name of the user who has to sign or approve the document.</summary>
+        /// <summary>Represents the name of the recipient who must sign or approve the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientName { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action_type", n => { ActionType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested_action_type>(); } },
+                { "action_type", n => { ActionType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedActionType>(); } },
                 { "recipient", n => { Recipient = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecipientNested>(global::Soenneker.Zoho.OpenApiClient.Models.RecipientNested.CreateFromDiscriminatorValue); } },
                 { "recipient_name", n => { RecipientName = n.GetStringValue(); } },
             };
@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested_action_type>("action_type", ActionType);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedActionType>("action_type", ActionType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecipientNested>("recipient", Recipient);
             writer.WriteStringValue("recipient_name", RecipientName);
         }

@@ -34,13 +34,14 @@ namespace Soenneker.Zoho.OpenApiClient.Get_related_records_count.Item.Item.Actio
         {
         }
         /// <summary>
-        /// Retrieves the count of related records for a specific parent record. Supports filtering by various criteria including approval status, conversion status, and custom field filters. This operation is useful for analytics and UI display purposes where you need to show counts without fetching the actual related records.
+        /// To retrieve the count of related records for a specified parent record in your Zoho CRM organization. Supports optional filtering by approval status, conversion status, category type, and field-level equality criteria. A single request can include up to 20 related list count specifications. You can use this API to get the count of records in the following types of related lists:- **System-defined related lists**, such as:  - Survey  - Desk  - Projects  - Visits  - Expense  - Invoice  - Subscription- **Custom related lists** created via Lookup fields.- **Custom related lists** created via Multi-select Lookup fields.- **Custom related lists** created via Multi-module Lookup fields.- **Related lists** created when history tracking is enabled for a picklist field.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountResponse"/></returns>
-        /// <param name="body">Request payload containing an array of related list count specifications.</param>
+        /// <param name="body">Represents the request payload for counting related records. Contains an array of related list count specifications, each identifying a related list and optional filtering criteria.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountInvalidUrlPatternError">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,15 +55,16 @@ namespace Soenneker.Zoho.OpenApiClient.Get_related_records_count.Item.Item.Actio
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountInvalidUrlPatternError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the count of related records for a specific parent record. Supports filtering by various criteria including approval status, conversion status, and custom field filters. This operation is useful for analytics and UI display purposes where you need to show counts without fetching the actual related records.
+        /// To retrieve the count of related records for a specified parent record in your Zoho CRM organization. Supports optional filtering by approval status, conversion status, category type, and field-level equality criteria. A single request can include up to 20 related list count specifications. You can use this API to get the count of records in the following types of related lists:- **System-defined related lists**, such as:  - Survey  - Desk  - Projects  - Visits  - Expense  - Invoice  - Subscription- **Custom related lists** created via Lookup fields.- **Custom related lists** created via Multi-select Lookup fields.- **Custom related lists** created via Multi-module Lookup fields.- **Related lists** created when history tracking is enabled for a picklist field.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload containing an array of related list count specifications.</param>
+        /// <param name="body">Represents the request payload for counting related records. Contains an array of related list count specifications, each identifying a related list and optional filtering criteria.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

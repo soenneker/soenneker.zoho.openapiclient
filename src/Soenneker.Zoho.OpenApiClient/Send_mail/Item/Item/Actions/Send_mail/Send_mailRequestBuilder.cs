@@ -34,10 +34,10 @@ namespace Soenneker.Zoho.OpenApiClient.Send_mail.Item.Item.Actions.Send_mail
         {
         }
         /// <summary>
-        /// Sends an email using specific templates or custom content to a record in a given module.
+        /// To send an email to a specific record in your Zoho CRM organization using a template or custom email content.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SendMailSuccessResponse"/></returns>
-        /// <param name="body">Root object for the send mail request.</param>
+        /// <param name="body">Represents the top-level request body for the Send Mail API, containing the email configuration objects.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FlatErrorResponse">When receiving a 403 status code</exception>
@@ -59,10 +59,10 @@ namespace Soenneker.Zoho.OpenApiClient.Send_mail.Item.Item.Actions.Send_mail
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SendMailSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SendMailSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sends an email using specific templates or custom content to a record in a given module.
+        /// To send an email to a specific record in your Zoho CRM organization using a template or custom email content.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Root object for the send mail request.</param>
+        /// <param name="body">Represents the top-level request body for the Send Mail API, containing the email configuration objects.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

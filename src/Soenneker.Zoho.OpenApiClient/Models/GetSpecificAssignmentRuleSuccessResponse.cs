@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Get all assignment rules success response
+    /// Get all Assignment Rules success response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetSpecificAssignmentRuleSuccessResponse : IParsable
     {
-        /// <summary>List of all assignment rules</summary>
+        /// <summary>Represents the list of all Assignment Rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRuleResponseObjectWithRuleEntries>? AssignmentRules { get; set; }

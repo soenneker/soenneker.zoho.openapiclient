@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for sending mail merge emails.
+    /// Represents the request payload for a send mail merge operation, including the template, recipient addresses, subject, message body, and optional attachment settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SendMailMergeNested : IParsable
     {
-        /// <summary>The name of the attachment you want to include in the email.</summary>
+        /// <summary>Represents the name of the attachment to include in the mail merge email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AttachmentName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string AttachmentName { get; set; }
 #endif
-        /// <summary>The details of the email or the mail merge field you want to include in the email&apos;s bcc. The keys are same as the ones in the &quot;from_address&quot; JSON object.</summary>
+        /// <summary>Represents the list of email addresses to include in the BCC field of the mail merge email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.BccEmailNested>? BccEmail { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.BccEmailNested> BccEmail { get; set; }
 #endif
-        /// <summary>The details of the email or the mail merge field you want to include in the email&apos;s cc. The keys are same as the ones in the &quot;from_address&quot; JSON object.</summary>
+        /// <summary>Represents the list of email addresses to include in the CC field of the mail merge email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.CcEmailNested>? CcEmail { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.CcEmailNested> CcEmail { get; set; }
 #endif
-        /// <summary>The email ID you want to use to send emails from. This email address must be the one of the org-verified email addresses or the current user&apos;s email ID.</summary>
+        /// <summary>Represents the sender address for a mail merge email, containing the address type and an org-verified or current user&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FromAddressNested? FromAddress { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FromAddressNested FromAddress { get; set; }
 #endif
-        /// <summary>Mailmerge Object to pass Template details</summary>
+        /// <summary>Represents the mail merge template reference, identified by the template name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested? MailMergeTemplate { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested MailMergeTemplate { get; set; }
 #endif
-        /// <summary>Represents the body or content of the email you want to send. It can include up to 100,000 characters.</summary>
+        /// <summary>Represents the body or content of the email you want to send. It can include up to **100,000 characters**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The subject line of the email.</summary>
+        /// <summary>Represents the subject line of the mail merge email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject { get; set; }
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Subject { get; set; }
 #endif
-        /// <summary>The email ID you want to use to send emails to.</summary>
+        /// <summary>Represents the list of email addresses to send the mail merge email to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested>? ToAddress { get; set; }
@@ -77,8 +77,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested> ToAddress { get; set; }
 #endif
-        /// <summary>The attachment type you want to include in the email. The possible values are inline to send the attachment as an inline image, and attachment to send the the file separately.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNested_type? Type { get; set; }
+        /// <summary>Represents the attachment type for the mail merge email.Possible values:**inline** - Includes the mail merge document as an inline image in the email.**attachment** - Attaches the mail merge document as a separate file in the email.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -105,7 +105,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "to_address", n => { ToAddress = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested>(global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNested_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedType>(); } },
             };
         }
         /// <summary>
@@ -123,7 +123,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("subject", Subject);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested>("to_address", ToAddress);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNested_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedType>("type", Type);
         }
     }
 }

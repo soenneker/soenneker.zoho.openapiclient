@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Normal tab theme.
+    /// Represents the normal tab theme settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserThemeNormalTab : IParsable
     {
-        /// <summary>Background color in hex.</summary>
+        /// <summary>Represents the background color of the normal tab in hexadecimal format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Background { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Background { get; set; }
 #endif
-        /// <summary>Font color in hex.</summary>
+        /// <summary>Represents the font color of the normal tab in hexadecimal format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FontColor { get; set; }

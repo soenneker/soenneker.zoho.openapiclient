@@ -16,10 +16,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of pipeline configuration items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse_pipeline>? Pipeline { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponsePipelineItem>? Pipeline { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse_pipeline> Pipeline { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponsePipelineItem> Pipeline { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pipeline", n => { Pipeline = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse_pipeline>(global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse_pipeline.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pipeline", n => { Pipeline = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponsePipelineItem>(global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponsePipelineItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponse_pipeline>("pipeline", Pipeline);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SinglePipelineGetResponsePipelineItem>("pipeline", Pipeline);
         }
     }
 }

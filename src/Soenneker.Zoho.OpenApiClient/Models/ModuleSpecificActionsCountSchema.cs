@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Counts of workflow rules for a specific module, including active and total configured rules, alongside the module reference.
+    /// Represents the workflow rule count details for a specific CRM module, including the number of active rules and total rules configured.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ModuleSpecificActionsCountSchema : IParsable
     {
-        /// <summary>&quot;Field: active_rules_configured&quot;</summary>
+        /// <summary>Represents number of currently active workflow rules configured.</summary>
         public int? ActiveRulesConfigured { get; set; }
-        /// <summary>Specify the module/field to which the workflow rule applies</summary>
+        /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? Module { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema Module { get; set; }
 #endif
-        /// <summary>&quot;Field: total_rules_configured&quot;</summary>
+        /// <summary>Represents total number of workflow rules configured (active + inactive).</summary>
         public int? TotalRulesConfigured { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

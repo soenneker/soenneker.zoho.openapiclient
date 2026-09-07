@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge
     public partial class Find_and_mergeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.find_and_merge.item collection</summary>
-        /// <param name="position">CRM module name for which records should be merged</param>
+        /// <param name="position">Specify the CRM module name containing the records to be merged.Possible values:**Accounts** - Accounts module.**Contacts** - Contacts module.**Leads** - Leads module.**Deals** - Deals module.**Vendors** - Cases module.Additionally, **custom modules** are also supported in this API.  </param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.WithModuleItemRequestBuilder this[string position]
         {

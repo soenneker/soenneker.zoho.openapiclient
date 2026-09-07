@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
     public partial class Services__sRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.services.Services__s.item collection</summary>
-        /// <param name="position">&quot;Path parameter: id&quot;</param>
+        /// <param name="position">Specify the unique ID of the service record to be retrieved, updated, or deleted.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Item.Services__sItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Item.Services__sItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Services__sRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/services/Services__s{?affected_data*,ids*}", pathParameters)
+        public Services__sRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/services/Services__s{?affected_data*,cvid*,ids*,page*,page_token*,per_page*,sort_by*,sort_order*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Services__sRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/services/Services__s{?affected_data*,ids*}", rawUrl)
+        public Services__sRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/services/Services__s{?affected_data*,cvid*,ids*,page*,page_token*,per_page*,sort_by*,sort_order*}", rawUrl)
         {
         }
         /// <summary>
-        /// services records delete
+        /// To delete one or more service records from your Zoho CRM organization. All appointments associated with the deleted services are also deleted; however, deals created upon completion of those appointments are not deleted.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteservicessResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,28 +65,28 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteservicessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteservicessResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// services records get
+        /// To retrieve the list of service records in your Zoho CRM organization that match the specified filter criteria. Supports pagination using either the **page** or **page_token** parameter and can return up to 100,000 services across paginated requests.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// create services api
+        /// To create one or more service records in your Zoho CRM organization, submitting up to 100 service objects per request, each configurable with a name, duration, price, location, members, availability type, and availability window.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PostservicessResponse201"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Request body schema for creating services. Contains a data array of service objects to be created and an optional skip_mandatory flag.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,19 +103,19 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostservicessResponse201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostservicessResponse201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// update services api
+        /// To update one or more existing service records in your Zoho CRM organization. Each request can include up to 100 service objects identified by their record IDs; only the fields supplied in the payload are modified.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Request body schema for updating multiple services. Contains a data array with up to 100 service objects, each identified by its ID and carrying the fields to be updated.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessBulkRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessBulkRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -123,7 +123,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutservicessResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// services records delete
+        /// To delete one or more service records from your Zoho CRM organization. All appointments associated with the deleted services are also deleted; however, deals created upon completion of those appointments are not deleted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,29 +142,29 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
             return requestInfo;
         }
         /// <summary>
-        /// services records get
+        /// To retrieve the list of service records in your Zoho CRM organization that match the specified filter criteria. Supports pagination using either the **page** or **page_token** parameter and can return up to 100,000 services across paginated requests.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/services/Services__s?fields={fields}{&cvid*,page*,page_token*,per_page*,sort_by*,sort_order*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// create services api
+        /// To create one or more service records in your Zoho CRM organization, submitting up to 100 service objects per request, each configurable with a name, duration, price, location, members, availability type, and availability window.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Request body schema for creating services. Contains a data array of service objects to be created and an optional skip_mandatory flag.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,18 +183,18 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
             return requestInfo;
         }
         /// <summary>
-        /// update services api
+        /// To update one or more existing service records in your Zoho CRM organization. Each request can include up to 100 service objects identified by their record IDs; only the fields supplied in the payload are modified.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Request body schema for updating multiple services. Contains a data array with up to 100 service objects, each identified by its ID and carrying the fields to be updated.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessBulkRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessBulkRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -214,22 +214,71 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
             return new global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// services records delete
+        /// To delete one or more service records from your Zoho CRM organization. All appointments associated with the deleted services are also deleted; however, deals created upon completion of those appointments are not deleted.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Services__sRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>contains service records id</summary>
+            /// <summary>Specify the IDs of the service records to be deleted. Provide them as comma-separated values with a maximum of **100** IDs per request.</summary>
             [QueryParameter("ids")]
             public double? Ids { get; set; }
         }
         /// <summary>
-        /// update services api
+        /// To retrieve the list of service records in your Zoho CRM organization that match the specified filter criteria. Supports pagination using either the **page** or **page_token** parameter and can return up to 100,000 services across paginated requests.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Services__sRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Specify the unique ID of the Custom View. Use the [Get Custom Views Metadata API](custom_views.yaml#$.paths./settings/custom_views.get) to retrieve the Custom View IDs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cvid")]
+            public string? Cvid { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cvid")]
+            public string Cvid { get; set; }
+#endif
+            /// <summary>Specify a comma-separated list of field API names to include in the response. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and API names.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public string? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public string Fields { get; set; }
+#endif
+            /// <summary>Specify the page number to retrieve. Starts at 1.</summary>
+            [QueryParameter("page")]
+            public int? Page { get; set; }
+            /// <summary>Specify the page token to retrieve records beyond the first 2,000 results. Use the **next_page_token** value from a previous response to access the next page of results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("page_token")]
+            public string? PageToken { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page_token")]
+            public string PageToken { get; set; }
+#endif
+            /// <summary>Specify the number of records to return per page. Maximum is 200.</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
+            /// <summary>Specify the field to sort records by.  Possible values:**id** - Sorts by record ID.  **Created_Time** - Sorts by creation timestamp.  **Modified_Time** - Sorts by last modification timestamp.</summary>
+            [QueryParameter("sort_by")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.ServicesSortBy? SortBy { get; set; }
+            /// <summary>Specify the sort order for the records.&lt;br/&gt; &lt;b&gt;Possible values:&lt;/b&gt; &lt;br/&gt;desc - Returns records in descending order.&lt;br/&gt; asc - Returns records in ascending order.</summary>
+            [QueryParameter("sort_order")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.ServicesSortOrder? SortOrder { get; set; }
+        }
+        /// <summary>
+        /// To update one or more existing service records in your Zoho CRM organization. Each request can include up to 100 service objects identified by their record IDs; only the fields supplied in the payload are modified.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Services__sRequestBuilderPutQueryParameters 
         {
-            /// <summary>adds the affected data in response</summary>
+            /// <summary>Specify whether to include the affected_data details in the response. Set to true to receive the IDs of records whose process flows were affected by the update.</summary>
             [QueryParameter("affected_data")]
             public bool? AffectedData { get; set; }
         }

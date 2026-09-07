@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Workflow Rule created successfully
+    /// Represents the success response returned after reordering workflow rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReOrderSuccessResponseSchema : IParsable
     {
-        /// <summary>&quot;Field: workflow_rules&quot;</summary>
+        /// <summary>Represents the array of workflow rule objects with their updated execution order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseNestedSchema>? Reorder { get; set; }

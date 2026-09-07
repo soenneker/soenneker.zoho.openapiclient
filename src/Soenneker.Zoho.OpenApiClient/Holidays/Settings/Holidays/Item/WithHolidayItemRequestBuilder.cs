@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithHolidayItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/holidays/settings/holidays/{holidayId}", pathParameters)
+        public WithHolidayItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/holidays/settings/holidays/{holidayId}{?shift_id*,type*,year*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,82 +30,82 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithHolidayItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/holidays/settings/holidays/{holidayId}", rawUrl)
+        public WithHolidayItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/holidays/settings/holidays/{holidayId}{?shift_id*,type*,year*}", rawUrl)
         {
         }
         /// <summary>
-        /// Permanently deletes a specific holiday identified by its ID. This operation is irreversible. Ensure the holiday ID is valid before deletion to avoid errors.
+        /// To permanently delete a holiday from Zoho CRM using its unique identifier. The deletion cannot be undone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysDeleteHoliday400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysDeleteHoliday400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item.WithHolidayItemRequestBuilder.WithHolidayItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item.WithHolidayItemRequestBuilder.WithHolidayItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.HolidaysDeleteHoliday400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.HolidaysDeleteHoliday400Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves complete details of a specific holiday by its unique identifier, including its name, date, type, associated shift hour (if applicable), and year.
+        /// To retrieve the complete details of a specific holiday record from Zoho CRM using its unique identifier.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item.WithHolidayItemRequestBuilder.WithHolidayItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item.WithHolidayItemRequestBuilder.WithHolidayItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Updates a specific holiday identified by its ID. You can modify the holiday&apos;s name (max 80 characters, no special characters: #, %, ^, &amp;, *) or date (must be within current or next financial year). Provide only the fields you want to update.&quot;
+        /// To update the name or date of a specific holiday record in Zoho CRM using its unique identifier.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200"/></returns>
-        /// <param name="body">The Request body of the object.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200Response"/></returns>
+        /// <param name="body">Represents the request body schema for updating a single holiday.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidayRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidayRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Permanently deletes a specific holiday identified by its ID. This operation is irreversible. Ensure the holiday ID is valid before deletion to avoid errors.
+        /// To permanently delete a holiday from Zoho CRM using its unique identifier. The deletion cannot be undone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item.WithHolidayItemRequestBuilder.WithHolidayItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item.WithHolidayItemRequestBuilder.WithHolidayItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -114,17 +114,17 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieves complete details of a specific holiday by its unique identifier, including its name, date, type, associated shift hour (if applicable), and year.
+        /// To retrieve the complete details of a specific holiday record from Zoho CRM using its unique identifier.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item.WithHolidayItemRequestBuilder.WithHolidayItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item.WithHolidayItemRequestBuilder.WithHolidayItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -133,18 +133,18 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Updates a specific holiday identified by its ID. You can modify the holiday&apos;s name (max 80 characters, no special characters: #, %, ^, &amp;, *) or date (must be within current or next financial year). Provide only the fields you want to update.&quot;
+        /// To update the name or date of a specific holiday record in Zoho CRM using its unique identifier.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The Request body of the object.</param>
+        /// <param name="body">Represents the request body schema for updating a single holiday.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidayRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidayRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -162,6 +162,39 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item
         public global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item.WithHolidayItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item.WithHolidayItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// To permanently delete a holiday from Zoho CRM using its unique identifier. The deletion cannot be undone.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithHolidayItemRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>Specify the year for which to filter holidays.</summary>
+            [QueryParameter("year")]
+            public int? Year { get; set; }
+        }
+        /// <summary>
+        /// To retrieve the complete details of a specific holiday record from Zoho CRM using its unique identifier.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithHolidayItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Specify the unique identifier of the shift hour whose holidays to retrieve. Required when the type parameter is set to shift_holiday.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("shift_id")]
+            public string? ShiftId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("shift_id")]
+            public string ShiftId { get; set; }
+#endif
+            /// <summary>Specify the type of holidays to retrieve.Possible values: business_holiday, shift_holiday.</summary>
+            [QueryParameter("type")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.TypeValue? Type { get; set; }
+            /// <summary>Specify the year for which to filter holidays.</summary>
+            [QueryParameter("year")]
+            public int? Year { get; set; }
         }
     }
 }

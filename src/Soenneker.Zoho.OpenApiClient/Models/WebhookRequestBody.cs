@@ -8,22 +8,22 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Defines the structure of the request body for a webhook, including data format and content to be sent during POST and PUT operations.
+    /// Represents the request body configuration for the outgoing webhook request. For type **form_data**, provide form_data_content with module_parameters and custom_parameters; format may be null. For type **raw**, supply raw_data_content and a format value of JSON, XML, Text, or HTML. For type **none**, the body carries no content and format may be null.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookRequestBody : IParsable
     {
-        /// <summary>Specify the format of the body (Required)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody_format? Format { get; set; }
-        /// <summary>Nested schema for form_data_content</summary>
+        /// <summary>Specify the body content format.Possible values:**JSON** - JSON format.**XML** - XML format.**Text** - Plain text format.**HTML** - HTML format.**null** - Valid for form_data and none body types.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormat? Format { get; set; }
+        /// <summary>Represents the form data body content for webhook requests when body.type is form_data. Contains module merge-field parameters, custom static parameters, and an optional user-defined parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema16? FormDataContent { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FormDataContent? FormDataContent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema16 FormDataContent { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FormDataContent FormDataContent { get; set; }
 #endif
-        /// <summary>Use this when you want to send plain text, JSON, HTML, or XML content directly.</summary>
+        /// <summary>Represents the raw string content sent as the request body. This field is required when the body type is raw.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RawDataContent { get; set; }
@@ -31,8 +31,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string RawDataContent { get; set; }
 #endif
-        /// <summary>Specify the body Type (Required)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody_type? Type { get; set; }
+        /// <summary>Specify the body type for the webhook request.Possible values:**form_data** - Sends data as key-value pairs in the request body.**raw** - Sends plain text, JSON, HTML, or XML content directly.**none** - No body content.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,10 +51,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "form_data_content", n => { FormDataContent = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema16>(global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema16.CreateFromDiscriminatorValue); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody_format>(); } },
+                { "form_data_content", n => { FormDataContent = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FormDataContent>(global::Soenneker.Zoho.OpenApiClient.Models.FormDataContent.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormat>(); } },
                 { "raw_data_content", n => { RawDataContent = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyType>(); } },
             };
         }
         /// <summary>
@@ -64,10 +64,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody_format>("format", Format);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGeneratedSchema16>("form_data_content", FormDataContent);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormat>("format", Format);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FormDataContent>("form_data_content", FormDataContent);
             writer.WriteStringValue("raw_data_content", RawDataContent);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyType>("type", Type);
         }
     }
 }

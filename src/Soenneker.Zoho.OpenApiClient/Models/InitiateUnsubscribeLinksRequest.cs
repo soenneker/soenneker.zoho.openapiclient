@@ -13,13 +13,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InitiateUnsubscribeLinksRequest : IParsable
     {
-        /// <summary>a (Required)</summary>
+        /// <summary>Array containing the unsubscribe link configuration to create (required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksGeneratedSchema1>? UnsubscribeLinks { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkCreateItem>? UnsubscribeLinks { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksGeneratedSchema1> UnsubscribeLinks { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkCreateItem> UnsubscribeLinks { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "unsubscribe_links", n => { UnsubscribeLinks = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksGeneratedSchema1>(global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksGeneratedSchema1.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "unsubscribe_links", n => { UnsubscribeLinks = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkCreateItem>(global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkCreateItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksGeneratedSchema1>("unsubscribe_links", UnsubscribeLinks);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkCreateItem>("unsubscribe_links", UnsubscribeLinks);
         }
     }
 }

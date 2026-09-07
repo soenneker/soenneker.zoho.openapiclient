@@ -8,28 +8,28 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Rules with actions and conditions limit
+    /// Represents the workflow rule count and limit details for the organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRulesCountResponseSchemaRulesCount : IParsable
     {
-        /// <summary>&quot;Field: active_rules_configured&quot;</summary>
+        /// <summary>Represents the number of currently active workflow rules configured in the organization.</summary>
         public int? ActiveRulesConfigured { get; set; }
-        /// <summary>&quot;Field: active_rules_limit&quot;</summary>
+        /// <summary>Represents the maximum number of active workflow rules allowed in the organization.</summary>
         public int? ActiveRulesLimit { get; set; }
-        /// <summary>&quot;Field: active_rules_limit_per_module&quot;</summary>
+        /// <summary>Represents the maximum number of active workflow rules allowed per CRM module.</summary>
         public int? ActiveRulesLimitPerModule { get; set; }
-        /// <summary>&quot;Field: rules_per_process_limit&quot;</summary>
+        /// <summary>Represents the maximum number of workflow rules allowed per business process.</summary>
         public int? RulesPerProcessLimit { get; set; }
-        /// <summary>&quot;Field: scheduled_actions_per_rule_limit&quot;</summary>
+        /// <summary>Represents the maximum number of scheduled action groups allowed per workflow rule.</summary>
         public int? ScheduledActionsPerRuleLimit { get; set; }
-        /// <summary>&quot;Field: total_actions_per_rule_limit&quot;</summary>
+        /// <summary>Represents the maximum total number of actions (instant and scheduled combined) allowed per workflow rule.</summary>
         public int? TotalActionsPerRuleLimit { get; set; }
-        /// <summary>&quot;Field: total_rules_configured&quot;</summary>
+        /// <summary>Represents the total number of workflow rules configured in the organization, including both active and inactive rules.</summary>
         public int? TotalRulesConfigured { get; set; }
-        /// <summary>&quot;Field: total_rules_limit&quot;</summary>
+        /// <summary>Represents the maximum total number of workflow rules allowed in the organization.</summary>
         public int? TotalRulesLimit { get; set; }
-        /// <summary>&quot;Field: total_rules_limit_per_module&quot;</summary>
+        /// <summary>Represents the maximum number of workflow rules allowed per CRM module.</summary>
         public int? TotalRulesLimitPerModule { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

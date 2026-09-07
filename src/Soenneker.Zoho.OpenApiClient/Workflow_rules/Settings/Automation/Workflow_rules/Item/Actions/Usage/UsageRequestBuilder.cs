@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         {
         }
         /// <summary>
-        /// To retrieve the usage report of a specific Workflow Rule in your Zoho CRM organization. It provides a count of how many times the workflow was triggered and the success or failure metrics for each associated action within a specified date range.
+        /// To retrieve the action usage report for a specific workflow rule in your Zoho CRM organization, including trigger count and per-action success, failure, and queue metrics, as well as email engagement statistics. Results are scoped to a configurable date range.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleUsageResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleUsageResponseSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleUsageResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the usage report of a specific Workflow Rule in your Zoho CRM organization. It provides a count of how many times the workflow was triggered and the success or failure metrics for each associated action within a specified date range.
+        /// To retrieve the action usage report for a specific workflow rule in your Zoho CRM organization, including trigger count and per-action success, failure, and queue metrics, as well as email engagement statistics. Results are scoped to a configurable date range.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,15 +89,15 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return new global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Item.Actions.Usage.UsageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To retrieve the usage report of a specific Workflow Rule in your Zoho CRM organization. It provides a count of how many times the workflow was triggered and the success or failure metrics for each associated action within a specified date range.
+        /// To retrieve the action usage report for a specific workflow rule in your Zoho CRM organization, including trigger count and per-action success, failure, and queue metrics, as well as email engagement statistics. Results are scoped to a configurable date range.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsageRequestBuilderGetQueryParameters 
         {
-            /// <summary>Start date for fetching usage data in ISO 8601 format (yyyy-mm-dd).</summary>
+            /// <summary>Specifies the start date of the usage data query window in ISO 8601 format (yyyy-MM-dd).</summary>
             [QueryParameter("executed_from")]
             public Date? ExecutedFrom { get; set; }
-            /// <summary>The end date for fetching usage data in ISO 8601 format (yyyy-mm-dd). </summary>
+            /// <summary>Specifies the end date of the usage data query window in ISO 8601 format (yyyy-MM-dd).</summary>
             [QueryParameter("executed_till")]
             public Date? ExecutedTill { get; set; }
         }

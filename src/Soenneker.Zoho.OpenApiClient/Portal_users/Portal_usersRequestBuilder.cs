@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users
             get => new global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.portal_users.item collection</summary>
-        /// <param name="position">The CRM module name for portal invitation</param>
+        /// <param name="position">Specify the API name of the CRM module for which you want to manage portal users. Refer to the [Get Modules](https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html) resource for valid values.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.WithModuleItemRequestBuilder this[string position]
         {

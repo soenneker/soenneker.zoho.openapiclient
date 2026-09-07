@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Error details containing resource path index
+    /// Represents additional details about the error, including the path parameter index.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CommonUrlErrorResponseDetails : IParsable
     {
-        /// <summary>Index of the resource path</summary>
+        /// <summary>Represents the zero-based index of the path parameter that caused the error.</summary>
         public int? ResourcePathIndex { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

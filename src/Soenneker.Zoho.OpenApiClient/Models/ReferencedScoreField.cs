@@ -8,16 +8,16 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains the API name of the referenced score field used in scoring rules.
+    /// Represents the referenced score field linked to a custom field in a Scoring Rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReferencedScoreField : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>api name of the referenced score field (Required for POST)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreField_api_name? ApiName { get; set; }
-        /// <summary>Reference field id</summary>
+        /// <summary>Specifies the API name of the referenced score field. Required when creating a Scoring Rule.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreFieldApiName? ApiName { get; set; }
+        /// <summary>Represents the unique ID of the referenced score field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "api_name", n => { ApiName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreField_api_name>(); } },
+                { "api_name", n => { ApiName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreFieldApiName>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreField_api_name>("api_name", ApiName);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreFieldApiName>("api_name", ApiName);
             writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }

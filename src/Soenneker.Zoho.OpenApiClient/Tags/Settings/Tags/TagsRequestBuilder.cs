@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
     public partial class TagsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.tags.settings.tags.item collection</summary>
-        /// <param name="position">&quot;Path parameter: id&quot;</param>
+        /// <param name="position">Specify the unique ID of the tag.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.Item.TagsItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.Item.TagsItemRequestBuilder this[string position]
         {
@@ -47,13 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
         {
         }
         /// <summary>
-        /// to get tags from a module
+        /// To retrieve all tags associated with a module in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GettagsResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsGetTags403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsGetTags404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoTagPermissionError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsInvalidUrlPatternError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GettagsResponse200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.TagsRequestBuilder.TagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,20 +66,20 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsGetTags403.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsGetTags404.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoTagPermissionError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsInvalidUrlPatternError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GettagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GettagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint is used to create tags
+        /// To create tags for a module in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PosttagsResponse201"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body schema for the create tag operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsPostTags403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsPostTags404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoTagPermissionError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsInvalidUrlPatternError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PosttagsResponse201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PosttagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.TagsRequestBuilder.TagsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,20 +93,20 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsPostTags403.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsPostTags404.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoTagPermissionError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsInvalidUrlPatternError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PosttagsResponse201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PosttagsResponse201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Put API with Tag id in request body
+        /// To update an existing tag in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body schema for the update tag operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsPutTags403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsPutTags404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoTagPermissionError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsInvalidUrlPatternError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PuttagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.TagsRequestBuilder.TagsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -120,13 +120,13 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsPutTags403.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsPutTags404.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoTagPermissionError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsInvalidUrlPatternError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// to get tags from a module
+        /// To retrieve all tags associated with a module in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,10 +145,10 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
             return requestInfo;
         }
         /// <summary>
-        /// This endpoint is used to create tags
+        /// To create tags for a module in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body schema for the create tag operation.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,17 +160,17 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/tags/settings/tags?module={module}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
-        /// Put API with Tag id in request body
+        /// To update an existing tag in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">Represents the request body schema for the update tag operation.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,7 +182,7 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/tags/settings/tags?module={module}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -198,37 +198,58 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
             return new global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.TagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// to get tags from a module
+        /// To retrieve all tags associated with a module in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TagsRequestBuilderGetQueryParameters 
         {
-            /// <summary>It defines whether the tag is associated to configurations, associated record counts and when the tag is last associated to a record.</summary>
+            /// <summary>Specify the additional tag properties to include in the response. Possible values: **type**, **associated_record_count**, **last_accessed_time**.</summary>
             [QueryParameter("include")]
-            public global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.GetIncludeQueryParameterType? Include { get; set; }
-            /// <summary>Module api name</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.TagsParamQueryInclude? Include { get; set; }
+            /// <summary>Specify the API name of the module. Refer to the [Get Modules](https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html) resource for valid values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("module")]
-            public global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.GetModuleQueryParameterType? Module { get; set; }
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
         }
         /// <summary>
-        /// This endpoint is used to create tags
+        /// To create tags for a module in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TagsRequestBuilderPostQueryParameters 
         {
-            /// <summary>Module api name</summary>
+            /// <summary>Specify the API name of the module. Refer to the [Get Modules](https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html) resource for valid values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("module")]
-            public global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.PostModuleQueryParameterType? Module { get; set; }
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
         }
         /// <summary>
-        /// Put API with Tag id in request body
+        /// To update an existing tag in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TagsRequestBuilderPutQueryParameters 
         {
-            /// <summary>Module api name</summary>
+            /// <summary>Specify the API name of the module. Refer to the [Get Modules](https://www.zoho.com/crm/developer/docs/api/v8/modules-api.html) resource for valid values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("module")]
-            public global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.PutModuleQueryParameterType? Module { get; set; }
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
         }
     }
 }

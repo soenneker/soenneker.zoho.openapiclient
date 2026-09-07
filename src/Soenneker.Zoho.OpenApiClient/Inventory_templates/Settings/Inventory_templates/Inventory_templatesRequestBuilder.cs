@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Item;
 using Soenneker.Zoho.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,12 +18,24 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_te
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Inventory_templatesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.inventory_templates.settings.inventory_templates.item collection</summary>
+        /// <param name="position">Inventory template ID.</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Item.WithTemplateItemRequestBuilder"/></returns>
+        public global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Item.WithTemplateItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("templateId", position);
+                return new global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Item.WithTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Inventory_templatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Inventory_templatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/inventory_templates/settings/inventory_templates{?category*,filters*,module*,page*,per_page*,sort_by*,sort_order*}", pathParameters)
+        public Inventory_templatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/inventory_templates/settings/inventory_templates{?module*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,34 +43,29 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_te
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Inventory_templatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/inventory_templates/settings/inventory_templates{?category*,filters*,module*,page*,per_page*,sort_by*,sort_order*}", rawUrl)
+        public Inventory_templatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/inventory_templates/settings/inventory_templates{?module*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;Retrieve a paginated list of inventory templates with support for sorting, filtering, and category selection. Use page/per_page for pagination (default: 20 per page, max: 200). Supports sorting by any field and filtering via JSON-stringified filter expressions.&quot;
+        /// To retrieve a paginated list of inventory templates configured in your Zoho CRM organization, with optional filtering by module, category, and field criteria, and sorting by name or usage and modification timestamps.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Inventory_templatesRequestBuilder.Inventory_templatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Inventory_templatesRequestBuilder.Inventory_templatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Inventory_templatesRequestBuilder.Inventory_templatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Inventory_templatesRequestBuilder.Inventory_templatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesErrorResponse.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve a paginated list of inventory templates with support for sorting, filtering, and category selection. Use page/per_page for pagination (default: 20 per page, max: 200). Supports sorting by any field and filtering via JSON-stringified filter expressions.&quot;
+        /// To retrieve a paginated list of inventory templates configured in your Zoho CRM organization, with optional filtering by module, category, and field criteria, and sorting by name or usage and modification timestamps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,25 +93,12 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_te
             return new global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Inventory_templatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieve a paginated list of inventory templates with support for sorting, filtering, and category selection. Use page/per_page for pagination (default: 20 per page, max: 200). Supports sorting by any field and filtering via JSON-stringified filter expressions.&quot;
+        /// To retrieve a paginated list of inventory templates configured in your Zoho CRM organization, with optional filtering by module, category, and field criteria, and sorting by name or usage and modification timestamps.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Inventory_templatesRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Filter by template category. Values: normal (active templates), draft (saved drafts)&quot;</summary>
-            [QueryParameter("category")]
-            public global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.GetCategoryQueryParameterType? Category { get; set; }
-            /// <summary>JSON-stringified filter expression. See operation description for supported comparators and group_operator.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("filters")]
-            public string? Filters { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filters")]
-            public string Filters { get; set; }
-#endif
-            /// <summary>Module API name.</summary>
+            /// <summary>Specifies the API name of the CRM module used to filter the returned inventory templates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]
@@ -113,25 +108,12 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_te
             [QueryParameter("module")]
             public string Module { get; set; }
 #endif
-            /// <summary>Page number, starting at 1</summary>
+            /// <summary>Specify the page number to retrieve in the paginated results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of items per page (default = 20, max = 100)</summary>
+            /// <summary>Specify the number of inventory templates to return per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Field name to sort by (e.g., modified_time, name)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("sort_by")]
-            public string? SortBy { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort_by")]
-            public string SortBy { get; set; }
-#endif
-            /// <summary>Sort order; default is desc</summary>
-            [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.GetSort_orderQueryParameterType? SortOrder { get; set; }
         }
     }
 }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Condition-level usage summary where instant actions include tag details; also includes scheduled actions (if any), usage count, and condition ID.
+    /// Represents the usage summary for a workflow rule condition where instant actions include tag-based metrics, along with scheduled action group data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowConditionUsageWithTaggedInstantActionsSchema : IParsable
     {
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the WorkflowConditionUsageWithTaggedInstantActions within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Container for instant actions that carry tag information, listing each tagged action&apos;s usage metrics.</summary>
+        /// <summary>Represents a container for instant action usage details that include tag-based metrics, grouped within a workflow rule condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageWithTagsSchema? InstantActions { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageWithTagsSchema InstantActions { get; set; }
 #endif
-        /// <summary>List of scheduled actions associated with the workflow rule.</summary>
+        /// <summary>Represents the list of scheduled action groups for a workflow rule, each group containing the actions and their execution usage metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchemaItem>? ScheduledActions { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchemaItem> ScheduledActions { get; set; }
 #endif
-        /// <summary>&quot;Field: usage_count&quot;</summary>
+        /// <summary>Represents the total number of times the actions in this condition were executed.</summary>
         public int? UsageCount { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

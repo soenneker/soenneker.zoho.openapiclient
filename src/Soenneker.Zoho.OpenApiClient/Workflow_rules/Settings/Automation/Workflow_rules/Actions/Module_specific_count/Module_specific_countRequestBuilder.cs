@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         {
         }
         /// <summary>
-        /// Get Workflow Rule actions count for each module
+        /// To retrieve the count of active and total workflow rules configured for each module in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificCountsResponseAllSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificCountsResponseAllSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificCountsResponseAllSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Workflow Rule actions count for each module
+        /// To retrieve the count of active and total workflow rules configured for each module in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,12 +87,12 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             return new global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Actions.Module_specific_count.Module_specific_countRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Workflow Rule actions count for each module
+        /// To retrieve the count of active and total workflow rules configured for each module in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Module_specific_countRequestBuilderGetQueryParameters 
         {
-            /// <summary>The module for which the rule counts should be provided.</summary>
+            /// <summary>Specifies the CRM module API name to filter workflow rules by, such as Leads, Contacts, or Deals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("module")]

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item
     public partial class WithModuleApiNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.attachments.item.item collection</summary>
-        /// <param name="position">The unique identifier of the record</param>
+        /// <param name="position">Specify the unique identifier of the record. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve record IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

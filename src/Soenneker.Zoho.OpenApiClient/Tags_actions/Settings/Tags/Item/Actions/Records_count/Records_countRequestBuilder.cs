@@ -34,12 +34,13 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.Actions.R
         {
         }
         /// <summary>
-        /// This endpoint is used to get the number of records associated to the tag.
+        /// Retrieves the number of records associated with a specific tag, including workflow, blueprint, and orchestration usage details.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetrecordscountResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsGetRecordsCount403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsNoPermissionError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseTagIdNotFound">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetrecordscountResponse200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.Actions.Records_count.Records_countRequestBuilder.Records_countRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,12 +53,13 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.Actions.R
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsGetRecordsCount403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsNoPermissionError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseTagIdNotFound.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetrecordscountResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetrecordscountResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint is used to get the number of records associated to the tag.
+        /// Retrieves the number of records associated with a specific tag, including workflow, blueprint, and orchestration usage details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,17 +87,31 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.Actions.R
             return new global::Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.Actions.Records_count.Records_countRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This endpoint is used to get the number of records associated to the tag.
+        /// Retrieves the number of records associated with a specific tag, including workflow, blueprint, and orchestration usage details.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Records_countRequestBuilderGetQueryParameters 
         {
-            /// <summary>tag id</summary>
+            /// <summary>Tag ID to retrieve the records count for. Use the [Get Tags API](tags.yaml#$.paths./settings/tags.get) to retrieve tag IDs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("id")]
-            public double? Id { get; set; }
-            /// <summary>module api name</summary>
+            public string? Id { get; set; }
+#nullable restore
+#else
+            [QueryParameter("id")]
+            public string Id { get; set; }
+#endif
+            /// <summary>The API name of the module to retrieve the tag records count for. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API names.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("module")]
-            public global::Soenneker.Zoho.OpenApiClient.Tags_actions.Settings.Tags.Item.Actions.Records_count.GetModuleQueryParameterType? Module { get; set; }
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
         }
     }
 }

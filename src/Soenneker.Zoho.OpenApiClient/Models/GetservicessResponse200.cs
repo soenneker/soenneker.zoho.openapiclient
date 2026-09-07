@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// services records get , success response
+    /// Wrapped response that lists the service records matching the request. Contains a data array with up to 200 service objects, each carrying the full set of service fields.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetservicessResponse200 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Field: data&quot;</summary>
+        /// <summary>Represents the array of service records returned by the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGETDataNested>? Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNested>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGETDataNested> Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNested> Data { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGETDataNested>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesGETDataNested.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNested>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNested.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGETDataNested>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNested>("data", Data);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

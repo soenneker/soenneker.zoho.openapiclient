@@ -8,143 +8,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration metadata for a related list.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookup"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelatedList : IParsable
+    public partial class RelatedList : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Action key of the related list (null if no specific action).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookup"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookup? RelatedListMultiselectLookup { get; set; }
 #nullable restore
 #else
-        public string Action { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookup RelatedListMultiselectLookup { get; set; }
 #endif
-        /// <summary>API name identifier for the related list module.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup? RelatedListNonMultiselectLookup { get; set; }
 #nullable restore
 #else
-        public string ApiName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup RelatedListNonMultiselectLookup { get; set; }
 #endif
-        /// <summary>API name of the connected lookup field if applicable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConnectedlookupApiName { get; set; }
-#nullable restore
-#else
-        public string ConnectedlookupApiName { get; set; }
-#endif
-        /// <summary>The connected module name (null if no module connection).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Connectedmodule { get; set; }
-#nullable restore
-#else
-        public string Connectedmodule { get; set; }
-#endif
-        /// <summary>Whether the display label can be customized for this related list.</summary>
-        public bool? CustomizeDisplayLabel { get; set; }
-        /// <summary>Whether field selection can be customized for this related list.</summary>
-        public bool? CustomizeFields { get; set; }
-        /// <summary>Whether custom sorting can be applied to this related list.</summary>
-        public bool? CustomizeSort { get; set; }
-        /// <summary>User-friendly label displayed for the related list.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayLabel { get; set; }
-#nullable restore
-#else
-        public string DisplayLabel { get; set; }
-#endif
-        /// <summary>Whether field customization is enabled for this related list.</summary>
-        public bool? FieldEnabled { get; set; }
-        /// <summary>Reference URL for the related list (null if not applicable).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Href { get; set; }
-#nullable restore
-#else
-        public string Href { get; set; }
-#endif
-        /// <summary>Unique identifier of the related list configuration.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The linking module name (null if no linking module).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Linkingmodule { get; set; }
-#nullable restore
-#else
-        public string Linkingmodule { get; set; }
-#endif
-        /// <summary>Module information for the related list (null if not applicable).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule? Module { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule Module { get; set; }
-#endif
-        /// <summary>Internal name of the related list.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>Array of parent related lists that this list depends on.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListParentReference>? ParentRelatedLists { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListParentReference> ParentRelatedLists { get; set; }
-#endif
-        /// <summary>Name of the personality associated with the related list.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PersonalityName { get; set; }
-#nullable restore
-#else
-        public string PersonalityName { get; set; }
-#endif
-        /// <summary>Flags indicating the record operations allowed on the related list.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRecordOperations? RecordOperations { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRecordOperations RecordOperations { get; set; }
-#endif
-        /// <summary>Display order position of the related list in the layout.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SequenceNumber { get; set; }
-#nullable restore
-#else
-        public string SequenceNumber { get; set; }
-#endif
-        /// <summary>The visibility status of the related list.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedList_status? Status { get; set; }
-        /// <summary>Type classification of the related list.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>Visibility level setting for the related list.</summary>
-        public int? Visibility { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -153,7 +37,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.RelatedList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.RelatedList();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedList();
+            if("RelatedListMultiselectLookup".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RelatedListMultiselectLookup = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookup();
+            }
+            else if("RelatedListNonMultiselectLookup".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RelatedListNonMultiselectLookup = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -161,30 +55,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(RelatedListMultiselectLookup != null)
             {
-                { "action", n => { Action = n.GetStringValue(); } },
-                { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "connectedlookupApiName", n => { ConnectedlookupApiName = n.GetStringValue(); } },
-                { "connectedmodule", n => { Connectedmodule = n.GetStringValue(); } },
-                { "customize_display_label", n => { CustomizeDisplayLabel = n.GetBoolValue(); } },
-                { "customize_fields", n => { CustomizeFields = n.GetBoolValue(); } },
-                { "customize_sort", n => { CustomizeSort = n.GetBoolValue(); } },
-                { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
-                { "field_enabled", n => { FieldEnabled = n.GetBoolValue(); } },
-                { "href", n => { Href = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "linkingmodule", n => { Linkingmodule = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_related_lists", n => { ParentRelatedLists = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListParentReference>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedListParentReference.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "personality_name", n => { PersonalityName = n.GetStringValue(); } },
-                { "record_operations", n => { RecordOperations = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRecordOperations>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRecordOperations.CreateFromDiscriminatorValue); } },
-                { "sequence_number", n => { SequenceNumber = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedList_status>(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "visibility", n => { Visibility = n.GetIntValue(); } },
-            };
+                return RelatedListMultiselectLookup.GetFieldDeserializers();
+            }
+            else if(RelatedListNonMultiselectLookup != null)
+            {
+                return RelatedListNonMultiselectLookup.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -193,27 +72,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("action", Action);
-            writer.WriteStringValue("api_name", ApiName);
-            writer.WriteStringValue("connectedlookupApiName", ConnectedlookupApiName);
-            writer.WriteStringValue("connectedmodule", Connectedmodule);
-            writer.WriteBoolValue("customize_display_label", CustomizeDisplayLabel);
-            writer.WriteBoolValue("customize_fields", CustomizeFields);
-            writer.WriteBoolValue("customize_sort", CustomizeSort);
-            writer.WriteStringValue("display_label", DisplayLabel);
-            writer.WriteBoolValue("field_enabled", FieldEnabled);
-            writer.WriteStringValue("href", Href);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("linkingmodule", Linkingmodule);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule>("module", Module);
-            writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListParentReference>("parent_related_lists", ParentRelatedLists);
-            writer.WriteStringValue("personality_name", PersonalityName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRecordOperations>("record_operations", RecordOperations);
-            writer.WriteStringValue("sequence_number", SequenceNumber);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedList_status>("status", Status);
-            writer.WriteStringValue("type", Type);
-            writer.WriteIntValue("visibility", Visibility);
+            if(RelatedListMultiselectLookup != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookup>(null, RelatedListMultiselectLookup);
+            }
+            else if(RelatedListNonMultiselectLookup != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup>(null, RelatedListNonMultiselectLookup);
+            }
         }
     }
 }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Layout id
+    /// Represents the layout used to render the service record. Refer to the [Get layouts](layouts.yaml#$.paths./settings/layouts.get) resource for valid values.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutNested : IParsable
     {
-        /// <summary>id</summary>
+        /// <summary>Specify the unique ID of the layout to use for the service record. Refer to the [Get layouts](layouts.yaml#$.paths./settings/layouts.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

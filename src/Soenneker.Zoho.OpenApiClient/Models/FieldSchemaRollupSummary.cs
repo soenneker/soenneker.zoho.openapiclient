@@ -7,68 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class FieldSchemaRollupSummary : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class FieldSchemaRollupSummary : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Module on which the rollup summary is based</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_based_on_module? BasedOnModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1? FieldSchemaRollupSummaryOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_based_on_module BasedOnModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1 FieldSchemaRollupSummaryOneOf1 { get; set; }
 #endif
-        /// <summary>Expression details of the rollup summary</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_expression? Expression { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull? TypeNull { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_expression Expression { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull TypeNull { get; set; }
 #endif
-        /// <summary>Related list details for the rollup summary</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_related_list? RelatedList { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_related_list RelatedList { get; set; }
-#endif
-        /// <summary>The return type of the rollup summary</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ReturnType { get; set; }
-#nullable restore
-#else
-        public string ReturnType { get; set; }
-#endif
-        /// <summary>Indicates what the rollup is based on</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RollupBasedOn { get; set; }
-#nullable restore
-#else
-        public string RollupBasedOn { get; set; }
-#endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary"/> and sets the default values.
-        /// </summary>
-        public FieldSchemaRollupSummary()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,7 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary();
+            if("FieldSchemaRollupSummaryOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FieldSchemaRollupSummaryOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,15 +51,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(FieldSchemaRollupSummaryOneOf1 != null)
             {
-                { "based_on_module", n => { BasedOnModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_based_on_module>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_based_on_module.CreateFromDiscriminatorValue); } },
-                { "expression", n => { Expression = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_expression>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_expression.CreateFromDiscriminatorValue); } },
-                { "related_list", n => { RelatedList = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_related_list>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_related_list.CreateFromDiscriminatorValue); } },
-                { "return_type", n => { ReturnType = n.GetStringValue(); } },
-                { "rollup_based_on", n => { RollupBasedOn = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return FieldSchemaRollupSummaryOneOf1.GetFieldDeserializers();
+            }
+            else if(TypeNull != null)
+            {
+                return TypeNull.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -102,13 +68,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_based_on_module>("based_on_module", BasedOnModule);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_expression>("expression", Expression);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummary_related_list>("related_list", RelatedList);
-            writer.WriteStringValue("return_type", ReturnType);
-            writer.WriteStringValue("rollup_based_on", RollupBasedOn);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(FieldSchemaRollupSummaryOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1>(null, FieldSchemaRollupSummaryOneOf1);
+            }
+            else if(TypeNull != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TypeNull>(null, TypeNull);
+            }
         }
     }
 }

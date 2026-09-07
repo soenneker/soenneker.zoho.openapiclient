@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Reference to a CRM module (api_name and id).
+    /// Represents a module reference containing the module **API name** and **ID**, used to identify the CRM module associated with an inventory template.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InventoryTemplatesModuleRef : IParsable
     {
-        /// <summary>API name of the module</summary>
+        /// <summary>Represents the API name of the CRM module associated with the inventory template. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>ID of the module</summary>
+        /// <summary>Represents the unique ID of the CRM module associated with the inventory template. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

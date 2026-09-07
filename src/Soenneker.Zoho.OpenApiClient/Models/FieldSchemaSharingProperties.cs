@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Sharing properties of the field
+    /// Contains the sharing configuration for this field, defining how its value participates in record-level sharing rules and whether specific sharing preferences are active.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchemaSharingProperties : IParsable
     {
-        /// <summary>The scheduler status for sharing</summary>
+        /// <summary>The scheduler_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchedulerStatus { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingPropertiesSchedulerStatus? SchedulerStatus { get; set; }
 #nullable restore
 #else
-        public string SchedulerStatus { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingPropertiesSchedulerStatus SchedulerStatus { get; set; }
 #endif
-        /// <summary>The share permission for the field</summary>
+        /// <summary>Represents the sharing access level assigned to this field, controlling whether users who receive shared record access can read, edit, or are restricted from this field&apos;s value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SharePermission { get; set; }
@@ -29,8 +29,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string SharePermission { get; set; }
 #endif
-        /// <summary>Indicates if share preference is enabled</summary>
+        /// <summary>Indicates whether the sharing preference configuration is active for this field. Possible values: `true` — sharing preference settings are applied to this field; `false` — sharing preference is not enabled.</summary>
         public bool? SharePreferenceEnabled { get; set; }
+        /// <summary>Indicates whether this field&apos;s value is shared with users in superior roles in the CRM role hierarchy when record sharing propagates upward. Possible values: `true` — the field is shared with superior role users; `false` — the field is not shared with superiors.</summary>
+        public bool? ShareWithSuperiors { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,9 +51,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scheduler_status", n => { SchedulerStatus = n.GetStringValue(); } },
+                { "scheduler_status", n => { SchedulerStatus = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingPropertiesSchedulerStatus>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingPropertiesSchedulerStatus.CreateFromDiscriminatorValue); } },
                 { "share_permission", n => { SharePermission = n.GetStringValue(); } },
                 { "share_preference_enabled", n => { SharePreferenceEnabled = n.GetBoolValue(); } },
+                { "share_with_superiors", n => { ShareWithSuperiors = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -61,9 +64,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("scheduler_status", SchedulerStatus);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingPropertiesSchedulerStatus>("scheduler_status", SchedulerStatus);
             writer.WriteStringValue("share_permission", SharePermission);
             writer.WriteBoolValue("share_preference_enabled", SharePreferenceEnabled);
+            writer.WriteBoolValue("share_with_superiors", ShareWithSuperiors);
         }
     }
 }

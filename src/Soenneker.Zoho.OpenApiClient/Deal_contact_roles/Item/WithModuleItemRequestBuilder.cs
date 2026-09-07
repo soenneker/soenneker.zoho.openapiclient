@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item
     public partial class WithModuleItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.deal_contact_roles.item.item collection</summary>
-        /// <param name="position">The unique identifier of the deal record</param>
+        /// <param name="position">Represents the unique identifier of the deal record. Use the [Get Records API](record.yaml#$.paths./{module}.get) and get the unique ID of the Deal.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.Item.WithDealItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.Item.WithDealItemRequestBuilder this[string position]
         {

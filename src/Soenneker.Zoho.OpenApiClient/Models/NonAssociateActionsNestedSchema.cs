@@ -8,20 +8,30 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// An array of action objects
+    /// Represents an inline action configuration that is defined directly within the workflow rule condition, rather than referencing a pre-created action entity by ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class NonAssociateActionsNestedSchema : IParsable
+    public partial class NonAssociateActionsNestedSchema : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Specify the details of the action</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates that this action should be removed from the workflow rule when set in a PUT request. Provide a null value to signal deletion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema.NonAssociateActionsNestedSchema_details? Details { get; set; }
+        public UntypedNode? Delete { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema.NonAssociateActionsNestedSchema_details Details { get; set; }
+        public UntypedNode Delete { get; set; }
 #endif
-        /// <summary>Unique identifier for the non-associate action.</summary>
+        /// <summary>PURPOSE: Details object for assign_owner action. Assigns/reassigns record owner via user, role, group, profile, assignment_rule, merge_field, or criteria. MANDATORY: module ({api_name, id} - must match trigger module), assign_to (array 1-5 entries). OPTIONAL: notify (bool), related_records ([{api_name, id}] - Tasks/Calls/Events), apply_assignment_threshold (bool), user_availability_based_on, lookup_field (for cross-module). EXAMPLE: {&quot;module&quot;: {&quot;api_name&quot;: &quot;Leads&quot;, &quot;id&quot;: &quot;111111000000000175&quot;}, &quot;assign_to&quot;: [{&quot;type&quot;: &quot;user&quot;, &quot;resource&quot;: {&quot;id&quot;: &quot;111111000000050001&quot;, &quot;name&quot;: &quot;John&quot;}}], &quot;notify&quot;: true}</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetails? Details { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetails Details { get; set; }
+#endif
+        /// <summary>Represents the unique ID of the AssignOwner action within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Specify the action name (Required)</summary>
+        /// <summary>Represents the display name of the AssignOwner action as it appears within the workflow rule configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -37,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The related_details property</summary>
+        /// <summary>Represents the optional action-specific configuration attached to an associate action, such as best-time delivery settings for email notifications or lookup field references for field updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema? RelatedDetails { get; set; }
@@ -45,8 +55,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema RelatedDetails { get; set; }
 #endif
-        /// <summary>Specify the type of action (Required)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema_type? Type { get; set; }
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema"/> and sets the default values.
+        /// </summary>
+        public NonAssociateActionsNestedSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,11 +88,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema.NonAssociateActionsNestedSchema_details>(global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema.NonAssociateActionsNestedSchema_details.CreateFromDiscriminatorValue); } },
+                { "_delete", n => { Delete = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "related_details", n => { RelatedDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -79,126 +103,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema.NonAssociateActionsNestedSchema_details>("details", Details);
+            writer.WriteObjectValue<UntypedNode>("_delete", Delete);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetails>("details", Details);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema>("related_details", RelatedDetails);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema_type>("type", Type);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerDetailsSchema"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MeetingOrCallActionSchema"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TagActionSchema"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class NonAssociateActionsNestedSchema_details : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerDetailsSchema"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerDetailsSchema? AssignOwnerDetailsSchema { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerDetailsSchema AssignOwnerDetailsSchema { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema? ConvertDetailsSchema { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema ConvertDetailsSchema { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MeetingOrCallActionSchema"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.MeetingOrCallActionSchema? MeetingOrCallActionSchema { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.MeetingOrCallActionSchema MeetingOrCallActionSchema { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TagActionSchema"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.TagActionSchema? TagActionSchema { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.TagActionSchema TagActionSchema { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema.NonAssociateActionsNestedSchema_details"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema.NonAssociateActionsNestedSchema_details CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Zoho.OpenApiClient.Models.NonAssociateActionsNestedSchema.NonAssociateActionsNestedSchema_details();
-                if("AssignOwnerDetailsSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.AssignOwnerDetailsSchema = new global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerDetailsSchema();
-                }
-                else if("ConvertDetailsSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConvertDetailsSchema = new global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema();
-                }
-                else if("MeetingOrCallActionSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MeetingOrCallActionSchema = new global::Soenneker.Zoho.OpenApiClient.Models.MeetingOrCallActionSchema();
-                }
-                else if("TagActionSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TagActionSchema = new global::Soenneker.Zoho.OpenApiClient.Models.TagActionSchema();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(AssignOwnerDetailsSchema != null)
-                {
-                    return AssignOwnerDetailsSchema.GetFieldDeserializers();
-                }
-                else if(ConvertDetailsSchema != null)
-                {
-                    return ConvertDetailsSchema.GetFieldDeserializers();
-                }
-                else if(MeetingOrCallActionSchema != null)
-                {
-                    return MeetingOrCallActionSchema.GetFieldDeserializers();
-                }
-                else if(TagActionSchema != null)
-                {
-                    return TagActionSchema.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(AssignOwnerDetailsSchema != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerDetailsSchema>(null, AssignOwnerDetailsSchema);
-                }
-                else if(ConvertDetailsSchema != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConvertDetailsSchema>(null, ConvertDetailsSchema);
-                }
-                else if(MeetingOrCallActionSchema != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MeetingOrCallActionSchema>(null, MeetingOrCallActionSchema);
-                }
-                else if(TagActionSchema != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagActionSchema>(null, TagActionSchema);
-                }
-            }
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Zoho.OpenApiClient.Models;
+using Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables.Actions;
 using Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -18,8 +19,13 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariablesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The actions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables.Actions.ActionsRequestBuilder Actions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.variables.settings.variables.item collection</summary>
-        /// <param name="position">variables id in url path</param>
+        /// <param name="position">The unique ID of the variable. Mandatory.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables.Item.VariablesItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables.Item.VariablesItemRequestBuilder this[string position]
         {
@@ -35,7 +41,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VariablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/variables/settings/variables{?ids*,rids*}", pathParameters)
+        public VariablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/variables/settings/variables{?ids}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +49,11 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VariablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/variables/settings/variables{?ids*,rids*}", rawUrl)
+        public VariablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/variables/settings/variables{?ids}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete all
+        /// Deletes one or more CRM variables by their IDs. Pass variable IDs as a comma-separated list in the ids query parameter, or pass rids in the rids query parameter. A variable that is associated with other features such as email templates, webhooks, or functions cannot be deleted until the association is removed. Requires the ZohoCRM.settings.variables.DELETE scope.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This helps in fetching all the variables
+        /// Retrieves all available CRM variables. Returns the API name, display name, description, type, value, and variable group for each variable. Requires the ZohoCRM.settings.variables.READ scope.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariablesListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariablesListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariablesListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// this creates variables.
+        /// Creates one or more CRM variables. The name, api_name, and variable_group keys are mandatory. The type key specifies the data type of the variable. Possible types: integer, text, percent, decimal, currency, date, datetime, email, phone, url, checkbox, textarea, long. Requires the ZohoCRM.settings.variables.CREATE scope.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchOperationCreated"/></returns>
         /// <param name="body">Request body wrapper that carries an array of variable definitions to be processed in a single batch.</param>
@@ -108,7 +114,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchOperationCreated>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchOperationCreated.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates all variables
+        /// Updates one or more CRM variables in a single request. The id key is mandatory in the request body to identify each variable. You cannot update the type or variable group of a variable. Requires the ZohoCRM.settings.variables.UPDATE scope.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchUpdateResponse"/></returns>
         /// <param name="body">Alternate instance of the batch update request wrapper holding an array of variable update items.</param>
@@ -128,7 +134,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchUpdateResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchUpdateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete all
+        /// Deletes one or more CRM variables by their IDs. Pass variable IDs as a comma-separated list in the ids query parameter, or pass rids in the rids query parameter. A variable that is associated with other features such as email templates, webhooks, or functions cannot be deleted until the association is removed. Requires the ZohoCRM.settings.variables.DELETE scope.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +153,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
             return requestInfo;
         }
         /// <summary>
-        /// This helps in fetching all the variables
+        /// Retrieves all available CRM variables. Returns the API name, display name, description, type, value, and variable group for each variable. Requires the ZohoCRM.settings.variables.READ scope.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +172,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
             return requestInfo;
         }
         /// <summary>
-        /// this creates variables.
+        /// Creates one or more CRM variables. The name, api_name, and variable_group keys are mandatory. The type key specifies the data type of the variable. Possible types: integer, text, percent, decimal, currency, date, datetime, email, phone, url, checkbox, textarea, long. Requires the ZohoCRM.settings.variables.CREATE scope.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body wrapper that carries an array of variable definitions to be processed in a single batch.</param>
@@ -188,7 +194,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
             return requestInfo;
         }
         /// <summary>
-        /// Updates all variables
+        /// Updates one or more CRM variables in a single request. The id key is mandatory in the request body to identify each variable. You cannot update the type or variable group of a variable. Requires the ZohoCRM.settings.variables.UPDATE scope.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Alternate instance of the batch update request wrapper holding an array of variable update items.</param>
@@ -219,30 +225,20 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
             return new global::Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables.VariablesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete all
+        /// Deletes one or more CRM variables by their IDs. Pass variable IDs as a comma-separated list in the ids query parameter, or pass rids in the rids query parameter. A variable that is associated with other features such as email templates, webhooks, or functions cannot be deleted until the association is removed. Requires the ZohoCRM.settings.variables.DELETE scope.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VariablesRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>param field for variable with id</summary>
+            /// <summary>Comma-separated list of variable IDs to delete. Mandatory when deleting multiple variables. Maximum: 100 IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
-            public string? Ids { get; set; }
+            public string[]? Ids { get; set; }
 #nullable restore
 #else
             [QueryParameter("ids")]
-            public string Ids { get; set; }
-#endif
-            /// <summary>param field for variable with rid</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("rids")]
-            public string? Rids { get; set; }
-#nullable restore
-#else
-            [QueryParameter("rids")]
-            public string Rids { get; set; }
+            public string[] Ids { get; set; }
 #endif
         }
     }

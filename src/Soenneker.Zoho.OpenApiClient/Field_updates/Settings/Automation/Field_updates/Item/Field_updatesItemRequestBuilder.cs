@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Field_updatesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/field_updates/settings/automation/field_updates/{id}?include_inner_details={include_inner_details}", pathParameters)
+        public Field_updatesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/field_updates/settings/automation/field_updates/{id}{?include_inner_details*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,84 +30,77 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Field_updatesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/field_updates/settings/automation/field_updates/{id}?include_inner_details={include_inner_details}", rawUrl)
+        public Field_updatesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/field_updates/settings/automation/field_updates/{id}{?include_inner_details*}", rawUrl)
         {
         }
         /// <summary>
-        /// To delete a field update action.
+        /// Deletes a single field update action identified by the path ID. Use the [Get Field Updates API](field_updates.yaml#$.paths./settings/automation/field_updates.get) to retrieve the field update ID. Actions associated with active automation rules return a `NOT_ALLOWED` error, and read-only actions cannot be deleted.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Delete3361265000006103409Response200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteFieldUpdateSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesDeleteFieldUpdateById403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Delete3361265000006103409Response200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DeleteFieldUpdateSuccessResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Delete3361265000006103409Response200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DeleteFieldUpdateSuccessResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesDeleteFieldUpdateById403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Delete3361265000006103409Response200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Delete3361265000006103409Response200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteFieldUpdateSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteFieldUpdateSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the details of the field-update action for the specified fieldUpdate ID.
+        /// Retrieves the details of the specified Field Update action, including its field configuration, module details, configured value, dependent fields, and audit information. Specify the Field Update ID in the path parameter. To retrieve additional field metadata, set the &apos;include_inner_details&apos; query parameter to one or more of field_label, enable_colour_code, pick_list_values.colour_code, data_type, or display_value. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module IDs. This API is useful for inspecting the current configuration of a Field Update action before updating it.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Get3361265000006103409Response200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateByIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesGetFieldUpdateById400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesGetFieldUpdateById403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Get3361265000006103409Response200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_updates.Item.Field_updatesItemRequestBuilder.Field_updatesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateByIdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_updates.Item.Field_updatesItemRequestBuilder.Field_updatesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Get3361265000006103409Response200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_updates.Item.Field_updatesItemRequestBuilder.Field_updatesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateByIdResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_updates.Item.Field_updatesItemRequestBuilder.Field_updatesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesGetFieldUpdateById400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesGetFieldUpdateById403.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Get3361265000006103409Response200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Get3361265000006103409Response200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateByIdResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateByIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To update an existing field update action.
+        /// Updates an existing field update action identified by the path ID. Use the [Get Field Updates API](field_updates.yaml#$.paths./settings/automation/field_updates.get) to find the field update ID. Locked actions require the appropriate privilege, and read-only actions cannot be modified. For single-value fields, use a string for value. For multi-select and multi-user field types, use an array for value (for example, [&apos;Call&apos;, &apos;Advertisement&apos;]). update_type (mandatory for multi-select and multi-user fields) specifies how to update the field and is supported only for multi-select fields: overwrite replaces existing values, append adds to existing values. dependent_fields specifies fields affected when the target field changes — primarily used for picklist dependencies. For example, updating Country to India restricts the dependent State field to Indian states.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.Put3361265000006103409Response200"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UpdateFieldUpdateSuccessResponse"/></returns>
+        /// <param name="body">The request body wrapper for creating or updating a field update action. Must contain a field_updates array with exactly one entry.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesPutFieldUpdateById403">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Put3361265000006103409Response200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Put3361265000006103409Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UpdateFieldUpdateSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CreateFieldUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.Put3361265000006103409Response200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.Put3361265000006103409Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UpdateFieldUpdateSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CreateFieldUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesPutFieldUpdateById403.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.Put3361265000006103409Response200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.Put3361265000006103409Response200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateFieldUpdateSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateFieldUpdateSuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To delete a field update action.
+        /// Deletes a single field update action identified by the path ID. Use the [Get Field Updates API](field_updates.yaml#$.paths./settings/automation/field_updates.get) to retrieve the field update ID. Actions associated with active automation rules return a `NOT_ALLOWED` error, and read-only actions cannot be deleted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,13 +113,13 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/field_updates/settings/automation/field_updates/{id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Retrieves the details of the field-update action for the specified fieldUpdate ID.
+        /// Retrieves the details of the specified Field Update action, including its field configuration, module details, configured value, dependent fields, and audit information. Specify the Field Update ID in the path parameter. To retrieve additional field metadata, set the &apos;include_inner_details&apos; query parameter to one or more of field_label, enable_colour_code, pick_list_values.colour_code, data_type, or display_value. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module IDs. This API is useful for inspecting the current configuration of a Field Update action before updating it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,22 +138,22 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
             return requestInfo;
         }
         /// <summary>
-        /// To update an existing field update action.
+        /// Updates an existing field update action identified by the path ID. Use the [Get Field Updates API](field_updates.yaml#$.paths./settings/automation/field_updates.get) to find the field update ID. Locked actions require the appropriate privilege, and read-only actions cannot be modified. For single-value fields, use a string for value. For multi-select and multi-user field types, use an array for value (for example, [&apos;Call&apos;, &apos;Advertisement&apos;]). update_type (mandatory for multi-select and multi-user fields) specifies how to update the field and is supported only for multi-select fields: overwrite replaces existing values, append adds to existing values. dependent_fields specifies fields affected when the target field changes — primarily used for picklist dependencies. For example, updating Country to India restricts the dependent State field to Indian states.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">The request body wrapper for creating or updating a field update action. Must contain a field_updates array with exactly one entry.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Put3361265000006103409Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CreateFieldUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.Put3361265000006103409Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.CreateFieldUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/field_updates/settings/automation/field_updates/{id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -176,14 +169,14 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
             return new global::Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_updates.Item.Field_updatesItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the details of the field-update action for the specified fieldUpdate ID.
+        /// Retrieves the details of the specified Field Update action, including its field configuration, module details, configured value, dependent fields, and audit information. Specify the Field Update ID in the path parameter. To retrieve additional field metadata, set the &apos;include_inner_details&apos; query parameter to one or more of field_label, enable_colour_code, pick_list_values.colour_code, data_type, or display_value. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module IDs. This API is useful for inspecting the current configuration of a Field Update action before updating it.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Field_updatesItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>To retrieve additional details about the field associated with the field update.</summary>
+            /// <summary>Include optional field metadata in the response. `field_label`: UI label, `enable_colour_code`: picklist color-coding flag, `pick_list_values.colour_code`: HEX color per picklist option, `data_type`: field data type, `display_value`: UI-friendly rendered value.</summary>
             [QueryParameter("include_inner_details")]
-            public global::Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_updates.Item.GetInclude_inner_detailsQueryParameterType? IncludeInnerDetails { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesParamQueryIncludeInnerDetails? IncludeInnerDetails { get; set; }
         }
     }
 }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested schema for workflow_rules
+    /// Represents a single item in a multi-status response array, including a response code, status indicator, message, and optionally the resource details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuccessResponseNestedSchema : IParsable
     {
-        /// <summary>&quot;Field: code&quot;</summary>
+        /// <summary>Represents the API response code indicating the operation result, such as **SUCCESS** or **INVALID_DATA**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>Nested schema for details</summary>
+        /// <summary>Represents the details object within a success response, containing the unique ID of the created or updated resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetailsSchema? Details { get; set; }
@@ -29,9 +29,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetailsSchema Details { get; set; }
 #endif
-        /// <summary>&quot;Field: message&quot;</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseNestedSchema_message? Message { get; set; }
-        /// <summary>&quot;Field: status&quot;</summary>
+        /// <summary>Represents the message describing the operation result or error.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseNestedSchemaMessage? Message { get; set; }
+        /// <summary>Represents the response status indicator, such as **success** or **error**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetailsSchema>(global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetailsSchema.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseNestedSchema_message>(); } },
+                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseNestedSchemaMessage>(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseDetailsSchema>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseNestedSchema_message>("message", Message);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseNestedSchemaMessage>("message", Message);
             writer.WriteStringValue("status", Status);
         }
     }

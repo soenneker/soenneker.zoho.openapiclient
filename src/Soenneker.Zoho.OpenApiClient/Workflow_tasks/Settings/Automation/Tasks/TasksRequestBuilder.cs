@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks
     public partial class TasksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.workflow_tasks.settings.automation.tasks.item collection</summary>
-        /// <param name="position">The ID of the task to retrieve</param>
+        /// <param name="position">The unique ID of the automation task definition to retrieve (not a Task record ID).</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.Item.TasksItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.Item.TasksItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TasksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_tasks/settings/automation/tasks?ids={ids}{&feature_type*,module*,page*,per_page*}", pathParameters)
+        public TasksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_tasks/settings/automation/tasks{?feature_type*,filter*,module*,page*,per_page*,sort_by*,sort_order*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,39 +43,43 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_tasks/settings/automation/tasks?ids={ids}{&feature_type*,module*,page*,per_page*}", rawUrl)
+        public TasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_tasks/settings/automation/tasks{?feature_type*,filter*,module*,page*,per_page*,sort_by*,sort_order*}", rawUrl)
         {
         }
         /// <summary>
-        /// To delete automation tasks configured in your Zoho CRM account.
+        /// PURPOSE: Deletes one or more automation task definitions by their IDs. MANDATORY: ids query parameter (comma-separated task IDs, max 10). KEY CONSTRAINTS: Tasks associated with active workflow rules, approval processes, or blueprints cannot be deleted (returns NOT_ALLOWED error). Returns per-task success/error status. Use GET /settings/automation/tasks to discover task IDs before deleting.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema8"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteTasksSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksErrorResponseCore11">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskInvalidDataSchema">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema8?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.TasksRequestBuilder.TasksRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteTasksSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.TasksRequestBuilder.TasksRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema8> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.TasksRequestBuilder.TasksRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteTasksSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.TasksRequestBuilder.TasksRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksErrorResponseCore11.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.TaskInvalidDataSchema.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema8>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema8.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteTasksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteTasksSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the list of automation tasks configured in your Zoho CRM organization.
+        /// PURPOSE: Retrieves a paginated list of automation task definitions. Supports filtering by module, feature_type, and name (via filter param). PAGINATION: page (default 1), per_page (default 200, max 200). Use info.more_records to determine if additional pages exist. A 204 response indicates no tasks match the supplied filters. Use this before PUT/DELETE to discover task IDs.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetTasksSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksInvalidModuleErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetTasksSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,32 +92,72 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksInvalidModuleErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetTasksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetTasksSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To create an automation task in your Zoho CRM organization.
+        /// PURPOSE: Creates an automation task definition used by workflow rules, approval processes, blueprints, kiosks, scoring rules, and case escalation rules. PREREQUISITES: (1) Call GET /settings/automation/tasks to check existing task definitions and avoid duplicates. (2) Call GET /settings/layouts?module=Tasks to discover supported fields and identify mandatory fields where required: true in the field info. STRUCTURE: The request body contains a tasks array with exactly 1 task object. Each task requires: name (string), module ({api_name, id}), and field_mappings (array). Omitting mandatory fields returns REQUIRED_DATA_NOT_FOUND. Returns the created task ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema5"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateTaskSuccessResponse"/></returns>
+        /// <param name="body">PURPOSE: Request body wrapper for creating or updating an automation task definition. MUST contain a tasks array with exactly 1 task object.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCreateWorkflowTasks400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema5?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema2 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CreateTaskSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema5> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema2 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CreateTaskSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema5>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema5.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCreateWorkflowTasks400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CreateTaskSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CreateTaskSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To delete automation tasks configured in your Zoho CRM account.
+        /// PURPOSE: Updates an existing automation task definition identified by the path parameter ID. PREREQUISITES: (1) Call GET /settings/automation/tasks/{id} to obtain the current task structure. (2) Call GET /settings/layouts?module=Tasks to verify supported fields and identify mandatory fields where required: true in the field info. BEHAVIOR: This is a full replacement - all field_mappings must be provided, not just the changed ones. KEY CONSTRAINTS: Locked tasks (locked by workflow rules, approval processes, or blueprints) return 401 AUTHORIZATION_ERROR. Read-only tasks return 400.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UpdateTaskSuccessResponse"/></returns>
+        /// <param name="body">PURPOSE: Request body wrapper for creating or updating an automation task definition. MUST contain a tasks array with exactly 1 task object.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksUpdateWorkflowTask401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskInvalidDataSchema">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse">When receiving a 500 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UpdateTaskSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UpdateTaskSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksUpdateWorkflowTask401Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.TaskInvalidDataSchema.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateTaskSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateTaskSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// PURPOSE: Deletes one or more automation task definitions by their IDs. MANDATORY: ids query parameter (comma-separated task IDs, max 10). KEY CONSTRAINTS: Tasks associated with active workflow rules, approval processes, or blueprints cannot be deleted (returns NOT_ALLOWED error). Returns per-task success/error status. Use GET /settings/automation/tasks to discover task IDs before deleting.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +176,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks
             return requestInfo;
         }
         /// <summary>
-        /// To retrieve the list of automation tasks configured in your Zoho CRM organization.
+        /// PURPOSE: Retrieves a paginated list of automation task definitions. Supports filtering by module, feature_type, and name (via filter param). PAGINATION: page (default 1), per_page (default 200, max 200). Use info.more_records to determine if additional pages exist. A 204 response indicates no tasks match the supplied filters. Use this before PUT/DELETE to discover task IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,28 +189,50 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/workflow_tasks/settings/automation/tasks{?feature_type*,module*,page*,per_page*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// To create an automation task in your Zoho CRM organization.
+        /// PURPOSE: Creates an automation task definition used by workflow rules, approval processes, blueprints, kiosks, scoring rules, and case escalation rules. PREREQUISITES: (1) Call GET /settings/automation/tasks to check existing task definitions and avoid duplicates. (2) Call GET /settings/layouts?module=Tasks to discover supported fields and identify mandatory fields where required: true in the field info. STRUCTURE: The request body contains a tasks array with exactly 1 task object. Each task requires: name (string), module ({api_name, id}), and field_mappings (array). Omitting mandatory fields returns REQUIRED_DATA_NOT_FOUND. Returns the created task ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">PURPOSE: Request body wrapper for creating or updating an automation task definition. MUST contain a tasks array with exactly 1 task object.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema2 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGeneratedSchema2 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/workflow_tasks/settings/automation/tasks", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
+        /// PURPOSE: Updates an existing automation task definition identified by the path parameter ID. PREREQUISITES: (1) Call GET /settings/automation/tasks/{id} to obtain the current task structure. (2) Call GET /settings/layouts?module=Tasks to verify supported fields and identify mandatory fields where required: true in the field info. BEHAVIOR: This is a full replacement - all field_mappings must be provided, not just the changed ones. KEY CONSTRAINTS: Locked tasks (locked by workflow rules, approval processes, or blueprints) return 401 AUTHORIZATION_ERROR. Read-only tasks return 400.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">PURPOSE: Request body wrapper for creating or updating an automation task definition. MUST contain a tasks array with exactly 1 task object.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -182,33 +248,63 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks
             return new global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To delete automation tasks configured in your Zoho CRM account.
+        /// PURPOSE: Deletes one or more automation task definitions by their IDs. MANDATORY: ids query parameter (comma-separated task IDs, max 10). KEY CONSTRAINTS: Tasks associated with active workflow rules, approval processes, or blueprints cannot be deleted (returns NOT_ALLOWED error). Returns per-task success/error status. Use GET /settings/automation/tasks to discover task IDs before deleting.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TasksRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>It represents the unique ID of the task that you want to delete. Skip this parameter if you have specified the ID in the request URL. You can pass upto 10 comma-separated IDs in this parameter.</summary>
+            /// <summary>Comma-separated automation task definition IDs to delete in bulk. Maximum 10 IDs per request. Each ID must be a numeric string (e.g., &quot;111111000000200035,111111000000190030&quot;). Tasks associated with active automation cannot be deleted  - returns NOT_ALLOWED per task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("ids")]
-            public int? Ids { get; set; }
+            public string? Ids { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
+#endif
         }
         /// <summary>
-        /// To retrieve the list of automation tasks configured in your Zoho CRM organization.
+        /// PURPOSE: Retrieves a paginated list of automation task definitions. Supports filtering by module, feature_type, and name (via filter param). PAGINATION: page (default 1), per_page (default 200, max 200). Use info.more_records to determine if additional pages exist. A 204 response indicates no tasks match the supplied filters. Use this before PUT/DELETE to discover task IDs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TasksRequestBuilderGetQueryParameters 
         {
-            /// <summary>To retrieve tasks based on their feature type.</summary>
+            /// <summary>Filter tasks by automation feature type. The filter accepts more values than POST does - values like `blueprint_transition`, `review_process`, and `orchestration` are system-created task types that can be retrieved but not created via POST. For POST, only `workflow`, `approval_process`, `Blueprint`, `kiosks`, `scoring_rule`, and `case_escalation_rule` are valid.</summary>
             [QueryParameter("feature_type")]
-            public global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.GetFeature_typeQueryParameterType? FeatureType { get; set; }
-            /// <summary>To retrieve tasks based on their module.</summary>
+            public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksParamQueryFeatureType? FeatureType { get; set; }
+            /// <summary>Filter object to search tasks by name. Supported shape: field.api_name must be &apos;name&apos;, comparator must be &apos;contains&apos;, and value is the search string. Example: {&quot;field&quot;:{&quot;api_name&quot;:&quot;name&quot;},&quot;comparator&quot;:&quot;contains&quot;,&quot;value&quot;:&quot;follow up&quot;}</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filter")]
+            public string? Filter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filter")]
+            public string Filter { get; set; }
+#endif
+            /// <summary>Filter tasks by CRM module API name (for example: Leads, Contacts, Deals).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("module")]
-            public global::Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.GetModuleQueryParameterType? Module { get; set; }
-            /// <summary>&quot;To get the list of tasks from the respective pages. The default value is 1. Possible values: Positive integer values only.&quot;</summary>
+            public string? Module { get; set; }
+#nullable restore
+#else
+            [QueryParameter("module")]
+            public string Module { get; set; }
+#endif
+            /// <summary>To get the list of tasks from the respective pages. The default value is 1. Possible values: Positive integer values only.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
             /// <summary>Specify how many tasks to return per page. The default and the maximum possible value is 200.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Sort field. Currently only modified_time supported.</summary>
+            [QueryParameter("sort_by")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.ModifiedTimeSortBy? SortBy { get; set; }
+            /// <summary>Sort order for the results based on sort_by. Possible values: desc, asc.</summary>
+            [QueryParameter("sort_order")]
+            public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksParamQuerySortOrder? SortOrder { get; set; }
         }
     }
 }

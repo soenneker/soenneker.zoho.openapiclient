@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Files
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/files?id={id}{&inline*}", pathParameters)
+        public FilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/files{?id*,inline*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,59 +30,60 @@ namespace Soenneker.Zoho.OpenApiClient.Files
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/files?id={id}{&inline*}", rawUrl)
+        public FilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/files{?id*,inline*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves the binary content of a file stored in Zoho File System (ZFS) using its unique file ID. The file ID is provided as a required query parameter &apos;id&apos;. If the file exists, the API returns the file&apos;s binary data along with appropriate headers indicating the MIME type and content disposition for download. If the file ID does not correspond to any file in ZFS, a 204 No Content response is returned. This endpoint is used to download files that have been previously uploaded to ZFS and associated with Zoho CRM records.
+        /// To retrieve the binary content of a file stored in Zoho File System (ZFS) using its unique file ID. The file ID is provided as a required query parameter &apos;id&apos;. If the file exists, the API returns the file&apos;s binary data along with appropriate headers indicating the MIME type and content disposition for download. If the file ID does not correspond to any file in ZFS, a 204 No Content response is returned. This endpoint is used to download files that have been previously uploaded to ZFS and associated with Zoho CRM records.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FilesGetFile400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FilesGetFile400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FilesGetFile400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FilesGetFile400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Uploads a file to Zoho File System (ZFS) and returns the file metadata including the file ID which can be used to associate the file with records in Zoho CRM. The file is uploaded using multipart/form-data with a required &apos;file&apos; field containing the binary data of the file to be uploaded. The response includes the file ID, name, status, and other details. Can upload 10 files in a single request by repeating the &apos;file&apos; field. Maximum file size is 20 MB.
+        /// To upload one or more files to the Zoho File System (ZFS) in your Zoho CRM account. The API returns an encrypted file ID for each uploaded file, which you can use to attach the file to a file upload field, image upload field, or record image field through the Create or Update Records API. The file is uploaded using multipart/form-data with a required &apos;file&apos; field containing the binary data of the file to be uploaded. The response includes the file ID, name, status, and other details. Can upload 10 files in a single request by repeating the &apos;file&apos; field. Maximum file size is 20 MB.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200"/></returns>
-        /// <param name="body">Multipart form data for uploading one or more files to Zoho File System</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200Response"/></returns>
+        /// <param name="body">Multipart form data for uploading one or more files to the Zoho File System.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles415">When receiving a 415 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles415Response">When receiving a 415 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200?> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200Response?> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200Response> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "415", global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles415.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles400Response.CreateFromDiscriminatorValue },
+                { "415", global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles415Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FilesUploadFiles200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the binary content of a file stored in Zoho File System (ZFS) using its unique file ID. The file ID is provided as a required query parameter &apos;id&apos;. If the file exists, the API returns the file&apos;s binary data along with appropriate headers indicating the MIME type and content disposition for download. If the file ID does not correspond to any file in ZFS, a 204 No Content response is returned. This endpoint is used to download files that have been previously uploaded to ZFS and associated with Zoho CRM records.
+        /// To retrieve the binary content of a file stored in Zoho File System (ZFS) using its unique file ID. The file ID is provided as a required query parameter &apos;id&apos;. If the file exists, the API returns the file&apos;s binary data along with appropriate headers indicating the MIME type and content disposition for download. If the file ID does not correspond to any file in ZFS, a 204 No Content response is returned. This endpoint is used to download files that have been previously uploaded to ZFS and associated with Zoho CRM records.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,16 +96,16 @@ namespace Soenneker.Zoho.OpenApiClient.Files
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder.FilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/files?id={id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Uploads a file to Zoho File System (ZFS) and returns the file metadata including the file ID which can be used to associate the file with records in Zoho CRM. The file is uploaded using multipart/form-data with a required &apos;file&apos; field containing the binary data of the file to be uploaded. The response includes the file ID, name, status, and other details. Can upload 10 files in a single request by repeating the &apos;file&apos; field. Maximum file size is 20 MB.
+        /// To upload one or more files to the Zoho File System (ZFS) in your Zoho CRM account. The API returns an encrypted file ID for each uploaded file, which you can use to attach the file to a file upload field, image upload field, or record image field through the Create or Update Records API. The file is uploaded using multipart/form-data with a required &apos;file&apos; field containing the binary data of the file to be uploaded. The response includes the file ID, name, status, and other details. Can upload 10 files in a single request by repeating the &apos;file&apos; field. Maximum file size is 20 MB.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Multipart form data for uploading one or more files to Zoho File System</param>
+        /// <param name="body">Multipart form data for uploading one or more files to the Zoho File System.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,7 +117,7 @@ namespace Soenneker.Zoho.OpenApiClient.Files
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/files{?inline*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "multipart/form-data", body);
@@ -132,12 +133,12 @@ namespace Soenneker.Zoho.OpenApiClient.Files
             return new global::Soenneker.Zoho.OpenApiClient.Files.FilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the binary content of a file stored in Zoho File System (ZFS) using its unique file ID. The file ID is provided as a required query parameter &apos;id&apos;. If the file exists, the API returns the file&apos;s binary data along with appropriate headers indicating the MIME type and content disposition for download. If the file ID does not correspond to any file in ZFS, a 204 No Content response is returned. This endpoint is used to download files that have been previously uploaded to ZFS and associated with Zoho CRM records.
+        /// To retrieve the binary content of a file stored in Zoho File System (ZFS) using its unique file ID. The file ID is provided as a required query parameter &apos;id&apos;. If the file exists, the API returns the file&apos;s binary data along with appropriate headers indicating the MIME type and content disposition for download. If the file ID does not correspond to any file in ZFS, a 204 No Content response is returned. This endpoint is used to download files that have been previously uploaded to ZFS and associated with Zoho CRM records.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FilesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Unique identifier of the file to retrieve</summary>
+            /// <summary>Specify the encrypted file ID received in the response when uploading files to the Zoho File System. Use the [ZFC API](files.yaml#$.paths./files.get) to retrieve the File IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("id")]
@@ -149,14 +150,14 @@ namespace Soenneker.Zoho.OpenApiClient.Files
 #endif
         }
         /// <summary>
-        /// Uploads a file to Zoho File System (ZFS) and returns the file metadata including the file ID which can be used to associate the file with records in Zoho CRM. The file is uploaded using multipart/form-data with a required &apos;file&apos; field containing the binary data of the file to be uploaded. The response includes the file ID, name, status, and other details. Can upload 10 files in a single request by repeating the &apos;file&apos; field. Maximum file size is 20 MB.
+        /// To upload one or more files to the Zoho File System (ZFS) in your Zoho CRM account. The API returns an encrypted file ID for each uploaded file, which you can use to attach the file to a file upload field, image upload field, or record image field through the Create or Update Records API. The file is uploaded using multipart/form-data with a required &apos;file&apos; field containing the binary data of the file to be uploaded. The response includes the file ID, name, status, and other details. Can upload 10 files in a single request by repeating the &apos;file&apos; field. Maximum file size is 20 MB.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FilesRequestBuilderPostQueryParameters 
         {
-            /// <summary>&quot;To upload inline images. Possible value: inline&quot;</summary>
+            /// <summary>Specify the upload type for inline images. Possible values: **inline** - Upload the file as an inline image for use in email templates or rich-text fields.</summary>
             [QueryParameter("inline")]
-            public global::Soenneker.Zoho.OpenApiClient.Files.PostInlineQueryParameterType? Inline { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.InlineInline? Inline { get; set; }
         }
     }
 }

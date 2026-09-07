@@ -8,26 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested object that identifies the variable group when defining a variable. Includes the group&apos;s id (required) and rid (UUID) if available.
+    /// Nested object that identifies the variable group when defining a variable. Includes the group&apos;s id (required).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariableGroupIdentifierInput : IParsable
     {
-        /// <summary>id of variable groups (Required)</summary>
+        /// <summary>The unique ID of the variable group. Mandatory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
 #nullable restore
 #else
         public string Id { get; set; }
-#endif
-        /// <summary>uuid for variable groups</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Rid { get; set; }
-#nullable restore
-#else
-        public string Rid { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +40,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "rid", n => { Rid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -59,7 +50,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("rid", Rid);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories
     public partial class TerritoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.users_territories.users.item.territories.item collection</summary>
-        /// <param name="position">The ID of the territory</param>
+        /// <param name="position">Specify the unique ID of the territory. Valid territory IDs can be retrieved using the [Get Territories](user_territories.json#$.paths./{users}/{user}/territories.get) API.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories.Item.WithTerritoryItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories.Item.WithTerritoryItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TerritoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users_territories/users/{user}/territories?ids={ids}", pathParameters)
+        public TerritoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users_territories/users/{user}/territories", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TerritoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users_territories/users/{user}/territories?ids={ids}", rawUrl)
+        public TerritoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users_territories/users/{user}/territories", rawUrl)
         {
         }
         /// <summary>
-        /// Remove Territories from a User
+        /// To remove one or more territories from a user in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Territories Assigned to a User
+        /// To retrieve all territories assigned to a specific user in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,21 +93,21 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Associate Territories to a User
+        /// To associate one or more territories with a specific user in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse"/></returns>
-        /// <param name="body">Request body to associate territories to a user</param>
+        /// <param name="body">Specify the data required to associate territories with a user.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CommonErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CommonUrlErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesAssociateTerritoriesToUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesAssociateTerritoriesToUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesAssociateTerritoriesToUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesAssociateTerritoriesToUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -120,7 +120,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove Territories from a User
+        /// To remove one or more territories from a user in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,13 +133,13 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories.TerritoriesRequestBuilder.TerritoriesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/users_territories/users/{user}/territories?ids={ids}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Get Territories Assigned to a User
+        /// To retrieve all territories assigned to a specific user in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,28 +152,28 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/users_territories/users/{user}/territories", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Associate Territories to a User
+        /// To associate one or more territories with a specific user in your Zoho CRM organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body to associate territories to a user</param>
+        /// <param name="body">Specify the data required to associate territories with a user.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesAssociateTerritoriesToUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesAssociateTerritoriesToUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesAssociateTerritoriesToUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.UsersTerritoriesAssociateTerritoriesToUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/users_territories/users/{user}/territories", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -189,12 +189,12 @@ namespace Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories
             return new global::Soenneker.Zoho.OpenApiClient.Users_territories.Users.Item.Territories.TerritoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove Territories from a User
+        /// To remove one or more territories from a user in your Zoho CRM organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TerritoriesRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Comma-separated IDs (each ID is an int64)</summary>
+            /// <summary>Specify the territory IDs to remove from the user. Accepts comma-separated values. Maximum: 100. Valid territory IDs can be retrieved using the [Get Territories](user_territories.json#$.paths./{users}/{user}/territories.get) API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Alternate successful response model for module-specific workflow rule counts.
+    /// Represents an alternate response model containing the workflow rule counts aggregated by CRM module.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ModuleSpecificCountsResponseAllSchema : IParsable
     {
-        /// <summary>&quot;Field: module_specific_count&quot;</summary>
+        /// <summary>Represents action counts broken down by CRM module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificActionsCountSchema>? ModuleSpecificCount { get; set; }

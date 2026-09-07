@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Aggregates action counts for a workflow rule condition, including its sequence number, instant action counts, scheduled action counts, and condition ID.
+    /// Represents the action count summary for a single workflow rule condition, including the condition ID, sequence number, and counts for instant and scheduled actions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowConditionActionCountSummarySchema : IParsable
     {
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the WorkflowConditionActionCountSummary within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema InstantActions { get; set; }
 #endif
-        /// <summary>&quot;Field: scheduled_actions&quot;</summary>
+        /// <summary>Represents the array of scheduled action groups configured for this condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema>? ScheduledActions { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema> ScheduledActions { get; set; }
 #endif
-        /// <summary>&quot;Field: sequence_number&quot;</summary>
+        /// <summary>Represents the execution order of this condition within the workflow rule, starting from one.</summary>
         public int? SequenceNumber { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

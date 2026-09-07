@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Ambiguity due to
+    /// Represents error details for ambiguity, listing the fields that caused the ambiguity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AmbiguityDetails : IParsable
     {
-        /// <summary>Ambiguity due to fields</summary>
+        /// <summary>Represents the list of fields that caused the ambiguity during processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetails_ambiguity_due_to>? AmbiguityDueTo { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetailsAmbiguityDueToItem>? AmbiguityDueTo { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetails_ambiguity_due_to> AmbiguityDueTo { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetailsAmbiguityDueToItem> AmbiguityDueTo { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ambiguity_due_to", n => { AmbiguityDueTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetails_ambiguity_due_to>(global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetails_ambiguity_due_to.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ambiguity_due_to", n => { AmbiguityDueTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetailsAmbiguityDueToItem>(global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetailsAmbiguityDueToItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetails_ambiguity_due_to>("ambiguity_due_to", AmbiguityDueTo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetailsAmbiguityDueToItem>("ambiguity_due_to", AmbiguityDueTo);
         }
     }
 }

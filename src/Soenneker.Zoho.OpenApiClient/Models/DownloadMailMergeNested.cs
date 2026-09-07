@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for downloading mail merge documents.
+    /// Represents the request payload for a download mail merge operation, including the template reference, output format, and optional file settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DownloadMailMergeNested : IParsable
     {
-        /// <summary>The file name you want for the document. Default value will be &quot;download&quot;. Maximum size for file_name is 255 characters.</summary>
+        /// <summary>Represents the file name for the downloaded mail merge document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FileName { get; set; }
 #endif
-        /// <summary>Mailmerge Object to pass Template details</summary>
+        /// <summary>Represents the mail merge template reference, identified by the template name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested? MailMergeTemplate { get; set; }
@@ -29,8 +29,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested MailMergeTemplate { get; set; }
 #endif
-        /// <summary>The format you want for the document. This can be pdf, html or docx. The default format will be pdf.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNested_output_format? OutputFormat { get; set; }
+        /// <summary>Represents the output format for the downloaded document.Possible values:**pdf** - Downloads the document in PDF format.**html** - Downloads the document in HTML format.**docx** - Downloads the document in DOCX format.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedOutputFormat? OutputFormat { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "file_name", n => { FileName = n.GetStringValue(); } },
                 { "mail_merge_template", n => { MailMergeTemplate = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested>(global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested.CreateFromDiscriminatorValue); } },
-                { "output_format", n => { OutputFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNested_output_format>(); } },
+                { "output_format", n => { OutputFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedOutputFormat>(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("file_name", FileName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested>("mail_merge_template", MailMergeTemplate);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNested_output_format>("output_format", OutputFormat);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedOutputFormat>("output_format", OutputFormat);
         }
     }
 }

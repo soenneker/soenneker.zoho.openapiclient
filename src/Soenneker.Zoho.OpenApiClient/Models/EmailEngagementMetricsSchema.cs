@@ -8,28 +8,28 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Metrics related to email-based actions, including sent, delivered, opened, clicked, bounced, unsent, unopened counts, and sent percentage. Used in workflow action usage.
+    /// Represents email engagement metrics for an email notification action, including sent, delivered, opened, clicked, bounced, and unsent counts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailEngagementMetricsSchema : IParsable
     {
-        /// <summary>&quot;Field: bounced&quot;</summary>
+        /// <summary>Represents number of emails that bounced back.</summary>
         public int? Bounced { get; set; }
-        /// <summary>&quot;Field: bulk_mail&quot;</summary>
+        /// <summary>Represents number of bulk email messages sent.</summary>
         public bool? BulkMail { get; set; }
-        /// <summary>&quot;Field: clicked&quot;</summary>
+        /// <summary>Represents number of emails where recipients clicked a link.</summary>
         public int? Clicked { get; set; }
-        /// <summary>&quot;Field: delivered&quot;</summary>
+        /// <summary>Represents number of emails successfully delivered.</summary>
         public int? Delivered { get; set; }
-        /// <summary>&quot;Field: opened&quot;</summary>
+        /// <summary>Represents number of emails opened by recipients.</summary>
         public int? Opened { get; set; }
-        /// <summary>&quot;Field: sent&quot;</summary>
+        /// <summary>Represents total number of emails sent.</summary>
         public int? Sent { get; set; }
-        /// <summary>&quot;Field: sent_percentage&quot;</summary>
+        /// <summary>Represents percentage of emails successfully sent out of total attempted.</summary>
         public int? SentPercentage { get; set; }
-        /// <summary>&quot;Field: unopened&quot;</summary>
+        /// <summary>Represents number of emails not opened by recipients.</summary>
         public int? Unopened { get; set; }
-        /// <summary>&quot;Field: unsent&quot;</summary>
+        /// <summary>Represents number of emails that failed to send.</summary>
         public int? Unsent { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

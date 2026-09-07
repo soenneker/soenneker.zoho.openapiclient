@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Operation types allowed for the field
+    /// Represents the set of operations permitted on this field, specifying independently whether values can be supplied or modified through API-based create/update calls and through the CRM web interface create/update forms.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchemaOperationType : IParsable
     {
-        /// <summary>Wether any operation is allowed through API create</summary>
+        /// <summary>Indicates whether this field accepts a value when a record is saved through the API during creation. Possible values: `true` — the field value can be set via API during record creation; `false` — the field value cannot be set via API at record creation time.</summary>
         public bool? ApiCreate { get; set; }
-        /// <summary>Wether any operation is allowed through API update</summary>
+        /// <summary>Indicates whether this field accepts a new value when a record is saved through the API during an update. Possible values: `true` — the field can be modified via API during a record update; `false` — the field is read-only for API-based update operations.</summary>
         public bool? ApiUpdate { get; set; }
-        /// <summary>Wether any operation is allowed through web create</summary>
+        /// <summary>Indicates whether this field appears and accepts a value when a record is saved through the CRM web interface during creation. Possible values: `true` — the field is editable in the web create form; `false` — the field does not appear or is locked in the web create form.</summary>
         public bool? WebCreate { get; set; }
-        /// <summary>Wether any operation is allowed through web update</summary>
+        /// <summary>Indicates whether this field accepts a new value when a record is saved through the CRM web interface during an update. Possible values: `true` — the field is editable in the web edit form; `false` — the field is read-only or hidden in the web update form.</summary>
         public bool? WebUpdate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

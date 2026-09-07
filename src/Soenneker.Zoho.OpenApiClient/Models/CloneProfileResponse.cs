@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response returned after cloning a profile.
+    /// Response body returned after a profile is successfully cloned.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloneProfileResponse : IParsable
     {
-        /// <summary>List containing the clone action result (single-item array).</summary>
+        /// <summary>Array containing the clone action result (contains at most one entry).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.CloneProfileActionResponse>? Profiles { get; set; }

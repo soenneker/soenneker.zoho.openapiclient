@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Describes tasks within the system, including metadata, status, fields, and associated entities.
+    /// Automation task details returned by the API, including ownership, module context, and field mappings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TaskDetails : IParsable
     {
-        /// <summary>&quot;Field: associated&quot;</summary>
+        /// <summary>Whether this task is associated with workflow/Blueprint/approval configuration.</summary>
         public bool? Associated { get; set; }
         /// <summary>Provides details about the creator of an entity, including their name and ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -23,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.CreatorDetails CreatedBy { get; set; }
 #endif
-        /// <summary>&quot;Field: created_time&quot;</summary>
+        /// <summary>Timestamp when the automation task was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedTime { get; set; }
@@ -31,27 +31,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string CreatedTime { get; set; }
 #endif
-        /// <summary>&quot;Field: deletable&quot;</summary>
+        /// <summary>Indicates whether this task can be deleted.</summary>
         public bool? Deletable { get; set; }
-        /// <summary>&quot;Field: editable&quot;</summary>
+        /// <summary>Indicates whether this task can be edited by the current user/context.</summary>
         public bool? Editable { get; set; }
-        /// <summary>&quot;Field: feature_type&quot;</summary>
+        /// <summary>Specify the automation feature category that uses this task. Values: &quot;workflow&quot; (workflow rule), &quot;approval_process&quot; (Approval Process), &quot;Blueprint&quot; (Blueprint transition), &quot;kiosks&quot; (kiosk/process flow), &quot;scoring_rule&quot; (Scoring Rule), &quot;case_escalation_rule&quot; (case escalation rule).</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.TaskDetailsFeatureType? FeatureType { get; set; }
+        /// <summary>Specify the field mappings configured for the task. When an automation task is created, the fields should be mapped to tasks modules. Use this JSON array to map the fields of Automation Tasks fields to create tasks automatically when an automation is triggered. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FeatureType { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings>? FieldMappings { get; set; }
 #nullable restore
 #else
-        public string FeatureType { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings> FieldMappings { get; set; }
 #endif
-        /// <summary>&quot;Field: field_mappings&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings>? FieldMappings { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings> FieldMappings { get; set; }
-#endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Unique ID of the automation task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -62,10 +56,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the lock status of a resource, indicating whether it is currently locked or not.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockStatus? LockStatus { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksLockStatus? LockStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockStatus LockStatus { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksLockStatus LockStatus { get; set; }
 #endif
         /// <summary>Provides details about the individual who modified an entity, including their name and ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ModifierDetails ModifiedBy { get; set; }
 #endif
-        /// <summary>&quot;Field: modified_time&quot;</summary>
+        /// <summary>Timestamp when the task definition was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifiedTime { get; set; }
@@ -83,7 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ModifiedTime { get; set; }
 #endif
-        /// <summary>Contains information about a module, including labels and API names.</summary>
+        /// <summary>Contains module metadata, including labels, API name, IDs, and optional module_name for related module contexts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails? Module { get; set; }
@@ -91,7 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails Module { get; set; }
 #endif
-        /// <summary>&quot;Field: name&quot;</summary>
+        /// <summary>Specify the name of the automation task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -99,17 +93,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Field: notify&quot;</summary>
+        /// <summary>Whether owner notification is enabled for this task.</summary>
         public bool? Notify { get; set; }
-        /// <summary>Describes a related module, with details about its labels, API name, and ID.</summary>
+        /// <summary>Related module metadata when the task is tied to a secondary module; otherwise null. Specify the api_name and id of the related module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails? RelatedModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TaskDetailsRelatedModule? RelatedModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails RelatedModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TaskDetailsRelatedModule RelatedModule { get; set; }
 #endif
-        /// <summary>&quot;Field: source&quot;</summary>
+        /// <summary>Source system that created or owns this task (for example: crm).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }
@@ -140,16 +134,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "created_time", n => { CreatedTime = n.GetStringValue(); } },
                 { "deletable", n => { Deletable = n.GetBoolValue(); } },
                 { "editable", n => { Editable = n.GetBoolValue(); } },
-                { "feature_type", n => { FeatureType = n.GetStringValue(); } },
-                { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings>(global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "feature_type", n => { FeatureType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TaskDetailsFeatureType>(); } },
+                { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "lock_status", n => { LockStatus = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockStatus>(global::Soenneker.Zoho.OpenApiClient.Models.LockStatus.CreateFromDiscriminatorValue); } },
+                { "lock_status", n => { LockStatus = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksLockStatus>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksLockStatus.CreateFromDiscriminatorValue); } },
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModifierDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ModifierDetails.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notify", n => { Notify = n.GetBoolValue(); } },
-                { "related_module", n => { RelatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails.CreateFromDiscriminatorValue); } },
+                { "related_module", n => { RelatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TaskDetailsRelatedModule>(global::Soenneker.Zoho.OpenApiClient.Models.TaskDetailsRelatedModule.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
             };
         }
@@ -165,16 +159,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("created_time", CreatedTime);
             writer.WriteBoolValue("deletable", Deletable);
             writer.WriteBoolValue("editable", Editable);
-            writer.WriteStringValue("feature_type", FeatureType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappings>("field_mappings", FieldMappings);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TaskDetailsFeatureType>("feature_type", FeatureType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings>("field_mappings", FieldMappings);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockStatus>("lock_status", LockStatus);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksLockStatus>("lock_status", LockStatus);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModifierDetails>("modified_by", ModifiedBy);
             writer.WriteStringValue("modified_time", ModifiedTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("notify", Notify);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails>("related_module", RelatedModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TaskDetailsRelatedModule>("related_module", RelatedModule);
             writer.WriteStringValue("source", Source);
         }
     }

@@ -8,14 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Metadata describing the module associated with the related list.
+    /// Represents the module associated with a related list, including its API name and unique identifier.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelatedListModule : IAdditionalDataHolder, IParsable
+    public partial class RelatedListModule : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>API name of the module.</summary>
+        /// <summary>API name of the module associated with the related list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -31,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Plural label of the module.</summary>
+        /// <summary>Plural display label of the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PluralLabel { get; set; }
@@ -39,13 +37,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string PluralLabel { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListModule"/> and sets the default values.
-        /// </summary>
-        public RelatedListModule()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,7 +70,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("plural_label", PluralLabel);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

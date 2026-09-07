@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body schema
+    /// Request body schema for removing tags from records.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostremovetagsRequest : IParsable
     {
-        /// <summary>record ids</summary>
+        /// <summary>JSON array string of record IDs to remove tags from. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve record IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ids { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Ids { get; set; }
 #endif
-        /// <summary>root key (Required)</summary>
+        /// <summary>Array of tags to remove from the records (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>? Tags { get; set; }

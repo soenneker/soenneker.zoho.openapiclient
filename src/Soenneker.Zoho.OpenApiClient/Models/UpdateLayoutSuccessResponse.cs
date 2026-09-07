@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Successful response for layout update operation.
+    /// Represents the successful response returned when a layout update operation completes, containing the per-layout update results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateLayoutSuccessResponse : IParsable
     {
-        /// <summary>Array containing the result of the layout update operation.</summary>
+        /// <summary>Contains the array of result entries for the layout update operation, each reporting the outcome for an individual layout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateSuccessResult>? Layouts { get; set; }

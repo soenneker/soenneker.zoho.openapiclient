@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Encapsulates headers for webhook requests including both module-specific and custom parameters, required for sending extra information.
+    /// Represents the HTTP headers configuration for the outgoing webhook request. Supports module merge-field parameters and custom static parameters. The host header name is reserved and cannot be used.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookHeaders : IParsable
     {
-        /// <summary>These are static values that never change. They are always sent with the webhook call.</summary>
+        /// <summary>Represents the static key-value pairs sent as HTTP headers with every webhook execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>? CustomParameters { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters> CustomParameters { get; set; }
 #endif
-        /// <summary>Headers let you send extra information along with the webhook request. For example, API keys, authentication tokens, or custom values that the external application needs. (Required)</summary>
+        /// <summary>Represents the module merge-field parameters sent as HTTP headers. The key must be present but may be an empty array when only custom parameters are needed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>? ModuleParameters { get; set; }

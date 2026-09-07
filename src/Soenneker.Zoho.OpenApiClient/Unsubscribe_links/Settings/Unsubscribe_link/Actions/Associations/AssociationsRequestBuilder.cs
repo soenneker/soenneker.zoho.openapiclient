@@ -34,7 +34,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
         {
         }
         /// <summary>
-        /// To obtain information regarding the associations of unsubscribe links configured in your account.
+        /// To retrieve information about where unsubscribe links are being used (associated places) in your CRM account, such as in email templates.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchAssociatedPlacesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FetchAssociatedPlacesResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FetchAssociatedPlacesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To obtain information regarding the associations of unsubscribe links configured in your account.
+        /// To retrieve information about where unsubscribe links are being used (associated places) in your CRM account, such as in email templates.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

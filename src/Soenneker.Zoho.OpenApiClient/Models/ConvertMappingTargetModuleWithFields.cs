@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Target layout configuration for a module during record conversion, including required fields that must be populated.
+    /// Represents the target layout configuration for a module involved in a record conversion, including field-level mapping details that define how source field values are transferred.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConvertMappingTargetModuleWithFields : IParsable
     {
-        /// <summary>Display label of the target layout shown in the UI.</summary>
+        /// <summary>Represents the label of the target module&apos;s layout as it appears in the CRM interface during record conversion. This variant is accompanied by field-level mapping details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayLabel { get; set; }
@@ -21,15 +21,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayLabel { get; set; }
 #endif
-        /// <summary>List of fields in the target layout that are relevant during conversion. Includes both mandatory and optional fields that can be populated during conversion.</summary>
+        /// <summary>Contains the collection of field configurations belonging to the target module&apos;s layout that participate in the record conversion process, each describing how a specific field is handled during the transfer of data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFields_fields>? Fields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFieldsFieldsItem>? Fields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFields_fields> Fields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFieldsFieldsItem> Fields { get; set; }
 #endif
-        /// <summary>Unique identifier (64-bit integer represented as string)</summary>
+        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>API name of the target layout.</summary>
+        /// <summary>Represents the unique API name that programmatically identifies the target layout within the conversion mapping configuration. This variant is accompanied by field-level mapping details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFields_fields>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFields_fields.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFieldsFieldsItem>(global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFieldsFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -77,7 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_label", DisplayLabel);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFields_fields>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFieldsFieldsItem>("fields", Fields);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
         }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains information about a module, including labels and API names.
+    /// Contains module metadata, including labels, API name, IDs, and optional module_name for related module contexts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowTasksModuleDetails : IParsable
     {
-        /// <summary>&quot;Field: api_name&quot;</summary>
+        /// <summary>API name of the module used in API requests (e.g., Leads, Contacts, Deals).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Unique Zoho CRM module ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,7 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Field: moduleName&quot;</summary>
+        /// <summary>Module system name (snake_case). Present on related_module objects only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Module_name { get; set; }
+#nullable restore
+#else
+        public string Module_name { get; set; }
+#endif
+        /// <summary>Module display name (camelCase). Present on parent module objects only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModuleName { get; set; }
@@ -37,7 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ModuleName { get; set; }
 #endif
-        /// <summary>&quot;Field: plural_label&quot;</summary>
+        /// <summary>Plural display label of the module (e.g., Leads, Contacts).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PluralLabel { get; set; }
@@ -45,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string PluralLabel { get; set; }
 #endif
-        /// <summary>&quot;Field: singular_label&quot;</summary>
+        /// <summary>Singular display label of the module (e.g., Lead, Contact).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SingularLabel { get; set; }
@@ -76,6 +84,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "moduleName", n => { ModuleName = n.GetStringValue(); } },
                 { "plural_label", n => { PluralLabel = n.GetStringValue(); } },
                 { "singular_label", n => { SingularLabel = n.GetStringValue(); } },
+                { "module_name", n => { Module_name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,6 +96,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("module_name", Module_name);
             writer.WriteStringValue("moduleName", ModuleName);
             writer.WriteStringValue("plural_label", PluralLabel);
             writer.WriteStringValue("singular_label", SingularLabel);

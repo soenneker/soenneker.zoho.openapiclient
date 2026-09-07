@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Associate_email
     public partial class Associate_emailRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.associate_email.item collection</summary>
-        /// <param name="position">The API name of the module (e.g., Leads, Contacts).</param>
+        /// <param name="position">The API name of the module containing the record. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API names.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Associate_email.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Associate_email.Item.WithModuleItemRequestBuilder this[string position]
         {

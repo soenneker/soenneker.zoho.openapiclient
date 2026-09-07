@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Mailmerge Object to pass Template details
+    /// Represents the mail merge template reference, identified by the template name.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MailMergeTemplateNested : IParsable
     {
-        /// <summary>The name of the mail merge template you want to use.</summary>
+        /// <summary>Represents the name of the mail merge template to use for the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

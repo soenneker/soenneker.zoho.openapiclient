@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Zoho.OpenApiClient.Modules.Settings.Module;
 using Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The module property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Module.ModuleRequestBuilder Module
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Module.ModuleRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The modules property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.ModulesRequestBuilder Modules
         {

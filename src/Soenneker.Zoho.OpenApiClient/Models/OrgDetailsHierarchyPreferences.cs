@@ -8,15 +8,15 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// hierarchy preference of an organization
+    /// Represents the hierarchy preferences configured for the organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrgDetailsHierarchyPreferences : IParsable
     {
-        /// <summary>non reporting users data should be visible to CEO and Administator(true) or any user higher in the hierarchy(false)</summary>
+        /// <summary>Indicates whether data visibility is restricted to the direct reporting chain.Possible values:**true** - Data is visible only to the CEO and administrators.**false** - Data is visible to any user higher in the hierarchy.</summary>
         public bool? StrictlyReporting { get; set; }
-        /// <summary>type of hierarchy</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferences_type? Type { get; set; }
+        /// <summary>Represents the hierarchy type configured for the organization. Possible values:**Role_Hierarchy** - Access is based on the user&apos;s role in the hierarchy.**Reporting_To_Hierarchy** - Access is based on the user&apos;s reporting structure.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferencesType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "strictly_reporting", n => { StrictlyReporting = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferences_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferencesType>(); } },
             };
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("strictly_reporting", StrictlyReporting);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferences_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferencesType>("type", Type);
         }
     }
 }

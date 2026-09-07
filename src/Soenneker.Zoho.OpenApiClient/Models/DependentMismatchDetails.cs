@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Details of dependent mismatch error
+    /// Represents error details when a dependent field value does not match the expected values based on the parent field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DependentMismatchDetails : IParsable
     {
-        /// <summary>&quot;Detail field: api_name&quot;</summary>
+        /// <summary>Represents the API name of the field with the dependency mismatch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>&quot;Detail field: dependee&quot;</summary>
+        /// <summary>Represents the dependee field associated with the mismatch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetailsDependee? Dependee { get; set; }
@@ -29,7 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetailsDependee Dependee { get; set; }
 #endif
-        /// <summary>&quot;Detail field: json_path&quot;</summary>
+        /// <summary>Represents the data type the server expected for the dependent field based on the parent field&apos;s value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpectedDataType { get; set; }
+#nullable restore
+#else
+        public string ExpectedDataType { get; set; }
+#endif
+        /// <summary>Represents the JSON path of the field with the dependency mismatch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JsonPath { get; set; }
@@ -37,7 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JsonPath { get; set; }
 #endif
-        /// <summary>&quot;Detail field: param_name&quot;</summary>
+        /// <summary>Represents the parameter name associated with the field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParamName { get; set; }
@@ -45,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ParamName { get; set; }
 #endif
-        /// <summary>&quot;Detail field: supported_values&quot;</summary>
+        /// <summary>Represents the list of supported values for the dependee field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SupportedValues { get; set; }
@@ -73,6 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "dependee", n => { Dependee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetailsDependee>(global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetailsDependee.CreateFromDiscriminatorValue); } },
+                { "expected_data_type", n => { ExpectedDataType = n.GetStringValue(); } },
                 { "json_path", n => { JsonPath = n.GetStringValue(); } },
                 { "param_name", n => { ParamName = n.GetStringValue(); } },
                 { "supported_values", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -87,6 +96,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetailsDependee>("dependee", Dependee);
+            writer.WriteStringValue("expected_data_type", ExpectedDataType);
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteStringValue("param_name", ParamName);
             writer.WriteCollectionOfPrimitiveValues<string>("supported_values", SupportedValues);

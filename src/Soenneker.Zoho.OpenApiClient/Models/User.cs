@@ -9,12 +9,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Schema representing a user in Zoho CRM.
+    /// Represents a user record in Zoho CRM, including personal details, role, profile, and related information.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class User : IParsable
     {
-        /// <summary>User&apos;s alias.</summary>
+        /// <summary>Represents the user&apos;s alias.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Alias { get; set; }
@@ -22,9 +22,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Alias { get; set; }
 #endif
-        /// <summary>User&apos;s category/type.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_category? Category { get; set; }
-        /// <summary>User&apos;s city.</summary>
+        /// <summary>Represents the user&apos;s category or type.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCategory? Category { get; set; }
+        /// <summary>Represents the user&apos;s city.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -32,9 +32,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string City { get; set; }
 #endif
-        /// <summary>Whether user has confirmed their account.</summary>
+        /// <summary>Indicates whether the user has confirmed their account.</summary>
         public bool? Confirm { get; set; }
-        /// <summary>User&apos;s country.</summary>
+        /// <summary>Represents the user&apos;s country.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>User&apos;s country locale.</summary>
+        /// <summary>Represents the user&apos;s country locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryLocale { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string CountryLocale { get; set; }
 #endif
-        /// <summary>User who created this account.</summary>
+        /// <summary>Represents the user who created this user record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserCreatedBy? CreatedBy { get; set; }
@@ -58,17 +58,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserCreatedBy CreatedBy { get; set; }
 #endif
-        /// <summary>When the user account was created.</summary>
+        /// <summary>Represents the date and time when the user account was created.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
-        /// <summary>User&apos;s current shift (optional).</summary>
+        /// <summary>Represents the user&apos;s current shift assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_Current_shift? CurrentShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCurrentShiftProperty? CurrentShift { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_Current_shift CurrentShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCurrentShiftProperty CurrentShift { get; set; }
 #endif
-        /// <summary>User&apos;s customization preferences.</summary>
+        /// <summary>Represents the user&apos;s customization preferences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo? CustomizeInfo { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo CustomizeInfo { get; set; }
 #endif
-        /// <summary>User&apos;s preferred date format.</summary>
+        /// <summary>Represents the user&apos;s preferred date format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateFormat { get; set; }
@@ -84,9 +84,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DateFormat { get; set; }
 #endif
-        /// <summary>User&apos;s preferred decimal separator.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_decimal_separator? DecimalSeparator { get; set; }
-        /// <summary>User&apos;s default tab group.</summary>
+        /// <summary>Represents the user&apos;s preferred decimal separator.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserDecimalSeparator? DecimalSeparator { get; set; }
+        /// <summary>Represents the user&apos;s default tab group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultTabGroup { get; set; }
@@ -94,9 +94,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DefaultTabGroup { get; set; }
 #endif
-        /// <summary>User&apos;s date of birth.</summary>
+        /// <summary>Represents the user&apos;s date of birth.</summary>
         public Date? Dob { get; set; }
-        /// <summary>User&apos;s fax number.</summary>
+        /// <summary>Represents the user&apos;s fax number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Fax { get; set; }
@@ -104,7 +104,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Fax { get; set; }
 #endif
-        /// <summary>User&apos;s first name.</summary>
+        /// <summary>Represents the user&apos;s first name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -112,7 +112,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>User&apos;s full name.</summary>
+        /// <summary>Represents the user&apos;s full name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullName { get; set; }
@@ -120,7 +120,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FullName { get; set; }
 #endif
-        /// <summary>Unique identifier for the user.</summary>
+        /// <summary>Represents the unique identifier of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -128,9 +128,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether user is currently online.</summary>
+        /// <summary>Indicates whether the user is currently online.</summary>
         public bool? Isonline { get; set; }
-        /// <summary>User&apos;s preferred language.</summary>
+        /// <summary>Represents the user&apos;s preferred language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language { get; set; }
@@ -138,7 +138,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Language { get; set; }
 #endif
-        /// <summary>User&apos;s last name (optional).</summary>
+        /// <summary>Represents the user&apos;s last name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -146,7 +146,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>User&apos;s locale.</summary>
+        /// <summary>Represents the user&apos;s locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Locale { get; set; }
@@ -154,9 +154,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Locale { get; set; }
 #endif
-        /// <summary>Whether user has Microsoft integration enabled.</summary>
+        /// <summary>Indicates whether the user has Microsoft integration enabled.</summary>
         public bool? Microsoft { get; set; }
-        /// <summary>User who last modified this account.</summary>
+        /// <summary>Represents the user who last modified this user record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserModifiedBy? ModifiedBy { get; set; }
@@ -164,19 +164,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserModifiedBy ModifiedBy { get; set; }
 #endif
-        /// <summary>When the user account was last modified.</summary>
+        /// <summary>Represents the date and time when the user account was last modified.</summary>
         public DateTimeOffset? ModifiedTime { get; set; }
-        /// <summary>User&apos;s preferred name format.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_name_format__s? NameFormatS { get; set; }
-        /// <summary>User&apos;s next shift (optional).</summary>
+        /// <summary>Represents the user&apos;s preferred name format.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserNameFormatS? NameFormatS { get; set; }
+        /// <summary>Represents the user&apos;s next upcoming shift assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_Next_shift? NextShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserNextShiftProperty? NextShift { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_Next_shift NextShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserNextShiftProperty NextShift { get; set; }
 #endif
-        /// <summary>User&apos;s preferred number separator.</summary>
+        /// <summary>Represents the user&apos;s preferred number separator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NumberSeparator { get; set; }
@@ -184,11 +184,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string NumberSeparator { get; set; }
 #endif
-        /// <summary>Time zone offset in milliseconds.</summary>
+        /// <summary>Represents the time zone offset in milliseconds.</summary>
         public int? Offset { get; set; }
-        /// <summary>Whether this is a personal account.</summary>
+        /// <summary>Indicates whether this is a personal account.</summary>
         public bool? PersonalAccount { get; set; }
-        /// <summary>User&apos;s profile.</summary>
+        /// <summary>Represents the user&apos;s profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserProfile? Profile { get; set; }
@@ -196,7 +196,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserProfile Profile { get; set; }
 #endif
-        /// <summary>User&apos;s role.</summary>
+        /// <summary>Represents the user&apos;s role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserRole? Role { get; set; }
@@ -204,17 +204,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserRole Role { get; set; }
 #endif
-        /// <summary>Whether user is a sandbox developer.</summary>
+        /// <summary>Indicates whether the user is a sandbox developer.</summary>
         public bool? SandboxDeveloper { get; set; }
-        /// <summary>When user&apos;s shift becomes effective (optional).</summary>
+        /// <summary>Represents the date from which the user&apos;s shift becomes effective.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_Shift_effective_from? ShiftEffectiveFrom { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserShiftEffectiveFromProperty? ShiftEffectiveFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_Shift_effective_from ShiftEffectiveFrom { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserShiftEffectiveFromProperty ShiftEffectiveFrom { get; set; }
 #endif
-        /// <summary>User&apos;s signature.</summary>
+        /// <summary>Represents the user&apos;s email signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Signature { get; set; }
@@ -222,7 +222,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Signature { get; set; }
 #endif
-        /// <summary>User&apos;s sort order preference.</summary>
+        /// <summary>Represents the user&apos;s sort order preference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SortOrderPreferenceS { get; set; }
@@ -230,7 +230,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string SortOrderPreferenceS { get; set; }
 #endif
-        /// <summary>User&apos;s state/province.</summary>
+        /// <summary>Represents the user&apos;s state or province.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -238,9 +238,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string State { get; set; }
 #endif
-        /// <summary>User&apos;s account status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_status? Status { get; set; }
-        /// <summary>Reason for user&apos;s status.</summary>
+        /// <summary>Represents the user&apos;s account status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserStatus? Status { get; set; }
+        /// <summary>Represents the reason for the user&apos;s current status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusReasonS { get; set; }
@@ -248,7 +248,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string StatusReasonS { get; set; }
 #endif
-        /// <summary>User&apos;s street address.</summary>
+        /// <summary>Represents the user&apos;s street address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Street { get; set; }
@@ -256,7 +256,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Street { get; set; }
 #endif
-        /// <summary>User&apos;s UI theme preferences.</summary>
+        /// <summary>Represents the user&apos;s UI theme preferences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.UserTheme? Theme { get; set; }
@@ -264,9 +264,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserTheme Theme { get; set; }
 #endif
-        /// <summary>User&apos;s preferred time format.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.User_time_format? TimeFormat { get; set; }
-        /// <summary>User&apos;s time zone.</summary>
+        /// <summary>Represents the user&apos;s preferred time format.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTimeFormat? TimeFormat { get; set; }
+        /// <summary>Represents the user&apos;s time zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeZone { get; set; }
@@ -274,7 +274,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string TimeZone { get; set; }
 #endif
-        /// <summary>User&apos;s website.</summary>
+        /// <summary>Represents the user&apos;s website URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Website { get; set; }
@@ -282,7 +282,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Website { get; set; }
 #endif
-        /// <summary>User&apos;s postal/zip code.</summary>
+        /// <summary>Represents the user&apos;s postal or zip code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Zip { get; set; }
@@ -290,7 +290,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Zip { get; set; }
 #endif
-        /// <summary>Zoho user ID.</summary>
+        /// <summary>Represents the Zoho user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Zuid { get; set; }
@@ -317,17 +317,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alias", n => { Alias = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_category>(); } },
+                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCategory>(); } },
                 { "city", n => { City = n.GetStringValue(); } },
                 { "confirm", n => { Confirm = n.GetBoolValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "country_locale", n => { CountryLocale = n.GetStringValue(); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.UserCreatedBy.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "$current_shift", n => { CurrentShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_Current_shift>(global::Soenneker.Zoho.OpenApiClient.Models.User_Current_shift.CreateFromDiscriminatorValue); } },
+                { "$current_shift", n => { CurrentShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCurrentShiftProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UserCurrentShiftProperty.CreateFromDiscriminatorValue); } },
                 { "customize_info", n => { CustomizeInfo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo>(global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo.CreateFromDiscriminatorValue); } },
                 { "date_format", n => { DateFormat = n.GetStringValue(); } },
-                { "decimal_separator", n => { DecimalSeparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_decimal_separator>(); } },
+                { "decimal_separator", n => { DecimalSeparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDecimalSeparator>(); } },
                 { "default_tab_group", n => { DefaultTabGroup = n.GetStringValue(); } },
                 { "dob", n => { Dob = n.GetDateValue(); } },
                 { "fax", n => { Fax = n.GetStringValue(); } },
@@ -341,23 +341,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "microsoft", n => { Microsoft = n.GetBoolValue(); } },
                 { "Modified_By", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.UserModifiedBy.CreateFromDiscriminatorValue); } },
                 { "Modified_Time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
-                { "name_format__s", n => { NameFormatS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_name_format__s>(); } },
-                { "$next_shift", n => { NextShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_Next_shift>(global::Soenneker.Zoho.OpenApiClient.Models.User_Next_shift.CreateFromDiscriminatorValue); } },
+                { "name_format__s", n => { NameFormatS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserNameFormatS>(); } },
+                { "$next_shift", n => { NextShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserNextShiftProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UserNextShiftProperty.CreateFromDiscriminatorValue); } },
                 { "number_separator", n => { NumberSeparator = n.GetStringValue(); } },
                 { "offset", n => { Offset = n.GetIntValue(); } },
                 { "personal_account", n => { PersonalAccount = n.GetBoolValue(); } },
                 { "profile", n => { Profile = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserProfile>(global::Soenneker.Zoho.OpenApiClient.Models.UserProfile.CreateFromDiscriminatorValue); } },
                 { "role", n => { Role = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserRole>(global::Soenneker.Zoho.OpenApiClient.Models.UserRole.CreateFromDiscriminatorValue); } },
                 { "sandboxDeveloper", n => { SandboxDeveloper = n.GetBoolValue(); } },
-                { "$shift_effective_from", n => { ShiftEffectiveFrom = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_Shift_effective_from>(global::Soenneker.Zoho.OpenApiClient.Models.User_Shift_effective_from.CreateFromDiscriminatorValue); } },
+                { "$shift_effective_from", n => { ShiftEffectiveFrom = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserShiftEffectiveFromProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UserShiftEffectiveFromProperty.CreateFromDiscriminatorValue); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "sort_order_preference__s", n => { SortOrderPreferenceS = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserStatus>(); } },
                 { "status_reason__s", n => { StatusReasonS = n.GetStringValue(); } },
                 { "street", n => { Street = n.GetStringValue(); } },
                 { "theme", n => { Theme = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTheme>(global::Soenneker.Zoho.OpenApiClient.Models.UserTheme.CreateFromDiscriminatorValue); } },
-                { "time_format", n => { TimeFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_time_format>(); } },
+                { "time_format", n => { TimeFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTimeFormat>(); } },
                 { "time_zone", n => { TimeZone = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
                 { "zip", n => { Zip = n.GetStringValue(); } },
@@ -372,17 +372,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alias", Alias);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_category>("category", Category);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCategory>("category", Category);
             writer.WriteStringValue("city", City);
             writer.WriteBoolValue("confirm", Confirm);
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("country_locale", CountryLocale);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCreatedBy>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_Current_shift>("$current_shift", CurrentShift);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCurrentShiftProperty>("$current_shift", CurrentShift);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo>("customize_info", CustomizeInfo);
             writer.WriteStringValue("date_format", DateFormat);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_decimal_separator>("decimal_separator", DecimalSeparator);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDecimalSeparator>("decimal_separator", DecimalSeparator);
             writer.WriteStringValue("default_tab_group", DefaultTabGroup);
             writer.WriteDateValue("dob", Dob);
             writer.WriteStringValue("fax", Fax);
@@ -396,23 +396,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("microsoft", Microsoft);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserModifiedBy>("Modified_By", ModifiedBy);
             writer.WriteDateTimeOffsetValue("Modified_Time", ModifiedTime);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_name_format__s>("name_format__s", NameFormatS);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_Next_shift>("$next_shift", NextShift);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserNameFormatS>("name_format__s", NameFormatS);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserNextShiftProperty>("$next_shift", NextShift);
             writer.WriteStringValue("number_separator", NumberSeparator);
             writer.WriteIntValue("offset", Offset);
             writer.WriteBoolValue("personal_account", PersonalAccount);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserProfile>("profile", Profile);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserRole>("role", Role);
             writer.WriteBoolValue("sandboxDeveloper", SandboxDeveloper);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.User_Shift_effective_from>("$shift_effective_from", ShiftEffectiveFrom);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserShiftEffectiveFromProperty>("$shift_effective_from", ShiftEffectiveFrom);
             writer.WriteStringValue("signature", Signature);
             writer.WriteStringValue("sort_order_preference__s", SortOrderPreferenceS);
             writer.WriteStringValue("state", State);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserStatus>("status", Status);
             writer.WriteStringValue("status_reason__s", StatusReasonS);
             writer.WriteStringValue("street", Street);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTheme>("theme", Theme);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.User_time_format>("time_format", TimeFormat);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTimeFormat>("time_format", TimeFormat);
             writer.WriteStringValue("time_zone", TimeZone);
             writer.WriteStringValue("website", Website);
             writer.WriteStringValue("zip", Zip);

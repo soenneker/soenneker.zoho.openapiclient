@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Change_owner.Item
             get => new global::Soenneker.Zoho.OpenApiClient.Change_owner.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.change_owner.item.item collection</summary>
-        /// <param name="position">The ID of the record to be updated</param>
+        /// <param name="position">Specify the ID of the record for which you want to change the owner.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Change_owner.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Change_owner.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

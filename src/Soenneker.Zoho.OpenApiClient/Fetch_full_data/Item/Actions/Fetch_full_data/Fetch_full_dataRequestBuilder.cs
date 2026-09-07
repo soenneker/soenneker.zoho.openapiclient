@@ -34,30 +34,32 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.Fetch_full_d
         {
         }
         /// <summary>
-        /// Fetches the full content of rich text fields for multiple records. The &apos;fields&apos; parameter is mandatory and supports a maximum of 8 rich text fields.
+        /// Retrieves the full content of rich text multi-line fields for multiple records in a single request. Both the &apos;ids&apos; and &apos;fields&apos; query parameters are mandatory. You can specify up to 200 record IDs in the &apos;ids&apos; parameter and up to 8 rich text field API names in the &apos;fields&apos; parameter. This API exclusively fetches rich text fields - other field types are not supported. Only data from rich text multi-line fields can be retrieved; multi-line fields of other types (small, large) are not supported.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200500Error">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataInternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200500Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords400Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataInternalServerErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForMultipleRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches the full content of rich text fields for multiple records. The &apos;fields&apos; parameter is mandatory and supports a maximum of 8 rich text fields.
+        /// Retrieves the full content of rich text multi-line fields for multiple records in a single request. Both the &apos;ids&apos; and &apos;fields&apos; query parameters are mandatory. You can specify up to 200 record IDs in the &apos;ids&apos; parameter and up to 8 rich text field API names in the &apos;fields&apos; parameter. This API exclusively fetches rich text fields - other field types are not supported. Only data from rich text multi-line fields can be retrieved; multi-line fields of other types (small, large) are not supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,12 +87,12 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.Fetch_full_d
             return new global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetches the full content of rich text fields for multiple records. The &apos;fields&apos; parameter is mandatory and supports a maximum of 8 rich text fields.
+        /// Retrieves the full content of rich text multi-line fields for multiple records in a single request. Both the &apos;ids&apos; and &apos;fields&apos; query parameters are mandatory. You can specify up to 200 record IDs in the &apos;ids&apos; parameter and up to 8 rich text field API names in the &apos;fields&apos; parameter. This API exclusively fetches rich text fields - other field types are not supported. Only data from rich text multi-line fields can be retrieved; multi-line fields of other types (small, large) are not supported.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Fetch_full_dataRequestBuilderGetQueryParameters 
         {
-            /// <summary>A single string containing a comma-separated list of rich text field API names to fetch.</summary>
+            /// <summary>A comma-separated list of rich text field API names whose values you want to retrieve. Mandatory when retrieving rich text fields for multiple records (maximum 8 field API names). Optional when retrieving rich text fields for a specific record - if omitted, all rich text fields of the record are returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -100,7 +102,7 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.Fetch_full_d
             [QueryParameter("fields")]
             public string Fields { get; set; }
 #endif
-            /// <summary>A single string containing a comma-separated list of valid record IDs. The maximum number of IDs allowed is 200.</summary>
+            /// <summary>Mandatory when retrieving rich text fields for multiple records. A comma-separated list of unique record IDs whose rich text field values you want to retrieve. You can specify up to 200 record IDs. Exceeding this limit results in an INVALID_REQUEST error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]

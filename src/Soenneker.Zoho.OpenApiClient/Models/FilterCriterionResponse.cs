@@ -8,11 +8,23 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse"/>
+    /// Represents the top-level filter criterion returned in the response, supporting both simple field-based filters and complex grouped filters with logical operators.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FilterCriterionResponse : IComposedTypeWrapper, IParsable
+    public partial class FilterCriterionResponse : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates whether the equal filter criterion is in a disrupted state, typically due to an invalid or unresolvable field or value reference.</summary>
+        public bool? Disrupted { get; set; }
+        /// <summary>Contains an array of filter conditions grouped together and evaluated with the specified logical operator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupItem>? Group { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupItem> Group { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +33,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponse GroupedFilterCriterionResponse { get; set; }
 #endif
+        /// <summary>Represents the logical operator applied between the filter conditions in the group.Possible values:AND - All conditions in the group must be satisfied.OR - At least one condition in the group must be satisfied.and - Equivalent to AND; all conditions in the group must be satisfied.or - Equivalent to OR; at least one condition in the group must be satisfied.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupOperator? GroupOperator { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +44,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse SimpleFilterCriterionResponse { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionResponse"/> and sets the default values.
+        /// </summary>
+        public FilterCriterionResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionResponse"/></returns>
@@ -37,15 +58,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionResponse();
-            if("GroupedFilterCriterionResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupOperator>() is global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupOperator groupOperatorValue)
+            {
+                result.GroupOperator = groupOperatorValue;
+            }
+            else if("GroupedFilterCriterionResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GroupedFilterCriterionResponse = new global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponse();
             }
-            else if("SimpleFilterCriterionResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetBoolValue() is bool disruptedValue)
             {
-                result.SimpleFilterCriterionResponse = new global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse();
+                result.Disrupted = disruptedValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupItem>(global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupItem> groupValue)
+            {
+                result.Group = groupValue;
             }
             return result;
         }
@@ -76,10 +105,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponse>(null, GroupedFilterCriterionResponse);
             }
+            else if(GroupOperator != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupOperator>(null, GroupOperator);
+            }
             else if(SimpleFilterCriterionResponse != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse>(null, SimpleFilterCriterionResponse);
             }
+            else if(Disrupted != null)
+            {
+                writer.WriteBoolValue(null, Disrupted);
+            }
+            else if(Group != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupItem>(null, Group);
+            }
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

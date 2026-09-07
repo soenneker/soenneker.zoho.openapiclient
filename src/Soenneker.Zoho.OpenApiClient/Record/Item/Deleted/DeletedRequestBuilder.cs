@@ -34,34 +34,36 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Deleted
         {
         }
         /// <summary>
-        /// Retrieve the deleted records for the module. This endpoint can retrieve both permanently deleted records and temporarily deleted records from the recycle bin.
+        /// To retrieve the list of deleted records from the specified module in your Zoho CRM organization, including records in the recycle bin and permanently deleted records. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeletedRecordsSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DeletedRecordsErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.Deleted.DeletedRequestBuilder.DeletedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DeletedRecordsSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.Deleted.DeletedRequestBuilder.DeletedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords200> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.Deleted.DeletedRequestBuilder.DeletedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DeletedRecordsSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.Deleted.DeletedRequestBuilder.DeletedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords401.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords404.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DeletedRecordsErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDeletedRecords200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeletedRecordsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeletedRecordsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the deleted records for the module. This endpoint can retrieve both permanently deleted records and temporarily deleted records from the recycle bin.
+        /// To retrieve the list of deleted records from the specified module in your Zoho CRM organization, including records in the recycle bin and permanently deleted records. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,20 +91,20 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Deleted
             return new global::Soenneker.Zoho.OpenApiClient.Record.Item.Deleted.DeletedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the deleted records for the module. This endpoint can retrieve both permanently deleted records and temporarily deleted records from the recycle bin.
+        /// To retrieve the list of deleted records from the specified module in your Zoho CRM organization, including records in the recycle bin and permanently deleted records. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeletedRequestBuilderGetQueryParameters 
         {
-            /// <summary>To get the list of records from the respective pages. Default value for page is 1.</summary>
+            /// <summary>Specify the page number to retrieve. Starts at 1.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>To get the list of records available per page. The default and the maximum possible value is 200.</summary>
+            /// <summary>Specify the number of records to return per page. Maximum is 200.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Specifies the type of deleted records to retrieve. Use &apos;all&apos; to get all deleted records, &apos;recycle&apos; for records in recycle bin, or &apos;permanent&apos; for permanently deleted records.</summary>
+            /// <summary>Specify the category of deleted records to retrieve.  Possible values:  **all** - Returns both recycled and permanently deleted records.  **recycle** - Returns only records in the Recycle Bin.  **permanent** - Returns only permanently deleted records.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Record.Item.Deleted.GetTypeQueryParameterType? Type { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.DeletedRecordsType? Type { get; set; }
         }
     }
 }

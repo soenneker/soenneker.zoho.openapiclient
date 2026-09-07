@@ -8,31 +8,42 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Simple field-based filter criterion with single field, comparator, and value
+    /// Represents the response for a simple field-based filter criterion, dispatching to the appropriate comparator-specific response schema.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SimpleFilterCriterionResponse : IParsable
+    public partial class SimpleFilterCriterionResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>&quot;Comparison operator. Note: allowed_groups.filters only supports &apos;in&apos; for allowed_values context.&quot;</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_comparator? Comparator { get; set; }
-        /// <summary>Field to apply the filter on</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the text comparison operator returned for the criterion.Possible values:like - Matches records where the field value contains the specified pattern.not_like - Matches records where the field value does not contain the specified pattern.starts_with - Matches records where the field value begins with the specified string.ends_with - Matches records where the field value ends with the specified string.contains - Matches records where the field value contains the specified string.not_contains - Matches records where the field value does not contain the specified string.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseComparator? Comparator { get; set; }
+        /// <summary>Indicates whether the equal filter criterion is in a disrupted state, typically due to an invalid or unresolvable field or value reference.</summary>
+        public bool? Disrupted { get; set; }
+        /// <summary>Represents the target field definition to which the text filter criterion was applied, conforming to the base field structure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_field? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseField? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_field Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseField Field { get; set; }
 #endif
-        /// <summary>Indicates if the value is a direct value or a system variable placeholder</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_type? Type { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>Indicates the value resolution mode of the criterion, distinguishing whether the filter value is a literal value, a merge field reference, a predefined system variable, or another field reference.Possible values:value - The value is a direct literal.merge_field - The value is a merge field reference.pre_defined - The value is a predefined system variable placeholder.field - The value references another field.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseType? Type { get; set; }
+        /// <summary>Represents the string filter value returned for the text comparator. Contains a scalar string or an array of string values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse.SimpleFilterCriterionResponse_value? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse.SimpleFilterCriterionResponse_value Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseValue Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse"/> and sets the default values.
+        /// </summary>
+        public SimpleFilterCriterionResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,10 +62,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comparator", n => { Comparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_comparator>(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_field>(global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_field.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_type>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse.SimpleFilterCriterionResponse_value>(global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse.SimpleFilterCriterionResponse_value.CreateFromDiscriminatorValue); } },
+                { "comparator", n => { Comparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseComparator>(); } },
+                { "$disrupted", n => { Disrupted = n.GetBoolValue(); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseField>(global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseField.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseType>(); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseValue>(global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -64,85 +76,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_comparator>("comparator", Comparator);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_field>("field", Field);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse.SimpleFilterCriterionResponse_value>("value", Value);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionValueObjectResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SimpleFilterCriterionResponse_value : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionValueObjectResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionValueObjectResponse? SimpleFilterCriterionValueObjectResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionValueObjectResponse SimpleFilterCriterionValueObjectResponse { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse.SimpleFilterCriterionResponse_value"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse.SimpleFilterCriterionResponse_value CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse.SimpleFilterCriterionResponse_value();
-                if("SimpleFilterCriterionValueObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.SimpleFilterCriterionValueObjectResponse = new global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionValueObjectResponse();
-                }
-                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UnionBranch = new global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(SimpleFilterCriterionValueObjectResponse != null)
-                {
-                    return SimpleFilterCriterionValueObjectResponse.GetFieldDeserializers();
-                }
-                else if(UnionBranch != null)
-                {
-                    return UnionBranch.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(SimpleFilterCriterionValueObjectResponse != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionValueObjectResponse>(null, SimpleFilterCriterionValueObjectResponse);
-                }
-                else if(UnionBranch != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-                }
-            }
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseComparator>("comparator", Comparator);
+            writer.WriteBoolValue("$disrupted", Disrupted);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseField>("field", Field);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TextFilterCriterionResponseValue>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,14 +9,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Response returned when the user does not have required permissions
+    /// Represents the error response returned when the user does not have the required permissions for the specified module.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ModuleForbiddenErrorResponse : ApiException, IParsable
     {
-        /// <summary>Error code indicating insufficient permissions</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse_code? Code { get; set; }
-        /// <summary>Additional details about the permission error</summary>
+        /// <summary>Represents the error code returned for the permission-denied failure.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode? Code { get; set; }
+        /// <summary>Represents the additional details about the permission error, including the required permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponseDetails? Details { get; set; }
@@ -25,11 +25,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponseDetails Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
-        /// <summary>Human-readable error message</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse_message? MessageEscaped { get; set; }
-        /// <summary>Status of the response</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse_status? Status { get; set; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>Represents the error message describing the permission denial.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
+        /// <summary>Indicates the response status.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,10 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponseDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse_message>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse_status>(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -61,10 +67,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponseDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse_message>("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse_status>("status", Status);
+            writer.WriteStringValue("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
         }
     }
 }

@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Body schema for PUT requests proposing updates to unsubscribe link configurations, demanding detailed entries across fields.
+    /// Request payload for bulk PUT requests to update unsubscribe link configurations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateUnsubscribeLinksRequest : IParsable
     {
-        /// <summary>Root key name (Required)</summary>
+        /// <summary>Root key containing the unsubscribe links to update (required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksGeneratedSchema3>? UnsubscribeLinks { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkBulkUpdateItem>? UnsubscribeLinks { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksGeneratedSchema3> UnsubscribeLinks { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkBulkUpdateItem> UnsubscribeLinks { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "unsubscribe_links", n => { UnsubscribeLinks = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksGeneratedSchema3>(global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksGeneratedSchema3.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "unsubscribe_links", n => { UnsubscribeLinks = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkBulkUpdateItem>(global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkBulkUpdateItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksGeneratedSchema3>("unsubscribe_links", UnsubscribeLinks);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkBulkUpdateItem>("unsubscribe_links", UnsubscribeLinks);
         }
     }
 }

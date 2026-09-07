@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Link_recordRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deal_link_emails/Contacts/{contactId}/Emails/actions/link_record?message_ids={message_ids}&owner_id={owner_id}", pathParameters)
+        public Link_recordRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deal_link_emails/Contacts/{contactId}/Emails/actions/link_record", pathParameters)
         {
         }
         /// <summary>
@@ -30,54 +30,63 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Link_recordRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deal_link_emails/Contacts/{contactId}/Emails/actions/link_record?message_ids={message_ids}&owner_id={owner_id}", rawUrl)
+        public Link_recordRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deal_link_emails/Contacts/{contactId}/Emails/actions/link_record", rawUrl)
         {
         }
         /// <summary>
-        /// Unlinks the emails from the specified records in CRM.
+        /// To unlink deals from one or more of a contact&apos;s emails. An email will only be linked to a single deal at a time.  When you call this API, the specified email(s) will be unlinked from them. The user&apos;s profile requires &quot;View&quot; permission for Deals and Contacts modules to use this API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsGetRecordActions200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsGetRecordActions200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsGetRecordActions200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsGetRecordActions200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsGetRecordActions200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal404Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Links the emails to the specified deals in CRM.
+        /// To link a deal with one or more of a contact&apos;s emails. An email can only be linked to a single deal at a time. Zoho CRM automatically links a contact&apos;s incoming emails to the deals using the [Deal Prediction Mechanism](https://help.zoho.com/portal/en/kb/crm/connect-with-customers/email/user-functions/articles/email-association-with-deal#Auto-link_Emails_by_Deal_Prediction_Mechanism). You can also manage these links using the Link Deal to Emails API and [Unlink Deal from Emails API](deal_link_emails.yaml#$.paths./Contacts/{contactId}/Emails/{messageId}/actions/link_record.delete).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200Response"/></returns>
+        /// <param name="body">The request body schema for linking emails to deals.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDealsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDealsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Unlinks the emails from the specified records in CRM.
+        /// To unlink deals from one or more of a contact&apos;s emails. An email will only be linked to a single deal at a time.  When you call this API, the specified email(s) will be unlinked from them. The user&apos;s profile requires &quot;View&quot; permission for Deals and Contacts modules to use this API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,28 +99,28 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deal_link_emails/Contacts/{contactId}/Emails/actions/link_record?message_ids={message_ids}&owner_id={owner_id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Links the emails to the specified deals in CRM.
+        /// To link a deal with one or more of a contact&apos;s emails. An email can only be linked to a single deal at a time. Zoho CRM automatically links a contact&apos;s incoming emails to the deals using the [Deal Prediction Mechanism](https://help.zoho.com/portal/en/kb/crm/connect-with-customers/email/user-functions/articles/email-association-with-deal#Auto-link_Emails_by_Deal_Prediction_Mechanism). You can also manage these links using the Link Deal to Emails API and [Unlink Deal from Emails API](deal_link_emails.yaml#$.paths./Contacts/{contactId}/Emails/{messageId}/actions/link_record.delete).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body schema</param>
+        /// <param name="body">The request body schema for linking emails to deals.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDealsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDealsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/deal_link_emails/Contacts/{contactId}/Emails/actions/link_record", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -127,17 +136,31 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
             return new global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Unlinks the emails from the specified records in CRM.
+        /// To unlink deals from one or more of a contact&apos;s emails. An email will only be linked to a single deal at a time.  When you call this API, the specified email(s) will be unlinked from them. The user&apos;s profile requires &quot;View&quot; permission for Deals and Contacts modules to use this API.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Link_recordRequestBuilderDeleteQueryParameters 
         {
             /// <summary>The IDs of the email messages to be linked</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("message_ids")]
-            public global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.DeleteMessage_idsQueryParameterType? MessageIds { get; set; }
-            /// <summary>The ID of the owner of the contact</summary>
+            public string? MessageIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("message_ids")]
+            public string MessageIds { get; set; }
+#endif
+            /// <summary>The ID of the owner of the contact.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("owner_id")]
-            public global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.DeleteOwner_idQueryParameterType? OwnerId { get; set; }
+            public string? OwnerId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("owner_id")]
+            public string OwnerId { get; set; }
+#endif
         }
     }
 }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains the name, ID and the module&apos;s API name of the customer for whom you are creating the appointment.
+    /// Represents the customer for whom the appointment is created, including the record ID, name, and module API name. Test4
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AppointmentForNested : IParsable
     {
-        /// <summary>id</summary>
+        /// <summary>Represents the list of result objects for each appointment deletion is attempted. Each item is either a success confirmation or an error response.Test7</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>module name</summary>
+        /// <summary>Represents the module details for the Appointment_For customer record lookup, including the module API name and ID. Test8</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleNested? Module { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleNested Module { get; set; }
 #endif
-        /// <summary>name</summary>
+        /// <summary>Represents the full name of the customer record in the associated module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

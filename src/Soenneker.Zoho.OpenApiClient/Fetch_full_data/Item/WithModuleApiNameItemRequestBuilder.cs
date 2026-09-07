@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item
             get => new global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.fetch_full_data.item.item collection</summary>
-        /// <param name="position">The unique identifier of the record. Must be a valid numeric record ID.</param>
+        /// <param name="position">The unique identifier of the record whose rich text field content you want to retrieve. Must be a valid numeric record ID. If the ID is invalid, an INVALID_DATA error (HTTP 400) is returned.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.ModuleApiNameItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.ModuleApiNameItemRequestBuilder this[string position]
         {

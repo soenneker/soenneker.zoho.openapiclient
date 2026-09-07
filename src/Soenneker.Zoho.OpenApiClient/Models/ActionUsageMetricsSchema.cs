@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Usage details for an action without queue metrics, including success and failure counts, action identifiers, type, and associated time.
+    /// Represents usage metrics for a single workflow action, including its identifier, display name, action type, execution success and failure counts within a queried date range, and the timestamp of its last association.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActionUsageMetricsSchema : IParsable
     {
-        /// <summary>&quot;Field: associated_time&quot;</summary>
+        /// <summary>Represents the ISO 8601 timestamp indicating when this action was last associated with or modified on a workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssociatedTime { get; set; }
@@ -21,9 +21,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string AssociatedTime { get; set; }
 #endif
-        /// <summary>&quot;Field: failure_count&quot;</summary>
+        /// <summary>Represents the total number of failed executions recorded for this action within the queried date range.</summary>
         public int? FailureCount { get; set; }
-        /// <summary>&quot;Field: id&quot;</summary>
+        /// <summary>Represents the unique ID of the workflow action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Field: name&quot;</summary>
+        /// <summary>Represents the display name of the workflow rule or its associated action as configured in Zoho CRM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -39,9 +39,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Field: success_count&quot;</summary>
+        /// <summary>Represents the total number of successful executions recorded for this action within the queried date range.</summary>
         public int? SuccessCount { get; set; }
-        /// <summary>&quot;Field: type&quot;</summary>
+        /// <summary>Represents the category of workflow action executed by the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

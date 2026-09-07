@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unblock_email
     public partial class Unblock_emailRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.unblock_email.item collection</summary>
-        /// <param name="position">The module name (e.g., Leads)</param>
+        /// <param name="position">Represents the module API name. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to get valid values. </param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Unblock_email.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Unblock_email.Item.WithModuleItemRequestBuilder this[string position]
         {

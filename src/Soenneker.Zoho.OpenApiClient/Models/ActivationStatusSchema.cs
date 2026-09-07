@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Indicates whether the workflow is currently active, represented by a boolean value.
+    /// Represents the activation state of a workflow rule, indicating whether the rule is currently active.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivationStatusSchema : IParsable
     {
-        /// <summary>&quot;Field: active&quot;</summary>
+        /// <summary>Indicates whether the workflow rule is currently active.Possible values:true - The workflow rule is active and executes its configured actions when trigger conditions are met.false - The workflow rule is inactive and does not execute, even when trigger conditions are met.</summary>
         public bool? Active { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

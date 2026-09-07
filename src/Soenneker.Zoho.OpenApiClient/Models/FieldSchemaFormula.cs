@@ -7,18 +7,29 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Contains the formula configuration for fields whose values are automatically calculated from expressions referencing other fields or functions, rather than being entered directly by users.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class FieldSchemaFormula : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates if the formula should assume default values</summary>
+        /// <summary>Indicates whether null or missing operand values in the formula expression are treated as zero or an equivalent default, rather than causing the formula result to be null. Possible values: `true` — null operands are substituted with default values; `false` — null operands propagate as null through the calculation.</summary>
         public bool? AssumeDefault { get; set; }
-        /// <summary>Indicates if the formula is dynamic</summary>
+        /// <summary>Indicates whether the formula is recalculated in real time as dependent field values change, rather than being evaluated only at save time. Possible values: `true` — the formula updates dynamically during record editing; `false` — the formula is evaluated only when the record is saved.</summary>
         public bool? Dynamic { get; set; }
-        /// <summary>The return type of the formula</summary>
+        /// <summary>Indicates the relative priority in which this formula field is evaluated when multiple formula fields exist in the same module and share dependencies, ensuring upstream values are resolved before downstream ones.</summary>
+        public int? EvaluationOrder { get; set; }
+        /// <summary>Contains the formula expression string that defines the calculation logic, composed of function calls, field API name references, and operators that the CRM engine evaluates to produce the field&apos;s computed value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Expression { get; set; }
+#nullable restore
+#else
+        public string Expression { get; set; }
+#endif
+        /// <summary>Identifies the data type produced by the formula expression, such as string, integer, decimal, date, or Boolean, which determines how the computed value is stored and displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReturnType { get; set; }
@@ -26,23 +37,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ReturnType { get; set; }
 #endif
-        /// <summary>Indicates if the formula computation should stop conditionally</summary>
+        /// <summary>Indicates whether the formula evaluation halts when a specified logical condition is met. Possible values: `true` — the formula stops computing once the stop condition expression evaluates to true; `false` — the formula computes to completion regardless of intermediate conditions.</summary>
         public bool? StopComputeConditionally { get; set; }
-        /// <summary>The string return type of the formula will be split values,</summary>
+        /// <summary>Contains the logical expression evaluated at runtime to determine whether formula computation should be interrupted. When the expression resolves to true and stop_compute_conditionally is enabled, further formula processing is skipped and the current interim value is retained.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubReturnType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormulaOneOf1StopComputeExpression? StopComputeExpression { get; set; }
 #nullable restore
 #else
-        public string SubReturnType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormulaOneOf1StopComputeExpression StopComputeExpression { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
+        /// <summary>Represents a secondary classification of the formula&apos;s output type, refining the primary return type to indicate a more specific data size or unit. Possible values: `small` — a compact representation of the return type. `medium` — a standard-size representation. `large` — a large-size representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormulaOneOf1SubReturnType? SubReturnType { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormulaOneOf1SubReturnType SubReturnType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormula"/> and sets the default values.
@@ -71,10 +82,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "assume_default", n => { AssumeDefault = n.GetBoolValue(); } },
                 { "dynamic", n => { Dynamic = n.GetBoolValue(); } },
+                { "evaluation_order", n => { EvaluationOrder = n.GetIntValue(); } },
+                { "expression", n => { Expression = n.GetStringValue(); } },
                 { "return_type", n => { ReturnType = n.GetStringValue(); } },
                 { "stop_compute_conditionally", n => { StopComputeConditionally = n.GetBoolValue(); } },
-                { "sub_return_type", n => { SubReturnType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "stop_compute_expression", n => { StopComputeExpression = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormulaOneOf1StopComputeExpression>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormulaOneOf1StopComputeExpression.CreateFromDiscriminatorValue); } },
+                { "sub_return_type", n => { SubReturnType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormulaOneOf1SubReturnType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormulaOneOf1SubReturnType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,10 +99,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("assume_default", AssumeDefault);
             writer.WriteBoolValue("dynamic", Dynamic);
+            writer.WriteIntValue("evaluation_order", EvaluationOrder);
+            writer.WriteStringValue("expression", Expression);
             writer.WriteStringValue("return_type", ReturnType);
             writer.WriteBoolValue("stop_compute_conditionally", StopComputeConditionally);
-            writer.WriteStringValue("sub_return_type", SubReturnType);
-            writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormulaOneOf1StopComputeExpression>("stop_compute_expression", StopComputeExpression);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaFormulaOneOf1SubReturnType>("sub_return_type", SubReturnType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

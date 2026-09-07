@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Details about pagination for resource listings, such as count, page number, and if more records are available.
+    /// Pagination metadata for list responses. Use more_records to determine if additional pages are available.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaginationInfo : IParsable
     {
-        /// <summary>&quot;Field: count&quot;</summary>
+        /// <summary>Number of records returned in the current page.</summary>
         public int? Count { get; set; }
-        /// <summary>&quot;Field: more_records&quot;</summary>
+        /// <summary>True when additional records are available on subsequent pages.</summary>
         public bool? MoreRecords { get; set; }
-        /// <summary>&quot;Field: page&quot;</summary>
+        /// <summary>Current page number (starts at 1).</summary>
         public int? Page { get; set; }
-        /// <summary>&quot;Field: per_page&quot;</summary>
+        /// <summary>Maximum number of records returned per page (default 200).</summary>
         public int? PerPage { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Change_owner
     public partial class Change_ownerRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.change_owner.item collection</summary>
-        /// <param name="position">The API name of the module</param>
+        /// <param name="position">Specify the API name of the module.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Change_owner.Item.WithModuleItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Change_owner.Item.WithModuleItemRequestBuilder this[string position]
         {
