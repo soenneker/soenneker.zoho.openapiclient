@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the error code indicating the type of permission or feature availability error.Possible values:NO_PERMISSION - The user&apos;s profile lacks the required privilege.FEATURE_NOT_SUPPORTED - The workflow feature is unavailable in the current CRM edition.</summary>
+    /// <summary>Represents the error code indicating the type of permission or feature availability error.Possible values:NO_PERMISSION - The user&apos;s profile lacks the required privilege.FEATURE_NOT_SUPPORTED - The workflow feature is unavailable in the current CRM edition. </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WorkflowConfigurationsNoPermissionErrorCode
     {

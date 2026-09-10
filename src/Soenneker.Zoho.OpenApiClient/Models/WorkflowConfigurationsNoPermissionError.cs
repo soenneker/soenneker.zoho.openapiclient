@@ -14,7 +14,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowConfigurationsNoPermissionError : ApiException, IParsable
     {
-        /// <summary>Represents the error code indicating the type of permission or feature availability error.Possible values:NO_PERMISSION - The user&apos;s profile lacks the required privilege.FEATURE_NOT_SUPPORTED - The workflow feature is unavailable in the current CRM edition.</summary>
+        /// <summary>Represents the error code indicating the type of permission or feature availability error.Possible values:NO_PERMISSION - The user&apos;s profile lacks the required privilege.FEATURE_NOT_SUPPORTED - The workflow feature is unavailable in the current CRM edition. </summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsNoPermissionErrorCode? Code { get; set; }
         /// <summary>Represents the object containing details about the missing permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
