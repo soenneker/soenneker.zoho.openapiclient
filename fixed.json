@@ -18,50 +18,14 @@
             "in",
             "cn",
             "au"
-          ],
-          "x-ms-enum": {
-            "name": "GeneratedEnum",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "com",
-                "name": "Com"
-              },
-              {
-                "value": "eu",
-                "name": "Eu"
-              },
-              {
-                "value": "in",
-                "name": "InValue"
-              },
-              {
-                "value": "cn",
-                "name": "Cn"
-              },
-              {
-                "value": "au",
-                "name": "Au"
-              }
-            ]
-          }
+          ]
         },
         "version": {
           "default": "v8",
           "description": "API version",
           "enum": [
             "v8"
-          ],
-          "x-ms-enum": {
-            "name": "GeneratedEnum",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "v8",
-                "name": "V8"
-              }
-            ]
-          }
+          ]
         }
       }
     },
@@ -90,41 +54,7 @@
             "au",
             "jp",
             "ca"
-          ],
-          "x-ms-enum": {
-            "name": "GeneratedEnum",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "com",
-                "name": "Com"
-              },
-              {
-                "value": "eu",
-                "name": "Eu"
-              },
-              {
-                "value": "in",
-                "name": "InValue"
-              },
-              {
-                "value": "cn",
-                "name": "Cn"
-              },
-              {
-                "value": "au",
-                "name": "Au"
-              },
-              {
-                "value": "jp",
-                "name": "Jp"
-              },
-              {
-                "value": "ca",
-                "name": "Ca"
-              }
-            ]
-          }
+          ]
         },
         "version": {
           "default": "v8",
@@ -145,33 +75,7 @@
             "in",
             "cn",
             "au"
-          ],
-          "x-ms-enum": {
-            "name": "GeneratedEnum",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "com",
-                "name": "Com"
-              },
-              {
-                "value": "eu",
-                "name": "Eu"
-              },
-              {
-                "value": "in",
-                "name": "InValue"
-              },
-              {
-                "value": "cn",
-                "name": "Cn"
-              },
-              {
-                "value": "au",
-                "name": "Au"
-              }
-            ]
-          }
+          ]
         },
         "version": {
           "default": "v8",
@@ -192,33 +96,7 @@
             "in",
             "cn",
             "au"
-          ],
-          "x-ms-enum": {
-            "name": "GeneratedEnum",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "com",
-                "name": "Com"
-              },
-              {
-                "value": "eu",
-                "name": "Eu"
-              },
-              {
-                "value": "in",
-                "name": "InValue"
-              },
-              {
-                "value": "cn",
-                "name": "Cn"
-              },
-              {
-                "value": "au",
-                "name": "Au"
-              }
-            ]
-          }
+          ]
         },
         "version": {
           "default": "v8",
@@ -19128,7 +19006,12 @@
         "operationId": "CancelMeetingsCancelMeetings",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Event"
+            "name": "eventValue",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -153287,17 +153170,7 @@
               "enum": [
                 "shared"
               ],
-              "description": "Access type of the custom view",
-              "x-ms-enum": {
-                "name": "AccessType",
-                "modelAsString": false,
-                "values": [
-                  {
-                    "value": "shared",
-                    "name": "Shared"
-                  }
-                ]
-              }
+              "description": "Access type of the custom view"
             }
           },
           "description": "If access_type is \u0027shared\u0027, then shared_to must be provided with at least one user/group"
@@ -153391,17 +153264,7 @@
               "enum": [
                 "shared"
               ],
-              "description": "Access type of the custom view",
-              "x-ms-enum": {
-                "name": "AccessType",
-                "modelAsString": false,
-                "values": [
-                  {
-                    "value": "shared",
-                    "name": "Shared"
-                  }
-                ]
-              }
+              "description": "Access type of the custom view"
             }
           },
           "description": "If access_type is \u0027shared\u0027, then shared_to must be provided with at least one user/group"
@@ -153503,17 +153366,7 @@
               "enum": [
                 "shared"
               ],
-              "description": "Access type of the custom view",
-              "x-ms-enum": {
-                "name": "AccessType",
-                "modelAsString": false,
-                "values": [
-                  {
-                    "value": "shared",
-                    "name": "Shared"
-                  }
-                ]
-              }
+              "description": "Access type of the custom view"
             }
           },
           "description": "If access_type is \u0027shared\u0027, then shared_to must be provided with at least one user/group"
@@ -159781,17 +159634,7 @@
             "display_based_on": {
               "enum": [
                 "end_month"
-              ],
-              "x-ms-enum": {
-                "name": "DisplayBasedOn",
-                "modelAsString": false,
-                "values": [
-                  {
-                    "value": "end_month",
-                    "name": "EndMonth"
-                  }
-                ]
-              }
+              ]
             }
           },
           "description": "Applies additional constraints when the display_based_on field is set to end_month."
@@ -159803,17 +159646,7 @@
                 "enum": [
                   "JANUARY"
                 ],
-                "description": "JANUARY is not allowed as the start_month when display_based_on is set to end_month.",
-                "x-ms-enum": {
-                  "name": "StartMonth",
-                  "modelAsString": false,
-                  "values": [
-                    {
-                      "value": "JANUARY",
-                      "name": "January"
-                    }
-                  ]
-                }
+                "description": "JANUARY is not allowed as the start_month when display_based_on is set to end_month."
               },
               "description": "Represents the constrained value for start_month when display_based_on is set to end_month."
             }
@@ -159848,17 +159681,7 @@
             "display_based_on": {
               "enum": [
                 "end_month"
-              ],
-              "x-ms-enum": {
-                "name": "DisplayBasedOn",
-                "modelAsString": false,
-                "values": [
-                  {
-                    "value": "end_month",
-                    "name": "EndMonth"
-                  }
-                ]
-              }
+              ]
             }
           },
           "description": "Applies additional constraints when the display_based_on field is set to end_month."
@@ -159870,17 +159693,7 @@
                 "enum": [
                   "JANUARY"
                 ],
-                "description": "JANUARY is not allowed as the start_month when display_based_on is set to end_month.",
-                "x-ms-enum": {
-                  "name": "StartMonth",
-                  "modelAsString": false,
-                  "values": [
-                    {
-                      "value": "JANUARY",
-                      "name": "January"
-                    }
-                  ]
-                }
+                "description": "JANUARY is not allowed as the start_month when display_based_on is set to end_month."
               },
               "description": "Represents the constrained value for start_month when display_based_on is set to end_month."
             }
@@ -159933,17 +159746,7 @@
             "display_based_on": {
               "enum": [
                 "end_month"
-              ],
-              "x-ms-enum": {
-                "name": "DisplayBasedOn",
-                "modelAsString": false,
-                "values": [
-                  {
-                    "value": "end_month",
-                    "name": "EndMonth"
-                  }
-                ]
-              }
+              ]
             }
           },
           "description": "Applies additional date restrictions when the display_based_on field is set to end_month."
@@ -160024,17 +159827,7 @@
             "display_based_on": {
               "enum": [
                 "end_month"
-              ],
-              "x-ms-enum": {
-                "name": "DisplayBasedOn",
-                "modelAsString": false,
-                "values": [
-                  {
-                    "value": "end_month",
-                    "name": "EndMonth"
-                  }
-                ]
-              }
+              ]
             }
           },
           "description": "Applies additional date restrictions when the display_based_on field is set to end_month."
@@ -291719,17 +291512,7 @@
               "enum": [
                 "subform_automation_trigger"
               ],
-              "description": "Action type for conditional validation",
-              "x-ms-enum": {
-                "name": "Action",
-                "modelAsString": false,
-                "values": [
-                  {
-                    "value": "subform_automation_trigger",
-                    "name": "SubformAutomationTrigger"
-                  }
-                ]
-              }
+              "description": "Action type for conditional validation"
             }
           },
           "description": "Conditional validation for subform_automation_trigger action"
@@ -313271,17 +313054,7 @@
               "enum": [
                 "composite"
               ],
-              "description": "The segment type discriminator.",
-              "x-ms-enum": {
-                "name": "Type",
-                "modelAsString": false,
-                "values": [
-                  {
-                    "value": "composite",
-                    "name": "Composite"
-                  }
-                ]
-              }
+              "description": "The segment type discriminator."
             }
           },
           "description": "Applies when the segment type is \u0027composite\u0027."
@@ -313305,17 +313078,7 @@
                 "enum": [
                   "fields"
                 ],
-                "description": "The segment type discriminator.",
-                "x-ms-enum": {
-                  "name": "Type",
-                  "modelAsString": false,
-                  "values": [
-                    {
-                      "value": "fields",
-                      "name": "Fields"
-                    }
-                  ]
-                }
+                "description": "The segment type discriminator."
               }
             },
             "description": "Applies when the segment type is \u0027fields\u0027."
@@ -313339,17 +313102,7 @@
                   "enum": [
                     "subforms"
                   ],
-                  "description": "The segment type discriminator.",
-                  "x-ms-enum": {
-                    "name": "Type",
-                    "modelAsString": false,
-                    "values": [
-                      {
-                        "value": "subforms",
-                        "name": "Subforms"
-                      }
-                    ]
-                  }
+                  "description": "The segment type discriminator."
                 }
               },
               "description": "Applies when the segment type is \u0027subforms\u0027."
@@ -313373,17 +313126,7 @@
                     "enum": [
                       "text_label"
                     ],
-                    "description": "The segment type discriminator.",
-                    "x-ms-enum": {
-                      "name": "Type",
-                      "modelAsString": false,
-                      "values": [
-                        {
-                          "value": "text_label",
-                          "name": "TextLabel"
-                        }
-                      ]
-                    }
+                    "description": "The segment type discriminator."
                   }
                 },
                 "description": "Applies when the segment type is \u0027text_label\u0027."
@@ -313411,17 +313154,7 @@
                       "enum": [
                         "widget"
                       ],
-                      "description": "The segment type discriminator.",
-                      "x-ms-enum": {
-                        "name": "Type",
-                        "modelAsString": false,
-                        "values": [
-                          {
-                            "value": "widget",
-                            "name": "Widget"
-                          }
-                        ]
-                      }
+                      "description": "The segment type discriminator."
                     }
                   },
                   "description": "Applies when the segment type is \u0027widget\u0027."
@@ -313445,17 +313178,7 @@
                         "enum": [
                           "buttons"
                         ],
-                        "description": "The segment type discriminator.",
-                        "x-ms-enum": {
-                          "name": "Type",
-                          "modelAsString": false,
-                          "values": [
-                            {
-                              "value": "buttons",
-                              "name": "Buttons"
-                            }
-                          ]
-                        }
+                        "description": "The segment type discriminator."
                       }
                     },
                     "description": "Conditional check for segment type \u0027buttons\u0027."
