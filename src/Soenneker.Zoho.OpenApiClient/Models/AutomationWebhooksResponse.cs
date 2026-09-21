@@ -11,33 +11,35 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the full webhook object returned by the list and get-by-ID operations, including all configuration fields, audit metadata, and status indicators.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationWebhooksResponse : IParsable
+    public partial class AutomationWebhooksResponse : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether this webhook is currently associated with at least one active Workflow Rule, Approval Process, or Blueprint.Possible values:**true** - The webhook is associated with at least one automation rule.**false** - The webhook is not associated with any automation rule.</summary>
         public bool? Associated { get; set; }
-        /// <summary>Represents the authentication configuration for the webhook endpoint. Use type **general** for endpoints that do not require credentials. Use type **connection** with a valid connection_name for endpoints that require authenticated access via a pre-configured Zoho connection.</summary>
+        /// <summary>Specify authentication details for the webhook endpoint. (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetails? Authentication { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseAuthentication? Authentication { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetails Authentication { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseAuthentication Authentication { get; set; }
 #endif
-        /// <summary>Represents the request body configuration for the outgoing webhook request. For type **form_data**, provide form_data_content with module_parameters and custom_parameters; format may be null. For type **raw**, supply raw_data_content and a format value of JSON, XML, Text, or HTML. For type **none**, the body carries no content and format may be null.</summary>
+        /// <summary>Define the data that Zoho CRM sends in the body of the webhook request. This is applicable only for POST and PUT HTTP methods</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody? Body { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseBody? Body { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody Body { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseBody Body { get; set; }
 #endif
-        /// <summary>Represents the CRM user who created the webhook.</summary>
+        /// <summary>The CRM user who created this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreatedByResponse? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseCreatedBy? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreatedByResponse CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseCreatedBy CreatedBy { get; set; }
 #endif
         /// <summary>Represents the ISO 8601 timestamp of when the webhook was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,13 +49,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string CreatedTime { get; set; }
 #endif
-        /// <summary>Represents the date and time formatting configuration applied to date or datetime merge-field values in webhook request payloads. Applicable only when a date or datetime merge-field is used in headers, url_parameters, or body. Returns null when no date or datetime merge-fields are present.</summary>
+        /// <summary>Date and time formatting configuration for this webhook&apos;s payloads. Null when no date/datetime merge-fields are used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DateTimeFormatConfig? DateTimeFormat { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseDateTimeFormat? DateTimeFormat { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DateTimeFormatConfig DateTimeFormat { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseDateTimeFormat DateTimeFormat { get; set; }
 #endif
         /// <summary>Indicates whether the current user can delete this webhook. Returns false for marketplace and extension-created webhooks.Possible values:**true** - The webhook can be deleted.**false** - The webhook cannot be deleted.</summary>
         public bool? Deletable { get; set; }
@@ -75,13 +77,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FeatureType { get; set; }
 #endif
-        /// <summary>Represents the HTTP headers configuration for the outgoing webhook request. Supports module merge-field parameters and custom static parameters. The host header name is reserved and cannot be used.</summary>
+        /// <summary>Headers let you send extra information along with the webhook request. For example, API keys, authentication tokens, or custom values that the external application needs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookHeaders? Headers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseHeaders? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookHeaders Headers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseHeaders Headers { get; set; }
 #endif
         /// <summary>Represents the HTTP method used when the webhook fires.Possible values:**GET** - Sends a GET request to the webhook URL.**POST** - Sends a POST request to the webhook URL.**PUT** - Sends a PUT request to the webhook URL.**DELETE** - Sends a DELETE request to the webhook URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,21 +101,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Represents the lock status of the webhook. Locked webhooks cannot be edited or deleted.</summary>
+        /// <summary>Lock status of the webhook. Locked webhooks cannot be edited or deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationLockStatusResponse? LockStatus { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseLockStatus? LockStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationLockStatusResponse LockStatus { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseLockStatus LockStatus { get; set; }
 #endif
-        /// <summary>Represents the CRM user who last modified the webhook.</summary>
+        /// <summary>The CRM user who last modified this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationModifiedByResponse? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseModifiedBy? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationModifiedByResponse ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseModifiedBy ModifiedBy { get; set; }
 #endif
         /// <summary>Represents the ISO 8601 timestamp of when the webhook was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,13 +125,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ModifiedTime { get; set; }
 #endif
-        /// <summary>Represents the CRM module reference identifying the parent module associated with a webhook.</summary>
+        /// <summary>The parent CRM module that this webhook monitors for trigger events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationModuleDetailsResponse? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseModule? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationModuleDetailsResponse Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseModule Module { get; set; }
 #endif
         /// <summary>Represents the display name of the webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,13 +141,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Represents a reference to a related CRM module linked to the parent module of a webhook. Returns null when no related module is configured. Required when feature_type is kiosk.</summary>
+        /// <summary>The child or dependent CRM module linked to this webhook&apos;s parent module. Null when no related module is configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleReference? RelatedModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseRelatedModule? RelatedModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleReference RelatedModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseRelatedModule RelatedModule { get; set; }
 #endif
         /// <summary>Represents the origin of the webhook. Returns null for legacy webhooks.Possible values:**user** - Created by a CRM user.**crm** - Created by the CRM system.**extension** - Created by a Marketplace extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -163,14 +165,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>Represents the URL query parameters appended to the webhook request URL. Applicable only when http_method is GET or DELETE. Returns null when http_method is POST or PUT.</summary>
+        /// <summary>URL parameters for GET/DELETE webhook HTTP methods. Null when http_method is POST or PUT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParameters? UrlParameters { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseUrlParameters? UrlParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParameters UrlParameters { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseUrlParameters UrlParameters { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponse"/> and sets the default values.
+        /// </summary>
+        public AutomationWebhooksResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -190,27 +199,27 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "associated", n => { Associated = n.GetBoolValue(); } },
-                { "authentication", n => { Authentication = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetails>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetails.CreateFromDiscriminatorValue); } },
-                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody.CreateFromDiscriminatorValue); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreatedByResponse>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreatedByResponse.CreateFromDiscriminatorValue); } },
+                { "authentication", n => { Authentication = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseAuthentication>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseAuthentication.CreateFromDiscriminatorValue); } },
+                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseBody>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseBody.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseCreatedBy.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetStringValue(); } },
-                { "date_time_format", n => { DateTimeFormat = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DateTimeFormatConfig>(global::Soenneker.Zoho.OpenApiClient.Models.DateTimeFormatConfig.CreateFromDiscriminatorValue); } },
+                { "date_time_format", n => { DateTimeFormat = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseDateTimeFormat>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseDateTimeFormat.CreateFromDiscriminatorValue); } },
                 { "deletable", n => { Deletable = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "editable", n => { Editable = n.GetBoolValue(); } },
                 { "feature_type", n => { FeatureType = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookHeaders>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookHeaders.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseHeaders>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseHeaders.CreateFromDiscriminatorValue); } },
                 { "http_method", n => { HttpMethod = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "lock_status", n => { LockStatus = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationLockStatusResponse>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationLockStatusResponse.CreateFromDiscriminatorValue); } },
-                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationModifiedByResponse>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationModifiedByResponse.CreateFromDiscriminatorValue); } },
+                { "lock_status", n => { LockStatus = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseLockStatus>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseLockStatus.CreateFromDiscriminatorValue); } },
+                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseModifiedBy.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationModuleDetailsResponse>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationModuleDetailsResponse.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseModule>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseModule.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "related_module", n => { RelatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleReference>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleReference.CreateFromDiscriminatorValue); } },
+                { "related_module", n => { RelatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseRelatedModule>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseRelatedModule.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
-                { "url_parameters", n => { UrlParameters = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParameters>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParameters.CreateFromDiscriminatorValue); } },
+                { "url_parameters", n => { UrlParameters = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseUrlParameters>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseUrlParameters.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -221,27 +230,28 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("associated", Associated);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookAuthenticationDetails>("authentication", Authentication);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBody>("body", Body);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreatedByResponse>("created_by", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseAuthentication>("authentication", Authentication);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseBody>("body", Body);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseCreatedBy>("created_by", CreatedBy);
             writer.WriteStringValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DateTimeFormatConfig>("date_time_format", DateTimeFormat);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseDateTimeFormat>("date_time_format", DateTimeFormat);
             writer.WriteBoolValue("deletable", Deletable);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("editable", Editable);
             writer.WriteStringValue("feature_type", FeatureType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookHeaders>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseHeaders>("headers", Headers);
             writer.WriteStringValue("http_method", HttpMethod);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationLockStatusResponse>("lock_status", LockStatus);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationModifiedByResponse>("modified_by", ModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseLockStatus>("lock_status", LockStatus);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseModifiedBy>("modified_by", ModifiedBy);
             writer.WriteStringValue("modified_time", ModifiedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationModuleDetailsResponse>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseModule>("module", Module);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleReference>("related_module", RelatedModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseRelatedModule>("related_module", RelatedModule);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("url", Url);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParameters>("url_parameters", UrlParameters);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseUrlParameters>("url_parameters", UrlParameters);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

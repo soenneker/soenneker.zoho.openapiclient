@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Error details for rollback operations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CompositeRequestsCreateCompositeRequest400ResponseDetailsOneOf12 : IParsable
+    public partial class CompositeRequestsCreateCompositeRequest400ResponseDetailsOneOf12 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the index of the sub-request that triggered the rollback operation. </summary>
         public int? RollbackedBySubRequestIndex { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest400ResponseDetailsOneOf12"/> and sets the default values.
+        /// </summary>
+        public CompositeRequestsCreateCompositeRequest400ResponseDetailsOneOf12()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("rollbacked_by_sub_request_index", RollbackedBySubRequestIndex);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

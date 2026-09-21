@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the intermediary linking module that bridges the source and target modules in a multi-select lookup, storing the join records that implement the many-to-many relationship.
+    /// Represents the module details for the multi-module lookup.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaMultiselectlookupOneOf1LinkingDetailsModule : IParsable
+    public partial class FieldSchemaMultiselectlookupOneOf1LinkingDetailsModule : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents an API identifier string composed of alphanumeric characters and underscores, used as a programmatic reference for fields, modules, and other CRM entities.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
+        /// <summary>Id of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Contains the plural display name of the linking module, as shown in navigation and relational UI elements within the CRM.</summary>
+        /// <summary>Represents the plural label of the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PluralLabel { get; set; }
@@ -37,8 +39,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string PluralLabel { get; set; }
 #endif
-        /// <summary>Indicates the visibility state of the linking module, controlling whether it appears in the CRM interface and navigation for end users.</summary>
+        /// <summary>Represents the visibility of the module.</summary>
         public int? Visibility { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetailsModule"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaMultiselectlookupOneOf1LinkingDetailsModule()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("plural_label", PluralLabel);
             writer.WriteIntValue("visibility", Visibility);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

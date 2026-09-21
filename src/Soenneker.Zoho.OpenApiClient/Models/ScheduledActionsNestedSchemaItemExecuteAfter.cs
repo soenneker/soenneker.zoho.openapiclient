@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Defines the delay before the scheduled actions execute. Required. Cannot be an empty object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScheduledActionsNestedSchemaItemExecuteAfter : IParsable
+    public partial class ScheduledActionsNestedSchemaItemExecuteAfter : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the type of time interval. Required. Must be one of the allowed period values (invalid_schedule_actions_period if invalid). business_hours and business_days are only available when org business hours are configured. The API returns available periods from getWorkflowConfigurations.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfterPeriod? Period { get; set; }
         /// <summary>Represents the numeric delay value. Required. Allowed ranges per period (unit_not_allowed_for_period if out of range): minutes: 5-180 (2-180 if 1-min repetition feature is enabled), hours: 0-99, days: 0-2000, weeks: 0-100, months: 0-24, years: 0-10, business_hours: 0-99, business_days: 0-2000. All values must be non-negative (no pre-event offsets for scheduled actions).</summary>
         public int? Unit { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter"/> and sets the default values.
+        /// </summary>
+        public ScheduledActionsNestedSchemaItemExecuteAfter()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfterPeriod>("period", Period);
             writer.WriteIntValue("unit", Unit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

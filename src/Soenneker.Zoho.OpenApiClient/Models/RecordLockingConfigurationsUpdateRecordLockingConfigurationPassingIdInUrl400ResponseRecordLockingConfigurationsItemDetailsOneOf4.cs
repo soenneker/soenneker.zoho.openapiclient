@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Indicates a missing dependent field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl400ResponseRecordLockingConfigurationsItemDetailsOneOf4 : IParsable
+    public partial class RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl400ResponseRecordLockingConfigurationsItemDetailsOneOf4 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the missing dependent field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JsonPath { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl400ResponseRecordLockingConfigurationsItemDetailsOneOf4"/> and sets the default values.
+        /// </summary>
+        public RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl400ResponseRecordLockingConfigurationsItemDetailsOneOf4()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl400ResponseRecordLockingConfigurationsItemDetailsOneOf4Dependee>("dependee", Dependee);
             writer.WriteStringValue("json_path", JsonPath);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

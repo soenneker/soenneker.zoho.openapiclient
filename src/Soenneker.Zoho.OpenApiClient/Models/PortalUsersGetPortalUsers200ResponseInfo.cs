@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents pagination metadata for the response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PortalUsersGetPortalUsers200ResponseInfo : IParsable
+    public partial class PortalUsersGetPortalUsers200ResponseInfo : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the total number of portal users available for the specified portal and user type.</summary>
         public int? TotalCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetPortalUsers200ResponseInfo"/> and sets the default values.
+        /// </summary>
+        public PortalUsersGetPortalUsers200ResponseInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("total_count", TotalCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

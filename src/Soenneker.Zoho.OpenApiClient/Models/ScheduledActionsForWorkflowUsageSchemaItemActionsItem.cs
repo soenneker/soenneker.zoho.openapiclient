@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the usage details for a single action within the scheduled action group.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScheduledActionsForWorkflowUsageSchemaItemActionsItem : IParsable
+    public partial class ScheduledActionsForWorkflowUsageSchemaItemActionsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the ISO 8601 timestamp when this action was last executed or associated.</summary>
         public DateTimeOffset? AssociatedTime { get; set; }
         /// <summary>Represents the number of failed executions for this action within the date range.</summary>
@@ -53,6 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchemaItemActionsItem"/> and sets the default values.
+        /// </summary>
+        public ScheduledActionsForWorkflowUsageSchemaItemActionsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,6 +105,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsForWorkflowUsageSchemaItemActionsItemRelatedDetailsProperty>("related_details", RelatedDetails);
             writer.WriteIntValue("success_count", SuccessCount);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

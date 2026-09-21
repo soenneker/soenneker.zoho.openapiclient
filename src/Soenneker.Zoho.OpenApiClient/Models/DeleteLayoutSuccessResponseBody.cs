@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the response body returned when one or more layouts are successfully deleted, containing per-layout deletion results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DeleteLayoutSuccessResponseBody : IParsable
+    public partial class DeleteLayoutSuccessResponseBody : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains one entry per layout included in the deletion request, each reporting the individual outcome — such as success or failure — for that specific layout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult> Layouts { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutSuccessResponseBody"/> and sets the default values.
+        /// </summary>
+        public DeleteLayoutSuccessResponseBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult>("layouts", Layouts);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,24 +11,33 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the response containing child territories with pagination details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TerritoryChildListResponse : IParsable
+    public partial class TerritoryChildListResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the pagination details for the response, including the current page, per-page count, total count, and whether more records are available.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Pagination metadata for the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InfoSchema? Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponseInfo? Info { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InfoSchema Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponseInfo Info { get; set; }
 #endif
         /// <summary>Represents the list of child territory objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchema>? Territories { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponseTerritoriesItem>? Territories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchema> Territories { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponseTerritoriesItem> Territories { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponse"/> and sets the default values.
+        /// </summary>
+        public TerritoryChildListResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,8 +56,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InfoSchema>(global::Soenneker.Zoho.OpenApiClient.Models.InfoSchema.CreateFromDiscriminatorValue); } },
-                { "territories", n => { Territories = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchema>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchema.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponseInfo>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponseInfo.CreateFromDiscriminatorValue); } },
+                { "territories", n => { Territories = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponseTerritoriesItem>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponseTerritoriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,8 +67,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InfoSchema>("info", Info);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchema>("territories", Territories);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponseInfo>("info", Info);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryChildListResponseTerritoriesItem>("territories", Territories);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

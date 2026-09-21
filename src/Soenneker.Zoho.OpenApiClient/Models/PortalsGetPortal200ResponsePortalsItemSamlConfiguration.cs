@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the SAML authentication configuration for the portal.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PortalsGetPortal200ResponsePortalsItemSamlConfiguration : IParsable
+    public partial class PortalsGetPortal200ResponsePortalsItemSamlConfiguration : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the SAML configuration is active for the portal. Possible values: **true** - SAML SSO is enabled.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the Zoho CRM user who created this SAML configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +51,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the SAML X.509 public key certificate used to verify assertions from the identity provider.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.Value46070E5E400D8163PublicKey? PublicKey { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration"/> and sets the default values.
+        /// </summary>
+        public PortalsGetPortal200ResponsePortalsItemSamlConfiguration()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -88,6 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("logout_url", LogoutUrl);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationModifiedBy>("modified_by", ModifiedBy);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.Value46070E5E400D8163PublicKey>("public_key", PublicKey);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

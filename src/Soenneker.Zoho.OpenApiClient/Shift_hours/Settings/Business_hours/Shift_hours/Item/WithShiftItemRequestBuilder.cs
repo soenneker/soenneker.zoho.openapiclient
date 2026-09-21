@@ -36,18 +36,18 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
         /// <summary>
         /// Deletes the shift hour identified by the `shift` path parameter. Once deleted, the shift hour configuration and all of its user assignments are removed.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursDeleteSingleShiftHour200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursDeleteSingleShiftHour400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursDeleteSingleShiftHour200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursDeleteSingleShiftHour200Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -56,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursDeleteSingleShiftHour400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursDeleteSingleShiftHour200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursDeleteSingleShiftHour200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the configuration of the shift hour identified by the `shift` path parameter, including its timing, break hours, holidays, time zone, and the users assigned to it.
@@ -84,7 +84,7 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
         /// <summary>
         /// Updates the configuration of the shift hour identified by the `shift` path parameter. The request body specifies the fields to change, such as the time zone, active days, timing, break windows, holidays, or user assignments. The updated timing must fall within the configured business hours.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHour200Response"/></returns>
         /// <param name="body">Represents the request body for updating one or more shift hour configurations. Each entry in `shift_hours` updates an existing shift with its timing, break hours, optional holidays, and assigned users.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,11 +92,11 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHour200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHour200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -106,7 +106,7 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHour400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHour200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHour200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes the shift hour identified by the `shift` path parameter. Once deleted, the shift hour configuration and all of its user assignments are removed.

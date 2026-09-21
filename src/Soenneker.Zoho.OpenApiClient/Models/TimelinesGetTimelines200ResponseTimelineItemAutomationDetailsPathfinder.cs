@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the Blueprint process details associated with the timeline entry, including the triggered state and entry or exit flags.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsPathfinder : IParsable
+    public partial class TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsPathfinder : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the Blueprint process entry action was triggered for this timeline event.</summary>
         public bool? ProcessEntry { get; set; }
         /// <summary>Indicates whether the Blueprint process exit action was triggered for this timeline event.</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsPathfinderState State { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsPathfinder"/> and sets the default values.
+        /// </summary>
+        public TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsPathfinder()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("process_entry", ProcessEntry);
             writer.WriteBoolValue("process_exit", ProcessExit);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsPathfinderState>("state", State);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

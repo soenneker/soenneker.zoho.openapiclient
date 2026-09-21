@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the execution delay configuration for a follow-up action, specifying the period unit and numeric value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExecuteAfterNested : IParsable
+    public partial class ExecuteAfterNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the time unit for the follow-up execution delay.Possible values:minutes - Execution delay in minutes.hours - Execution delay in hours.business_hours - Execution delay in business hours.days - Execution delay in days.business_days - Execution delay in business days.months - Execution delay in months.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteAfterNestedPeriod? Period { get; set; }
         /// <summary>Represents the numeric value of the execution delay, expressed in the specified period unit.</summary>
         public int? Unit { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteAfterNested"/> and sets the default values.
+        /// </summary>
+        public ExecuteAfterNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteAfterNestedPeriod>("period", Period);
             writer.WriteIntValue("unit", Unit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

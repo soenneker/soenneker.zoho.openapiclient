@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the count of member sources for the user group, categorized by source type. Returned when the **include** parameter is set to **sources_count**.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserGroupsGetUserGroups200ResponseUserGroupsItemSourcesCount : IParsable
+    public partial class UserGroupsGetUserGroups200ResponseUserGroupsItemSourcesCount : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of other user groups configured as member sources of this group.</summary>
         public int? Groups { get; set; }
         /// <summary>Represents the number of CRM roles configured as member sources of this group.</summary>
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? Territories { get; set; }
         /// <summary>Represents the count of CRM users configured as member sources of this group, categorized by user status.</summary>
         public int? Users { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200ResponseUserGroupsItemSourcesCount"/> and sets the default values.
+        /// </summary>
+        public UserGroupsGetUserGroups200ResponseUserGroupsItemSourcesCount()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,6 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("roles", Roles);
             writer.WriteIntValue("territories", Territories);
             writer.WriteIntValue("users", Users);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

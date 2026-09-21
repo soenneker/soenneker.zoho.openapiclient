@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the detailed configuration and metadata for a single Cadence.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetByIdCadenceSuccessRespCadencesItem : IParsable
+    public partial class GetByIdCadenceSuccessRespCadencesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the identifier and name of the user who created the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +132,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the enrollment type of a Cadence, indicating how records are enrolled.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CadenceEnrollmentType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItem"/> and sets the default values.
+        /// </summary>
+        public GetByIdCadenceSuccessRespCadencesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItem"/></returns>
@@ -188,6 +197,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("status", Status);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpSummary>("summary", Summary);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CadenceEnrollmentType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

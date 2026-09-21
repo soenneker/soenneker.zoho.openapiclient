@@ -11,8 +11,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents additional details about the authentication error. Returns an empty object when no additional details are available.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WizardsGetWizardDetails401ResponseDetails : IParsable
+    public partial class WizardsGetWizardDetails401ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails401ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public WizardsGetWizardDetails401ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

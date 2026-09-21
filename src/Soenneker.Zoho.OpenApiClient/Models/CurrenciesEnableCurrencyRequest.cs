@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Payload for creating and enabling base currency.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CurrenciesEnableCurrencyRequest : IParsable
+    public partial class CurrenciesEnableCurrencyRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the base currency information required for initializing multi-currency settings in the CRM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrencyRequestBaseCurrency BaseCurrency { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrencyRequest"/> and sets the default values.
+        /// </summary>
+        public CurrenciesEnableCurrencyRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrencyRequestBaseCurrency>("base_currency", BaseCurrency);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

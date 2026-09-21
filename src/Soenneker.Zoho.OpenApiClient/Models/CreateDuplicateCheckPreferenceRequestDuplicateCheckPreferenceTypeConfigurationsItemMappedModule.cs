@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the mapped module details. Mandatory when type is mapped_module_records.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemMappedModule : IParsable
+    public partial class CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemMappedModule : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the module.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ContactsApiName? ApiName { get; set; }
         /// <summary>Represents the unique identifier of the module. The module must resolve to Contacts.</summary>
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemMappedModule"/> and sets the default values.
+        /// </summary>
+        public CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemMappedModule()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ContactsApiName>("api_name", ApiName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

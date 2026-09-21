@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the URL query parameters appended to the webhook request URL. Applicable only when http_method is GET or DELETE. Returns null when http_method is POST or PUT.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WebhookUrlParameters : IParsable
+    public partial class WebhookUrlParameters : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the static key-value pairs appended as URL query parameters to every webhook request. Each entry must have a unique name.- name (string, optional)Specify a name to the custom header.- value (string, optional)Specify a value to the custom header.&quot;custom_parameters&quot;: [    {        &quot;name&quot;: &quot;OAuth&quot;,        &quot;value&quot;: &quot;2.0&quot;    }]. A maximum  of 10 entries is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,23 +31,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters> ModuleParameters { get; set; }
 #endif
-        /// <summary>Represents the single user-defined key-value parameter included in webhook request payloads.</summary>
+        /// <summary>A single user-defined parameter appended as a URL query parameter. Note: The API uses plural &apos;user_defined_parameters&apos; here but singular &apos;user_defined_parameter&apos; in form_data_content  - both are single objects, not arrays.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDefinedParameter? UserDefinedParameters { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters? UserDefinedParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserDefinedParameter UserDefinedParameters { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters UserDefinedParameters { get; set; }
 #endif
         /// <summary>
-        /// Creates a new instance of the appropriate class based on discriminator value
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParameters"/> and sets the default values.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParameters"/></returns>
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParameters CreateFromDiscriminatorValue(IParseNode parseNode)
+        public WebhookUrlParameters()
         {
-            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParameters();
+            AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "custom_parameters", n => { CustomParameters = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "module_parameters", n => { ModuleParameters = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "user_defined_parameters", n => { UserDefinedParameters = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDefinedParameter>(global::Soenneker.Zoho.OpenApiClient.Models.UserDefinedParameter.CreateFromDiscriminatorValue); } },
+                { "user_defined_parameters", n => { UserDefinedParameters = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,7 +68,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>("custom_parameters", CustomParameters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>("module_parameters", ModuleParameters);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDefinedParameter>("user_defined_parameters", UserDefinedParameters);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters>("user_defined_parameters", UserDefinedParameters);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

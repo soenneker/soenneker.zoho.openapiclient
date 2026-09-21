@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Full details of the requested profile.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ProfilesGetProfile200ResponseProfilesItem : IParsable
+    public partial class ProfilesGetProfile200ResponseProfilesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the profile, composed of alphanumeric characters and underscores and starting with a letter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +110,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Profile type classification. Possible values: `private_profile`, `normal_profile`, `lite_profile`, `system_profile`, `portal_profile`. `private_profile` is used exclusively for team modules; non-private profiles are not allowed for team modules.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItemType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItem"/> and sets the default values.
+        /// </summary>
+        public ProfilesGetProfile200ResponseProfilesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItem"/></returns>
@@ -162,6 +171,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItemPermissionsDetailsItem>("permissions_details", PermissionsDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItemSectionsItem>("sections", Sections);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

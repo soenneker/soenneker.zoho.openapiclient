@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the creation result for a single portal.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PortalsCreatePortal200ResponsePortalsItem : IParsable
+    public partial class PortalsCreatePortal200ResponsePortalsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**SUCCESS** - Represents success.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode? Code { get; set; }
         /// <summary>Represents the details of the created portal.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200ResponsePortalsItem"/> and sets the default values.
+        /// </summary>
+        public PortalsCreatePortal200ResponsePortalsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal200ResponsePortalsItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

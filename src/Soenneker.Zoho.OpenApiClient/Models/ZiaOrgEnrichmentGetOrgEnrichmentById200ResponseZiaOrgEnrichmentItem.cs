@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the full record of a single organization enrichment job, including its trigger fields and enriched output.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItem : IParsable
+    public partial class ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Shows the trigger values that were supplied when the enrichment job was scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the current execution status of the enrichment job.Possible values:**COMPLETED** - The job has finished and enriched data is available.**SCHEDULED** - The job is queued and yet to run.**FAILED** - The job ended in a failure.**DATA_NOT_FOUND** - The job completed but Zia could not locate public data to enrich.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItemStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItem"/> and sets the default values.
+        /// </summary>
+        public ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItemEnrichedData>("enriched_data", EnrichedData);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItemStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

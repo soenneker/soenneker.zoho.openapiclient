@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Details of the Assignment Rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AssignmentRuleResponseObject : IParsable
+    public partial class AssignmentRuleResponseObject : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the rule. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,13 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the date and time of Assignment Rule creation. </summary>
         public DateTimeOffset? CreatedTime { get; set; }
-        /// <summary>Details of the fallback user for record assignment in cases where the owner cannot be assigned through rule entries.</summary>
+        /// <summary>Defines the details of the fall back user to whom the records will be assigned when owner couldn&apos;t be assigned by any of the rule entries defined. (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject? DefaultAssignee { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRuleResponseObjectDefaultAssignee? DefaultAssignee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject DefaultAssignee { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRuleResponseObjectDefaultAssignee DefaultAssignee { get; set; }
 #endif
         /// <summary>Purpose of the Assignment Rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,6 +84,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRuleResponseObject"/> and sets the default values.
+        /// </summary>
+        public AssignmentRuleResponseObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRuleResponseObject"/></returns>
@@ -102,7 +111,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>(global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "default_assignee", n => { DefaultAssignee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject>(global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject.CreateFromDiscriminatorValue); } },
+                { "default_assignee", n => { DefaultAssignee = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRuleResponseObjectDefaultAssignee>(global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRuleResponseObjectDefaultAssignee.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>(global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject.CreateFromDiscriminatorValue); } },
@@ -121,13 +130,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObject>("default_assignee", DefaultAssignee);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRuleResponseObjectDefaultAssignee>("default_assignee", DefaultAssignee);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>("modified_by", ModifiedBy);
             writer.WriteDateTimeOffsetValue("modified_time", ModifiedTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>("module", Module);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

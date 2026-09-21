@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the email configuration for a single send-mail request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SendMailRequestDataItem : IParsable
+    public partial class SendMailRequestDataItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the list of files to attach to the email, referenced by their Zoho File System (ZFS) IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +112,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailUser> To { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItem"/> and sets the default values.
+        /// </summary>
+        public SendMailRequestDataItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItem"/></returns>
@@ -166,6 +175,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("subject", Subject);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemTemplate>("template", Template);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.EmailUser>("to", To);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

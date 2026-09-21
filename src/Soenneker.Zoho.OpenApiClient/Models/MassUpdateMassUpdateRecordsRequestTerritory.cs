@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the territory whose records must be mass updated. This key is valid only when you provide a Custom View ID in `cvid`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassUpdateMassUpdateRecordsRequestTerritory : IParsable
+    public partial class MassUpdateMassUpdateRecordsRequestTerritory : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the unique ID of the territory. Use the [Get Territories API](territories.yaml#$.paths./settings/territories.get) to get the ID of the required territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specify whether to include the records of the childterritories in the mass update.Possible values:**true** - Include the records of the child territories.**false** - Restrict the mass update to the records inthe specified territory only.</summary>
         public bool? IncludeChild { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestTerritory"/> and sets the default values.
+        /// </summary>
+        public MassUpdateMassUpdateRecordsRequestTerritory()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("include_child", IncludeChild);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

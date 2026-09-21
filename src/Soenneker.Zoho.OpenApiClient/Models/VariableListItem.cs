@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Representation of a variable within collection responses, including readOnly, apiName, name, description, id, source, type, value, and group brief.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class VariableListItem : IParsable
+    public partial class VariableListItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The API name of the CRM variable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +82,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSchema VariableGroup { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableListItem"/> and sets the default values.
+        /// </summary>
+        public VariableListItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableListItem"/></returns>
@@ -124,6 +133,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupSchema>("variable_group", VariableGroup);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A nested object representing a list view associated with a portal user type module. Identified by a unique numeric ID, name, display label, and type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ViewsNested : IParsable
+    public partial class ViewsNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the display label of the list view shown to portal users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,14 +42,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The type of the list view. Possible values: `canvas_view` (Canvas View), `custom_view` (Custom List View).</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ViewsNestedType? Type { get; set; }
         /// <summary>
-        /// Creates a new instance of the appropriate class based on discriminator value
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ViewsNested"/> and sets the default values.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ViewsNested"/></returns>
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.ViewsNested CreateFromDiscriminatorValue(IParseNode parseNode)
+        public ViewsNested()
         {
-            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ViewsNested();
+            AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ViewsNestedType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

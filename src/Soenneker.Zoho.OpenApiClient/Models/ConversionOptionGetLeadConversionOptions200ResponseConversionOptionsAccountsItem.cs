@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Account record with matching lead information
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsAccountsItem : IParsable
+    public partial class ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsAccountsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Name of the account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,6 +29,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string AccountType { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Current approval state of the account record</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsAccountsItemApprovalState? ApprovalState { get; set; }
         /// <summary>Indicates if the account record can be edited</summary>
@@ -59,6 +61,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Website { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsAccountsItem"/> and sets the default values.
+        /// </summary>
+        public ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsAccountsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -102,6 +111,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("Locked__s", LockedS);
             writer.WriteStringValue("Phone", Phone);
             writer.WriteStringValue("Website", Website);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

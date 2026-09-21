@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains the expression configuration for the rollup summary calculation, including the aggregation function, the field being summarized, and any filter criteria applied to restrict which related records are included.
+    /// Represents the expression details of the rollup summary.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaRollupSummaryOneOf1Expression : IParsable
+    public partial class FieldSchemaRollupSummaryOneOf1Expression : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the filter conditions applied to limit which related records in the child module are included in the rollup summary calculation.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1ExpressionCriteria? Criteria { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1ExpressionCriteria Criteria { get; set; }
 #endif
-        /// <summary>Represents the aggregation function applied to the child module records when computing the rollup summary, such as SUM, COUNT, MIN, MAX, or AVERAGE.</summary>
+        /// <summary>Represents the function used in the rollup summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Function { get; set; }
@@ -29,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Function { get; set; }
 #endif
-        /// <summary>Contains the list of parameters passed to the rollup aggregation function, specifying which fields or values are used as inputs to the calculation.</summary>
+        /// <summary>Represents the list of function parameters for the rollup summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1ExpressionFunctionParametersItem>? FunctionParameters { get; set; }
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1ExpressionFunctionParametersItem> FunctionParameters { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1Expression"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaRollupSummaryOneOf1Expression()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1ExpressionCriteria>("criteria", Criteria);
             writer.WriteStringValue("function", Function);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1ExpressionFunctionParametersItem>("function_parameters", FunctionParameters);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

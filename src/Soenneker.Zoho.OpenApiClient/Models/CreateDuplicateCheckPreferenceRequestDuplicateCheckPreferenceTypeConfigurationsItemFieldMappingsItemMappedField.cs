@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Unique field in the mapped module to match against.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField : IParsable
+    public partial class CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the mapped field. Validated when supplied, but the mapping is stored against id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Send None to skip this field mapping. Any other value, or omitting the property, creates the mapping.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.NoneSelected? Selected { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField"/> and sets the default values.
+        /// </summary>
+        public CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoneSelected>("selected", Selected);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

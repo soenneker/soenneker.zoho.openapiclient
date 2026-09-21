@@ -11,15 +11,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the details of a single webhook execution failure, including the triggering CRM record, workflow rule, failure reason, and timestamp.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WebhookFailureDetail : IParsable
+    public partial class WebhookFailureDetail : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the details of the CRM record whose automation event triggered a failed webhook execution.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Details of the CRM record that triggered the failed webhook execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FailureEntityDetails? EntityDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails? EntityDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FailureEntityDetails EntityDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails EntityDetails { get; set; }
 #endif
         /// <summary>Represents the reason for the webhook execution failure, such as page_notfound.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,22 +47,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Represents a lightweight reference to a webhook, containing its unique identifier and display name. Used in failure log records.</summary>
+        /// <summary>Reference to the webhook that failed (id and name).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookReference? Webhook { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook? Webhook { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookReference Webhook { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook Webhook { get; set; }
 #endif
-        /// <summary>Represents a reference to the workflow rule that triggered a webhook execution.</summary>
+        /// <summary>Reference to the workflow rule that triggered the webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleReference? WorkflowRule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule? WorkflowRule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleReference WorkflowRule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule WorkflowRule { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetail"/> and sets the default values.
+        /// </summary>
+        public WebhookFailureDetail()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,12 +88,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "entity_details", n => { EntityDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FailureEntityDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FailureEntityDetails.CreateFromDiscriminatorValue); } },
+                { "entity_details", n => { EntityDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails.CreateFromDiscriminatorValue); } },
                 { "failure_reason", n => { FailureReason = n.GetStringValue(); } },
                 { "failure_time", n => { FailureTime = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookReference>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookReference.CreateFromDiscriminatorValue); } },
-                { "workflow_rule", n => { WorkflowRule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleReference>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleReference.CreateFromDiscriminatorValue); } },
+                { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook.CreateFromDiscriminatorValue); } },
+                { "workflow_rule", n => { WorkflowRule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,12 +103,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FailureEntityDetails>("entity_details", EntityDetails);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails>("entity_details", EntityDetails);
             writer.WriteStringValue("failure_reason", FailureReason);
             writer.WriteStringValue("failure_time", FailureTime);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookReference>("webhook", Webhook);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleReference>("workflow_rule", WorkflowRule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook>("webhook", Webhook);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule>("workflow_rule", WorkflowRule);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

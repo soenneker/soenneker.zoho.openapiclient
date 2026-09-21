@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents the dependency information for a single sub-request, including its ID and the IDs of sub-requests it depends on.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CompositeRequestsCreateCompositeRequest400ResponseDetailsOneOf14DependentDataItem : IParsable
+    public partial class CompositeRequestsCreateCompositeRequest400ResponseDetailsOneOf14DependentDataItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the IDs of sub-requests that this sub-request depends on through references. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string SubRequestId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest400ResponseDetailsOneOf14DependentDataItem"/> and sets the default values.
+        /// </summary>
+        public CompositeRequestsCreateCompositeRequest400ResponseDetailsOneOf14DependentDataItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("referred_sub_request_ids", ReferredSubRequestIds);
             writer.WriteStringValue("sub_request_id", SubRequestId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

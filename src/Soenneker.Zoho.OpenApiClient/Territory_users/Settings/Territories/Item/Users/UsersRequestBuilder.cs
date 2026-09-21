@@ -19,7 +19,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.territory_users.settings.territories.item.users.item collection</summary>
-        /// <param name="position">Specify the unique ID of the user.</param>
+        /// <param name="position">User Id Param in URL</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item.Users.Item.WithUserItemRequestBuilder this[string position]
         {
@@ -107,6 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item
         /// <param name="body">Represents the request body for associating users with a territory.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersAssociateUsersToTerritory400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersAssociateUsersToTerritory403Response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersAssociateUsersToTerritory500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,6 +123,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersAssociateUsersToTerritory400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersAssociateUsersToTerritory403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersAssociateUsersToTerritory500Response.CreateFromDiscriminatorValue },
             };
@@ -202,7 +204,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Specify the unique IDs of the users to disassociate from the territory as a comma-separated list.</summary>
+            /// <summary>Ids to be removed from territory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]

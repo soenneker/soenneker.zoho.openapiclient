@@ -81,6 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// <param name="body">Represents the request body.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -92,7 +93,11 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update the sharing permissions of a specific record in a module of your Zoho CRM organization. The update can change the access level, change the visibility between private and public, or alter whether related records are shared along with the record.
@@ -101,6 +106,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// <param name="body">Represents the request body.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,7 +118,11 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords400Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To revoke all sharing on a specific record in a module of your Zoho CRM organization. Use this operation to remove access that was previously granted to users, roles, or groups through record-level sharing.

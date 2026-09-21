@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a button configuration entry within the segment, defining the button behavior and presentation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItemButtonsItem : IParsable
+    public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItemButtonsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the background color of the button, typically expressed as a hexadecimal color value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +116,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates the visibility behavior of the button, controlling whether the button is displayed or hidden within the wizard segment.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItemButtonsItemVisibility? Visibility { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItemButtonsItem"/> and sets the default values.
+        /// </summary>
+        public WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItemButtonsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItemButtonsItem"/></returns>
@@ -174,6 +183,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItemButtonsItemTransition>("transition", Transition);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItemButtonsItemType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItemButtonsItemVisibility>("visibility", Visibility);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents one shift hour with its timing, break hours, holidays, and assigned users.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursUpdateSingleShiftHour400ResponseShiftHoursItem : IParsable
+    public partial class ShiftHoursUpdateSingleShiftHour400ResponseShiftHoursItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the response code that identifies the outcome of the operation.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHour400ResponseShiftHoursItemCode? Code { get; set; }
         /// <summary>Represents additional details about the outcome of the operation.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHour400ResponseShiftHoursItem"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursUpdateSingleShiftHour400ResponseShiftHoursItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHour400ResponseShiftHoursItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

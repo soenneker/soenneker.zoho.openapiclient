@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single field condition entry, including the field reference, grouping operator, and optional sub-groups.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItem : IParsable
+    public partial class NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the CRM field that the condition monitors for changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the logical operator applied to the conditions within this sub-group.Possible values:and - All conditions in the sub-group must be satisfied.or - Any condition in the sub-group must be satisfied.null - No grouping operator is applied.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator? GroupOperator { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItem"/> and sets the default values.
+        /// </summary>
+        public NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemField>("field", Field);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupItem>("group", Group);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator>("group_operator", GroupOperator);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Object containing the data-sharing permission details for a module.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DataSharingGetDataSharing200ResponseDataSharingItem : IParsable
+    public partial class DataSharingGetDataSharing200ResponseDataSharingItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the module&apos;s API name and ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public bool? RuleComputationRunning { get; set; }
         /// <summary>Represents the access level for the module. **Possible values:** **private** - Only the record owner and their superior can view the records in the module. **public_read_only** - Users can view others&apos; records but cannot modify or delete them. **public_read_write** - Users can view and modify others&apos; records but cannot delete them. **public** - Users can view, modify, and delete others&apos; records.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemShareType? ShareType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItem"/> and sets the default values.
+        /// </summary>
+        public DataSharingGetDataSharing200ResponseDataSharingItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("public_in_portals", PublicInPortals);
             writer.WriteBoolValue("rule_computation_running", RuleComputationRunning);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemShareType>("share_type", ShareType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

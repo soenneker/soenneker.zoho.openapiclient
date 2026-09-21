@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains metadata about the target module and its associated layouts and fields that the multi-select lookup field resolves records against.
+    /// Represents the connected details for the multi-module lookup.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaMultiselectlookupOneOf1ConnectedDetails : IParsable
+    public partial class FieldSchemaMultiselectlookupOneOf1ConnectedDetails : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the specific field in the connected module that is referenced by the multi-select lookup, used to surface a meaningful value from the related record.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the field details for the multi-module lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1ConnectedDetailsField? Field { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1ConnectedDetailsField Field { get; set; }
 #endif
-        /// <summary>Contains the collection of layouts within the connected module in which the multi-select lookup field is available or rendered.</summary>
+        /// <summary>Represents the list of layouts associated with the multi-module lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1ConnectedDetailsLayoutsItem>? Layouts { get; set; }
@@ -29,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1ConnectedDetailsLayoutsItem> Layouts { get; set; }
 #endif
-        /// <summary>Represents the target module to which the multi-select lookup field resolves, providing display and identification attributes for that module.</summary>
+        /// <summary>Represents the module details for the multi-module lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1ConnectedDetailsModule? Module { get; set; }
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1ConnectedDetailsModule Module { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1ConnectedDetails"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaMultiselectlookupOneOf1ConnectedDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1ConnectedDetailsField>("field", Field);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1ConnectedDetailsLayoutsItem>("layouts", Layouts);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1ConnectedDetailsModule>("module", Module);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

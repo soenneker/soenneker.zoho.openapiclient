@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a static-type mapping that assigns a literal value directly to the target field at execution time. The value shape varies by field data type: a plain string for text, picklist, phone, email, URL, number, decimal, currency, and percentage fields (numeric values expressed as strings); an array of strings for multiselectpicklist fields; and an object containing ID and name for ownerlookup fields. Date, datetime, and ALARM fields do not support this type — use execution_time instead, as static on those fields produces a DEPENDENT_MISMATCH error. Fields marked unique in the module settings also require merge_field rather than static for create_record actions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowTasksStaticFieldMapping : IParsable
+    public partial class WorkflowTasksStaticFieldMapping : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The server-computed representation of the mapped value, included in GET responses. Omitted from create and update requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,13 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayValue { get; set; }
 #endif
-        /// <summary>Identifies the target CRM field to which a mapping value is applied within an automation rule. The api_name and ID properties must both be supplied and must refer to the same field; a mismatch between the two causes an AMBIGUITY_DURING_PROCESSING error. Available fields for a given module can be discovered via GET /settings/fields?module={api_name}.</summary>
+        /// <summary>Target field to populate when the automation executes. api_name is required. If id is also provided, both must refer to the same field; otherwise the API returns AMBIGUITY_DURING_PROCESSING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingField? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingField Field { get; set; }
 #endif
         /// <summary>Identifies the mapping strategy for this field assignment. The value must be `static`, which instructs the automation engine to assign a fixed, literal value to the target field at execution time rather than resolving it dynamically.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.StaticValueType? Type { get; set; }
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValue Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMapping"/> and sets the default values.
+        /// </summary>
+        public WorkflowTasksStaticFieldMapping()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingField.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticValueType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValue>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValue.CreateFromDiscriminatorValue); } },
             };
@@ -71,9 +80,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_value", DisplayValue);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticValueType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValue>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

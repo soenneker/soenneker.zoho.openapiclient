@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents the result of the user transfer and delete operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItem : IParsable
+    public partial class UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**SUCCESS** - Represents success.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode? Code { get; set; }
         /// <summary>Represents the additional details about the scheduled operation.</summary>
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItem"/> and sets the default values.
+        /// </summary>
+        public UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

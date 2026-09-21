@@ -39,6 +39,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupItem();
+            if("CustomViewsGroupedFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CustomViewsGroupedFilterCriterionRequest = new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequest();
+            }
             return result;
         }
         /// <summary>

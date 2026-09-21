@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the score update trigger details, including the Scoring Rule scope and the applicable scoring rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExecuteWhenT6ScoreUpdateDetails : IParsable
+    public partial class ExecuteWhenT6ScoreUpdateDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the rule fires every time the score condition is met. When false, the rule fires only on the first occurrence.</summary>
         public bool? Repeat { get; set; }
         /// <summary>Represents the array of Scoring Rule references to monitor. Required when **type** is set to **Selective_Rules**.</summary>
@@ -23,16 +25,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem> Rules { get; set; }
 #endif
-        /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
+        /// <summary>The module that actually triggers the rule. Defaults to the rule&apos;s top-level module if omitted. Must be explicitly set when the trigger targets a different module, such as a rule on Leads triggered by a note creation event, which requires the trigger module to reference the Notes module. To discover module API names and identifiers, retrieve the available modules from the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule? TriggerModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule TriggerModule { get; set; }
 #endif
         /// <summary>Represents the trigger type for scoring rules. Supports score increase and score decrease trigger events.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetails"/> and sets the default values.
+        /// </summary>
+        public ExecuteWhenT6ScoreUpdateDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "repeat", n => { Repeat = n.GetBoolValue(); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
+                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsType>(); } },
             };
         }
@@ -66,8 +75,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("repeat", Repeat);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem>("rules", Rules);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("trigger_module", TriggerModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule>("trigger_module", TriggerModule);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

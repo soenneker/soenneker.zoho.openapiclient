@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the configuration for scheduling territory rule execution. The schema supports three execution methods: criteria-based, Custom View-based, and territory-based.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TerritoriesRunTerritoryRulesRequest : IParsable
+    public partial class TerritoriesRunTerritoryRulesRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the configuration for territory rule execution. The **run_rules** object must match one of three execution methods: criteria-based, Custom View-based, or territory-based.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRules RunRules { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequest"/> and sets the default values.
+        /// </summary>
+        public TerritoriesRunTerritoryRulesRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRules>("run_rules", RunRules);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

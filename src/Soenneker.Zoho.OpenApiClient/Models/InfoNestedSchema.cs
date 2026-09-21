@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the pagination metadata included in list response payloads, including the current page, records per page, total count, and whether more records exist.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InfoNestedSchema : IParsable
+    public partial class InfoNestedSchema : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the total number of records matching the query.</summary>
         public int? Count { get; set; }
         /// <summary>Indicates whether more records exist beyond the current page.</summary>
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? Page { get; set; }
         /// <summary>Represents the number of records returned per page.</summary>
         public int? PerPage { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InfoNestedSchema"/> and sets the default values.
+        /// </summary>
+        public InfoNestedSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,6 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("more_records", MoreRecords);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("per_page", PerPage);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

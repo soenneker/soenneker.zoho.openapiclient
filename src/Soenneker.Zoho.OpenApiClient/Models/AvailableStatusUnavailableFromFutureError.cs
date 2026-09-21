@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Error response returned when the service Status is Available but Unavailable_From key&apos;s value is not later than the current date.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AvailableStatusUnavailableFromFutureError : IParsable
+    public partial class AvailableStatusUnavailableFromFutureError : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code for this response.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchCode? Code { get; set; }
         /// <summary>Represents the details providing validation context for the error.</summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.WhenTheServiceStatusIsAvailableCommaUnavailableFromMustBeGreaterThanCurrentDateMessage? Message { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AvailableStatusUnavailableFromFutureError"/> and sets the default values.
+        /// </summary>
+        public AvailableStatusUnavailableFromFutureError()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AvailableStatusUnavailableFromFutureErrorDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WhenTheServiceStatusIsAvailableCommaUnavailableFromMustBeGreaterThanCurrentDateMessage>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

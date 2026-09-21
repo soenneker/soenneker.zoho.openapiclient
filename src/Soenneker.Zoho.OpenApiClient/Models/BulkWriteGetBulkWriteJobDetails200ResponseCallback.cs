@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the callback configuration registered for the bulk write job, used to notify the configured URL when the job completes or fails. 
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkWriteGetBulkWriteJobDetails200ResponseCallback : IParsable
+    public partial class BulkWriteGetBulkWriteJobDetails200ResponseCallback : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the HTTP method for the callback request.Possible values:**post** - Sends the callback notification as an HTTP POST request.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PostMethod? Method { get; set; }
         /// <summary>Represents the URL that receives the job completion notification.Possible values:http://requestbin.fullcontact.com/1fcimk51 - Sample callback URL recorded for the job.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.HttpColonSlashSlashRequestbinFullcontactCom1Fcimk51Url? Url { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseCallback"/> and sets the default values.
+        /// </summary>
+        public BulkWriteGetBulkWriteJobDetails200ResponseCallback()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PostMethod>("method", Method);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.HttpColonSlashSlashRequestbinFullcontactCom1Fcimk51Url>("url", Url);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

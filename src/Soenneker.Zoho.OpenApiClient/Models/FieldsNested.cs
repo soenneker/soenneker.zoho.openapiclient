@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a field that is accessible to portal users for the configured module. Includes the field&apos;s unique identifier, API name, read-only flag, and the list of per-field CRUD permissions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldsNested : IParsable
+    public partial class FieldsNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The API name of the CRM field accessible to portal users within this module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Denotes whether the field is read-only for portal users. When `true`, portal users can view the field value but cannot modify it.</summary>
         public bool? ReadOnly { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldsNested"/> and sets the default values.
+        /// </summary>
+        public FieldsNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldsNestedPermissionsItem>("permissions", Permissions);
             writer.WriteBoolValue("read_only", ReadOnly);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

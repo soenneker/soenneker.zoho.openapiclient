@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the response returned when the `fields` query parameter trims each layout to the requested keys. Only `id` is guaranteed - it is returned even when it is not requested - every other key appears only when it was asked for, and keys with no value for a layout are returned as null.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutFieldsResponseSchema : IParsable
+    public partial class LayoutFieldsResponseSchema : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the array of layout objects trimmed to the keys requested through the `fields` parameter, ordered by layout name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItem> Layouts { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchema"/> and sets the default values.
+        /// </summary>
+        public LayoutFieldsResponseSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItem>("layouts", Layouts);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

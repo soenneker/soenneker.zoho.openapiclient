@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Defines the details of the default assignee.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DefaultAssigneeResponseObjectResourceOneOf2 : IParsable
+    public partial class DefaultAssigneeResponseObjectResourceOneOf2 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set ${CURRENTUSER} to use the logged-in user as the default assignee.Possible values:**${CURRENTUSER}** - Represents ${currentuser}.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.DollarLeftBraceCurrentuserRightBraceApiName? ApiName { get; set; }
         /// <summary>Logged in user reference display name.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2"/> and sets the default values.
+        /// </summary>
+        public DefaultAssigneeResponseObjectResourceOneOf2()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DollarLeftBraceCurrentuserRightBraceApiName>("api_name", ApiName);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,23 +11,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a follow-up action in a Cadence, including its configuration, execution timing, and trigger conditions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FollowUpsUpdateNested : IParsable
+    public partial class FollowUpsUpdateNested : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents a follow-up action in a Cadence, including its type, identifier, and configuration details.</summary>
+        /// <summary>Cadence followup action (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ActionNested? Action { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction? Action { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ActionNested Action { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction Action { get; set; }
 #endif
-        /// <summary>Represents the execution delay configuration for a follow-up action, specifying the period unit and numeric value.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Cadence followup execute_after</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteAfterNested? ExecuteAfter { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedExecuteAfter? ExecuteAfter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteAfterNested ExecuteAfter { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedExecuteAfter ExecuteAfter { get; set; }
 #endif
         /// <summary>Represents the unique identifier of the follow-up action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,6 +64,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<string> Triggers { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNested"/> and sets the default values.
+        /// </summary>
+        public FollowUpsUpdateNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNested"/></returns>
@@ -79,8 +88,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ActionNested>(global::Soenneker.Zoho.OpenApiClient.Models.ActionNested.CreateFromDiscriminatorValue); } },
-                { "execute_after", n => { ExecuteAfter = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteAfterNested>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteAfterNested.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction>(global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction.CreateFromDiscriminatorValue); } },
+                { "execute_after", n => { ExecuteAfter = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedExecuteAfter>(global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedExecuteAfter.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "parent_follow_up", n => { ParentFollowUp = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedParentFollowUp>(global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedParentFollowUp.CreateFromDiscriminatorValue); } },
                 { "reference_id", n => { ReferenceId = n.GetStringValue(); } },
@@ -94,12 +103,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ActionNested>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteAfterNested>("execute_after", ExecuteAfter);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction>("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedExecuteAfter>("execute_after", ExecuteAfter);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedParentFollowUp>("parent_follow_up", ParentFollowUp);
             writer.WriteStringValue("reference_id", ReferenceId);
             writer.WriteCollectionOfPrimitiveValues<string>("triggers", Triggers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

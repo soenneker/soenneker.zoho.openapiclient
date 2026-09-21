@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Conversion mapping configuration defining target modules (Accounts, Contacts, Deals) and field-level mappings when records in this module are converted. Populated only when &apos;convert_mapping&apos; is included in the include parameter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMapping : IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMapping : IAdditionalDataHolder, IParsable
     {
         /// <summary>Configuration object for converting this module&apos;s records to Accounts, including the Account module&apos;s display label, id, and internal name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingAccounts Accounts { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configuration object for converting this module&apos;s records to Contacts, including the Contacts module&apos;s display label, id, and internal name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingSalesOrders SalesOrders { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMapping"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMapping()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -90,6 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDeals>("Deals", Deals);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingInvoices>("Invoices", Invoices);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingSalesOrders>("SalesOrders", SalesOrders);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

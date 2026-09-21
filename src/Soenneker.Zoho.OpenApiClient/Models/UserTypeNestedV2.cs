@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A wrapper object used in update request bodies. Contains the `user_type` array that holds the portal user type object with the fields to be updated.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserTypeNestedV2 : IParsable
+    public partial class UserTypeNestedV2 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Set to `true` to activate the portal user type or `false` to deactivate it.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the list of modules whose properties you want to update within the portal user type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,14 +33,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>A nested object used in create and update requests to specify the personality module for the portal user type. The personality module is the CRM module whose records serve as portal user identities and whose records portal invitations are sent to.</summary>
+        /// <summary>The updated personality module for the portal user type. Cannot be changed for the default user type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PersonalityModuleNested? PersonalityModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedV2PersonalityModule? PersonalityModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PersonalityModuleNested PersonalityModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedV2PersonalityModule PersonalityModule { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedV2"/> and sets the default values.
+        /// </summary>
+        public UserTypeNestedV2()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "modules", n => { Modules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "personality_module", n => { PersonalityModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PersonalityModuleNested>(global::Soenneker.Zoho.OpenApiClient.Models.PersonalityModuleNested.CreateFromDiscriminatorValue); } },
+                { "personality_module", n => { PersonalityModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedV2PersonalityModule>(global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedV2PersonalityModule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,7 +82,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("active", Active);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2>("modules", Modules);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PersonalityModuleNested>("personality_module", PersonalityModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedV2PersonalityModule>("personality_module", PersonalityModule);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

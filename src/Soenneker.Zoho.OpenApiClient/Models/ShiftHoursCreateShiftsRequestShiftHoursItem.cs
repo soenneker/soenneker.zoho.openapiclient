@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents one shift hour configuration to be created or updated. Each entry captures the shift name, time zone, active days, timing, optional break hours, holidays, and assigned users.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursCreateShiftsRequestShiftHoursItem : IParsable
+    public partial class ShiftHoursCreateShiftsRequestShiftHoursItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lists the break windows scheduled within the shift hour. Each entry specifies the days the break applies to and the break timing for those days. A shift can have at most two break windows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +82,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequestShiftHoursItemUsersItem> Users { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequestShiftHoursItem"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursCreateShiftsRequestShiftHoursItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequestShiftHoursItem"/></returns>
@@ -124,6 +133,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequestShiftHoursItemShiftDaysItem>("shift_days", ShiftDays);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequestShiftHoursItemUsersItem>("users", Users);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

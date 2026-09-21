@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Error item for a single configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ZiaEnrichmentUpdateZiaEnrichmentConfigurations400ResponseDataEnrichmentItem : IParsable
+    public partial class ZiaEnrichmentUpdateZiaEnrichmentConfigurations400ResponseDataEnrichmentItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Error code identifying the type of validation failure.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentUpdateZiaEnrichmentConfigurations400ResponseDataEnrichmentItemCode? Code { get; set; }
         /// <summary>Details about the validation failure.</summary>
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentUpdateZiaEnrichmentConfigurations400ResponseDataEnrichmentItem"/> and sets the default values.
+        /// </summary>
+        public ZiaEnrichmentUpdateZiaEnrichmentConfigurations400ResponseDataEnrichmentItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentUpdateZiaEnrichmentConfigurations400ResponseDataEnrichmentItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the lookup field on the source module that establishes the association, containing identifying metadata such as the field&apos;s API name and display label.
+    /// Represents the details of the lookup field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaAssociationDetailsOneOf1LookupField : IParsable
+    public partial class FieldSchemaAssociationDetailsOneOf1LookupField : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents an API identifier string composed of alphanumeric characters and underscores, used as a programmatic reference for fields, modules, and other CRM entities.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
+        /// <summary>Id of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociationDetailsOneOf1LookupField"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaAssociationDetailsOneOf1LookupField()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the service preference settings configured for the organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ServicePreferenceGetServicePreference200ResponseServicePreferences : IParsable
+    public partial class ServicePreferenceGetServicePreference200ResponseServicePreferences : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes whether the job sheet is enabled for theorganization. When the job sheet is enabled, a jobsheet can be generated for a service appointment oncethe appointment is marked complete.Possible values:- **true**: The job sheet is enabled for theorganization. This is the default value.- **false**: The job sheet is disabled for theorganization.</summary>
         public bool? JobSheetEnabled { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200ResponseServicePreferences"/> and sets the default values.
+        /// </summary>
+        public ServicePreferenceGetServicePreference200ResponseServicePreferences()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("job_sheet_enabled", JobSheetEnabled);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

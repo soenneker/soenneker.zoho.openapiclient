@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Metadata about the related record.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo : IParsable
+    public partial class RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the creation date and time of the record.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
         /// <summary>ID of the member info.</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Timestamp when the record was last modified.</summary>
         public DateTimeOffset? ModifiedTime { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo"/> and sets the default values.
+        /// </summary>
+        public RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("Created_Time", CreatedTime);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("Modified_Time", ModifiedTime);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

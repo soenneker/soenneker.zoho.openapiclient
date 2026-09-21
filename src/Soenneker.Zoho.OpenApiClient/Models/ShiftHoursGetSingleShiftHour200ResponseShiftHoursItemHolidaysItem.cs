@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object specifies the date and the name of the holiday.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemHolidaysItem : IParsable
+    public partial class ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemHolidaysItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the date of the holiday in `YYYY-MM-DD` format.</summary>
         public Date? Date { get; set; }
         /// <summary>Represents the unique identifier of the holiday.</summary>
@@ -48,6 +50,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemHolidaysItemYear Year { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemHolidaysItem"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemHolidaysItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,6 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("userFmt", UserFmt);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemHolidaysItemYear>("year", Year);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

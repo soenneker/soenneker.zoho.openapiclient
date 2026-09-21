@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single appointment record object in the request, containing all appointment fields for creating or updating the record.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DataNested : IParsable
+    public partial class DataNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents any supplementary details about the appointment or specific customer requirements that do not belong to a standard field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,13 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the scheduled end date and time of the appointment, expressed in ISO 8601 format.</summary>
         public DateTimeOffset? AppointmentEndTime { get; set; }
-        /// <summary>Represents the customer for whom the appointment is created, including the record ID, name, and module API name. Test4</summary>
+        /// <summary>Contains the name, ID and the module&apos;s API name of the customer for whom you are creating the appointment. (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentForNested? AppointmentFor { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedAppointmentFor? AppointmentFor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentForNested AppointmentFor { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedAppointmentFor AppointmentFor { get; set; }
 #endif
         /// <summary>Partial deletion where one record deleted, one failed with INVALID_DATA</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,13 +83,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string CancelledTime { get; set; }
 #endif
-        /// <summary>Represents the user who created the appointment record, including the user ID, full name, and email address.</summary>
+        /// <summary>appointment created by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CreatedByNested? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedCreatedBy? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CreatedByNested CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedCreatedBy CreatedBy { get; set; }
 #endif
         /// <summary>Invalid HTTP request method type used in the request.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
@@ -171,23 +173,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the location where the appointment service is offered.Possible values:**Client Address** - The service is delivered at the customer&apos;s address.**Business Address** - The service is delivered at the business location.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedLocation? Location { get; set; }
-        /// <summary>Represents the user who last modified the appointment record, including the user ID, full name, and email address.</summary>
+        /// <summary>modified by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModifiedByNested? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedModifiedBy? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModifiedByNested ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedModifiedBy ModifiedBy { get; set; }
 #endif
         /// <summary>Represents the date and time when the appointment record was last modified.</summary>
         public DateTimeOffset? ModifiedTime { get; set; }
-        /// <summary>Represents the user assigned as the appointment owner, including the user ID, full name, and email address.</summary>
+        /// <summary>Represents the ID of the service member who will provide the service for this appointment. (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.OwnerNested? Owner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedOwner? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.OwnerNested Owner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedOwner Owner { get; set; }
 #endif
         /// <summary>Represents the availability status of the appointment record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -255,13 +257,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string RescheduleReason { get; set; }
 #endif
-        /// <summary>Represents the service for which the appointment is created, including the service ID and name.</summary>
+        /// <summary>Contains the name and distinctive ID of the service for which you are creating the appointment. (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServiceNameNested? ServiceName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedServiceName? ServiceName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServiceNameNested ServiceName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedServiceName ServiceName { get; set; }
 #endif
         /// <summary>Represents the sharing permission level granted to the current user for the appointment record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -296,6 +298,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<string> Tag { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataNested"/> and sets the default values.
+        /// </summary>
+        public DataNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataNested"/></returns>
@@ -316,14 +325,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "Additional_Information", n => { AdditionalInformation = n.GetStringValue(); } },
                 { "Address", n => { Address = n.GetStringValue(); } },
                 { "Appointment_End_Time", n => { AppointmentEndTime = n.GetDateTimeOffsetValue(); } },
-                { "Appointment_For", n => { AppointmentFor = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentForNested>(global::Soenneker.Zoho.OpenApiClient.Models.AppointmentForNested.CreateFromDiscriminatorValue); } },
+                { "Appointment_For", n => { AppointmentFor = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedAppointmentFor>(global::Soenneker.Zoho.OpenApiClient.Models.DataNestedAppointmentFor.CreateFromDiscriminatorValue); } },
                 { "Appointment_Name", n => { AppointmentName = n.GetStringValue(); } },
                 { "Appointment_Start_Time", n => { AppointmentStartTime = n.GetDateTimeOffsetValue(); } },
                 { "Cancellation_Note", n => { CancellationNote = n.GetStringValue(); } },
                 { "Cancellation_Reason", n => { CancellationReason = n.GetStringValue(); } },
                 { "Cancelled_By", n => { CancelledBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedCancelledByProperty>(global::Soenneker.Zoho.OpenApiClient.Models.DataNestedCancelledByProperty.CreateFromDiscriminatorValue); } },
                 { "Cancelled_Time", n => { CancelledTime = n.GetStringValue(); } },
-                { "Created_By", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CreatedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.CreatedByNested.CreateFromDiscriminatorValue); } },
+                { "Created_By", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.DataNestedCreatedBy.CreateFromDiscriminatorValue); } },
                 { "Created_Time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "$currency_symbol", n => { CurrencySymbol = n.GetStringValue(); } },
                 { "$status", n => { DataNestedStatus = n.GetStringValue(); } },
@@ -338,9 +347,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "Job_Sheet_Section__s", n => { JobSheetSectionS = n.GetStringValue(); } },
                 { "Last_Activity_Time", n => { LastActivityTime = n.GetStringValue(); } },
                 { "Location", n => { Location = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedLocation>(); } },
-                { "Modified_By", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModifiedByNested>(global::Soenneker.Zoho.OpenApiClient.Models.ModifiedByNested.CreateFromDiscriminatorValue); } },
+                { "Modified_By", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.DataNestedModifiedBy.CreateFromDiscriminatorValue); } },
                 { "Modified_Time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
-                { "Owner", n => { Owner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerNested>(global::Soenneker.Zoho.OpenApiClient.Models.OwnerNested.CreateFromDiscriminatorValue); } },
+                { "Owner", n => { Owner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedOwner>(global::Soenneker.Zoho.OpenApiClient.Models.DataNestedOwner.CreateFromDiscriminatorValue); } },
                 { "Record_Status__s", n => { RecordStatusS = n.GetStringValue(); } },
                 { "Remind_At", n => { RemindAt = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRemindAtItem>(global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRemindAtItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Reschedule_Count", n => { RescheduleCount = n.GetIntValue(); } },
@@ -350,7 +359,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "Rescheduled_From", n => { RescheduledFrom = n.GetStringValue(); } },
                 { "Rescheduled_Time", n => { RescheduledTime = n.GetStringValue(); } },
                 { "Rescheduled_To", n => { RescheduledTo = n.GetStringValue(); } },
-                { "Service_Name", n => { ServiceName = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServiceNameNested>(global::Soenneker.Zoho.OpenApiClient.Models.ServiceNameNested.CreateFromDiscriminatorValue); } },
+                { "Service_Name", n => { ServiceName = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedServiceName>(global::Soenneker.Zoho.OpenApiClient.Models.DataNestedServiceName.CreateFromDiscriminatorValue); } },
                 { "$sharing_permission", n => { SharingPermission = n.GetStringValue(); } },
                 { "$state", n => { State = n.GetStringValue(); } },
                 { "Status", n => { Status = n.GetStringValue(); } },
@@ -367,14 +376,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("Additional_Information", AdditionalInformation);
             writer.WriteStringValue("Address", Address);
             writer.WriteDateTimeOffsetValue("Appointment_End_Time", AppointmentEndTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentForNested>("Appointment_For", AppointmentFor);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedAppointmentFor>("Appointment_For", AppointmentFor);
             writer.WriteStringValue("Appointment_Name", AppointmentName);
             writer.WriteDateTimeOffsetValue("Appointment_Start_Time", AppointmentStartTime);
             writer.WriteStringValue("Cancellation_Note", CancellationNote);
             writer.WriteStringValue("Cancellation_Reason", CancellationReason);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedCancelledByProperty>("Cancelled_By", CancelledBy);
             writer.WriteStringValue("Cancelled_Time", CancelledTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CreatedByNested>("Created_By", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedCreatedBy>("Created_By", CreatedBy);
             writer.WriteDateTimeOffsetValue("Created_Time", CreatedTime);
             writer.WriteStringValue("$currency_symbol", CurrencySymbol);
             writer.WriteStringValue("$status", DataNestedStatus);
@@ -388,9 +397,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("Job_Sheet_Section__s", JobSheetSectionS);
             writer.WriteStringValue("Last_Activity_Time", LastActivityTime);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedLocation>("Location", Location);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModifiedByNested>("Modified_By", ModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedModifiedBy>("Modified_By", ModifiedBy);
             writer.WriteDateTimeOffsetValue("Modified_Time", ModifiedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerNested>("Owner", Owner);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedOwner>("Owner", Owner);
             writer.WriteStringValue("Record_Status__s", RecordStatusS);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRemindAtItem>("Remind_At", RemindAt);
             writer.WriteIntValue("Reschedule_Count", RescheduleCount);
@@ -400,11 +409,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("Rescheduled_To", RescheduledTo);
             writer.WriteStringValue("Reschedule_Note", RescheduleNote);
             writer.WriteStringValue("Reschedule_Reason", RescheduleReason);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServiceNameNested>("Service_Name", ServiceName);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedServiceName>("Service_Name", ServiceName);
             writer.WriteStringValue("$sharing_permission", SharingPermission);
             writer.WriteStringValue("$state", State);
             writer.WriteStringValue("Status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("Tag", Tag);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a simple trigger type (T1) that fires on record creation, editing, deletion, or when specific CRM events occur, with optional repeat and cross-module support.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExecuteWhenT1Simple : IParsable
+    public partial class ExecuteWhenT1Simple : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the optional trigger configuration details, including **repeat** (Boolean) and **trigger_module** (object) for cross-module triggers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the trigger API name that activates the workflow rule. Supported values vary by module; use the getWorkflowConfigurations endpoint to retrieve supported triggers for the target module.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1Simple"/> and sets the default values.
+        /// </summary>
+        public ExecuteWhenT1Simple()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

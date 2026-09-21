@@ -8,13 +8,28 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains the textarea-specific configuration for fields that render as multi-line text input areas, including details about the text area subtype.
+    /// Represents the textarea field details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaTextarea : IParsable
+    public partial class FieldSchemaTextarea : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the subtype of the textarea field, distinguishing between multi-line input variants that affect formatting and storage behavior. Possible values: `small` — a compact single-line or short textarea. `large` — a standard multi-line plain text area. `rich_text` — a rich text editor with formatting support.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTextareaType? Type { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the type of the textarea.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTextarea"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaTextarea()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTextareaType>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -43,7 +58,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaTextareaType>("type", Type);
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

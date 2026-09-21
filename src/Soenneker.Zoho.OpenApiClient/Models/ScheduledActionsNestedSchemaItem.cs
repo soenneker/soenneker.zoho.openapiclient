@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify when the scheduled actions should be executed
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScheduledActionsNestedSchemaItem : IParsable
+    public partial class ScheduledActionsNestedSchemaItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the array of action objects for this scheduled group. Uses the same associate and non-associate action structure as instant actions, but only action types that support scheduled execution are allowed. Per-type limits apply independently to instant and scheduled actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemActionsItem> Actions { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the delay before the scheduled actions execute. Required. Cannot be an empty object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItem"/> and sets the default values.
+        /// </summary>
+        public ScheduledActionsNestedSchemaItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemActionsItem>("actions", Actions);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter>("execute_after", ExecuteAfter);
             writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

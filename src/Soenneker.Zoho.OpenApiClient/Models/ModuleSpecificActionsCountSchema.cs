@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the workflow rule count details for a specific CRM module, including the number of active rules and total rules configured.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModuleSpecificActionsCountSchema : IParsable
+    public partial class ModuleSpecificActionsCountSchema : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents number of currently active workflow rules configured.</summary>
         public int? ActiveRulesConfigured { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents total number of workflow rules configured (active + inactive).</summary>
         public int? TotalRulesConfigured { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificActionsCountSchema"/> and sets the default values.
+        /// </summary>
+        public ModuleSpecificActionsCountSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("active_rules_configured", ActiveRulesConfigured);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("module", Module);
             writer.WriteIntValue("total_rules_configured", TotalRulesConfigured);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

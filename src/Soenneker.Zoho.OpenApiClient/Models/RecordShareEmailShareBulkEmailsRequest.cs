@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the request body schema for sharing emails in bulk, containing an array of record IDs.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordShareEmailShareBulkEmailsRequest : IParsable
+    public partial class RecordShareEmailShareBulkEmailsRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the list of record IDs whose emails you want to share. Accepts up to 100 record IDs per request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<string> Ids { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmailsRequest"/> and sets the default values.
+        /// </summary>
+        public RecordShareEmailShareBulkEmailsRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

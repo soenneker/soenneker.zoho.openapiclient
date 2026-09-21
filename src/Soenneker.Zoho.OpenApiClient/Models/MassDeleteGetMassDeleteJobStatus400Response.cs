@@ -16,8 +16,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code for the response.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus400ResponseCode? Code { get; set; }
+        /// <summary>Represents the error code for this response.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MandatoryNotFoundCode? Code { get; set; }
         /// <summary>Contains additional details about the error, including the name of the missing parameter. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,8 +28,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>Represents the error message for the response. </summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus400ResponseMessage? MessageEscaped { get; set; }
+        /// <summary>Represents the error message. </summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MandatoryParamMissingMessage? MessageEscaped { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus400ResponseCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MandatoryNotFoundCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus400ResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus400ResponseDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus400ResponseMessage>(); } },
+                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MandatoryParamMissingMessage>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
@@ -70,9 +70,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus400ResponseCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MandatoryNotFoundCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus400ResponseDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus400ResponseMessage>("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MandatoryParamMissingMessage>("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

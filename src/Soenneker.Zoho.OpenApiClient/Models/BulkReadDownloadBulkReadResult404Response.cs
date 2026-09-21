@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error response returned when the specified bulk read job result does not exist.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkReadDownloadBulkReadResult404Response : ApiException, IParsable
+    public partial class BulkReadDownloadBulkReadResult404Response : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code indicating that the requested bulk read job was not found. Possible values:**RESOURCE_NOT_FOUND** - The bulk read job with the specified ID does not exist.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ResourceNotFoundCode? Code { get; set; }
         /// <summary>Represents additional details about the resource not found error. </summary>
@@ -36,6 +38,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadDownloadBulkReadResult404Response"/> and sets the default values.
+        /// </summary>
+        public BulkReadDownloadBulkReadResult404Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadDownloadBulkReadResult404ResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

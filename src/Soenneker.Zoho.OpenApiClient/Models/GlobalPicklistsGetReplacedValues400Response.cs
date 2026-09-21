@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Error response object containing code, message, details, and status.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GlobalPicklistsGetReplacedValues400Response : ApiException, IParsable
+    public partial class GlobalPicklistsGetReplacedValues400Response : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Error code indicating the failure reason. Possible values: INVALID_DATA, NOT_ALLOWED.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetReplacedValues400ResponseCode? Code { get; set; }
         /// <summary>Details about the error, including the resource path index.</summary>
@@ -42,6 +44,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetReplacedValues400Response"/> and sets the default values.
+        /// </summary>
+        public GlobalPicklistsGetReplacedValues400Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,6 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetReplacedValues400ResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

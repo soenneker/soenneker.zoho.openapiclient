@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains additional context information about the error, such as the field API name, JSON path, and constraint limits that caused the validation failure. 
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FindAndMergeGetMergeJobStatus400ResponseDetails : IParsable
+    public partial class FindAndMergeGetMergeJobStatus400ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the field or resource that caused the validation error. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,6 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? MinimumLength { get; set; }
         /// <summary>Represents the zero-based index of the path parameter that caused the error, where 0 corresponds to the module API name parameter and 1 corresponds to the master record ID in the parameter. </summary>
         public int? ResourcePathIndex { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus400ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public FindAndMergeGetMergeJobStatus400ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,6 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("maximum_length", MaximumLength);
             writer.WriteIntValue("minimum_length", MinimumLength);
             writer.WriteIntValue("resource_path_index", ResourcePathIndex);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

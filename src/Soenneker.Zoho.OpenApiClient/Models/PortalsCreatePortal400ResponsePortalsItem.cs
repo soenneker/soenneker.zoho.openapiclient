@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the validation error object for a single portal in the request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PortalsCreatePortal400ResponsePortalsItem : IParsable
+    public partial class PortalsCreatePortal400ResponsePortalsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code identifying the type of validation failure.Possible values: **INVALID_DATA** - a field value is invalid or out of range. **ALREADY_USED** - the portal name is already in use. **MANDATORY_NOT_FOUND** - a required field is missing. </summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal400ResponsePortalsItemCode? Code { get; set; }
         /// <summary>Represents additional context about the validation error.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal400ResponsePortalsItem"/> and sets the default values.
+        /// </summary>
+        public PortalsCreatePortal400ResponsePortalsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PortalsCreatePortal400ResponsePortalsItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

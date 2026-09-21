@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the configuration object for a new workflow rule, including required fields such as name, target module, and trigger configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowRulePostNestedSchema : IParsable
+    public partial class WorkflowRulePostNestedSchema : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the conditions that define the branching logic of the workflow rule. Each condition evaluates records against criteria and executes its own set of actions. At least one condition is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,13 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Represents the trigger configuration that defines when the workflow rule fires, including the trigger type and its associated details.</summary>
+        /// <summary>Specifies when the workflow rule is triggered. This is a required JSON object with &quot;type&quot; and &quot;details&quot; properties. For example: {&quot;type&quot;: &quot;create_or_edit&quot;, &quot;details&quot;: {&quot;trigger_module&quot;: {&quot;api_name&quot;: &quot;Leads&quot;, &quot;id&quot;: &quot;...&quot;}, &quot;repeat&quot;: false}}. Passing a string instead of a JSON object, such as &quot;create_or_edit&quot;, returns an &quot;INVALID_DATA&quot; error. The &quot;details.trigger_module&quot; must match the module associated with the workflow rule. Use &quot;getWorkflowConfigurations&quot; to retrieve the available triggers and their supported actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema? ExecuteWhen { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen? ExecuteWhen { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema ExecuteWhen { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen ExecuteWhen { get; set; }
 #endif
         /// <summary>Specify the lock configuration to prevent other users from editing the rule. Only administrators can lock or unlock rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,13 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock Lock { get; set; }
 #endif
-        /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
+        /// <summary>The module to which the workflow rule applies. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module IDs. Required. Must be a workflow-supported module. If both id and api_name are provided, they must match. Use `getWorkflowConfigurations` to discover supported modules. Cannot be changed after creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule Module { get; set; }
 #endif
         /// <summary>Specify the workflow rule name. Required. Cannot exceed 100 characters. Special characters are not allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,6 +63,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchema"/> and sets the default values.
+        /// </summary>
+        public WorkflowRulePostNestedSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,9 +90,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "execute_when", n => { ExecuteWhen = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema.CreateFromDiscriminatorValue); } },
+                { "execute_when", n => { ExecuteWhen = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen.CreateFromDiscriminatorValue); } },
                 { "lock", n => { Lock = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock.CreateFromDiscriminatorValue); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -96,10 +105,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>("conditions", Conditions);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema>("execute_when", ExecuteWhen);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen>("execute_when", ExecuteWhen);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock>("lock", Lock);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule>("module", Module);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error result returned for a failed layout update operation, containing a classification code, descriptive message, and status indicator.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutUpdateErrorResult : IParsable
+    public partial class LayoutUpdateErrorResult : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error classification code returned for a failed layout update operation. Possible values: `INVALID_DATA` — a field value fails validation. `MANDATORY_NOT_FOUND` — a required field is absent. `NOT_ALLOWED` — the operation is not permitted for this field. `LIMIT_EXCEEDED` — a maximum count or size limit was exceeded. `DUPLICATE_DATA` — a duplicate value was detected. `EXPECTED_FIELD_MISSING` — a conditionally required field is absent. `DEPENDENT_FIELD_MISSING` — a dependent field required by another field is not provided. `DEPENDENT_MISMATCH` — a dependent field&apos;s value does not match the expected configuration. `NOT_SUPPORTED` — the operation is not supported for this field type. `FEATURE_NOT_SUPPORTED` — the requested feature is not available. `AMBIGUITY_DURING_PROCESSING` — conflicting references prevent unambiguous processing.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorResultCode? Code { get; set; }
         /// <summary>Represents the structured error details for a layout update failure, providing diagnostic information such as the offending field&apos;s JSON path and API name, dependency violations, ambiguity sources, limit breaches, and expected field constraints.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorResult"/> and sets the default values.
+        /// </summary>
+        public LayoutUpdateErrorResult()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

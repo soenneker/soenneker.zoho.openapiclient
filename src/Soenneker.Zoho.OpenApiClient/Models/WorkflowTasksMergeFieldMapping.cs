@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a merge_field-type mapping whose value is resolved at execution time by substituting token references with live field data. Supports direct field tokens (${!Module.Field}), traversal tokens (${!Module.Lookup.Field}), and system tokens (${CURRENTTIME}, ${CURRENTUSER}). Applies to text-based fields such as Subject, Description, and custom text fields. Targeting owner or lookup fields with this type produces a DEPENDENT_MISMATCH error; those fields require a static mapping using an object with a numeric identifier and an optional name. Multiple tokens may be chained with surrounding text for multi-line fields, while single-value fields such as email or URL accept exactly one token.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowTasksMergeFieldMapping : IParsable
+    public partial class WorkflowTasksMergeFieldMapping : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Controls whether agent users are eligible for record assignment. Possible values:**true** — agent users are included in the assignment pool alongside standard users.**false** — agent users are excluded from assignment.Applies to mapping types role, group, profile, merge_field, and criteria. Does not apply to user or assignment_rule types.</summary>
         public bool? AllowAgentUser { get; set; }
         /// <summary>The server-computed representation of the mapped value, included in GET responses. Omitted from create and update requests.</summary>
@@ -23,13 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayValue { get; set; }
 #endif
-        /// <summary>Identifies the target CRM field to which a mapping value is applied within an automation rule. The api_name and ID properties must both be supplied and must refer to the same field; a mismatch between the two causes an AMBIGUITY_DURING_PROCESSING error. Available fields for a given module can be discovered via GET /settings/fields?module={api_name}.</summary>
+        /// <summary>Target field to populate when the automation executes. api_name is required. If id is also provided, both must refer to the same field; otherwise the API returns AMBIGUITY_DURING_PROCESSING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksMergeFieldMappingField? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksMergeFieldMappingField Field { get; set; }
 #endif
         /// <summary>Identifies the mapping strategy for this field assignment. The value must be `merge_field`, which instructs the automation engine to resolve the field value dynamically from a merge field token at execution time rather than from a static literal.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.MergeFieldType? Type { get; set; }
@@ -46,6 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public WorkflowTasksMergeFieldMapping()
         {
+            AdditionalData = new Dictionary<string, object>();
             AllowAgentUser = false;
         }
         /// <summary>
@@ -68,7 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "allow_agent_user", n => { AllowAgentUser = n.GetBoolValue(); } },
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksMergeFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksMergeFieldMappingField.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MergeFieldType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -82,9 +85,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_agent_user", AllowAgentUser);
             writer.WriteStringValue("display_value", DisplayValue);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksMergeFieldMappingField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MergeFieldType>("type", Type);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

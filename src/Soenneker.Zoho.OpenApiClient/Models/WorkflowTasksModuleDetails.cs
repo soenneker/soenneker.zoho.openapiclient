@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains module metadata, including labels, API name, IDs, and optional module_name for related module contexts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowTasksModuleDetails : IParsable
+    public partial class WorkflowTasksModuleDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the module used in API requests (e.g., Leads, Contacts, Deals).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +64,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string SingularLabel { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails"/> and sets the default values.
+        /// </summary>
+        public WorkflowTasksModuleDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksModuleDetails"/></returns>
@@ -100,6 +109,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("moduleName", ModuleName);
             writer.WriteStringValue("plural_label", PluralLabel);
             writer.WriteStringValue("singular_label", SingularLabel);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

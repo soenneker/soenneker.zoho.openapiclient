@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents additional details about the outcome of the operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursCreateShifts400ResponseShiftHoursItemDetails : IParsable
+    public partial class ShiftHoursCreateShifts400ResponseShiftHoursItemDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the maximum number of shift hoursthat can be configured.Possible values: **50**.</summary>
         public int? Limit { get; set; }
         /// <summary>Lists the fields that caused the limit to be exceeded.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts400ResponseShiftHoursItemDetailsLimitDueToItem> LimitDueTo { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts400ResponseShiftHoursItemDetails"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursCreateShifts400ResponseShiftHoursItemDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("limit", Limit);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts400ResponseShiftHoursItemDetailsLimitDueToItem>("limit_due_to", LimitDueTo);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

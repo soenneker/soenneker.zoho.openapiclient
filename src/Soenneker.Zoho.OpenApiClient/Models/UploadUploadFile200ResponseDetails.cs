@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the details of the uploaded file, including the file ID and creation time.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UploadUploadFile200ResponseDetails : IParsable
+    public partial class UploadUploadFile200ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the date and time when the file was uploaded, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
         /// <summary>Represents the unique ID assigned to the uploaded file. Use this ID in the Create Bulk Write Job request.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FileId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile200ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public UploadUploadFile200ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteStringValue("file_id", FileId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

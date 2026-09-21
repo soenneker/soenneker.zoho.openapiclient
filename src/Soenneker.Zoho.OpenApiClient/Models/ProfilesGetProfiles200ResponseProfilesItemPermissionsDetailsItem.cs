@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A single permission entry describing a specific access right in the profile.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ProfilesGetProfiles200ResponseProfilesItemPermissionsDetailsItem : IParsable
+    public partial class ProfilesGetProfiles200ResponseProfilesItemPermissionsDetailsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Whether the permission is active.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +88,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string TooltipMsg { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItemPermissionsDetailsItem"/> and sets the default values.
+        /// </summary>
+        public ProfilesGetProfiles200ResponseProfilesItemPermissionsDetailsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItemPermissionsDetailsItem"/></returns>
@@ -136,6 +145,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItemPermissionsDetailsItemParentPermissions>("parent_permissions", ParentPermissions);
             writer.WriteStringValue("tooltip_msg", TooltipMsg);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

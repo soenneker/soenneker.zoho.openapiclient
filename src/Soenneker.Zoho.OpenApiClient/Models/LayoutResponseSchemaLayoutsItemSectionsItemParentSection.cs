@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItemParentSectionOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItemParentSectionOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutResponseSchemaLayoutsItemSectionsItemParentSection : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItemParentSectionOneOf1 LayoutResponseSchemaLayoutsItemSectionsItemParentSectionOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull? TypeNull { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull? LayoutsTypeNull { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull TypeNull { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull LayoutsTypeNull { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 return LayoutResponseSchemaLayoutsItemSectionsItemParentSectionOneOf1.GetFieldDeserializers();
             }
-            else if(TypeNull != null)
+            else if(LayoutsTypeNull != null)
             {
-                return TypeNull.GetFieldDeserializers();
+                return LayoutsTypeNull.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,9 +72,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItemParentSectionOneOf1>(null, LayoutResponseSchemaLayoutsItemSectionsItemParentSectionOneOf1);
             }
-            else if(TypeNull != null)
+            else if(LayoutsTypeNull != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TypeNull>(null, TypeNull);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull>(null, LayoutsTypeNull);
             }
         }
     }

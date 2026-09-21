@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error details. Contains either `expected_data_type` when the value has non-alphabetic characters, or `supported_values` when the value is not one of the allowed calendar types.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FiscalInvalidCalendarTypeErrorDetails : IParsable
+    public partial class FiscalInvalidCalendarTypeErrorDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the field that caused the validation failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<string> SupportedValues { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidCalendarTypeErrorDetails"/> and sets the default values.
+        /// </summary>
+        public FiscalInvalidCalendarTypeErrorDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TextExpectedDataType>("expected_data_type", ExpectedDataType);
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteCollectionOfPrimitiveValues<string>("supported_values", SupportedValues);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

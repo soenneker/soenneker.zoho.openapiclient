@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Mapping configuration for associating a picklist value with a specific pipeline stage.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PipelineCreateRequestPipelineItemMapsItem : IParsable
+    public partial class PipelineCreateRequestPipelineItemMapsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>User-facing display name for the pipeline stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Optional position of this stage mapping in the pipeline sequence (overrides default positioning).</summary>
         public int? SequenceNumber { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PipelineCreateRequestPipelineItemMapsItem"/> and sets the default values.
+        /// </summary>
+        public PipelineCreateRequestPipelineItemMapsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("display_value", DisplayValue);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("sequence_number", SequenceNumber);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

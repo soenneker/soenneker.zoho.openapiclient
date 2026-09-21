@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Identifies a related module whose open records&apos; ownership should be transferred alongside the parent record when the Owner field is updated. Available modules depend on the parent module context.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelatedRecordModule : IParsable
+    public partial class RelatedRecordModule : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the related module. Events, Calls, Tasks - open activity records, available for all modules. Contacts - available only when the parent module is Accounts. Deals - available when the parent module is Accounts or Contacts.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModuleApiName? ApiName { get; set; }
         /// <summary>Unique identifier of the related module. This is the module ID corresponding to the api_name.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule"/> and sets the default values.
+        /// </summary>
+        public RelatedRecordModule()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModuleApiName>("api_name", ApiName);
             writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

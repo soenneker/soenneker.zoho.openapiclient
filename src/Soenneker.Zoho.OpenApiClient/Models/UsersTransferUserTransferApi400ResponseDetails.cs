@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the details about the invalid user in the request path. owner_status is not returned for the NOT_ALLOWED case where the target user is not a subordinate of the caller.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersTransferUserTransferApi400ResponseDetails : IParsable
+    public partial class UsersTransferUserTransferApi400ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the current status of the user specified in the request path.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferApi400ResponseDetailsOwnerStatus? OwnerStatus { get; set; }
         /// <summary>Represents the position index of the invalid user ID in the resource path.</summary>
         public int? ResourcePathIndex { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferApi400ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public UsersTransferUserTransferApi400ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferApi400ResponseDetailsOwnerStatus>("owner_status", OwnerStatus);
             writer.WriteIntValue("resource_path_index", ResourcePathIndex);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the filter criteria applied to a related module when the trigger involves cross-module data, such as emails, calls, or notes.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CriteriaDetailsNestedSchemaRelationalCriteria : IParsable
+    public partial class CriteriaDetailsNestedSchemaRelationalCriteria : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the filter criteria applied to the related module records. Follows the same structure as the top-level criteria field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the scope selector for the related module filter. Required when **relational_criteria** is present.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection? ModuleSelection { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria"/> and sets the default values.
+        /// </summary>
+        public CriteriaDetailsNestedSchemaRelationalCriteria()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaCriteria>("criteria", Criteria);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("module", Module);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection>("module_selection", ModuleSelection);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

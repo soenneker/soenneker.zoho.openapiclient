@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Sharing configuration for appointment-associated records. Defines the permission level granted to the appointment owner for the associated record. Required when sharing_enabled is set to true.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails : IParsable
+    public partial class AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The permission level granted to the appointment owner for the associated record.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetailsPermission? Permission { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails"/> and sets the default values.
+        /// </summary>
+        public AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetailsPermission>("permission", Permission);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

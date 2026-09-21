@@ -12,9 +12,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Error response for internal server error
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InternalError : ApiException, IParsable
+    public partial class InternalError : ApiException, IAdditionalDataHolder, IParsable
     {
-        /// <summary>Error code for internal server error</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the error code indicating the type of server-side failure.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode? Code { get; set; }
         /// <summary>Empty error details object for errors that don&apos;t require additional context</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,6 +32,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorMessage? MessageEscaped { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalError"/> and sets the default values.
+        /// </summary>
+        public InternalError()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,6 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorMessage>("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

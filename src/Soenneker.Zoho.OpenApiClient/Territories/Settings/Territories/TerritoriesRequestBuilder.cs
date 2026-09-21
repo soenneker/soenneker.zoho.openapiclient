@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories
             get => new global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.territories.settings.territories.item collection</summary>
-        /// <param name="position">Represents the ID path parameter, which specifies the unique identifier of the territory.</param>
+        /// <param name="position">The unique ID of the territory to retrieve.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder this[string position]
         {
@@ -245,7 +245,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TerritoriesRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Represents the delete_previous_forecasts query parameter, which specifies whether to delete previous forecast data when transferring and deleting a territory.</summary>
+            /// <summary>Delete Previous Forecasts for these territories</summary>
             [QueryParameter("delete_previous_forecasts")]
             public bool? DeletePreviousForecasts { get; set; }
             /// <summary>Specify the unique IDs of the territories you want to delete. Accepts comma-separated territory IDs.</summary>
@@ -265,7 +265,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TerritoriesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Represents the filters query parameter, which specifies the filter criteria to apply when retrieving territories.</summary>
+            /// <summary>Filter Out the Territories based on Given Criteria</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]
@@ -275,7 +275,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories
             [QueryParameter("filters")]
             public string Filters { get; set; }
 #endif
-            /// <summary>Represents the ids query parameter, which specifies the unique identifiers of the territories to retrieve.</summary>
+            /// <summary>List of Territory Ids</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
@@ -285,16 +285,16 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories
             [QueryParameter("ids")]
             public string[] Ids { get; set; }
 #endif
-            /// <summary>Represents the include query parameter, which specifies the rule criteria to include in the response. Possible values: **account_rule_criteria**, **lead_rule_criteria**, **deal_rule_criteria**, **account_rule_criteria,lead_rule_criteria**, **account_rule_criteria,deal_rule_criteria**, **lead_rule_criteria,deal_rule_criteria**, **account_rule_criteria,lead_rule_criteria,deal_rule_criteria**.</summary>
+            /// <summary>Include account_rule_criteria, lead_rule_criteria (or) deal_rule_criteria.</summary>
             [QueryParameter("include")]
             public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesInclude? Include { get; set; }
-            /// <summary>Represents the include_inner_details query parameter, which specifies the additional manager fields to include in the response. Possible values: **manager.zuid,manager.status**, **manager.zuid**, **manager.status**.</summary>
+            /// <summary>Include manager status &amp; zuid</summary>
             [QueryParameter("include_inner_details")]
             public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesIncludeInnerDetails? IncludeInnerDetails { get; set; }
-            /// <summary>Represents the page query parameter, which specifies the page number for paginated results.</summary>
+            /// <summary>Page Numeber</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Represents the per_page query parameter, which specifies the number of records to return per page.</summary>
+            /// <summary>Per Page Number</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

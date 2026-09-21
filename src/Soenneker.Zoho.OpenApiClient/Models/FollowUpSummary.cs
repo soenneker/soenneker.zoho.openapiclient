@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a summary of follow-up action counts in a Cadence, broken down by action type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FollowUpSummary : IParsable
+    public partial class FollowUpSummary : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of scheduled call follow-up actions in the Cadence.</summary>
         public int? CallFollowUpCount { get; set; }
         /// <summary>Represents the number of email notification follow-up actions in the Cadence.</summary>
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? TaskFollowUpCount { get; set; }
         /// <summary>Represents the number of WhatsApp message follow-up actions in the Cadence.</summary>
         public int? WhatsappFollowUpCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpSummary"/> and sets the default values.
+        /// </summary>
+        public FollowUpSummary()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,6 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("email_follow_up_count", EmailFollowUpCount);
             writer.WriteIntValue("task_follow_up_count", TaskFollowUpCount);
             writer.WriteIntValue("whatsapp_follow_up_count", WhatsappFollowUpCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

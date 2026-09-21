@@ -11,15 +11,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single condition within a workflow rule that defines which records are evaluated and what actions are executed when the criteria are met.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConditionsNestedSchema : IParsable
+    public partial class ConditionsNestedSchema : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the filter criteria that determine which records satisfy the workflow rule condition.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Record matching criteria for this condition. When provided, criteria_details must be a JSON object and cannot be null. To match all records, pass an object with criteria set to null, but do not set criteria_details itself to null. This field is required for certain trigger types, such as related module triggers like Notes on Leads. The convert action type requires criteria_details.criteria to be a non-null filter object. Omit criteria_details entirely or pass criteria as null to match all records when the trigger does not require specific criteria and no convert action is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema? CriteriaDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchemaCriteriaDetails? CriteriaDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema CriteriaDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchemaCriteriaDetails CriteriaDetails { get; set; }
 #endif
         /// <summary>Indicates that this condition should be removed from the workflow rule when set in a PUT request. Provide a null value to signal deletion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,13 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Represents the container for instant actions that execute immediately when the workflow rule condition is met.</summary>
+        /// <summary>Actions to execute immediately when the condition is met. At least one of instant_actions or scheduled_actions must be present  - returns MANDATORY_NOT_FOUND if both are absent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchema? InstantActions { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchemaInstantActions? InstantActions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchema InstantActions { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchemaInstantActions InstantActions { get; set; }
 #endif
         /// <summary>Represents the container for scheduled actions that execute after a configured delay from the time the workflow rule condition is triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +57,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the execution order of this condition within the workflow rule, starting from one. Must be unique across all conditions in the rule.</summary>
         public int? SequenceNumber { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema"/> and sets the default values.
+        /// </summary>
+        public ConditionsNestedSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,10 +82,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria_details", n => { CriteriaDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema.CreateFromDiscriminatorValue); } },
+                { "criteria_details", n => { CriteriaDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchemaCriteriaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchemaCriteriaDetails.CreateFromDiscriminatorValue); } },
                 { "_delete", n => { Delete = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "instant_actions", n => { InstantActions = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchema.CreateFromDiscriminatorValue); } },
+                { "instant_actions", n => { InstantActions = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchemaInstantActions>(global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchemaInstantActions.CreateFromDiscriminatorValue); } },
                 { "scheduled_actions", n => { ScheduledActions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItem>(global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sequence_number", n => { SequenceNumber = n.GetIntValue(); } },
             };
@@ -88,12 +97,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchema>("criteria_details", CriteriaDetails);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchemaCriteriaDetails>("criteria_details", CriteriaDetails);
             writer.WriteObjectValue<UntypedNode>("_delete", Delete);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchema>("instant_actions", InstantActions);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchemaInstantActions>("instant_actions", InstantActions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItem>("scheduled_actions", ScheduledActions);
             writer.WriteIntValue("sequence_number", SequenceNumber);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

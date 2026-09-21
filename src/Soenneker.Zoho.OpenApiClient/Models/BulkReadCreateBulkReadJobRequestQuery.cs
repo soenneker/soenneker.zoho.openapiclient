@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the query parameters for the bulk read job, including the target module, optional field selection, optional Custom View, and optional filter criteria.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkReadCreateBulkReadJobRequestQuery : IParsable
+    public partial class BulkReadCreateBulkReadJobRequestQuery : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the filter criteria to narrow down the records exported in the bulk read job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +49,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specify the page number of records to export in the bulk read job. The default value is **1** and means that the first **200,000** records matching your query will get exported. If you want to fetch the records from the range **200,001 to 400,000**, then mention the value as **&apos;2&apos;.**</summary>
         public int? Page { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQuery"/> and sets the default values.
+        /// </summary>
+        public BulkReadCreateBulkReadJobRequestQuery()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,6 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryModule>("module", Module);
             writer.WriteIntValue("page", Page);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

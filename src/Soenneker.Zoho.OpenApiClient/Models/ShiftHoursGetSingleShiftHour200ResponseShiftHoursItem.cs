@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents one shift hour with its timing, break hours, holidays, and assigned users.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem : IParsable
+    public partial class ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lists the break windows scheduled within the shift hour. A shift can have at most two break windows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +92,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the number of users currently assigned to the shift hour.</summary>
         public int? UsersCount { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem"/></returns>
@@ -138,6 +147,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemUsersItem>("users", Users);
             writer.WriteIntValue("users_count", UsersCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

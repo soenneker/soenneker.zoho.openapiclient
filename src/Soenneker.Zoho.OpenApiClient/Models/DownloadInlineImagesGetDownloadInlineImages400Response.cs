@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error response returned when the inline image download request fails due to invalid parameters or missing data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DownloadInlineImagesGetDownloadInlineImages400Response : ApiException, IParsable
+    public partial class DownloadInlineImagesGetDownloadInlineImages400Response : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code identifying the type of issue. Possible values:**INVALID_URL_PATTERN** - The request URL format is incorrect.**INVALID_DATA** - The provided data is invalid.**INVALID_REQUEST_METHOD** - The HTTP method is not supported for this endpoint.**INVALID_TOKEN** - The access token is invalid or expired.**INVALID_MODULE** - The specified module does not exist or is not accessible.**REQUIRED_PARAM_MISSING** - A required parameter is missing from the request.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.DownloadInlineImagesGetDownloadInlineImages400ResponseCode? Code { get; set; }
         /// <summary>Contains additional context about the error, such as the specific field or parameter that caused the issue. </summary>
@@ -36,6 +38,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DownloadInlineImagesGetDownloadInlineImages400Response"/> and sets the default values.
+        /// </summary>
+        public DownloadInlineImagesGetDownloadInlineImages400Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DownloadInlineImagesGetDownloadInlineImages400ResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

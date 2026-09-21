@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Territory restriction applied to the module; null when territory management is not enabled for the organization
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItemTerritory : IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItemTerritory : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique identifier of the territory as a string-encoded numeric ID; &apos;0&apos; indicates no territory restriction is applied</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>True when subordinate (child) territories are included within the scope of this territory restriction</summary>
         public bool? Subordinates { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemTerritory"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModuleByApiName200ResponseModulesItemTerritory()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("subordinates", Subordinates);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

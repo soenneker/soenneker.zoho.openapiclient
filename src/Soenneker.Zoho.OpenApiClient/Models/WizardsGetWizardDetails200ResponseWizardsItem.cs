@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a wizard object containing its complete configuration, including its associated module, active status, and the containers that define the multi-step screen flow.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WizardsGetWizardDetails200ResponseWizardsItem : IParsable
+    public partial class WizardsGetWizardDetails200ResponseWizardsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the wizard is currently active.Possible values:true - The wizard is active and available for use in the CRM module.false - The wizard is inactive and not available for use.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the list of containers associated with the wizard. Each container links a specific layout to the screens and segments that define the wizard flow for that layout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +96,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates the source that originated the wizard.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemSource? Source { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItem"/> and sets the default values.
+        /// </summary>
+        public WizardsGetWizardDetails200ResponseWizardsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItem"/></returns>
@@ -146,6 +155,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemPortalUserTypesItem>("portal_user_types", PortalUserTypes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemProfilesItem>("profiles", Profiles);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemSource>("source", Source);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

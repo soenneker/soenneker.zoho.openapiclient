@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the field-based filter criteria applied to related records before counting. Contains the field to evaluate, the comparison operator, and the value to compare against.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FilterCriteria : IParsable
+    public partial class FilterCriteria : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the equal comparison operator applied to the criterion.Possible values:equal - Matches records where the field value equals the specified filter value.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.EqualComparator? Comparator { get; set; }
         /// <summary>Represents the field to use when filtering related records before counting.</summary>
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FilterCriteria"/> and sets the default values.
+        /// </summary>
+        public FilterCriteria()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EqualComparator>("comparator", Comparator);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterField>("field", Field);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// The record locking configuration object to update.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordLockingConfigurationsUpdateRecordLockingConfigurationRequestRecordLockingConfigurationsItem : IParsable
+    public partial class RecordLockingConfigurationsUpdateRecordLockingConfigurationRequestRecordLockingConfigurationsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Fields that are exempt from locking. Even if a record is locked, these fields can still be modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +76,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public RecordLockingConfigurationsUpdateRecordLockingConfigurationRequestRecordLockingConfigurationsItem()
         {
+            AdditionalData = new Dictionary<string, object>();
             LockForPortalUsers = true;
         }
         /// <summary>
@@ -123,6 +126,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationRequestRecordLockingConfigurationsItemLockType>("lock_type", LockType);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationRequestRecordLockingConfigurationsItemRestrictedActionsItem>("restricted_actions", RestrictedActions);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.SendMailItem>("restricted_communications", RestrictedCommunications);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

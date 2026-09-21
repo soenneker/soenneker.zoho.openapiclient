@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a wrapped fiscal year error response containing the validation error details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FiscalYearUpdateFiscalYear400Response : ApiException, IParsable
+    public partial class FiscalYearUpdateFiscalYear400Response : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The fiscal_year property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,6 +26,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearUpdateFiscalYear400Response"/> and sets the default values.
+        /// </summary>
+        public FiscalYearUpdateFiscalYear400Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearUpdateFiscalYear400ResponseFiscalYear>("fiscal_year", FiscalYear);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

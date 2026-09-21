@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/>
+    /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldsTypeNull"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchemaModifiedTime : IComposedTypeWrapper, IParsable
     {
         /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
         public DateTimeOffset? DateTimeOffset { get; set; }
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldsTypeNull"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull? TypeNull { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldsTypeNull? FieldsTypeNull { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull TypeNull { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldsTypeNull FieldsTypeNull { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,9 +45,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(TypeNull != null)
+            if(FieldsTypeNull != null)
             {
-                return TypeNull.GetFieldDeserializers();
+                return FieldsTypeNull.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -58,9 +58,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(TypeNull != null)
+            if(FieldsTypeNull != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TypeNull>(null, TypeNull);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldsTypeNull>(null, FieldsTypeNull);
             }
             else if(DateTimeOffset != null)
             {

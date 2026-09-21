@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents one member source entry for the user group, including the source type, identifier, and optional flags for subordinates or sub-territories.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserGroupsGetUserGroupSources200ResponseSourcesItem : IParsable
+    public partial class UserGroupsGetUserGroupSources200ResponseSourcesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the identifier and name of the source. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public bool? SubTerritories { get; set; }
         /// <summary>Represents the type of this member source. Possible values:**users** - Individual CRM users.**roles** - CRM roles.**territories** - CRM territories.**groups** - CRM user groups.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItem"/> and sets the default values.
+        /// </summary>
+        public UserGroupsGetUserGroupSources200ResponseSourcesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("subordinates", Subordinates);
             writer.WriteBoolValue("sub_territories", SubTerritories);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

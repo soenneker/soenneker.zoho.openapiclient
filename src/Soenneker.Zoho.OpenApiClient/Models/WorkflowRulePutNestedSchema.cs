@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the configuration object for updating an existing workflow rule, including the rule ID and optional fields such as name, trigger, conditions, and lock status.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowRulePutNestedSchema : IParsable
+    public partial class WorkflowRulePutNestedSchema : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the array of condition objects to update. On update, unspecified conditions are preserved. Conditions with a null ID are added; conditions with an existing ID get replaced; conditions with a **_delete** flag are removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,13 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Represents the trigger configuration that defines when the workflow rule fires, including the trigger type and its associated details.</summary>
+        /// <summary>Defines the conditions under which the workflow rule will be executed. (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema? ExecuteWhen { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaExecuteWhen? ExecuteWhen { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema ExecuteWhen { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaExecuteWhen ExecuteWhen { get; set; }
 #endif
         /// <summary>Represents the unique ID of the workflow rule to update. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,6 +80,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaStatus Status { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchema"/> and sets the default values.
+        /// </summary>
+        public WorkflowRulePutNestedSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchema"/></returns>
@@ -97,7 +106,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "execute_when", n => { ExecuteWhen = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema.CreateFromDiscriminatorValue); } },
+                { "execute_when", n => { ExecuteWhen = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaExecuteWhen>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaExecuteWhen.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lock", n => { Lock = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaLock>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaLock.CreateFromDiscriminatorValue); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
@@ -114,12 +123,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>("conditions", Conditions);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenNestedSchema>("execute_when", ExecuteWhen);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaExecuteWhen>("execute_when", ExecuteWhen);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaLock>("lock", Lock);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

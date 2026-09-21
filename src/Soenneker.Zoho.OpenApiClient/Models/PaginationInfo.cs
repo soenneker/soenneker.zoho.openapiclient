@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Pagination metadata for list responses. Use more_records to determine if additional pages are available.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PaginationInfo : IParsable
+    public partial class PaginationInfo : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of records returned in the current page.</summary>
         public int? Count { get; set; }
         /// <summary>True when additional records are available on subsequent pages.</summary>
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? Page { get; set; }
         /// <summary>Maximum number of records returned per page (default 200).</summary>
         public int? PerPage { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo"/> and sets the default values.
+        /// </summary>
+        public PaginationInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,6 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("more_records", MoreRecords);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("per_page", PerPage);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error response returned when the uploaded photo file has an unsupported format or its resolution exceeds the allowed limit.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordPhotoUploadRecordPhoto415Response : ApiException, IParsable
+    public partial class RecordPhotoUploadRecordPhoto415Response : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code indicating an unsupported media type or invalid file format. Possible values: **FILE_RESOLUTION_EXCEEDS**, **INVALID_DATA**. </summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseCode? Code { get; set; }
         /// <summary>Represents additional details about the media type error. Contains the file resolution that exceeded the limit when applicable.</summary>
@@ -36,6 +38,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415Response"/> and sets the default values.
+        /// </summary>
+        public RecordPhotoUploadRecordPhoto415Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

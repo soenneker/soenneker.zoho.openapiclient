@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a currency object that includes metadata and formatting configuration such as symbol, decimal precision, and display rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CurrenciesGetCurrencies200ResponseCurrenciesItem : IParsable
+    public partial class CurrenciesGetCurrencies200ResponseCurrenciesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the user who created the currency record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +94,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Symbol { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItem"/> and sets the default values.
+        /// </summary>
+        public CurrenciesGetCurrencies200ResponseCurrenciesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItem"/></returns>
@@ -148,6 +157,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("prefix_symbol", PrefixSymbol);
             writer.WriteStringValue("symbol", Symbol);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

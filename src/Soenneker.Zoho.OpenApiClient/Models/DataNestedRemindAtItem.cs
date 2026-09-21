@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents a single reminder configuration, including the time unit and reminder period.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DataNestedRemindAtItem : IParsable
+    public partial class DataNestedRemindAtItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the unit of time for the reminder.Possible values:**minutes** - Reminder in minutes.**hours** - Reminder in hours.**days** - Reminder in days.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRemindAtItemPeriod? Period { get; set; }
         /// <summary>Represents the numeric value of the reminder time.</summary>
         public int? Unit { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRemindAtItem"/> and sets the default values.
+        /// </summary>
+        public DataNestedRemindAtItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataNestedRemindAtItemPeriod>("period", Period);
             writer.WriteIntValue("unit", Unit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -92,10 +92,10 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Associated_users_countRequestBuilderGetQueryParameters 
         {
-            /// <summary>Represents the page query parameter, which specifies the page number for paginated results.</summary>
+            /// <summary>Page Number</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Represents the per_page query parameter, which specifies the number of records to return per page.</summary>
+            /// <summary>Per Page Number</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

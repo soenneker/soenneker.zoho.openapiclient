@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Complete metadata for a single Zoho CRM module, including configuration, capabilities, fields, layouts, profiles, and related lists.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModules200ResponseModulesItem : IParsable
+    public partial class ModulesGetModules200ResponseModulesItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Access control type for the module; `org_based` grants organization-wide access and `team_based` grants team-specific access. This value is immutable after module creation and cannot be updated via PUT operations.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200ResponseModulesItemAccessType? AccessType { get; set; }
@@ -31,6 +31,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ActualSingularLabel { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique API identifier for the module used in third-party integrations; starts with a letter, contains only alphanumeric characters and underscores, and has no consecutive or trailing underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -212,6 +214,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string WebLink { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200ResponseModulesItem"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModules200ResponseModulesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200ResponseModulesItem"/></returns>
@@ -340,6 +349,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("visibility", Visibility);
             writer.WriteBoolValue("webform_supported", WebformSupported);
             writer.WriteStringValue("web_link", WebLink);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

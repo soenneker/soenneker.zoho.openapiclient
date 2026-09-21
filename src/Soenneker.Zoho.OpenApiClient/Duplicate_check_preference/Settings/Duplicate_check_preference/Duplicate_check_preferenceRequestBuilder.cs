@@ -61,18 +61,18 @@ namespace Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Dupli
         /// <summary>
         /// To retrieve the duplicate check preference configured for the Leads module in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Duplicate_check_preference.Duplicate_check_preferenceRequestBuilder.Duplicate_check_preferenceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -81,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Duplicate_check_preference.Settings.Dupli
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference403Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreference.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To enable duplicate check preference for the Leads module in your Zoho CRM organization.

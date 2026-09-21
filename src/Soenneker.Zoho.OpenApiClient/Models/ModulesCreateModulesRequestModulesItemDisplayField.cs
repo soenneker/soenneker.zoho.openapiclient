@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the details of the display field for the module. This is optional, but if provided, either field_label or data_type is mandatory. Supported data types are **autonumber** and **text**. If this is not specified, the system generates a text display field.  If data_type is &apos;autonumber&apos;, then auto_number configuration with start_number is mandatory. 
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesCreateModulesRequestModulesItemDisplayField : IParsable
+    public partial class ModulesCreateModulesRequestModulesItemDisplayField : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the auto-number configuration for the display field. Required when **data_type** is **autonumber**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FieldLabel { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField"/> and sets the default values.
+        /// </summary>
+        public ModulesCreateModulesRequestModulesItemDisplayField()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldAutoNumber>("auto_number", AutoNumber);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldDataType>("data_type", DataType);
             writer.WriteStringValue("field_label", FieldLabel);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

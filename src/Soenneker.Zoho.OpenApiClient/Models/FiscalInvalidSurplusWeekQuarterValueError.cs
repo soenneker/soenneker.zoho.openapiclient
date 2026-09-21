@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error returned when the quarter value in the surplus_week object is not in the allowed range of 1 to 4.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FiscalInvalidSurplusWeekQuarterValueError : IParsable
+    public partial class FiscalInvalidSurplusWeekQuarterValueError : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code for this response.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode? Code { get; set; }
         /// <summary>Represents the error details with the JSON path and the list of supported quarter values.</summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.ProvideValidQuarterForSurplusWeekMessage? Message { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidSurplusWeekQuarterValueError"/> and sets the default values.
+        /// </summary>
+        public FiscalInvalidSurplusWeekQuarterValueError()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidSurplusWeekQuarterValueErrorDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ProvideValidQuarterForSurplusWeekMessage>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

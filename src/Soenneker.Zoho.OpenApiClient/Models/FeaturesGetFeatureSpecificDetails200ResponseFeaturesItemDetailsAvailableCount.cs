@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the number of feature instances available for use in the organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FeaturesGetFeatureSpecificDetails200ResponseFeaturesItemDetailsAvailableCount : IParsable
+    public partial class FeaturesGetFeatureSpecificDetails200ResponseFeaturesItemDetailsAvailableCount : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the total number of available instances for the feature. Always returned in the response.</summary>
         public int? Total { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200ResponseFeaturesItemDetailsAvailableCount"/> and sets the default values.
+        /// </summary>
+        public FeaturesGetFeatureSpecificDetails200ResponseFeaturesItemDetailsAvailableCount()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("total", Total);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents an individual error that occurred during a merge operation, including the error code, details, and a descriptive message.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FindAndMergeMergeRecords400ResponseMergeItem : IParsable
+    public partial class FindAndMergeMergeRecords400ResponseMergeItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code that identifies the type of failure for the merge operation. Possible values:**MANDATORY_NOT_FOUND** - A required field or property is missing from the request.**NOT_ALLOWED** - The operation is not permitted due to a business rule constraint.**INVALID_DATA** - The request contains invalid or malformed data.**DUPLICATE_DATA** - Duplicate values were detected for a field that must be unique.**DEPENDENT_FIELD_MISSING** - A field that depends on another field is missing from the request.**LIMIT_EXCEEDED** - A size or count limit has been exceeded.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords400ResponseMergeItemCode? Code { get; set; }
         /// <summary>Contains detailed error information for the failed merge operation, including the field name, JSON path, and constraint limits.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords400ResponseMergeItem"/> and sets the default values.
+        /// </summary>
+        public FindAndMergeMergeRecords400ResponseMergeItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords400ResponseMergeItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

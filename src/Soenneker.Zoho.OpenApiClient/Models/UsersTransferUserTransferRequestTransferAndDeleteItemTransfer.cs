@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the transfer settings for records, assignments, and criteria of the deleted user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersTransferUserTransferRequestTransferAndDeleteItemTransfer : IParsable
+    public partial class UsersTransferUserTransferRequestTransferAndDeleteItemTransfer : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to replace the user in assignment rules, escalation rules, field updates, and automation actions. </summary>
         public bool? Assignment { get; set; }
         /// <summary>Specify whether to replace the user in criteria for custom views, automation, and reports. </summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specify whether to transfer the open records of the deleted user to the new user. </summary>
         public bool? Records { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferRequestTransferAndDeleteItemTransfer"/> and sets the default values.
+        /// </summary>
+        public UsersTransferUserTransferRequestTransferAndDeleteItemTransfer()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("criteria", Criteria);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("records", Records);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

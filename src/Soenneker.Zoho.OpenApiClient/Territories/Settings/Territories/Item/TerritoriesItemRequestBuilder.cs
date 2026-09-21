@@ -74,7 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryFeatureNotEnabledError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGetTerritoryById400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,7 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryFeatureNotEnabledError.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGetTerritoryById400Response.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetByIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -193,7 +193,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TerritoriesItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Represents the delete_previous_forecasts query parameter, which specifies whether to delete previous forecast data when transferring and deleting a territory.</summary>
+            /// <summary>Delete Previous Forecasts for these territories</summary>
             [QueryParameter("delete_previous_forecasts")]
             public bool? DeletePreviousForecasts { get; set; }
         }
@@ -203,10 +203,10 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TerritoriesItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Represents the include query parameter, which specifies the rule criteria to include in the response. Possible values: **account_rule_criteria**, **lead_rule_criteria**, **deal_rule_criteria**, **account_rule_criteria,lead_rule_criteria**, **account_rule_criteria,deal_rule_criteria**, **lead_rule_criteria,deal_rule_criteria**, **account_rule_criteria,lead_rule_criteria,deal_rule_criteria**.</summary>
+            /// <summary>Specify the additional details to include in the response, such as **account_rule_criteria**, **lead_rule_criteria**, or **deal_rule_criteria**.</summary>
             [QueryParameter("include")]
             public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesInclude? Include { get; set; }
-            /// <summary>Represents the include_inner_details query parameter, which specifies the additional manager fields to include in the response. Possible values: **manager.zuid,manager.status**, **manager.zuid**, **manager.status**.</summary>
+            /// <summary>Specifies additional manager details to include, such as ZUID and account status.</summary>
             [QueryParameter("include_inner_details")]
             public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesIncludeInnerDetails? IncludeInnerDetails { get; set; }
         }

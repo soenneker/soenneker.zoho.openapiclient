@@ -26,7 +26,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemDetails Details { get; set; }
 #endif
         /// <summary>Represents the success message for the response. </summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemMessage? Message { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordIsDeletedMessage? Message { get; set; }
         /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemDetails>(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemMessage>(); } },
+                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordIsDeletedMessage>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
             };
         }
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemMessage>("message", Message);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordIsDeletedMessage>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

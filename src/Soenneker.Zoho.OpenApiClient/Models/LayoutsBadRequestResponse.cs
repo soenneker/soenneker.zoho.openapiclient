@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error response body returned when a request is rejected due to invalid parameters, missing required inputs, or unsupported operations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutsBadRequestResponse : ApiException, IParsable
+    public partial class LayoutsBadRequestResponse : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error classification for the bad request. Possible values: `REQUIRED_PARAM_MISSING` — a required parameter was absent from the request; `INVALID_MODULE` — the specified module does not exist or is not accessible; `INVALID_REQUEST_METHOD` — the HTTP method used is not supported for this endpoint; `PATTERN_NOT_MATCHED` — a parameter value did not conform to the expected format; `NOT_SUPPORTED` — the requested operation is not supported.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsBadRequestResponseCode? Code { get; set; }
         /// <summary>Contains supplementary information about the bad request error, identifying the specific parameter or condition responsible for the failure.</summary>
@@ -36,6 +38,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsBadRequestResponse"/> and sets the default values.
+        /// </summary>
+        public LayoutsBadRequestResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsBadRequestResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

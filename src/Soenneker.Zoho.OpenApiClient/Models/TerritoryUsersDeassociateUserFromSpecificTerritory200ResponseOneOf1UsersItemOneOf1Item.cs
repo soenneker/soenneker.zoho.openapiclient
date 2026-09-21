@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents an error detail for an invalid user ID in the request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TerritoryUsersDeassociateUserFromSpecificTerritory200ResponseOneOf1UsersItemOneOf1Item : IParsable
+    public partial class TerritoryUsersDeassociateUserFromSpecificTerritory200ResponseOneOf1UsersItemOneOf1Item : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**SUCCESS** - Represents success.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode? Code { get; set; }
         /// <summary>Represents additional details about the disassociation operation.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUserFromSpecificTerritory200ResponseOneOf1UsersItemOneOf1Item"/> and sets the default values.
+        /// </summary>
+        public TerritoryUsersDeassociateUserFromSpecificTerritory200ResponseOneOf1UsersItemOneOf1Item()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUserFromSpecificTerritory200ResponseOneOf1UsersItemOneOf1ItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

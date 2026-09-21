@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single filter condition, including the field to filter on, the comparator, and the value to compare against.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItem : IParsable
+    public partial class RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the comparison operator to apply between the field and the value. Possible values: **equal**, **not_equal**, **contains**, **not_contains**, **starts_with**, **ends_with**, **greater_than**, **less_than**. The set of comparators supported depends on the field: **display_name** and **deleted_by** support equal, not_equal, contains, not_contains, starts_with, ends_with; **module** supports equal and not_equal; **deleted_time** supports equal, not_equal, greater_than, less_than.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemValue Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItem"/> and sets the default values.
+        /// </summary>
+        public RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("comparator", Comparator);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemField>("field", Field);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemValue>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

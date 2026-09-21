@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents field-level values from the lead that match existing Contact and Account fields. Returns mapped field details when matches exist, or null when no mappings are available.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValue : IParsable
+    public partial class ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValue : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents Account field mappings for matched lead values. Returns mapping entries when Account matches exist, or null when no Account mappings are available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValueAccountsItem> Accounts { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents Contact field mappings for matched lead values. Returns mapping entries when Contact matches exist, or null when no Contact mappings are available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValueContactsItem> Contacts { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValue"/> and sets the default values.
+        /// </summary>
+        public ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValue()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValueAccountsItem>("Accounts", Accounts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValueContactsItem>("Contacts", Contacts);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

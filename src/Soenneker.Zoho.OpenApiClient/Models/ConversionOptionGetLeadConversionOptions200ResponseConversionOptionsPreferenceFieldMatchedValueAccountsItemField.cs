@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Details of the field being mapped, including its API name, display label, uniqueness constraint, and ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValueAccountsItemField : IParsable
+    public partial class ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValueAccountsItemField : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the matched Account field has a uniqueness constraint. Returns true if the field is unique, false if it is not, or null if the uniqueness metadata is unavailable.</summary>
         public bool? Unique { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValueAccountsItemField"/> and sets the default values.
+        /// </summary>
+        public ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValueAccountsItemField()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("field_label", FieldLabel);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("unique", Unique);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

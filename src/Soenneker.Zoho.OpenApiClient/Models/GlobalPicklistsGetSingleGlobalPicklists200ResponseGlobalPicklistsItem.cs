@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Global picklist object with details. Every key listed here is returned by default. When the &apos;fields&apos; query parameter is used, only the requested keys along with &apos;id&apos; are present in the response, hence &apos;id&apos; is the only key that is always returned.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GlobalPicklistsGetSingleGlobalPicklists200ResponseGlobalPicklistsItem : IParsable
+    public partial class GlobalPicklistsGetSingleGlobalPicklists200ResponseGlobalPicklistsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Actual label of the global picklist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ActualLabel { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +102,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200ResponseGlobalPicklistsItemUsedInModulesItem> UsedInModules { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200ResponseGlobalPicklistsItem"/> and sets the default values.
+        /// </summary>
+        public GlobalPicklistsGetSingleGlobalPicklists200ResponseGlobalPicklistsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200ResponseGlobalPicklistsItem"/></returns>
@@ -158,6 +167,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("presence", Presence);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200ResponseGlobalPicklistsItemSource>("source", Source);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetSingleGlobalPicklists200ResponseGlobalPicklistsItemUsedInModulesItem>("used_in_modules", UsedInModules);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

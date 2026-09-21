@@ -90,7 +90,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.Chi
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Child_territoriesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Represents the filters query parameter, which specifies the filter criteria to apply when retrieving territories.</summary>
+            /// <summary>Filter Out the Territories based on Given Criteria</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]
@@ -100,16 +100,16 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.Chi
             [QueryParameter("filters")]
             public string Filters { get; set; }
 #endif
-            /// <summary>Represents the include query parameter, which specifies the rule criteria to include in the response. Possible values: **account_rule_criteria**, **lead_rule_criteria**, **deal_rule_criteria**, **account_rule_criteria,lead_rule_criteria**, **account_rule_criteria,deal_rule_criteria**, **lead_rule_criteria,deal_rule_criteria**, **account_rule_criteria,lead_rule_criteria,deal_rule_criteria**.</summary>
+            /// <summary>Include account_rule_criteria, lead_rule_criteria (or) deal_rule_criteria.</summary>
             [QueryParameter("include")]
             public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesInclude? Include { get; set; }
-            /// <summary>Represents the include_inner_details query parameter, which specifies the additional manager fields to include in the response. Possible values: **manager.zuid,manager.status**, **manager.zuid**, **manager.status**.</summary>
+            /// <summary>Include manager status &amp; zuid</summary>
             [QueryParameter("include_inner_details")]
             public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesIncludeInnerDetails? IncludeInnerDetails { get; set; }
-            /// <summary>Represents the page query parameter, which specifies the page number for paginated results.</summary>
+            /// <summary>Page Numeber</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Represents the per_page query parameter, which specifies the number of records to return per page.</summary>
+            /// <summary>Per Page Number</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

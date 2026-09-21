@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the composite request configuration, including execution options and the array of sub-requests to process.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CompositeRequestsCreateCompositeRequestRequest : IParsable
+    public partial class CompositeRequestsCreateCompositeRequestRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the API requests to execute as sub-requests within the composite call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public CompositeRequestsCreateCompositeRequestRequest()
         {
+            AdditionalData = new Dictionary<string, object>();
             ParallelExecution = true;
             RollbackOnFail = false;
         }
@@ -66,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem>("__composite_requests", CompositeRequests);
             writer.WriteBoolValue("parallel_execution", ParallelExecution);
             writer.WriteBoolValue("rollback_on_fail", RollbackOnFail);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

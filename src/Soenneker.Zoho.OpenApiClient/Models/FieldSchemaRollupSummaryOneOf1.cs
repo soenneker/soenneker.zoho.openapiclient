@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active rollup summary configuration for this field, detailing the aggregation function, child module, filter criteria, and related list used to compute the summarized value.
+    /// Represents the rollup summary details, if available.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaRollupSummaryOneOf1 : IParsable
+    public partial class FieldSchemaRollupSummaryOneOf1 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the child module from which related records are aggregated when computing the rollup summary value for this field.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the module on which the rollup summary is based.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1BasedOnModule? BasedOnModule { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1BasedOnModule BasedOnModule { get; set; }
 #endif
-        /// <summary>Contains the expression configuration for the rollup summary calculation, including the aggregation function, the field being summarized, and any filter criteria applied to restrict which related records are included.</summary>
+        /// <summary>Represents the expression details of the rollup summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1Expression? Expression { get; set; }
@@ -29,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1Expression Expression { get; set; }
 #endif
-        /// <summary>Represents the related list configuration that defines the child module relationship from which records are drawn for the rollup summary calculation.</summary>
+        /// <summary>Represents the related list details for the rollup summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1RelatedList? RelatedList { get; set; }
@@ -37,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1RelatedList RelatedList { get; set; }
 #endif
-        /// <summary>Indicates the data type of the value produced by the rollup summary calculation, such as integer, decimal, or date, which determines how the computed result is stored and displayed.</summary>
+        /// <summary>Represents the return type of the rollup summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReturnType { get; set; }
@@ -45,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ReturnType { get; set; }
 #endif
-        /// <summary>Indicates the basis of the rollup calculation, specifying whether the aggregation operates on all related records or only on a filtered subset defined by the expression criteria.</summary>
+        /// <summary>Indicates what the rollup is based on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RollupBasedOn { get; set; }
@@ -53,6 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string RollupBasedOn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaRollupSummaryOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -90,6 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1RelatedList>("related_list", RelatedList);
             writer.WriteStringValue("return_type", ReturnType);
             writer.WriteStringValue("rollup_based_on", RollupBasedOn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

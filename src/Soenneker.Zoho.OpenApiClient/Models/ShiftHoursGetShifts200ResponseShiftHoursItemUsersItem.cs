@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object specifies the user and the date from which the assignment becomes effective.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursGetShifts200ResponseShiftHoursItemUsersItem : IParsable
+    public partial class ShiftHoursGetShifts200ResponseShiftHoursItemUsersItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the date from which the user assignment to the shift hour becomes effective, in `YYYY-MM-DD` format. The date must be in the future and must not be more than six months ahead of the current date.</summary>
         public Date? EffectiveFrom { get; set; }
         /// <summary>Represents the email address of the user assigned to the shift hour.</summary>
@@ -57,6 +59,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Zuid { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftHoursItemUsersItem"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursGetShifts200ResponseShiftHoursItemUsersItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftHoursItemUsersItem"/></returns>
@@ -95,6 +104,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftHoursItemUsersItemRole>("role", Role);
             writer.WriteStringValue("zuid", Zuid);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

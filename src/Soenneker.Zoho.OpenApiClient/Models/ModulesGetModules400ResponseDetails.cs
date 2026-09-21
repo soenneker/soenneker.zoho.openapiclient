@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Details about the validation error, including the parameter name, the invalid value index, and the list of supported values.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModules400ResponseDetails : IParsable
+    public partial class ModulesGetModules400ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Zero-based index of the invalid value in the comma-separated `status` parameter.</summary>
         public int? Index { get; set; }
         /// <summary>Name of the parameter that contains the invalid value. Always `status` for this error variant.</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<string> SupportedValues { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules400ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModules400ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("index", Index);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.StatusParamName>("param_name", ParamName);
             writer.WriteCollectionOfPrimitiveValues<string>("supported_values", SupportedValues);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

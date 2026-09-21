@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Details about the error, including the resource path index.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GlobalPicklistsGetReplacedValues400ResponseDetails : IParsable
+    public partial class GlobalPicklistsGetReplacedValues400ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This value is always 2.</summary>
         public int? ResourcePathIndex { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetReplacedValues400ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public GlobalPicklistsGetReplacedValues400ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("resource_path_index", ResourcePathIndex);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

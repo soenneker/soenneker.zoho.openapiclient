@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the layout configuration, including its unique identifier and the profile associations to add or remove during activation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutActivateRequestLayoutsItem : IParsable
+    public partial class LayoutActivateRequestLayoutsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the unique identifier of the deactivated layout to activate. Must reference an existing deactivated layout within the specified module. The ID is represented as a string containing a 64-bit integer value. Layout IDs are data center-specific. The status key in the response from the [Get Layouts Metadata API](layouts.yaml#$.paths./settings/layouts.get) indicates whether the layout is **active** or **inactive**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequestLayoutsItemProfilesItem> Profiles { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequestLayoutsItem"/> and sets the default values.
+        /// </summary>
+        public LayoutActivateRequestLayoutsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActivateRequestLayoutsItemProfilesItem>("profiles", Profiles);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

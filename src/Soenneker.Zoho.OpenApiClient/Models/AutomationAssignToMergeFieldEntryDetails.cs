@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains the merge field reference that resolves to a user at execution time.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationAssignToMergeFieldEntryDetails : IParsable
+    public partial class AutomationAssignToMergeFieldEntryDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Merge field token referencing a user-type field. Must use the format ${!Module.User_Field} ,${!Module.Lookup_Field_API_Name.User_Field} where Field is a user-type field (data_type=ownerlookup or userlookup) from the trigger module. Fetch valid fields from GET /settings/fields?module={module_api_name}. Common user-type fields: Owner, Created_By, Modified_By. Examples: ${!Leads.Created_By}, ${!Deals.Owner}, ${!Contacts.Account_Manager}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntryDetails"/> and sets the default values.
+        /// </summary>
+        public AutomationAssignToMergeFieldEntryDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// PURPOSE: The CRM module this task definition belongs to. Specifies which module&apos;s records will trigger task creation - not the Tasks module itself. PREREQUISITES: Call GET /settings/modules to discover available module api_names and IDs. api_name is required, id is optional.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TaskCreateOrUpdateModuleRef : IParsable
+    public partial class TaskCreateOrUpdateModuleRef : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>REQUIRED. API name of the CRM module whose records trigger this task creation (e.g., Leads, Contacts, Deals). Use GET /settings/modules to discover available modules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateModuleRef"/> and sets the default values.
+        /// </summary>
+        public TaskCreateOrUpdateModuleRef()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

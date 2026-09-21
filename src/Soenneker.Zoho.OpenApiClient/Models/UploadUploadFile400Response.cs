@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error response returned when the file upload request fails.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UploadUploadFile400Response : ApiException, IParsable
+    public partial class UploadUploadFile400Response : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code for the upload failure. Possible values: **INVALID_DATA** - The request data is invalid.**NOT_SUPPORTED_FEATURE** - The specified feature is not supported. **MANDATORY_NOT_FOUND** - A required field is missing. **INVALID_FILE_FORMAT** - The uploaded file format is not supported.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile400ResponseCode? Code { get; set; }
         /// <summary>Represents additional details about the upload failure, when provided.</summary>
@@ -36,6 +38,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile400Response"/> and sets the default values.
+        /// </summary>
+        public UploadUploadFile400Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UploadUploadFile400ResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

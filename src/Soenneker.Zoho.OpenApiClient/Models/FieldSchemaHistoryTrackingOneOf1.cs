@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active history tracking configuration for this field, detailing the retention duration, tracked fields, associated module, and related list configuration.
+    /// Represents the history tracking details of the field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaHistoryTrackingOneOf1 : IParsable
+    public partial class FieldSchemaHistoryTrackingOneOf1 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Contains the settings that govern the time window over which field value changes are retained in the history log, such as the retention period length and applicable time units used to define how far back historical data is preserved.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the duration configuration for history tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DurationConfiguration { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DurationConfiguration { get; set; }
 #endif
-        /// <summary>The duration_configured_field property</summary>
+        /// <summary>Represents the duration configured field details for history tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField? DurationConfiguredField { get; set; }
@@ -29,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField DurationConfiguredField { get; set; }
 #endif
-        /// <summary>Contains the collection of fields whose value changes are actively monitored and recorded as part of this field&apos;s history tracking configuration, allowing administrators to scope audit trail capture to a defined subset of related fields.</summary>
+        /// <summary>Represents the list of fields being followed for history tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1FollowedFieldsItem>? FollowedFields { get; set; }
@@ -37,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1FollowedFieldsItem> FollowedFields { get; set; }
 #endif
-        /// <summary>Represents the CRM module with which this field&apos;s history tracking is associated, providing the module-level context required to correctly scope, store, and surface field change records in the appropriate audit trail.</summary>
+        /// <summary>Represents the module details for history tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1Module? Module { get; set; }
@@ -45,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1Module Module { get; set; }
 #endif
-        /// <summary>Represents the display name of the related list through which the field&apos;s historical change records are surfaced on the associated module&apos;s detail view, allowing end users to review the audit trail directly within the record context.</summary>
+        /// <summary>Represents the name of the related list for history tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RelatedListName { get; set; }
@@ -53,6 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string RelatedListName { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaHistoryTrackingOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -90,6 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1FollowedFieldsItem>("followed_fields", FollowedFields);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1Module>("module", Module);
             writer.WriteStringValue("related_list_name", RelatedListName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

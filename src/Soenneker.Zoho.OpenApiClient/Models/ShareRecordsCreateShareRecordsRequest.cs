@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the request body.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShareRecordsCreateShareRecordsRequest : IParsable
+    public partial class ShareRecordsCreateShareRecordsRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to send an email notification to the recordowner once the share action is completed. **Possible values**: - true- false</summary>
         public bool? NotifyOnCompletion { get; set; }
         /// <summary>Specify whether to send a notification to the members withwhom the record is shared. **Possible values**: - true- false</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItem> Share { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequest"/> and sets the default values.
+        /// </summary>
+        public ShareRecordsCreateShareRecordsRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("notify_on_completion", NotifyOnCompletion);
             writer.WriteBoolValue("notify_shared_members", NotifySharedMembers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItem>("share", Share);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

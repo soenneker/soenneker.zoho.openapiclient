@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the maximum usage limits for the feature, including the absolute total limit and the edition-level ceiling.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsLimits : IParsable
+    public partial class FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsLimits : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the maximum count for the feature allowed by the current subscription edition.</summary>
         public int? EditionLimit { get; set; }
         /// <summary>Represents the absolute maximum count for the feature across all editions. Always returned in the response.</summary>
         public int? Total { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsLimits"/> and sets the default values.
+        /// </summary>
+        public FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsLimits()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("edition_limit", EditionLimit);
             writer.WriteIntValue("total", Total);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

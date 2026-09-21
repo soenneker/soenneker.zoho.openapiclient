@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents an execution_time-type field mapping that computes a date, datetime, or ALARM value at runtime by applying a signed offset to a trigger field or the current time. The value carries an ExecutionTimeValue object specifying the period, unit, trigger_field, and optional time or notify_type properties. A plus sign places the result after the trigger; a minus sign places it before. ALARM fields always require minus. Workflow task actions support only days and business_days as period values.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowTasksExecutionTimeFieldMapping : IParsable
+    public partial class WorkflowTasksExecutionTimeFieldMapping : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The server-computed representation of the mapped value, included in GET responses. Omitted from create and update requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,24 +23,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayValue { get; set; }
 #endif
-        /// <summary>Identifies the target CRM field to which a mapping value is applied within an automation rule. The api_name and ID properties must both be supplied and must refer to the same field; a mismatch between the two causes an AMBIGUITY_DURING_PROCESSING error. Available fields for a given module can be discovered via GET /settings/fields?module={api_name}.</summary>
+        /// <summary>Target field to populate when the automation executes. api_name is required. If id is also provided, both must refer to the same field; otherwise the API returns AMBIGUITY_DURING_PROCESSING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingField? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingField Field { get; set; }
 #endif
         /// <summary>Identifies the mapping variant as an execution-time offset. The value is always &quot;execution_time&quot; for this schema and acts as the polymorphic discriminator across the AutomationFieldMappings union.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeType? Type { get; set; }
-        /// <summary>Represents the offset configuration used by an execution_time mapping to compute a final date, datetime, or ALARM value at runtime. Contains period (the time unit granularity), unit (the numeric magnitude expressed as a string integer), and trigger_field (a merge token or ${CURRENTTIME}). Date fields use period, unit, and trigger_field with an implied positive direction. Datetime fields additionally accept sign to control direction. ALARM fields additionally accept time and notify_type, and always require a minus sign. Workflow task actions restrict period to days or business_days.</summary>
+        /// <summary>Execution-time object specifying how to compute the date/datetime offset from a reference field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeValue? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeValue Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingValue Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMapping"/> and sets the default values.
+        /// </summary>
+        public WorkflowTasksExecutionTimeFieldMapping()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,9 +67,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingField.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeType>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeValue>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingValue>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,9 +80,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_value", DisplayValue);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingValue>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

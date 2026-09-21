@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A permission entry that specifies what portal users can do with a specific CRUD action (create, edit, delete, or view) for this field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldsNestedPermissionsItem : IParsable
+    public partial class FieldsNestedPermissionsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether portal users can set a value for this field when creating a record.</summary>
         public bool? Create { get; set; }
         /// <summary>Whether portal users can delete records that have this field.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public bool? Iscustomizable { get; set; }
         /// <summary>Whether portal users can view the value of this field.</summary>
         public bool? View { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldsNestedPermissionsItem"/> and sets the default values.
+        /// </summary>
+        public FieldsNestedPermissionsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("edit", Edit);
             writer.WriteBoolValue("iscustomizable", Iscustomizable);
             writer.WriteBoolValue("view", View);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

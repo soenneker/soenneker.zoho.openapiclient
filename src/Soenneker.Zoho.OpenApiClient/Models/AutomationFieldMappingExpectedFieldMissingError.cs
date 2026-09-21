@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a validation error returned by the API when a field_mapping entry omits the field object entirely or provides a field object that contains neither api_name nor ID, leaving the target field unresolvable.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationFieldMappingExpectedFieldMissingError : IParsable
+    public partial class AutomationFieldMappingExpectedFieldMissingError : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**EXPECTED_FIELD_MISSING** - Represents expected field missing.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingCode? Code { get; set; }
         /// <summary>Contains the structured breakdown of expected field identifiers that were absent from the request payload, enabling precise identification of which fields were anticipated but not received.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationFieldMappingExpectedFieldMissingError"/> and sets the default values.
+        /// </summary>
+        public AutomationFieldMappingExpectedFieldMissingError()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationFieldMappingExpectedFieldMissingErrorDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

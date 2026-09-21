@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active supplementary rendering configuration for this field type, such as phone split settings or radio button orientation.
+    /// Represents the display format configuration for the field, including the phone-number split value and radio-button display type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaDisplayFormatPropertiesOneOf1 : IParsable
+    public partial class FieldSchemaDisplayFormatPropertiesOneOf1 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Specifies the layout orientation used to render radio button options in the UI, such as arranging choices horizontally in a row or vertically in a stacked column.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the display type applied to radio button fields, such as **all** or **vertical**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RadioDisplayType { get; set; }
@@ -21,8 +23,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string RadioDisplayType { get; set; }
 #endif
-        /// <summary>Indicates the formatting pattern applied to split a phone number into its dial-code prefix and local number segments when rendering the field in the UI.</summary>
+        /// <summary>Represents the split value applied to phone number fields, which divides the number into the specified number of segments.</summary>
         public int? Split { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormatPropertiesOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaDisplayFormatPropertiesOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("radio_display_type", RadioDisplayType);
             writer.WriteIntValue("split", Split);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

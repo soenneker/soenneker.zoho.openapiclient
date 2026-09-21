@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the count of each type of member source configured in the user group.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItem : IParsable
+    public partial class UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of group sources in this user group. Present when group sources are configured.</summary>
         public int? Groups { get; set; }
         /// <summary>Represents the number of role sources in this user group. Present when role sources are configured.</summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItemUsers Users { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItem"/> and sets the default values.
+        /// </summary>
+        public UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("roles", Roles);
             writer.WriteIntValue("territories", Territories);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItemUsers>("users", Users);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

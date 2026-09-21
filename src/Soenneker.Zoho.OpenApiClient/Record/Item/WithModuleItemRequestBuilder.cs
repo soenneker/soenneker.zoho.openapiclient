@@ -120,7 +120,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// Creates one or more records in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the available field API names and data types. You can create up to 100 records in a single API call. Specify the required field API names and their corresponding values in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse"/></returns>
-        /// <param name="body">Represents the RecordsInputSchema data structure.</param>
+        /// <param name="body">The request body for Records Post</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
@@ -129,11 +129,11 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -151,7 +151,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// Updates one or more existing records in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name and the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field API names.A maximum of 100 records can be updated per API call. Use only Field API names in the input. You can update all fields supported by the Insert Records API operation.When updating multiple records, the response array maintains the same order as the input records, allowing each response to be mapped to its corresponding input record. To update multiple subform records, specify the subform API name as a key within the record and provide the subform records as a JSON array. Use the subform field API names as keys within each subform record. For detailed information on subforms, refer to the [Manipulating Subform using Zoho CRM APIs](https://help.zoho.com/portal/en/community/topic/kaizen-124-accessing-subform-using-zoho-crm-apis).Use the [Modules API](modules.yaml#$.paths./settings/modules.get) and [Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the API names of the subform and its fields. To update an existing subform record, include its record ID in the subform JSON array. Use the [Get Records API](record.yaml#$.paths./module.get) with the subform API name to retrieve subform record IDs.When adding a new subform record, it is appended to the existing records. Passing an empty JSON array for a subform deletes all its records. To delete a specific subform record, specify its record ID and set &quot;_delete&quot; to &quot;null&quot;. Deleting the parent record also deletes all its subform records.  
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse"/></returns>
-        /// <param name="body">Represents the RecordsPutInputSchema data structure.</param>
+        /// <param name="body">Request body containing the updated resource data to modify the existing record.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
@@ -161,11 +161,11 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -222,15 +222,15 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// Creates one or more records in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the available field API names and data types. You can create up to 100 records in a single API call. Specify the required field API names and their corresponding values in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Represents the RecordsInputSchema data structure.</param>
+        /// <param name="body">The request body for Records Post</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -244,15 +244,15 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// Updates one or more existing records in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name and the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field API names.A maximum of 100 records can be updated per API call. Use only Field API names in the input. You can update all fields supported by the Insert Records API operation.When updating multiple records, the response array maintains the same order as the input records, allowing each response to be mapped to its corresponding input record. To update multiple subform records, specify the subform API name as a key within the record and provide the subform records as a JSON array. Use the subform field API names as keys within each subform record. For detailed information on subforms, refer to the [Manipulating Subform using Zoho CRM APIs](https://help.zoho.com/portal/en/community/topic/kaizen-124-accessing-subform-using-zoho-crm-apis).Use the [Modules API](modules.yaml#$.paths./settings/modules.get) and [Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the API names of the subform and its fields. To update an existing subform record, include its record ID in the subform JSON array. Use the [Get Records API](record.yaml#$.paths./module.get) with the subform API name to retrieve subform record IDs.When adding a new subform record, it is appended to the existing records. Passing an empty JSON array for a subform deletes all its records. To delete a specific subform record, specify its record ID and set &quot;_delete&quot; to &quot;null&quot;. Deleting the parent record also deletes all its subform records.  
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Represents the RecordsPutInputSchema data structure.</param>
+        /// <param name="body">Request body containing the updated resource data to modify the existing record.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

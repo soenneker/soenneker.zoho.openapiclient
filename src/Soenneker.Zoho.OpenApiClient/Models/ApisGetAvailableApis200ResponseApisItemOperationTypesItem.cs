@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents the details of a single HTTP operation supported by that API.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ApisGetAvailableApis200ResponseApisItemOperationTypesItem : IParsable
+    public partial class ApisGetAvailableApis200ResponseApisItemOperationTypesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the maximum credits that the API consumes.</summary>
         public int? MaxCredits { get; set; }
         /// <summary>Represents the supported request method forthat API. Possible values:**GET** - Retrieve data.**POST** - Create data.**PUT** - Update data.**PATCH** - Partially update data.**DELETE** - Remove data.</summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string OauthScope { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem"/> and sets the default values.
+        /// </summary>
+        public ApisGetAvailableApis200ResponseApisItemOperationTypesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItemMethod>("method", Method);
             writer.WriteIntValue("min_credits", MinCredits);
             writer.WriteStringValue("oauth_scope", OauthScope);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

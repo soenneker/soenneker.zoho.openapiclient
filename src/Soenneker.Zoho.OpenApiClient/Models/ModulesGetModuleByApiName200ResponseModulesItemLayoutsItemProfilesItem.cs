@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Profile configuration with default view settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemProfilesItem : IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemProfilesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True when this profile serves as the default profile for the layout.</summary>
         public bool? Default { get; set; }
         /// <summary>Default assignment view configuration applied when records are assigned under this profile, controlling how record assignment operations are presented.</summary>
@@ -47,6 +49,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemProfilesItem"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemProfilesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,6 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemProfilesItemDefaultView>("_default_view", DefaultView);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

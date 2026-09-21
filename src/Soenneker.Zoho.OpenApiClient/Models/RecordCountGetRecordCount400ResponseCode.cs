@@ -15,10 +15,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         #pragma warning disable CS1591
         FieldTypeUnavailable,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NOT_SUPPORTED")]
-        #pragma warning disable CS1591
-        NotSupported,
-        #pragma warning restore CS1591
         [EnumMember(Value = "EXPECTED_PARAM_MISSING")]
         #pragma warning disable CS1591
         ExpectedParamMissing,

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the details of the newly created bulk read job. 
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkReadCreateBulkReadJob201ResponseDataItemDetails : IParsable
+    public partial class BulkReadCreateBulkReadJob201ResponseDataItemDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the user who created the bulk read job. Refer to the [Get Users](users.json#$.paths./users.get) endpoint for details. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,6 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.ReadOperation? Operation { get; set; }
         /// <summary>Represents the current state of the bulk read job. Possible values:**ADDED** - The job has been accepted and is queued for processing.**IN PROGRESS** - The job is currently being processed.**COMPLETED** - The job has finished processing successfully.**FAILURE** - The job encountered an error during processing.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201ResponseDataItemDetailsState? State { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201ResponseDataItemDetails"/> and sets the default values.
+        /// </summary>
+        public BulkReadCreateBulkReadJob201ResponseDataItemDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,6 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ReadOperation>("operation", Operation);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201ResponseDataItemDetailsState>("state", State);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

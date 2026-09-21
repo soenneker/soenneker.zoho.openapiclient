@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// PURPOSE: assign_to entry for criteria-based ownership. Evaluates filter criteria against the triggering record at execution time. MANDATORY: type (const &apos;criteria&apos;), details.criteria (filter condition - simple or grouped with AND/OR). Criteria fields must reference valid trigger module fields - GET /settings/fields?module={api_name}.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationAssignToCriteriaEntry : IParsable
+    public partial class AutomationAssignToCriteriaEntry : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow assignment to an agent user or not. When true, the record can be assigned to an agent user also. When false, agent users are excluded from assignment. Applicable only for types: role, group, profile, merge_field, criteria. Not supported for types user and assignment_rule.</summary>
         public bool? AllowAgentUser { get; set; }
         /// <summary>Contains the filter criteria to evaluate against the triggering record.</summary>
@@ -38,6 +40,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public AutomationAssignToCriteriaEntry()
         {
+            AdditionalData = new Dictionary<string, object>();
             AllowAgentUser = false;
         }
         /// <summary>
@@ -75,6 +78,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetails>("details", Details);
             writer.WriteObjectValue<UntypedNode>("resource", Resource);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Result object for a field update create, update, or delete operation. Contains the operation outcome code, a human-readable message, the status, and details including the server-generated ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldUpdateActionResult : IParsable
+    public partial class FieldUpdateActionResult : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Operation result code. &apos;SUCCESS&apos; for successful operations. In bulk operations (DELETE 207), individual items may return error codes like &apos;NOT_ALLOWED&apos; or &apos;INVALID_DATA&apos;.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResultCode? Code { get; set; }
         /// <summary>Details object within an action result, containing the server-generated unique identifier of the created, updated, or deleted field update action.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Overall status of the operation. &apos;success&apos; for successful operations, &apos;error&apos; for failed individual items in bulk operations.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResultStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult"/> and sets the default values.
+        /// </summary>
+        public FieldUpdateActionResult()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ActionResultDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResultStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

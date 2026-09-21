@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Field descriptor for a field to be excluded from locking.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordLockingConfigurationsCreateRecordLockingConfigurationRequestRecordLockingConfigurationsItemExcludedFieldsItem : IParsable
+    public partial class RecordLockingConfigurationsCreateRecordLockingConfigurationRequestRecordLockingConfigurationsItemExcludedFieldsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the field. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve field IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfigurationRequestRecordLockingConfigurationsItemExcludedFieldsItem"/> and sets the default values.
+        /// </summary>
+        public RecordLockingConfigurationsCreateRecordLockingConfigurationRequestRecordLockingConfigurationsItemExcludedFieldsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the fields to update for the holiday.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class HolidaysUpdateHolidayRequestHolidaysItem : IParsable
+    public partial class HolidaysUpdateHolidayRequestHolidaysItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the new date for the holiday in **YYYY-MM-DD** format.</summary>
         public Date? Date { get; set; }
         /// <summary>Specify the new name for the holiday.</summary>
@@ -24,6 +26,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidayRequestHolidaysItem"/> and sets the default values.
+        /// </summary>
+        public HolidaysUpdateHolidayRequestHolidaysItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,6 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("date", Date);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

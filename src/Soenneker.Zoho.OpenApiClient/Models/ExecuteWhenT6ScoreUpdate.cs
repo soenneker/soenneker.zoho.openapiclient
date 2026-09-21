@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a score update trigger type (T6) that fires when a record score changes due to configured scoring rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExecuteWhenT6ScoreUpdate : IParsable
+    public partial class ExecuteWhenT6ScoreUpdate : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the score update trigger details, including the Scoring Rule scope and the applicable scoring rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the trigger type for scoring rules. Supports score increase and score decrease trigger events.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdate"/> and sets the default values.
+        /// </summary>
+        public ExecuteWhenT6ScoreUpdate()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

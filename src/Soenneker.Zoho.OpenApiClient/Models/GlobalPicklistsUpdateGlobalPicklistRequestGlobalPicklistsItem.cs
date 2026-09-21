@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Global picklist object with update details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItem : IParsable
+    public partial class GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +58,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates if picklist values should be sorted lexically.</summary>
         public bool? PickListValuesSortedLexically { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItem"/> and sets the default values.
+        /// </summary>
+        public GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItem"/></returns>
@@ -94,6 +103,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItemPickListValuesItem>("pick_list_values", PickListValues);
             writer.WriteBoolValue("pick_list_values_sorted_lexically", PickListValuesSortedLexically);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

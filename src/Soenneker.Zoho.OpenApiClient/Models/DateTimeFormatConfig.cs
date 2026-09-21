@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the date and time formatting configuration applied to date or datetime merge-field values in webhook request payloads. Applicable only when a date or datetime merge-field is used in headers, url_parameters, or body. Returns null when no date or datetime merge-fields are present.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DateTimeFormatConfig : IParsable
+    public partial class DateTimeFormatConfig : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the format pattern for date-only merge-field values in the webhook payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,14 +40,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string TimeZone { get; set; }
 #endif
         /// <summary>
-        /// Creates a new instance of the appropriate class based on discriminator value
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DateTimeFormatConfig"/> and sets the default values.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DateTimeFormatConfig"/></returns>
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.DateTimeFormatConfig CreateFromDiscriminatorValue(IParseNode parseNode)
+        public DateTimeFormatConfig()
         {
-            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.DateTimeFormatConfig();
+            AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("date_format", DateFormat);
             writer.WriteStringValue("datetime_format", DatetimeFormat);
             writer.WriteStringValue("time_zone", TimeZone);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

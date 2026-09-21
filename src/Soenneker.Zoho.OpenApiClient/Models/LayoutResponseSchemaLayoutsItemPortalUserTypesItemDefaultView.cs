@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the default view assigned to this portal user type for the layout, defining which view is presented to portal users of this type by default.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutResponseSchemaLayoutsItemPortalUserTypesItemDefaultView : IParsable
+    public partial class LayoutResponseSchemaLayoutsItemPortalUserTypesItemDefaultView : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the category of the default view assigned to this portal user type, such as a layout view or a wizard-based view.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemPortalUserTypesItemDefaultViewType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemPortalUserTypesItemDefaultView"/> and sets the default values.
+        /// </summary>
+        public LayoutResponseSchemaLayoutsItemPortalUserTypesItemDefaultView()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemPortalUserTypesItemDefaultViewType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

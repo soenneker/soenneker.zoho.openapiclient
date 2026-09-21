@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Request body for changing status of portal users
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PortalUsersChangePortalUsersStatusBulkRequest : IParsable
+    public partial class PortalUsersChangePortalUsersStatusBulkRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the list of portal user status change results. Contains one result object per requested status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequestChangeStatusItem> ChangeStatus { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequest"/> and sets the default values.
+        /// </summary>
+        public PortalUsersChangePortalUsersStatusBulkRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequestChangeStatusItem>("change_status", ChangeStatus);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

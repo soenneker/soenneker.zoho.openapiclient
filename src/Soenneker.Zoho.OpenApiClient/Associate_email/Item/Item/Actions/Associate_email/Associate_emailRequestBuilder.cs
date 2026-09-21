@@ -36,27 +36,27 @@ namespace Soenneker.Zoho.OpenApiClient.Associate_email.Item.Item.Actions.Associa
         /// <summary>
         /// Associates an email with a specific record in a module, creating a link between the email and the CRM record.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ActionResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail201Response"/></returns>
         /// <param name="body">Request body for associating an email with a record.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleError">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ActionResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ActionResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ActionResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ActionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Associates an email with a specific record in a module, creating a link between the email and the CRM record.

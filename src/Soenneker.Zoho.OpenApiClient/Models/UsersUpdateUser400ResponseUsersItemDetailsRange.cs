@@ -12,12 +12,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains the valid date range.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersUpdateUser400ResponseUsersItemDetailsRange : IParsable
+    public partial class UsersUpdateUser400ResponseUsersItemDetailsRange : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the start date of the valid date range.</summary>
         public Date? From { get; set; }
         /// <summary>Represents the end date of the valid date range.</summary>
         public Date? To { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemDetailsRange"/> and sets the default values.
+        /// </summary>
+        public UsersUpdateUser400ResponseUsersItemDetailsRange()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("from", From);
             writer.WriteDateValue("to", To);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

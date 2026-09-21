@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the full configuration and metadata of a single workflow rule, including its trigger, conditions, actions, lock status, and audit timestamps.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowRuleSingleGetSchema : IParsable
+    public partial class WorkflowRuleSingleGetSchema : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the classification category of the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,6 +124,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.ActivationStatusSchema Status { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleSingleGetSchema"/> and sets the default values.
+        /// </summary>
+        public WorkflowRuleSingleGetSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleSingleGetSchema"/></returns>
@@ -184,6 +193,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("source", Source);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ActivationStatusSchema>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

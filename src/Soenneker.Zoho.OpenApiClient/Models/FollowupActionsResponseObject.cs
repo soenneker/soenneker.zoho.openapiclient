@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// List of actions to be executed following the assignment of ownership to a record.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FollowupActionsResponseObject : IParsable
+    public partial class FollowupActionsResponseObject : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the list of action details of the given type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the type of the action.Possible values:**tasks** - Represents tasks. </summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.TasksType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject"/> and sets the default values.
+        /// </summary>
+        public FollowupActionsResponseObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>("resources", Resources);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TasksType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

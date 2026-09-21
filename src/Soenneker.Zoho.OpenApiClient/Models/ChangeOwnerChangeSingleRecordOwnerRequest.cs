@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the owner details for the single record owner change request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ChangeOwnerChangeSingleRecordOwnerRequest : IParsable
+    public partial class ChangeOwnerChangeSingleRecordOwnerRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to notify the new owner via email when the record is assigned.\nPossible values:\n**true** - The new owner is notified via email.\n**false** - The new owner is not notified via email.</summary>
         public bool? Notify { get; set; }
         /// <summary>Specify the details of the new owner for the record.</summary>
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestRelatedModulesItem> RelatedModules { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequest"/> and sets the default values.
+        /// </summary>
+        public ChangeOwnerChangeSingleRecordOwnerRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("notify", Notify);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestOwner>("owner", Owner);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestRelatedModulesItem>("related_modules", RelatedModules);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

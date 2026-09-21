@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the details about the data constraint violation, including the field that exceeds the maximum allowed length.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersTransferUserTransferWithoutId400ResponseDetails : IParsable
+    public partial class UsersTransferUserTransferWithoutId400ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the field that exceeds the maximum allowed length.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the maximum number of elements allowed in the field.</summary>
         public int? MaximumLength { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId400ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public UsersTransferUserTransferWithoutId400ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteIntValue("maximum_length", MaximumLength);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

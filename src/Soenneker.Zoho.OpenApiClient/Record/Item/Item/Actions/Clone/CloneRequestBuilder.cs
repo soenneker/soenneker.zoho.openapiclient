@@ -37,7 +37,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item.Actions.Clone
         /// Clones a record in the specified module.  Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and API names.By default, the field values of the parent record are copied to the cloned record. To modify or add field values, specify the field API names and their corresponding values in the input body. If no field values need to be modified, the input body can be omitted.Mandatory fields specified in the input must not be null. The Sample Inputs, Sample Responses, and Possible Errors documented for the [Insert Records API](record.yaml#$.paths./module.post) also apply to the [Record Clone API](record.yaml#$.paths./{module}/{recordId}/actions/clone.post).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse"/></returns>
-        /// <param name="body">Represents the RecordsInputSchema data structure.</param>
+        /// <param name="body">By default, when you clone a record, the field values of the parent record will also be copied to the cloned record. If you want to modify certain fields or to add value to some fields, specify their field API names and their corresponding values in the input body.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item.Actions.Clone
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordCloneRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordCloneRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -66,15 +66,15 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item.Actions.Clone
         /// Clones a record in the specified module.  Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and API names.By default, the field values of the parent record are copied to the cloned record. To modify or add field values, specify the field API names and their corresponding values in the input body. If no field values need to be modified, the input body can be omitted.Mandatory fields specified in the input must not be null. The Sample Inputs, Sample Responses, and Possible Errors documented for the [Insert Records API](record.yaml#$.paths./module.post) also apply to the [Record Clone API](record.yaml#$.paths./{module}/{recordId}/actions/clone.post).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Represents the RecordsInputSchema data structure.</param>
+        /// <param name="body">By default, when you clone a record, the field values of the parent record will also be copied to the cloned record. If you want to modify certain fields or to add value to some fields, specify their field API names and their corresponding values in the input body.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordCloneRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordCloneRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

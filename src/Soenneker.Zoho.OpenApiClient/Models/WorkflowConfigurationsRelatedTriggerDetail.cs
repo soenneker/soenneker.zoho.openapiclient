@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a related module that can act as a trigger source for the parent module&apos;s workflow rules. For example, when a user creates a Note on a Lead record, a workflow rule on the Leads module configured with a Notes-related trigger fires.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowConfigurationsRelatedTriggerDetail : IParsable
+    public partial class WorkflowConfigurationsRelatedTriggerDetail : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the related module that can act as a trigger source (for example, Notes, Tasks, Events, Attachments). Use this value to identify the related module when creating workflow rules that should fire on related record events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,13 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>Represents a CRM module with its identity and display labels, including its API name, singular and plural display labels, unique ID, and internal name.</summary>
+        /// <summary>Module identity including api_name, id, and labels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleReference? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetailModule? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleReference Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetailModule Module { get; set; }
 #endif
         /// <summary>Represents the display name of the related module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger> Triggers { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetail"/> and sets the default values.
+        /// </summary>
+        public WorkflowConfigurationsRelatedTriggerDetail()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleReference>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleReference.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetailModule>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetailModule.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "triggers", n => { Triggers = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -77,9 +86,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleReference>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetailModule>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger>("triggers", Triggers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

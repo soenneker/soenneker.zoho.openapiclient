@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// PURPOSE: assign_to entry for resource-based ownership. MANDATORY: type (user|role|group|assignment_rule|profile), resource ({id, name}). For type=profile: associated_to must be &apos;team_profile&apos;. For round-robin: use multiple entries of type=user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationAssignToResourceEntry : IParsable
+    public partial class AutomationAssignToResourceEntry : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow assignment to an agent user or not. When true, the record can be assigned to an agent user also. When false, agent users are excluded from assignment. Applicable only for types: role, group, profile, merge_field, criteria. Not supported for types user and assignment_rule.</summary>
         public bool? AllowAgentUser { get; set; }
         /// <summary>Association context for profile-based assignment. Must be &quot;team_profile&quot; when type=profile. Not applicable for other assignment types; if provided for a non-profile type, the API returns DEPENDENT_MISMATCH.</summary>
@@ -25,13 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public UntypedNode Details { get; set; }
 #endif
-        /// <summary>PURPOSE: Resource reference for assign_to entry. MANDATORY: id (string). OPTIONAL: name, type. Obtain from GET /settings/users (user), /settings/roles (role), /settings/user_groups (group), /settings/automation/assignment_rules (assignment_rule), /settings/profiles (profile). If both id and name given, must match (AMBIGUITY_DURING_PROCESSING).</summary>
+        /// <summary>Identifies the target user, role, group, assignment rule, or profile by ID and/or name. At least one of id or name must be provided; if both are given and they do not match, the API returns AMBIGUITY_DURING_PROCESSING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerResource? Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntryResource? Resource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerResource Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntryResource Resource { get; set; }
 #endif
         /// <summary>Assignment method. Determines what kind of entity receives ownership. Values: &quot;user&quot; - assign to a specific CRM user (GET /settings/users), for round-robin include multiple assign_to entries of type=user; &quot;role&quot; - assign to a user holding the specified role (GET /settings/roles), system picks an eligible user at execution time; &quot;group&quot; - assign to a member of the specified user group (GET /settings/user_groups); &quot;assignment_rule&quot; - assign using a pre-configured assignment rule (GET /settings/automation/assignment_rules), the rule&apos;s criteria and round-robin logic determine the final owner; &quot;profile&quot; - assign to a user matching the specified profile (GET /settings/profiles), must include associated_to=team_profile.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntryType? Type { get; set; }
@@ -40,6 +42,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public AutomationAssignToResourceEntry()
         {
+            AdditionalData = new Dictionary<string, object>();
             AllowAgentUser = false;
         }
         /// <summary>
@@ -63,7 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "allow_agent_user", n => { AllowAgentUser = n.GetBoolValue(); } },
                 { "associated_to", n => { AssociatedTo = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntryAssociatedTo>(); } },
                 { "details", n => { Details = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerResource>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntryResource>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntryResource.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntryType>(); } },
             };
         }
@@ -77,8 +80,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("allow_agent_user", AllowAgentUser);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntryAssociatedTo>("associated_to", AssociatedTo);
             writer.WriteObjectValue<UntypedNode>("details", Details);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerResource>("resource", Resource);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntryResource>("resource", Resource);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntryType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

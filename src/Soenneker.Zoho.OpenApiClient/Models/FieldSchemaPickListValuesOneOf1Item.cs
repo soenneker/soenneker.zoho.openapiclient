@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active list of picklist options for this field, ordered by sequence number, each containing the stored value, display label, and associated metadata.
+    /// Represents the list of picklist values configured for the field, applicable to picklist and multi-select picklist fields.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchemaPickListValuesOneOf1Item : IAdditionalDataHolder, IParsable

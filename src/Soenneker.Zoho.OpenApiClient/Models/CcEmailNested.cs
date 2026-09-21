@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a CC recipient entry for a mail merge email, containing the address type and email value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CcEmailNested : IParsable
+    public partial class CcEmailNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the type of the address.Possible values:**email** - Indicates that the value is an email address.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.EmailType? Type { get; set; }
         /// <summary>Represents the email address to include in the CC list for the mail merge email.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CcEmailNested"/> and sets the default values.
+        /// </summary>
+        public CcEmailNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailType>("type", Type);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a field configured as a column in a related list view.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelatedListField : IParsable
+    public partial class RelatedListField : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +98,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>UI type identifier that determines how the field is rendered.</summary>
         public int? UiType { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListField"/> and sets the default values.
+        /// </summary>
+        public RelatedListField()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListField"/></returns>
@@ -150,6 +159,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("separator", Separator);
             writer.WriteIntValue("sequence_number", SequenceNumber);
             writer.WriteIntValue("ui_type", UiType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

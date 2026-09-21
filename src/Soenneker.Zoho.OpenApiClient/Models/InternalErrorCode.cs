@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Error code for internal server error</summary>
+    /// <summary>Represents the error code indicating the type of server-side failure.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum InternalErrorCode
     {

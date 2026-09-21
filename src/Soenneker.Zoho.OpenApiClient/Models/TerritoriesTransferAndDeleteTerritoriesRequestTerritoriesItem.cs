@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the details for each territory to transfer and delete.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TerritoriesTransferAndDeleteTerritoriesRequestTerritoriesItem : IParsable
+    public partial class TerritoriesTransferAndDeleteTerritoriesRequestTerritoriesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to delete previous forecasts associated with the territory. Set to **true** to delete forecasts, or **false** to retain them.</summary>
         public bool? DeletePreviousForecasts { get; set; }
         /// <summary>Specify the unique ID of the territory to delete.</summary>
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string TransferToId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTransferAndDeleteTerritoriesRequestTerritoriesItem"/> and sets the default values.
+        /// </summary>
+        public TerritoriesTransferAndDeleteTerritoriesRequestTerritoriesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("delete_previous_forecasts", DeletePreviousForecasts);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("transfer_to_id", TransferToId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -8,27 +8,36 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria"/>
+    /// Represents the query details for the lookup field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaLookupOneOf1QueryDetails : IComposedTypeWrapper, IParsable
+    public partial class FieldSchemaLookupOneOf1QueryDetails : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the query ID for the lookup field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly? FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly { get; set; }
+        public string? QueryId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly { get; set; }
+        public string QueryId { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria"/></summary>
+        /// <summary>The system_query_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria? FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId? SystemQueryId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId SystemQueryId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetails"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaLookupOneOf1QueryDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +46,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetails();
-            if("FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly();
-            }
-            else if("FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria();
-            }
-            return result;
+            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +54,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly.GetFieldDeserializers();
-            }
-            else if(FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria != null)
-            {
-                return FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "query_id", n => { QueryId = n.GetStringValue(); } },
+                { "system_query_id", n => { SystemQueryId = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId.CreateFromDiscriminatorValue); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +67,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly>(null, FieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnly);
-            }
-            else if(FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria>(null, FieldSchemaLookupOneOf1QueryDetailsQueryDetailsWithCriteria);
-            }
+            writer.WriteStringValue("query_id", QueryId);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId>("system_query_id", SystemQueryId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

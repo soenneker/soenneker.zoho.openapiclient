@@ -17,13 +17,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the execution method for territory assignment rules.Possible values:**criteria** - Runs territory rules against records matching a specified filter criterion.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesBasedOn? BasedOn { get; set; }
-        /// <summary>Represents the top-level filter criterion for data selection, supporting both simple field-based filters and complex grouped filters with logical operators.</summary>
+        /// <summary>Filter criteria for territory rule execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesFilterCriterionRequest? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCriteria? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesFilterCriterionRequest Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCriteria Criteria { get; set; }
 #endif
         /// <summary>Specify the Custom View for which the territory assignment rules apply. Provide either the **ID** or the **api_name** of the Custom View.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,13 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specify whether to include child territories when running the territory assignment rules.Possible values:**true** - Includes child territories of the specified territories in the rule execution.**false** - Runs rules only for the specified territories, without their child territories.</summary>
         public bool? IncludeChild { get; set; }
-        /// <summary>Represents the CRM module associated with the territory rule, identified by either its unique ID or API name.</summary>
+        /// <summary>Specify the API name of the module for which to run territory assignment rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRuleModuleReference? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesModule? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRuleModuleReference Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesModule Module { get; set; }
 #endif
         /// <summary>Specify the list of territories for which the territory assignment rules apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,10 +77,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "based_on", n => { BasedOn = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesBasedOn>(); } },
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesFilterCriterionRequest>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesFilterCriterionRequest.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCriteria.CreateFromDiscriminatorValue); } },
                 { "custom_view", n => { CustomView = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCustomView>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCustomView.CreateFromDiscriminatorValue); } },
                 { "include_child", n => { IncludeChild = n.GetBoolValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRuleModuleReference>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRuleModuleReference.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesModule>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesModule.CreateFromDiscriminatorValue); } },
                 { "territories", n => { Territories = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesItem>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -92,10 +92,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesBasedOn>("based_on", BasedOn);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesFilterCriterionRequest>("criteria", Criteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCriteria>("criteria", Criteria);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCustomView>("custom_view", CustomView);
             writer.WriteBoolValue("include_child", IncludeChild);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRuleModuleReference>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesModule>("module", Module);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesItem>("territories", Territories);
             writer.WriteAdditionalData(AdditionalData);
         }

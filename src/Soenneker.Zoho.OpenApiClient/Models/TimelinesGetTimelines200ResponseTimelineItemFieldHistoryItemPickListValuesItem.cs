@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single picklist option for the changed field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItemPickListValuesItem : IParsable
+    public partial class TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItemPickListValuesItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the actual stored value of the picklist option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ActualValue { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the color code associated with the picklist option. This field is nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Type { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItemPickListValuesItem"/> and sets the default values.
+        /// </summary>
+        public TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItemPickListValuesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItemPickListValuesItem"/></returns>
@@ -104,6 +113,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("reference_value", ReferenceValue);
             writer.WriteIntValue("sequence_number", SequenceNumber);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

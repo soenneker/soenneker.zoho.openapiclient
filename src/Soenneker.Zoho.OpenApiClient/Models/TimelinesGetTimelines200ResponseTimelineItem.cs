@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single timeline entry recording an audited event on the CRM record.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TimelinesGetTimelines200ResponseTimelineItem : IParsable
+    public partial class TimelinesGetTimelines200ResponseTimelineItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the type of action performed on the record. This field is nullable.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAction? Action { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the timestamp at which the action was audited and recorded in the timeline.</summary>
         public DateTimeOffset? AuditedTime { get; set; }
         /// <summary>Represents the automation context associated with the timeline entry, including details about triggered workflows, approval processes, scoring rules, ownership changes, and review processes.</summary>
@@ -86,6 +88,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the type of the timeline entry. Possible values: **timeline** (standard CRM activity), **signal** (event from a Zoho extension).</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItem"/> and sets the default values.
+        /// </summary>
+        public TimelinesGetTimelines200ResponseTimelineItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItem"/></returns>
@@ -136,6 +145,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemRelatedRecord>("related_record", RelatedRecord);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemSource>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

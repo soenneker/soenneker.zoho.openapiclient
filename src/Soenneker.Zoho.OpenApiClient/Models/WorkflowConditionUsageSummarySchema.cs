@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the execution usage summary for a single workflow rule condition, including total execution count and breakdowns for instant and scheduled action groups.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowConditionUsageSummarySchema : IParsable
+    public partial class WorkflowConditionUsageSummarySchema : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the unique ID of the WorkflowConditionUsageSummary within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the total number of times the actions in this condition were executed.</summary>
         public int? UsageCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConditionUsageSummarySchema"/> and sets the default values.
+        /// </summary>
+        public WorkflowConditionUsageSummarySchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageListSchema>("instant_actions", InstantActions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsUsageGroupSchema>("scheduled_actions", ScheduledActions);
             writer.WriteIntValue("usage_count", UsageCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

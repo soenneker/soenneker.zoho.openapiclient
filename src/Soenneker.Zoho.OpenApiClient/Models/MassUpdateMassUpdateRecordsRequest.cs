@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the mass update request payload. The payload must include the `data` array along with either `ids` for a synchronous update or `cvid` for an asynchronous scheduled update. `ids` and `cvid` are mutually exclusive.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassUpdateMassUpdateRecordsRequest : IParsable
+    public partial class MassUpdateMassUpdateRecordsRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the Custom View ID whose matching records must be mass updated. Use `cvid` to schedule an asynchronous background job that processes the records in the Custom View. Use the [Get Custom View API](custom_views.yaml#$.paths./settings/custom_views.get) to get the ID of the requires custom view. The response returns a `job_id` that can be passed to [Get Mass Update Status API](mass_update.yaml#$.paths./{module}/actions/mass_update.get) to track the progress of the scheduled job.&gt; **Note**:&gt; The cvid key is supported for mass update via API in the following editions:&gt; - Enterprise&gt; - Ultimate&gt; - CRM Plus&gt; - Zoho One Enterprise</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestTerritory Territory { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequest"/> and sets the default values.
+        /// </summary>
+        public MassUpdateMassUpdateRecordsRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,6 +89,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestDataItem>("data", Data);
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestTerritory>("territory", Territory);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

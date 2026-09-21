@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specifies a single holiday record in the response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class HolidaysGetHoliday200ResponseHolidaysItem : IParsable
+    public partial class HolidaysGetHoliday200ResponseHolidaysItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the date of the holiday in **YYYY-MM-DD** format. </summary>
         public Date? Date { get; set; }
         /// <summary>Represents the unique identifier of the holiday record. </summary>
@@ -44,6 +46,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200ResponseHolidaysItemType? Type { get; set; }
         /// <summary>Specifies the year in which the holiday falls. </summary>
         public int? Year { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200ResponseHolidaysItem"/> and sets the default values.
+        /// </summary>
+        public HolidaysGetHoliday200ResponseHolidaysItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,6 +92,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200ResponseHolidaysItemShiftHour>("shift_hour", ShiftHour);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200ResponseHolidaysItemType>("type", Type);
             writer.WriteIntValue("year", Year);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

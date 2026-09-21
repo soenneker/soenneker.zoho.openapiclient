@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A locking rule object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrlRequestRecordLockingConfigurationsItemLockingRulesItem : IParsable
+    public partial class RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrlRequestRecordLockingConfigurationsItemLockingRulesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Criteria that records must satisfy for the rule to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrlRequestRecordLockingConfigurationsItemLockingRulesItem()
         {
+            AdditionalData = new Dictionary<string, object>();
             LockExistingRecords = false;
         }
         /// <summary>
@@ -81,6 +84,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("lock_existing_records", LockExistingRecords);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

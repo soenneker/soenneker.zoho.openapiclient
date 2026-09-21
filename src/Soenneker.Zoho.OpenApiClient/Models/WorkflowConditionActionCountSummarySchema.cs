@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the action count summary for a single workflow rule condition, including the condition ID, sequence number, and counts for instant and scheduled actions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowConditionActionCountSummarySchema : IParsable
+    public partial class WorkflowConditionActionCountSummarySchema : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the unique ID of the WorkflowConditionActionCountSummary within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the execution order of this condition within the workflow rule, starting from one.</summary>
         public int? SequenceNumber { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConditionActionCountSummarySchema"/> and sets the default values.
+        /// </summary>
+        public WorkflowConditionActionCountSummarySchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema>("instant_actions", InstantActions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchema>("scheduled_actions", ScheduledActions);
             writer.WriteIntValue("sequence_number", SequenceNumber);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

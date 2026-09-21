@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a screen definition within the wizard container that organizes segments and governs the data-entry step presented to the user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItem : IParsable
+    public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the screen within the wizard container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +56,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItem> Segments { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItem"/> and sets the default values.
+        /// </summary>
+        public WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItem"/></returns>
@@ -90,6 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("display_label", DisplayLabel);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemSegmentsItem>("segments", Segments);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

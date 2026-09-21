@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify a profile to associate with or disassociate from the layout.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutActivateRequestLayoutsItemProfilesItem : IParsable
+    public partial class LayoutActivateRequestLayoutsItemProfilesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to remove this profile&apos;s association from the layout. Possible values: **true** - Removes the profile association from the layout. **false** - Adds or retains the profile association on the layout.</summary>
         public bool? Delete { get; set; }
         /// <summary>Specify the unique identifier of the profile to associate with or disassociate from the layout. Must be a profile that exists in the CRM organization and is associated with the specified module. The ID is represented as a string containing a 64-bit integer value. Refer to the [Get Profiles](profiles.yaml#$.paths./settings/profiles.get) resource for valid values.</summary>
@@ -28,6 +30,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public LayoutActivateRequestLayoutsItemProfilesItem()
         {
+            AdditionalData = new Dictionary<string, object>();
             Delete = false;
         }
         /// <summary>
@@ -61,6 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("_delete", Delete);
             writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

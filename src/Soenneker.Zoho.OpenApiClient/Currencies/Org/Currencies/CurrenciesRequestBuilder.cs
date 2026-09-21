@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Currencies.Org.Currencies
             get => new global::Soenneker.Zoho.OpenApiClient.Currencies.Org.Currencies.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.currencies.org.currencies.item collection</summary>
-        /// <param name="position">Path parameter identifying the currency ID.</param>
+        /// <param name="position">Unique identifier of the currency to retrieve.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Currencies.Org.Currencies.Item.WithCurrencyItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Currencies.Org.Currencies.Item.WithCurrencyItemRequestBuilder this[string position]
         {

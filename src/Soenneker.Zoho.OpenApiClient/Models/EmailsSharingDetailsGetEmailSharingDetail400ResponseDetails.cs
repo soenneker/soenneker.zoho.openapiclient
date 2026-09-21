@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents an object containing additional context about the error, such as the path segment where the issue occurred. Always returned in the response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EmailsSharingDetailsGetEmailSharingDetail400ResponseDetails : IParsable
+    public partial class EmailsSharingDetailsGetEmailSharingDetail400ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the index of the path segment in the request URL where the error occurred.</summary>
         public int? ResourcePathIndex { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail400ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public EmailsSharingDetailsGetEmailSharingDetail400ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("resource_path_index", ResourcePathIndex);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -101,7 +101,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item
         /// To update the field values of a specific record in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and API names.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse"/></returns>
-        /// <param name="body">Represents the RecordsSinglePutInputSchema data structure.</param>
+        /// <param name="body">Request body containing the updated resource data to modify the existing record.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
@@ -111,11 +111,11 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsSinglePutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordsSinglePutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -172,15 +172,15 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item
         /// To update the field values of a specific record in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field IDs and API names.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Represents the RecordsSinglePutInputSchema data structure.</param>
+        /// <param name="body">Request body containing the updated resource data to modify the existing record.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsSinglePutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordsSinglePutInputSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

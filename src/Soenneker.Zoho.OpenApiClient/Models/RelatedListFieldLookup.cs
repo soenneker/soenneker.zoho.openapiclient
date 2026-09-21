@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Lookup configuration for the field. Empty object if the field is not a lookup. Returned when include_inner_details contains fields.lookup.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelatedListFieldLookup : IParsable
+    public partial class RelatedListFieldLookup : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the lookup related list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +58,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates if the filter should be revalidated during edit.</summary>
         public bool? RevalidateFilterDuringEdit { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListFieldLookup"/> and sets the default values.
+        /// </summary>
+        public RelatedListFieldLookup()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListFieldLookup"/></returns>
@@ -94,6 +103,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListFieldLookupModule>("module", Module);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListFieldLookupQueryDetails>("query_details", QueryDetails);
             writer.WriteBoolValue("revalidate_filter_during_edit", RevalidateFilterDuringEdit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

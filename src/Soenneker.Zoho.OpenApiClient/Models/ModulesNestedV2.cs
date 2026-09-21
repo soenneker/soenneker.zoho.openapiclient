@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Used in update requests to modify module-level properties for an existing portal user type. Supports updating the shared type, allowed layouts, and filter-by field for the specified module.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesNestedV2 : IParsable
+    public partial class ModulesNestedV2 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the updated filter-by field configuration for the module. Specifies the CRM field by which portal users can filter records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,24 +39,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsNested> Layouts { get; set; }
 #endif
-        /// <summary>Used in update requests to modify the CRUD and shared-record permissions for a module within an existing portal user type.</summary>
+        /// <summary>The updated CRUD permissions for portal users on this module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PermissionsNestedV2? Permissions { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Permissions? Permissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PermissionsNestedV2 Permissions { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Permissions Permissions { get; set; }
 #endif
         /// <summary>The updated sharing mode for this module. Possible values: `public` (all records are shared with the portal user, and can be restricted using secondary conditions) or `private` (only records matching configured filter or secondary conditions are shared with the portal user).</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2SharedType? SharedType { get; set; }
-        /// <summary>A nested object representing a list view associated with a portal user type module. Identified by a unique numeric ID, name, display label, and type.</summary>
+        /// <summary>The updated list view (canvas view or custom view) accessible to portal users for this module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ViewsNested? Views { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Views? Views { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ViewsNested Views { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Views Views { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2"/> and sets the default values.
+        /// </summary>
+        public ModulesNestedV2()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -76,9 +85,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FiltersNested>(global::Soenneker.Zoho.OpenApiClient.Models.FiltersNested.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "layouts", n => { Layouts = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsNested>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsNested.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PermissionsNestedV2>(global::Soenneker.Zoho.OpenApiClient.Models.PermissionsNestedV2.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Permissions>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Permissions.CreateFromDiscriminatorValue); } },
                 { "shared_type", n => { SharedType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2SharedType>(); } },
-                { "views", n => { Views = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ViewsNested>(global::Soenneker.Zoho.OpenApiClient.Models.ViewsNested.CreateFromDiscriminatorValue); } },
+                { "views", n => { Views = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Views>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Views.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,9 +100,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FiltersNested>("filters", Filters);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsNested>("layouts", Layouts);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PermissionsNestedV2>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Permissions>("permissions", Permissions);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2SharedType>("shared_type", SharedType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ViewsNested>("views", Views);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Views>("views", Views);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

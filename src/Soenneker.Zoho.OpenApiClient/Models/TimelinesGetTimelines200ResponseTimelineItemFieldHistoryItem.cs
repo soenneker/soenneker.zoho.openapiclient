@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single field change recorded in the timeline event.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItem : IParsable
+    public partial class TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the field that changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItemValue Value { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItem"/> and sets the default values.
+        /// </summary>
+        public TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItem"/></returns>
@@ -104,6 +113,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItemPickListValuesItem>("pick_list_values", PickListValues);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemFieldHistoryItemValue>("_value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

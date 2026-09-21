@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents additional context about the error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ChangeOwnerChangeSingleRecordOwner400ResponseDetails : IParsable
+    public partial class ChangeOwnerChangeSingleRecordOwner400ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the index of the resource path in the request that caused the error.</summary>
         public int? ResourcePathIndex { get; set; }
         /// <summary>Represents the minimum supported API version. Returned with the API_NOT_SUPPORTED error code.</summary>
         public int? SupportedVersion { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwner400ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public ChangeOwnerChangeSingleRecordOwner400ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("resource_path_index", ResourcePathIndex);
             writer.WriteIntValue("supported_version", SupportedVersion);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

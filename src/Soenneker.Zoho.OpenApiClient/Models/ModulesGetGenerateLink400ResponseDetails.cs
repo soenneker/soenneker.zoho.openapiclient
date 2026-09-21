@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents additional context about the cause of the error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetGenerateLink400ResponseDetails : IParsable
+    public partial class ModulesGetGenerateLink400ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the param name returned for the Assignment Rule operation.Possible values:**module** - Represents module. </summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ModuleParamName? ParamName { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetGenerateLink400ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public ModulesGetGenerateLink400ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleParamName>("param_name", ParamName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

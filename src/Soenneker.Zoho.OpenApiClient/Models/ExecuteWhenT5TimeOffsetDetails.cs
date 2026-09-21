@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the time offset trigger details, including the time unit and magnitude for the offset.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExecuteWhenT5TimeOffsetDetails : IParsable
+    public partial class ExecuteWhenT5TimeOffsetDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the field reference returned in GET responses for time-offset triggers, including the trigger field details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,16 +25,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the time unit for the offset.Possible values:days - Offset in days.hours - Offset in hours.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsPeriod? Period { get; set; }
-        /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
+        /// <summary>The module that actually triggers the rule. Defaults tothe rule&apos;s top-level module if omitted. Must be explicitly setwhen the trigger targets a different module  - e.g., a rule onLeads triggered by &apos;note created&apos; requires trigger_module ={api_name: &apos;Notes&apos;, id: &apos;...&apos;}. Use `getModules` to discovermodule api_name and id values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule? TriggerModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule TriggerModule { get; set; }
 #endif
         /// <summary>Represents the time offset magnitude. Always a positive integer for time-offset triggers, such as 1 for one day or 3 for three hours.</summary>
         public int? Unit { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetails"/> and sets the default values.
+        /// </summary>
+        public ExecuteWhenT5TimeOffsetDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField.CreateFromDiscriminatorValue); } },
                 { "period", n => { Period = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsPeriod>(); } },
-                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
+                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule.CreateFromDiscriminatorValue); } },
                 { "unit", n => { Unit = n.GetIntValue(); } },
             };
         }
@@ -66,8 +75,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsPeriod>("period", Period);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("trigger_module", TriggerModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule>("trigger_module", TriggerModule);
             writer.WriteIntValue("unit", Unit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

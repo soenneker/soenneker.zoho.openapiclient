@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     ///  Unique identifier of the module
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DealLinkEmailsLinkEmailToRecord400ResponseEmailsItemOneOf2Item : IParsable
+    public partial class DealLinkEmailsLinkEmailToRecord400ResponseEmailsItemOneOf2Item : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code for this response.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataCode? Code { get; set; }
         /// <summary> Unique identifier of the module</summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataMessage? Message { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord400ResponseEmailsItemOneOf2Item"/> and sets the default values.
+        /// </summary>
+        public DealLinkEmailsLinkEmailToRecord400ResponseEmailsItemOneOf2Item()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord400ResponseEmailsItemOneOf2ItemDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataMessage>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

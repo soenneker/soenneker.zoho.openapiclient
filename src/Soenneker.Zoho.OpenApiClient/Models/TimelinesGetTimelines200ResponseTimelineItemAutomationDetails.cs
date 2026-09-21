@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the automation context associated with the timeline entry, including details about triggered workflows, approval processes, scoring rules, ownership changes, and review processes.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TimelinesGetTimelines200ResponseTimelineItemAutomationDetails : IParsable
+    public partial class TimelinesGetTimelines200ResponseTimelineItemAutomationDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the Approval Process details associated with the timeline entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +104,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsWorkflow Workflow { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetails"/> and sets the default values.
+        /// </summary>
+        public TimelinesGetTimelines200ResponseTimelineItemAutomationDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetails"/></returns>
@@ -150,6 +159,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRule>("scoring_rule", ScoringRule);
             writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsWorkflow>("workflow", Workflow);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

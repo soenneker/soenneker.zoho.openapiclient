@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the activation state of a workflow rule, indicating whether the rule is currently active.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ActivationStatusSchema : IParsable
+    public partial class ActivationStatusSchema : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the workflow rule is currently active.Possible values:true - The workflow rule is active and executes its configured actions when trigger conditions are met.false - The workflow rule is inactive and does not execute, even when trigger conditions are met.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ActivationStatusSchema"/> and sets the default values.
+        /// </summary>
+        public ActivationStatusSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

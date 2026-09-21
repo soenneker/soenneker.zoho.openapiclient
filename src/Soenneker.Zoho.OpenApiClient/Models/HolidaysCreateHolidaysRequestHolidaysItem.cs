@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the details for a single holiday to create.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class HolidaysCreateHolidaysRequestHolidaysItem : IParsable
+    public partial class HolidaysCreateHolidaysRequestHolidaysItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the date of the holiday in **YYYY-MM-DD** format.</summary>
         public Date? Date { get; set; }
         /// <summary>Specify the name of the holiday.</summary>
@@ -34,6 +36,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specify the type of holiday. Possible values: **business_holiday**, **shift_holiday**.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidaysRequestHolidaysItemType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidaysRequestHolidaysItem"/> and sets the default values.
+        /// </summary>
+        public HolidaysCreateHolidaysRequestHolidaysItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +78,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidaysRequestHolidaysItemShiftHour>("shift_hour", ShiftHour);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysCreateHolidaysRequestHolidaysItemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Different business hours for different days when same_as_everyday is false
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BusinessHoursUpdateBusinessHoursRequestBusinessHoursCustomTimingItem : IParsable
+    public partial class BusinessHoursUpdateBusinessHoursRequestBusinessHoursCustomTimingItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Start and end time for business hours on this specific day</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursUpdateBusinessHoursRequestBusinessHoursCustomTimingItemDays? Days { get; set; }
         /// <summary>Set to true to delete the custom timing for this specific business day</summary>
         public bool? Delete { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursUpdateBusinessHoursRequestBusinessHoursCustomTimingItem"/> and sets the default values.
+        /// </summary>
+        public BusinessHoursUpdateBusinessHoursRequestBusinessHoursCustomTimingItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("business_timing", BusinessTiming);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursUpdateBusinessHoursRequestBusinessHoursCustomTimingItemDays>("days", Days);
             writer.WriteBoolValue("_delete", Delete);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

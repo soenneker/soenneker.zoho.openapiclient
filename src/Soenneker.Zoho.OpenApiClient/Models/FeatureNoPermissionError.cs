@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -12,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Indicates that the user does not have the necessary permissions to create a field update action.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FeatureNoPermissionError : ApiException, IParsable
+    public partial class FeatureNoPermissionError : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code returned for the permission-denied failure.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode? Code { get; set; }
         /// <summary>Error details with validation information</summary>
@@ -24,12 +25,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionErrorDetails Details { get; set; }
 #endif
-        /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
         /// <summary>Represents the error message.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionErrorMessage? MessageEscaped { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionErrorMessage? Message { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionError"/> and sets the default values.
+        /// </summary>
+        public FeatureNoPermissionError()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionErrorDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionErrorDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionErrorMessage>(); } },
+                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionErrorMessage>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
@@ -63,8 +69,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionErrorDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionErrorMessage>("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FeatureNoPermissionErrorMessage>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

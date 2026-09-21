@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the grouped filter criterion returned in the response, containing multiple filter conditions evaluated with a logical operator. Supports recursive nesting for complex filtering logic.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScoringRulesGroupedFilterCriterionResponse : IParsable
+    public partial class ScoringRulesGroupedFilterCriterionResponse : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the grouped filter criterion is in a disrupted state, typically due to an invalid or unresolvable condition within the group.</summary>
         public bool? Disrupted { get; set; }
         /// <summary>Contains an array of filter conditions grouped together and evaluated with the specified logical operator.</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the logical operator applied between the filter conditions in the group.Possible values:AND - All conditions in the group must be satisfied.OR - At least one condition in the group must be satisfied.and - Equivalent to AND; all conditions in the group must be satisfied.or - Equivalent to OR; at least one condition in the group must be satisfied.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesGroupedFilterCriterionResponseGroupOperator? GroupOperator { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesGroupedFilterCriterionResponse"/> and sets the default values.
+        /// </summary>
+        public ScoringRulesGroupedFilterCriterionResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("$disrupted", Disrupted);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesGroupedFilterCriterionResponseGroupItem>("group", Group);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesGroupedFilterCriterionResponseGroupOperator>("group_operator", GroupOperator);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

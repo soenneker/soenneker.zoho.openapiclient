@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the locking information details of a locked record.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LockingInformationsGetRecordLockingInformationById200ResponseDataItem : IParsable
+    public partial class LockingInformationsGetRecordLockingInformationById200ResponseDataItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the locked record is editable by the current user. Possible values: **true** - The record is editable. **false** - The record is not editable.</summary>
         public bool? Editable { get; set; }
         /// <summary>Represents the feature type associated with the locking information.</summary>
@@ -100,6 +102,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string ZiaVisions { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationById200ResponseDataItem"/> and sets the default values.
+        /// </summary>
+        public LockingInformationsGetRecordLockingInformationById200ResponseDataItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationById200ResponseDataItem"/></returns>
@@ -152,6 +161,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("Record_Locking_Rule_Id__s", RecordLockingRuleIdS);
             writer.WriteStringValue("$sharing_permission", SharingPermission);
             writer.WriteStringValue("$zia_visions", ZiaVisions);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

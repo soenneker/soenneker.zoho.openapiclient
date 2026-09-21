@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error response body returned when the request fails due to invalid input or an unrecognized module.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EmailsSharingDetailsGetEmailSharingDetail400Response : ApiException, IParsable
+    public partial class EmailsSharingDetailsGetEmailSharingDetail400Response : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code that identifies the type of error. Possible values: **INVALID_DATA**, **INVALID_MODULE**. Always returned in the response.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail400ResponseCode? Code { get; set; }
         /// <summary>Represents an object containing additional context about the error, such as the path segment where the issue occurred. Always returned in the response.</summary>
@@ -30,6 +32,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail400ResponseMessage? MessageEscaped { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail400Response"/> and sets the default values.
+        /// </summary>
+        public EmailsSharingDetailsGetEmailSharingDetail400Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,6 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail400ResponseDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail400ResponseMessage>("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

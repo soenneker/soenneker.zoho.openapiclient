@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// If assign to type is zia suggested user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ZiaSuggestedUsersTypeAssignToObject : IParsable
+    public partial class ZiaSuggestedUsersTypeAssignToObject : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the type or users to associate as owner during execution.Possible values:**zia_suggested_users** - Represents zia suggested users. </summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersTypeAssignToObject"/> and sets the default values.
+        /// </summary>
+        public ZiaSuggestedUsersTypeAssignToObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

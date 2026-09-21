@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the date-based trigger details, including the target date field, time offset, and recurrence configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExecuteWhenT4DateBasedDetails : IParsable
+    public partial class ExecuteWhenT4DateBasedDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the exact time of day at which to fire the trigger, in 24-hour HH:mm format. Applicable only to datetime fields.</summary>
         public Time? ExecuteAt { get; set; }
         /// <summary>Represents the date or datetime field to monitor for triggering the rule. Use the getFields endpoint to discover available date and datetime fields.</summary>
@@ -30,16 +32,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsRecurCycle? RecurCycle { get; set; }
         /// <summary>Indicates whether the trigger fires repeatedly. When true, the trigger fires on each recurrence as configured.</summary>
         public bool? Repeat { get; set; }
-        /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
+        /// <summary>Specifies the module that triggers the workflow rule. If omitted,it defaults to the rule&apos;s top-level module. Specify this when the triggertargets a different module. For example, a workflow rule on Leads triggeredwhen a note is created requires &apos;trigger_module&apos;: {&quot;api_name&quot;: &quot;Notes&quot;,&apos;id&apos;: &apos;...&apos;}. Use &apos;getModules&apos; to retrieve the module API name and ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule? TriggerModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule TriggerModule { get; set; }
 #endif
         /// <summary>Represents the offset magnitude relative to the monitored date field value. Negative values indicate before the date; positive values indicate after.</summary>
         public int? Unit { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetails"/> and sets the default values.
+        /// </summary>
+        public ExecuteWhenT4DateBasedDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "period", n => { Period = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsPeriod>(); } },
                 { "recur_cycle", n => { RecurCycle = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsRecurCycle>(); } },
                 { "repeat", n => { Repeat = n.GetBoolValue(); } },
-                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
+                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule.CreateFromDiscriminatorValue); } },
                 { "unit", n => { Unit = n.GetIntValue(); } },
             };
         }
@@ -79,8 +88,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsPeriod>("period", Period);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsRecurCycle>("recur_cycle", RecurCycle);
             writer.WriteBoolValue("repeat", Repeat);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("trigger_module", TriggerModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule>("trigger_module", TriggerModule);
             writer.WriteIntValue("unit", Unit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

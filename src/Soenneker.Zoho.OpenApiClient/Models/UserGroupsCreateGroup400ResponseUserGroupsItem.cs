@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error details for a user group creation failure, including the error code, message, status, and field-level details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserGroupsCreateGroup400ResponseUserGroupsItem : IParsable
+    public partial class UserGroupsCreateGroup400ResponseUserGroupsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code for the user group creation failure. Possible values:**DUPLICATE_DATA** - A user group with the same name already exists.**INVALID_DATA** - One or more field values are invalid.**MANDATORY_NOT_FOUND** - A required field is missing from the request.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup400ResponseUserGroupsItemCode? Code { get; set; }
         /// <summary>Represents additional details about the creation error, including the API name and JSON path of the problematic field. </summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup400ResponseUserGroupsItem"/> and sets the default values.
+        /// </summary>
+        public UserGroupsCreateGroup400ResponseUserGroupsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup400ResponseUserGroupsItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

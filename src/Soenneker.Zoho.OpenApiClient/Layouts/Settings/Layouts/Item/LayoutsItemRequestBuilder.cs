@@ -250,7 +250,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
         {
             /// <summary>Specify additional data to include in the response beyond the default layout structure. Possible values: `total_profiles` — include the total count of profiles associated with each layout. `portal_user_types` — include portal user type associations for each layout.</summary>
             [QueryParameter("include")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.Includes? Include { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsIncludes? Include { get; set; }
             /// <summary>Specify the type of field component in the layout, distinguishing standard fields from mirror fields that derive their value from a lookup source. Possible values: `field` — a standard data field in the layout. `mirror_field` — a field that reflects a value from a related module lookup.</summary>
             [QueryParameter("include_element_types")]
             public global::Soenneker.Zoho.OpenApiClient.Models.MirrorComponentParameter? IncludeElementTypes { get; set; }

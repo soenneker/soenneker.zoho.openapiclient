@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single user group configured in the Zoho CRM organization, including its name, description, member sources, and creation and modification metadata.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserGroupsGetUserGroups200ResponseUserGroupsItem : IParsable
+    public partial class UserGroupsGetUserGroups200ResponseUserGroupsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the CRM user who created this user group. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200ResponseUserGroupsItemSourcesCount SourcesCount { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200ResponseUserGroupsItem"/> and sets the default values.
+        /// </summary>
+        public UserGroupsGetUserGroups200ResponseUserGroupsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200ResponseUserGroupsItem"/></returns>
@@ -108,6 +117,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200ResponseUserGroupsItemSourcesCount>("sources_count", SourcesCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

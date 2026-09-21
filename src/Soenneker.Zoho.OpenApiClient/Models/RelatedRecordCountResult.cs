@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the count result for a specific related list, including the total number of matching records and the related list identifier.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelatedRecordCountResult : IParsable
+    public partial class RelatedRecordCountResult : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the total number of related records matching the specified criteria.</summary>
         public int? Count { get; set; }
         /// <summary>Represents a related list identified by its API name and unique ID. Used in both the request to specify the target related list and in the response to echo the queried related list.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.RelatedListReference RelatedList { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountResult"/> and sets the default values.
+        /// </summary>
+        public RelatedRecordCountResult()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListReference>("related_list", RelatedList);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

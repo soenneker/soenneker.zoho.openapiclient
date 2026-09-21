@@ -11,25 +11,27 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Rule entry request object to update.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RuleEntryUpdateRequestObject : IParsable
+    public partial class RuleEntryUpdateRequestObject : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether Digital Employee (agent) users are eligible for assignment in this rule entry.</summary>
         public bool? AllowAgentUser { get; set; }
-        /// <summary>Assign to request object schema.</summary>
+        /// <summary>This field defines the set of users to whom the records that enter the current rule entry must be assigned.  (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssignToRequestObject? AssignTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignTo? AssignTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssignToRequestObject AssignTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignTo AssignTo { get; set; }
 #endif
-        /// <summary>Filter criteria for data selection supporting both simple field-based filters and complex grouped filters with logical operators.</summary>
+        /// <summary>Defines the record criteria based on which records will be filtered and assignment logic defined for current rule entry will be applied. If criteria is not provided or is null, all records entering current rule entry will be assigned based on current rule entry&apos;s assignment logic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectCriteria? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectCriteria Criteria { get; set; }
 #endif
         /// <summary>Defines the list of different actions to be executed after owner assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,6 +58,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectUserAvailabilityBasedOnItem?> UserAvailabilityBasedOn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObject"/> and sets the default values.
+        /// </summary>
+        public RuleEntryUpdateRequestObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObject"/></returns>
@@ -74,8 +83,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allow_agent_user", n => { AllowAgentUser = n.GetBoolValue(); } },
-                { "assign_to", n => { AssignTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignToRequestObject>(global::Soenneker.Zoho.OpenApiClient.Models.AssignToRequestObject.CreateFromDiscriminatorValue); } },
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest>(global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest.CreateFromDiscriminatorValue); } },
+                { "assign_to", n => { AssignTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignTo>(global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignTo.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectCriteria.CreateFromDiscriminatorValue); } },
                 { "followup_actions", n => { FollowupActions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsRequestObject>(global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsRequestObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "user_availability_based_on", n => { UserAvailabilityBasedOn = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectUserAvailabilityBasedOnItem>()?.AsList(); } },
@@ -89,11 +98,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_agent_user", AllowAgentUser);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignToRequestObject>("assign_to", AssignTo);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest>("criteria", Criteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignTo>("assign_to", AssignTo);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectCriteria>("criteria", Criteria);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsRequestObject>("followup_actions", FollowupActions);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectUserAvailabilityBasedOnItem>("user_availability_based_on", UserAvailabilityBasedOn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

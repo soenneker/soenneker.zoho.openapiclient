@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error details with the JSON path and the list of supported period values for the configured quarter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FiscalInvalidSurplusWeekPeriodValueErrorDetails : IParsable
+    public partial class FiscalInvalidSurplusWeekPeriodValueErrorDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the JSON path of the field that caused the validation failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<int?> SupportedValues { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FiscalInvalidSurplusWeekPeriodValueErrorDetails"/> and sets the default values.
+        /// </summary>
+        public FiscalInvalidSurplusWeekPeriodValueErrorDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteCollectionOfPrimitiveValues<int?>("supported_values", SupportedValues);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

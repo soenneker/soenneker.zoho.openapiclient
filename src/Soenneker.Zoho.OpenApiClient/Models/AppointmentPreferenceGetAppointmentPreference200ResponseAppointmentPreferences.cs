@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the complete set of appointment preferences configured in the CRM organization. 
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferences : IParsable
+    public partial class AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferences : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes if you can create appointments outside business hours.Possible values:**true** - You can create appointments outside business hours.**false** - You can not create appointments outside business hours.</summary>
         public bool? AllowBookingOutsideBusinesshours { get; set; }
         /// <summary>Denotes if you can create appointments outside service availability.Possible values:**true** - You can create appointments outside service availability.**false** - You can not create appointments outside service availability.</summary>
@@ -41,6 +43,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesWhenAppointmentCompleted? WhenAppointmentCompleted { get; set; }
         /// <summary>Represents who has to mark the appointment as &apos;Completed&apos; when the service duration gets over.Possible values:**mark_as_complete** - The appointment is automatically marked as &apos;completed&apos;.**ask_appointment_provider_to_complete** - User has to manually mark the appointment as &apos;completed&apos;.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesWhenDurationExceeds? WhenDurationExceeds { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferences"/> and sets the default values.
+        /// </summary>
+        public AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferences()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,6 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("show_job_sheet", ShowJobSheet);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesWhenAppointmentCompleted>("when_appointment_completed", WhenAppointmentCompleted);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesWhenDurationExceeds>("when_duration_exceeds", WhenDurationExceeds);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

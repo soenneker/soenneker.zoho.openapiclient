@@ -47,13 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Represents the optional related configuration details for email notification actions, including best-time delivery settings.</summary>
+        /// <summary>Controls whether the email is sent at the best time for the recipient (powered by Data Intelligence). Null when best_time is not enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationRelatedDetailsSchema? RelatedDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaRelatedDetails? RelatedDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationRelatedDetailsSchema RelatedDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaRelatedDetails RelatedDetails { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "related_details", n => { RelatedDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationRelatedDetailsSchema>(global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationRelatedDetailsSchema.CreateFromDiscriminatorValue); } },
+                { "related_details", n => { RelatedDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaRelatedDetails>(global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaRelatedDetails.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -107,7 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaDetails>("details", Details);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationRelatedDetailsSchema>("related_details", RelatedDetails);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaRelatedDetails>("related_details", RelatedDetails);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// An object representing a single currency-related error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CurrenciesUpdateCurrencies400ResponseCurrenciesItem : IParsable
+    public partial class CurrenciesUpdateCurrencies400ResponseCurrenciesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Error identifier representing the validation failure type.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateCurrencies400ResponseCurrenciesItemCode? Code { get; set; }
         /// <summary>Additional debugging metadata for the error. Provides field-level or permission-level details.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateCurrencies400ResponseCurrenciesItem"/> and sets the default values.
+        /// </summary>
+        public CurrenciesUpdateCurrencies400ResponseCurrenciesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateCurrencies400ResponseCurrenciesItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

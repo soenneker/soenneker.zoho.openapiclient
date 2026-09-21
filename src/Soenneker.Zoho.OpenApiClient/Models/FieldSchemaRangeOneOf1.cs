@@ -8,27 +8,24 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active numeric range constraint for this field, specifying the minimum and maximum allowed values.
+    /// Represents the numeric range allowed for the field, defined by the **from** and **to** values.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaRangeOneOf1 : IParsable
+    public partial class FieldSchemaRangeOneOf1 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The from property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1From? From { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1From From { get; set; }
-#endif
-        /// <summary>The to property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1To? To { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1To To { get; set; }
-#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the starting value of the range.</summary>
+        public double? From { get; set; }
+        /// <summary>Represents the ending value of the range.</summary>
+        public double? To { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaRangeOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,8 +44,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "from", n => { From = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1From>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1From.CreateFromDiscriminatorValue); } },
-                { "to", n => { To = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1To>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1To.CreateFromDiscriminatorValue); } },
+                { "from", n => { From = n.GetDoubleValue(); } },
+                { "to", n => { To = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -58,8 +55,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1From>("from", From);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRangeOneOf1To>("to", To);
+            writer.WriteDoubleValue("from", From);
+            writer.WriteDoubleValue("to", To);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

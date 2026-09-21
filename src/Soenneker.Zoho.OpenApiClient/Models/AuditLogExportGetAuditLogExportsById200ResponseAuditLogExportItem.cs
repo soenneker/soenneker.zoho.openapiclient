@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the details of the specified audit log export job.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AuditLogExportGetAuditLogExportsById200ResponseAuditLogExportItem : IParsable
+    public partial class AuditLogExportGetAuditLogExportsById200ResponseAuditLogExportItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the Zoho CRM user who created the export job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public DateTimeOffset? JobStartTime { get; set; }
         /// <summary>Status of the export job.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200ResponseAuditLogExportItemStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200ResponseAuditLogExportItem"/> and sets the default values.
+        /// </summary>
+        public AuditLogExportGetAuditLogExportsById200ResponseAuditLogExportItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,6 +105,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("job_end_time", JobEndTime);
             writer.WriteDateTimeOffsetValue("job_start_time", JobStartTime);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200ResponseAuditLogExportItemStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

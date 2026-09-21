@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the hierarchy preferences configured for the organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class OrgDetailsHierarchyPreferences : IParsable
+    public partial class OrgDetailsHierarchyPreferences : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether data visibility is restricted to the direct reporting chain.Possible values:**true** - Data is visible only to the CEO and administrators.**false** - Data is visible to any user higher in the hierarchy.</summary>
         public bool? StrictlyReporting { get; set; }
         /// <summary>Represents the hierarchy type configured for the organization. Possible values:**Role_Hierarchy** - Access is based on the user&apos;s role in the hierarchy.**Reporting_To_Hierarchy** - Access is based on the user&apos;s reporting structure.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferencesType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferences"/> and sets the default values.
+        /// </summary>
+        public OrgDetailsHierarchyPreferences()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("strictly_reporting", StrictlyReporting);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferencesType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

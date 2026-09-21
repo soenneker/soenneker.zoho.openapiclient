@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the recurring execution interval for a Cadence, specifying the frequency period and numeric value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExecuteEvery : IParsable
+    public partial class ExecuteEvery : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the frequency interval for recurring Cadence execution.Possible values:immediately - Execute immediately after each enrollment trigger.hours - Execute at the specified number of hours interval.days - Execute at the specified number of days interval.weeks - Execute at the specified number of weeks interval.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEveryPeriod? Period { get; set; }
         /// <summary>Represents the numeric value of the execution interval, expressed in the specified period unit.</summary>
         public int? Unit { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEvery"/> and sets the default values.
+        /// </summary>
+        public ExecuteEvery()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEveryPeriod>("period", Period);
             writer.WriteIntValue("unit", Unit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

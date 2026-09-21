@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Container for all conversion option data
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConversionOptionGetLeadConversionOptions200ResponseConversionOptions : IParsable
+    public partial class ConversionOptionGetLeadConversionOptions200ResponseConversionOptions : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents matching Account records for the lead. Returns an array when matches exist, or null when no matching accounts are found.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsAccountsItem> Accounts { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents matching Contact records for the lead. Returns an array when matches exist, or null when no matching contacts are found.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValue PreferenceFieldMatchedValue { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptions"/> and sets the default values.
+        /// </summary>
+        public ConversionOptionGetLeadConversionOptions200ResponseConversionOptions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -90,6 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsModulePreference>("module_preference", ModulePreference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsModulesWithMultipleLayoutsItem>("modules_with_multiple_layouts", ModulesWithMultipleLayouts);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsPreferenceFieldMatchedValue>("preference_field_matched_value", PreferenceFieldMatchedValue);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

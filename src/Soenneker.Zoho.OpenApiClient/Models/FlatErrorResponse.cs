@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a flat (non-array) error response returned when a request-level error occurs.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FlatErrorResponse : ApiException, IParsable
+    public partial class FlatErrorResponse : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code for the request failure. Always returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +51,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FlatErrorResponse"/> and sets the default values.
+        /// </summary>
+        public FlatErrorResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FlatErrorResponse"/></returns>
@@ -83,6 +92,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FlatErrorResponseDetailsProperty>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

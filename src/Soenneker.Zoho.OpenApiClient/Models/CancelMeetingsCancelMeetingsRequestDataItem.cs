@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Object specifying whether to send a cancellation notification email to participants.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CancelMeetingsCancelMeetingsRequestDataItem : IParsable
+    public partial class CancelMeetingsCancelMeetingsRequestDataItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The user who cancelled the meeting. If specified, send_cancelling_mail must be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether to send a meeting cancellation notification email to all participants. Mandatory. Possible values: true - Sends a cancellation notification email to all participants. false - Cancels the meeting without sending a notification email</summary>
         public bool? SendCancellingMail { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItem"/> and sets the default values.
+        /// </summary>
+        public CancelMeetingsCancelMeetingsRequestDataItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItemCancelledBy>("cancelled_by", CancelledBy);
             writer.WriteBoolValue("send_cancelling_mail", SendCancellingMail);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

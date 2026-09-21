@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the full state and processing result of a bulk write job, including the overall status, the per-resource processing summary, the job creator, and the download URL of the result archive.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkWriteGetBulkWriteJobDetails200Response : IParsable
+    public partial class BulkWriteGetBulkWriteJobDetails200Response : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the callback configuration registered for the bulk write job, used to notify the configured URL when the job completes or fails. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +82,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200Response"/> and sets the default values.
+        /// </summary>
+        public BulkWriteGetBulkWriteJobDetails200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200Response"/></returns>
@@ -124,6 +133,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItem>("resource", Resource);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResult>("result", Result);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

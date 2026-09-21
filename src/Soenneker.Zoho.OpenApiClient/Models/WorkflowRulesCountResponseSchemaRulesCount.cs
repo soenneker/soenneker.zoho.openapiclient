@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the workflow rule count and limit details for the organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowRulesCountResponseSchemaRulesCount : IParsable
+    public partial class WorkflowRulesCountResponseSchemaRulesCount : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the number of currently active workflow rules configured in the organization.</summary>
         public int? ActiveRulesConfigured { get; set; }
@@ -19,6 +19,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? ActiveRulesLimit { get; set; }
         /// <summary>Represents the maximum number of active workflow rules allowed per CRM module.</summary>
         public int? ActiveRulesLimitPerModule { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the maximum number of workflow rules allowed per business process.</summary>
         public int? RulesPerProcessLimit { get; set; }
         /// <summary>Represents the maximum number of scheduled action groups allowed per workflow rule.</summary>
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? TotalRulesLimit { get; set; }
         /// <summary>Represents the maximum number of workflow rules allowed per CRM module.</summary>
         public int? TotalRulesLimitPerModule { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount"/> and sets the default values.
+        /// </summary>
+        public WorkflowRulesCountResponseSchemaRulesCount()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -76,6 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("total_rules_configured", TotalRulesConfigured);
             writer.WriteIntValue("total_rules_limit", TotalRulesLimit);
             writer.WriteIntValue("total_rules_limit_per_module", TotalRulesLimitPerModule);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

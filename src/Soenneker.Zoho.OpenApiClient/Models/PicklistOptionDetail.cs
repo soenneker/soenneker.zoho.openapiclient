@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Full metadata for a picklist option, including unique ID, actual/reference/display values, sequence order, usage type (used/unused), optional color code, and associated layouts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PicklistOptionDetail : IParsable
+    public partial class PicklistOptionDetail : IAdditionalDataHolder, IParsable
     {
         /// <summary>Actual value of the picklist option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ActualValue { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Color code of the picklist option when the picklist field in color code enabled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Presence of the option in layouts and in the module</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PicklistOptionDetailType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PicklistOptionDetail"/> and sets the default values.
+        /// </summary>
+        public PicklistOptionDetail()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PicklistOptionDetail"/></returns>
@@ -108,6 +117,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("reference_value", ReferenceValue);
             writer.WriteIntValue("sequence_number", SequenceNumber);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistOptionDetailType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

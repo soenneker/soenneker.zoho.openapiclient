@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a validation error returned by the API when a field that the target module requires (such as Subject for Tasks) is absent from the field_mappings array. The details.value property identifies the missing field, and details.sub_json_path indicates the nested property path used to locate it.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationFieldMappingRequiredDataNotFoundError : IParsable
+    public partial class AutomationFieldMappingRequiredDataNotFoundError : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code that identifies the specific error condition.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RequiredDataNotFoundCode? Code { get; set; }
         /// <summary>Supplies contextual information that pinpoints the specific field entry absent from the field_mappings collection, enabling precise identification of the missing data.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationFieldMappingRequiredDataNotFoundError"/> and sets the default values.
+        /// </summary>
+        public AutomationFieldMappingRequiredDataNotFoundError()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationFieldMappingRequiredDataNotFoundErrorDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,15 +11,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Successful response containing inventory_templates array and pagination info.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InventoryTemplateListResponse : IParsable
+    public partial class InventoryTemplateListResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the pagination metadata for list responses, including page number, items per page, total count, and whether more records are available.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Pagination information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesInfoBlock? Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponseInfo? Info { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesInfoBlock Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponseInfo Info { get; set; }
 #endif
         /// <summary>Represents the list of inventory templates returned for the current page. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListItem> InventoryTemplates { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse"/> and sets the default values.
+        /// </summary>
+        public InventoryTemplateListResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesInfoBlock>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesInfoBlock.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponseInfo>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponseInfo.CreateFromDiscriminatorValue); } },
                 { "inventory_templates", n => { InventoryTemplates = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListItem>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -58,8 +67,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesInfoBlock>("info", Info);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponseInfo>("info", Info);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListItem>("inventory_templates", InventoryTemplates);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

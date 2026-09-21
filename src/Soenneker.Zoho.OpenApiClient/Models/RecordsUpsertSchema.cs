@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Request body schema for upsert operations, allowing creation or update of records based on duplicate fields.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordsUpsertSchema : IParsable
+    public partial class RecordsUpsertSchema : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of records to be created or updated using the upsert operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,13 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string LarId { get; set; }
 #endif
-        /// <summary>The trigger property</summary>
+        /// <summary>Specifies the CRM features to execute for the API request. Supported values are &quot;workflow&quot;, &quot;approval&quot;, and &quot;blueprint&quot;. If the &quot;trigger&quot; parameter is not specified, workflows, approvals, and blueprints related to the API are executed. Specify an empty array [] to prevent these features from executing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerProperty? Trigger { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerItem?>? Trigger { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerProperty Trigger { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerItem?> Trigger { get; set; }
 #endif
         /// <summary>Workflow trigger identifier to be executed as part of the upsert operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,6 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string WfTrigger { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchema"/> and sets the default values.
+        /// </summary>
+        public RecordsUpsertSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,7 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItem>(global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "duplicate_check_fields", n => { DuplicateCheckFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "lar_id", n => { LarId = n.GetStringValue(); } },
-                { "trigger", n => { Trigger = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerProperty>(global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerProperty.CreateFromDiscriminatorValue); } },
+                { "trigger", n => { Trigger = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerItem>()?.AsList(); } },
                 { "wf_trigger", n => { WfTrigger = n.GetStringValue(); } },
             };
         }
@@ -88,8 +97,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItem>("data", Data);
             writer.WriteCollectionOfPrimitiveValues<string>("duplicate_check_fields", DuplicateCheckFields);
             writer.WriteStringValue("lar_id", LarId);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerProperty>("trigger", Trigger);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerItem>("trigger", Trigger);
             writer.WriteStringValue("wf_trigger", WfTrigger);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

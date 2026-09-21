@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SectionPropertiesBulkAddition : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull? LayoutsTypeNull { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull LayoutsTypeNull { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,14 +36,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1 SectionPropertiesBulkAdditionOneOf1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull? TypeNull { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull TypeNull { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,17 +59,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SectionPropertiesBulkAdditionMember1 != null)
+            if(LayoutsTypeNull != null)
+            {
+                return LayoutsTypeNull.GetFieldDeserializers();
+            }
+            else if(SectionPropertiesBulkAdditionMember1 != null)
             {
                 return SectionPropertiesBulkAdditionMember1.GetFieldDeserializers();
             }
             else if(SectionPropertiesBulkAdditionOneOf1 != null)
             {
                 return SectionPropertiesBulkAdditionOneOf1.GetFieldDeserializers();
-            }
-            else if(TypeNull != null)
-            {
-                return TypeNull.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -80,17 +80,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SectionPropertiesBulkAdditionMember1 != null)
+            if(LayoutsTypeNull != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull>(null, LayoutsTypeNull);
+            }
+            else if(SectionPropertiesBulkAdditionMember1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionMember1>(null, SectionPropertiesBulkAdditionMember1);
             }
             else if(SectionPropertiesBulkAdditionOneOf1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1>(null, SectionPropertiesBulkAdditionOneOf1);
-            }
-            else if(TypeNull != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TypeNull>(null, TypeNull);
             }
         }
     }

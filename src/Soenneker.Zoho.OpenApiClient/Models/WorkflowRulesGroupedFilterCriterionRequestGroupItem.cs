@@ -39,10 +39,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem();
-            if("WorkflowRulesGroupedFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.WorkflowRulesGroupedFilterCriterionRequest = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequest();
-            }
             return result;
         }
         /// <summary>

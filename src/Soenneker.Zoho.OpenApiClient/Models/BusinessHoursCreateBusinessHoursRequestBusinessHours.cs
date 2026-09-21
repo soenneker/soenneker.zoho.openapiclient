@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// The business hours configuration object containing all settings for the organization&apos;s working schedule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BusinessHoursCreateBusinessHoursRequestBusinessHours : IParsable
+    public partial class BusinessHoursCreateBusinessHoursRequestBusinessHours : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The specific days of the week on which the organization is open for business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,6 +45,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursType? Type { get; set; }
         /// <summary>The day on which the organization&apos;s work week begins.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursWeekStartsOn? WeekStartsOn { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHours"/> and sets the default values.
+        /// </summary>
+        public BusinessHoursCreateBusinessHoursRequestBusinessHours()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,6 +91,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("same_as_everyday", SameAsEveryday);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursWeekStartsOn>("week_starts_on", WeekStartsOn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

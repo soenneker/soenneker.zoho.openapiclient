@@ -11,20 +11,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the email-reply-window trigger details, including the time unit and magnitude for the reply window.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExecuteWhenT7EmailRepliedWithinDetails : IParsable
+    public partial class ExecuteWhenT7EmailRepliedWithinDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the time unit for the reply window.Possible values:days - Window measured in days.hours - Window measured in hours.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithinDetailsPeriod? Period { get; set; }
-        /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
+        /// <summary>The module that actually triggers the rule. Defaults to the rule&apos;s top-level module if omitted. Must be explicitly set when the trigger targets a different module  - e.g., a rule on Leads triggered by &apos;note created&apos; requires trigger_module = {api_name: &apos;Notes&apos;, id: &apos;...&apos;}. Use `getModules` to discover module api_name and id values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithinDetailsTriggerModule? TriggerModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithinDetailsTriggerModule TriggerModule { get; set; }
 #endif
         /// <summary>Represents the reply window magnitude, such as 3 for a window of three days or three hours.</summary>
         public int? Unit { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithinDetails"/> and sets the default values.
+        /// </summary>
+        public ExecuteWhenT7EmailRepliedWithinDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "period", n => { Period = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithinDetailsPeriod>(); } },
-                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
+                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithinDetailsTriggerModule>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithinDetailsTriggerModule.CreateFromDiscriminatorValue); } },
                 { "unit", n => { Unit = n.GetIntValue(); } },
             };
         }
@@ -56,8 +65,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithinDetailsPeriod>("period", Period);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("trigger_module", TriggerModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT7EmailRepliedWithinDetailsTriggerModule>("trigger_module", TriggerModule);
             writer.WriteIntValue("unit", Unit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

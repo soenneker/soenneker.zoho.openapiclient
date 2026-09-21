@@ -90,7 +90,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Scheduled_run_rule_jobsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Represents the job_id query parameter, which specifies the unique identifier of the scheduled run rule job.</summary>
+            /// <summary>The unique identifier of the scheduled run rule job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("job_id")]

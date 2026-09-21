@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single Zia organization enrichment request that defines the trigger fields used to identify the organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItem : IParsable
+    public partial class ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the details of the fields on whose values you want to trigger enrichment.  Note that you must provide at least one of the following values in the input. Based on these values, Zia will look for information on the web and enrich fields as per [Enrichment Configuration.](zia_enrichment.yaml#$.paths./settings/zia/data_enrichment.get)) Note that the values of these keys must be at least three characters long and only in English.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItemEnrichBasedOn EnrichBasedOn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItem"/> and sets the default values.
+        /// </summary>
+        public ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItemEnrichBasedOn>("enrich_based_on", EnrichBasedOn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

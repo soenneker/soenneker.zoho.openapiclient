@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a grouped filter criterion containing multiple filter conditions evaluated with a logical operator. Supports recursive nesting for complex filtering logic.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowRulesGroupedFilterCriterionRequest : IParsable
+    public partial class WorkflowRulesGroupedFilterCriterionRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains an array of filter conditions grouped together and evaluated with the specified logical operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the logical operator applied between the filter conditions in the group.Possible values:AND - All conditions in the group must be satisfied.OR - At least one condition in the group must be satisfied.and - Equivalent to AND; all conditions in the group must be satisfied.or - Equivalent to OR; at least one condition in the group must be satisfied.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupOperator? GroupOperator { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequest"/> and sets the default values.
+        /// </summary>
+        public WorkflowRulesGroupedFilterCriterionRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem>("group", Group);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupOperator>("group_operator", GroupOperator);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

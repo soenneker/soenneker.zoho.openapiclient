@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents the shift timing override for a specific day of the week.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursCreateShiftsRequestShiftHoursItemCustomTimingItem : IParsable
+    public partial class ShiftHoursCreateShiftsRequestShiftHoursItemCustomTimingItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the day of the week to which thiscustom shift timing applies.Possible values: - Monday- Tuesday- Wednesday- Thursday- Friday- Saturday- Sunday</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequestShiftHoursItemCustomTimingItemDays? Days { get; set; }
         /// <summary>Represents the start and end time of the shift on the specifiedday in `HH:MM` in the 24-hour format. </summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<string> ShiftTiming { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequestShiftHoursItemCustomTimingItem"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursCreateShiftsRequestShiftHoursItemCustomTimingItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequestShiftHoursItemCustomTimingItemDays>("days", Days);
             writer.WriteCollectionOfPrimitiveValues<string>("shift_timing", ShiftTiming);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

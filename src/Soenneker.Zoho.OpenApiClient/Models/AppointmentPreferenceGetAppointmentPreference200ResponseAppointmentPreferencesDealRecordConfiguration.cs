@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains the field mappings and layout details for record configuration in Deals from the Appointments module.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesDealRecordConfiguration : IParsable
+    public partial class AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesDealRecordConfiguration : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the field mappings that define how appointment and service data populates deal fields when Zoho CRM creates a deal automatically after the appointment completion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesDealRecordConfigurationLayout Layout { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesDealRecordConfiguration"/> and sets the default values.
+        /// </summary>
+        public AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesDealRecordConfiguration()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesDealRecordConfigurationFieldMappingsItem>("field_mappings", FieldMappings);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesDealRecordConfigurationLayout>("layout", Layout);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

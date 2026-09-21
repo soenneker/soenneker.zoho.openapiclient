@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains the current Call Preferences configuration for your Zoho CRM organization in the **Calls** module.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CallPreferencesGetCallPreferences200ResponseCallPreferences : IParsable
+    public partial class CallPreferencesGetCallPreferences200ResponseCallPreferences : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the **From Number** field is currently enabled on records in the Calls module. **Possible values:****true** - The **From Number** field is enabled and appears on Call records.**false** - The **From Number** field is disabled and is hidden from Call records.</summary>
         public bool? ShowFromNumber { get; set; }
         /// <summary>Indicates whether the **To Number** field is currently enabled on records in the Calls module. **Possible values:****true** - The **To Number** field is enabled and appears on Call records.**false** - The **To Number** field is disabled and is hidden from Call records.</summary>
         public bool? ShowToNumber { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences"/> and sets the default values.
+        /// </summary>
+        public CallPreferencesGetCallPreferences200ResponseCallPreferences()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("show_from_number", ShowFromNumber);
             writer.WriteBoolValue("show_to_number", ShowToNumber);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

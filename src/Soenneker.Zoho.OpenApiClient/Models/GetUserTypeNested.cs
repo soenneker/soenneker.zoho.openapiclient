@@ -11,12 +11,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A summary representation of a portal user type as returned by the list operation, including identity fields, active status, user counts, and last modification timestamp.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetUserTypeNested : IParsable
+    public partial class GetUserTypeNested : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the portal user type is currently active.</summary>
         public bool? Active { get; set; }
         /// <summary>Represents the number of portal users currently assigned to and active under this user type.</summary>
         public int? ActiveUserCount { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents nested object identifying the Zoho CRM user who created the portal user type, containing the user&apos;s unique identifier and display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +88,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.GetPersonalityModuleNested PersonalityModule { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetUserTypeNested"/> and sets the default values.
+        /// </summary>
+        public GetUserTypeNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetUserTypeNested"/></returns>
@@ -136,6 +145,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetPersonalityModuleNested>("personality_module", PersonalityModule);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

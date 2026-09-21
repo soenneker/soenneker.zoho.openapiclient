@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the deletion result for the user group, indicating whether it completes immediately or queues for background processing.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserGroupsDeleteGroup200ResponseUserGroupsItem : IParsable
+    public partial class UserGroupsDeleteGroup200ResponseUserGroupsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the result code for the user group deletion operation. Possible values:**SUCCESS** - The user group deletion completes immediately.**SCHEDULED** - The user group deletion queues for background processing; the response includes a **job ID**.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsDeleteGroup200ResponseUserGroupsItemCode? Code { get; set; }
         /// <summary>Represents additional details about the deletion result, containing either the deleted group ID or a scheduled job ID. </summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the status of the user group deletion operation. Possible values:**success** - The user group deletion completes immediately.**scheduled** - The user group deletion queues for background processing.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsDeleteGroup200ResponseUserGroupsItemStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsDeleteGroup200ResponseUserGroupsItem"/> and sets the default values.
+        /// </summary>
+        public UserGroupsDeleteGroup200ResponseUserGroupsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsDeleteGroup200ResponseUserGroupsItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsDeleteGroup200ResponseUserGroupsItemStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

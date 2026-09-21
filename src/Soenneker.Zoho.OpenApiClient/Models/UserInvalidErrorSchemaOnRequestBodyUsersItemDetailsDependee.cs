@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the dependent field information related to the validation error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserInvalidErrorSchemaOnRequestBodyUsersItemDetailsDependee : IParsable
+    public partial class UserInvalidErrorSchemaOnRequestBodyUsersItemDetailsDependee : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API field name of the dependent field that caused the validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the index in the resource path where the dependent field is located.</summary>
         public int? ResourcePathIndex { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserInvalidErrorSchemaOnRequestBodyUsersItemDetailsDependee"/> and sets the default values.
+        /// </summary>
+        public UserInvalidErrorSchemaOnRequestBodyUsersItemDetailsDependee()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteIntValue("resource_path_index", ResourcePathIndex);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

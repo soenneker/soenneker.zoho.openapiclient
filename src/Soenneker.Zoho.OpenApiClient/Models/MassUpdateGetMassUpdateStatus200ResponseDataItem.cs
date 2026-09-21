@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the status object that contains the current state and processed-record counts for the mass update job.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassUpdateGetMassUpdateStatus200ResponseDataItem : IParsable
+    public partial class MassUpdateGetMassUpdateStatus200ResponseDataItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of records that failed to update due to validation errors or other processing failures during the mass update job.</summary>
         public int? FailedCount { get; set; }
         /// <summary>Represents the number of records that are not yet updated by the mass update job.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? TotalCount { get; set; }
         /// <summary>Represents the number of records that were successfully updated by the mass update job.</summary>
         public int? UpdatedCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200ResponseDataItem"/> and sets the default values.
+        /// </summary>
+        public MassUpdateGetMassUpdateStatus200ResponseDataItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200ResponseDataItemStatus>("Status", Status);
             writer.WriteIntValue("Total_Count", TotalCount);
             writer.WriteIntValue("Updated_Count", UpdatedCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

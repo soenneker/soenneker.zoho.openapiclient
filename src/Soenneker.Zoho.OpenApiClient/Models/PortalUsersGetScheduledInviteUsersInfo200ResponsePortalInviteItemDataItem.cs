@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the invitation result for a single portal invitation batch.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PortalUsersGetScheduledInviteUsersInfo200ResponsePortalInviteItemDataItem : IParsable
+    public partial class PortalUsersGetScheduledInviteUsersInfo200ResponsePortalInviteItemDataItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code. Possible values: **SUCCESS**, **CANNOT_PROCESS**, **INVALID_DATA**, **REQUIRED_PARAM_MISSING**, **LICENSE_LIMIT_EXCEEDED**, **NOT_REVIEWED**, **NOT_APPROVED**, **DUPLICATE_DATA**.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200ResponsePortalInviteItemDataItemCode? Code { get; set; }
         /// <summary>Represents additional details about the operation result.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the status of the operation. Possible values: **success**, **error**.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200ResponsePortalInviteItemDataItemStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200ResponsePortalInviteItemDataItem"/> and sets the default values.
+        /// </summary>
+        public PortalUsersGetScheduledInviteUsersInfo200ResponsePortalInviteItemDataItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200ResponsePortalInviteItemDataItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200ResponsePortalInviteItemDataItemStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

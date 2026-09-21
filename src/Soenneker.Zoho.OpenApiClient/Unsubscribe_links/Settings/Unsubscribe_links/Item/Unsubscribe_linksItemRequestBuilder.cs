@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkRemovalResultList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PermissionDeniedError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPermissionDeniedError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkRemovalResultList?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PermissionDeniedError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPermissionDeniedError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkRemovalResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkRemovalResultList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -62,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RetrieveUnsubscribeLinksResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PermissionDeniedError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPermissionDeniedError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RetrieveUnsubscribeLinksResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,7 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PermissionDeniedError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPermissionDeniedError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RetrieveUnsubscribeLinksResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RetrieveUnsubscribeLinksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

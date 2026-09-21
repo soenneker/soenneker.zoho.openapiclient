@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents a Cadence configured in Zoho CRM, including its schedule, execution details, and status.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CadencesGetCadences200ResponseCadencesItem : IParsable
+    public partial class CadencesGetCadences200ResponseCadencesItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents whether the Cadence is currently active. Possible values: **true**, **false**.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the identifier and name of the user who created the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +100,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates the enrollment type of the Cadence. Possible values: **Custom view**, **Manual enrollment**.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200ResponseCadencesItemType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200ResponseCadencesItem"/> and sets the default values.
+        /// </summary>
+        public CadencesGetCadences200ResponseCadencesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200ResponseCadencesItem"/></returns>
@@ -154,6 +163,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200ResponseCadencesItemStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpSummary>("summary", Summary);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CadencesGetCadences200ResponseCadencesItemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

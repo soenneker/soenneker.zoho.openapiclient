@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the standard error response structure returned by the API when a request fails, containing a structured error code, a descriptive message, and a status indicator.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutsErrorResponse : ApiException, IParsable
+    public partial class LayoutsErrorResponse : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identifies the category of error returned by the API. Possible values: `REQUIRED_PARAM_MISSING` — a mandatory parameter was absent from the request; `DEPENDENT_PARAM_MISSING` — a parameter required by another supplied parameter was not provided; `INVALID_MODULE` — the specified module does not exist or is not accessible; `INVALID_DATA` — one or more field values failed validation; `NOT_SUPPORTED` — the requested operation is not supported for the target resource; `NOT_ALLOWED` — the operation is not permitted in the current context; `AUTHENTICATION_FAILURE` — the supplied credentials could not be verified; `OAUTH_SCOPE_MISMATCH` — the OAuth token does not carry the scope required for the operation; `INVALID_REQUEST_METHOD` — the HTTP method used is not accepted by the endpoint; `INTERNAL_ERROR` — an unexpected server-side failure occurred; `NO_PERMISSION` — the authenticated user lacks the CRM profile permission needed to perform the action.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponseCode? Code { get; set; }
         /// <summary>Contains additional context-specific details accompanying an API error response, providing structured diagnostics such as the offending parameter name, expected data type, supported values, or dependency information.</summary>
@@ -36,6 +38,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse"/> and sets the default values.
+        /// </summary>
+        public LayoutsErrorResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

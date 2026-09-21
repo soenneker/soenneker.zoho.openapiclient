@@ -8,27 +8,36 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/>
+    /// Represents the duration configured field details for history tracking.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaHistoryTrackingOneOf1DurationConfiguredField : IComposedTypeWrapper, IParsable
+    public partial class FieldSchemaHistoryTrackingOneOf1DurationConfiguredField : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1? FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1 { get; set; }
+        public string? ApiName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1 FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1 { get; set; }
+        public string ApiName { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/></summary>
+        /// <summary>Id of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull? TypeNull { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull TypeNull { get; set; }
+        public string Id { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaHistoryTrackingOneOf1DurationConfiguredField()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,13 +46,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField();
-            if("FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1();
-            }
-            return result;
+            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,15 +54,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1.GetFieldDeserializers();
-            }
-            else if(TypeNull != null)
-            {
-                return TypeNull.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "api_name", n => { ApiName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -68,14 +67,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1>(null, FieldSchemaHistoryTrackingOneOf1DurationConfiguredFieldOneOf1);
-            }
-            else if(TypeNull != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TypeNull>(null, TypeNull);
-            }
+            writer.WriteStringValue("api_name", ApiName);
+            writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

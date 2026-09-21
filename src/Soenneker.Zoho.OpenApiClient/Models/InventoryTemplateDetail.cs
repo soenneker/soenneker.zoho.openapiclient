@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Complete inventory template object with all detailed information including content
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InventoryTemplateDetail : IParsable
+    public partial class InventoryTemplateDetail : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the category of the inventory template. Possible values:**normal** - A regular, published inventory template.**draft** - A template that is saved as a draft and not yet published.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailCategory? Category { get; set; }
         /// <summary>Represents the full HTML content of the inventory template. </summary>
@@ -23,13 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>Represents a user reference containing the user ID and display name, used to identify the user associated with an inventory template operation.</summary>
+        /// <summary>User who created the template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailCreatedBy? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailCreatedBy CreatedBy { get; set; }
 #endif
         /// <summary>Represents the creation timestamp of the inventory template. </summary>
         public DateTimeOffset? CreatedTime { get; set; }
@@ -37,13 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailEditorMode? EditorMode { get; set; }
         /// <summary>Indicates whether the inventory template is marked as a favorite. Possible values:**true** - The template is marked as a favorite.**false** - The template is not marked as a favorite.</summary>
         public bool? Favorite { get; set; }
-        /// <summary>Represents a folder reference containing the folder ID and name, used to identify the folder associated with an inventory template.</summary>
+        /// <summary>Folder containing this template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesFolderRef? Folder { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailFolder? Folder { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesFolderRef Folder { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailFolder Folder { get; set; }
 #endif
         /// <summary>Unique template identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,23 +57,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the date and time at which the inventory template was last used, or null if the template has never been used. </summary>
         public DateTimeOffset? LastUsageTime { get; set; }
-        /// <summary>Represents a user reference containing the user ID and display name, used to identify the user associated with an inventory template operation.</summary>
+        /// <summary>User who last modified the template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailModifiedBy? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailModifiedBy ModifiedBy { get; set; }
 #endif
         /// <summary>Represents the date and time at which the inventory template was last modified. </summary>
         public DateTimeOffset? ModifiedTime { get; set; }
-        /// <summary>Represents a module reference containing the module **API name** and **ID**, used to identify the CRM module associated with an inventory template.</summary>
+        /// <summary>Module this template belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesModuleRef? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailModule? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesModuleRef Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailModule Module { get; set; }
 #endif
         /// <summary>Represents the name of the inventory template. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,6 +83,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetail"/> and sets the default values.
+        /// </summary>
+        public InventoryTemplateDetail()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -101,16 +110,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "category", n => { Category = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailCategory>(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailCreatedBy.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "editor_mode", n => { EditorMode = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailEditorMode>(); } },
                 { "favorite", n => { Favorite = n.GetBoolValue(); } },
-                { "folder", n => { Folder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesFolderRef>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesFolderRef.CreateFromDiscriminatorValue); } },
+                { "folder", n => { Folder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailFolder>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailFolder.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_usage_time", n => { LastUsageTime = n.GetDateTimeOffsetValue(); } },
-                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef.CreateFromDiscriminatorValue); } },
+                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailModifiedBy.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesModuleRef>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesModuleRef.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailModule>(global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailModule.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -123,17 +132,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailCategory>("category", Category);
             writer.WriteStringValue("content", Content);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef>("created_by", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailCreatedBy>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailEditorMode>("editor_mode", EditorMode);
             writer.WriteBoolValue("favorite", Favorite);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesFolderRef>("folder", Folder);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailFolder>("folder", Folder);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_usage_time", LastUsageTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesUserRef>("modified_by", ModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailModifiedBy>("modified_by", ModifiedBy);
             writer.WriteDateTimeOffsetValue("modified_time", ModifiedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesModuleRef>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailModule>("module", Module);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

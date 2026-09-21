@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents one break window scheduled within the shift hour, including the days it applies to and the break timing.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursCreateShiftsRequestShiftHoursItemBreakHoursItem : IParsable
+    public partial class ShiftHoursCreateShiftsRequestShiftHoursItemBreakHoursItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lists the days of the week on which the break applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string SameAsEveryday { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequestShiftHoursItemBreakHoursItem"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursCreateShiftsRequestShiftHoursItemBreakHoursItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,6 +89,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShiftsRequestShiftHoursItemBreakHoursItemCustomTimingItem>("custom_timing", CustomTiming);
             writer.WriteCollectionOfPrimitiveValues<string>("daily_timing", DailyTiming);
             writer.WriteStringValue("same_as_everyday", SameAsEveryday);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

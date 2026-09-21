@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single job status entry containing conversion counts and the current processing status of the mass convert job.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassConvertGetMassConvertJobStatus200ResponseDataItem : IParsable
+    public partial class MassConvertGetMassConvertJobStatus200ResponseDataItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of leads that were successfully converted in the job. </summary>
         public int? ConvertedCount { get; set; }
         /// <summary>Represents the number of leads for which conversion failed. </summary>
@@ -29,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the total number of leads scheduled for conversion in the job. </summary>
         public int? TotalCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus200ResponseDataItem"/> and sets the default values.
+        /// </summary>
+        public MassConvertGetMassConvertJobStatus200ResponseDataItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,6 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("Not_Converted_Count", NotConvertedCount);
             writer.WriteStringValue("Status", Status);
             writer.WriteIntValue("Total_Count", TotalCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

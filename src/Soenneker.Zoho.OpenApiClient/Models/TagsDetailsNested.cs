@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the detailed metadata of the tag, including timestamps, the tag name, color code, and the users who created and last modified it.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TagsDetailsNested : IParsable
+    public partial class TagsDetailsNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the hex color code assigned to the tag, such as **#FF0000**. The value is null when no color is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +60,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsDetailsNested"/> and sets the default values.
+        /// </summary>
+        public TagsDetailsNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsDetailsNested"/></returns>
@@ -98,6 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsModifiedByNested>("modified_by", ModifiedBy);
             writer.WriteDateTimeOffsetValue("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

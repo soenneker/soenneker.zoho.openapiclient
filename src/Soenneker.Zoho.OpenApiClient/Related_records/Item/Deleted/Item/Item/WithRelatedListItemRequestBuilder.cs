@@ -39,8 +39,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,8 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Deleted.Item.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord403Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord500Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

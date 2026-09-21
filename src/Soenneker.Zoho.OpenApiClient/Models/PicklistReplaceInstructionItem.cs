@@ -11,26 +11,35 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A structured instruction that pairs a source and target picklist option, with an option to delete the source after replacement.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PicklistReplaceInstructionItem : IParsable
+    public partial class PicklistReplaceInstructionItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Boolean value to delete the old_value along with replace</summary>
         public bool? DeleteOldValue { get; set; }
-        /// <summary>Represents the picklist option that will act as the replacement, providing the display value and unique identifier. At least one of id or display_value must be provided.</summary>
+        /// <summary>The option to be replaced with the option (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceTargetValue? NewValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue? NewValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceTargetValue NewValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue NewValue { get; set; }
 #endif
-        /// <summary>Represents the picklist option to be replaced, providing the display value and unique identifier. At least one of id or display_value must be provided.</summary>
+        /// <summary>The option which is to be replaced (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceSourceValue? OldValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue? OldValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceSourceValue OldValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue OldValue { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItem"/> and sets the default values.
+        /// </summary>
+        public PicklistReplaceInstructionItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,8 +59,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "delete_old_value", n => { DeleteOldValue = n.GetBoolValue(); } },
-                { "new_value", n => { NewValue = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceTargetValue>(global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceTargetValue.CreateFromDiscriminatorValue); } },
-                { "old_value", n => { OldValue = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceSourceValue>(global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceSourceValue.CreateFromDiscriminatorValue); } },
+                { "new_value", n => { NewValue = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue>(global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue.CreateFromDiscriminatorValue); } },
+                { "old_value", n => { OldValue = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue>(global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,8 +71,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("delete_old_value", DeleteOldValue);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceTargetValue>("new_value", NewValue);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceSourceValue>("old_value", OldValue);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue>("new_value", NewValue);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue>("old_value", OldValue);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

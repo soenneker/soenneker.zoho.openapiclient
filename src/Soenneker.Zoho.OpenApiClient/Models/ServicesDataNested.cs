@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a service object in the create request payload, including its name, duration, price, location, members, availability configuration, layout reference, and Zia owner assignment.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ServicesDataNested : IParsable
+    public partial class ServicesDataNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify how the service availability is defined. **Possible values**: - Every Business Days - service is available on every business day.- Specific Date Range - service is available within anAvailable_From and Available_Till range.- Specific Date(s) - service is available on the dates listed inAvailable_Dates.- Specific Day(s) - service is available on the weekdays listed inAvailable_Days.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedAvailabilityType? AvailabilityType { get; set; }
         /// <summary>Specify the list of dates on which the service is available, in YYYY-MM-DD format. This key is mandatory when Availability_Type is Specific Date(s).</summary>
@@ -56,13 +58,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? Duration { get; set; }
         /// <summary>Specify whether a job sheet is required for the service. **Possible values**: Yes, No.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedJobSheetRequired? JobSheetRequired { get; set; }
-        /// <summary>Represents the layout used to render the service record. Refer to the [Get layouts](layouts.yaml#$.paths./settings/layouts.get) resource for valid values.</summary>
+        /// <summary>Layout id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutNested? Layout { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout? Layout { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutNested Layout { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout Layout { get; set; }
 #endif
         /// <summary>Specify where the service is delivered. **Possible values**: Client Address, Business Address, BusinessAddress and Client Address.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLocation? Location { get; set; }
@@ -74,13 +76,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested> Members { get; set; }
 #endif
-        /// <summary>Represents the owner of the service. Identifies the user who owns the service record by name, full name, and ID. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.</summary>
+        /// <summary>owner of the service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesOwnerNested? Owner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesOwnerNested Owner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner Owner { get; set; }
 #endif
         /// <summary>Specify the price charged for the service in the organization currency, with up to 16 digits and 2 decimal places.</summary>
         public int? Price { get; set; }
@@ -111,11 +113,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the Zia-suggested users payload associated with the service record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsers? ZiaSuggestedUsers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty? ZiaSuggestedUsers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsers ZiaSuggestedUsers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty ZiaSuggestedUsers { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNested"/> and sets the default values.
+        /// </summary>
+        public ServicesDataNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -143,15 +152,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "Description", n => { Description = n.GetStringValue(); } },
                 { "Duration", n => { Duration = n.GetIntValue(); } },
                 { "Job_Sheet_Required", n => { JobSheetRequired = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedJobSheetRequired>(); } },
-                { "Layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutNested>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutNested.CreateFromDiscriminatorValue); } },
+                { "Layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout.CreateFromDiscriminatorValue); } },
                 { "Location", n => { Location = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLocation>(); } },
                 { "Members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested>(global::Soenneker.Zoho.OpenApiClient.Models.MembersNested.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "Owner", n => { Owner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesOwnerNested>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesOwnerNested.CreateFromDiscriminatorValue); } },
+                { "Owner", n => { Owner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner.CreateFromDiscriminatorValue); } },
                 { "Price", n => { Price = n.GetIntValue(); } },
                 { "Service_Name", n => { ServiceName = n.GetStringValue(); } },
                 { "Tax", n => { Tax = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TaxNested>(global::Soenneker.Zoho.OpenApiClient.Models.TaxNested.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "$zia_owner_assignment", n => { ZiaOwnerAssignment = n.GetStringValue(); } },
-                { "zia_suggested_users", n => { ZiaSuggestedUsers = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsers>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsers.CreateFromDiscriminatorValue); } },
+                { "zia_suggested_users", n => { ZiaSuggestedUsers = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -170,15 +179,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("Description", Description);
             writer.WriteIntValue("Duration", Duration);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedJobSheetRequired>("Job_Sheet_Required", JobSheetRequired);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutNested>("Layout", Layout);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout>("Layout", Layout);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLocation>("Location", Location);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested>("Members", Members);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesOwnerNested>("Owner", Owner);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner>("Owner", Owner);
             writer.WriteIntValue("Price", Price);
             writer.WriteStringValue("Service_Name", ServiceName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TaxNested>("Tax", Tax);
             writer.WriteStringValue("$zia_owner_assignment", ZiaOwnerAssignment);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsers>("zia_suggested_users", ZiaSuggestedUsers);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty>("zia_suggested_users", ZiaSuggestedUsers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

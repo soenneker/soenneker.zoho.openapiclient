@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the email delivery and engagement statistics from the most recent version of the template. 
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EmailTemplateListItemLastVersionStatistics : IParsable
+    public partial class EmailTemplateListItemLastVersionStatistics : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of emails that bounced when sent using this template. </summary>
         public int? Bounced { get; set; }
         /// <summary>Represents the number of link clicks recorded in emails sent using this template. </summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? Sent { get; set; }
         /// <summary>Represents the number of emails sent using this template for which tracking is enabled. </summary>
         public int? Tracked { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListItemLastVersionStatistics"/> and sets the default values.
+        /// </summary>
+        public EmailTemplateListItemLastVersionStatistics()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("opened", Opened);
             writer.WriteIntValue("sent", Sent);
             writer.WriteIntValue("tracked", Tracked);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

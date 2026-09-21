@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the details of the Module definition object containing module metadata, optional access_type, profiles (not applicable for team_based), and optional display field configuration
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesCreateModulesRequestModulesItem : IParsable
+    public partial class ModulesCreateModulesRequestModulesItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Specify the access type for the module.Defaults to org_based when omitted. Use team_based to create a team module.Possible values:**org_based** - The module is accessible based on organizational profile settings.**team_based** - The module is restricted to team-based access.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemAccessType? AccessType { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the unique API name for the module. The name must begin with an English alphabet character, must not end with an underscore, and must not contain two consecutive underscores. If omitted, the system generates the API name from the **plural_label** value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +58,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string SingularLabel { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItem"/> and sets the default values.
+        /// </summary>
+        public ModulesCreateModulesRequestModulesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItem"/></returns>
@@ -94,6 +103,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("plural_label", PluralLabel);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemProfilesItem>("profiles", Profiles);
             writer.WriteStringValue("singular_label", SingularLabel);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

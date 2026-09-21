@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the activation state of the workflow rule. When setting **active** to false, you can optionally delete all associated scheduled actions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowRulePutNestedSchemaStatus : IParsable
+    public partial class WorkflowRulePutNestedSchemaStatus : IAdditionalDataHolder, IParsable
     {
         /// <summary>Specify whether the workflow rule is active or inactive.Possible values:true - The rule is active and executes when triggered.false - The rule is inactive and does not execute.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to delete all scheduled actions associated with the workflow rule when deactivating it.Possible values:true - Delete all scheduled actions when the rule is deactivated.false - Preserve scheduled actions when the rule is deactivated.</summary>
         public bool? DeleteScheduleAction { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaStatus"/> and sets the default values.
+        /// </summary>
+        public WorkflowRulePutNestedSchemaStatus()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteBoolValue("delete_schedule_action", DeleteScheduleAction);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

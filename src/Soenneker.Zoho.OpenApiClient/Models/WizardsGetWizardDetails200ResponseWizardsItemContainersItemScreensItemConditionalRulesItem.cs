@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a conditional rule configured for the screen, defining the criteria and the corresponding actions to execute when the criteria are satisfied.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItem : IParsable
+    public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the list of actions executed when the conditional rule criteria are satisfied on the screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemActionsItem> Actions { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the criteria expression evaluated to determine whether the conditional rule actions are triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string QueryId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItem"/> and sets the default values.
+        /// </summary>
+        public WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemCriteria>("criteria", Criteria);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemScreensItemConditionalRulesItemExecuteOn>("execute_on", ExecuteOn);
             writer.WriteStringValue("query_id", QueryId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

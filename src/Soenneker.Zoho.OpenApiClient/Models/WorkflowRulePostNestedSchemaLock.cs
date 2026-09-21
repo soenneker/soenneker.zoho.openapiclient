@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the lock configuration to prevent other users from editing the rule. Only administrators can lock or unlock rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowRulePostNestedSchemaLock : IParsable
+    public partial class WorkflowRulePostNestedSchemaLock : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the reason or context for locking the rule. Valid only when **lock.status** is set to true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specify whether to lock the rule.Possible values:true - Locks the rule to prevent editing.false - Unlocks the rule.</summary>
         public bool? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock"/> and sets the default values.
+        /// </summary>
+        public WorkflowRulePostNestedSchemaLock()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", Message);
             writer.WriteBoolValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

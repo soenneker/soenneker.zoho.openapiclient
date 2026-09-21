@@ -12,12 +12,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains the permissible date interval for a date-type field that failed validation, expressed as a start date and an end date defining the inclusive bounds that the submitted value must fall within.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersUpdateSingleUser400ResponseUsersItemDetailsRange : IParsable
+    public partial class UsersUpdateSingleUser400ResponseUsersItemDetailsRange : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the earliest permissible date of the valid range for the field that triggered the validation error.</summary>
         public Date? From { get; set; }
         /// <summary>Represents the latest permissible date of the valid range for the field that triggered the validation error.</summary>
         public Date? To { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateSingleUser400ResponseUsersItemDetailsRange"/> and sets the default values.
+        /// </summary>
+        public UsersUpdateSingleUser400ResponseUsersItemDetailsRange()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("from", From);
             writer.WriteDateValue("to", To);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

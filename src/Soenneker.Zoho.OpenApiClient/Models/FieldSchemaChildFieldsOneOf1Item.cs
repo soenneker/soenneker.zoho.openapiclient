@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the ordered list of child field entries for a composite field such as an address field, each associating a sub-field&apos;s identity with its display sequence.
+    /// Represents the list of child fields associated with the Address field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchemaChildFieldsOneOf1Item : IAdditionalDataHolder, IParsable

@@ -8,15 +8,24 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active HIPAA compliance configuration for this field, specifying the access restriction and export suppression settings applied when HIPAA compliance is enabled.
+    /// Represents the HIPAA compliance configuration of the field, including restrictions applied during access and export.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaHipaaComplianceOneOf1 : IParsable
+    public partial class FieldSchemaHipaaComplianceOneOf1 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Indicates whether access to this field&apos;s value is restricted under HIPAA compliance rules, limiting visibility to only those users or roles authorized to handle protected health information. Possible values: `true` — the field is treated as restricted PHI and access controls are enforced; `false` — the field is not subject to HIPAA access restrictions.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates if the field is restricted.</summary>
         public bool? Restricted { get; set; }
-        /// <summary>Indicates whether this field&apos;s value is suppressed or masked when records are exported, in accordance with HIPAA data handling requirements. Possible values: `true` — the field is excluded or redacted in exported data sets; `false` — the field value is included in exports without HIPAA-based redaction.</summary>
+        /// <summary>Indicates if the field is restricted in export.</summary>
         public bool? RestrictedInExport { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHipaaComplianceOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaHipaaComplianceOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("restricted", Restricted);
             writer.WriteBoolValue("restricted_in_export", RestrictedInExport);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

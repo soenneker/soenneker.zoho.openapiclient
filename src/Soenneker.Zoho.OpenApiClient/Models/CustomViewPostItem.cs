@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the configuration for creating a Custom View, including its name, filter criteria, field list, sort configuration, and access control settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomViewPostItem : IParsable
+    public partial class CustomViewPostItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the access type for the Custom View.Possible values:**shared** - The view is shared with selected users, roles, groups, or territories.**public** - The view is accessible to all users in the organization.**only_to_me** - The view is private and accessible only to the creator.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemAccessType? AccessType { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the category for the Custom View.Possible values:**public_views** - Views accessible to all users in the organization.**other_users_views** - Views created by other users in the organization.**shared_with_me** - Views shared with the current user.**created_by_me** - Views created by the current user.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemCategory? Category { get; set; }
         /// <summary>Represents the filter criteria of the Custom View</summary>
@@ -74,6 +76,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates whether text wrapping is enabled for the Custom View.Possible values:**true** - Text wrapping is enabled.**false** - Text wrapping is disabled.</summary>
         public bool? WrapText { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItem"/> and sets the default values.
+        /// </summary>
+        public CustomViewPostItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItem"/></returns>
@@ -124,6 +133,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>("sort_by", SortBy);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemSortOrder>("sort_order", SortOrder);
             writer.WriteBoolValue("wrap_text", WrapText);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

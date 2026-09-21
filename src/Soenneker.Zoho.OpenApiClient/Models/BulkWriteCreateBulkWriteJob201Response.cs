@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the success envelope that Zoho CRM returns after scheduling a bulk write job. Contains the overall status, response code, message, and the details of the newly scheduled job.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkWriteCreateBulkWriteJob201Response : IParsable
+    public partial class BulkWriteCreateBulkWriteJob201Response : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the response code returned for the bulk write job creation. Possible values:**SUCCESS** - Indicates that the bulk write job was scheduled successfully.**FILE_UPLOAD_SUCCESS** - Indicates that the file associated with the job was uploaded successfully.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201ResponseCode? Code { get; set; }
         /// <summary>Represents the details of the newly scheduled bulk write job. </summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201ResponseMessage? Message { get; set; }
         /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response"/> and sets the default values.
+        /// </summary>
+        public BulkWriteCreateBulkWriteJob201Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201ResponseDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201ResponseMessage>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

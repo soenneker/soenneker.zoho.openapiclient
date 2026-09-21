@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents an individual role in the organization. 
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RolesGetRoles200ResponseRolesItem : IParsable
+    public partial class RolesGetRoles200ResponseRolesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name identifier for the role, used to reference the role programmatically.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +94,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates whether users assigned to this role can share records with users in peer roles at the same level. Possible values:**true** - Users assigned to this role can share records with peer role users.**false** - Users assigned to this role cannot share records with peer role users.</summary>
         public bool? ShareWithPeers { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200ResponseRolesItem"/> and sets the default values.
+        /// </summary>
+        public RolesGetRoles200ResponseRolesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200ResponseRolesItem"/></returns>
@@ -142,6 +151,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RolesGetRoles200ResponseRolesItemReportingTo>("reporting_to", ReportingTo);
             writer.WriteBoolValue("share_with_peers", ShareWithPeers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

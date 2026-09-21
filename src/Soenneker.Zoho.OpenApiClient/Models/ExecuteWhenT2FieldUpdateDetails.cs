@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the field update trigger details, including the criteria that define which field value change activates the rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExecuteWhenT2FieldUpdateDetails : IParsable
+    public partial class ExecuteWhenT2FieldUpdateDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the field value change criteria that activate the trigger. Defines which field is monitored and what change condition fires the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,14 +27,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public bool? MatchAll { get; set; }
         /// <summary>Indicates whether the rule fires every time the field update condition is met. When false, the rule fires only on the first occurrence.</summary>
         public bool? Repeat { get; set; }
-        /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
+        /// <summary>The module that actually triggers the rule. Defaults to the rule&apos;s top-level module if omitted. Must be explicitly set when the trigger targets a different module  - e.g., a rule on Leads triggered by &apos;note created&apos; requires trigger_module = {api_name: &apos;Notes&apos;, id: &apos;...&apos;}. Use `getModules` to discover module api_name and id values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdateDetailsTriggerModule? TriggerModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdateDetailsTriggerModule TriggerModule { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdateDetails"/> and sets the default values.
+        /// </summary>
+        public ExecuteWhenT2FieldUpdateDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdateDetailsCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdateDetailsCriteria.CreateFromDiscriminatorValue); } },
                 { "match_all", n => { MatchAll = n.GetBoolValue(); } },
                 { "repeat", n => { Repeat = n.GetBoolValue(); } },
-                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
+                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdateDetailsTriggerModule>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdateDetailsTriggerModule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +76,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdateDetailsCriteria>("criteria", Criteria);
             writer.WriteBoolValue("match_all", MatchAll);
             writer.WriteBoolValue("repeat", Repeat);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("trigger_module", TriggerModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT2FieldUpdateDetailsTriggerModule>("trigger_module", TriggerModule);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -17,13 +17,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the number of columns in which fields are arranged within this section when the layout is rendered on record forms.</summary>
         public int? ColumnCount { get; set; }
-        /// <summary>Represents the configuration object used to specify the deletion mode when removing a layout or resource, indicating whether the deletion is permanent or a soft delete to the recycle bin.</summary>
+        /// <summary>Delete configuration for removing the section. When provided, the section identified by id will be deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject? Delete { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete? Delete { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject Delete { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete Delete { get; set; }
 #endif
         /// <summary>Represents the heading label of the section as displayed in the CRM interface. Required when creating a new section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "column_count", n => { ColumnCount = n.GetIntValue(); } },
-                { "_delete", n => { Delete = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject>(global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject.CreateFromDiscriminatorValue); } },
+                { "_delete", n => { Delete = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete>(global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete.CreateFromDiscriminatorValue); } },
                 { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
                 { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -104,7 +104,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("column_count", ColumnCount);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject>("_delete", Delete);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete>("_delete", Delete);
             writer.WriteStringValue("display_label", DisplayLabel);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject>("fields", Fields);
             writer.WriteStringValue("id", Id);

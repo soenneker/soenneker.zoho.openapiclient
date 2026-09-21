@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionRequest"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteria : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1? TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3? TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1 TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3 TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteria();
-            if("TerritoriesGroupedFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3 = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3();
+            }
+            else if("TerritoriesGroupedFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TerritoriesGroupedFilterCriterionRequest = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest();
             }
@@ -59,9 +63,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1 != null)
+            if(TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3 != null)
             {
-                return TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1.GetFieldDeserializers();
+                return TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3.GetFieldDeserializers();
             }
             else if(TerritoriesGroupedFilterCriterionRequest != null)
             {
@@ -80,9 +84,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1 != null)
+            if(TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1>(null, TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaMember1);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3>(null, TerritoriesCreateTerritoriesRequestTerritoriesItemLeadRuleCriteriaBranch3);
             }
             else if(TerritoriesGroupedFilterCriterionRequest != null)
             {

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Automation task details returned by the API, including ownership, module context, and field mappings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TaskDetails : IParsable
+    public partial class TaskDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this task is associated with workflow/Blueprint/approval configuration.</summary>
         public bool? Associated { get; set; }
         /// <summary>Provides details about the creator of an entity, including their name and ID.</summary>
@@ -112,6 +114,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Source { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskDetails"/> and sets the default values.
+        /// </summary>
+        public TaskDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskDetails"/></returns>
@@ -170,6 +179,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("notify", Notify);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TaskDetailsRelatedModule>("related_module", RelatedModule);
             writer.WriteStringValue("source", Source);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

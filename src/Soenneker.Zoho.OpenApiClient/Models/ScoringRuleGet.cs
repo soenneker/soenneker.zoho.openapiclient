@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the root element for defining a scoring rule, including layout, fields, custom fields, and scoring configurations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScoringRuleGet : IParsable
+    public partial class ScoringRuleGet : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the Scoring Rule is active (`true`) or inactive (`false`).</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Nested schema for created_by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,21 +67,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Represents the layout associated with a Scoring Rule, including its display label, API name, and unique ID.</summary>
+        /// <summary>Layout info. If the rule should be created for all layouts, this field can be skipped or set value as null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutDetails? Layout { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetLayout? Layout { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutDetails Layout { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetLayout Layout { get; set; }
 #endif
-        /// <summary>Nested schema for modified_by</summary>
+        /// <summary>Scoring rule modified by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModifiedBySchema? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetModifiedBy? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModifiedBySchema ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetModifiedBy ModifiedBy { get; set; }
 #endif
         /// <summary>Represents the date and time when the Scoring Rule was last modified, in ISO 8601 format. This field is nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,13 +91,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ModifiedTime { get; set; }
 #endif
-        /// <summary>Represents the module associated with a Scoring Rule, including the module API name and unique ID.</summary>
+        /// <summary>module info (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesModuleDetails? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetModule? Module { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesModuleDetails Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetModule Module { get; set; }
 #endif
         /// <summary>Represents the unique name of the Scoring Rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,6 +115,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration> SignalRules { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGet"/> and sets the default values.
+        /// </summary>
+        public ScoringRuleGet()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -139,10 +148,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "field_rules", n => { FieldRules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldScoreConfigurationResponse>(global::Soenneker.Zoho.OpenApiClient.Models.FieldScoreConfigurationResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "has_signal_rules", n => { HasSignalRules = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutDetails>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutDetails.CreateFromDiscriminatorValue); } },
-                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModifiedBySchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModifiedBySchema.CreateFromDiscriminatorValue); } },
+                { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetLayout>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetLayout.CreateFromDiscriminatorValue); } },
+                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetModifiedBy.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesModuleDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesModuleDetails.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetModule>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetModule.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "signal_rules", n => { SignalRules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration>(global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -162,12 +171,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldScoreConfigurationResponse>("field_rules", FieldRules);
             writer.WriteBoolValue("has_signal_rules", HasSignalRules);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutDetails>("layout", Layout);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModifiedBySchema>("modified_by", ModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetLayout>("layout", Layout);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetModifiedBy>("modified_by", ModifiedBy);
             writer.WriteStringValue("modified_time", ModifiedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesModuleDetails>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleGetModule>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfiguration>("signal_rules", SignalRules);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

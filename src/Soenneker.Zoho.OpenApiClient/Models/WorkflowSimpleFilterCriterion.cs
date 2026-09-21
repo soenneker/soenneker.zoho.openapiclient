@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a simple filter criterion for workflow rule queries, specifying the field API name, comparator, and value to match.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowSimpleFilterCriterion : IParsable
+    public partial class WorkflowSimpleFilterCriterion : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the comparison operator applied to the filter criterion. **${ANYVALUE}** is a special value supported only in field update triggers; it matches any change to the monitored field value.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionComparator? Comparator { get; set; }
         /// <summary>Represents the field to which the filter criterion is applied.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValue Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterion"/> and sets the default values.
+        /// </summary>
+        public WorkflowSimpleFilterCriterion()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValue>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a variable to create, including api_name, name, optional description, data type (text, integer, boolean, date, float), initial value, and the target variable_group reference.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class VariableCreationItem : IParsable
+    public partial class VariableCreationItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the API name of the variables.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,14 +43,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.VariableCreationItemType? Type { get; set; }
         /// <summary>Initial value of variable</summary>
         public int? Value { get; set; }
-        /// <summary>Nested object that identifies the variable group when defining a variable. Includes the group&apos;s id (required).</summary>
+        /// <summary>Variable Groups json object (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupIdentifierInput? VariableGroup { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.VariableCreationItemVariableGroup? VariableGroup { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupIdentifierInput VariableGroup { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.VariableCreationItemVariableGroup VariableGroup { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableCreationItem"/> and sets the default values.
+        /// </summary>
+        public VariableCreationItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableCreationItemType>(); } },
                 { "value", n => { Value = n.GetIntValue(); } },
-                { "variable_group", n => { VariableGroup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupIdentifierInput>(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupIdentifierInput.CreateFromDiscriminatorValue); } },
+                { "variable_group", n => { VariableGroup = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableCreationItemVariableGroup>(global::Soenneker.Zoho.OpenApiClient.Models.VariableCreationItemVariableGroup.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,7 +96,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableCreationItemType>("type", Type);
             writer.WriteIntValue("value", Value);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupIdentifierInput>("variable_group", VariableGroup);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.VariableCreationItemVariableGroup>("variable_group", VariableGroup);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Configuration item for a single module&apos;s enrichment settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ZiaEnrichmentCreateZiaEnrichmentConfigurationsRequestDataEnrichmentItem : IParsable
+    public partial class ZiaEnrichmentCreateZiaEnrichmentConfigurationsRequestDataEnrichmentItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Array of field mappings for write operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentCreateZiaEnrichmentConfigurationsRequestDataEnrichmentItem"/> and sets the default values.
+        /// </summary>
+        public ZiaEnrichmentCreateZiaEnrichmentConfigurationsRequestDataEnrichmentItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,6 +89,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Module>("module", Module);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem>("output_data_field_mapping", OutputDataFieldMapping);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

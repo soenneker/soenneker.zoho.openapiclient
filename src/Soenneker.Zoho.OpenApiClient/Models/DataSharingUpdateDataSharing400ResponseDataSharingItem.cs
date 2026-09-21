@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Object containing the error details for a module&apos;s data sharing setting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DataSharingUpdateDataSharing400ResponseDataSharingItem : IParsable
+    public partial class DataSharingUpdateDataSharing400ResponseDataSharingItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code identifying the type of error. **INVALID_DATA**- Indicates invalid input such as an invalid share_type or module. **NOT_ALLOWED**- Indicates the module is public in portals and cannot be modified.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing400ResponseDataSharingItemCode? Code { get; set; }
         /// <summary>Object containing additional details about the error, such as the field name and JSON path that caused the error.</summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing400ResponseDataSharingItemMessage? Message { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing400ResponseDataSharingItem"/> and sets the default values.
+        /// </summary>
+        public DataSharingUpdateDataSharing400ResponseDataSharingItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing400ResponseDataSharingItemDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharing400ResponseDataSharingItemMessage>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

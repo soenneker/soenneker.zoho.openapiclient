@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Error context including field path
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DuplicateCheckPreferenceCreateDuplicateCheckPreference400ResponseDuplicateCheckPreferenceDetails : IParsable
+    public partial class DuplicateCheckPreferenceCreateDuplicateCheckPreference400ResponseDuplicateCheckPreferenceDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the field that caused the error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +56,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string JsonPath { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceCreateDuplicateCheckPreference400ResponseDuplicateCheckPreferenceDetails"/> and sets the default values.
+        /// </summary>
+        public DuplicateCheckPreferenceCreateDuplicateCheckPreference400ResponseDuplicateCheckPreferenceDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceCreateDuplicateCheckPreference400ResponseDuplicateCheckPreferenceDetails"/></returns>
@@ -90,6 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("expected_data_type", ExpectedDataType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceCreateDuplicateCheckPreference400ResponseDuplicateCheckPreferenceDetailsExpectedFieldsItem>("expected_fields", ExpectedFields);
             writer.WriteStringValue("json_path", JsonPath);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

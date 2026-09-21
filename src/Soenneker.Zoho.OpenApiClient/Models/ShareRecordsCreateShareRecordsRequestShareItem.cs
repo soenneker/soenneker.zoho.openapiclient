@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents an entry in the array.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShareRecordsCreateShareRecordsRequestShareItem : IParsable
+    public partial class ShareRecordsCreateShareRecordsRequestShareItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the level of access to grant for the sharedrecord. **Possible values**: - read_only- read_write- full_access</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemPermission? Permission { get; set; }
         /// <summary>Specify the details of the entity (user, role, or group) with which to share the record.</summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public bool? ShareRelatedRecords { get; set; }
         /// <summary>Specify the type of sharing to apply to the record. **Possible values**: - private - public</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItem"/> and sets the default values.
+        /// </summary>
+        public ShareRecordsCreateShareRecordsRequestShareItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemSharedWith>("shared_with", SharedWith);
             writer.WriteBoolValue("share_related_records", ShareRelatedRecords);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

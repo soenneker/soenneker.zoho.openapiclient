@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the configuration of a multi-user lookup field, which enables associating a record with multiple CRM users through a linking module rather than a single user reference.
+    /// Represents the multi-user lookup details of the field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaMultiuserlookup : IParsable
+    public partial class FieldSchemaMultiuserlookup : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Contains the configuration of the linking module and its lookup fields that connect the source module to multiple CRM users in a multi-user lookup relationship.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the linking details for the multi-user lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails? LinkingDetails { get; set; }
@@ -21,8 +23,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails LinkingDetails { get; set; }
 #endif
-        /// <summary>Indicates whether the multi-user lookup grants the associated users access to the record being linked, in addition to recording the relationship. Possible values: `true` — linked users gain record-level access; `false` — the relationship is recorded without affecting the users&apos; access to the record.</summary>
+        /// <summary>Indicates if record access is enabled for the multi-user lookup.</summary>
         public bool? RecordAccess { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookup"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaMultiuserlookup()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails>("linking_details", LinkingDetails);
             writer.WriteBoolValue("record_access", RecordAccess);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the email fields to unblock for the record.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UnblockEmailUnblockEmailByIdRequest : IParsable
+    public partial class UnblockEmailUnblockEmailByIdRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>To unblock emails, specify one or both of the system-definedfields : **Email** and **Secondary_Email**.&gt; **Note**&gt; - The permanently blocked emails cannot be unblocked.&gt; - A temporarily blocked email can be unblocked up to **5times**.&gt; - A **custom email field** cannot be unblocked.&gt; - You cannot merge records that are **locked** or in an**Approval Process/Review Process**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailItem?> UnblockFields { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnblockEmailUnblockEmailByIdRequest"/> and sets the default values.
+        /// </summary>
+        public UnblockEmailUnblockEmailByIdRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.EmailItem>("unblock_fields", UnblockFields);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

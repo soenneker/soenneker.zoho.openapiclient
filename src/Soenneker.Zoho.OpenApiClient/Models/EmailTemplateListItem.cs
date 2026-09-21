@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents an Email Template in list view with summary information, including metadata, statistics, and association details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EmailTemplateListItem : IParsable
+    public partial class EmailTemplateListItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the Email Template is active. Possible values:**true** - The template is active.**false** - The template is inactive/deleted.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the Email Template is currently associated with one or more CRM components. Possible values:**true** - The template is associated with one or more CRM components.**false** - The template is not associated with any CRM component.</summary>
         public bool? Associated { get; set; }
         /// <summary>Represents the list of attachments associated with the Email Template. </summary>
@@ -104,6 +106,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Subject { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListItem"/> and sets the default values.
+        /// </summary>
+        public EmailTemplateListItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListItem"/></returns>
@@ -166,6 +175,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleRef>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("subject", Subject);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

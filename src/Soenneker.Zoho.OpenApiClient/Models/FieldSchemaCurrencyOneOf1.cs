@@ -8,15 +8,30 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active currency configuration for this field, specifying the decimal precision and rounding rule applied when storing and displaying monetary values.
+    /// Represents the currency configuration of the field, including precision, rounding option, and currency code.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaCurrencyOneOf1 : IParsable
+    public partial class FieldSchemaCurrencyOneOf1 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Indicates the number of decimal places retained when storing and displaying currency values for this field, controlling the granularity of monetary amounts.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the precision of the currency.</summary>
         public int? Precision { get; set; }
-        /// <summary>Specifies the rounding rule applied to currency values when the raw amount exceeds the configured precision. Possible values: `round_up` — always rounds the value up. `round_down` — always rounds the value down. `round_off` — rounds to the nearest value. `normal` — no rounding applied.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCurrencyOneOf1RoundingOption? RoundingOption { get; set; }
+        /// <summary>Represents the rounding option for the currency.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RoundingOption { get; set; }
+#nullable restore
+#else
+        public string RoundingOption { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCurrencyOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaCurrencyOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "precision", n => { Precision = n.GetIntValue(); } },
-                { "rounding_option", n => { RoundingOption = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCurrencyOneOf1RoundingOption>(); } },
+                { "rounding_option", n => { RoundingOption = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,7 +62,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("precision", Precision);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaCurrencyOneOf1RoundingOption>("rounding_option", RoundingOption);
+            writer.WriteStringValue("rounding_option", RoundingOption);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

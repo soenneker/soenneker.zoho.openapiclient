@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object specifies the days the break applies to and the break timing for those days. 
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemBreakHoursItem : IParsable
+    public partial class ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemBreakHoursItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lists the days of the week on which the break hour applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +49,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the break hour follows thesame timing on every day the break isscheduled. **Possible values**:- **true** - the break hour uses the sametiming every day, and **daily_timing** becomesmandatory.- **false** - the break hour uses differenttiming for different days, and**custom_timing** becomes mandatory.</summary>
         public bool? SameAsEveryday { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemBreakHoursItem"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursGetSingleShiftHour200ResponseShiftHoursItemBreakHoursItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,6 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("daily_timing", DailyTiming);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("same_as_everyday", SameAsEveryday);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

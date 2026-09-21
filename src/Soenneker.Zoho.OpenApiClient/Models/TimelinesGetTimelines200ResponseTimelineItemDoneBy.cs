@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// The details of the user who modified the record such as the name, ID, name and ID of that user&apos;s profile, and the user type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TimelinesGetTimelines200ResponseTimelineItemDoneBy : IParsable
+    public partial class TimelinesGetTimelines200ResponseTimelineItemDoneBy : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the unique ID of the user who performed the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string TypeS { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemDoneBy"/> and sets the default values.
+        /// </summary>
+        public TimelinesGetTimelines200ResponseTimelineItemDoneBy()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,6 +89,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemDoneByProfile>("profile", Profile);
             writer.WriteStringValue("type__s", TypeS);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

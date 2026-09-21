@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Details of not found error
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DealLinkEmailsLinkEmailsToDeals404Response : ApiException, IParsable
+    public partial class DealLinkEmailsLinkEmailsToDeals404Response : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code returned for the invalid URL pattern failure.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternCode? Code { get; set; }
         /// <summary>Additional details about the error</summary>
@@ -30,6 +32,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.PleaseCheckIfTheUrlTryingToAccessIsACorrectOneMessage? MessageEscaped { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404Response"/> and sets the default values.
+        /// </summary>
+        public DealLinkEmailsLinkEmailsToDeals404Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,6 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404ResponseDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PleaseCheckIfTheUrlTryingToAccessIsACorrectOneMessage>("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

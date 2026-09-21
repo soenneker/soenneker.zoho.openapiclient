@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Defines the criteria and list of users eligible for record assignment upon entering the current rule entry.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersTypeAssignToResponseObject : IParsable
+    public partial class UsersTypeAssignToResponseObject : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the list of users details. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>If assign to type is users.Possible values:**users** - Represents users.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UsersType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTypeAssignToResponseObject"/> and sets the default values.
+        /// </summary>
+        public UsersTypeAssignToResponseObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>("resources", Resources);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

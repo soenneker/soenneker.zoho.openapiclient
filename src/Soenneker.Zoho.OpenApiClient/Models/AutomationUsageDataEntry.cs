@@ -12,19 +12,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single daily usage data point capturing the execution count for an automation action. When the group_by parameter includes resource, the embedded resource object identifies the individual email notification or webhook. When group_by is date only, the resource object is omitted and the count reflects total executions across all actions for that day. The type field indicates the automation feature responsible for the executions, such as workflow_rules, approval_process, or Blueprint.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationUsageDataEntry : IParsable
+    public partial class AutomationUsageDataEntry : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of times the automation action was executed on this date. When the group_by parameter is set to &apos;date&apos; only, this value reflects the total across all actions.</summary>
         public int? Count { get; set; }
         /// <summary>Represents the date of this usage data point in YYYY-MM-DD format. All dates are evaluated in the organization&apos;s time zone.</summary>
         public Date? Date { get; set; }
-        /// <summary>Represents a reference to the specific automation action that generated usage. The identifier and name are resolved from the action&apos;s configuration record; for deleted actions, the name falls back to the corresponding automation audit log entry. When the include_inner_details parameter includes resource.layout_id and the action is associated with a wizard layout, a layout_id field is included in the representation.</summary>
+        /// <summary>Reference to the specific automation action (email notification or webhook) that generated the usage count. Only present when group_by includes &apos;resource&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageResource? Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageDataEntryResource? Resource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageResource Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageDataEntryResource Resource { get; set; }
 #endif
         /// <summary>Represents the automation feature type associated with the reported executions. Values correspond to the filter types supported by the type query parameter, such as workflow_rules, approval_process, Blueprint, email_notifications, webhooks, and kiosks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,6 +36,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageDataEntry"/> and sets the default values.
+        /// </summary>
+        public AutomationUsageDataEntry()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "date", n => { Date = n.GetDateValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageResource>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageDataEntryResource>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageDataEntryResource.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -67,8 +76,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteDateValue("date", Date);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageResource>("resource", Resource);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageDataEntryResource>("resource", Resource);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

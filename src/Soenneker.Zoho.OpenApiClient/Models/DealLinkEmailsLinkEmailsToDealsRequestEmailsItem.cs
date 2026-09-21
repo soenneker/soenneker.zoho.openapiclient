@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Object containing the details of the email to link to a deal.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DealLinkEmailsLinkEmailsToDealsRequestEmailsItem : IParsable
+    public partial class DealLinkEmailsLinkEmailsToDealsRequestEmailsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The details of the deal record to be linked to the email. Mandatory. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDealsRequestEmailsItemOwner Owner { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDealsRequestEmailsItem"/> and sets the default values.
+        /// </summary>
+        public DealLinkEmailsLinkEmailsToDealsRequestEmailsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDealsRequestEmailsItemLinkedRecord>("linked_record", LinkedRecord);
             writer.WriteStringValue("message_id", MessageId);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDealsRequestEmailsItemOwner>("owner", Owner);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

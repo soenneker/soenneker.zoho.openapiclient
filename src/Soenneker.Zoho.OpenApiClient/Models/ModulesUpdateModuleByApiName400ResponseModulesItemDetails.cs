@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Error details identifying the invalid field and its location in the request body. May also include the maximum allowed length or expected data type depending on the violation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesUpdateModuleByApiName400ResponseModulesItemDetails : IParsable
+    public partial class ModulesUpdateModuleByApiName400ResponseModulesItemDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the field that failed validation. Maximum 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Maximum permitted character length for the field. Present only when the validation failure is caused by a length constraint violation.</summary>
         public int? MaximumLength { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName400ResponseModulesItemDetails"/> and sets the default values.
+        /// </summary>
+        public ModulesUpdateModuleByApiName400ResponseModulesItemDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("expected_data_type", ExpectedDataType);
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteIntValue("maximum_length", MaximumLength);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

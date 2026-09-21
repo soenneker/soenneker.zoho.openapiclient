@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Request payload that specifies how to scope the restoration. Provide exactly one of **ids**, **filters**, or **restore_all_records**; supplying more than one results in an AMBIGUITY_DURING_PROCESSING error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecycleBinRestoreRecycleBinRecordsRequest : IParsable
+    public partial class RecycleBinRestoreRecycleBinRecordsRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the filter criteria to select recycle-bin records for restoration. Mutually exclusive with **ids** and **restore_all_records**. Restoration based on filters is always scheduled as a background job, regardless of the number of matching records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specify whether every record currently in the Recycle Bin should be restored. Possible values: **true** - Every record in the Recycle Bin is restored. This option cannot be combined with **ids** or **filters** and the operation is always scheduled as a background job. **false** - Either **ids** or **filters** must be supplied to scope the restoration.</summary>
         public bool? RestoreAllRecords { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequest"/> and sets the default values.
+        /// </summary>
+        public RecycleBinRestoreRecycleBinRecordsRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFilters>("filters", Filters);
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
             writer.WriteBoolValue("restore_all_records", RestoreAllRecords);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the lock configuration of a workflow rule, including the lock state and the identity of the user who applied the lock.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LockStatusSchema : IParsable
+    public partial class LockStatusSchema : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the details of the CRM user who locked the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the workflow rule is locked.Possible values:true - The rule is locked.false - The rule is not locked.</summary>
         public bool? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockStatusSchema"/> and sets the default values.
+        /// </summary>
+        public LockStatusSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockedByObjectSchema>("locked_by", LockedBy);
             writer.WriteStringValue("message", Message);
             writer.WriteBoolValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

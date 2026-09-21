@@ -11,16 +11,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Response containing workflow configurations for a module including available triggers, actions, and related trigger details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetworkflowconfigurationsResponse200 : IParsable
+    public partial class GetworkflowconfigurationsResponse200 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Configuration metadata for workflows on a specific module. Contains three sections: triggers (events that fire the rule), actions (operations available when the rule fires with their per-type limits and scheduling support), and related_triggers_details (child/related modules like Notes or Calls whose events can also trigger rules on the parent module).</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Workflow configuration metadata for the requested module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsMetadata? WorkflowConfigurations { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations? WorkflowConfigurations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsMetadata WorkflowConfigurations { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations WorkflowConfigurations { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200"/> and sets the default values.
+        /// </summary>
+        public GetworkflowconfigurationsResponse200()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "workflow_configurations", n => { WorkflowConfigurations = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsMetadata>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsMetadata.CreateFromDiscriminatorValue); } },
+                { "workflow_configurations", n => { WorkflowConfigurations = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations>(global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +58,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsMetadata>("workflow_configurations", WorkflowConfigurations);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations>("workflow_configurations", WorkflowConfigurations);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

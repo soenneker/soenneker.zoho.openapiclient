@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Object enumerating the operations that the current user can perform on this layout, including flags for clone, deactivate, delete, downgrade, edit, rename, and configure permissions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemActionsAllowed : IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemActionsAllowed : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True when the current user has permission to clone this layout.</summary>
         public bool? Clone { get; set; }
         /// <summary>True when the current user has permission to deactivate this layout.</summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public bool? Rename { get; set; }
         /// <summary>True when the current user has permission to configure profile-based access permissions for this layout.</summary>
         public bool? SetLayoutPermissions { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemActionsAllowed"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemActionsAllowed()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("edit", Edit);
             writer.WriteBoolValue("rename", Rename);
             writer.WriteBoolValue("set_layout_permissions", SetLayoutPermissions);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

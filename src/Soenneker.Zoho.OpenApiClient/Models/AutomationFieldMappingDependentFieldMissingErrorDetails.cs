@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains structured diagnostic information that identifies the absent dependent field and the field whose value or presence governs the dependency relationship.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationFieldMappingDependentFieldMissingErrorDetails : IParsable
+    public partial class AutomationFieldMappingDependentFieldMissingErrorDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the API name of the dependent field that was expected but not found in the automation action payload, such as a unit or period qualifier associated with another field&apos;s value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JsonPath { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationFieldMappingDependentFieldMissingErrorDetails"/> and sets the default values.
+        /// </summary>
+        public AutomationFieldMappingDependentFieldMissingErrorDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationFieldMappingDependentFieldMissingErrorDetailsDependee>("dependee", Dependee);
             writer.WriteStringValue("json_path", JsonPath);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -23,13 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public UntypedNode Delete { get; set; }
 #endif
-        /// <summary>PURPOSE: Details object for assign_owner action. Assigns/reassigns record owner via user, role, group, profile, assignment_rule, merge_field, or criteria. MANDATORY: module ({api_name, id} - must match trigger module), assign_to (array 1-5 entries). OPTIONAL: notify (bool), related_records ([{api_name, id}] - Tasks/Calls/Events), apply_assignment_threshold (bool), user_availability_based_on, lookup_field (for cross-module). EXAMPLE: {&quot;module&quot;: {&quot;api_name&quot;: &quot;Leads&quot;, &quot;id&quot;: &quot;111111000000000175&quot;}, &quot;assign_to&quot;: [{&quot;type&quot;: &quot;user&quot;, &quot;resource&quot;: {&quot;id&quot;: &quot;111111000000050001&quot;, &quot;name&quot;: &quot;John&quot;}}], &quot;notify&quot;: true}</summary>
+        /// <summary>Configuration for the assign_owner action. Requires a module reference and an assign_to array with one to five entries, each specifying who to assign the record to — a user, role, group, assignment rule, or profile, a merge field, or matching criteria. Optionally sends a notification, includes related records, applies an assignment threshold, or bases assignment on user availability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaDetails? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaDetails Details { get; set; }
 #endif
         /// <summary>Represents the unique ID of the AssignOwner action within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,13 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Represents the optional action-specific configuration attached to an associate action, such as best-time delivery settings for email notifications or lookup field references for field updates.</summary>
+        /// <summary>Optional. For assign_owner, related_details is not typically used. Applicable sub-fields: best_time (for email_notifications only), followup_details (for tasks only), lookup_field (for field_updates only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema? RelatedDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaRelatedDetails? RelatedDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema RelatedDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaRelatedDetails RelatedDetails { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "_delete", n => { Delete = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetails.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "related_details", n => { RelatedDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema.CreateFromDiscriminatorValue); } },
+                { "related_details", n => { RelatedDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaRelatedDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaRelatedDetails.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -104,10 +104,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<UntypedNode>("_delete", Delete);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetails>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaDetails>("details", Details);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchema>("related_details", RelatedDetails);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaRelatedDetails>("related_details", RelatedDetails);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

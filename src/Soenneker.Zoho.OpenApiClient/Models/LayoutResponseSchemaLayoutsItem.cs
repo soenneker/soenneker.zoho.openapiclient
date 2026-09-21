@@ -11,16 +11,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the complete configuration of a single layout in the module, including its sections, field assignments, profile associations, and display metadata.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutResponseSchemaLayoutsItem : IParsable
+    public partial class LayoutResponseSchemaLayoutsItem : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the set of Boolean permission flags indicating which operations are permitted on a layout, such as editing, renaming, cloning, deactivating, and deleting.</summary>
+        /// <summary>Permissions indicating which operations are allowed on this layout</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutActionsAllowed? ActionsAllowed { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed? ActionsAllowed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutActionsAllowed ActionsAllowed { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed ActionsAllowed { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents an API identifier string composed of alphanumeric characters and underscores, used as a programmatic reference for fields, modules, and other CRM entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,6 +142,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates whether this layout is currently visible and accessible to users in the CRM interface. Possible values: `true` — the layout is visible and selectable; `false` — the layout is hidden.</summary>
         public bool? Visible { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem"/> and sets the default values.
+        /// </summary>
+        public LayoutResponseSchemaLayoutsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem"/></returns>
@@ -157,7 +166,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions_allowed", n => { ActionsAllowed = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActionsAllowed>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutActionsAllowed.CreateFromDiscriminatorValue); } },
+                { "actions_allowed", n => { ActionsAllowed = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed.CreateFromDiscriminatorValue); } },
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "convert_mapping", n => { ConvertMapping = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemConvertMapping>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemConvertMapping.CreateFromDiscriminatorValue); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedBy.CreateFromDiscriminatorValue); } },
@@ -187,7 +196,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutActionsAllowed>("actions_allowed", ActionsAllowed);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed>("actions_allowed", ActionsAllowed);
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemConvertMapping>("convert_mapping", ConvertMapping);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedBy>("created_by", CreatedBy);
@@ -208,6 +217,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemStatus>("status", Status);
             writer.WriteIntValue("total_profiles", TotalProfiles);
             writer.WriteBoolValue("visible", Visible);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

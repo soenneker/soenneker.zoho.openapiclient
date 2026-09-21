@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify a filter condition object that defines a single criterion for filtering records in the bulk read export.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem : IParsable
+    public partial class BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the comparison operator to apply between the field and value in this filter condition.Possible values:**equal** - Records where the field value exactly matches the specified value.**not_equal** - Records where the field value does not match the specified value.**contains** - Records where the field value contains the specified value.**not_contains** - Records where the field value does not contain the specified value.**starts_with** - Records where the field value starts with the specified value.**ends_with** - Records where the field value ends with the specified value.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItemComparator? Comparator { get; set; }
         /// <summary>Specify the field to apply the filter condition on. Refer to the [Get Fields](fields.json#$.paths./settings/fields.get) resource for valid values.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem"/> and sets the default values.
+        /// </summary>
+        public BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItemField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ValueTypeObject>("type", Type);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

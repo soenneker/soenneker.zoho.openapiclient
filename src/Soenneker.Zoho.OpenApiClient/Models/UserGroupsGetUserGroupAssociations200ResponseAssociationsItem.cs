@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents one CRM resource association for the user group, including the resource identifier, association type, and module details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserGroupsGetUserGroupAssociations200ResponseAssociationsItem : IParsable
+    public partial class UserGroupsGetUserGroupAssociations200ResponseAssociationsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the CRM module details for this association. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociations200ResponseAssociationsItem"/> and sets the default values.
+        /// </summary>
+        public UserGroupsGetUserGroupAssociations200ResponseAssociationsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociations200ResponseAssociationsItemDetails>("details", Details);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociations200ResponseAssociationsItemResource>("resource", Resource);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

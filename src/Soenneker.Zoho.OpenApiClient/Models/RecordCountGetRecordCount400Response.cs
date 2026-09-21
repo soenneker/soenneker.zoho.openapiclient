@@ -28,8 +28,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>Human-readable error message</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount400ResponseMessage? MessageEscaped { get; set; }
+        /// <summary>Human-readable error message describing the invalid request error</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnableToProcessYourRequestPleaseVerifyWhetherYouHaveEnteredProperMethodNameCommaParameterAndParameterValuesDotMessage? MessageEscaped { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount400ResponseCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount400ResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount400ResponseDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount400ResponseMessage>(); } },
+                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UnableToProcessYourRequestPleaseVerifyWhetherYouHaveEnteredProperMethodNameCommaParameterAndParameterValuesDotMessage>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount400ResponseCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount400ResponseDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordCountGetRecordCount400ResponseMessage>("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UnableToProcessYourRequestPleaseVerifyWhetherYouHaveEnteredProperMethodNameCommaParameterAndParameterValuesDotMessage>("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

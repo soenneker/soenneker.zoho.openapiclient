@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single portal user and their associated attributes.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PortalUsersGetPortalUsers200ResponseUsersItem : IParsable
+    public partial class PortalUsersGetPortalUsers200ResponseUsersItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the portal user is currently active. Possible values: **true**, **false**. </summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the portal user has confirmed their account. Possible values: **true**, **false**. </summary>
         public bool? Confirm { get; set; }
         /// <summary>Represents the date and time of portal user creation.</summary>
@@ -68,6 +70,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string StatusReasonS { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetPortalUsers200ResponseUsersItem"/> and sets the default values.
+        /// </summary>
+        public PortalUsersGetPortalUsers200ResponseUsersItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetPortalUsers200ResponseUsersItem"/></returns>
@@ -112,6 +121,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("personality_id", PersonalityId);
             writer.WriteStringValue("Source__s", SourceS);
             writer.WriteStringValue("status_reason__s", StatusReasonS);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

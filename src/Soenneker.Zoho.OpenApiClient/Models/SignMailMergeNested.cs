@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the request payload for a sign mail merge operation, including the template reference, file name, signing order, and the list of signers.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SignMailMergeNested : IParsable
+    public partial class SignMailMergeNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the name of the file to send for signing or approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,13 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string FileName { get; set; }
 #endif
-        /// <summary>Represents the mail merge template reference, identified by the template name.</summary>
+        /// <summary>To pass Template details (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested? MailMergeTemplate { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate? MailMergeTemplate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested MailMergeTemplate { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate MailMergeTemplate { get; set; }
 #endif
         /// <summary>The details of the users you want to sign the document.- recipient_name **string, mandatory** - the name of the user who has to sign or approve the document.- **action_type** string, mandatory - the type of action you want the user to perform. The possible values are sign to **sign** the document, and **approve** to approve the document.- **recipient** JSON object, mandatory    - **value** string, mandatory - the email ID of the user who has to sign or approve the document.&gt; **Note**&gt; The values for the fields **recipient_name** and **recipient.value** will be taken from the mail merge template. If you want to override the values in the template, you must specify the values of these fields in the input body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether recipients must act on the document in a specified sequence.Possible values:**true** - The document first goes for approval, then for signing in the defined order.**false** - Zoho Sign sends the document to all recipients simultaneously.</summary>
         public bool? SignInOrder { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNested"/> and sets the default values.
+        /// </summary>
+        public SignMailMergeNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "file_name", n => { FileName = n.GetStringValue(); } },
-                { "mail_merge_template", n => { MailMergeTemplate = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested>(global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested.CreateFromDiscriminatorValue); } },
+                { "mail_merge_template", n => { MailMergeTemplate = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate>(global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate.CreateFromDiscriminatorValue); } },
                 { "sign_in_order", n => { SignInOrder = n.GetBoolValue(); } },
                 { "signers", n => { Signers = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested>(global::Soenneker.Zoho.OpenApiClient.Models.SignersNested.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -71,9 +80,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("file_name", FileName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MailMergeTemplateNested>("mail_merge_template", MailMergeTemplate);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate>("mail_merge_template", MailMergeTemplate);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested>("signers", Signers);
             writer.WriteBoolValue("sign_in_order", SignInOrder);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

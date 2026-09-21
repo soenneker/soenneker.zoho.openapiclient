@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DefaultAssigneeResponseObjectResource : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1? DefaultAssigneeResponseObjectResourceOneOf1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1 DefaultAssigneeResponseObjectResourceOneOf1 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +28,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2 DefaultAssigneeResponseObjectResourceOneOf2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject? ResourceResponseObject { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject ResourceResponseObject { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResource();
-            if("DefaultAssigneeResponseObjectResourceOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("DefaultAssigneeResponseObjectResourceOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DefaultAssigneeResponseObjectResourceOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1();
+            }
+            else if("DefaultAssigneeResponseObjectResourceOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DefaultAssigneeResponseObjectResourceOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2();
-            }
-            else if("ResourceResponseObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ResourceResponseObject = new global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DefaultAssigneeResponseObjectResourceOneOf2 != null)
+            if(DefaultAssigneeResponseObjectResourceOneOf1 != null)
+            {
+                return DefaultAssigneeResponseObjectResourceOneOf1.GetFieldDeserializers();
+            }
+            else if(DefaultAssigneeResponseObjectResourceOneOf2 != null)
             {
                 return DefaultAssigneeResponseObjectResourceOneOf2.GetFieldDeserializers();
-            }
-            else if(ResourceResponseObject != null)
-            {
-                return ResourceResponseObject.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DefaultAssigneeResponseObjectResourceOneOf2 != null)
+            if(DefaultAssigneeResponseObjectResourceOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1>(null, DefaultAssigneeResponseObjectResourceOneOf1);
+            }
+            else if(DefaultAssigneeResponseObjectResourceOneOf2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2>(null, DefaultAssigneeResponseObjectResourceOneOf2);
-            }
-            else if(ResourceResponseObject != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>(null, ResourceResponseObject);
             }
         }
     }

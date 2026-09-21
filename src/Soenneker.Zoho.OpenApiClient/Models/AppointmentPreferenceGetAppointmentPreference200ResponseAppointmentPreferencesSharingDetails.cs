@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Details about the sharing configuration for appointment-associated records. When sharing is enabled, the record associated in the appointment field is shared with the appointment owner with the configured permission level.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetails : IParsable
+    public partial class AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The permission level granted to the appointment owner for the associated record.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetailsPermission? Permission { get; set; }
         /// <summary>Indicates whether the sharing computation is currently in progress or completed.</summary>
         public bool? SharingComputationStatus { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetails"/> and sets the default values.
+        /// </summary>
+        public AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetailsPermission>("permission", Permission);
             writer.WriteBoolValue("sharing_computation_status", SharingComputationStatus);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

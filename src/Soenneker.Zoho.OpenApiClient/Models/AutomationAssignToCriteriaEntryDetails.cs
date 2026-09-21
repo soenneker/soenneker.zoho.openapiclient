@@ -11,16 +11,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains the filter criteria to evaluate against the triggering record.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationAssignToCriteriaEntryDetails : IParsable
+    public partial class AutomationAssignToCriteriaEntryDetails : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the top-level filter criterion for data selection, supporting both simple field-based filters and complex grouped filters with logical operators.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Filter criteria defining when this assignment applies. Can be a simple condition (field + comparator + value) or a grouped condition (group_operator + group array). The field references in criteria must be valid fields of the trigger module  - fetch available fields from GET /settings/fields?module={module_api_name}. For example: {&quot;field&quot;: {&quot;api_name&quot;: &quot;Department&quot;}, &quot;comparator&quot;: &quot;equal&quot;, &quot;value&quot;: &quot;Engineering&quot;} assigns ownership when the record&apos;s Department is Engineering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesFilterCriterionRequest? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetailsCriteria? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesFilterCriterionRequest Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetailsCriteria Criteria { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetails"/> and sets the default values.
+        /// </summary>
+        public AutomationAssignToCriteriaEntryDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesFilterCriterionRequest>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesFilterCriterionRequest.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetailsCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetailsCriteria.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +58,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesFilterCriterionRequest>("criteria", Criteria);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetailsCriteria>("criteria", Criteria);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

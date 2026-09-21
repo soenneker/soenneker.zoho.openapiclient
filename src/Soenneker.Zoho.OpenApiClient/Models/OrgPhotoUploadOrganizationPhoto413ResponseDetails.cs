@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains additional details about the file size error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class OrgPhotoUploadOrganizationPhoto413ResponseDetails : IParsable
+    public partial class OrgPhotoUploadOrganizationPhoto413ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the maximum allowed file size in bytes.</summary>
         public int? Size { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.OrgPhotoUploadOrganizationPhoto413ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public OrgPhotoUploadOrganizationPhoto413ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("size", Size);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

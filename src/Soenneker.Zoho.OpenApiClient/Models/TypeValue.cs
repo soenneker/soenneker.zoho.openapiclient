@@ -3,17 +3,22 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>The Type of the object.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum TypeValue
+    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "business_holiday")]
+        [EnumMember(Value = "all")]
         #pragma warning disable CS1591
-        BusinessHoliday,
+        All,
         #pragma warning restore CS1591
-        [EnumMember(Value = "shift_holiday")]
+        [EnumMember(Value = "unused")]
         #pragma warning disable CS1591
-        ShiftHoliday,
+        Unused,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "used")]
+        #pragma warning disable CS1591
+        Used,
         #pragma warning restore CS1591
     }
 }

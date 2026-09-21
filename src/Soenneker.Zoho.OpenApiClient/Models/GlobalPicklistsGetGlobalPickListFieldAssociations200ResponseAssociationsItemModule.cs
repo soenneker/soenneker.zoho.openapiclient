@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Module details associated with the field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemModule : IParsable
+    public partial class GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemModule : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string PluralLabel { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemModule"/> and sets the default values.
+        /// </summary>
+        public GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemModule()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,6 +89,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("module_name", ModuleName);
             writer.WriteStringValue("plural_label", PluralLabel);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

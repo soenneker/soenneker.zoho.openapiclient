@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the criteria to filter which records are included in the ownership change.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassChangeOwnerMassChangeOwnerRequestCriteria : IParsable
+    public partial class MassChangeOwnerMassChangeOwnerRequestCriteria : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the comparison operator for the criteria.Possible values:**equal** - Matches records where the field equals thespecified value.**not_equal** - Matches records where the field does notequal the specified value.**starts_with** - Matches records where the field startswith the specified value.**ends_with** - Matches records where the field endswith the specified value.**greater_than** - Matches records where the field isgreater than the specified value.**less_than** - Matches records where the field is lessthan the specified value.**greater_equal** - Matches records where the field isgreater than or equal to the specified value.**less_equal** - Matches records where the field is lessthan or equal to the specified value.**between** - Matches records where the field valuefalls within a specified range.**not_between** - Matches records where the field valuefalls outside a specified range.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestCriteriaComparator? Comparator { get; set; }
         /// <summary>Specify the module field on which the criteria condition applies.</summary>
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestCriteria"/> and sets the default values.
+        /// </summary>
+        public MassChangeOwnerMassChangeOwnerRequestCriteria()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestCriteriaComparator>("comparator", Comparator);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestCriteriaField>("field", Field);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

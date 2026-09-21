@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Configuration metadata for a standard (non-multiselectlookup) related list.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelatedListNonMultiselectLookup : IParsable
+    public partial class RelatedListNonMultiselectLookup : IAdditionalDataHolder, IParsable
     {
         /// <summary>Action type supported for adding records to the related list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Action { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name identifier for the related list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,6 +166,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Numeric visibility flag for the related list.</summary>
         public int? Visibility { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup"/> and sets the default values.
+        /// </summary>
+        public RelatedListNonMultiselectLookup()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup"/></returns>
@@ -238,6 +247,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookupStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookupType>("type", Type);
             writer.WriteIntValue("visibility", Visibility);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Nested schema for details in merge response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DetailsNested2 : IParsable
+    public partial class DetailsNested2 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Color code of the tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Resource ID</summary>
         public Guid? Rid { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsNested2"/> and sets the default values.
+        /// </summary>
+        public DetailsNested2()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsNested2"/></returns>
@@ -104,6 +113,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsModifiedByNested>("modified_by", ModifiedBy);
             writer.WriteStringValue("modified_time", ModifiedTime);
             writer.WriteGuidValue("rid", Rid);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active filter criteria configuration for the rollup summary, specifying the conditions that child module records must satisfy to be included in the aggregation.
+    /// Represents the criteria details for the rollup summary.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaRollupSummaryOneOf1ExpressionCriteriaOneOf1 : IParsable
+    public partial class FieldSchemaRollupSummaryOneOf1ExpressionCriteriaOneOf1 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the comparison operator used in the rollup filter criterion, applied when evaluating whether a related record&apos;s field value satisfies the filter condition.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the comparator used in the criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comparator { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Comparator { get; set; }
 #endif
-        /// <summary>Identifies the field in the child module whose value is tested against the comparator and filter value when determining which related records are included in the rollup.</summary>
+        /// <summary>Represents the details of the field used in the criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1ExpressionCriteriaOneOf1Field? Field { get; set; }
@@ -29,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1ExpressionCriteriaOneOf1Field Field { get; set; }
 #endif
-        /// <summary>Indicates whether the filter value in the rollup criterion is a static literal or a dynamic reference resolved at runtime.</summary>
+        /// <summary>Represents the type of the criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -37,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>Represents the value compared against the child module field when evaluating the rollup filter criterion.</summary>
+        /// <summary>Represents the value used in the criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -45,6 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1ExpressionCriteriaOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaRollupSummaryOneOf1ExpressionCriteriaOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,6 +89,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1ExpressionCriteriaOneOf1Field>("field", Field);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

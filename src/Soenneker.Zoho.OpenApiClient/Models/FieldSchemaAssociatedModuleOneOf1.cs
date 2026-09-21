@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the associated module details when this field is a subform field, including the module API name and the layout used to render the embedded records.
+    /// Represents the details of the associated module, such as a subform.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaAssociatedModuleOneOf1 : IParsable
+    public partial class FieldSchemaAssociatedModuleOneOf1 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Id of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -21,15 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Represents the name of the layout applied to the associated module&apos;s records when displayed within the subform field, determining which set of fields and sections are rendered in the embedded view.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModuleOneOf1Layout? Layout { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModuleOneOf1Layout Layout { get; set; }
-#endif
-        /// <summary>Represents the API name of a CRM module, used as a programmatic identifier in API requests, automation configurations, and cross-module references.</summary>
+        /// <summary>Represents the name of the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Module { get; set; }
@@ -37,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Module { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModuleOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaAssociatedModuleOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,7 +57,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModuleOneOf1Layout>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModuleOneOf1Layout.CreateFromDiscriminatorValue); } },
                 { "module", n => { Module = n.GetStringValue(); } },
             };
         }
@@ -68,8 +68,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAssociatedModuleOneOf1Layout>("layout", Layout);
             writer.WriteStringValue("module", Module);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

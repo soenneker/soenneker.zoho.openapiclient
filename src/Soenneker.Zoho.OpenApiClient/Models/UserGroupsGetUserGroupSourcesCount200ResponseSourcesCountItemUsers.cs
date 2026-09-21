@@ -11,14 +11,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the count of individual user sources by status. Present when user sources are configured.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItemUsers : IParsable
+    public partial class UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItemUsers : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the number of active users in this user group. </summary>
         public int? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of deleted users in this user group. </summary>
         public int? Deleted { get; set; }
         /// <summary>Represents the number of inactive users in this user group. </summary>
         public int? Inactive { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItemUsers"/> and sets the default values.
+        /// </summary>
+        public UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItemUsers()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("active", Active);
             writer.WriteIntValue("deleted", Deleted);
             writer.WriteIntValue("inactive", Inactive);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

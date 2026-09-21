@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the callback configuration that Zoho CRM uses to notify your endpoint when the bulk write job completes or fails.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkWriteCreateBulkWriteJobRequestCallback : IParsable
+    public partial class BulkWriteCreateBulkWriteJobRequestCallback : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the HTTP method for the callback request.Possible values:**post** - Sends the callback notification as an HTTP POST request.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PostMethod? Method { get; set; }
         /// <summary>Specify the URL that receives the job completion notification. The URL must accept the HTTP POST method and be reachable from Zoho CRM servers.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Url { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestCallback"/> and sets the default values.
+        /// </summary>
+        public BulkWriteCreateBulkWriteJobRequestCallback()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PostMethod>("method", Method);
             writer.WriteStringValue("url", Url);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

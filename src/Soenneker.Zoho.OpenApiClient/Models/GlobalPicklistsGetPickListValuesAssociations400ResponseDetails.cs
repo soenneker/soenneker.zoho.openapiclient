@@ -11,10 +11,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Additional details about the error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GlobalPicklistsGetPickListValuesAssociations400ResponseDetails : IParsable
+    public partial class GlobalPicklistsGetPickListValuesAssociations400ResponseDetails : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Index of the path parameter that is invalid (2 for relation name)</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.Value2ResourcePathIndex? ResourcePathIndex { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Index in the resource path indicating the error location.</summary>
+        public int? ResourcePathIndex { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations400ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public GlobalPicklistsGetPickListValuesAssociations400ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,7 +42,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "resource_path_index", n => { ResourcePathIndex = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.Value2ResourcePathIndex>(); } },
+                { "resource_path_index", n => { ResourcePathIndex = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -43,7 +52,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.Value2ResourcePathIndex>("resource_path_index", ResourcePathIndex);
+            writer.WriteIntValue("resource_path_index", ResourcePathIndex);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

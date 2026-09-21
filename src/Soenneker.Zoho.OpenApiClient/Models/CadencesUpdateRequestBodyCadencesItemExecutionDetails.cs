@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the updated execution frequency and unenrollment configuration for the Cadence.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CadencesUpdateRequestBodyCadencesItemExecutionDetails : IParsable
+    public partial class CadencesUpdateRequestBodyCadencesItemExecutionDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the updated conditions under which records are automatically unenrolled from the Cadence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.UnenrollPropertiesNested> UnenrollProperties { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesUpdateRequestBodyCadencesItemExecutionDetails"/> and sets the default values.
+        /// </summary>
+        public CadencesUpdateRequestBodyCadencesItemExecutionDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UnenrollPropertiesNested>("unenroll_properties", UnenrollProperties);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

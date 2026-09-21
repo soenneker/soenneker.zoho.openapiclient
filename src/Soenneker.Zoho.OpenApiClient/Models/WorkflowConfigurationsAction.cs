@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents an action type available for the module. Defines an operation that can be performed when a workflow rule triggers. The limit field is the per-type cap that applies independently to instant_actions and scheduled_actions - for instance, if limit=5, you can add up to 5 instances in instant_actions and up to 5 in scheduled_actions of the same rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowConfigurationsAction : IParsable
+    public partial class WorkflowConfigurationsAction : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API identifier of the action type used when creating or modifying workflow rules (for example, field_updates, email_notifications, webhooks, assign_owner, add_tags, remove_tags, create_record, add_meeting, schedule_call, convert, functions, flow).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this action type can be used as a scheduled (time-delayed) action in a workflow rule. **Possible values:** true - This action type is supported in scheduled_actions (for example, time-delayed email_notifications or field_updates). false - This action type is only supported in instant_actions.</summary>
         public bool? SupportedInScheduledAction { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction"/> and sets the default values.
+        /// </summary>
+        public WorkflowConfigurationsAction()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,6 +89,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("limit_per_action", LimitPerAction);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("supported_in_scheduled_action", SupportedInScheduledAction);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

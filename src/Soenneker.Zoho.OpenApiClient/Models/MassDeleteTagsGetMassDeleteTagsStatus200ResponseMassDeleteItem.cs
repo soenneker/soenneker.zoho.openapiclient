@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents a single mass delete tag job, including its identifier, current status, and tag deletion counts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem : IParsable
+    public partial class MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the timestamp at which the mass delete tag job was scheduled, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
         /// <summary>Represents the number of tags that the job has deleted successfully.</summary>
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the total number of tags that were submitted for deletion in the mass delete tag job.</summary>
         public int? TotalCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem"/> and sets the default values.
+        /// </summary>
+        public MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -76,6 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("job_id", JobId);
             writer.WriteStringValue("status", Status);
             writer.WriteIntValue("total_count", TotalCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

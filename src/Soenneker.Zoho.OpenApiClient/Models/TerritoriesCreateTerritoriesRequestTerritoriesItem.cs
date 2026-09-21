@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the details for each territory to create.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TerritoriesCreateTerritoriesRequestTerritoriesItem : IParsable
+    public partial class TerritoriesCreateTerritoriesRequestTerritoriesItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Specify the criteria for auto-assigning accounts to the territory. To remove an existing criteria, set this field to **null**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemAccountRuleCriteria AccountRuleCriteria { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the criteria for auto-assigning deals to the territory. To remove an existing criteria, set this field to **null**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +74,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemReportingTo ReportingTo { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItem"/> and sets the default values.
+        /// </summary>
+        public TerritoriesCreateTerritoriesRequestTerritoriesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItem"/></returns>
@@ -114,6 +123,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemPermissionType>("permission_type", PermissionType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemReportingTo>("reporting_to", ReportingTo);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

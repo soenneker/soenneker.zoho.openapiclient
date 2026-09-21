@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the per-file processing summary for this resource entry. 
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFile : IParsable
+    public partial class BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFile : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the number of records that were created from the file. </summary>
         public int? AddedCount { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the file name read from the uploaded archive. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? TotalCount { get; set; }
         /// <summary>Represents the number of records that were updated from the file. </summary>
         public int? UpdatedCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFile"/> and sets the default values.
+        /// </summary>
+        public BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFile()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFileStatus>("status", Status);
             writer.WriteIntValue("total_count", TotalCount);
             writer.WriteIntValue("updated_count", UpdatedCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

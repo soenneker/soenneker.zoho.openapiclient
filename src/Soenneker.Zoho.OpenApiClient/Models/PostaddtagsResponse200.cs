@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Success response when tags are associated successfully to records.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PostaddtagsResponse200 : IParsable
+    public partial class PostaddtagsResponse200 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Array of operation results for each record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +58,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Tags { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200"/> and sets the default values.
+        /// </summary>
+        public PostaddtagsResponse200()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200"/></returns>
@@ -94,6 +103,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("over_write", OverWrite);
             writer.WriteStringValue("success_count", SuccessCount);
             writer.WriteStringValue("tags", Tags);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

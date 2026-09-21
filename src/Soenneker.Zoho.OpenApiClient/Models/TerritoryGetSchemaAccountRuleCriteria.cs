@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaMember1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaWrapper"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerritoryGetSchemaAccountRuleCriteria : IComposedTypeWrapper, IParsable
@@ -29,13 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionResponse TerritoriesSimpleFilterCriterionResponse { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaWrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaMember1? TerritoryGetSchemaAccountRuleCriteriaMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaWrapper? TerritoryGetSchemaAccountRuleCriteriaWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaMember1 TerritoryGetSchemaAccountRuleCriteriaMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaWrapper TerritoryGetSchemaAccountRuleCriteriaWrapper { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +50,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if("TerritoriesGroupedFilterCriterionResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TerritoriesGroupedFilterCriterionResponse = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse();
+            }
+            else if("TerritoryGetSchemaAccountRuleCriteriaWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TerritoryGetSchemaAccountRuleCriteriaWrapper = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaWrapper();
             }
             return result;
         }
@@ -67,9 +71,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 return TerritoriesSimpleFilterCriterionResponse.GetFieldDeserializers();
             }
-            else if(TerritoryGetSchemaAccountRuleCriteriaMember1 != null)
+            else if(TerritoryGetSchemaAccountRuleCriteriaWrapper != null)
             {
-                return TerritoryGetSchemaAccountRuleCriteriaMember1.GetFieldDeserializers();
+                return TerritoryGetSchemaAccountRuleCriteriaWrapper.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,9 +92,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionResponse>(null, TerritoriesSimpleFilterCriterionResponse);
             }
-            else if(TerritoryGetSchemaAccountRuleCriteriaMember1 != null)
+            else if(TerritoryGetSchemaAccountRuleCriteriaWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaMember1>(null, TerritoryGetSchemaAccountRuleCriteriaMember1);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteriaWrapper>(null, TerritoryGetSchemaAccountRuleCriteriaWrapper);
             }
         }
     }

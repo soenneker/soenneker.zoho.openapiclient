@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Field mapping configuration specifying a single field for conversion.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDealsFieldsItem : IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDealsFieldsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name of the target Deals field in this mapping. Maximum 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>True when this Deals field must be populated during the record conversion process; false when it is optional.</summary>
         public bool? Required { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDealsFieldsItem"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDealsFieldsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("field_label", FieldLabel);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("required", Required);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

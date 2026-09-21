@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Indicates a single follow-up step in the Cadence.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CadenceAnalyticsResponseCadencesItemFollowUpsItem : IParsable
+    public partial class CadenceAnalyticsResponseCadencesItemFollowUpsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the action configured for the follow-up step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAction Action { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the execution metrics for the follow-up action, including counts based on the action type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemParentFollowUp ParentFollowUp { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItem"/> and sets the default values.
+        /// </summary>
+        public CadenceAnalyticsResponseCadencesItemFollowUpsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -90,6 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("follow_up_number", FollowUpNumber);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemParentFollowUp>("parent_follow_up", ParentFollowUp);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Shared To Object
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SharedToItem : IParsable
+    public partial class SharedToItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the user/group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public bool? Subordinates { get; set; }
         /// <summary>Represents the type of the shared-to entity.Possible values:**territories** - The view is shared with a territory.**roles** - The view is shared with a role.**groups** - The view is shared with a group.**users** - The view is shared with a specific user.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SharedToItemType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem"/> and sets the default values.
+        /// </summary>
+        public SharedToItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("subordinates", Subordinates);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

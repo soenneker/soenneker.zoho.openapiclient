@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contact record with matching lead information
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItem : IParsable
+    public partial class ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the account associated with the matched contact. Returns account details when an association exists, or null when no account is linked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItemAccountName AccountName { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Current approval state of the contact record</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItemApprovalState? ApprovalState { get; set; }
         /// <summary>Represents the GDPR data processing basis for the matched contact. Returns a basis value when configured, or null when it is not specified.</summary>
@@ -68,6 +70,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates if the contact record is locked</summary>
         public bool? LockedS { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItem"/> and sets the default values.
+        /// </summary>
+        public ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItem"/></returns>
@@ -112,6 +121,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionOptionGetLeadConversionOptions200ResponseConversionOptionsContactsItemLayout>("Layout", Layout);
             writer.WriteBoolValue("Locked__s", LockedS);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

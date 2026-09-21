@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single directed connection in the wizard flow, linking a source screen to a target screen to define the transition path between them.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItem : IParsable
+    public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the unique identifier of the connection between the source screen and the target screen in the wizard flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemTargetScreen TargetScreen { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItem"/> and sets the default values.
+        /// </summary>
+        public WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemSourceScreen>("source_screen", SourceScreen);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemTargetScreen>("target_screen", TargetScreen);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

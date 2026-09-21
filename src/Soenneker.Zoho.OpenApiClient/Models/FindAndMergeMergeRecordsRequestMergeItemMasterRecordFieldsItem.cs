@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object specifies the API name of a master record field like file upload or image upload fields, the attachment IDs to retain. 
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItem : IParsable
+    public partial class FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the API name of the master record field to retain in the merged record. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItemDataItem> Data { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItem"/> and sets the default values.
+        /// </summary>
+        public FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItemDataItem>("_data", Data);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

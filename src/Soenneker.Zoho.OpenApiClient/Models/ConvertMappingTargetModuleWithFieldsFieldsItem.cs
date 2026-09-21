@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single field entry within the target module&apos;s layout, capturing the field&apos;s label and any constraints that apply when transferring record data during conversion.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConvertMappingTargetModuleWithFieldsFieldsItem : IParsable
+    public partial class ConvertMappingTargetModuleWithFieldsFieldsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents an API identifier string composed of alphanumeric characters and underscores, used as a programmatic reference for fields, modules, and other CRM entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the field must be populated for the record conversion to proceed successfully. Possible values: `true` — the field is mandatory and a value must be provided before conversion can complete; `false` — the field is optional and may be left unpopulated during conversion.</summary>
         public bool? Required { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertMappingTargetModuleWithFieldsFieldsItem"/> and sets the default values.
+        /// </summary>
+        public ConvertMappingTargetModuleWithFieldsFieldsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("field_label", FieldLabel);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("required", Required);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

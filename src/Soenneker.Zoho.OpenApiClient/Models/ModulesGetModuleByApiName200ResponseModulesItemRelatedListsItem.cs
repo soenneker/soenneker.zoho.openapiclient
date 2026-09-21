@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Related list configuration defining how related module records are displayed and managed within the parent module&apos;s detail view.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem : IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Action URL or operation identifier associated with this related list, up to 64 characters; null when no action is defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Action { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name used to reference this related list programmatically, up to 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,6 +168,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Numeric code controlling where this related list appears or is hidden in the UI</summary>
         public int? Visibility { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem"/></returns>
@@ -242,6 +251,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VisibleStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemType>("type", Type);
             writer.WriteIntValue("visibility", Visibility);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

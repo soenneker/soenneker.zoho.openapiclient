@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the result for one user entry in the request, including the outcome code, error details, status, and message.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserInvalidErrorSchemaOnRequestBodyUsersItem : IParsable
+    public partial class UserInvalidErrorSchemaOnRequestBodyUsersItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error or status code for the user entry. Possible values: **INVALID_DATA**, **DUPLICATE_DATA**, **MANDATORY_NOT_FOUND**, **NOT_ALLOWED**, **DEPENDENT_FIELD_MISSING**.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UserInvalidErrorSchemaOnRequestBodyUsersItemCode? Code { get; set; }
         /// <summary>Represents additional contextual information about the validation error for the user entry.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the outcome status of the user entry in the response. Possible values: **error**, **success**, **failure**.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UserInvalidErrorSchemaOnRequestBodyUsersItemStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserInvalidErrorSchemaOnRequestBodyUsersItem"/> and sets the default values.
+        /// </summary>
+        public UserInvalidErrorSchemaOnRequestBodyUsersItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserInvalidErrorSchemaOnRequestBodyUsersItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserInvalidErrorSchemaOnRequestBodyUsersItemStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

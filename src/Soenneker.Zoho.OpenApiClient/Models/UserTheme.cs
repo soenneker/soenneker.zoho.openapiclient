@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the user&apos;s UI theme preferences.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserTheme : IParsable
+    public partial class UserTheme : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the overall background color of the theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +51,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the type of theme applied.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.UserThemeType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserTheme"/> and sets the default values.
+        /// </summary>
+        public UserTheme()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -88,6 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeScreen>("screen", Screen);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeSelectedTab>("selected_tab", SelectedTab);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserThemeType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

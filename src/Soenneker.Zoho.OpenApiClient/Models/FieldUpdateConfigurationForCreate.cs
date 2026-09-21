@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Defines a single field update action, including the target module, target field, mapping type, and the value to apply. Some properties are conditionally required depending on the target field&apos;s type — for example, Owner fields require notify and related_records.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldUpdateConfigurationForCreate : IParsable
+    public partial class FieldUpdateConfigurationForCreate : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to enforce assignment-threshold rules when updating the Owner field. This key is applicable only for Owner updates, and is required only when active owner-assignment thresholds exist for the module. If thresholds are not configured, sending this key can be rejected as not allowed.</summary>
         public bool? ApplyAssignmentThreshold { get; set; }
         /// <summary>Dependent fields that must be set alongside the target field. Required for dependent picklist relationships. Common chains: Pipeline -&gt; Stage, Layout -&gt; Pipeline, and Layout -&gt; Pipeline -&gt; Stage (nested via dependent_fields inside the Pipeline node).</summary>
@@ -23,23 +25,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested> DependentFields { get; set; }
 #endif
-        /// <summary>Automation feature where this field update action is used. Supports baseline features plus connected_workflows. No cadence support.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateFeatureType? FeatureType { get; set; }
-        /// <summary>Identifies the target field to update. Requires both id and api_name; if they refer to different fields, the request fails with AMBIGUITY_DURING_PROCESSING.</summary>
+        /// <summary>The automation feature this field update is associated with. Defaults to &apos;workflow&apos; if omitted. All enum values are supported for creation via API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldDetails? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType? FeatureType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldDetails Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType FeatureType { get; set; }
 #endif
-        /// <summary>Module metadata for the primary CRM module associated with the field update action.</summary>
+        /// <summary>Target field to be updated. Provide both field.id and field.api_name. If both are present but inconsistent, ambiguity or invalid-data errors can be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleDetails? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateField? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleDetails Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateField Field { get; set; }
+#endif
+        /// <summary>The CRM module where this field update should be applied. Specify using the module&apos;s unique ID and/or API name (e.g., Deals, Leads, Contacts).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateModule? Module { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateModule Module { get; set; }
 #endif
         /// <summary>Name of the field update action. Must be unique within the org. This label is displayed in the automation rule configuration UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,13 +59,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Whether to send an email notification to the new owner when the Owner field is updated. Required when the target field is Owner (omitting returns DEPENDENT_FIELD_MISSING). Must not be sent when the target field is not Owner (returns NOT_ALLOWED).</summary>
         public bool? Notify { get; set; }
-        /// <summary>Related module metadata for automation contexts that operate on related records. Null when no related module context applies.</summary>
+        /// <summary>Related module context when the field update is configured on a related module&apos;s records (e.g., updating a field on Contacts related to Accounts). Pass null or omit when not applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails? RelatedModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule? RelatedModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails RelatedModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule RelatedModule { get; set; }
 #endif
         /// <summary>Related modules whose open record ownership should also be transferred when the Owner field is updated. Common activity modules (Tasks, Calls, Events) are available for all modules. Additional modules depend on the parent module: Accounts can also include Contacts and Deals; Contacts can also include Deals. Required when the target field is Owner (omitting returns DEPENDENT_FIELD_MISSING). Must not be sent when the target field is not Owner (returns NOT_ALLOWED). Pass null to skip ownership transfer on related records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +75,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule> RelatedRecords { get; set; }
 #endif
-        /// <summary>The mapping type used when creating or updating the field update action. Only static is accepted; merge_field appears only in GET responses for existing actions.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateType? Type { get; set; }
-        /// <summary>Specifies how the new value is applied to a multi-select picklist or Owner field: overwrite replaces the existing value, append adds to the existing entries. Omit or set to null for single-value fields.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateUpdateType? UpdateType { get; set; }
+        /// <summary>Create/update mapping type. Only static is accepted for create/update payloads.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType Type { get; set; }
+#endif
+        /// <summary>Strategy for applying the value. Required for multi-select fields: &apos;overwrite&apos; replaces all existing values, &apos;append&apos; adds to them. Omit or pass null for single-value fields.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType? UpdateType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType UpdateType { get; set; }
+#endif
         /// <summary>The value to assign to the target field when this action is triggered. The type must match the target field&apos;s data type  - a mismatch returns DEPENDENT_MISMATCH. Pipeline expects a string value from Pipelines metadata; Layout expects a layout object from Layouts metadata; Owner expects a user object from Users API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +104,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public FieldUpdateConfigurationForCreate()
         {
+            AdditionalData = new Dictionary<string, object>();
             ApplyAssignmentThreshold = false;
             Notify = false;
         }
@@ -107,15 +128,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "apply_assignment_threshold", n => { ApplyAssignmentThreshold = n.GetBoolValue(); } },
                 { "dependent_fields", n => { DependentFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>(global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "feature_type", n => { FeatureType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateFeatureType>(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FieldDetails.CreateFromDiscriminatorValue); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleDetails.CreateFromDiscriminatorValue); } },
+                { "feature_type", n => { FeatureType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateField>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateField.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateModule>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateModule.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notify", n => { Notify = n.GetBoolValue(); } },
-                { "related_module", n => { RelatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails.CreateFromDiscriminatorValue); } },
+                { "related_module", n => { RelatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule.CreateFromDiscriminatorValue); } },
                 { "related_records", n => { RelatedRecords = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateType>(); } },
-                { "update_type", n => { UpdateType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateUpdateType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType.CreateFromDiscriminatorValue); } },
+                { "update_type", n => { UpdateType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValue>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -128,16 +149,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apply_assignment_threshold", ApplyAssignmentThreshold);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>("dependent_fields", DependentFields);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateFeatureType>("feature_type", FeatureType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldDetails>("field", Field);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleDetails>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType>("feature_type", FeatureType);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateField>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateModule>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("notify", Notify);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails>("related_module", RelatedModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule>("related_module", RelatedModule);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>("related_records", RelatedRecords);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateType>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateUpdateType>("update_type", UpdateType);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType>("update_type", UpdateType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValue>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

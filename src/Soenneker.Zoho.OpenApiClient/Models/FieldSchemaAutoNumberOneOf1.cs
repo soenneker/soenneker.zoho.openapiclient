@@ -8,11 +8,13 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active auto-number configuration for this field, containing the prefix, suffix, starting number, and digit length used to generate sequential identifiers.
+    /// Represents the auto number details of the field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaAutoNumberOneOf1 : IParsable
+    public partial class FieldSchemaAutoNumberOneOf1 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The prefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,16 +23,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1Prefix Prefix { get; set; }
 #endif
-        /// <summary>Represents the total digit length of the starting number used in the auto-number sequence, controlling zero-padding and minimum width of generated values.</summary>
+        /// <summary>Represents the length of the starting number.</summary>
         public int? StartingNumberLength { get; set; }
-        /// <summary>The start_number property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1StartNumber? StartNumber { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1StartNumber StartNumber { get; set; }
-#endif
+        /// <summary>Represents the starting number for the auto number.</summary>
+        public int? StartNumber { get; set; }
         /// <summary>The suffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1Suffix Suffix { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaAutoNumberOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "prefix", n => { Prefix = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1Prefix>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1Prefix.CreateFromDiscriminatorValue); } },
-                { "start_number", n => { StartNumber = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1StartNumber>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1StartNumber.CreateFromDiscriminatorValue); } },
+                { "start_number", n => { StartNumber = n.GetIntValue(); } },
                 { "starting_number_length", n => { StartingNumberLength = n.GetIntValue(); } },
                 { "suffix", n => { Suffix = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1Suffix>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1Suffix.CreateFromDiscriminatorValue); } },
             };
@@ -72,8 +75,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1Prefix>("prefix", Prefix);
             writer.WriteIntValue("starting_number_length", StartingNumberLength);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1StartNumber>("start_number", StartNumber);
+            writer.WriteIntValue("start_number", StartNumber);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaAutoNumberOneOf1Suffix>("suffix", Suffix);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

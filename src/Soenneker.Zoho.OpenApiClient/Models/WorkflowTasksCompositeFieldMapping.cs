@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a composite-type field mapping used exclusively for the Participants field in the Events module via the add_meeting action. The value carries a structured object that encodes participant data and is not applicable to any other field or automation action type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowTasksCompositeFieldMapping : IParsable
+    public partial class WorkflowTasksCompositeFieldMapping : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The server-computed representation of the mapped value, included in GET responses. Omitted from create and update requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,13 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayValue { get; set; }
 #endif
-        /// <summary>Identifies the target CRM field to which a mapping value is applied within an automation rule. The api_name and ID properties must both be supplied and must refer to the same field; a mismatch between the two causes an AMBIGUITY_DURING_PROCESSING error. Available fields for a given module can be discovered via GET /settings/fields?module={api_name}.</summary>
+        /// <summary>Target field to populate when the automation executes. api_name is required. If id is also provided, both must refer to the same field; otherwise the API returns AMBIGUITY_DURING_PROCESSING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingField? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingField Field { get; set; }
 #endif
         /// <summary>Serves as the polymorphic discriminator that identifies this field mapping as a composite mapping; the value must be set to &quot;composite&quot; to select this schema variant.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CompositeType? Type { get; set; }
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingValueProperty Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMapping"/> and sets the default values.
+        /// </summary>
+        public WorkflowTasksCompositeFieldMapping()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingField.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CompositeType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingValueProperty>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingValueProperty.CreateFromDiscriminatorValue); } },
             };
@@ -71,9 +80,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_value", DisplayValue);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldAttributes>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CompositeType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingValueProperty>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,25 +11,27 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a field operation object used in layout update requests to add, modify, create, or remove a field within a section.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldUpdateObject : IParsable
+    public partial class FieldUpdateObject : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The association_details property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Association details for Field-Of-Lookup (FOL) mapping. Links this field to a related field in another module through a lookup field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetails? AssociationDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails? AssociationDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetails AssociationDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails AssociationDetails { get; set; }
 #endif
         /// <summary>Represents the data type of the field. Required when adding a new custom field to the layout. Possible values: `text`, `textarea`, `email`, `phone`, `website`, `integer`, `bigint`, `currency`, `double`, `percent`, `date`, `datetime`, `boolean`, `picklist`, `multiselectpicklist`, `lookup`, `multiselectlookup`, `autonumber`, `fileupload`, `imageupload`, `formula`, `rollup_summary`, `consent_lookup`, `profileimage`, `richtextarea`, `userlookup`, `multiuserlookup`, `event_reminder`.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectDataType? DataType { get; set; }
-        /// <summary>Represents the configuration object used to specify the deletion mode when removing a layout or resource, indicating whether the deletion is permanent or a soft delete to the recycle bin.</summary>
+        /// <summary>Delete configuration for removing the field. Set permanent to false to move to unused section (can be re-added later), true to permanently delete the field and its data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject? Delete { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectDelete? Delete { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject Delete { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectDelete Delete { get; set; }
 #endif
         /// <summary>Represents the element type for special field components in the layout, distinguishing standard data fields from mirror fields. Possible values: `field` — a standard data field. `mirror_field` — a field that mirrors a value from a lookup source.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectElementType? ElementType { get; set; }
@@ -62,6 +64,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the one-based ordinal position of the field within its containing section, controlling the rendering order of fields on record forms.</summary>
         public int? SequenceNumber { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject"/> and sets the default values.
+        /// </summary>
+        public FieldUpdateObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject"/></returns>
@@ -79,9 +88,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "association_details", n => { AssociationDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetails>(global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetails.CreateFromDiscriminatorValue); } },
+                { "association_details", n => { AssociationDetails = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails.CreateFromDiscriminatorValue); } },
                 { "data_type", n => { DataType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectDataType>(); } },
-                { "_delete", n => { Delete = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject>(global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject.CreateFromDiscriminatorValue); } },
+                { "_delete", n => { Delete = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectDelete>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectDelete.CreateFromDiscriminatorValue); } },
                 { "element_type", n => { ElementType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectElementType>(); } },
                 { "field_label", n => { FieldLabel = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -97,15 +106,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetails>("association_details", AssociationDetails);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails>("association_details", AssociationDetails);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectDataType>("data_type", DataType);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DeleteObject>("_delete", Delete);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectDelete>("_delete", Delete);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectElementType>("element_type", ElementType);
             writer.WriteStringValue("field_label", FieldLabel);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("length", Length);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectLookupField>("lookup_field", LookupField);
             writer.WriteIntValue("sequence_number", SequenceNumber);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

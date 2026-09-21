@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the theme configuration applied to the user&apos;s CRM interface. Includes color and display settings for the background, screen, header, normal tab, and selected tab elements.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetUserDetailsTheme : IParsable
+    public partial class GetUserDetailsTheme : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the background color of the user&apos;s theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +60,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the type of theme applied to the user&apos;s CRM interface.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsTheme"/> and sets the default values.
+        /// </summary>
+        public GetUserDetailsTheme()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsTheme"/></returns>
@@ -98,6 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FixedValueScreen>("screen", Screen);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeSelectedTab>("selected_tab", SelectedTab);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

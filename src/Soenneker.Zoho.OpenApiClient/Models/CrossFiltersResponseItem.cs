@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single cross-filter object returned in the response, containing the relationship reference, filter criteria, and inclusion flag.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CrossFiltersResponseItem : IParsable
+    public partial class CrossFiltersResponseItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the top-level filter criterion returned in the response, supporting both simple field-based filters and complex grouped filters with logical operators.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersResponseItemRelation Relation { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersResponseItem"/> and sets the default values.
+        /// </summary>
+        public CrossFiltersResponseItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionResponse>("criteria", Criteria);
             writer.WriteBoolValue("include_objects", IncludeObjects);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersResponseItemRelation>("relation", Relation);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

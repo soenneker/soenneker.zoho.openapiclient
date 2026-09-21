@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Summarized unsubscribe link configuration with timestamps, page settings, submission behavior, and creator or modifier references as returned by the listing endpoint.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UnsubscribeLinkSummaryRecord : IParsable
+    public partial class UnsubscribeLinkSummaryRecord : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>User who created the unsubscribe link, including the user name and ID. Refer to the [Get Users](users.yaml#$.paths./users.get) endpoint for details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +112,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string SubmissionRedirectUrl { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkSummaryRecord"/> and sets the default values.
+        /// </summary>
+        public UnsubscribeLinkSummaryRecord()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkSummaryRecord"/></returns>
@@ -160,6 +169,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("submission_action_type", SubmissionActionType);
             writer.WriteStringValue("submission_message", SubmissionMessage);
             writer.WriteStringValue("submission_redirect_url", SubmissionRedirectUrl);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

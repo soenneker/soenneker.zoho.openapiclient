@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the updated details for a single holiday.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class HolidaysUpdateHolidaysRequestOneOf1HolidaysItem : IParsable
+    public partial class HolidaysUpdateHolidaysRequestOneOf1HolidaysItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the updated date for the holiday in **YYYY-MM-DD** format.</summary>
         public Date? Date { get; set; }
         /// <summary>Specify the unique identifier of the holiday to update.</summary>
@@ -42,6 +44,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specify the updated type of holiday. Possible values: **business_holiday, shift_holiday**.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidaysRequestOneOf1HolidaysItemType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidaysRequestOneOf1HolidaysItem"/> and sets the default values.
+        /// </summary>
+        public HolidaysUpdateHolidaysRequestOneOf1HolidaysItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidaysRequestOneOf1HolidaysItemShiftHour>("shift_hour", ShiftHour);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidaysRequestOneOf1HolidaysItemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the sort order configuration details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomViewsChangeSortByIdRequestCustomViewsItem : IParsable
+    public partial class CustomViewsChangeSortByIdRequestCustomViewsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents a reference to a field in the Custom View, identified by its API name and unique ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specify the sort order for the Custom View.Possible values:**asc** - Ascending order.**desc** - Descending order.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortByIdRequestCustomViewsItemSortOrder? SortOrder { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortByIdRequestCustomViewsItem"/> and sets the default values.
+        /// </summary>
+        public CustomViewsChangeSortByIdRequestCustomViewsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>("sort_by", SortBy);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortByIdRequestCustomViewsItemSortOrder>("sort_order", SortOrder);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

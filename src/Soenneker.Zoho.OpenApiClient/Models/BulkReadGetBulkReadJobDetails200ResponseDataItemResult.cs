@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// specifies the export result details of the bulk read job, including the download URL and pagination information. Present when the job has completed or partially completed.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkReadGetBulkReadJobDetails200ResponseDataItemResult : IParsable
+    public partial class BulkReadGetBulkReadJobDetails200ResponseDataItemResult : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the total number of records exported in the bulk read job. </summary>
         public int? Count { get; set; }
         /// <summary>Specifies the URL to download the exported file. </summary>
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? Page { get; set; }
         /// <summary>Represents the number of records per page in the exported result. </summary>
         public int? PerPage { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadGetBulkReadJobDetails200ResponseDataItemResult"/> and sets the default values.
+        /// </summary>
+        public BulkReadGetBulkReadJobDetails200ResponseDataItemResult()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -76,6 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("next_page_token", NextPageToken);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("per_page", PerPage);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

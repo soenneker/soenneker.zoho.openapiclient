@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a member who delivers the service. Identifies the user by name and ID. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MembersNested : IParsable
+    public partial class MembersNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the unique ID of the user who delivers the service. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,13 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Represents a member who delivers the service. Identifies the user by name and ID. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.</summary>
+        /// <summary>contains member details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MembersNested? Members { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MembersNestedMembers? Members { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MembersNested Members { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MembersNestedMembers Members { get; set; }
 #endif
         /// <summary>Specify the display name of the user who delivers the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MembersNested"/> and sets the default values.
+        /// </summary>
+        public MembersNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "Members", n => { Members = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested>(global::Soenneker.Zoho.OpenApiClient.Models.MembersNested.CreateFromDiscriminatorValue); } },
+                { "Members", n => { Members = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MembersNestedMembers>(global::Soenneker.Zoho.OpenApiClient.Models.MembersNestedMembers.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -68,8 +77,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested>("Members", Members);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MembersNestedMembers>("Members", Members);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

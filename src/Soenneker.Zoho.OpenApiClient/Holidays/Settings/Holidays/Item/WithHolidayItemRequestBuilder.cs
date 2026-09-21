@@ -191,7 +191,7 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item
 #endif
             /// <summary>Specify the type of holidays to retrieve.Possible values: business_holiday, shift_holiday.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.TypeValue? Type { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.HolidaysType? Type { get; set; }
             /// <summary>Specify the year for which to filter holidays.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }

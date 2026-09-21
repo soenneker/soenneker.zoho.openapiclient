@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Provides limit details when a limit is exceeded.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordLockingConfigurationsCreateRecordLockingConfiguration400ResponseDetailsOneOf4 : IParsable
+    public partial class RecordLockingConfigurationsCreateRecordLockingConfiguration400ResponseDetailsOneOf4 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Remaining available capacity, if applicable.</summary>
         public int? AvailableLimit { get; set; }
         /// <summary>The maximum allowed value.</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ParamName { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration400ResponseDetailsOneOf4"/> and sets the default values.
+        /// </summary>
+        public RecordLockingConfigurationsCreateRecordLockingConfiguration400ResponseDetailsOneOf4()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("available_limit", AvailableLimit);
             writer.WriteIntValue("limit", Limit);
             writer.WriteStringValue("param_name", ParamName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

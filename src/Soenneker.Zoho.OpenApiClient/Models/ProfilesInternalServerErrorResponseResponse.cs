@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Error code for internal server error</summary>
+        /// <summary>Represents the error code indicating the type of server-side failure.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode? Code { get; set; }
         /// <summary>Empty details object included with the internal error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Complete metadata for a CRM module including configuration, capabilities, fields, layouts, profiles, and related lists.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItem : IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Access control scope for the module. Possible values: org_based - organization-wide access; team_based - team-specific access. Immutable after module creation; cannot be changed via PUT.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemAccessType? AccessType { get; set; }
@@ -33,6 +33,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ActualSingularLabel { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Case-sensitive API name used to reference this module in API requests (e.g., &apos;Leads&apos;, &apos;Contacts&apos;, &apos;CustomModule1&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -356,6 +358,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>True when Zia AI view is enabled for this module; applicable only to the Deals module</summary>
         public bool? ZiaView { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItem"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModuleByApiName200ResponseModulesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItem"/></returns>
@@ -550,6 +559,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("webform_supported", WebformSupported);
             writer.WriteStringValue("web_link", WebLink);
             writer.WriteBoolValue("zia_view", ZiaView);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

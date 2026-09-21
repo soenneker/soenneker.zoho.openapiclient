@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the fiscal year settings configured for the organization, including the calendar type, start month, structure, and surplus week information.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetFiscalYearNested : IParsable
+    public partial class GetFiscalYearNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the calendar type configured for the fiscal year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +88,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.GetSurplusWeekNested SurplusWeek { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested"/> and sets the default values.
+        /// </summary>
+        public GetFiscalYearNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested"/></returns>
@@ -130,6 +139,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("start_month", StartMonth);
             writer.WriteStringValue("structure", Structure);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetSurplusWeekNested>("surplus_week", SurplusWeek);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

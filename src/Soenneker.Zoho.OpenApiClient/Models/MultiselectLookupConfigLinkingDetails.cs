@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Details of the linking module that connects the two entities in the multiselectlookup.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MultiselectLookupConfigLinkingDetails : IParsable
+    public partial class MultiselectLookupConfigLinkingDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lookup field in the linking module that references the connected module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Visibility flag for the linking module relationship.</summary>
         public int? Visibility { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigLinkingDetails"/> and sets the default values.
+        /// </summary>
+        public MultiselectLookupConfigLinkingDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigLinkingDetailsLookupField>("lookup_field", LookupField);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigLinkingDetailsModule>("module", Module);
             writer.WriteIntValue("visibility", Visibility);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

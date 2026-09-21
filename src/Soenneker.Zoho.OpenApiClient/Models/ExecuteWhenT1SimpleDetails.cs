@@ -11,18 +11,27 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the optional trigger configuration details, including **repeat** (Boolean) and **trigger_module** (object) for cross-module triggers.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExecuteWhenT1SimpleDetails : IParsable
+    public partial class ExecuteWhenT1SimpleDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the rule fires every time the trigger condition is met. When false, the rule fires only on the first occurrence.</summary>
         public bool? Repeat { get; set; }
-        /// <summary>Represents a CRM module or field reference using its API name and unique numeric ID.</summary>
+        /// <summary>The module that actually triggers the rule. Defaults to the rule&apos;s top-level module if omitted. Must be explicitly set when the trigger targets a different module, such as a rule on Leads triggered by a note creation event, which requires the trigger module to reference the Notes module. To discover module API names and identifiers, retrieve the available modules from the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema? TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule? TriggerModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule TriggerModule { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetails"/> and sets the default values.
+        /// </summary>
+        public ExecuteWhenT1SimpleDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "repeat", n => { Repeat = n.GetBoolValue(); } },
-                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
+                { "trigger_module", n => { TriggerModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -53,7 +62,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("repeat", Repeat);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("trigger_module", TriggerModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule>("trigger_module", TriggerModule);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Must contain the mandatory keys &quot;Deal_Name&quot;, &quot;Stage&quot;, &quot;Closing_Date&quot;, and &quot;Pipeline&quot;(if enabled), besides the other mandatory fields configured for the Deals module. Note that if there are layouts other than Standard, the custom-defined mandatory fields will not be processed while converting the lead.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassConvertMassConvertRequestDeals : IParsable
+    public partial class MassConvertMassConvertRequestDeals : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the name of the deal to create for the converted lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DealName { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvertRequestDeals"/> and sets the default values.
+        /// </summary>
+        public MassConvertMassConvertRequestDeals()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Deal_Name", DealName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

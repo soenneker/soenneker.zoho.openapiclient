@@ -8,13 +8,22 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the uniqueness constraint configuration for this field, controlling whether duplicate values are permitted across records in the module and whether the check is case-sensitive.
+    /// Represents the uniqueness details of the field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaUnique : IParsable
+    public partial class FieldSchemaUnique : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Indicates whether the field&apos;s uniqueness constraint treats values differing only in letter case as distinct. Possible values: `true` — case-sensitive comparison is applied and values with different casing are treated as unique; `false` — the uniqueness check is case-insensitive.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates if the uniqueness is case sensitive.</summary>
         public bool? CaseSensitive { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaUnique"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaUnique()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("case_sensitive", CaseSensitive);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Root element for defining a scoring rule, including layout, fields, custom fields, and scoring configurations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScoringRulePost : IParsable
+    public partial class ScoringRulePost : IAdditionalDataHolder, IParsable
     {
         /// <summary>It defined the status (active or inactive) of the rule.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Custom fields can be configured for scoring rule. These fields will hold the referred scores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +74,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationPost> SignalRules { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePost"/> and sets the default values.
+        /// </summary>
+        public ScoringRulePost()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePost"/></returns>
@@ -114,6 +123,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleModuleInput>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TouchPointScoreConfigurationPost>("signal_rules", SignalRules);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

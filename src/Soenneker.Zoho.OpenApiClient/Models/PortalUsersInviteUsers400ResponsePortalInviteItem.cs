@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error details for a single failed portal invitation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PortalUsersInviteUsers400ResponsePortalInviteItem : IParsable
+    public partial class PortalUsersInviteUsers400ResponsePortalInviteItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code. Possible values: **MANDATORY_NOT_FOUND**, **INVALID_DATA**. </summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers400ResponsePortalInviteItemCode? Code { get; set; }
         /// <summary>Represents additional details about the error.</summary>
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers400ResponsePortalInviteItem"/> and sets the default values.
+        /// </summary>
+        public PortalUsersInviteUsers400ResponsePortalInviteItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers400ResponsePortalInviteItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

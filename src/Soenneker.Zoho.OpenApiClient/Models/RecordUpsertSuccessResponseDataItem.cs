@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single item in the RecordUpsertSuccessResponse array.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordUpsertSuccessResponseDataItem : IParsable
+    public partial class RecordUpsertSuccessResponseDataItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the data value.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertSuccessResponseDataItemAction? Action { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**SUCCESS** - Represents success.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode? Code { get; set; }
         /// <summary>Represents the data value.</summary>
@@ -43,6 +45,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUpsertSuccessResponseDataItem"/> and sets the default values.
+        /// </summary>
+        public RecordUpsertSuccessResponseDataItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,6 +91,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("duplicate_field", DuplicateField);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

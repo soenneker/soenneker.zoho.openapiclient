@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the detailed configuration of a single portal.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PortalsGetPortal200ResponsePortalsItem : IParsable
+    public partial class PortalsGetPortal200ResponsePortalsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the Assertion Consumer Service (ACS) URL for the portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -23,6 +23,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the portal is active.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the Zoho account zone ID of the portal administrator.</summary>
         public int? AdminZuid { get; set; }
         /// <summary>Represents the Zoho CRM user who created this portal.</summary>
@@ -102,6 +104,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Zaid { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItem"/> and sets the default values.
+        /// </summary>
+        public PortalsGetPortal200ResponsePortalsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItem"/></returns>
@@ -156,6 +165,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration>("saml_configuration", SamlConfiguration);
             writer.WriteStringValue("single_logout_url", SingleLogoutUrl);
             writer.WriteStringValue("zaid", Zaid);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

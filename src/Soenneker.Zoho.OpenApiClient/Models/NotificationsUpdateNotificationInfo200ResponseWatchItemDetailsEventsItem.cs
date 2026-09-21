@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the details of a single event-channel subscription after the update.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class NotificationsUpdateNotificationInfo200ResponseWatchItemDetailsEventsItem : IParsable
+    public partial class NotificationsUpdateNotificationInfo200ResponseWatchItemDetailsEventsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the expiry date and time of the updated notification channel. Always returned in the response.</summary>
         public DateTimeOffset? ChannelExpiry { get; set; }
         /// <summary>Represents the identifier of the updated notification channel. Always returned in the response.</summary>
@@ -47,6 +49,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ResourceUri { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200ResponseWatchItemDetailsEventsItem"/> and sets the default values.
+        /// </summary>
+        public NotificationsUpdateNotificationInfo200ResponseWatchItemDetailsEventsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,6 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("resource_id", ResourceId);
             writer.WriteStringValue("resource_name", ResourceName);
             writer.WriteStringValue("resource_uri", ResourceUri);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

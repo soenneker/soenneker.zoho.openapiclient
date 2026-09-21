@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a wizard and its basic configuration details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WizardsGetAllWizards200ResponseWizardsItem : IParsable
+    public partial class WizardsGetAllWizards200ResponseWizardsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the wizard is currently enabled.Possible values:true - The wizard is active and available for use.false - The wizard is inactive and not available for use.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the list of containers within the wizard, each defining a layout and the screens through which users progress.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +96,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates the origin from which the wizard originates.Possible values:crm - Created natively within Zoho CRM.platform_plugin - Created via a Zoho platform plugin.marketplace_plugin - Created through a Zoho Marketplace plugin.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200ResponseWizardsItemSource? Source { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200ResponseWizardsItem"/> and sets the default values.
+        /// </summary>
+        public WizardsGetAllWizards200ResponseWizardsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200ResponseWizardsItem"/></returns>
@@ -146,6 +155,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200ResponseWizardsItemPortalUserTypesItem>("portal_user_types", PortalUserTypes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200ResponseWizardsItemProfilesItem>("profiles", Profiles);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200ResponseWizardsItemSource>("source", Source);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

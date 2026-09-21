@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the mapping between a single column in the uploaded file and a field on the target module.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFieldMappingsItem : IParsable
+    public partial class BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFieldMappingsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the field on the target module that received the column value. Refer to the [Fields API](fields.yaml#$.paths./settings/fields.get) resource for details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +60,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the column index of the parent record reference when the mapped field is part of a subform or related record. Returned as **null** when no parent column was supplied.</summary>
         public int? ParentColumnIndex { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFieldMappingsItem"/> and sets the default values.
+        /// </summary>
+        public BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFieldMappingsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFieldMappingsItem"/></returns>
@@ -98,6 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("index", Index);
             writer.WriteStringValue("module", Module);
             writer.WriteIntValue("parent_column_index", ParentColumnIndex);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

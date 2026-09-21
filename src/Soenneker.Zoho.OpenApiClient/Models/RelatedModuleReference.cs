@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a reference to a related CRM module linked to the parent module of a webhook. Returns null when no related module is configured. Required when feature_type is kiosk.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelatedModuleReference : IParsable
+    public partial class RelatedModuleReference : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the related CRM module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,14 +32,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>
-        /// Creates a new instance of the appropriate class based on discriminator value
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleReference"/> and sets the default values.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleReference"/></returns>
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleReference CreateFromDiscriminatorValue(IParseNode parseNode)
+        public RelatedModuleReference()
         {
-            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleReference();
+            AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

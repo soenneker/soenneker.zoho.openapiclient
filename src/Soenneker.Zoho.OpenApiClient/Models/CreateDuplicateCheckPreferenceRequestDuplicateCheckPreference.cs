@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Duplicate check preference details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateDuplicateCheckPreferenceRequestDuplicateCheckPreference : IParsable
+    public partial class CreateDuplicateCheckPreferenceRequestDuplicateCheckPreference : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of duplicate check preference.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceType? Type { get; set; }
         /// <summary>Configurations for the duplicate check preference type. Mandatory when type is mapped_module_records and ignored when type is converted_records. Only the first entry is processed.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItem> TypeConfigurations { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreference"/> and sets the default values.
+        /// </summary>
+        public CreateDuplicateCheckPreferenceRequestDuplicateCheckPreference()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceType>("type", Type);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItem>("type_configurations", TypeConfigurations);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

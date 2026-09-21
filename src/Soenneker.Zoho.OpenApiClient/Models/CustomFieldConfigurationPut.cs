@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Configuration for custom fields in PUT request. Supports creating/updating a custom field or deleting one by providing its id with _delete: null.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomFieldConfigurationPut : IParsable
+    public partial class CustomFieldConfigurationPut : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Api name of the custom field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,14 +47,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Represents the referenced score field linked to a custom field in a Scoring Rule.</summary>
+        /// <summary>It will hold the referenced score field info.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreField? ReferenceField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomFieldConfigurationPutReferenceField? ReferenceField { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreField ReferenceField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomFieldConfigurationPutReferenceField ReferenceField { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomFieldConfigurationPut"/> and sets the default values.
+        /// </summary>
+        public CustomFieldConfigurationPut()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -75,7 +84,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "_delete", n => { Delete = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "field_label", n => { FieldLabel = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "reference_field", n => { ReferenceField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreField>(global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreField.CreateFromDiscriminatorValue); } },
+                { "reference_field", n => { ReferenceField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomFieldConfigurationPutReferenceField>(global::Soenneker.Zoho.OpenApiClient.Models.CustomFieldConfigurationPutReferenceField.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,7 +98,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("_delete", Delete);
             writer.WriteStringValue("field_label", FieldLabel);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ReferencedScoreField>("reference_field", ReferenceField);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomFieldConfigurationPutReferenceField>("reference_field", ReferenceField);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

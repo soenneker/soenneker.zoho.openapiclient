@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a field included in the Custom View, with configuration details such as pin status, pin order, and display width.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomViewFieldItem : IParsable
+    public partial class CustomViewFieldItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the field included in the Custom View.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,6 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? PinOrder { get; set; }
         /// <summary>Represents the display width of the field in pixels.</summary>
         public int? Width { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewFieldItem"/> and sets the default values.
+        /// </summary>
+        public CustomViewFieldItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,6 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("_pin", Pin);
             writer.WriteIntValue("_pin_order", PinOrder);
             writer.WriteIntValue("_width", Width);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

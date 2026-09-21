@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a user group and the count of users associated with it based on the provided filter criteria.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItem : IParsable
+    public partial class UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of users associated with this user group. </summary>
         public int? Count { get; set; }
         /// <summary>Represents the user group details for this entry. </summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItemUserGroup UserGroup { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItem"/> and sets the default values.
+        /// </summary>
+        public UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItemUserGroup>("user_group", UserGroup);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

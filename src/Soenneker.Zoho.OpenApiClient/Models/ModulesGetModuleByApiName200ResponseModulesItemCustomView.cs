@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Default custom view configuration for the module, including filter criteria, display fields, sort settings, and sharing options. Exposed only when &apos;custom_view&apos; is included in the include parameter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItemCustomView : IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItemCustomView : IAdditionalDataHolder, IParsable
     {
         /// <summary>Access scope for the custom view, determining visibility to other users (e.g., private, shared with all, shared with roles).</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewAccessType? AccessType { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Integer code representing the sharing category of the custom view (e.g., private, shared_with_everyone, shared_with_roles).</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewCategory? Category { get; set; }
         /// <summary>User object identifying who created this custom view, containing id and name. Null for system-generated views.</summary>
@@ -140,6 +142,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public ModulesGetModuleByApiName200ResponseModulesItemCustomView()
         {
+            AdditionalData = new Dictionary<string, object>();
             Locked = false;
         }
         /// <summary>
@@ -219,6 +222,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("system_defined", SystemDefined);
             writer.WriteStringValue("system_name", SystemName);
             writer.WriteBoolValue("wrap_text", WrapText);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

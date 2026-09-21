@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the layout configuration object supplied in an update request, containing at least one of the updatable attributes: name, sections, profiles, or business card display setting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutUpdateObject : IParsable
+    public partial class LayoutUpdateObject : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the new display name for the layout. Must be unique within the module&apos;s layout configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specifies whether the business card view is enabled or disabled for this layout as part of the update.</summary>
         public bool? ShowBusinessCard { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateObject"/> and sets the default values.
+        /// </summary>
+        public LayoutUpdateObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ProfileUpdateObject>("profiles", Profiles);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObject>("sections", Sections);
             writer.WriteBoolValue("show_business_card", ShowBusinessCard);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

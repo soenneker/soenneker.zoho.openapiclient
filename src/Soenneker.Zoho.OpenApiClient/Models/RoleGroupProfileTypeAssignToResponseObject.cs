@@ -11,18 +11,27 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Defines the criteria and list of users eligible for record assignment upon entering the current rule entry.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RoleGroupProfileTypeAssignToResponseObject : IParsable
+    public partial class RoleGroupProfileTypeAssignToResponseObject : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Resource details.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Defines the details user category such as role, group, profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject? Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectResource? Resource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectResource Resource { get; set; }
 #endif
         /// <summary>Defines which set of users should be considered for assignment.Possible values:**role** - Represents role.**group** - Represents group.**profile** - Represents profile. </summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObject"/> and sets the default values.
+        /// </summary>
+        public RoleGroupProfileTypeAssignToResponseObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +50,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>(global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectResource>(global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectResource.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectType>(); } },
             };
         }
@@ -52,8 +61,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObject>("resource", Resource);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectResource>("resource", Resource);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

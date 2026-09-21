@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the API name and record ID of a related module record to transfer to the new owner.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ChangeOwnerChangeOwnerBulkRequestRelatedModulesItem : IParsable
+    public partial class ChangeOwnerChangeOwnerBulkRequestRelatedModulesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the API name of the related module for which the records are transferred.\nPossible values:\n**Tasks**\n**Events**\n**Calls**\n**Contacts**\n**Deals**</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequestRelatedModulesItemApiName? ApiName { get; set; }
         /// <summary>Specify the record ID of the related module record to transfer to the new owner.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequestRelatedModulesItem"/> and sets the default values.
+        /// </summary>
+        public ChangeOwnerChangeOwnerBulkRequestRelatedModulesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequestRelatedModulesItemApiName>("api_name", ApiName);
             writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

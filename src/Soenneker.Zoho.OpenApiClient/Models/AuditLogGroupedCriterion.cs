@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A group of filter conditions combined with a logical operator.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AuditLogGroupedCriterion : IParsable
+    public partial class AuditLogGroupedCriterion : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Conditions to combine.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Logical operator applied between the grouped conditions.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.AndGroupOperator? GroupOperator { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogGroupedCriterion"/> and sets the default values.
+        /// </summary>
+        public AuditLogGroupedCriterion()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogGroupedCriterionGroupItem>("group", Group);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AndGroupOperator>("group_operator", GroupOperator);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

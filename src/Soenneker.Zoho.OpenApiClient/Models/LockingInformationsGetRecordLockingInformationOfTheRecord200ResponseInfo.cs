@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// An object containing the pagination details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseInfo : IParsable
+    public partial class LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseInfo : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the total number of locking information records returned in the response.</summary>
         public int? Count { get; set; }
         /// <summary>Indicates whether more locking information records are available beyond the current page. Possible values: **true** - More records are available. **false** - No more records are available.</summary>
@@ -45,6 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string PreviousPageToken { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseInfo"/> and sets the default values.
+        /// </summary>
+        public LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -86,6 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("page_token_expiry", PageTokenExpiry);
             writer.WriteIntValue("per_page", PerPage);
             writer.WriteStringValue("previous_page_token", PreviousPageToken);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

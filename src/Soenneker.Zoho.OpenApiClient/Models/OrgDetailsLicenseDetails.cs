@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the license and subscription details for the organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class OrgDetailsLicenseDetails : IParsable
+    public partial class OrgDetailsLicenseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the organization has a paid subscription.Possible values:**true** - The organization has a paid subscription.**false** - The organization does not have a paid subscription.</summary>
         public bool? Paid { get; private set; }
         /// <summary>Represents the expiry date of the paid license for the organization.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the number of user licenses purchased for the organization.</summary>
         public int? UsersLicensePurchased { get; private set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsLicenseDetails"/> and sets the default values.
+        /// </summary>
+        public OrgDetailsLicenseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("trial_expiry", TrialExpiry);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

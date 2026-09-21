@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the field selection criteria, including the grouping operator and field references.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection : IParsable
+    public partial class NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the list of field references to use as notification conditions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Specify the logical operator to apply to the field condition groups.Possible values:and - All conditions in the group must be satisfied.or - Any condition in the group must be satisfied.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelectionGroupOperator? GroupOperator { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection"/> and sets the default values.
+        /// </summary>
+        public NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelectionGroupItem>("group", Group);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelectionGroupOperator>("group_operator", GroupOperator);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

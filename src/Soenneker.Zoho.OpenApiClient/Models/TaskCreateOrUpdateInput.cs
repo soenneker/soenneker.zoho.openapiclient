@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// PURPOSE: Writable task fields for create or update. PREREQUISITES: (1) Call GET /settings/layouts?module=Tasks - fields with required: true in the field info are mandatory in field_mappings. (2) Call GET /settings/modules to discover valid module api_names. Read-only fields (id, created_time, modified_time, created_by, modified_by, lock_status, associated, deletable) are excluded.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TaskCreateOrUpdateInput : IParsable
+    public partial class TaskCreateOrUpdateInput : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The automation feature this task definition belongs to. Defaults to &quot;workflow&quot; if omitted. A task can only be associated with the feature it was created for - a task with feature_type=&quot;workflow&quot; can only be attached to workflow rules, not to blueprints or kiosks. Supported values are defined in the enum.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateInputFeatureType? FeatureType { get; set; }
         /// <summary>REQUIRED. Field mappings for task fields. Mandatory mappings: Subject (static or merge_field), Due_Date (execution_time), Status (static: Not Started, Deferred, In Progress, Completed, Waiting on someone else), Priority (static: Highest, High, Normal, Low, Lowest). Optional: Description, Owner, Remind_At (execution_time). Each entry requires field ({api_name, id}), type, and value. Types: static (literal values), merge_field (${!Module.Field} tokens), execution_time (for Date/DateTime/ALARM - requires period, unit, trigger_field, sign). Workflow tasks support period: days, business_days only. Max 20 entries.</summary>
@@ -46,6 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public TaskCreateOrUpdateInput()
         {
+            AdditionalData = new Dictionary<string, object>();
             Notify = false;
         }
         /// <summary>
@@ -85,6 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateModuleRef>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("notify", Notify);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

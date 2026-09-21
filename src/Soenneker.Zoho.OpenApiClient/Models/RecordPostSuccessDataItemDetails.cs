@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains additional context about the error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordPostSuccessDataItemDetails : IParsable
+    public partial class RecordPostSuccessDataItemDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains additional context about the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +98,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string WizardConnectionPath { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPostSuccessDataItemDetails"/> and sets the default values.
+        /// </summary>
+        public RecordPostSuccessDataItemDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPostSuccessDataItemDetails"/></returns>
@@ -150,6 +159,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("$state", State);
             writer.WriteStringValue("$status", Status);
             writer.WriteStringValue("$wizard_connection_path", WizardConnectionPath);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

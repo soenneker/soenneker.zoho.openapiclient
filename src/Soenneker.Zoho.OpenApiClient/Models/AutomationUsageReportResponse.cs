@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a successful response from an automation usage report endpoint. Contains an array of daily usage data points alongside pagination metadata that includes the edition-specific daily execution cap. When no usage exists for the queried period, the endpoint returns an empty data array rather than null, and the response resolves with HTTP 200.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationUsageReportResponse : IParsable
+    public partial class AutomationUsageReportResponse : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the collection of usage data points for the queried period. Each entry represents the execution count for a specific automation action on a given date. Returns an empty array when no usage exists for the queried period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,14 +23,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageDataEntry> DataUsage { get; set; }
 #endif
-        /// <summary>Represents pagination metadata returned with automation usage report responses. Includes a max_limit value that reflects the edition-specific daily execution cap for the relevant action type, derived from the organization&apos;s feature limits.</summary>
+        /// <summary>Pagination metadata including the edition-specific daily execution cap.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsagePaginationInfo? Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponseInfo? Info { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsagePaginationInfo Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponseInfo Info { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponse"/> and sets the default values.
+        /// </summary>
+        public AutomationUsageReportResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data_usage", n => { DataUsage = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageDataEntry>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageDataEntry.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsagePaginationInfo>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsagePaginationInfo.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponseInfo>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponseInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,7 +68,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageDataEntry>("data_usage", DataUsage);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsagePaginationInfo>("info", Info);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponseInfo>("info", Info);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

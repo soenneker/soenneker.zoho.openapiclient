@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// JSON object containing the updated base currency values.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CurrenciesUpdateBaseCurrencyRequestBaseCurrency : IParsable
+    public partial class CurrenciesUpdateBaseCurrencyRequestBaseCurrency : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the rate at which the currency has to be exchanged with home currency. Accepts positive decimal numbers up to nine digits and nine decimal places. Example: 123456789.123456789.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +64,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Symbol { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateBaseCurrencyRequestBaseCurrency"/> and sets the default values.
+        /// </summary>
+        public CurrenciesUpdateBaseCurrencyRequestBaseCurrency()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateBaseCurrencyRequestBaseCurrency"/></returns>
@@ -100,6 +109,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("iso_code", IsoCode);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("symbol", Symbol);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

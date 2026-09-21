@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents optional filtering and selection parameters applied to related records before counting. Includes support for approval status, conversion status, category type, and field-level equality filters.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CountParameters : IParsable
+    public partial class CountParameters : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the approval workflow state used to filter related records before counting.Possible values:**approved** - Count only records in the approved workflow state.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ApprovedApprovalState? ApprovalState { get; set; }
         /// <summary>Indicates whether to restrict the count to approved records only.Possible values:**true** - Count only approved records.**false** - Count only records that are not approved.</summary>
@@ -29,6 +31,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FilterCriteria Filters { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CountParameters"/> and sets the default values.
+        /// </summary>
+        public CountParameters()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,6 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CountParametersCategory>("category", Category);
             writer.WriteBoolValue("converted", Converted);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterCriteria>("filters", Filters);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

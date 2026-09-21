@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A dependent field that must be included alongside the target field&apos;s value, used when the target field&apos;s valid options depend on another field (for example, Pipeline requires Stage). Supports nesting up to 3 levels.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DependentFieldsNested : IParsable
+    public partial class DependentFieldsNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Nested dependent fields that must be set when the current dependent field itself has further dependencies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,13 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNestedLevel2> DependentFields { get; set; }
 #endif
-        /// <summary>Identifies the target field to update. Requires both id and api_name; if they refer to different fields, the request fails with AMBIGUITY_DURING_PROCESSING.</summary>
+        /// <summary>Specify the API name and ID of the dependent field to be updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldDetails? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNestedField? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldDetails Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNestedField Field { get; set; }
 #endif
         /// <summary>Contains value of the dependent field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested"/> and sets the default values.
+        /// </summary>
+        public DependentFieldsNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dependent_fields", n => { DependentFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNestedLevel2>(global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNestedLevel2.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FieldDetails.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNestedField>(global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNestedField.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -68,8 +77,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNestedLevel2>("dependent_fields", DependentFields);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldDetails>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNestedField>("field", Field);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

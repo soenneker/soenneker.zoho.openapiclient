@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the pagination metadata for the email templates list response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InfoBlock : IParsable
+    public partial class InfoBlock : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of Email Template records returned in the current page. </summary>
         public int? Count { get; set; }
         /// <summary>Indicates whether additional pages of results are available. Possible values:**true** - More records are available on subsequent pages.**false** - The current page contains the last available records.</summary>
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public int? Page { get; set; }
         /// <summary>Represents the number of Email Template records returned per page. </summary>
         public int? PerPage { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InfoBlock"/> and sets the default values.
+        /// </summary>
+        public InfoBlock()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,6 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("more_records", MoreRecords);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("per_page", PerPage);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

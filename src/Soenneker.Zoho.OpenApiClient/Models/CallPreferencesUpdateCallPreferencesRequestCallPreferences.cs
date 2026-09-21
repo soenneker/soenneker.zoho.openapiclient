@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the new visibility setting for one or both Call Preferences. Omit a preference from the object to leave its current setting unchanged.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CallPreferencesUpdateCallPreferencesRequestCallPreferences : IParsable
+    public partial class CallPreferencesUpdateCallPreferencesRequestCallPreferences : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether the **From Number** field must appear on records in the Calls module. **Possible values:****true** - Enable the **From Number** field on Call records.**false** - Disable the **From Number** field and hide it from Call records.</summary>
         public bool? ShowFromNumber { get; set; }
         /// <summary>Specify whether the **To Number** field must appear on records in the Calls module. **Possible values:****true** - Enable the **To Number** field on Call records.**false** - Disable the **To Number** field and hide it from Call records.</summary>
         public bool? ShowToNumber { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferencesRequestCallPreferences"/> and sets the default values.
+        /// </summary>
+        public CallPreferencesUpdateCallPreferencesRequestCallPreferences()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("show_from_number", ShowFromNumber);
             writer.WriteBoolValue("show_to_number", ShowToNumber);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

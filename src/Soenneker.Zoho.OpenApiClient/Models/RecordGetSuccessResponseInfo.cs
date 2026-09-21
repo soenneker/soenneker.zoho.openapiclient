@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the info value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordGetSuccessResponseInfo : IParsable
+    public partial class RecordGetSuccessResponseInfo : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the info value.</summary>
         public bool? Call { get; set; }
         /// <summary>Represents the info value.</summary>
@@ -53,6 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the info value.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponseInfoSortOrder? SortOrder { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponseInfo"/> and sets the default values.
+        /// </summary>
+        public RecordGetSuccessResponseInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -102,6 +111,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("previous_page_token", PreviousPageToken);
             writer.WriteStringValue("sort_by", SortBy);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponseInfoSortOrder>("sort_order", SortOrder);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

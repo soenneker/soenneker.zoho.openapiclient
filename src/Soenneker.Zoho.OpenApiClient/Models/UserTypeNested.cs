@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A top-level wrapper object used in create and update request bodies. Contains the `user_type` array that holds one or more portal user type objects.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserTypeNested : IParsable
+    public partial class UserTypeNested : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the portal user type is active. Set to `true` to allow portal users to access the portal via this user type, or `false` to deactivate it.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of portal users assigned to this user type who are currently deactivated.</summary>
         public int? DeactiveUserCount { get; set; }
         /// <summary>Denotes the unique numeric identifier of the portal user type.</summary>
@@ -25,13 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>Represents the nested object used in create and update requests to specify the invitation field for the portal user type. The invitation field determines which CRM field stores the portal user&apos;s email address for sending invitations.</summary>
+        /// <summary>The CRM field used as the invitation field for this portal user type. Portal invitations are sent to the contact value stored in this field. Required when creating a user type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InvitationFieldNested? InvitationField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField? InvitationField { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InvitationFieldNested InvitationField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField InvitationField { get; set; }
 #endif
         /// <summary>The list of CRM modules with their access configurations for this portal user type. Required when creating a user type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,14 +51,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>A nested object used in create and update requests to specify the personality module for the portal user type. The personality module is the CRM module whose records serve as portal user identities and whose records portal invitations are sent to.</summary>
+        /// <summary>The personality module for this portal user type. Records in this module serve as portal user identities, and portal invitations are sent to records in this module. Required when creating a user type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PersonalityModuleNested? PersonalityModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule? PersonalityModule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PersonalityModuleNested PersonalityModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule PersonalityModule { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested"/> and sets the default values.
+        /// </summary>
+        public UserTypeNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,10 +87,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "deactive_user_count", n => { DeactiveUserCount = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "invitation_field", n => { InvitationField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvitationFieldNested>(global::Soenneker.Zoho.OpenApiClient.Models.InvitationFieldNested.CreateFromDiscriminatorValue); } },
+                { "invitation_field", n => { InvitationField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField>(global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField.CreateFromDiscriminatorValue); } },
                 { "modules", n => { Modules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNested>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesNested.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "personality_module", n => { PersonalityModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PersonalityModuleNested>(global::Soenneker.Zoho.OpenApiClient.Models.PersonalityModuleNested.CreateFromDiscriminatorValue); } },
+                { "personality_module", n => { PersonalityModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule>(global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,10 +102,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteIntValue("deactive_user_count", DeactiveUserCount);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvitationFieldNested>("invitation_field", InvitationField);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField>("invitation_field", InvitationField);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNested>("modules", Modules);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PersonalityModuleNested>("personality_module", PersonalityModule);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule>("personality_module", PersonalityModule);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

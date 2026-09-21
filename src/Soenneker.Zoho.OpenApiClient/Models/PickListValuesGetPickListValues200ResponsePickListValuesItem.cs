@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Pick list value object
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PickListValuesGetPickListValues200ResponsePickListValuesItem : IParsable
+    public partial class PickListValuesGetPickListValues200ResponsePickListValuesItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the actual internal value of the picklist option stored in the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ActualValue { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Hexadecimal color code for UI rendering. Null if no color assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the usage status of the picklist value in the CRM field. Possible values: **used** - The picklist value is active and available for selection. **unused** - The picklist value is inactive and not available for selection. Always returned in the response.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesGetPickListValues200ResponsePickListValuesItemType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesGetPickListValues200ResponsePickListValuesItem"/> and sets the default values.
+        /// </summary>
+        public PickListValuesGetPickListValues200ResponsePickListValuesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesGetPickListValues200ResponsePickListValuesItem"/></returns>
@@ -108,6 +117,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("reference_value", ReferenceValue);
             writer.WriteIntValue("sequence_number", SequenceNumber);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesGetPickListValues200ResponsePickListValuesItemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

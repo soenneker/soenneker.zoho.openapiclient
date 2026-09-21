@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object specifies a shift hour with its timing, break hours, holidays, and assigned users.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursUpdateShiftHoursRequestShiftHoursItem : IParsable
+    public partial class ShiftHoursUpdateShiftHoursRequestShiftHoursItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lists the break windows scheduled within the shift hour. A shift can have at most two break windows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +82,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItemUsersItem> Users { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItem"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursUpdateShiftHoursRequestShiftHoursItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItem"/></returns>
@@ -124,6 +133,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItemShiftDaysItem>("shift_days", ShiftDays);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItemUsersItem>("users", Users);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

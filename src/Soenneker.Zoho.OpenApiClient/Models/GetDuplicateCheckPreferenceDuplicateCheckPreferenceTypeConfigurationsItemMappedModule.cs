@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the mapped module details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemMappedModule : IParsable
+    public partial class GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemMappedModule : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the module.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ContactsApiName? ApiName { get; set; }
         /// <summary>Represents the unique identifier of the module.</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the display name of the module.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ContactsName? Name { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemMappedModule"/> and sets the default values.
+        /// </summary>
+        public GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemMappedModule()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ContactsApiName>("api_name", ApiName);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ContactsName>("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

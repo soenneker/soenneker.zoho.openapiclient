@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Currency formatting rules including numeral style, decimals and separators.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CurrenciesGetCurrencies200ResponseCurrenciesItemFormat : IParsable
+    public partial class CurrenciesGetCurrencies200ResponseCurrenciesItemFormat : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of decimal places allowed for the currency. It can be **0, 2, and 3.**</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormatDecimalPlaces? DecimalPlaces { get; set; }
         /// <summary>The decimal separator separates the integer part of the currency from its fractional part. It can be a **Period or Comma,** depending on the currency.</summary>
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormatNumeralSystem? NumeralSystem { get; set; }
         /// <summary>The thousand separator separates groups of thousands in a currency. It can be a **Period, Comma, or Space**, depending on the currency.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormatThousandSeparator? ThousandSeparator { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormat"/> and sets the default values.
+        /// </summary>
+        public CurrenciesGetCurrencies200ResponseCurrenciesItemFormat()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,6 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormatDecimalSeparator>("decimal_separator", DecimalSeparator);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormatNumeralSystem>("numeral_system", NumeralSystem);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormatThousandSeparator>("thousand_separator", ThousandSeparator);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

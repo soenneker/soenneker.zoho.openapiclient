@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the target module name and ID for the converted record.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InventoryConvertConvertInventoryRequestDataItemConvertToItem : IParsable
+    public partial class InventoryConvertConvertInventoryRequestDataItemConvertToItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies whether the tags from the source record are carried over to the converted target record. Must be set to true or omitted; setting this to false returns a NOT_ALLOWED error.</summary>
         public bool? CarryOverTags { get; set; }
         /// <summary>Specify the target inventory module to which the record is to be converted.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItemModule Module { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItem"/> and sets the default values.
+        /// </summary>
+        public InventoryConvertConvertInventoryRequestDataItemConvertToItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("carry_over_tags", CarryOverTags);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItemModule>("module", Module);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

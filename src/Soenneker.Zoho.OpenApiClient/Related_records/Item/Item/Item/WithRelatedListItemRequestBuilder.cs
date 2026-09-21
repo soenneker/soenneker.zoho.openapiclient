@@ -52,8 +52,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,8 +66,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords403Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords500Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -77,8 +77,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -91,8 +91,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords403Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords500Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -103,8 +103,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
         /// <param name="body">Represents the request payload for updating multiple related records in a related list.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecords403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecords500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -118,8 +118,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsNoPermissionError.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecords403Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecords500Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

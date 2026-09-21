@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the details of the scheduled mass delete tag job, including the job identifier returned by the system.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassDeleteTagsMassDeleteTags202ResponseDetails : IParsable
+    public partial class MassDeleteTagsMassDeleteTags202ResponseDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the unique identifier assigned to the scheduled mass delete tag job. Use this value with the [Mass Delete Tags Status](mass_delete_tags.yaml#$.paths./settings/tags/actions/mass_delete.get) API call to know the job state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string JobId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags202ResponseDetails"/> and sets the default values.
+        /// </summary>
+        public MassDeleteTagsMassDeleteTags202ResponseDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("job_id", JobId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

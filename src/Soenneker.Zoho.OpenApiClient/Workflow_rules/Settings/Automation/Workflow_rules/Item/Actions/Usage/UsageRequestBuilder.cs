@@ -40,7 +40,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchema">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchema">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGetWorkflowRuleUsage401Response">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +55,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchema.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchema.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGetWorkflowRuleUsage401Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionSchema.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleUsageResponseSchema>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleUsageResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

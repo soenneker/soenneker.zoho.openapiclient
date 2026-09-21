@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Set of allowed record-level operations within this related list, such as create, edit, and assign.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations : IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True when the assign operation is permitted for records in this related list.</summary>
         public bool? Assign { get; set; }
         /// <summary>True when bulk edit of records in this related list is permitted for the current user.</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public bool? Disassociate { get; set; }
         /// <summary>True when editing of records within this related list is permitted for the current user.</summary>
         public bool? Edit { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("delete", Delete);
             writer.WriteBoolValue("disassociate", Disassociate);
             writer.WriteBoolValue("edit", Edit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

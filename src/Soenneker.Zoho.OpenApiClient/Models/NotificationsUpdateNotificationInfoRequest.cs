@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Contains the notification channel fields to be partially updated.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class NotificationsUpdateNotificationInfoRequest : IParsable
+    public partial class NotificationsUpdateNotificationInfoRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the new expiry date and time for the notification channel.</summary>
         public DateTimeOffset? ChannelExpiry { get; set; }
         /// <summary>Specify the identifier of the notification channel to update.</summary>
@@ -60,6 +62,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Token { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequest"/> and sets the default values.
+        /// </summary>
+        public NotificationsUpdateNotificationInfoRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequest"/></returns>
@@ -102,6 +111,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("notify_url", NotifyUrl);
             writer.WriteBoolValue("return_affected_field_values", ReturnAffectedFieldValues);
             writer.WriteStringValue("token", Token);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

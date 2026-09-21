@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// A trigger type available for the module. Defines the event that initiates a workflow rule. Use the api_name value in the execute_when.type field when creating or updating a workflow rule via POST/PUT /settings/automation/workflow_rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowConfigurationsTrigger : IParsable
+    public partial class WorkflowConfigurationsTrigger : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the list of action type API names supported by this trigger. Only these action types can be used in workflow rules with this trigger type. Cross-reference with the top-level actions array in the response for full action metadata, including per-type limits and scheduling support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<string> Actions { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API identifier of the trigger type. Use this value in the execute_when.type field when creating a workflow rule (for example, create, edit, create_or_edit, delete, field_update, section_update, date_or_datetime, score_increase, score_decrease, score_update).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +59,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this trigger type supports scheduled (time-delayed) actions.Possible values:true - Both instant_actions and scheduled_actions are available for workflow rules with this trigger.false - Only instant_actions can be used in workflow rules with this trigger.</summary>
         public bool? ScheduledActionsSupported { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger"/> and sets the default values.
+        /// </summary>
+        public WorkflowConfigurationsTrigger()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -98,6 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("generated_type", GeneratedType);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("scheduled_actions_supported", ScheduledActionsSupported);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

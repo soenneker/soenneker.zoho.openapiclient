@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error details for a single territory with its associated user count.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TerritoryAssociatedUsersCountResponseAssociatedUsersCountItem : IParsable
+    public partial class TerritoryAssociatedUsersCountResponseAssociatedUsersCountItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the total number of users associated with the territory.</summary>
         public int? Count { get; set; }
         /// <summary>Represents the territory object associated with the user count.</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponseAssociatedUsersCountItemTerritory Territory { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponseAssociatedUsersCountItem"/> and sets the default values.
+        /// </summary>
+        public TerritoryAssociatedUsersCountResponseAssociatedUsersCountItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponseAssociatedUsersCountItemTerritory>("territory", Territory);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

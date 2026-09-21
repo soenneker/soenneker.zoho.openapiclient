@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the per-item outcome for a single recycle-bin record deletion, including the outcome status, result code, message, and deletion details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecycleBinDeleteRecycleBinRecord200ResponseRecycleBinItem : IParsable
+    public partial class RecycleBinDeleteRecycleBinRecord200ResponseRecycleBinItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the result code for the deletion. Possible values: **SUCCESS** - The record was permanently deleted. **CANNOT_DELETE** - The record could not be permanently deleted.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200ResponseRecycleBinItemCode? Code { get; set; }
         /// <summary>Represents additional details about the per-item deletion result, including the ID of the affected record.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the deletion succeeded or failed for the record. Possible values: **success** - The record was permanently deleted. **error** - The deletion failed for this record.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200ResponseRecycleBinItemStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200ResponseRecycleBinItem"/> and sets the default values.
+        /// </summary>
+        public RecycleBinDeleteRecycleBinRecord200ResponseRecycleBinItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200ResponseRecycleBinItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200ResponseRecycleBinItemStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

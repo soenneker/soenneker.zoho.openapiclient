@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the set of record operations permitted for a related list.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelatedListRecordOperations : IParsable
+    public partial class RelatedListRecordOperations : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the assign operation is allowed on records in the related list. Possible values: **true**, **false**. </summary>
         public bool? Assign { get; set; }
         /// <summary>Indicates whether the bulk edit operation is allowed on records in the related list. Possible values: **true**, **false**. </summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public bool? Disassociate { get; set; }
         /// <summary>Indicates whether the edit operation is allowed on records in the related list. Possible values: **true**, **false**. </summary>
         public bool? Edit { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRecordOperations"/> and sets the default values.
+        /// </summary>
+        public RelatedListRecordOperations()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("delete", Delete);
             writer.WriteBoolValue("disassociate", Disassociate);
             writer.WriteBoolValue("edit", Edit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Layout configuration object containing layout metadata, profile associations, and field arrangements.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem : IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Object enumerating the operations that the current user can perform on this layout, including flags for clone, deactivate, delete, downgrade, edit, rename, and configure permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemActionsAllowed ActionsAllowed { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API name used to reference this layout in API requests. Maximum 40 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +120,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>True when the layout is visible and accessible to users.</summary>
         public bool? Visible { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem"/> and sets the default values.
+        /// </summary>
+        public ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem"/></returns>
@@ -182,6 +191,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemSource>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemStatus>("status", Status);
             writer.WriteBoolValue("visible", Visible);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Error object for a specific locking configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordLockingConfigurationsCreateRecordLockingConfiguration400ResponseRecordLockingConfigurationsItem : IParsable
+    public partial class RecordLockingConfigurationsCreateRecordLockingConfiguration400ResponseRecordLockingConfigurationsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Error code for the configuration error.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration400ResponseRecordLockingConfigurationsItemCode? Code { get; set; }
         /// <summary>Detailed metadata for the configuration error. The structure varies by error type.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration400ResponseRecordLockingConfigurationsItem"/> and sets the default values.
+        /// </summary>
+        public RecordLockingConfigurationsCreateRecordLockingConfiguration400ResponseRecordLockingConfigurationsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsCreateRecordLockingConfiguration400ResponseRecordLockingConfigurationsItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

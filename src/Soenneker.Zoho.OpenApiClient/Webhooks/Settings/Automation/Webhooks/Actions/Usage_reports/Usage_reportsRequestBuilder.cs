@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Act
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageNoPermissionError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGetWebhookUsageReports403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.Usage_reportsRequestBuilder.Usage_reportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Act
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageNoPermissionError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGetWebhookUsageReports403Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

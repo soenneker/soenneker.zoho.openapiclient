@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the detailed error information associated with a specific parameter or field that caused the request to fail.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class NotificationsErrorDetails : IParsable
+    public partial class NotificationsErrorDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the list of fields that caused ambiguity during request processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +74,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<string> SupportedValues { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails"/> and sets the default values.
+        /// </summary>
+        public NotificationsErrorDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorDetails"/></returns>
@@ -114,6 +123,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("json_path", JsonPath);
             writer.WriteIntValue("maximum_length", MaximumLength);
             writer.WriteCollectionOfPrimitiveValues<string>("supported_values", SupportedValues);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

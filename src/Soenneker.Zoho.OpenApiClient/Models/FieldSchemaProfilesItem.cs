@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the permission assignment for a single CRM profile, specifying whether users of that profile can view, edit, or are restricted from accessing this field.
+    /// Represents the profile details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaProfilesItem : IParsable
+    public partial class FieldSchemaProfilesItem : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Id of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Represents the name of the CRM profile for which this field permission entry applies.</summary>
+        /// <summary>Represents the name of the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -29,8 +31,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Represents the level of access granted to users of this profile for the field. Possible values: `read_write` — full read and write access; users can view and edit the field. `read_only` — view access only; users can see but cannot modify the field value. `hidden` — the field is not visible to users of this profile.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaProfilesItemPermissionType? PermissionType { get; set; }
+        /// <summary>Represents the type of permission granted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PermissionType { get; set; }
+#nullable restore
+#else
+        public string PermissionType { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaProfilesItem"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaProfilesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,7 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permission_type", n => { PermissionType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaProfilesItemPermissionType>(); } },
+                { "permission_type", n => { PermissionType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,7 +78,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaProfilesItemPermissionType>("permission_type", PermissionType);
+            writer.WriteStringValue("permission_type", PermissionType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

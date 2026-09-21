@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Response object for a successful configuration update.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordLockingConfigurationsUpdateRecordLockingConfiguration200Response : IParsable
+    public partial class RecordLockingConfigurationsUpdateRecordLockingConfiguration200Response : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Array containing the update response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200ResponseRecordLockingConfigurationsItem> RecordLockingConfigurations { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200Response"/> and sets the default values.
+        /// </summary>
+        public RecordLockingConfigurationsUpdateRecordLockingConfiguration200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200ResponseRecordLockingConfigurationsItem>("record_locking_configurations", RecordLockingConfigurations);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

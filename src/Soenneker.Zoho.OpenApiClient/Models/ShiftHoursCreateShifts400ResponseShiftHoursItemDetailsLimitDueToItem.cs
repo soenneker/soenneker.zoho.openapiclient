@@ -11,12 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents one field that contributed to exceeding the configured limit.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShiftHoursCreateShifts400ResponseShiftHoursItemDetailsLimitDueToItem : IParsable
+    public partial class ShiftHoursCreateShifts400ResponseShiftHoursItemDetailsLimitDueToItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the field that caused the error.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursApiName? ApiName { get; set; }
         /// <summary>Represents the JSON path of the field that caused the error.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.DollarDotShiftHoursJsonPath? JsonPath { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts400ResponseShiftHoursItemDetailsLimitDueToItem"/> and sets the default values.
+        /// </summary>
+        public ShiftHoursCreateShifts400ResponseShiftHoursItemDetailsLimitDueToItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursApiName>("api_name", ApiName);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DollarDotShiftHoursJsonPath>("json_path", JsonPath);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

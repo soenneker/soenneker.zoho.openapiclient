@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the configuration for updating a Custom View by its ID, including the fields to update.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomViewPutByIdItem : IParsable
+    public partial class CustomViewPutByIdItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Represents the access type for the Custom View.Possible values:**shared** - The view is shared with selected users, roles, groups, or territories.**public** - The view is accessible to all users in the organization.**only_to_me** - The view is private and accessible only to the creator.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemAccessType? AccessType { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the category for the Custom View.Possible values:**public_views** - Views accessible to all users in the organization.**other_users_views** - Views created by other users in the organization.**shared_with_me** - Views shared with the current user.**created_by_me** - Views created by the current user.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemCategory? Category { get; set; }
         /// <summary>Represents the filter criteria of the Custom View</summary>
@@ -72,6 +74,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the sort order applied to the records in the Custom View.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder? SortOrder { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItem"/> and sets the default values.
+        /// </summary>
+        public CustomViewPutByIdItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItem"/></returns>
@@ -120,6 +129,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem>("shared_to", SharedTo);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>("sort_by", SortBy);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder>("sort_order", SortOrder);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

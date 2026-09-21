@@ -36,18 +36,18 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables.Actions.Gene
         /// <summary>
         /// generates api name
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApiNameGenerationResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariablesApiNameGenerationResponse"/></returns>
         /// <param name="body">Alternate request payload wrapper containing items used to generate API names.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ApiNameGenerationResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ApiNameGenerationRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariablesApiNameGenerationResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ApiNameGenerationRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ApiNameGenerationResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ApiNameGenerationRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariablesApiNameGenerationResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ApiNameGenerationRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables.Actions.Gene
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ApiNameGenerationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ApiNameGenerationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariablesApiNameGenerationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariablesApiNameGenerationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// generates api name

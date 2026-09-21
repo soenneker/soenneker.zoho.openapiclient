@@ -8,11 +8,13 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active lookup field configuration, encapsulating the target module reference, the lookup field&apos;s API name, display label, unique identifier, and any query filter settings.
+    /// Represents the lookup field details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaLookupOneOf1 : IParsable
+    public partial class FieldSchemaLookupOneOf1 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The api_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1DisplayLabel DisplayLabel { get; set; }
 #endif
-        /// <summary>Represents the unique system-generated identifier for the lookup field definition within the target module. May be null for lookups created implicitly by the system rather than explicitly configured by an administrator.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1Id? Id { get; set; }
@@ -37,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1Id Id { get; set; }
 #endif
-        /// <summary>Represents the target CRM module that this lookup field references, providing the module&apos;s identifying metadata — such as its name and encryption status — required to resolve and navigate the cross-module relationship.</summary>
+        /// <summary>Represents the module details for the lookup field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1Module? Module { get; set; }
@@ -45,7 +47,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1Module Module { get; set; }
 #endif
-        /// <summary>Contains the query configuration used to filter the selectable records in the lookup dropdown, restricting available options based on field criteria or system-defined query identifiers.</summary>
+        /// <summary>Represents the query details for the lookup field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetails? QueryDetails { get; set; }
@@ -53,8 +55,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetails QueryDetails { get; set; }
 #endif
-        /// <summary>Indicates whether the lookup&apos;s filter criteria are re-evaluated each time the record is opened in edit mode, ensuring that the selectable records reflect current field values rather than the values at the time the record was first created. Possible values: `true` — filter criteria are reapplied during edit; `false` — filter criteria are applied only at initial field population.</summary>
+        /// <summary>Indicates if the filter should be revalidated during edit.</summary>
         public bool? RevalidateFilterDuringEdit { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaLookupOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -94,6 +103,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1Module>("module", Module);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetails>("query_details", QueryDetails);
             writer.WriteBoolValue("revalidate_filter_during_edit", RevalidateFilterDuringEdit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

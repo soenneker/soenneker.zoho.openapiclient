@@ -11,19 +11,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Each object represents the field dependency object with complete parent and child field references, picklist value mappings, and dependency metadata.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MapDependencyGetMapDependencyById200ResponseMapDependencyItem : IParsable
+    public partial class MapDependencyGetMapDependencyById200ResponseMapDependencyItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the dependency is active in the layout. Possible values: **true**, **false**. </summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the category of the dependency. Possible values: **0**. **0** represents the default category. </summary>
         public int? Category { get; set; }
-        /// <summary>Represents a reference to a field, identified by its unique ID and API name.</summary>
+        /// <summary>Details of the child field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyFieldReference? Child { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItemChild? Child { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyFieldReference Child { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItemChild Child { get; set; }
 #endif
         /// <summary>Represents the unique identifier of the field dependency. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,13 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the dependency was defined by the system or created by the user. Possible values: **true**, **false**. </summary>
         public bool? Internal { get; set; }
-        /// <summary>Represents a reference to a field, identified by its unique ID and API name.</summary>
+        /// <summary>Parent field details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyFieldReference? Parent { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItemParent? Parent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyFieldReference Parent { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItemParent Parent { get; set; }
 #endif
         /// <summary>Contains the complete mapping of parent picklist options to their corresponding child picklist options. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,6 +55,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Represents the source of the dependency. Possible values: **1**. It indicates Zoho CRM as the source. </summary>
         public int? Source { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItem"/> and sets the default values.
+        /// </summary>
+        public MapDependencyGetMapDependencyById200ResponseMapDependencyItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,10 +82,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "category", n => { Category = n.GetIntValue(); } },
-                { "child", n => { Child = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyFieldReference>(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyFieldReference.CreateFromDiscriminatorValue); } },
+                { "child", n => { Child = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItemChild>(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItemChild.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "internal", n => { Internal = n.GetBoolValue(); } },
-                { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyFieldReference>(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyFieldReference.CreateFromDiscriminatorValue); } },
+                { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItemParent>(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItemParent.CreateFromDiscriminatorValue); } },
                 { "pick_list_values", n => { PickListValues = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingRead>(global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingRead.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "source", n => { Source = n.GetIntValue(); } },
             };
@@ -90,12 +99,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteIntValue("category", Category);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyFieldReference>("child", Child);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItemChild>("child", Child);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("internal", Internal);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyFieldReference>("parent", Parent);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200ResponseMapDependencyItemParent>("parent", Parent);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingRead>("pick_list_values", PickListValues);
             writer.WriteIntValue("source", Source);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

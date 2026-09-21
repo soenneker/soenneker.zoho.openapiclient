@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active multi-module lookup configuration, specifying the participating modules, display label, and dynamic addition settings.
+    /// Represents the multi-module lookup configuration of the field, including the display label, API name, and the list of modules the lookup references.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaMultiModuleLookupOneOf1 : IParsable
+    public partial class FieldSchemaMultiModuleLookupOneOf1 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents an API identifier string composed of alphanumeric characters and underscores, used as a programmatic reference for fields, modules, and other CRM entities.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiName { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string ApiName { get; set; }
 #endif
-        /// <summary>Represents the identifying label of the multi-module lookup field in the CRM interface, identifying the lookup relationship across its participating modules.</summary>
+        /// <summary>Represents the display label of the multi module lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayLabel { get; set; }
@@ -29,9 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string DisplayLabel { get; set; }
 #endif
-        /// <summary>Indicates whether additional CRM modules can be incorporated into this multi-module lookup relationship at runtime without requiring a layout reconfiguration. Possible values: `true` — new modules may be added dynamically; `false` — the participating modules are fixed at configuration time.</summary>
-        public bool? DynamicModuleAdditionAllowed { get; set; }
-        /// <summary>Contains the collection of CRM modules that participate in this multi-module lookup relationship, each representing a valid source from which the user can select a referenced record.</summary>
+        /// <summary>Represents the list of modules associated with the multi module lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiModuleLookupOneOf1ModulesItem>? Modules { get; set; }
@@ -39,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiModuleLookupOneOf1ModulesItem> Modules { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiModuleLookupOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaMultiModuleLookupOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +66,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
-                { "dynamic_module_addition_allowed", n => { DynamicModuleAdditionAllowed = n.GetBoolValue(); } },
                 { "modules", n => { Modules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiModuleLookupOneOf1ModulesItem>(global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiModuleLookupOneOf1ModulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -72,8 +78,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("display_label", DisplayLabel);
-            writer.WriteBoolValue("dynamic_module_addition_allowed", DynamicModuleAdditionAllowed);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiModuleLookupOneOf1ModulesItem>("modules", Modules);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

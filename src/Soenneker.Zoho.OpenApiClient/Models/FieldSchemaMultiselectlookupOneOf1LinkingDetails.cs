@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains the configuration of the intermediary linking module that joins the source and target modules in a multi-select lookup relationship, including the relevant lookup fields on each side.
+    /// Represents the linking details for the multi-module lookup.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaMultiselectlookupOneOf1LinkingDetails : IParsable
+    public partial class FieldSchemaMultiselectlookupOneOf1LinkingDetails : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the lookup field on the linking module that points toward the connected (target) module, completing the many-to-many association in the multi-select lookup.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the connected lookup field details for the multi-module lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetailsConnectedLookupField? ConnectedLookupField { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetailsConnectedLookupField ConnectedLookupField { get; set; }
 #endif
-        /// <summary>Represents the lookup field on the linking module that points back toward the source module, establishing the origin side of the multi-select lookup relationship.</summary>
+        /// <summary>Represents the lookup field details for the multi-module lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetailsLookupField? LookupField { get; set; }
@@ -29,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetailsLookupField LookupField { get; set; }
 #endif
-        /// <summary>Represents the intermediary linking module that bridges the source and target modules in a multi-select lookup, storing the join records that implement the many-to-many relationship.</summary>
+        /// <summary>Represents the module details for the multi-module lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetailsModule? Module { get; set; }
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetailsModule Module { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetails"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaMultiselectlookupOneOf1LinkingDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetailsConnectedLookupField>("connected_lookup_field", ConnectedLookupField);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetailsLookupField>("lookup_field", LookupField);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiselectlookupOneOf1LinkingDetailsModule>("module", Module);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

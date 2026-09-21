@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Specify the record IDs and owner details for the bulk owner change request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ChangeOwnerChangeOwnerBulkRequest : IParsable
+    public partial class ChangeOwnerChangeOwnerBulkRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the IDs of the records for which you want to change the owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +41,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequestRelatedModulesItem> RelatedModules { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequest"/> and sets the default values.
+        /// </summary>
+        public ChangeOwnerChangeOwnerBulkRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("notify", Notify);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequestOwner>("owner", Owner);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequestRelatedModulesItem>("related_modules", RelatedModules);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

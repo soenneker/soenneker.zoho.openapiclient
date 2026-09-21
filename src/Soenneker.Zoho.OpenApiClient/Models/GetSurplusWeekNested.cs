@@ -11,14 +11,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the surplus week configuration, including the quarter, period, and year in which the surplus week is placed.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetSurplusWeekNested : IParsable
+    public partial class GetSurplusWeekNested : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the period within the quarter in which the surplus week falls.</summary>
         public int? Period { get; set; }
         /// <summary>Represents the quarter in which the surplus week falls.</summary>
         public int? Quarter { get; set; }
         /// <summary>Represents the year for which the surplus week is configured.</summary>
         public int? Year { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetSurplusWeekNested"/> and sets the default values.
+        /// </summary>
+        public GetSurplusWeekNested()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("period", Period);
             writer.WriteIntValue("quarter", Quarter);
             writer.WriteIntValue("year", Year);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

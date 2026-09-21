@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the status payload returned for the queried mass delete tag job, including the job identifier, current execution state, scheduled time, and counts of total, deleted, and failed tags.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassDeleteTagsGetMassDeleteTagsStatus200Response : IParsable
+    public partial class MassDeleteTagsGetMassDeleteTagsStatus200Response : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the list of mass delete tag jobs returned for the queried job ID, with one entry per job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem> MassDelete { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200Response"/> and sets the default values.
+        /// </summary>
+        public MassDeleteTagsGetMassDeleteTagsStatus200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem>("mass_delete", MassDelete);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

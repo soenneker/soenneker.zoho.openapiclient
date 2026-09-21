@@ -8,19 +8,28 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// 200 response providing generated API names for the submitted variables.
+    /// Represents the response body for a successful generate API name operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ApiNameGenerationResponse : IParsable
+    public partial class ApiNameGenerationResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Array of results for the API name generation operation.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents an array of per-item results containing the generated API names for each submitted variable group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableActionResult>? Variables { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationStatus>? VariableGroups { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableActionResult> Variables { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationStatus> VariableGroups { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApiNameGenerationResponse"/> and sets the default values.
+        /// </summary>
+        public ApiNameGenerationResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "variables", n => { Variables = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableActionResult>(global::Soenneker.Zoho.OpenApiClient.Models.VariableActionResult.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "variable_groups", n => { VariableGroups = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationStatus>(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationStatus.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +58,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableActionResult>("variables", Variables);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupOperationStatus>("variable_groups", VariableGroups);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

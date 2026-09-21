@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Scheduling details; null to remove schedule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EmailDraftsUpdateEmailDraftsForRecordRequestEmailDraftsItemScheduleDetails : IParsable
+    public partial class EmailDraftsUpdateEmailDraftsForRecordRequestEmailDraftsItemScheduleDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Source of the schedule decision.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecordRequestEmailDraftsItemScheduleDetailsSource? Source { get; set; }
         /// <summary>Scheduled send time (ISO 8601 format).</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Timezone { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecordRequestEmailDraftsItemScheduleDetails"/> and sets the default values.
+        /// </summary>
+        public EmailDraftsUpdateEmailDraftsForRecordRequestEmailDraftsItemScheduleDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsForRecordRequestEmailDraftsItemScheduleDetailsSource>("source", Source);
             writer.WriteDateTimeOffsetValue("time", Time);
             writer.WriteStringValue("timezone", Timezone);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

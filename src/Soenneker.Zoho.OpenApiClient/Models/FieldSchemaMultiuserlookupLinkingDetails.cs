@@ -8,12 +8,14 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains the configuration of the linking module and its lookup fields that connect the source module to multiple CRM users in a multi-user lookup relationship.
+    /// Represents the linking details for the multi-user lookup.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaMultiuserlookupLinkingDetails : IParsable
+    public partial class FieldSchemaMultiuserlookupLinkingDetails : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Represents the lookup field on the linking module that references the Users module, forming the user-side join in the multi-user lookup relationship.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the connected lookup field details for the multi-user lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsConnectedLookupField? ConnectedLookupField { get; set; }
@@ -21,7 +23,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsConnectedLookupField ConnectedLookupField { get; set; }
 #endif
-        /// <summary>Represents the lookup field on the linking module that references the source module, establishing the origin side of the multi-user lookup relationship.</summary>
+        /// <summary>Represents the lookup field details for the multi-user lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsLookupField? LookupField { get; set; }
@@ -29,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsLookupField LookupField { get; set; }
 #endif
-        /// <summary>Represents the linking module that intermediates the connection between the source module and the Users module in a multi-user lookup relationship.</summary>
+        /// <summary>Represents the module details for the multi-user lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsModule? Module { get; set; }
@@ -37,6 +39,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsModule Module { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaMultiuserlookupLinkingDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsConnectedLookupField>("connected_lookup_field", ConnectedLookupField);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsLookupField>("lookup_field", LookupField);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsModule>("module", Module);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

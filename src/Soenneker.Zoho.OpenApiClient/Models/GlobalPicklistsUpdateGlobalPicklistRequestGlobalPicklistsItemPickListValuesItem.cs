@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Picklist value object for update/add/delete.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItemPickListValuesItem : IParsable
+    public partial class GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItemPickListValuesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to true to delete this picklist value. Only one value can be deleted per request.</summary>
         public bool? Delete { get; set; }
         /// <summary>The picklist display value(translated value if translation enabled).</summary>
@@ -41,6 +43,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Type of the picklist value (used or unused). Only one value can be moved to unused per request.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItemPickListValuesItemType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItemPickListValuesItem"/> and sets the default values.
+        /// </summary>
+        public GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItemPickListValuesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,6 +87,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("reference_value", ReferenceValue);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistRequestGlobalPicklistsItemPickListValuesItemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

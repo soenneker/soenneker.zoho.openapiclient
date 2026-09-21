@@ -11,10 +11,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the summary details of a single portal.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PortalsGetPortals200ResponsePortalsItem : IParsable
+    public partial class PortalsGetPortals200ResponsePortalsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the portal is active.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the Zoho CRM user who created this portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +62,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string Zaid { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200ResponsePortalsItem"/> and sets the default values.
+        /// </summary>
+        public PortalsGetPortals200ResponsePortalsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortals200ResponsePortalsItem"/></returns>
@@ -102,6 +111,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("zaid", Zaid);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

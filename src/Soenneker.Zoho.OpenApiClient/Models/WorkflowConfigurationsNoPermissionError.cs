@@ -12,8 +12,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the error response when the user lacks the required Manage Automation Actions privilege or when the workflow feature is unavailable in the current CRM edition.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowConfigurationsNoPermissionError : ApiException, IParsable
+    public partial class WorkflowConfigurationsNoPermissionError : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the error code indicating the type of permission or feature availability error.Possible values:NO_PERMISSION - The user&apos;s profile lacks the required privilege.FEATURE_NOT_SUPPORTED - The workflow feature is unavailable in the current CRM edition. </summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsNoPermissionErrorCode? Code { get; set; }
         /// <summary>Represents the object containing details about the missing permission.</summary>
@@ -36,6 +38,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsNoPermissionError"/> and sets the default values.
+        /// </summary>
+        public WorkflowConfigurationsNoPermissionError()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsNoPermissionErrorDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

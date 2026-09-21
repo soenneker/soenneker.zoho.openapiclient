@@ -59,11 +59,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.WorkflowTasksCompositeFieldMapping = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMapping();
             }
-            else if("execution_time".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ExecutionTimeFieldMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkflowTasksExecutionTimeFieldMapping = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMapping();
             }
-            else if("merge_field".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("MergeFieldMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkflowTasksMergeFieldMapping = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksMergeFieldMapping();
             }

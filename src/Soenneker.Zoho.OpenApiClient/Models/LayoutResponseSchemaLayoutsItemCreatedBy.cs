@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedByOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutResponseSchemaLayoutsItemCreatedBy : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedByOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference? LayoutsUserReference { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedByOneOf1? LayoutResponseSchemaLayoutsItemCreatedByOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference LayoutsUserReference { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedByOneOf1 LayoutResponseSchemaLayoutsItemCreatedByOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TypeNull"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull? TypeNull { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull? LayoutsTypeNull { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TypeNull TypeNull { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull LayoutsTypeNull { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,9 +39,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedBy();
-            if("LayoutsUserReference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("LayoutResponseSchemaLayoutsItemCreatedByOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LayoutsUserReference = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference();
+                result.LayoutResponseSchemaLayoutsItemCreatedByOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedByOneOf1();
             }
             return result;
         }
@@ -51,13 +51,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LayoutsUserReference != null)
+            if(LayoutResponseSchemaLayoutsItemCreatedByOneOf1 != null)
             {
-                return LayoutsUserReference.GetFieldDeserializers();
+                return LayoutResponseSchemaLayoutsItemCreatedByOneOf1.GetFieldDeserializers();
             }
-            else if(TypeNull != null)
+            else if(LayoutsTypeNull != null)
             {
-                return TypeNull.GetFieldDeserializers();
+                return LayoutsTypeNull.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -68,13 +68,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(LayoutsUserReference != null)
+            if(LayoutResponseSchemaLayoutsItemCreatedByOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsUserReference>(null, LayoutsUserReference);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedByOneOf1>(null, LayoutResponseSchemaLayoutsItemCreatedByOneOf1);
             }
-            else if(TypeNull != null)
+            else if(LayoutsTypeNull != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TypeNull>(null, TypeNull);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull>(null, LayoutsTypeNull);
             }
         }
     }

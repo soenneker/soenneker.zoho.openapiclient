@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents an individual layout carrying only the keys requested through the `fields` parameter, plus the always-present `id`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutFieldsResponseSchemaLayoutsItem : IParsable
+    public partial class LayoutFieldsResponseSchemaLayoutsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents an API identifier string composed of alphanumeric characters and underscores, used as a programmatic reference for fields, modules, and other CRM entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +90,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates whether the layout is visible to users in the CRM interface.</summary>
         public bool? Visible { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItem"/> and sets the default values.
+        /// </summary>
+        public LayoutFieldsResponseSchemaLayoutsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItem"/></returns>
@@ -140,6 +149,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemSource>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemStatus>("status", Status);
             writer.WriteBoolValue("visible", Visible);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

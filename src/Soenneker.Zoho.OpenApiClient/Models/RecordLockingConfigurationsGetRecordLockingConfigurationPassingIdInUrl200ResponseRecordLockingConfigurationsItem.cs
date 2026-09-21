@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Details of the record locking configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItem : IParsable
+    public partial class RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>User who created the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,6 +106,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// </summary>
         public RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItem()
         {
+            AdditionalData = new Dictionary<string, object>();
             LockForPortalUsers = true;
         }
         /// <summary>
@@ -165,6 +168,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.SendMailItem>("restricted_communications", RestrictedCommunications);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemRestrictedCustomButtonsItem>("restricted_custom_buttons", RestrictedCustomButtons);
             writer.WriteBoolValue("system_defined", SystemDefined);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

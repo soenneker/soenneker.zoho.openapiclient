@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Defines entries with matching and assignment logic for record processing.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RuleEntryResponseObject : IParsable
+    public partial class RuleEntryResponseObject : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether Digital Employee (agent) users are eligible for assignment in this rule entry.</summary>
         public bool? AllowAgentUser { get; set; }
         /// <summary>Assign to response object schema.</summary>
@@ -58,6 +60,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem?> UserAvailabilityBasedOn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject"/> and sets the default values.
+        /// </summary>
+        public RuleEntryResponseObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObject"/></returns>
@@ -98,6 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("sequence_number", SequenceNumber);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem>("user_availability_based_on", UserAvailabilityBasedOn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

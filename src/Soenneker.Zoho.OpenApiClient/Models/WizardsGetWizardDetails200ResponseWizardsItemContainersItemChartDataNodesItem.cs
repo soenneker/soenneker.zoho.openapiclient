@@ -11,8 +11,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents a single visual node on the wizard canvas, corresponding to a screen in the wizard flow and capturing its position and identity within the chart layout.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItem : IParsable
+    public partial class WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItem : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the X-coordinate position, in pixels, of the node on the wizard canvas.</summary>
         public int? PosX { get; set; }
         /// <summary>Represents the Y-coordinate position, in pixels, of the node on the wizard canvas.</summary>
@@ -27,6 +29,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this node is the starting screen in the wizard flow.Possible values:true - The node is the starting screen of the wizard flow.false - The node is not the starting screen of the wizard flow.</summary>
         public bool? StartNode { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItem"/> and sets the default values.
+        /// </summary>
+        public WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("pos_y", PosY);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItemScreen>("screen", Screen);
             writer.WriteBoolValue("start_node", StartNode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

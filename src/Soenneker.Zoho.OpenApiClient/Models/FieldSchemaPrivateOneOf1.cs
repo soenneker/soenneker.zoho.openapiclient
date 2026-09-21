@@ -8,17 +8,32 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the active privacy configuration for this field, specifying the access restriction type and export suppression settings when the field is marked as private.
+    /// Represents the privacy configuration of the field, including the restriction type, access restrictions, and export restrictions applied to sensitive data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldSchemaPrivateOneOf1 : IParsable
+    public partial class FieldSchemaPrivateOneOf1 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Indicates whether this field&apos;s value is included when records are exported from the CRM, subject to the field&apos;s privacy settings. Possible values: `true` — the field is included in exports; `false` — the field is excluded from exported data.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates if the field is exportable.</summary>
         public bool? Export { get; set; }
-        /// <summary>Indicates whether this field is subject to privacy restrictions that limit its visibility to the record owner and administrators. Possible values: `true` — access to the field value is restricted based on record ownership; `false` — the field is accessible to all users with the appropriate module permissions.</summary>
+        /// <summary>Indicates if the field is restricted.</summary>
         public bool? Restricted { get; set; }
-        /// <summary>Represents the privacy restriction level applied to this field. Possible values: `High` — high-level privacy restriction with strict access control. `Low` — low-level privacy restriction with relaxed access control.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPrivateOneOf1Type? Type { get; set; }
+        /// <summary>Represents the type of privacy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPrivateOneOf1"/> and sets the default values.
+        /// </summary>
+        public FieldSchemaPrivateOneOf1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +54,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "export", n => { Export = n.GetBoolValue(); } },
                 { "restricted", n => { Restricted = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPrivateOneOf1Type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +66,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("export", Export);
             writer.WriteBoolValue("restricted", Restricted);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaPrivateOneOf1Type>("type", Type);
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
