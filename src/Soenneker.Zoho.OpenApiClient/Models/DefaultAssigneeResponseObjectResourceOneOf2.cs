@@ -15,7 +15,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set ${CURRENTUSER} to use the logged-in user as the default assignee.Possible values:**${CURRENTUSER}** - Represents ${currentuser}.</summary>
+        /// <summary>To define &quot;logged in user&quot; as fallback user for the given Assignment Rule, set ${CURRENTUSER} as value for this field.Possible values:**${CURRENTUSER}** - Represents ${currentuser}.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.DollarLeftBraceCurrentuserRightBraceApiName? ApiName { get; set; }
         /// <summary>Logged in user reference display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

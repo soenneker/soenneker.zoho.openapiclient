@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Set ${CURRENTUSER} to use the logged-in user as the default assignee.Possible values:**${CURRENTUSER}** - Represents ${currentuser}.</summary>
+    /// <summary>To define &quot;logged in user&quot; as fallback user for the given Assignment Rule, set ${CURRENTUSER} as value for this field.Possible values:**${CURRENTUSER}** - Represents ${currentuser}.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DollarLeftBraceCurrentuserRightBraceApiName
     {

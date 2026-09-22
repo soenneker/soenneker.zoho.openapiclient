@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Each object represents a CRM profile permission missing from the requesting user&apos;s profile.</summary>
+    /// <summary>Permission name</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CrmImpliedManageUsersItem
     {
