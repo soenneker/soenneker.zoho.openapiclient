@@ -2,7 +2,7 @@
   "descriptionHash": "AD2BEE359948CF23C03B3CDB600D4B8BA83624355DECE46B94008486DE0B1189FD02A46650ED8DECCD5128EBD0A6B1C5DF1C6B733F9A70C37D0B466906A2A7C9",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.35.0",
+  "kiotaVersion": "1.36.0",
   "clientClassName": "ZohoOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Zoho.OpenApiClient",
