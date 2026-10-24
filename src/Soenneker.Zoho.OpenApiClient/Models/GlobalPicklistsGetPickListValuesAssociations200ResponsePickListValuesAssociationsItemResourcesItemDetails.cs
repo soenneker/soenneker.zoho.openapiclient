@@ -8,19 +8,11 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf2"/>, List&lt;global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetails : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3? GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3 GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +29,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf2 GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf2 { get; set; }
 #endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item>? GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item> GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,17 +47,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetails();
-            if("GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3 = new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3();
-            }
-            else if("GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1();
             }
             else if("GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf2();
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item>(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item> globalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3ItemValue)
+            {
+                result.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item = globalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3ItemValue;
             }
             return result;
         }
@@ -67,11 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3 != null)
-            {
-                return GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3.GetFieldDeserializers();
-            }
-            else if(GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1 != null)
+            if(GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1 != null)
             {
                 return GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1.GetFieldDeserializers();
             }
@@ -88,17 +84,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3>(null, GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsBranch3);
-            }
-            else if(GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1 != null)
+            if(GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1>(null, GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf1);
             }
             else if(GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf2>(null, GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf2);
+            }
+            else if(GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item>(null, GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItemResourcesItemDetailsOneOf3Item);
             }
         }
     }

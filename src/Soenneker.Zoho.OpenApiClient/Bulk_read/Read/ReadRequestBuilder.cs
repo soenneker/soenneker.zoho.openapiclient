@@ -53,7 +53,6 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_read.Read
         /// <param name="body">Represents the request payload used to configure and create a bulk read job in Zoho CRM.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,11 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_read.Read
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob400Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create a bulk read job in Zoho CRM. A bulk read job exports records from a specified CRM module to a CSV or ICS file. The job runs asynchronously; use the Get Bulk Read Job Details API to monitor the job status, and use the Download Bulk Read Result API to retrieve the exported file once the job is complete.

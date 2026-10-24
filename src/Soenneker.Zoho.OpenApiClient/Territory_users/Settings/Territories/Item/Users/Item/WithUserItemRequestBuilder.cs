@@ -39,7 +39,6 @@ namespace Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUserFromSpecificTerritory200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUserFromSpecificTerritory400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUserFromSpecificTerritory403Response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUserFromSpecificTerritory500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +53,6 @@ namespace Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUserFromSpecificTerritory400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUserFromSpecificTerritory403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUserFromSpecificTerritory500Response.CreateFromDiscriminatorValue },
             };

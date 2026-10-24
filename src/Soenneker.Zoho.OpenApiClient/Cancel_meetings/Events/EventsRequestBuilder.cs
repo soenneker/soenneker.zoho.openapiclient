@@ -16,7 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.cancel_meetings.Events.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">This refers to the Event&apos;s id that need to be cancel</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.WithEventValueItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.WithEventValueItemRequestBuilder this[string position]
         {

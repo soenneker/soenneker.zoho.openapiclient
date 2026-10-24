@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// A structured object value. Used when the target field requires composite data  - for example, a Layout field (with id, name, display_label), an Owner/user-lookup field (with id, name), or other lookup-type fields that resolve to a resource with an identifier.
+    /// A null value. Used to clear/empty the target field  - equivalent to choosing &apos;empty value&apos; in the field update configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldUpdateConfigurationForListValueMember1 : IAdditionalDataHolder, IParsable

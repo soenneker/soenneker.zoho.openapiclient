@@ -8,22 +8,23 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Represents an error response returned when an unexpected internal server error occurs.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class RelatedRecordsDelinkRelatedRecords500Response : ApiException, IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code indicating the type of server-side failure.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode? Code { get; set; }
+        /// <summary>Error code.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalErrorCode? Code { get; set; }
         /// <summary>Additional error details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords500ResponseDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalErrorDetailsProperty? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords500ResponseDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalErrorDetailsProperty Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
@@ -62,8 +63,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords500ResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords500ResponseDetails.CreateFromDiscriminatorValue); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalErrorCode>(); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalErrorDetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalErrorDetailsProperty.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
@@ -75,8 +76,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords500ResponseDetails>("details", Details);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalErrorCode>("code", Code);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsInternalErrorDetailsProperty>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

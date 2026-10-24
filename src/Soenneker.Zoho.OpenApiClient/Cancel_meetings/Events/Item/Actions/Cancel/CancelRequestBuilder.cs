@@ -40,7 +40,6 @@ namespace Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.Actions.Cance
         /// <param name="body">The request body for the cancel meeting operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings401Response">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings403Response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings404Response">When receiving a 404 status code</exception>
@@ -57,7 +56,6 @@ namespace Soenneker.Zoho.OpenApiClient.Cancel_meetings.Events.Item.Actions.Cance
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings400Response.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings401Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetings404Response.CreateFromDiscriminatorValue },

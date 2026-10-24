@@ -26,18 +26,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Creator of the profile - a [UserReference](users.yaml#$.paths./users.get) object, or null when creator information is not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.Profiles? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.Profiles CreatedBy { get; set; }
 #endif
         /// <summary>Creation timestamp of the profile - an ISO 8601 datetime string, or null when creation time is not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCreatedTime? CreatedTime { get; set; }
+        public UntypedNode? CreatedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCreatedTime CreatedTime { get; set; }
+        public UntypedNode CreatedTime { get; set; }
 #endif
         /// <summary>Indicates whether the profile is a custom profile (`true`) or a system profile (`false`).</summary>
         public bool? Custom { get; set; }
@@ -70,18 +70,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Last modifier of the profile - a [UserReference](users.yaml#$.paths./users.get) object, or null when modifier information is not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesModifiedBy? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.Profiles? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesModifiedBy ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.Profiles ModifiedBy { get; set; }
 #endif
         /// <summary>Last modification timestamp of the profile - an ISO 8601 datetime string, or null when the modification time is not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModifiedTime? ModifiedTime { get; set; }
+        public UntypedNode? ModifiedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModifiedTime ModifiedTime { get; set; }
+        public UntypedNode ModifiedTime { get; set; }
 #endif
         /// <summary>Display name for the profile, up to 50 characters, excluding the special characters `~`, `` ` ``, `#`, `%`, `^`, `&amp;`, `*`, `(`, `)`, `+`, `|`, `,`, `=`, `{`, `}`, `;`, `[`, `]`, `&quot;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,15 +135,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCreatedBy.CreateFromDiscriminatorValue); } },
-                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCreatedTime>(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCreatedTime.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Profiles>(global::Soenneker.Zoho.OpenApiClient.Models.Profiles.CreateFromDiscriminatorValue); } },
+                { "created_time", n => { CreatedTime = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "custom", n => { Custom = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "display_label", n => { DisplayLabel = n.GetStringValue(); } },
                 { "$has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesModifiedBy.CreateFromDiscriminatorValue); } },
-                { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModifiedTime>(global::Soenneker.Zoho.OpenApiClient.Models.ModifiedTime.CreateFromDiscriminatorValue); } },
+                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Profiles>(global::Soenneker.Zoho.OpenApiClient.Models.Profiles.CreateFromDiscriminatorValue); } },
+                { "modified_time", n => { ModifiedTime = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions_details", n => { PermissionsDetails = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItemPermissionsDetailsItem>(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItemPermissionsDetailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sections", n => { Sections = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItemSectionsItem>(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItemSectionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -158,15 +158,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCreatedBy>("created_by", CreatedBy);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCreatedTime>("created_time", CreatedTime);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Profiles>("created_by", CreatedBy);
+            writer.WriteObjectValue<UntypedNode>("created_time", CreatedTime);
             writer.WriteBoolValue("custom", Custom);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("display_label", DisplayLabel);
             writer.WriteBoolValue("$has_more", HasMore);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesModifiedBy>("modified_by", ModifiedBy);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModifiedTime>("modified_time", ModifiedTime);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.Profiles>("modified_by", ModifiedBy);
+            writer.WriteObjectValue<UntypedNode>("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItemPermissionsDetailsItem>("permissions_details", PermissionsDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItemSectionsItem>("sections", Sections);

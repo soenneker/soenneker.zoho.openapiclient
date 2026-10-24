@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf4"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetails : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1? RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1? RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1 RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1 RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetails();
-            if("RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1();
+            }
+            else if("RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf2();
             }
@@ -75,9 +79,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1 != null)
+            if(RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1 != null)
             {
-                return RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1.GetFieldDeserializers();
+                return RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1.GetFieldDeserializers();
             }
             else if(RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf2 != null)
             {
@@ -100,9 +104,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1 != null)
+            if(RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1>(null, RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsMember1);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1>(null, RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf1);
             }
             else if(RecordLockingConfigurationsDeleteRecordLockingConfiguration400ResponseDetailsOneOf2 != null)
             {

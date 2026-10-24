@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Pagination info for the response
+    /// Represents pagination metadata and category label translations for the Custom Views response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetAllCustomViewsResponseInfo : IAdditionalDataHolder, IParsable

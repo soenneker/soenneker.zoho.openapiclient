@@ -8,30 +8,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Pagination and license usage information for the profiles list response.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ProfilesGetProfiles200ResponseInfo : IAdditionalDataHolder, IParsable
+    public partial class ProfilesGetProfiles200ResponseInfo : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Number of profiles returned in this response page.</summary>
-        public int? Count { get; set; }
-        /// <summary>Maximum number of profiles allowed by the organization&apos;s license.</summary>
-        public int? LicenseLimit { get; set; }
-        /// <summary>Indicates whether additional profiles exist beyond the current page.</summary>
-        public bool? MoreRecords { get; set; }
-        /// <summary>Current page number in the paginated result set.</summary>
-        public int? Page { get; set; }
-        /// <summary>Number of profiles returned per page.</summary>
-        public int? PerPage { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfo"/> and sets the default values.
-        /// </summary>
-        public ProfilesGetProfiles200ResponseInfo()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf1? ProfilesGetProfiles200ResponseInfoOneOf1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf1 ProfilesGetProfiles200ResponseInfoOneOf1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf2? ProfilesGetProfiles200ResponseInfoOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf2 ProfilesGetProfiles200ResponseInfoOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,7 +37,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfo();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfo();
+            if("ProfilesGetProfiles200ResponseInfoOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ProfilesGetProfiles200ResponseInfoOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf1();
+            }
+            else if("ProfilesGetProfiles200ResponseInfoOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ProfilesGetProfiles200ResponseInfoOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,14 +55,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ProfilesGetProfiles200ResponseInfoOneOf1 != null)
             {
-                { "count", n => { Count = n.GetIntValue(); } },
-                { "license_limit", n => { LicenseLimit = n.GetIntValue(); } },
-                { "more_records", n => { MoreRecords = n.GetBoolValue(); } },
-                { "page", n => { Page = n.GetIntValue(); } },
-                { "per_page", n => { PerPage = n.GetIntValue(); } },
-            };
+                return ProfilesGetProfiles200ResponseInfoOneOf1.GetFieldDeserializers();
+            }
+            else if(ProfilesGetProfiles200ResponseInfoOneOf2 != null)
+            {
+                return ProfilesGetProfiles200ResponseInfoOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -64,12 +72,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("count", Count);
-            writer.WriteIntValue("license_limit", LicenseLimit);
-            writer.WriteBoolValue("more_records", MoreRecords);
-            writer.WriteIntValue("page", Page);
-            writer.WriteIntValue("per_page", PerPage);
-            writer.WriteAdditionalData(AdditionalData);
+            if(ProfilesGetProfiles200ResponseInfoOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf1>(null, ProfilesGetProfiles200ResponseInfoOneOf1);
+            }
+            else if(ProfilesGetProfiles200ResponseInfoOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf2>(null, ProfilesGetProfiles200ResponseInfoOneOf2);
+            }
         }
     }
 }

@@ -2,47 +2,57 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the fiscal year settings to update. Use one of the supported request structures based on the type of fiscal year update being performed.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember4"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember5"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PutfiscalyearRequestFiscalYear : IAdditionalDataHolder, IParsable
+    public partial class PutfiscalyearRequestFiscalYear : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Specify the calendar type used to switch to a standard fiscal year. Possible values: `gregorian`.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GregorianCalendarType? CalendarType { get; set; }
-        /// <summary>Specify whether the fiscal year label is based on the start month or the end month of the fiscal period. Possible values: `start_month`, `end_month`.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdateDisplayBasedOn? DisplayBasedOn { get; set; }
-        /// <summary>Specify the display format for the custom fiscal year intervals. Possible values: `year`, `quarter`.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearIntervalDisplayOption? IntervalDisplayOption { get; set; }
-        /// <summary>Specify the start date of the custom fiscal year. This field can be configured only for the current year.</summary>
-        public Date? StartDate { get; set; }
-        /// <summary>Specify the start month of the fiscal year. Possible values: `JANUARY`, `FEBRUARY`, `MARCH`, `APRIL`, `MAY`, `JUNE`, `JULY`, `AUGUST`, `SEPTEMBER`, `OCTOBER`, `NOVEMBER`, `DECEMBER`.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStartMonth? StartMonth { get; set; }
-        /// <summary>Specify the week distribution structure for the custom fiscal year. Possible values: `4-4-5`, `4-5-4`, `5-4-4`, `3-3-3-4`, `3-3-4-3`, `3-4-3-3`, `4-3-3-3`.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStructure? Structure { get; set; }
-        /// <summary>Specify the surplus week configuration for the custom fiscal year. Send `null` to clear the configured surplus week.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdateSurplusWeek? SurplusWeek { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember1? PutfiscalyearRequestFiscalYearMember1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdateSurplusWeek SurplusWeek { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember1 PutfiscalyearRequestFiscalYearMember1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYear"/> and sets the default values.
-        /// </summary>
-        public PutfiscalyearRequestFiscalYear()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember2? PutfiscalyearRequestFiscalYearMember2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember2 PutfiscalyearRequestFiscalYearMember2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember3? PutfiscalyearRequestFiscalYearMember3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember3 PutfiscalyearRequestFiscalYearMember3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember4? PutfiscalyearRequestFiscalYearMember4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember4 PutfiscalyearRequestFiscalYearMember4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember5? PutfiscalyearRequestFiscalYearMember5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember5 PutfiscalyearRequestFiscalYearMember5 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,7 +61,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYear CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYear();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYear();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,16 +71,27 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PutfiscalyearRequestFiscalYearMember1 != null)
             {
-                { "calendar_type", n => { CalendarType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GregorianCalendarType>(); } },
-                { "display_based_on", n => { DisplayBasedOn = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdateDisplayBasedOn>(); } },
-                { "interval_display_option", n => { IntervalDisplayOption = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearIntervalDisplayOption>(); } },
-                { "start_date", n => { StartDate = n.GetDateValue(); } },
-                { "start_month", n => { StartMonth = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStartMonth>(); } },
-                { "structure", n => { Structure = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStructure>(); } },
-                { "surplus_week", n => { SurplusWeek = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdateSurplusWeek>(global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdateSurplusWeek.CreateFromDiscriminatorValue); } },
-            };
+                return PutfiscalyearRequestFiscalYearMember1.GetFieldDeserializers();
+            }
+            else if(PutfiscalyearRequestFiscalYearMember2 != null)
+            {
+                return PutfiscalyearRequestFiscalYearMember2.GetFieldDeserializers();
+            }
+            else if(PutfiscalyearRequestFiscalYearMember3 != null)
+            {
+                return PutfiscalyearRequestFiscalYearMember3.GetFieldDeserializers();
+            }
+            else if(PutfiscalyearRequestFiscalYearMember4 != null)
+            {
+                return PutfiscalyearRequestFiscalYearMember4.GetFieldDeserializers();
+            }
+            else if(PutfiscalyearRequestFiscalYearMember5 != null)
+            {
+                return PutfiscalyearRequestFiscalYearMember5.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -77,14 +100,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GregorianCalendarType>("calendar_type", CalendarType);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdateDisplayBasedOn>("display_based_on", DisplayBasedOn);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearIntervalDisplayOption>("interval_display_option", IntervalDisplayOption);
-            writer.WriteDateValue("start_date", StartDate);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStartMonth>("start_month", StartMonth);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStructure>("structure", Structure);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SwitchToCustomFiscalYearUpdateSurplusWeek>("surplus_week", SurplusWeek);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PutfiscalyearRequestFiscalYearMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember1>(null, PutfiscalyearRequestFiscalYearMember1);
+            }
+            else if(PutfiscalyearRequestFiscalYearMember2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember2>(null, PutfiscalyearRequestFiscalYearMember2);
+            }
+            else if(PutfiscalyearRequestFiscalYearMember3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember3>(null, PutfiscalyearRequestFiscalYearMember3);
+            }
+            else if(PutfiscalyearRequestFiscalYearMember4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember4>(null, PutfiscalyearRequestFiscalYearMember4);
+            }
+            else if(PutfiscalyearRequestFiscalYearMember5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember5>(null, PutfiscalyearRequestFiscalYearMember5);
+            }
         }
     }
 }

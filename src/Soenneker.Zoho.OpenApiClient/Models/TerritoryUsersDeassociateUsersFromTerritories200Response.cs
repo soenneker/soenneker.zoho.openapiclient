@@ -18,10 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of user-territory disassociation results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories200ResponseOneOf1UsersItemOneOf1Item>? Users { get; set; }
+        public UntypedNode? Users { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories200ResponseOneOf1UsersItemOneOf1Item> Users { get; set; }
+        public UntypedNode Users { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories200Response"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories200ResponseOneOf1UsersItemOneOf1Item>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories200ResponseOneOf1UsersItemOneOf1Item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "users", n => { Users = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories200ResponseOneOf1UsersItemOneOf1Item>("users", Users);
+            writer.WriteObjectValue<UntypedNode>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

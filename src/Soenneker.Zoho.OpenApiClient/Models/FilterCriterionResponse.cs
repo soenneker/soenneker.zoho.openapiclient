@@ -15,7 +15,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates whether the equal filter criterion is in a disrupted state, typically due to an invalid or unresolvable field or value reference.</summary>
+        /// <summary>Indicates whether the grouped filter criterion is in a disrupted state, typically due to an invalid or unresolvable condition within the group.</summary>
         public bool? Disrupted { get; set; }
         /// <summary>Contains an array of filter conditions grouped together and evaluated with the specified logical operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("comparator")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionResponse();
             if(parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupOperator>() is global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupOperator groupOperatorValue)
             {

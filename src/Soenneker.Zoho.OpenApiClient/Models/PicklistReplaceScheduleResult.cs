@@ -15,8 +15,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the processing status code. For 202 responses, this is always **SCHEDULED**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode? Code { get; set; }
+        /// <summary>Code of the scheduler response</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResultCode? Code { get; set; }
         /// <summary>Contains the scheduler job identifier for an asynchronous operation that was accepted for processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,8 +27,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Message of the scheduled details</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PicklistOptionReplaceOperationScheduledSuccessfullyMessage? Message { get; set; }
-        /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
+        /// <summary>status on replace operation of the scheduler</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResultStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResult"/> and sets the default values.
         /// </summary>
@@ -54,10 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResultCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AsyncJobDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AsyncJobDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistOptionReplaceOperationScheduledSuccessfullyMessage>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResultStatus>(); } },
             };
         }
         /// <summary>
@@ -67,10 +67,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResultCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AsyncJobDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistOptionReplaceOperationScheduledSuccessfullyMessage>("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResultStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

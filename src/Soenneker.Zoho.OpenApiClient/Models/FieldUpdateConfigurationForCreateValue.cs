@@ -8,58 +8,46 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch4"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch5"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateNullValue"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueMember2"/>, <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldUpdateConfigurationForCreateValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch1? FieldUpdateConfigurationForCreateValueBranch1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueMember1? FieldUpdateConfigurationForCreateValueMember1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch1 FieldUpdateConfigurationForCreateValueBranch1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueMember1 FieldUpdateConfigurationForCreateValueMember1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch2? FieldUpdateConfigurationForCreateValueBranch2 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueMember2? FieldUpdateConfigurationForCreateValueMember2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch2 FieldUpdateConfigurationForCreateValueBranch2 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueMember2 FieldUpdateConfigurationForCreateValueMember2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch4"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch4? FieldUpdateConfigurationForCreateValueBranch4 { get; set; }
+        public string? FieldUpdateConfigurationForCreateValueString { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch4 FieldUpdateConfigurationForCreateValueBranch4 { get; set; }
+        public string FieldUpdateConfigurationForCreateValueString { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch5"/></summary>
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch5? FieldUpdateConfigurationForCreateValueBranch5 { get; set; }
+        public List<string>? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch5 FieldUpdateConfigurationForCreateValueBranch5 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueOneOf3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueOneOf3? FieldUpdateConfigurationForCreateValueOneOf3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueOneOf3 FieldUpdateConfigurationForCreateValueOneOf3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateNullValue"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateNullValue? FieldUpdateNullValue { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateNullValue FieldUpdateNullValue { get; set; }
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -71,25 +59,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValue();
-            if("FieldUpdateConfigurationForCreateValueBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetBoolValue() is bool booleanValue)
             {
-                result.FieldUpdateConfigurationForCreateValueBranch1 = new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch1();
+                result.Boolean = booleanValue;
             }
-            else if("FieldUpdateConfigurationForCreateValueBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetDoubleValue() is double doubleValue)
             {
-                result.FieldUpdateConfigurationForCreateValueBranch2 = new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch2();
+                result.Double = doubleValue;
             }
-            else if("FieldUpdateConfigurationForCreateValueBranch4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetStringValue() is string fieldUpdateConfigurationForCreateValueStringValue)
             {
-                result.FieldUpdateConfigurationForCreateValueBranch4 = new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch4();
+                result.FieldUpdateConfigurationForCreateValueString = fieldUpdateConfigurationForCreateValueStringValue;
             }
-            else if("FieldUpdateConfigurationForCreateValueBranch5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
-                result.FieldUpdateConfigurationForCreateValueBranch5 = new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch5();
-            }
-            else if("FieldUpdateConfigurationForCreateValueOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FieldUpdateConfigurationForCreateValueOneOf3 = new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueOneOf3();
+                result.String = stringValue;
             }
             return result;
         }
@@ -99,29 +83,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(FieldUpdateConfigurationForCreateValueBranch1 != null)
+            if(FieldUpdateConfigurationForCreateValueMember1 != null)
             {
-                return FieldUpdateConfigurationForCreateValueBranch1.GetFieldDeserializers();
+                return FieldUpdateConfigurationForCreateValueMember1.GetFieldDeserializers();
             }
-            else if(FieldUpdateConfigurationForCreateValueBranch2 != null)
+            else if(FieldUpdateConfigurationForCreateValueMember2 != null)
             {
-                return FieldUpdateConfigurationForCreateValueBranch2.GetFieldDeserializers();
-            }
-            else if(FieldUpdateConfigurationForCreateValueBranch4 != null)
-            {
-                return FieldUpdateConfigurationForCreateValueBranch4.GetFieldDeserializers();
-            }
-            else if(FieldUpdateConfigurationForCreateValueBranch5 != null)
-            {
-                return FieldUpdateConfigurationForCreateValueBranch5.GetFieldDeserializers();
-            }
-            else if(FieldUpdateConfigurationForCreateValueOneOf3 != null)
-            {
-                return FieldUpdateConfigurationForCreateValueOneOf3.GetFieldDeserializers();
-            }
-            else if(FieldUpdateNullValue != null)
-            {
-                return FieldUpdateNullValue.GetFieldDeserializers();
+                return FieldUpdateConfigurationForCreateValueMember2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -132,29 +100,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(FieldUpdateConfigurationForCreateValueBranch1 != null)
+            if(FieldUpdateConfigurationForCreateValueMember1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch1>(null, FieldUpdateConfigurationForCreateValueBranch1);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueMember1>(null, FieldUpdateConfigurationForCreateValueMember1);
             }
-            else if(FieldUpdateConfigurationForCreateValueBranch2 != null)
+            else if(FieldUpdateConfigurationForCreateValueMember2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch2>(null, FieldUpdateConfigurationForCreateValueBranch2);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueMember2>(null, FieldUpdateConfigurationForCreateValueMember2);
             }
-            else if(FieldUpdateConfigurationForCreateValueBranch4 != null)
+            else if(Boolean != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch4>(null, FieldUpdateConfigurationForCreateValueBranch4);
+                writer.WriteBoolValue(null, Boolean);
             }
-            else if(FieldUpdateConfigurationForCreateValueBranch5 != null)
+            else if(Double != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueBranch5>(null, FieldUpdateConfigurationForCreateValueBranch5);
+                writer.WriteDoubleValue(null, Double);
             }
-            else if(FieldUpdateConfigurationForCreateValueOneOf3 != null)
+            else if(FieldUpdateConfigurationForCreateValueString != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValueOneOf3>(null, FieldUpdateConfigurationForCreateValueOneOf3);
+                writer.WriteStringValue(null, FieldUpdateConfigurationForCreateValueString);
             }
-            else if(FieldUpdateNullValue != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateNullValue>(null, FieldUpdateNullValue);
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

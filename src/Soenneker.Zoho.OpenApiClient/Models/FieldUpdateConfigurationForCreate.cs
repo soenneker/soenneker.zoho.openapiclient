@@ -25,14 +25,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested> DependentFields { get; set; }
 #endif
-        /// <summary>The automation feature this field update is associated with. Defaults to &apos;workflow&apos; if omitted. All enum values are supported for creation via API.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Automation feature where this field update action is used. Supports baseline features plus connected_workflows. No cadence support.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType? FeatureType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType FeatureType { get; set; }
-#endif
         /// <summary>Target field to be updated. Provide both field.id and field.api_name. If both are present but inconsistent, ambiguity or invalid-data errors can be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,22 +69,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule> RelatedRecords { get; set; }
 #endif
-        /// <summary>Create/update mapping type. Only static is accepted for create/update payloads.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>The mapping type used when creating or updating the field update action. Only static is accepted; merge_field appears only in GET responses for existing actions.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType Type { get; set; }
-#endif
-        /// <summary>Strategy for applying the value. Required for multi-select fields: &apos;overwrite&apos; replaces all existing values, &apos;append&apos; adds to them. Omit or pass null for single-value fields.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Specifies how the new value is applied to a multi-select picklist or Owner field: overwrite replaces the existing value, append adds to the existing entries. Omit or set to null for single-value fields.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType? UpdateType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType UpdateType { get; set; }
-#endif
         /// <summary>The value to assign to the target field when this action is triggered. The type must match the target field&apos;s data type  - a mismatch returns DEPENDENT_MISMATCH. Pipeline expects a string value from Pipelines metadata; Layout expects a layout object from Layouts metadata; Owner expects a user object from Users API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,15 +110,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "apply_assignment_threshold", n => { ApplyAssignmentThreshold = n.GetBoolValue(); } },
                 { "dependent_fields", n => { DependentFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>(global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "feature_type", n => { FeatureType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType.CreateFromDiscriminatorValue); } },
+                { "feature_type", n => { FeatureType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType>(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateField>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateField.CreateFromDiscriminatorValue); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateModule>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateModule.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notify", n => { Notify = n.GetBoolValue(); } },
                 { "related_module", n => { RelatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule.CreateFromDiscriminatorValue); } },
                 { "related_records", n => { RelatedRecords = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType.CreateFromDiscriminatorValue); } },
-                { "update_type", n => { UpdateType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType>(); } },
+                { "update_type", n => { UpdateType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValue>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -149,15 +131,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apply_assignment_threshold", ApplyAssignmentThreshold);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>("dependent_fields", DependentFields);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType>("feature_type", FeatureType);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateFeatureType>("feature_type", FeatureType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateField>("field", Field);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateModule>("module", Module);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("notify", Notify);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule>("related_module", RelatedModule);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>("related_records", RelatedRecords);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType>("update_type", UpdateType);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateUpdateType>("update_type", UpdateType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

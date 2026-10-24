@@ -8,19 +8,11 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ModulesGetModuleByApiName200ResponseModulesItemDisplayField : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1? ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1 ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +29,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2 ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,13 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayField();
-            if("ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1 = new global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1();
-            }
-            else if("ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2();
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -63,11 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1 != null)
-            {
-                return ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1.GetFieldDeserializers();
-            }
-            else if(ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldMember1 != null)
+            if(ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldMember1 != null)
             {
                 return ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldMember1.GetFieldDeserializers();
             }
@@ -84,17 +80,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1>(null, ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldBranch1);
-            }
-            else if(ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldMember1 != null)
+            if(ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldMember1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldMember1>(null, ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldMember1);
             }
             else if(ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2>(null, ModulesGetModuleByApiName200ResponseModulesItemDisplayFieldOneOf2);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
             }
         }
     }

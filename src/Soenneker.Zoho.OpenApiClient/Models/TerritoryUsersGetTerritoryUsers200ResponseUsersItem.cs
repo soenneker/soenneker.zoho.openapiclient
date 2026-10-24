@@ -65,10 +65,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the user&apos;s current shift assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemCurrentShift? CurrentShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCurrentShiftProperty? CurrentShift { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemCurrentShift CurrentShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCurrentShiftProperty CurrentShift { get; set; }
 #endif
         /// <summary>Represents the user&apos;s customization preferences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -173,10 +173,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the user&apos;s next upcoming shift assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemNextShift? NextShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserNextShiftProperty? NextShift { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemNextShift NextShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserNextShiftProperty NextShift { get; set; }
 #endif
         /// <summary>Represents the user&apos;s preferred number separator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,10 +211,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the date from which the user&apos;s shift becomes effective.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemShiftEffectiveFrom? ShiftEffectiveFrom { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserShiftEffectiveFromProperty? ShiftEffectiveFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemShiftEffectiveFrom ShiftEffectiveFrom { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserShiftEffectiveFromProperty ShiftEffectiveFrom { get; set; }
 #endif
         /// <summary>Represents the user&apos;s email signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -333,7 +333,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "country_locale", n => { CountryLocale = n.GetStringValue(); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.UserCreatedBy.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "$current_shift", n => { CurrentShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemCurrentShift>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemCurrentShift.CreateFromDiscriminatorValue); } },
+                { "$current_shift", n => { CurrentShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCurrentShiftProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UserCurrentShiftProperty.CreateFromDiscriminatorValue); } },
                 { "customize_info", n => { CustomizeInfo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo>(global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo.CreateFromDiscriminatorValue); } },
                 { "date_format", n => { DateFormat = n.GetStringValue(); } },
                 { "decimal_separator", n => { DecimalSeparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDecimalSeparator>(); } },
@@ -351,14 +351,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "Modified_By", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.UserModifiedBy.CreateFromDiscriminatorValue); } },
                 { "Modified_Time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
                 { "name_format__s", n => { NameFormatS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserNameFormatS>(); } },
-                { "$next_shift", n => { NextShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemNextShift>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemNextShift.CreateFromDiscriminatorValue); } },
+                { "$next_shift", n => { NextShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserNextShiftProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UserNextShiftProperty.CreateFromDiscriminatorValue); } },
                 { "number_separator", n => { NumberSeparator = n.GetStringValue(); } },
                 { "offset", n => { Offset = n.GetIntValue(); } },
                 { "personal_account", n => { PersonalAccount = n.GetBoolValue(); } },
                 { "profile", n => { Profile = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserProfile>(global::Soenneker.Zoho.OpenApiClient.Models.UserProfile.CreateFromDiscriminatorValue); } },
                 { "role", n => { Role = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserRole>(global::Soenneker.Zoho.OpenApiClient.Models.UserRole.CreateFromDiscriminatorValue); } },
                 { "sandboxDeveloper", n => { SandboxDeveloper = n.GetBoolValue(); } },
-                { "$shift_effective_from", n => { ShiftEffectiveFrom = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemShiftEffectiveFrom>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemShiftEffectiveFrom.CreateFromDiscriminatorValue); } },
+                { "$shift_effective_from", n => { ShiftEffectiveFrom = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserShiftEffectiveFromProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UserShiftEffectiveFromProperty.CreateFromDiscriminatorValue); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "sort_order_preference__s", n => { SortOrderPreferenceS = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
@@ -388,7 +388,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("country_locale", CountryLocale);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCreatedBy>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemCurrentShift>("$current_shift", CurrentShift);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCurrentShiftProperty>("$current_shift", CurrentShift);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo>("customize_info", CustomizeInfo);
             writer.WriteStringValue("date_format", DateFormat);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserDecimalSeparator>("decimal_separator", DecimalSeparator);
@@ -406,14 +406,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserModifiedBy>("Modified_By", ModifiedBy);
             writer.WriteDateTimeOffsetValue("Modified_Time", ModifiedTime);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserNameFormatS>("name_format__s", NameFormatS);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemNextShift>("$next_shift", NextShift);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserNextShiftProperty>("$next_shift", NextShift);
             writer.WriteStringValue("number_separator", NumberSeparator);
             writer.WriteIntValue("offset", Offset);
             writer.WriteBoolValue("personal_account", PersonalAccount);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserProfile>("profile", Profile);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserRole>("role", Role);
             writer.WriteBoolValue("sandboxDeveloper", SandboxDeveloper);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200ResponseUsersItemShiftEffectiveFrom>("$shift_effective_from", ShiftEffectiveFrom);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserShiftEffectiveFromProperty>("$shift_effective_from", ShiftEffectiveFrom);
             writer.WriteStringValue("signature", Signature);
             writer.WriteStringValue("sort_order_preference__s", SortOrderPreferenceS);
             writer.WriteStringValue("state", State);

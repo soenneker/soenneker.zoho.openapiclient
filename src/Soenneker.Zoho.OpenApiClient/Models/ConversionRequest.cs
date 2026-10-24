@@ -44,10 +44,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The default property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestDefault? Default { get; set; }
+        public UntypedNode? Default { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestDefault Default { get; set; }
+        public UntypedNode Default { get; set; }
 #endif
         /// <summary>If true, sends email notification to the Lead owner about the conversion. Default is false.</summary>
         public bool? NotifyLeadOwner { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "assign_to", n => { AssignTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo>(global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo.CreateFromDiscriminatorValue); } },
                 { "carry_over_tags", n => { CarryOverTags = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags>(global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags.CreateFromDiscriminatorValue); } },
                 { "Deals", n => { Deals = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealConversion>(global::Soenneker.Zoho.OpenApiClient.Models.DealConversion.CreateFromDiscriminatorValue); } },
-                { "default", n => { Default = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestDefault>(global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestDefault.CreateFromDiscriminatorValue); } },
+                { "default", n => { Default = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "notify_lead_owner", n => { NotifyLeadOwner = n.GetBoolValue(); } },
                 { "notify_new_entity_owner", n => { NotifyNewEntityOwner = n.GetBoolValue(); } },
                 { "overwrite", n => { Overwrite = n.GetBoolValue(); } },
@@ -103,7 +103,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo>("assign_to", AssignTo);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags>("carry_over_tags", CarryOverTags);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealConversion>("Deals", Deals);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestDefault>("default", Default);
+            writer.WriteObjectValue<UntypedNode>("default", Default);
             writer.WriteBoolValue("notify_lead_owner", NotifyLeadOwner);
             writer.WriteBoolValue("notify_new_entity_owner", NotifyNewEntityOwner);
             writer.WriteBoolValue("overwrite", Overwrite);

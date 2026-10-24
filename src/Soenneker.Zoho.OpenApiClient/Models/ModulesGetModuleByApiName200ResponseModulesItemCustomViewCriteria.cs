@@ -42,10 +42,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Filter value to compare against. Can be boolean, string, number, object, array, or null depending on field type and comparator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewCriteriaValue? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewCriteriaValue Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewCriteria"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "comparator", n => { Comparator = n.GetStringValue(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewCriteriaField>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewCriteriaField.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewCriteriaValue>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewCriteriaValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("comparator", Comparator);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewCriteriaField>("field", Field);
             writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewCriteriaValue>("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

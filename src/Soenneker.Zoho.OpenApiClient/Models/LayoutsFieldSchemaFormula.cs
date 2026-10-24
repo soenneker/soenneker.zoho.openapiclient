@@ -8,60 +8,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains the formula configuration for fields whose values are automatically calculated from expressions referencing other fields or functions, rather than being entered directly by users.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LayoutsFieldSchemaFormula : IAdditionalDataHolder, IParsable
+    public partial class LayoutsFieldSchemaFormula : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates whether null or missing operand values in the formula expression are treated as zero or an equivalent default, rather than causing the formula result to be null. Possible values: `true` — null operands are substituted with default values; `false` — null operands propagate as null through the calculation.</summary>
-        public bool? AssumeDefault { get; set; }
-        /// <summary>Indicates whether the formula is recalculated in real time as dependent field values change, rather than being evaluated only at save time. Possible values: `true` — the formula updates dynamically during record editing; `false` — the formula is evaluated only when the record is saved.</summary>
-        public bool? Dynamic { get; set; }
-        /// <summary>Indicates the relative priority in which this formula field is evaluated when multiple formula fields exist in the same module and share dependencies, ensuring upstream values are resolved before downstream ones.</summary>
-        public int? EvaluationOrder { get; set; }
-        /// <summary>Contains the formula expression string that defines the calculation logic, composed of function calls, field API name references, and operators that the CRM engine evaluates to produce the field&apos;s computed value.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expression { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1? LayoutsFieldSchemaFormulaOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Expression { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1 LayoutsFieldSchemaFormulaOneOf1 { get; set; }
 #endif
-        /// <summary>Identifies the data type produced by the formula expression, such as string, integer, decimal, date, or Boolean, which determines how the computed value is stored and displayed.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReturnType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf2? LayoutsFieldSchemaFormulaOneOf2 { get; set; }
 #nullable restore
 #else
-        public string ReturnType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf2 LayoutsFieldSchemaFormulaOneOf2 { get; set; }
 #endif
-        /// <summary>Indicates whether the formula evaluation halts when a specified logical condition is met. Possible values: `true` — the formula stops computing once the stop condition expression evaluates to true; `false` — the formula computes to completion regardless of intermediate conditions.</summary>
-        public bool? StopComputeConditionally { get; set; }
-        /// <summary>Contains the logical expression evaluated at runtime to determine whether formula computation should be interrupted. When the expression resolves to true and stop_compute_conditionally is enabled, further formula processing is skipped and the current interim value is retained.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression? StopComputeExpression { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression StopComputeExpression { get; set; }
-#endif
-        /// <summary>Represents a secondary classification of the formula&apos;s output type, refining the primary return type to indicate a more specific data size or unit. Possible values: `small` — a compact representation of the return type. `medium` — a standard-size representation. `large` — a large-size representation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType? SubReturnType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType SubReturnType { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormula"/> and sets the default values.
-        /// </summary>
-        public LayoutsFieldSchemaFormula()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,7 +37,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormula CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormula();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormula();
+            if("LayoutsFieldSchemaFormulaOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.LayoutsFieldSchemaFormulaOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1();
+            }
+            else if("LayoutsFieldSchemaFormulaOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.LayoutsFieldSchemaFormulaOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,17 +55,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(LayoutsFieldSchemaFormulaOneOf1 != null)
             {
-                { "assume_default", n => { AssumeDefault = n.GetBoolValue(); } },
-                { "dynamic", n => { Dynamic = n.GetBoolValue(); } },
-                { "evaluation_order", n => { EvaluationOrder = n.GetIntValue(); } },
-                { "expression", n => { Expression = n.GetStringValue(); } },
-                { "return_type", n => { ReturnType = n.GetStringValue(); } },
-                { "stop_compute_conditionally", n => { StopComputeConditionally = n.GetBoolValue(); } },
-                { "stop_compute_expression", n => { StopComputeExpression = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression.CreateFromDiscriminatorValue); } },
-                { "sub_return_type", n => { SubReturnType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType>(global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType.CreateFromDiscriminatorValue); } },
-            };
+                return LayoutsFieldSchemaFormulaOneOf1.GetFieldDeserializers();
+            }
+            else if(LayoutsFieldSchemaFormulaOneOf2 != null)
+            {
+                return LayoutsFieldSchemaFormulaOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -97,15 +72,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("assume_default", AssumeDefault);
-            writer.WriteBoolValue("dynamic", Dynamic);
-            writer.WriteIntValue("evaluation_order", EvaluationOrder);
-            writer.WriteStringValue("expression", Expression);
-            writer.WriteStringValue("return_type", ReturnType);
-            writer.WriteBoolValue("stop_compute_conditionally", StopComputeConditionally);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression>("stop_compute_expression", StopComputeExpression);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType>("sub_return_type", SubReturnType);
-            writer.WriteAdditionalData(AdditionalData);
+            if(LayoutsFieldSchemaFormulaOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1>(null, LayoutsFieldSchemaFormulaOneOf1);
+            }
+            else if(LayoutsFieldSchemaFormulaOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf2>(null, LayoutsFieldSchemaFormulaOneOf2);
+            }
         }
     }
 }

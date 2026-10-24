@@ -32,7 +32,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingField Field { get; set; }
 #endif
         /// <summary>Identifies the mapping strategy for this field assignment. The value must be `static`, which instructs the automation engine to assign a fixed, literal value to the target field at execution time rather than resolving it dynamically.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.StaticValueType? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingType? Type { get; set; }
         /// <summary>The literal value assigned to the target field at automation execution time. The expected shape is determined by the target field data_type, discoverable via GET /settings/fields?module={module}. For most field types, supply a string (for example, &quot;High&quot;, &quot;Not Started&quot;, &quot;1234&quot;). For multi-select picklist fields (data_type: multiselectpicklist), supply an array of option strings. For fields that reference an entity such as an owner or layout (data_type: ownerlookup), supply an object with at minimum the entity ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +68,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingField.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticValueType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValue>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_value", DisplayValue);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingField>("field", Field);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticValueType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

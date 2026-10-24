@@ -17,10 +17,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the email address of the user who owns the service record.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGAtZohocorpComEmail? Email { get; set; }
-        /// <summary>Specify the unique ID of the user who delivers the service. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.Value4671651000000635001Id? Id { get; set; }
-        /// <summary>Specify the display name of the user who delivers the service.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGName? Name { get; set; }
+        /// <summary>Specify the unique ID of the user who owns the service record. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseId? Id { get; set; }
+        /// <summary>Specify the display name of the user who owns the service record.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseName? Name { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.OwnerBase"/> and sets the default values.
         /// </summary>
@@ -47,8 +47,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGAtZohocorpComEmail>(); } },
-                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.Value4671651000000635001Id>(); } },
-                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGName>(); } },
+                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseId>(); } },
+                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseName>(); } },
             };
         }
         /// <summary>
@@ -59,8 +59,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGAtZohocorpComEmail>("email", Email);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.Value4671651000000635001Id>("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGName>("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseId>("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseName>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPath"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApiNameLimit"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApiNameLimitJsonPath"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DependencyFieldMissingDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsPermission"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.IdDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataWithDataType"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataWithDataTypeAndSupportedValues"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataWithId"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataWithSupportedValues"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MandatoryInvalidDataCommonApiNameJsonPath"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MaximumLengthApiNameJsonPath"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ParamNameDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ParamNameWithEnumDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ResourcePathIndex"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsOneOf16"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApiNameExistsInJsonPath"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApiNameLimit"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApiNameLimitJsonPath"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DependencyFieldMissingDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DependentMismatchDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsPermission"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExpectedFieldMissingDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.IdDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataWithDataType"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataWithDataTypeAndSupportedValues"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataWithId"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataWithSupportedValues"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MandatoryInvalidDataCommonApiNameJsonPath"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MaximumLengthApiNameJsonPath"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ParamNameDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ParamNameWithEnumDetails"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ResourcePathIndex"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AllErrorResponseDetails : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsOneOf16"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsMember1? AllErrorResponseDetailsMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsOneOf16? AllErrorResponseDetailsOneOf16 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsMember1 AllErrorResponseDetailsMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsOneOf16 AllErrorResponseDetailsOneOf16 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetails"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,7 +183,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetails();
-            if("AmbiguityDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("AllErrorResponseDetailsOneOf16".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AllErrorResponseDetailsOneOf16 = new global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsOneOf16();
+            }
+            else if("AmbiguityDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AmbiguityDetails = new global::Soenneker.Zoho.OpenApiClient.Models.AmbiguityDetails();
             }
@@ -263,9 +267,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AllErrorResponseDetailsMember1 != null)
+            if(AllErrorResponseDetailsOneOf16 != null)
             {
-                return AllErrorResponseDetailsMember1.GetFieldDeserializers();
+                return AllErrorResponseDetailsOneOf16.GetFieldDeserializers();
             }
             else if(AmbiguityDetails != null)
             {
@@ -352,9 +356,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(AllErrorResponseDetailsMember1 != null)
+            if(AllErrorResponseDetailsOneOf16 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsMember1>(null, AllErrorResponseDetailsMember1);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetailsOneOf16>(null, AllErrorResponseDetailsOneOf16);
             }
             else if(AmbiguityDetails != null)
             {

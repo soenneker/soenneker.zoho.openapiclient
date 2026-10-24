@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaWrapper2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataErrorSchemaPut"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataErrorSchemaPut"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldNotFoundErrorSchema"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataErrorSchemaPut"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataErrorSchemaPut"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldNotFoundErrorSchema"/>, List&lt;global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContactRolesUpdateContactRoles400ResponseOneOf1ContactRolesItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaWrapper2"/></summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaWrapper2? ArrayOfDuplicateSchemaWrapper2 { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem>? ArrayOfDuplicateSchemaItem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaWrapper2 ArrayOfDuplicateSchemaWrapper2 { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem> ArrayOfDuplicateSchemaItem { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataErrorSchemaPut"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,11 +55,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles400ResponseOneOf1ContactRolesItem();
-            if("ArrayOfDuplicateSchemaWrapper2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ArrayOfDuplicateSchemaWrapper2 = new global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaWrapper2();
-            }
-            else if("DuplicateDataErrorSchemaPut".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("DuplicateDataErrorSchemaPut".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DuplicateDataErrorSchemaPut = new global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataErrorSchemaPut();
             }
@@ -71,6 +67,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.MandatoryFieldNotFoundErrorSchema = new global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldNotFoundErrorSchema();
             }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem>(global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem> arrayOfDuplicateSchemaItemValue)
+            {
+                result.ArrayOfDuplicateSchemaItem = arrayOfDuplicateSchemaItemValue;
+            }
             return result;
         }
         /// <summary>
@@ -79,11 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ArrayOfDuplicateSchemaWrapper2 != null)
-            {
-                return ArrayOfDuplicateSchemaWrapper2.GetFieldDeserializers();
-            }
-            else if(DuplicateDataErrorSchemaPut != null)
+            if(DuplicateDataErrorSchemaPut != null)
             {
                 return DuplicateDataErrorSchemaPut.GetFieldDeserializers();
             }
@@ -104,11 +100,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ArrayOfDuplicateSchemaWrapper2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaWrapper2>(null, ArrayOfDuplicateSchemaWrapper2);
-            }
-            else if(DuplicateDataErrorSchemaPut != null)
+            if(DuplicateDataErrorSchemaPut != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataErrorSchemaPut>(null, DuplicateDataErrorSchemaPut);
             }
@@ -119,6 +111,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             else if(MandatoryFieldNotFoundErrorSchema != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldNotFoundErrorSchema>(null, MandatoryFieldNotFoundErrorSchema);
+            }
+            else if(ArrayOfDuplicateSchemaItem != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem>(null, ArrayOfDuplicateSchemaItem);
             }
         }
     }

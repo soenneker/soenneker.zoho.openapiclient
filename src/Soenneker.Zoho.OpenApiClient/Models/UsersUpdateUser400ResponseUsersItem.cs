@@ -8,34 +8,171 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents an individual error result object describing the failure reason for a user update request, including the error code, status, message, and any additional details.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf10"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf11"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf12"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf13"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf14"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf15"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf16"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf17"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf18"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf19"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf20"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf4"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf5"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf6"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf7"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf8"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf9"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersUpdateUser400ResponseUsersItem : IAdditionalDataHolder, IParsable
+    public partial class UsersUpdateUser400ResponseUsersItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code for this error variant. Possible values: **INVALID_DATA**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemCode? Code { get; set; }
-        /// <summary>Contains additional details about the error, including the field API name and JSON path.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf1? UsersUpdateUser400ResponseUsersItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf1 UsersUpdateUser400ResponseUsersItemOneOf1 { get; set; }
 #endif
-        /// <summary>Indicates the error message describing the invalid data condition. Possible values: **invalid data**, **INVALID_DATA**, **the id given seems to be invalid**,**Special Characters Found**, **Pattern not matched**, **invalid id in reporting to or roles provided**, **the number separator and decimal separator values should not be same**, **Invalid data. Valid values are Comma/Period/Space (Not case-sensitive)**, **Invalid data. Valid values are Comma/Period (Not case-sensitive)**, **Give a proper time zone value**, **Reporting manager should be from parent roles or from the same role to which the current user belongs**, **Valid name format should be given**, **Valid sort order preference should be given**, **Give a proper language code**, **the reporting manager must be superior in reporting hierarchy**, **Effective from should be greater than current date**, **Effective from should be less than 6 months**, **Shift effective from date should be greater than Current Shift date**, **User is not confirmed so customization information cannot be updated**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemMessage? Message { get; set; }
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItem"/> and sets the default values.
-        /// </summary>
-        public UsersUpdateUser400ResponseUsersItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf10"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf10? UsersUpdateUser400ResponseUsersItemOneOf10 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf10 UsersUpdateUser400ResponseUsersItemOneOf10 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf11"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf11? UsersUpdateUser400ResponseUsersItemOneOf11 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf11 UsersUpdateUser400ResponseUsersItemOneOf11 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf12"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf12? UsersUpdateUser400ResponseUsersItemOneOf12 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf12 UsersUpdateUser400ResponseUsersItemOneOf12 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf13"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf13? UsersUpdateUser400ResponseUsersItemOneOf13 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf13 UsersUpdateUser400ResponseUsersItemOneOf13 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf14"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf14? UsersUpdateUser400ResponseUsersItemOneOf14 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf14 UsersUpdateUser400ResponseUsersItemOneOf14 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf15"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf15? UsersUpdateUser400ResponseUsersItemOneOf15 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf15 UsersUpdateUser400ResponseUsersItemOneOf15 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf16"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf16? UsersUpdateUser400ResponseUsersItemOneOf16 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf16 UsersUpdateUser400ResponseUsersItemOneOf16 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf17? UsersUpdateUser400ResponseUsersItemOneOf17 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf17 UsersUpdateUser400ResponseUsersItemOneOf17 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf18"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf18? UsersUpdateUser400ResponseUsersItemOneOf18 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf18 UsersUpdateUser400ResponseUsersItemOneOf18 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf19"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf19? UsersUpdateUser400ResponseUsersItemOneOf19 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf19 UsersUpdateUser400ResponseUsersItemOneOf19 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf2? UsersUpdateUser400ResponseUsersItemOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf2 UsersUpdateUser400ResponseUsersItemOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf20"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf20? UsersUpdateUser400ResponseUsersItemOneOf20 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf20 UsersUpdateUser400ResponseUsersItemOneOf20 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf3? UsersUpdateUser400ResponseUsersItemOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf3 UsersUpdateUser400ResponseUsersItemOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf4? UsersUpdateUser400ResponseUsersItemOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf4 UsersUpdateUser400ResponseUsersItemOneOf4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf5? UsersUpdateUser400ResponseUsersItemOneOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf5 UsersUpdateUser400ResponseUsersItemOneOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf6? UsersUpdateUser400ResponseUsersItemOneOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf6 UsersUpdateUser400ResponseUsersItemOneOf6 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf7"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf7? UsersUpdateUser400ResponseUsersItemOneOf7 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf7 UsersUpdateUser400ResponseUsersItemOneOf7 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf8? UsersUpdateUser400ResponseUsersItemOneOf8 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf8 UsersUpdateUser400ResponseUsersItemOneOf8 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf9"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf9? UsersUpdateUser400ResponseUsersItemOneOf9 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf9 UsersUpdateUser400ResponseUsersItemOneOf9 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +181,89 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItem();
+            if("UsersUpdateUser400ResponseUsersItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf1();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf10".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf10 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf10();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf11".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf11 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf11();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf12".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf12 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf12();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf13".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf13 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf13();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf14".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf14 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf14();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf15".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf15 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf15();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf16".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf16 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf16();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf17".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf17 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf17();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf18".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf18 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf18();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf19".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf19 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf19();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf2();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf20".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf20 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf20();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf3 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf3();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf4 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf4();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf5 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf5();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf6 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf6();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf7".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf7 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf7();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf8".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf8 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf8();
+            }
+            else if("UsersUpdateUser400ResponseUsersItemOneOf9".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UsersUpdateUser400ResponseUsersItemOneOf9 = new global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf9();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,13 +271,87 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(UsersUpdateUser400ResponseUsersItemOneOf1 != null)
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemCode>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemDetails>(global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemMessage>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
-            };
+                return UsersUpdateUser400ResponseUsersItemOneOf1.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf10 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf10.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf11 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf11.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf12 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf12.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf13 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf13.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf14 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf14.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf15 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf15.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf16 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf16.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf17 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf17.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf18 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf18.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf19 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf19.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf2 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf2.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf20 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf20.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf3 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf3.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf4 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf4.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf5 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf5.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf6 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf6.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf7 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf7.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf8 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf8.GetFieldDeserializers();
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf9 != null)
+            {
+                return UsersUpdateUser400ResponseUsersItemOneOf9.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -67,11 +360,86 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemCode>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemMessage>("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
-            writer.WriteAdditionalData(AdditionalData);
+            if(UsersUpdateUser400ResponseUsersItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf1>(null, UsersUpdateUser400ResponseUsersItemOneOf1);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf10 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf10>(null, UsersUpdateUser400ResponseUsersItemOneOf10);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf11 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf11>(null, UsersUpdateUser400ResponseUsersItemOneOf11);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf12 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf12>(null, UsersUpdateUser400ResponseUsersItemOneOf12);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf13 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf13>(null, UsersUpdateUser400ResponseUsersItemOneOf13);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf14 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf14>(null, UsersUpdateUser400ResponseUsersItemOneOf14);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf15 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf15>(null, UsersUpdateUser400ResponseUsersItemOneOf15);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf16 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf16>(null, UsersUpdateUser400ResponseUsersItemOneOf16);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf17 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf17>(null, UsersUpdateUser400ResponseUsersItemOneOf17);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf18 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf18>(null, UsersUpdateUser400ResponseUsersItemOneOf18);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf19 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf19>(null, UsersUpdateUser400ResponseUsersItemOneOf19);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf2>(null, UsersUpdateUser400ResponseUsersItemOneOf2);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf20 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf20>(null, UsersUpdateUser400ResponseUsersItemOneOf20);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf3>(null, UsersUpdateUser400ResponseUsersItemOneOf3);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf4>(null, UsersUpdateUser400ResponseUsersItemOneOf4);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf5>(null, UsersUpdateUser400ResponseUsersItemOneOf5);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf6>(null, UsersUpdateUser400ResponseUsersItemOneOf6);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf7 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf7>(null, UsersUpdateUser400ResponseUsersItemOneOf7);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf8 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf8>(null, UsersUpdateUser400ResponseUsersItemOneOf8);
+            }
+            else if(UsersUpdateUser400ResponseUsersItemOneOf9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateUser400ResponseUsersItemOneOf9>(null, UsersUpdateUser400ResponseUsersItemOneOf9);
+            }
         }
     }
 }

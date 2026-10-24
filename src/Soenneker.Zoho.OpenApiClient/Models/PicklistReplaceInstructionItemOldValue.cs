@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the picklist option to be replaced, providing the display value and unique identifier. At least one of id or display_value must be provided.
+    /// The option which is to be replaced (Required)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PicklistReplaceInstructionItemOldValue : IAdditionalDataHolder, IParsable

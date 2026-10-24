@@ -8,56 +8,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents additional details about the response. 
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassUpdateMassUpdateRecords200ResponseDataItemDetails : IAdditionalDataHolder, IParsable
+    public partial class MassUpdateMassUpdateRecords200ResponseDataItemDetails : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the user who originally created the record.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1? MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1 MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1 { get; set; }
 #endif
-        /// <summary>Represents the date and time, in ISO 8601 format, when the record was originally created.</summary>
-        public DateTimeOffset? CreatedTime { get; set; }
-        /// <summary>Represents the unique ID of the record that the mass update operation modified.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2? MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2 MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2 { get; set; }
 #endif
-        /// <summary>Represents the unique ID of the scheduled mass update job. Pass this value as the `job_id` query parameter to [Get Mass Update Status API](mass_update.yaml#$.paths./{module}/actions/mass_update.get) to retrieve the job&apos;s current status and record counts.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? JobId { get; set; }
-#nullable restore
-#else
-        public string JobId { get; set; }
-#endif
-        /// <summary>Represents the user who performed the mass update on the record.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsModifiedBy? ModifiedBy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsModifiedBy ModifiedBy { get; set; }
-#endif
-        /// <summary>Represents the date and time, in ISO 8601 format, when the record was last modified by the mass update operation.</summary>
-        public DateTimeOffset? ModifiedTime { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetails"/> and sets the default values.
-        /// </summary>
-        public MassUpdateMassUpdateRecords200ResponseDataItemDetails()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,7 +37,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetails();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetails();
+            if("MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1();
+            }
+            else if("MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,15 +55,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1 != null)
             {
-                { "Created_By", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsCreatedBy.CreateFromDiscriminatorValue); } },
-                { "Created_Time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "job_id", n => { JobId = n.GetStringValue(); } },
-                { "Modified_By", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsModifiedBy.CreateFromDiscriminatorValue); } },
-                { "Modified_Time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
-            };
+                return MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1.GetFieldDeserializers();
+            }
+            else if(MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2 != null)
+            {
+                return MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -91,13 +72,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsCreatedBy>("Created_By", CreatedBy);
-            writer.WriteDateTimeOffsetValue("Created_Time", CreatedTime);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("job_id", JobId);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsModifiedBy>("Modified_By", ModifiedBy);
-            writer.WriteDateTimeOffsetValue("Modified_Time", ModifiedTime);
-            writer.WriteAdditionalData(AdditionalData);
+            if(MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1>(null, MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf1);
+            }
+            else if(MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2>(null, MassUpdateMassUpdateRecords200ResponseDataItemDetailsOneOf2);
+            }
         }
     }
 }

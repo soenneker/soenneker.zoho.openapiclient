@@ -53,7 +53,6 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_write.Write
         /// <param name="body">Defines the payload for creating a bulk write job, including the operation type, optional callback configuration, and the list of resource configurations.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,11 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_write.Write
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob400Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create a bulk write job in your Zoho CRM organization that creates, updates, or upserts records in a target module from a previously uploaded file. The job is processed asynchronously; the response returns the job identifier that the get job details operation uses to poll job status, and an optional callback URL is notified on completion or failure.

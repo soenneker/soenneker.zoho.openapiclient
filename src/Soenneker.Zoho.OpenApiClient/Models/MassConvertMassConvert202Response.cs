@@ -15,8 +15,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the processing status code. For 202 responses, this is always **SCHEDULED**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode? Code { get; set; }
+        /// <summary>Represents the response code indicating the job has been scheduled.Possible values:**SCHEDULED** - The mass convert job has been accepted and scheduled for execution.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202ResponseCode? Code { get; set; }
         /// <summary>Represents additional details about the scheduled mass convert job, including the job identifier. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,8 +33,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
+        /// <summary>Represents the status category of the response.Possible values:*success** - The mass convert job was scheduled successfully.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202ResponseStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202Response"/> and sets the default values.
         /// </summary>
@@ -60,10 +60,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202ResponseCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202ResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202ResponseDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202ResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -73,10 +73,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202ResponseCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202ResponseDetails>("details", Details);
             writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertMassConvert202ResponseStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

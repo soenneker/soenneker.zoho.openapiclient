@@ -36,10 +36,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of record fields included in the notification payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemFieldsItem>? Fields { get; set; }
+        public UntypedNode? Fields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemFieldsItem> Fields { get; set; }
+        public UntypedNode Fields { get; set; }
 #endif
         /// <summary>Represents the list of field-selection conditions that determine which record changes trigger a notification on this channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +121,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "channel_expiry", n => { ChannelExpiry = n.GetDateTimeOffsetValue(); } },
                 { "channel_id", n => { ChannelId = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemFieldsItem>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fields", n => { Fields = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "notification_condition", n => { NotificationCondition = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItem>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notify_on_related_action", n => { NotifyOnRelatedAction = n.GetBoolValue(); } },
                 { "notify_url", n => { NotifyUrl = n.GetStringValue(); } },
@@ -142,7 +142,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("channel_expiry", ChannelExpiry);
             writer.WriteStringValue("channel_id", ChannelId);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemFieldsItem>("fields", Fields);
+            writer.WriteObjectValue<UntypedNode>("fields", Fields);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItem>("notification_condition", NotificationCondition);
             writer.WriteBoolValue("notify_on_related_action", NotifyOnRelatedAction);
             writer.WriteStringValue("notify_url", NotifyUrl);

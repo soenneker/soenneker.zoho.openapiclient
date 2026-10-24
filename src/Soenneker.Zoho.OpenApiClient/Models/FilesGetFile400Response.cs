@@ -8,10 +8,11 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Returned when the required **id** query parameter is not present in the request URL.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class FilesGetFile400Response : ApiException, IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -27,8 +28,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>Error message indicating a parameter is missing</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.OneOfTheExpectedParameterIsMissingMessage? MessageEscaped { get; set; }
+        /// <summary>Represents the error message describing the issue.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.RequiredParamMissingResponseMessage? MessageEscaped { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
@@ -58,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RequiredParamMissingCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RequiredParamMissingResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.RequiredParamMissingResponseDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OneOfTheExpectedParameterIsMissingMessage>(); } },
+                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RequiredParamMissingResponseMessage>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
@@ -71,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RequiredParamMissingCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RequiredParamMissingResponseDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OneOfTheExpectedParameterIsMissingMessage>("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RequiredParamMissingResponseMessage>("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

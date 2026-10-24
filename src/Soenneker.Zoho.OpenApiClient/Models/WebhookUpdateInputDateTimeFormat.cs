@@ -11,14 +11,47 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Optional. Only relevant when a date or datetime merge-field is used in any parameter (headers, url_parameters, or body). Use datetime_format + time_zone for datetime fields, date_format for date fields. Ignored if no date/datetime merge-fields are present.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WebhookUpdateInputDateTimeFormat : global::Soenneker.Zoho.OpenApiClient.Models.DateTimeFormatConfig, IParsable
+    public partial class WebhookUpdateInputDateTimeFormat : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Represents the format pattern for date-only merge-field values in the webhook payload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DateFormat { get; set; }
+#nullable restore
+#else
+        public string DateFormat { get; set; }
+#endif
+        /// <summary>Represents the format pattern for datetime merge-field values in the webhook payload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DatetimeFormat { get; set; }
+#nullable restore
+#else
+        public string DatetimeFormat { get; set; }
+#endif
+        /// <summary>Represents the timezone identifier applied to datetime merge-field values in the webhook payload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZone { get; set; }
+#nullable restore
+#else
+        public string TimeZone { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhookUpdateInputDateTimeFormat"/> and sets the default values.
+        /// </summary>
+        public WebhookUpdateInputDateTimeFormat()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhookUpdateInputDateTimeFormat"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Zoho.OpenApiClient.Models.WebhookUpdateInputDateTimeFormat CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Zoho.OpenApiClient.Models.WebhookUpdateInputDateTimeFormat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Zoho.OpenApiClient.Models.WebhookUpdateInputDateTimeFormat();
@@ -27,20 +60,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "date_format", n => { DateFormat = n.GetStringValue(); } },
+                { "datetime_format", n => { DatetimeFormat = n.GetStringValue(); } },
+                { "time_zone", n => { TimeZone = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteStringValue("date_format", DateFormat);
+            writer.WriteStringValue("datetime_format", DatetimeFormat);
+            writer.WriteStringValue("time_zone", TimeZone);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

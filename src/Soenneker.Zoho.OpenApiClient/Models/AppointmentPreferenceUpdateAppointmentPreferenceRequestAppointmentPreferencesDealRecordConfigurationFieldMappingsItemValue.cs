@@ -8,28 +8,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Denotes the value of the Deals fields. The format of this key&apos;s value depends on the mapping **type**.**Value for merge_field**: The datatype of this value is a string. To merge any field from a module, it should be specified like this **${module_api_name.field_api_name}**.Example: ${Appointments__s.Appointment_Name}**Value for static**: The datatype of this value is a JSON object. It contains the name and ID of the entity.When you want to give static values that look up to a different module, make a GET API call of the specific module and provide the relevant ID and name of the record. You can also give standard text values enclosed in a string.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValue : IAdditionalDataHolder, IParsable
+    public partial class AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Specify a merge-field expression that references appointment or service module data using the format **${!module_api_name.field_api_name}**.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2? AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2 AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValue"/> and sets the default values.
-        /// </summary>
-        public AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValue()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +37,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValue();
+            if("AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2();
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,10 +55,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2 != null)
             {
-                { "value", n => { Value = n.GetStringValue(); } },
-            };
+                return AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -58,8 +68,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2>(null, AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItemValueOneOf2);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
         }
     }
 }

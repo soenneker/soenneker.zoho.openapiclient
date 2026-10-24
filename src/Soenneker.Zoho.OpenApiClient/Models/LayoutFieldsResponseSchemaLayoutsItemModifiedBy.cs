@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutFieldsResponseSchemaLayoutsItemModifiedBy : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1? LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1? LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1 LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1 LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,10 +39,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedBy();
-            if("LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1();
-            }
             return result;
         }
         /// <summary>
@@ -51,9 +47,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1 != null)
+            if(LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1 != null)
             {
-                return LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1.GetFieldDeserializers();
+                return LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1.GetFieldDeserializers();
             }
             else if(LayoutsTypeNull != null)
             {
@@ -68,9 +64,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1 != null)
+            if(LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1>(null, LayoutFieldsResponseSchemaLayoutsItemModifiedByOneOf1);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1>(null, LayoutFieldsResponseSchemaLayoutsItemModifiedByMember1);
             }
             else if(LayoutsTypeNull != null)
             {

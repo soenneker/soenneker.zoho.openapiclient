@@ -8,26 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.StaticArrayValueWrapper"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValueBranch1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.StaticObjectValue"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.StaticObjectValue"/>, <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StaticFieldMappingValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.StaticArrayValueWrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.StaticArrayValueWrapper? StaticArrayValueWrapper { get; set; }
+        public string? StaticFieldMappingValueString { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.StaticArrayValueWrapper StaticArrayValueWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValueBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValueBranch1? StaticFieldMappingValueBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValueBranch1 StaticFieldMappingValueBranch1 { get; set; }
+        public string StaticFieldMappingValueString { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.StaticObjectValue"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,6 +28,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.StaticObjectValue StaticObjectValue { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? String { get; set; }
+#nullable restore
+#else
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,17 +47,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValue();
-            if("StaticArrayValueWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.StaticArrayValueWrapper = new global::Soenneker.Zoho.OpenApiClient.Models.StaticArrayValueWrapper();
-            }
-            else if("StaticFieldMappingValueBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.StaticFieldMappingValueBranch1 = new global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValueBranch1();
-            }
-            else if("StaticObjectValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("StaticObjectValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.StaticObjectValue = new global::Soenneker.Zoho.OpenApiClient.Models.StaticObjectValue();
+            }
+            else if(parseNode.GetStringValue() is string staticFieldMappingValueStringValue)
+            {
+                result.StaticFieldMappingValueString = staticFieldMappingValueStringValue;
+            }
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -67,15 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(StaticArrayValueWrapper != null)
-            {
-                return StaticArrayValueWrapper.GetFieldDeserializers();
-            }
-            else if(StaticFieldMappingValueBranch1 != null)
-            {
-                return StaticFieldMappingValueBranch1.GetFieldDeserializers();
-            }
-            else if(StaticObjectValue != null)
+            if(StaticObjectValue != null)
             {
                 return StaticObjectValue.GetFieldDeserializers();
             }
@@ -88,17 +80,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(StaticArrayValueWrapper != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticArrayValueWrapper>(null, StaticArrayValueWrapper);
-            }
-            else if(StaticFieldMappingValueBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValueBranch1>(null, StaticFieldMappingValueBranch1);
-            }
-            else if(StaticObjectValue != null)
+            if(StaticObjectValue != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticObjectValue>(null, StaticObjectValue);
+            }
+            else if(StaticFieldMappingValueString != null)
+            {
+                writer.WriteStringValue(null, StaticFieldMappingValueString);
+            }
+            else if(String != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

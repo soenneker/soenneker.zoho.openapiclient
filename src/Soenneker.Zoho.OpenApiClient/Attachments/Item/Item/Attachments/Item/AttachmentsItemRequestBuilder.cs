@@ -39,7 +39,6 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,18 +49,13 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment400Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Download the file content of a specific attachment by its ID. This endpoint returns the actual file (image, PDF, document, etc.). Returns an error for link attachments, as they cannot be downloaded.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsGetAttachmentById400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse">When receiving a 404 status code</exception>
@@ -80,7 +74,6 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsGetAttachmentById400Response.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },

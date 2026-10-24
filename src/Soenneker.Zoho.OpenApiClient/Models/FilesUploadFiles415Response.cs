@@ -8,10 +8,11 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Returned when any file in the upload request exceeds the 20 MB size limit. The entire upload is rejected, even if other files are within the allowed size.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class FilesUploadFiles415Response : ApiException, IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

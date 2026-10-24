@@ -39,7 +39,6 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_f
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataInternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +52,6 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_f
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord400Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataInternalServerErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

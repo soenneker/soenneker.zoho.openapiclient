@@ -32,7 +32,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingField Field { get; set; }
 #endif
         /// <summary>Serves as the polymorphic discriminator that identifies this field mapping as a composite mapping; the value must be set to &quot;composite&quot; to select this schema variant.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeType? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingType? Type { get; set; }
         /// <summary>Holds the structured composite object that encodes participant data for the Events module Participants field; the shape of this object varies according to the participant type configuration defined for the automation rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +68,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingField.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CompositeType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingValueProperty>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingValueProperty.CreateFromDiscriminatorValue); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_value", DisplayValue);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingField>("field", Field);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CompositeType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMappingValueProperty>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

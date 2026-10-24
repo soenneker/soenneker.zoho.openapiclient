@@ -58,10 +58,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Fields displayed in the business card view (up to 15). Present only when &apos;business_card_fields&apos; is included in the include parameter. Can be empty array, array of objects with api_name and id, or array of string API names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemBusinessCardFieldsItem>? BusinessCardFields { get; set; }
+        public List<string>? BusinessCardFields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemBusinessCardFieldsItem> BusinessCardFields { get; set; }
+        public List<string> BusinessCardFields { get; set; }
 #endif
         /// <summary>True when CommandCenter (workflow orchestration) is enabled for this module; false when not configured or unsupported.</summary>
         public bool? CcEnabled { get; set; }
@@ -248,10 +248,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nullable array of extended property objects (up to 50) representing additional module capabilities; each item is either a string property name or an object with arbitrary key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPropertiesItem>? Properties { get; set; }
+        public List<string>? Properties { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPropertiesItem> Properties { get; set; }
+        public List<string> Properties { get; set; }
 #endif
         /// <summary>True when public fields have been configured for this module.</summary>
         public bool? PublicFieldsConfigured { get; set; }
@@ -390,7 +390,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "api_supported", n => { ApiSupported = n.GetBoolValue(); } },
                 { "arguments", n => { Arguments = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "business_card_field_limit", n => { BusinessCardFieldLimit = n.GetIntValue(); } },
-                { "business_card_fields", n => { BusinessCardFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemBusinessCardFieldsItem>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemBusinessCardFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "business_card_fields", n => { BusinessCardFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "cc_enabled", n => { CcEnabled = n.GetBoolValue(); } },
                 { "chart_view", n => { ChartView = n.GetBoolValue(); } },
                 { "chart_view_supported", n => { ChartViewSupported = n.GetBoolValue(); } },
@@ -434,7 +434,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "private_profile", n => { PrivateProfile = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile.CreateFromDiscriminatorValue); } },
                 { "profile_count", n => { ProfileCount = n.GetIntValue(); } },
                 { "profiles", n => { Profiles = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "$properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPropertiesItem>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPropertiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "$properties", n => { Properties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "public_fields_configured", n => { PublicFieldsConfigured = n.GetBoolValue(); } },
                 { "quick_create", n => { QuickCreate = n.GetBoolValue(); } },
                 { "recycle_bin_on_delete", n => { RecycleBinOnDelete = n.GetBoolValue(); } },
@@ -483,7 +483,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("api_supported", ApiSupported);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem>("arguments", Arguments);
             writer.WriteIntValue("business_card_field_limit", BusinessCardFieldLimit);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemBusinessCardFieldsItem>("business_card_fields", BusinessCardFields);
+            writer.WriteCollectionOfPrimitiveValues<string>("business_card_fields", BusinessCardFields);
             writer.WriteBoolValue("cc_enabled", CcEnabled);
             writer.WriteBoolValue("chart_view", ChartView);
             writer.WriteBoolValue("chart_view_supported", ChartViewSupported);
@@ -527,7 +527,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile>("private_profile", PrivateProfile);
             writer.WriteIntValue("profile_count", ProfileCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem>("profiles", Profiles);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPropertiesItem>("$properties", Properties);
+            writer.WriteCollectionOfPrimitiveValues<string>("$properties", Properties);
             writer.WriteBoolValue("public_fields_configured", PublicFieldsConfigured);
             writer.WriteBoolValue("quick_create", QuickCreate);
             writer.WriteBoolValue("recycle_bin_on_delete", RecycleBinOnDelete);

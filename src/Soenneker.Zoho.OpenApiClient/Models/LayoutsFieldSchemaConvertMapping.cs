@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingQuotesFieldConvertMapping"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingSalesOrdersFieldConvertMapping"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingOneOf4"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingQuotesFieldConvertMapping"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingSalesOrdersFieldConvertMapping"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutsFieldSchemaConvertMapping : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingMember1? LayoutsFieldSchemaConvertMappingMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingOneOf4? LayoutsFieldSchemaConvertMappingOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingMember1 LayoutsFieldSchemaConvertMappingMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingOneOf4 LayoutsFieldSchemaConvertMappingOneOf4 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingQuotesFieldConvertMapping"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,6 +59,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping();
             }
+            else if("LayoutsFieldSchemaConvertMappingOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.LayoutsFieldSchemaConvertMappingOneOf4 = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingOneOf4();
+            }
             else if("LayoutsFieldSchemaConvertMappingQuotesFieldConvertMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LayoutsFieldSchemaConvertMappingQuotesFieldConvertMapping = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingQuotesFieldConvertMapping();
@@ -79,9 +83,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 return LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping.GetFieldDeserializers();
             }
-            else if(LayoutsFieldSchemaConvertMappingMember1 != null)
+            else if(LayoutsFieldSchemaConvertMappingOneOf4 != null)
             {
-                return LayoutsFieldSchemaConvertMappingMember1.GetFieldDeserializers();
+                return LayoutsFieldSchemaConvertMappingOneOf4.GetFieldDeserializers();
             }
             else if(LayoutsFieldSchemaConvertMappingQuotesFieldConvertMapping != null)
             {
@@ -104,9 +108,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping>(null, LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping);
             }
-            else if(LayoutsFieldSchemaConvertMappingMember1 != null)
+            else if(LayoutsFieldSchemaConvertMappingOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingMember1>(null, LayoutsFieldSchemaConvertMappingMember1);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingOneOf4>(null, LayoutsFieldSchemaConvertMappingOneOf4);
             }
             else if(LayoutsFieldSchemaConvertMappingQuotesFieldConvertMapping != null)
             {

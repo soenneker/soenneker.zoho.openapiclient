@@ -8,22 +8,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents additional details about the media type error. Contains the file resolution that exceeded the limit when applicable.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecordPhotoUploadRecordPhoto415ResponseDetails : IAdditionalDataHolder, IParsable
+    public partial class RecordPhotoUploadRecordPhoto415ResponseDetails : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the resolution of the uploaded file that exceeded the maximum allowed limit.</summary>
-        public int? Resolution { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetails"/> and sets the default values.
-        /// </summary>
-        public RecordPhotoUploadRecordPhoto415ResponseDetails()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1? RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1 RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2? RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2 RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +37,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetails();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetails();
+            if("RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1();
+            }
+            else if("RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,10 +55,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1 != null)
             {
-                { "resolution", n => { Resolution = n.GetIntValue(); } },
-            };
+                return RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1.GetFieldDeserializers();
+            }
+            else if(RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2 != null)
+            {
+                return RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -52,8 +72,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("resolution", Resolution);
-            writer.WriteAdditionalData(AdditionalData);
+            if(RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1>(null, RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf1);
+            }
+            else if(RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2>(null, RecordPhotoUploadRecordPhoto415ResponseDetailsOneOf2);
+            }
         }
     }
 }

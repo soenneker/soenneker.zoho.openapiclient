@@ -103,7 +103,6 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks
         /// <param name="body">PURPOSE: Request body wrapper for creating or updating an automation task definition. MUST contain a tasks array with exactly 1 task object.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCreateWorkflowTasks400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse">When receiving a 500 status code</exception>
@@ -120,7 +119,6 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCreateWorkflowTasks400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse.CreateFromDiscriminatorValue },

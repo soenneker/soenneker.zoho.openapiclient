@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a reference to a related CRM module linked to the parent module of a webhook. Returns null when no related module is configured. Required when feature_type is kiosk.
+    /// The child or dependent CRM module linked to this webhook&apos;s parent module. Null when no related module is configured.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationWebhooksResponseRelatedModule : IAdditionalDataHolder, IParsable

@@ -8,10 +8,11 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Represents the error response returned when a required parameter such as the module API name or field path is missing from the request.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class WorkflowRulesGetWorkflowRules400Response : ApiException, IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

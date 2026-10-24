@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the result message for the email sharing operation. Always present in the response.</summary>
+    /// <summary>Represents the result message for the successfully shared record. Always present in the response.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SuccessfullySharedMessage
     {

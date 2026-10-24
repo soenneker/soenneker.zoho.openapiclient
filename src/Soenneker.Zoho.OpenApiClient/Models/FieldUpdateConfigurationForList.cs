@@ -47,14 +47,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Whether the current user can edit this field update action.</summary>
         public bool? Editable { get; set; }
-        /// <summary>Automation feature where this field update action is used.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Automation feature where this field update action is used. Supports baseline features plus connected_workflows. No cadence support.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListFeatureType? FeatureType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListFeatureType FeatureType { get; set; }
-#endif
         /// <summary>The target CRM field that this action updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,22 +139,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
-        /// <summary>Type returned by the API for this field update. Create/update accepts only static; GET responses can include merge_field for pre-existing actions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Response-only field update type. Create/update supports only static, while GET responses may include merge_field for pre-existing actions.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType Type { get; set; }
-#endif
-        /// <summary>Specifies how the field value should be applied when the target field supports multiple update strategies (e.g., multi-select picklist, Owner). Null when the field type does not support multiple update strategies (e.g., text, single picklist).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Specifies how the new value is applied to a multi-select picklist or Owner field: overwrite replaces the existing value, append adds to the existing entries. Omit or set to null for single-value fields.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType? UpdateType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType UpdateType { get; set; }
-#endif
         /// <summary>The value configured for the field update. The shape depends on the target field type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,7 +183,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "deletable", n => { Deletable = n.GetBoolValue(); } },
                 { "dependent_fields", n => { DependentFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>(global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "editable", n => { Editable = n.GetBoolValue(); } },
-                { "feature_type", n => { FeatureType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListFeatureType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListFeatureType.CreateFromDiscriminatorValue); } },
+                { "feature_type", n => { FeatureType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListFeatureType>(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListField>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListField.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lock_status", n => { LockStatus = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListLockStatus>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListLockStatus.CreateFromDiscriminatorValue); } },
@@ -214,8 +196,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "related_module", n => { RelatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListRelatedModule>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListRelatedModule.CreateFromDiscriminatorValue); } },
                 { "related_records", n => { RelatedRecords = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType.CreateFromDiscriminatorValue); } },
-                { "update_type", n => { UpdateType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType>(); } },
+                { "update_type", n => { UpdateType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -233,7 +215,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("deletable", Deletable);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>("dependent_fields", DependentFields);
             writer.WriteBoolValue("editable", Editable);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListFeatureType>("feature_type", FeatureType);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListFeatureType>("feature_type", FeatureType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListField>("field", Field);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListLockStatus>("lock_status", LockStatus);
@@ -246,8 +228,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListRelatedModule>("related_module", RelatedModule);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>("related_records", RelatedRecords);
             writer.WriteStringValue("source", Source);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType>("update_type", UpdateType);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType>("update_type", UpdateType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

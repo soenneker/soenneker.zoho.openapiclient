@@ -8,40 +8,43 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the error details returned when the appointment preference update fails validation. 
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferences : IAdditionalDataHolder, IParsable
+    public partial class AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferences : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code returned when a required field is missing from the request.Possible values:**MANDATORY_NOT_FOUND** - A required field is absent from the request body.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesCode? Code { get; set; }
-        /// <summary>Represents the details identifying the missing mandatory field, including its API name and JSON path.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1? AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1 AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1 { get; set; }
 #endif
-        /// <summary>Represents the error message describing the missing mandatory field.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2? AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Message { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2 AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2 { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferences"/> and sets the default values.
-        /// </summary>
-        public AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferences()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3? AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3 AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4? AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4 AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +53,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferences CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferences();
+            var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferences();
+            if("MANDATORY_NOT_FOUND".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1();
+            }
+            else if("INVALID_DATA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2();
+            }
+            else if("DEPENDENT_MISMATCH".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3 = new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3();
+            }
+            else if("DEPENDENT_FIELD_MISSING".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4 = new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,13 +79,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1 != null)
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesCode>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
-            };
+                return AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1.GetFieldDeserializers();
+            }
+            else if(AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2 != null)
+            {
+                return AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2.GetFieldDeserializers();
+            }
+            else if(AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3 != null)
+            {
+                return AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3.GetFieldDeserializers();
+            }
+            else if(AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4 != null)
+            {
+                return AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -73,11 +104,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesCode>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesDetails>("details", Details);
-            writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
-            writer.WriteAdditionalData(AdditionalData);
+            if(AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1>(null, AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf1);
+            }
+            else if(AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2>(null, AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf2);
+            }
+            else if(AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3>(null, AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf3);
+            }
+            else if(AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4>(null, AppointmentPreferenceUpdateAppointmentPreference400ResponseAppointmentPreferencesOneOf4);
+            }
         }
     }
 }

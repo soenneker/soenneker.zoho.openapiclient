@@ -37,13 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.DeletedRecordsErrorResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.DeletedRecordsErrorResponseDataItem();
-            if("InvalidModuleGetDeletedError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("INVALID_MODULE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.InvalidModuleGetDeletedError = new global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleGetDeletedError();
             }
-            else if("PatternNotMatchedGetDeletedError".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PATTERN_NOT_MATCHED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PatternNotMatchedGetDeletedError = new global::Soenneker.Zoho.OpenApiClient.Models.PatternNotMatchedGetDeletedError();
             }

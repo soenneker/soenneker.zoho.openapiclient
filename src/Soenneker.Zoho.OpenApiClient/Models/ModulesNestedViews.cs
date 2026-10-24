@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// A nested object representing a list view associated with a portal user type module. Identified by a unique numeric ID, name, display label, and type.
+    /// The list view (canvas view or custom view) visible to portal users when browsing records in this module.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ModulesNestedViews : IAdditionalDataHolder, IParsable

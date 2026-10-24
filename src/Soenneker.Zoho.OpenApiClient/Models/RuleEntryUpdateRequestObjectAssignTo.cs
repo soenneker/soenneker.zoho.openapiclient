@@ -8,46 +8,59 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Assign to request object schema.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RuleEntryUpdateRequestObjectAssignTo : IAdditionalDataHolder, IParsable
+    public partial class RuleEntryUpdateRequestObjectAssignTo : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Defines the criteria of the users who is considered for owner assignment for records entering the current rule entry.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToRequestObjectCriteriaProperty? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria? RuleEntryUpdateRequestObjectAssignToCriteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToRequestObjectCriteriaProperty Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria RuleEntryUpdateRequestObjectAssignToCriteria { get; set; }
 #endif
-        /// <summary>Details of the role to assign</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RoleTypeAssignToRequestObjectResource? Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup? RuleEntryUpdateRequestObjectAssignToGroup { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RoleTypeAssignToRequestObjectResource Resource { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup RuleEntryUpdateRequestObjectAssignToGroup { get; set; }
 #endif
-        /// <summary>Defines the list of users details.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserResourceRequestObject>? Resources { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile? RuleEntryUpdateRequestObjectAssignToProfile { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserResourceRequestObject> Resources { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile RuleEntryUpdateRequestObjectAssignToProfile { get; set; }
 #endif
-        /// <summary>Defines the type or users to associate as owner during execution.Possible values:**zia_suggested_users** - Represents zia suggested users. </summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignTo"/> and sets the default values.
-        /// </summary>
-        public RuleEntryUpdateRequestObjectAssignTo()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole? RuleEntryUpdateRequestObjectAssignToRole { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole RuleEntryUpdateRequestObjectAssignToRole { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers? RuleEntryUpdateRequestObjectAssignToUsers { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers RuleEntryUpdateRequestObjectAssignToUsers { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers? RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,7 +69,33 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignTo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignTo();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignTo();
+            if("criteria".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RuleEntryUpdateRequestObjectAssignToCriteria = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria();
+            }
+            else if("group".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RuleEntryUpdateRequestObjectAssignToGroup = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup();
+            }
+            else if("profile".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RuleEntryUpdateRequestObjectAssignToProfile = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile();
+            }
+            else if("role".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RuleEntryUpdateRequestObjectAssignToRole = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole();
+            }
+            else if("users".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RuleEntryUpdateRequestObjectAssignToUsers = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers();
+            }
+            else if("zia_suggested_users".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,13 +103,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(RuleEntryUpdateRequestObjectAssignToCriteria != null)
             {
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToRequestObjectCriteriaProperty>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToRequestObjectCriteriaProperty.CreateFromDiscriminatorValue); } },
-                { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleTypeAssignToRequestObjectResource>(global::Soenneker.Zoho.OpenApiClient.Models.RoleTypeAssignToRequestObjectResource.CreateFromDiscriminatorValue); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UserResourceRequestObject>(global::Soenneker.Zoho.OpenApiClient.Models.UserResourceRequestObject.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersType>(); } },
-            };
+                return RuleEntryUpdateRequestObjectAssignToCriteria.GetFieldDeserializers();
+            }
+            else if(RuleEntryUpdateRequestObjectAssignToGroup != null)
+            {
+                return RuleEntryUpdateRequestObjectAssignToGroup.GetFieldDeserializers();
+            }
+            else if(RuleEntryUpdateRequestObjectAssignToProfile != null)
+            {
+                return RuleEntryUpdateRequestObjectAssignToProfile.GetFieldDeserializers();
+            }
+            else if(RuleEntryUpdateRequestObjectAssignToRole != null)
+            {
+                return RuleEntryUpdateRequestObjectAssignToRole.GetFieldDeserializers();
+            }
+            else if(RuleEntryUpdateRequestObjectAssignToUsers != null)
+            {
+                return RuleEntryUpdateRequestObjectAssignToUsers.GetFieldDeserializers();
+            }
+            else if(RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers != null)
+            {
+                return RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -79,11 +136,30 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToRequestObjectCriteriaProperty>("criteria", Criteria);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleTypeAssignToRequestObjectResource>("resource", Resource);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UserResourceRequestObject>("resources", Resources);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaSuggestedUsersType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(RuleEntryUpdateRequestObjectAssignToCriteria != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria>(null, RuleEntryUpdateRequestObjectAssignToCriteria);
+            }
+            else if(RuleEntryUpdateRequestObjectAssignToGroup != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup>(null, RuleEntryUpdateRequestObjectAssignToGroup);
+            }
+            else if(RuleEntryUpdateRequestObjectAssignToProfile != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile>(null, RuleEntryUpdateRequestObjectAssignToProfile);
+            }
+            else if(RuleEntryUpdateRequestObjectAssignToRole != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole>(null, RuleEntryUpdateRequestObjectAssignToRole);
+            }
+            else if(RuleEntryUpdateRequestObjectAssignToUsers != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers>(null, RuleEntryUpdateRequestObjectAssignToUsers);
+            }
+            else if(RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers>(null, RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers);
+            }
         }
     }
 }

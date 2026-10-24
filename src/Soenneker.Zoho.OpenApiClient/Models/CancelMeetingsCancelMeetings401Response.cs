@@ -8,10 +8,11 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// The access token you have used to make this API call does not have the required scope. Generate a new access token with the required scopes for this API.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CancelMeetingsCancelMeetings401Response : ApiException, IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

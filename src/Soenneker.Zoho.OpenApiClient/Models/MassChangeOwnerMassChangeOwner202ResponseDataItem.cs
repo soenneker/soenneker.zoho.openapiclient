@@ -15,8 +15,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the processing status code. For 202 responses, this is always **SCHEDULED**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode? Code { get; set; }
+        /// <summary>Represents the response code for the scheduled job.Possible values:**SCHEDULED** - The mass change owner job issuccessfully scheduled.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202ResponseDataItemCode? Code { get; set; }
         /// <summary>Represents the additional details about the scheduled mass change owner job. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,7 +54,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202ResponseDataItemCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202ResponseDataItemDetails>(global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202ResponseDataItemDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerIsSuccessfullyScheduledMessage>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
@@ -67,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202ResponseDataItemCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202ResponseDataItemDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerIsSuccessfullyScheduledMessage>("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);

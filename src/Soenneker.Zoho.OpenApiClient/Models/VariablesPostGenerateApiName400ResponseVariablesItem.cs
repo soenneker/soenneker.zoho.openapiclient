@@ -53,21 +53,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400ResponseVariablesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("message")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400ResponseVariablesItem();
-            if("ErrorApiNameGenerationMandatoryMissingResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("required field not found".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ErrorApiNameGenerationMandatoryMissingResponse = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorApiNameGenerationMandatoryMissingResponse();
             }
-            else if("ErrorInvalidDataResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("Invalid data".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ErrorInvalidDataResponse = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorInvalidDataResponse();
             }
-            else if("ErrorInvalidDataTypeResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("Invalid data type".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ErrorInvalidDataTypeResponse = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorInvalidDataTypeResponse();
             }
-            else if("ErrorMandatoryFieldMissingResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("Required field is missing".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ErrorMandatoryFieldMissingResponse = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorMandatoryFieldMissingResponse();
             }

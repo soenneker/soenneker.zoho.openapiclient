@@ -8,10 +8,11 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Represents the error response returned when the appointment ID in the request URL is invalid.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AppointmentsGetAppointmentById404Response : ApiException, IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -20,10 +21,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the error details object for the invalid URL pattern failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsGetAppointmentById404ResponseDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseCore2271053024DetailsProperty? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsGetAppointmentById404ResponseDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseCore2271053024DetailsProperty Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
@@ -57,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternCode>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsGetAppointmentById404ResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsGetAppointmentById404ResponseDetails.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseCore2271053024DetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseCore2271053024DetailsProperty.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PleaseCheckIfTheUrlTryingToAccessIsACorrectOneMessage>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
@@ -70,7 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidUrlPatternCode>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsGetAppointmentById404ResponseDetails>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseCore2271053024DetailsProperty>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PleaseCheckIfTheUrlTryingToAccessIsACorrectOneMessage>("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails200ResponseDataItemDetails Details { get; set; }
 #endif
-        /// <summary>Represents the result message for the email sharing operation. Always present in the response.</summary>
+        /// <summary>Represents the result message for the successfully shared record. Always present in the response.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessfullySharedMessage? Message { get; set; }
         /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }

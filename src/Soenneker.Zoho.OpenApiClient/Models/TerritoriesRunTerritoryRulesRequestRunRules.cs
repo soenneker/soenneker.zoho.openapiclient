@@ -8,56 +8,35 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Specify the configuration for territory rule execution. The **run_rules** object must match one of three execution methods: criteria-based, Custom View-based, or territory-based.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TerritoriesRunTerritoryRulesRequestRunRules : IAdditionalDataHolder, IParsable
+    public partial class TerritoriesRunTerritoryRulesRequestRunRules : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Specify the execution method for territory assignment rules.Possible values:**criteria** - Runs territory rules against records matching a specified filter criterion.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesBasedOn? BasedOn { get; set; }
-        /// <summary>Filter criteria for territory rule execution.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCriteria? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1? TerritoriesRunTerritoryRulesRequestRunRulesOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCriteria Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1 TerritoriesRunTerritoryRulesRequestRunRulesOneOf1 { get; set; }
 #endif
-        /// <summary>Specify the Custom View for which the territory assignment rules apply. Provide either the **ID** or the **api_name** of the Custom View.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCustomView? CustomView { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2? TerritoriesRunTerritoryRulesRequestRunRulesOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCustomView CustomView { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2 TerritoriesRunTerritoryRulesRequestRunRulesOneOf2 { get; set; }
 #endif
-        /// <summary>Specify whether to include child territories when running the territory assignment rules.Possible values:**true** - Includes child territories of the specified territories in the rule execution.**false** - Runs rules only for the specified territories, without their child territories.</summary>
-        public bool? IncludeChild { get; set; }
-        /// <summary>Specify the API name of the module for which to run territory assignment rules.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesModule? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf3? TerritoriesRunTerritoryRulesRequestRunRulesOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesModule Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf3 TerritoriesRunTerritoryRulesRequestRunRulesOneOf3 { get; set; }
 #endif
-        /// <summary>Specify the list of territories for which the territory assignment rules apply.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesItem>? Territories { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesItem> Territories { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRules"/> and sets the default values.
-        /// </summary>
-        public TerritoriesRunTerritoryRulesRequestRunRules()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,7 +45,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRules CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRules();
+            var mappingValue = parseNode.GetChildNode("based_on")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRules();
+            if("criteria".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1();
+            }
+            else if("custom_view".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2();
+            }
+            else if("territory".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TerritoriesRunTerritoryRulesRequestRunRulesOneOf3 = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,15 +67,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(TerritoriesRunTerritoryRulesRequestRunRulesOneOf1 != null)
             {
-                { "based_on", n => { BasedOn = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesBasedOn>(); } },
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCriteria.CreateFromDiscriminatorValue); } },
-                { "custom_view", n => { CustomView = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCustomView>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCustomView.CreateFromDiscriminatorValue); } },
-                { "include_child", n => { IncludeChild = n.GetBoolValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesModule>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesModule.CreateFromDiscriminatorValue); } },
-                { "territories", n => { Territories = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesItem>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-            };
+                return TerritoriesRunTerritoryRulesRequestRunRulesOneOf1.GetFieldDeserializers();
+            }
+            else if(TerritoriesRunTerritoryRulesRequestRunRulesOneOf2 != null)
+            {
+                return TerritoriesRunTerritoryRulesRequestRunRulesOneOf2.GetFieldDeserializers();
+            }
+            else if(TerritoriesRunTerritoryRulesRequestRunRulesOneOf3 != null)
+            {
+                return TerritoriesRunTerritoryRulesRequestRunRulesOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -91,13 +88,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesBasedOn>("based_on", BasedOn);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCriteria>("criteria", Criteria);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesCustomView>("custom_view", CustomView);
-            writer.WriteBoolValue("include_child", IncludeChild);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesModule>("module", Module);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesItem>("territories", Territories);
-            writer.WriteAdditionalData(AdditionalData);
+            if(TerritoriesRunTerritoryRulesRequestRunRulesOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1>(null, TerritoriesRunTerritoryRulesRequestRunRulesOneOf1);
+            }
+            else if(TerritoriesRunTerritoryRulesRequestRunRulesOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2>(null, TerritoriesRunTerritoryRulesRequestRunRulesOneOf2);
+            }
+            else if(TerritoriesRunTerritoryRulesRequestRunRulesOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf3>(null, TerritoriesRunTerritoryRulesRequestRunRulesOneOf3);
+            }
         }
     }
 }

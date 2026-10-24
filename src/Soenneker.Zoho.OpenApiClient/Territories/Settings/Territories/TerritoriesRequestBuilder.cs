@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories
             get => new global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.territories.settings.territories.item collection</summary>
-        /// <param name="position">The unique ID of the territory to retrieve.</param>
+        /// <param name="position">Represents the ID path parameter, which specifies the unique identifier of the territory.</param>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder"/></returns>
         public global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Item.TerritoriesItemRequestBuilder this[string position]
         {

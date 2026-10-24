@@ -78,7 +78,6 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_enrichment.Settings.Zia.Data_enrichme
         /// <param name="body">Request body schema for creating Zia Enrichment configurations.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentCreateZiaEnrichmentConfigurations400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentCreateZiaEnrichmentConfigurations403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,7 +92,6 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_enrichment.Settings.Zia.Data_enrichme
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentCreateZiaEnrichmentConfigurations400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentCreateZiaEnrichmentConfigurations403Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentCreateZiaEnrichmentConfigurations201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentCreateZiaEnrichmentConfigurations201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

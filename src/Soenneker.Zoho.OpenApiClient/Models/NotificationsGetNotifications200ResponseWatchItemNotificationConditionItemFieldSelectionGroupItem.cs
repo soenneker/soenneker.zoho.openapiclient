@@ -26,10 +26,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents an optional nested sub-group of field conditions within the parent group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupItem>? Group { get; set; }
+        public UntypedNode? Group { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupItem> Group { get; set; }
+        public UntypedNode Group { get; set; }
 #endif
         /// <summary>Represents the logical operator applied to the conditions within this sub-group.Possible values:and - All conditions in the sub-group must be satisfied.or - Any condition in the sub-group must be satisfied.null - No grouping operator is applied.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator? GroupOperator { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemField>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemField.CreateFromDiscriminatorValue); } },
-                { "group", n => { Group = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupItem>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "group", n => { Group = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "group_operator", n => { GroupOperator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator>(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemField>("field", Field);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupItem>("group", Group);
+            writer.WriteObjectValue<UntypedNode>("group", Group);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator>("group_operator", GroupOperator);
             writer.WriteAdditionalData(AdditionalData);
         }

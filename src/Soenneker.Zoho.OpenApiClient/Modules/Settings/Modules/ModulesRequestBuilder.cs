@@ -52,7 +52,6 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.ModulesRequestBuilder.ModulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,11 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules400Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create a custom module in your Zoho CRM organization. Only one module can be created per request. The required permission depends on the access type: **Crm_Implied_Customize_Zoho_CRM** for org-based modules and **Crm_Implied_Create_Team_Module** for team-based modules. Submitting the same api_name multiple times will result in validation errors. The optional access_type controls module access model (org_based/team_based).
@@ -76,7 +71,6 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules
         /// <param name="body">Represents the request body structure for creating a custom module, containing the module definition in the **modules** array.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModules400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModules401Response">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModules403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +86,6 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModules400Response.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModules401Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModules403Response.CreateFromDiscriminatorValue },
             };

@@ -11,14 +11,39 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Related module context when the field update is configured on a related module&apos;s records (e.g., updating a field on Contacts related to Accounts). Pass null or omit when not applicable.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FieldUpdateConfigurationForCreateRelatedModule : global::Soenneker.Zoho.OpenApiClient.Models.RelatedModuleDetails, IParsable
+    public partial class FieldUpdateConfigurationForCreateRelatedModule : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>CRM related-module API name used in automation configuration (e.g., Notes).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApiName { get; set; }
+#nullable restore
+#else
+        public string ApiName { get; set; }
+#endif
+        /// <summary>Unique identifier of the related CRM module corresponding to api_name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule"/> and sets the default values.
+        /// </summary>
+        public FieldUpdateConfigurationForCreateRelatedModule()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForCreateRelatedModule();
@@ -27,20 +52,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "api_name", n => { ApiName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteStringValue("api_name", ApiName);
+            writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

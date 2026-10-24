@@ -16,8 +16,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code indicating the type of server-side failure.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode? Code { get; set; }
+        /// <summary>Represents the error code identifying the type of failure.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInternalErrorResponseCode? Code { get; set; }
         /// <summary>Contains additional context about the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInternalErrorResponseCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInternalErrorResponseDetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInternalErrorResponseDetailsProperty.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
@@ -76,7 +76,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInternalErrorResponseCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInternalErrorResponseDetailsProperty>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);

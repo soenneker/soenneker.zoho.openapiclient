@@ -36,8 +36,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>Represents the status of the response.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalServerError"/> and sets the default values.
         /// </summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorDetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorDetailsProperty.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorDetailsProperty>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

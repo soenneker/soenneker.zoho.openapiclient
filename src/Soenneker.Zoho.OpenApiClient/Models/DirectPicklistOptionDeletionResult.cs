@@ -27,8 +27,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Picklist option deletion message</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PickListOptionDeletedSuccessfullyMessage? Message { get; set; }
-        /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
+        /// <summary>Picklist option deletion status</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResultStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResult"/> and sets the default values.
         /// </summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResultDetails>(global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResultDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PickListOptionDeletedSuccessfullyMessage>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResultStatus>(); } },
             };
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResultDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PickListOptionDeletedSuccessfullyMessage>("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResultStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

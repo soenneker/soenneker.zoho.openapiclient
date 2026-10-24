@@ -65,7 +65,6 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
         /// <param name="body">Specify the details for the mass change owner operation, including the target Custom View, the new owner, an optional territory, and an optional criteria filter.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +79,6 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner403Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

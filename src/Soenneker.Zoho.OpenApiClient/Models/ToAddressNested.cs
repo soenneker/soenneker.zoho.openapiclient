@@ -15,8 +15,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the type of the address.Possible values:**email** - Indicates that the value is an email address.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailType? Type { get; set; }
+        /// <summary>Represents the type of the address.Possible values:**email** - Indicates the value is an email address.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNestedType? Type { get; set; }
         /// <summary>Represents the recipient email address for the mail merge email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +50,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNestedType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.EmailType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNestedType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

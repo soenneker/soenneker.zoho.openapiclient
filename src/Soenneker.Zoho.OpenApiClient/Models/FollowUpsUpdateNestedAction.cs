@@ -8,38 +8,43 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a follow-up action in a Cadence, including its type, identifier, and configuration details.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FollowUpsUpdateNestedAction : IAdditionalDataHolder, IParsable
+    public partial class FollowUpsUpdateNestedAction : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Action configuration carrying module+layout+field_mappings for creating the Call record.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduleCallTypeFollowupActionRequestObjectDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications? FollowUpsUpdateNestedActionEmailNotifications { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduleCallTypeFollowupActionRequestObjectDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications FollowUpsUpdateNestedActionEmailNotifications { get; set; }
 #endif
-        /// <summary>Represents the unique identifier of the task action.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall? FollowUpsUpdateNestedActionScheduleCall { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall FollowUpsUpdateNestedActionScheduleCall { get; set; }
 #endif
-        /// <summary>Represents the type of the action.Possible values:**tasks** - Represents tasks. </summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TasksType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction"/> and sets the default values.
-        /// </summary>
-        public FollowUpsUpdateNestedAction()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks? FollowUpsUpdateNestedActionTasks { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks FollowUpsUpdateNestedActionTasks { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification? FollowUpsUpdateNestedActionWhatsappMessageNotification { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification FollowUpsUpdateNestedActionWhatsappMessageNotification { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +53,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction();
+            if("email_notifications".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FollowUpsUpdateNestedActionEmailNotifications = new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications();
+            }
+            else if("schedule_call".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FollowUpsUpdateNestedActionScheduleCall = new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall();
+            }
+            else if("tasks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FollowUpsUpdateNestedActionTasks = new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks();
+            }
+            else if("whatsapp_message_notification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FollowUpsUpdateNestedActionWhatsappMessageNotification = new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,12 +79,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(FollowUpsUpdateNestedActionEmailNotifications != null)
             {
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduleCallTypeFollowupActionRequestObjectDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ScheduleCallTypeFollowupActionRequestObjectDetails.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TasksType>(); } },
-            };
+                return FollowUpsUpdateNestedActionEmailNotifications.GetFieldDeserializers();
+            }
+            else if(FollowUpsUpdateNestedActionScheduleCall != null)
+            {
+                return FollowUpsUpdateNestedActionScheduleCall.GetFieldDeserializers();
+            }
+            else if(FollowUpsUpdateNestedActionTasks != null)
+            {
+                return FollowUpsUpdateNestedActionTasks.GetFieldDeserializers();
+            }
+            else if(FollowUpsUpdateNestedActionWhatsappMessageNotification != null)
+            {
+                return FollowUpsUpdateNestedActionWhatsappMessageNotification.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -70,10 +104,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduleCallTypeFollowupActionRequestObjectDetails>("details", Details);
-            writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TasksType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(FollowUpsUpdateNestedActionEmailNotifications != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications>(null, FollowUpsUpdateNestedActionEmailNotifications);
+            }
+            else if(FollowUpsUpdateNestedActionScheduleCall != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall>(null, FollowUpsUpdateNestedActionScheduleCall);
+            }
+            else if(FollowUpsUpdateNestedActionTasks != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks>(null, FollowUpsUpdateNestedActionTasks);
+            }
+            else if(FollowUpsUpdateNestedActionWhatsappMessageNotification != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification>(null, FollowUpsUpdateNestedActionWhatsappMessageNotification);
+            }
         }
     }
 }

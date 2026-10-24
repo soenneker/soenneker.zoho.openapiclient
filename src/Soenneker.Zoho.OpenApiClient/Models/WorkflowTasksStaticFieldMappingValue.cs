@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticArrayValueWrapper"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValueBranch1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticObjectValue"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticObjectValue"/>, <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowTasksStaticFieldMappingValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticArrayValueWrapper"/></summary>
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticArrayValueWrapper? WorkflowTasksStaticArrayValueWrapper { get; set; }
+        public List<string>? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticArrayValueWrapper WorkflowTasksStaticArrayValueWrapper { get; set; }
+        public List<string> String { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValueBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValueBranch1? WorkflowTasksStaticFieldMappingValueBranch1 { get; set; }
+        public string? WorkflowTasksStaticFieldMappingValueString { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValueBranch1 WorkflowTasksStaticFieldMappingValueBranch1 { get; set; }
+        public string WorkflowTasksStaticFieldMappingValueString { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticObjectValue"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,17 +47,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValue();
-            if("WorkflowTasksStaticArrayValueWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.WorkflowTasksStaticArrayValueWrapper = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticArrayValueWrapper();
-            }
-            else if("WorkflowTasksStaticFieldMappingValueBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.WorkflowTasksStaticFieldMappingValueBranch1 = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValueBranch1();
-            }
-            else if("WorkflowTasksStaticObjectValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("WorkflowTasksStaticObjectValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkflowTasksStaticObjectValue = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticObjectValue();
+            }
+            else if(parseNode.GetStringValue() is string workflowTasksStaticFieldMappingValueStringValue)
+            {
+                result.WorkflowTasksStaticFieldMappingValueString = workflowTasksStaticFieldMappingValueStringValue;
+            }
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -67,15 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WorkflowTasksStaticArrayValueWrapper != null)
-            {
-                return WorkflowTasksStaticArrayValueWrapper.GetFieldDeserializers();
-            }
-            else if(WorkflowTasksStaticFieldMappingValueBranch1 != null)
-            {
-                return WorkflowTasksStaticFieldMappingValueBranch1.GetFieldDeserializers();
-            }
-            else if(WorkflowTasksStaticObjectValue != null)
+            if(WorkflowTasksStaticObjectValue != null)
             {
                 return WorkflowTasksStaticObjectValue.GetFieldDeserializers();
             }
@@ -88,17 +80,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(WorkflowTasksStaticArrayValueWrapper != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticArrayValueWrapper>(null, WorkflowTasksStaticArrayValueWrapper);
-            }
-            else if(WorkflowTasksStaticFieldMappingValueBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMappingValueBranch1>(null, WorkflowTasksStaticFieldMappingValueBranch1);
-            }
-            else if(WorkflowTasksStaticObjectValue != null)
+            if(WorkflowTasksStaticObjectValue != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticObjectValue>(null, WorkflowTasksStaticObjectValue);
+            }
+            else if(WorkflowTasksStaticFieldMappingValueString != null)
+            {
+                writer.WriteStringValue(null, WorkflowTasksStaticFieldMappingValueString);
+            }
+            else if(String != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

@@ -17,7 +17,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the text comparison operator returned for the criterion.Possible values:like - Matches records where the field value contains the specified pattern.not_like - Matches records where the field value does not contain the specified pattern.starts_with - Matches records where the field value begins with the specified string.ends_with - Matches records where the field value ends with the specified string.contains - Matches records where the field value contains the specified string.not_contains - Matches records where the field value does not contain the specified string.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionResponseComparator? Comparator { get; set; }
-        /// <summary>Indicates whether the equal filter criterion is in a disrupted state, typically due to an invalid or unresolvable field or value reference.</summary>
+        /// <summary>Indicates whether the text filter criterion is in a disrupted state, typically due to an invalid or unresolvable field or value reference.</summary>
         public bool? Disrupted { get; set; }
         /// <summary>Represents the target field definition to which the text filter criterion was applied, conforming to the base field structure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

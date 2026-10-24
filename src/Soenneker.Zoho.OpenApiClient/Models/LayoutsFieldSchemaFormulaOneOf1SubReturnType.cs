@@ -8,19 +8,13 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutsFieldSchemaFormulaOneOf1SubReturnType : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper? LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1"/></summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1? LayoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsTypeNull"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,9 +33,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType();
-            if("LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1>() is global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1 layoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1Value)
             {
-                result.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper = new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper();
+                result.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1 = layoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1Value;
             }
             return result;
         }
@@ -51,11 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper != null)
-            {
-                return LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper.GetFieldDeserializers();
-            }
-            else if(LayoutsTypeNull != null)
+            if(LayoutsTypeNull != null)
             {
                 return LayoutsTypeNull.GetFieldDeserializers();
             }
@@ -68,9 +58,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper != null)
+            if(LayoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper>(null, LayoutsFieldSchemaFormulaOneOf1SubReturnTypeWrapper);
+                writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1>(null, LayoutsFieldSchemaFormulaOneOf1SubReturnTypeOneOf1);
             }
             else if(LayoutsTypeNull != null)
             {

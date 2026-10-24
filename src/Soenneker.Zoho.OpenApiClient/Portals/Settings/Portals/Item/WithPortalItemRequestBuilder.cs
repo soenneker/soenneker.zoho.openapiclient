@@ -65,7 +65,6 @@ namespace Soenneker.Zoho.OpenApiClient.Portals.Settings.Portals.Item
         /// <param name="body">Represents the request body schema for updating a portal, supporting name and SAML configuration updates.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortal400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortal403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +79,6 @@ namespace Soenneker.Zoho.OpenApiClient.Portals.Settings.Portals.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortal400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortal403Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortal200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortal200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

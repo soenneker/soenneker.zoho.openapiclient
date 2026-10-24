@@ -17,7 +17,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Error code indicating the type of error.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesNotEnabledCode? Code { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencyById403ResponseCode? Code { get; set; }
         /// <summary>Additional details about the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,8 +36,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>Response status indicator.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencyById403ResponseStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencyById403Response"/> and sets the default values.
         /// </summary>
@@ -63,10 +63,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesNotEnabledCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencyById403ResponseCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencyById403ResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencyById403ResponseDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencyById403ResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -76,10 +76,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesNotEnabledCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencyById403ResponseCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencyById403ResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencyById403ResponseStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

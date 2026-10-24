@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the URL query parameters appended to the webhook request URL. Applicable only when http_method is GET or DELETE. Returns null when http_method is POST or PUT.
+    /// URL parameters for GET/DELETE webhook HTTP methods. Null when http_method is POST or PUT.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationWebhooksResponseUrlParameters : IAdditionalDataHolder, IParsable

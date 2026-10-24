@@ -37,13 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.DefaultViewNested CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultViewNested();
-            if("DefaultViewLayoutNested".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("layout".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DefaultViewLayoutNested = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultViewLayoutNested();
             }
-            else if("DefaultViewWizardNested".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("wizard".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DefaultViewWizardNested = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultViewWizardNested();
             }

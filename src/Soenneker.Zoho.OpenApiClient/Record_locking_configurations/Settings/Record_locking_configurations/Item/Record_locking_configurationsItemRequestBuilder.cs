@@ -86,7 +86,6 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
         /// <param name="body">Request body for updating a record locking configuration.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrlRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Record_locking_configurations.Item.Record_locking_configurationsItemRequestBuilder.Record_locking_configurationsItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -98,11 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record_locking_configurations.Settings.Re
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl400Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfigurationPassingIdInUrl200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a specific record locking configuration using the configuration ID provided in the URL path.

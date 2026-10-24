@@ -273,13 +273,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public string State { get; set; }
 #endif
         /// <summary>Represents the current status of the user in the Zoho CRM organization.Possible values:active - The user is active and can access the CRM.inactive - The user is deactivated and cannot access the CRM.deleted - The user account has been deleted.disabled - The user account is disabled.closed - The user account is closed.disabled dormant - The user account is disabled and dormant.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus Status { get; set; }
-#endif
         /// <summary>Represents the reason for the user&apos;s current status. Returns null if no reason is associated with the current status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS? StatusReasonS { get; set; }
         /// <summary>Represents the details of the user who last updated the status of this user. Returns null if no status update has been recorded.</summary>
@@ -421,7 +415,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "sort_order_preference__s", n => { SortOrderPreferenceS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsSortOrderPreferenceS>(); } },
                 { "state", n => { State = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus>(global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus>(); } },
                 { "status_reason__s", n => { StatusReasonS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS>(); } },
                 { "Status_Updated_By__s", n => { StatusUpdatedByS = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusUpdatedByS>(global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusUpdatedByS.CreateFromDiscriminatorValue); } },
                 { "Status_Updated_Time__s", n => { StatusUpdatedTimeS = n.GetDateTimeOffsetValue(); } },
@@ -485,7 +479,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("signature", Signature);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsSortOrderPreferenceS>("sort_order_preference__s", SortOrderPreferenceS);
             writer.WriteStringValue("state", State);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS>("status_reason__s", StatusReasonS);
             writer.WriteStringValue("street", Street);
             writer.WriteBoolValue("telephony_enabled", TelephonyEnabled);

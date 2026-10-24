@@ -16,8 +16,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code returned for the permission-denied failure.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode? Code { get; set; }
+        /// <summary>Represents the error code indicating a permission failure.Possible values:**NO_PERMISSION** - The user does not have permission to perform this action.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403ResponseCode? Code { get; set; }
         /// <summary>Represents additional details about the permission error. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,8 +36,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>Represents the status category of the response.Possible values:**error** - The request was denied due to insufficient permissions.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403ResponseStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403Response"/> and sets the default values.
         /// </summary>
@@ -63,10 +63,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403ResponseCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403ResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403ResponseDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403ResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -76,10 +76,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403ResponseCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403ResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus403ResponseStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

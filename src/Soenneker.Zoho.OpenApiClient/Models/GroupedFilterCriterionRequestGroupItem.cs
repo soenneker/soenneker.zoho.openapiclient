@@ -37,12 +37,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequestGroupItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("comparator")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequestGroupItem();
-            if("GroupedFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GroupedFilterCriterionRequest = new global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionRequest();
-            }
             return result;
         }
         /// <summary>

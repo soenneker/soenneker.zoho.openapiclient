@@ -15,8 +15,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**SUCCESS** - Represents success.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode? Code { get; set; }
+        /// <summary>Result code for the per-item operation. Possible values: **SUCCESS**.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinSuccessResponseCode? Code { get; set; }
         /// <summary>Represents additional details about the per-item operation, including the affected record ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +60,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinSuccessResponseCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinSuccessResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinSuccessResponseDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
@@ -73,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinSuccessResponseCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinSuccessResponseDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);

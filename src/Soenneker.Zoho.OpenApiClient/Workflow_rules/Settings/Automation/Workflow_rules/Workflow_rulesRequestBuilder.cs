@@ -26,14 +26,14 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         }
         /// <summary>Gets an item from the Soenneker.Zoho.OpenApiClient.workflow_rules.settings.automation.workflow_rules.item collection</summary>
         /// <param name="position">Represents the unique 19-digit numeric ID of the workflow rule. Obtain valid IDs from the List Workflow Rules endpoint.</param>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Item.ItemRequestBuilder"/></returns>
-        public global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Item.ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Item.Workflow_rulesItemRequestBuilder"/></returns>
+        public global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Item.Workflow_rulesItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("%2Did", position);
-                return new global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Item.ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Item.Workflow_rulesItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

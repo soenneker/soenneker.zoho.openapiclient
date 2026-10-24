@@ -80,7 +80,6 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
         /// <param name="body">Represents the request body for creating a field dependency between picklist fields in a layout.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotFoundErrorResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyInternalServerErrorResponse">When receiving a 500 status code</exception>
@@ -97,7 +96,6 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependency400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.NotFoundErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyInternalServerErrorResponse.CreateFromDiscriminatorValue },

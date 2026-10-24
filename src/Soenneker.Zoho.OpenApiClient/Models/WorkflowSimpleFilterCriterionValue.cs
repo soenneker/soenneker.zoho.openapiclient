@@ -8,11 +8,23 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesSimpleFilterCriterionValueObjectRequest"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch3"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesSimpleFilterCriterionValueObjectRequest"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowSimpleFilterCriterionValue : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesSimpleFilterCriterionValueObjectRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,30 +32,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesSimpleFilterCriterionValueObjectRequest WorkflowRulesSimpleFilterCriterionValueObjectRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch1? WorkflowSimpleFilterCriterionValueBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch1 WorkflowSimpleFilterCriterionValueBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch2? WorkflowSimpleFilterCriterionValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch2 WorkflowSimpleFilterCriterionValueBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch3? WorkflowSimpleFilterCriterionValueBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch3 WorkflowSimpleFilterCriterionValueBranch3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,17 +47,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.WorkflowRulesSimpleFilterCriterionValueObjectRequest = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesSimpleFilterCriterionValueObjectRequest();
             }
-            else if("WorkflowSimpleFilterCriterionValueBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetBoolValue() is bool booleanValue)
             {
-                result.WorkflowSimpleFilterCriterionValueBranch1 = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch1();
+                result.Boolean = booleanValue;
             }
-            else if("WorkflowSimpleFilterCriterionValueBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetDoubleValue() is double doubleValue)
             {
-                result.WorkflowSimpleFilterCriterionValueBranch2 = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch2();
+                result.Double = doubleValue;
             }
-            else if("WorkflowSimpleFilterCriterionValueBranch3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetStringValue() is string stringValue)
             {
-                result.WorkflowSimpleFilterCriterionValueBranch3 = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch3();
+                result.String = stringValue;
             }
             return result;
         }
@@ -82,18 +70,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(WorkflowRulesSimpleFilterCriterionValueObjectRequest != null)
             {
                 return WorkflowRulesSimpleFilterCriterionValueObjectRequest.GetFieldDeserializers();
-            }
-            else if(WorkflowSimpleFilterCriterionValueBranch1 != null)
-            {
-                return WorkflowSimpleFilterCriterionValueBranch1.GetFieldDeserializers();
-            }
-            else if(WorkflowSimpleFilterCriterionValueBranch2 != null)
-            {
-                return WorkflowSimpleFilterCriterionValueBranch2.GetFieldDeserializers();
-            }
-            else if(WorkflowSimpleFilterCriterionValueBranch3 != null)
-            {
-                return WorkflowSimpleFilterCriterionValueBranch3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -108,17 +84,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesSimpleFilterCriterionValueObjectRequest>(null, WorkflowRulesSimpleFilterCriterionValueObjectRequest);
             }
-            else if(WorkflowSimpleFilterCriterionValueBranch1 != null)
+            else if(Boolean != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch1>(null, WorkflowSimpleFilterCriterionValueBranch1);
+                writer.WriteBoolValue(null, Boolean);
             }
-            else if(WorkflowSimpleFilterCriterionValueBranch2 != null)
+            else if(Double != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch2>(null, WorkflowSimpleFilterCriterionValueBranch2);
+                writer.WriteDoubleValue(null, Double);
             }
-            else if(WorkflowSimpleFilterCriterionValueBranch3 != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowSimpleFilterCriterionValueBranch3>(null, WorkflowSimpleFilterCriterionValueBranch3);
+                writer.WriteStringValue(null, String);
             }
         }
     }

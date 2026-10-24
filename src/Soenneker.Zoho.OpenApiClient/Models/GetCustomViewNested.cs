@@ -18,26 +18,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of custom view IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvidsItem>? Cvids { get; set; }
+        public UntypedNode? Cvids { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvidsItem> Cvids { get; set; }
+        public UntypedNode Cvids { get; set; }
 #endif
         /// <summary>List of modules with custom views</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvmodulesItem>? Cvmodules { get; set; }
+        public UntypedNode? Cvmodules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvmodulesItem> Cvmodules { get; set; }
+        public UntypedNode Cvmodules { get; set; }
 #endif
         /// <summary>List of custom view names</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvnamesItem>? Cvnames { get; set; }
+        public UntypedNode? Cvnames { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvnamesItem> Cvnames { get; set; }
+        public UntypedNode Cvnames { get; set; }
 #endif
         /// <summary>Indicates whether inaccessible custom views exist</summary>
         public bool? InaccessibleCustomViewPresent { get; set; }
@@ -66,9 +66,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cvids", n => { Cvids = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvidsItem>(global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvidsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "cvmodules", n => { Cvmodules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvmodulesItem>(global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvmodulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "cvnames", n => { Cvnames = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvnamesItem>(global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvnamesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cvids", n => { Cvids = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "cvmodules", n => { Cvmodules = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "cvnames", n => { Cvnames = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "inaccessible_custom_view_present", n => { InaccessibleCustomViewPresent = n.GetBoolValue(); } },
             };
         }
@@ -79,9 +79,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvidsItem>("cvids", Cvids);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvmodulesItem>("cvmodules", Cvmodules);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNestedCvnamesItem>("cvnames", Cvnames);
+            writer.WriteObjectValue<UntypedNode>("cvids", Cvids);
+            writer.WriteObjectValue<UntypedNode>("cvmodules", Cvmodules);
+            writer.WriteObjectValue<UntypedNode>("cvnames", Cvnames);
             writer.WriteBoolValue("inaccessible_custom_view_present", InaccessibleCustomViewPresent);
             writer.WriteAdditionalData(AdditionalData);
         }

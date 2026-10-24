@@ -39,7 +39,6 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item.WithModuleIdentifierItemRequestBuilder.WithModuleIdentifierItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,11 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName400Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the singular label, plural label, and profile assignments for the module identified by {moduleIdentifier}. Immutable fields such as access_type and api_name cannot be changed; attempting to include them returns a NOT_ALLOWED error
@@ -63,7 +58,6 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item
         /// <param name="body">Request body schema for updating a module. Contains a single-element modules array with the module ID, updated labels, and profile assignments</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiNameRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,11 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName400Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves complete metadata for a specific CRM module identified by its API name, including fields, layouts, profiles, related lists, and feature capabilities. Returns 204 when the module is not available through this endpoint, or 400 when the identifier is invalid or the module is unsupported

@@ -36,8 +36,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>Response status indicator.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies403ResponseStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies403Response"/> and sets the default values.
         /// </summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesNotEnabledCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies403ResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies403ResponseDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies403ResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesNotEnabledCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies403ResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies403ResponseStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

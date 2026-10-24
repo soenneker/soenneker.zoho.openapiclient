@@ -16,15 +16,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code indicating the type of server-side failure.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode? Code { get; set; }
+        /// <summary>Error code for the internal server error. Possible values: `INTERNAL_ERROR`.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorCode? Code { get; set; }
         /// <summary>Empty details object included with the internal error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponseDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorDetailsProperty? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponseDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorDetailsProperty Details { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
@@ -63,8 +63,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponseDetails.CreateFromDiscriminatorValue); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorCode>(); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorDetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorDetailsProperty.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
@@ -76,8 +76,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponseDetails>("details", Details);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorCode>("code", Code);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorDetailsProperty>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

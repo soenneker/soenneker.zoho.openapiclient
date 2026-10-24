@@ -37,13 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ResultListRecycleBinItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.ResultListRecycleBinItem();
-            if("RecycleBinSuccessResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SUCCESS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RecycleBinSuccessResponse = new global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinSuccessResponse();
             }
-            else if("ScheduledResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SCHEDULED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ScheduledResponse = new global::Soenneker.Zoho.OpenApiClient.Models.ScheduledResponse();
             }

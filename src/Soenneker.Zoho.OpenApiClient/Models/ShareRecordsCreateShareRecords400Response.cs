@@ -26,8 +26,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public List<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateBadResponseWithShareArrayShareItem> Share { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords400Response"/> and sets the default values.
         /// </summary>
@@ -54,7 +52,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "share", n => { Share = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateBadResponseWithShareArrayShareItem>(global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateBadResponseWithShareArrayShareItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -65,7 +62,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateBadResponseWithShareArrayShareItem>("share", Share);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

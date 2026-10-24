@@ -8,19 +8,11 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1"/>, <see cref="int"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCount : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2? FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2 FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +21,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1 FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="int"/></summary>
+        public int? Integer { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,13 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCount();
-            if("FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2 = new global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2();
-            }
-            else if("FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1();
+            }
+            else if(parseNode.GetIntValue() is int integerValue)
+            {
+                result.Integer = integerValue;
             }
             return result;
         }
@@ -55,11 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2 != null)
-            {
-                return FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2.GetFieldDeserializers();
-            }
-            else if(FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1 != null)
+            if(FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1 != null)
             {
                 return FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1.GetFieldDeserializers();
             }
@@ -72,13 +62,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2>(null, FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountBranch2);
-            }
-            else if(FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1 != null)
+            if(FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1>(null, FeaturesGetFeatureDetails200ResponseFeaturesItemDetailsUsedCountOneOf1);
+            }
+            else if(Integer != null)
+            {
+                writer.WriteIntValue(null, Integer);
             }
         }
     }

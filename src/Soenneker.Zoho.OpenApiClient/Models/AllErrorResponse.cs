@@ -36,8 +36,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>Represents the status of the API response.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse"/> and sets the default values.
         /// </summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponseStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

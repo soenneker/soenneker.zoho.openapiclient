@@ -58,8 +58,6 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles400Response">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,8 +72,6 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles400Response.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse.CreateFromDiscriminatorValue },
             };

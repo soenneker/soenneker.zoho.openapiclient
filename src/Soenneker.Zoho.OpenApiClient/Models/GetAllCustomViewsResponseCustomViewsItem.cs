@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Custom view item
+    /// Represents the details of a Custom View returned in the response, including its filter criteria, sort configuration, field list, and access control settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetAllCustomViewsResponseCustomViewsItem : IAdditionalDataHolder, IParsable

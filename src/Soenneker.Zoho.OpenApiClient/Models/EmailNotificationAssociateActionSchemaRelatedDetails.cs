@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the optional related configuration details for email notification actions, including best-time delivery settings.
+    /// Controls whether the email is sent at the best time for the recipient (powered by Data Intelligence). Null when best_time is not enabled.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailNotificationAssociateActionSchemaRelatedDetails : IAdditionalDataHolder, IParsable

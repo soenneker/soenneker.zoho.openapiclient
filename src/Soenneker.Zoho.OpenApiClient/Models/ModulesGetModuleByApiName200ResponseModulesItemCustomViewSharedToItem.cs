@@ -8,40 +8,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a sharing entry defining an entity that this Custom View is shared with.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItem : IAdditionalDataHolder, IParsable
+    public partial class ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Unique identifier of the entity.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1? ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1 ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1 { get; set; }
 #endif
-        /// <summary>Name of the entity (user, role, group, or territory).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2? ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2 ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2 { get; set; }
 #endif
-        /// <summary>Indicates if subordinates of the specified entity are included in sharing.</summary>
-        public bool? Subordinates { get; set; }
-        /// <summary>Type of entity the view is shared with (territories, roles, groups, users).</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItem"/> and sets the default values.
-        /// </summary>
-        public ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +37,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItem();
+            if("ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1();
+            }
+            else if("ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,13 +55,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1 != null)
             {
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "subordinates", n => { Subordinates = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemType>(); } },
-            };
+                return ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1.GetFieldDeserializers();
+            }
+            else if(ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2 != null)
+            {
+                return ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -73,11 +72,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteBoolValue("subordinates", Subordinates);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1>(null, ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf1);
+            }
+            else if(ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2>(null, ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItemOneOf2);
+            }
         }
     }
 }

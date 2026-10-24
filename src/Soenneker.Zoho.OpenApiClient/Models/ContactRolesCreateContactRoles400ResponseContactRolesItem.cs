@@ -45,17 +45,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRoles400ResponseContactRolesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRoles400ResponseContactRolesItem();
-            if("DuplicateDataErrorSchemaPost".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("DUPLICATE_DATA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DuplicateDataErrorSchemaPost = new global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataErrorSchemaPost();
             }
-            else if("InvalidDataErrorSchemaPost".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("INVALID_DATA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.InvalidDataErrorSchemaPost = new global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataErrorSchemaPost();
             }
-            else if("MandatoryFieldNotFoundErrorSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("MANDATORY_NOT_FOUND".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MandatoryFieldNotFoundErrorSchema = new global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldNotFoundErrorSchema();
             }

@@ -16,8 +16,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code indicating the type of server-side failure.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode? Code { get; set; }
+        /// <summary>Represents the error code for the internal server error. Possible values: **INTERNAL_ERROR** - Indicates an unexpected error occurred while processing the request. Always returned in the response.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate500ResponseCode? Code { get; set; }
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
         /// <summary>Represents the error message describing the internal server error. Always returned in the response.</summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate500ResponseCode>(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
@@ -67,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InternalErrorCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate500ResponseCode>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

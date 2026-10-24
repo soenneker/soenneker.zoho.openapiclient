@@ -33,8 +33,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public UntypedNode Resource { get; set; }
 #endif
-        /// <summary>Defines which set of users should be considered for assignment.Possible values:**criteria** - Represents criteria.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaType? Type { get; set; }
+        /// <summary>Assignment method indicating criteria-based evaluation.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntry"/> and sets the default values.
         /// </summary>
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "allow_agent_user", n => { AllowAgentUser = n.GetBoolValue(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetails.CreateFromDiscriminatorValue); } },
                 { "resource", n => { Resource = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryType>(); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("allow_agent_user", AllowAgentUser);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetails>("details", Details);
             writer.WriteObjectValue<UntypedNode>("resource", Resource);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

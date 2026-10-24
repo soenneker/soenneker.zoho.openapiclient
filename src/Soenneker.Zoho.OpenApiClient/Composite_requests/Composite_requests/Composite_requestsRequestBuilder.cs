@@ -40,7 +40,6 @@ namespace Soenneker.Zoho.OpenApiClient.Composite_requests.Composite_requests
         /// <param name="body">Specify the composite request configuration, including execution options and the array of sub-requests to process.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,11 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Composite_requests.Composite_requests
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest400Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To bundle multiple Zoho CRM API requests into a single HTTP call, reducing network round-trips and enabling request chaining. You can reference the output of one sub-request in another using the format **@{sub_request_id:JSONPath}** to build dependent workflows. When **rollback_on_fail** is enabled, all successful sub-requests are rolled back if any subsequent sub-request fails.

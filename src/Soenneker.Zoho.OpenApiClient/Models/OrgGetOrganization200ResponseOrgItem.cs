@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the organization details for the Zoho CRM account, including company information, operational settings, and license details.
+    /// Represents the organization details for the Zoho CRM account, including company information, currency settings, license details, and hierarchy preferences.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrgGetOrganization200ResponseOrgItem : IAdditionalDataHolder, IParsable

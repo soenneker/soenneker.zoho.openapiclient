@@ -8,19 +8,11 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetails : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1? RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1 RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +37,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf3 RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf3 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4? RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4 RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +67,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf3 = new global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf3();
             }
+            else if("RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4 = new global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4();
+            }
             return result;
         }
         /// <summary>
@@ -75,11 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1 != null)
-            {
-                return RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1.GetFieldDeserializers();
-            }
-            else if(RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf1 != null)
+            if(RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf1 != null)
             {
                 return RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf1.GetFieldDeserializers();
             }
@@ -91,6 +91,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 return RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf3.GetFieldDeserializers();
             }
+            else if(RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4 != null)
+            {
+                return RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4.GetFieldDeserializers();
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -100,11 +104,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1>(null, RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsMember1);
-            }
-            else if(RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf1 != null)
+            if(RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf1>(null, RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf1);
             }
@@ -115,6 +115,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             else if(RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf3 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf3>(null, RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf3);
+            }
+            else if(RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4>(null, RecordLockingConfigurationsGetRecordLockingConfiguration400ResponseDetailsOneOf4);
             }
         }
     }

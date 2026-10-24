@@ -15,8 +15,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the processing status code. For 202 responses, this is always **SCHEDULED**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode? Code { get; set; }
+        /// <summary>Indicates the scheduling outcome of the enrichment request.Possible values:**SCHEDULED** - The enrichment job has been queued for asynchronous execution.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202ResponseZiaOrgEnrichmentItemCode? Code { get; set; }
         /// <summary>Contains identifying information about the scheduled enrichment job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +60,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202ResponseZiaOrgEnrichmentItemCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202ResponseZiaOrgEnrichmentItemDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202ResponseZiaOrgEnrichmentItemDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
@@ -73,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202ResponseZiaOrgEnrichmentItemCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202ResponseZiaOrgEnrichmentItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);

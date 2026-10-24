@@ -8,30 +8,35 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Specify the details of the entity (user, role, or group) with which to share the record.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ShareRecordsUpdateShareRecordsRequestShareItemSharedWith : IAdditionalDataHolder, IParsable
+    public partial class ShareRecordsUpdateShareRecordsRequestShareItemSharedWith : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the ID of the role with which the record is being shared.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1? ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1 ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1 { get; set; }
 #endif
-        /// <summary>Specify the type of entity with which to share the record.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWith"/> and sets the default values.
-        /// </summary>
-        public ShareRecordsUpdateShareRecordsRequestShareItemSharedWith()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2? ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2 ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3? ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3 ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,7 +45,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWith CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWith();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWith();
+            if("roles".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1();
+            }
+            else if("groups".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2();
+            }
+            else if("users".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3 = new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,11 +67,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1 != null)
             {
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithType>(); } },
-            };
+                return ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1.GetFieldDeserializers();
+            }
+            else if(ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2 != null)
+            {
+                return ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2.GetFieldDeserializers();
+            }
+            else if(ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3 != null)
+            {
+                return ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -61,9 +88,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1>(null, ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf1);
+            }
+            else if(ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2>(null, ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf2);
+            }
+            else if(ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3>(null, ShareRecordsUpdateShareRecordsRequestShareItemSharedWithOneOf3);
+            }
         }
     }
 }

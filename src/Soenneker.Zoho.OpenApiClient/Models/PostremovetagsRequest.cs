@@ -16,13 +16,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>JSON array string of record IDs to remove tags from. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve record IDs.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Ids { get; set; }
-#nullable restore
-#else
-        public string Ids { get; set; }
-#endif
+        public global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002496003QuoteRightBracketIds? Ids { get; set; }
         /// <summary>Array of tags to remove from the records (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +50,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ids", n => { Ids = n.GetStringValue(); } },
+                { "ids", n => { Ids = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002496003QuoteRightBracketIds>(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -67,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("ids", Ids);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002496003QuoteRightBracketIds>("ids", Ids);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }

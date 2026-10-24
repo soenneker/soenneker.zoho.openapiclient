@@ -8,33 +8,13 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a duplicate data error for a contact role field.
+    /// Contains the list of duplicate data errors for contact role operations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ArrayOfDuplicateSchemaItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**DUPLICATE_DATA** - Represents duplicate data.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataCode? Code { get; set; }
-        /// <summary>Represents the error details for the duplicate data.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItemDetails? Details { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItemDetails Details { get; set; }
-#endif
-        /// <summary>Represents the error message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Message { get; set; }
-#nullable restore
-#else
-        public string Message { get; set; }
-#endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem"/> and sets the default values.
         /// </summary>
@@ -60,10 +40,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataCode>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItemDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItemDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -73,10 +49,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataCode>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItemDetails>("details", Details);
-            writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

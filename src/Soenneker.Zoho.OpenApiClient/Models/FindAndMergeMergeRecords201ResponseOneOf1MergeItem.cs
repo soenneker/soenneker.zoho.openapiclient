@@ -8,40 +8,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Each object represents a merge result item indicating whether the operation completed synchronously or was scheduled for processing.   
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FindAndMergeMergeRecords201ResponseOneOf1MergeItem : IAdditionalDataHolder, IParsable
+    public partial class FindAndMergeMergeRecords201ResponseOneOf1MergeItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the success code for a completed merge. Possible values: **SUCCESS** - The records were merged successfully.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemCode? Code { get; set; }
-        /// <summary>Contains the details of the completed merge, including the ID of the master record retained after the merge.  </summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1? FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1 FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1 { get; set; }
 #endif
-        /// <summary>Represents the success message for the completed merge operation. </summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2? FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Message { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2 FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2 { get; set; }
 #endif
-        /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem"/> and sets the default values.
-        /// </summary>
-        public FindAndMergeMergeRecords201ResponseOneOf1MergeItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +37,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem();
+            var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem();
+            if("SUCCESS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1();
+            }
+            else if("SCHEDULED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,13 +55,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1 != null)
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemCode>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemDetails>(global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
-            };
+                return FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1.GetFieldDeserializers();
+            }
+            else if(FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2 != null)
+            {
+                return FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -73,11 +72,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemCode>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemDetails>("details", Details);
-            writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
-            writer.WriteAdditionalData(AdditionalData);
+            if(FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1>(null, FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1);
+            }
+            else if(FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2>(null, FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2);
+            }
         }
     }
 }

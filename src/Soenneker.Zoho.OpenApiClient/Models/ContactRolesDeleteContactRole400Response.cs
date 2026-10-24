@@ -25,15 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public List<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItem> ContactRoles { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>The primary error message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageEscaped { get; set; }
-#nullable restore
-#else
-        public string MessageEscaped { get; set; }
-#endif
+        public override string Message { get => base.Message; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400Response"/> and sets the default values.
         /// </summary>
@@ -60,7 +52,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "contact_roles", n => { ContactRoles = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItem>(global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +62,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItem>("contact_roles", ContactRoles);
-            writer.WriteStringValue("message", MessageEscaped);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

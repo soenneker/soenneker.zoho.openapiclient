@@ -42,10 +42,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemLockingRulesItemCriteriaValue? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemLockingRulesItemCriteriaValue Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemLockingRulesItemCriteria"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "comparator", n => { Comparator = n.GetStringValue(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemLockingRulesItemCriteriaField>(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemLockingRulesItemCriteriaField.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemLockingRulesItemCriteriaValue>(global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemLockingRulesItemCriteriaValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("comparator", Comparator);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemLockingRulesItemCriteriaField>("field", Field);
             writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemLockingRulesItemCriteriaValue>("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

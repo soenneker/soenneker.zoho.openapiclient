@@ -26,10 +26,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>_Details Schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectResourceDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObjectDetails? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectResourceDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObjectDetails Details { get; set; }
 #endif
         /// <summary>ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "_details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectResourceDetails>(global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectResourceDetails.CreateFromDiscriminatorValue); } },
+                { "_details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObjectDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObjectDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "zuid", n => { Zuid = n.GetStringValue(); } },
@@ -95,7 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RoleGroupProfileTypeAssignToResponseObjectResourceDetails>("_details", Details);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ResourceResponseObjectDetails>("_details", Details);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("zuid", Zuid);

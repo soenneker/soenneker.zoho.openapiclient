@@ -42,8 +42,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>Status of the error response.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponseStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponse"/> and sets the default values.
         /// </summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponseDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponseStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

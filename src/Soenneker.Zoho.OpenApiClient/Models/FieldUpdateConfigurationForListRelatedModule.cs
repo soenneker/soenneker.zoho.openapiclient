@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Related module metadata for automation contexts that operate on related records. Null when no related module context applies.
+    /// Related module context when the automation is configured on related records; null when not applicable.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldUpdateConfigurationForListRelatedModule : IAdditionalDataHolder, IParsable

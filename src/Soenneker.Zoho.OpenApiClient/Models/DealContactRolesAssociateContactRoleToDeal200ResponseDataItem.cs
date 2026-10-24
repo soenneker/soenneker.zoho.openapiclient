@@ -15,8 +15,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**SUCCESS** - Represents success.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode? Code { get; set; }
+        /// <summary>Operation status code</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200ResponseDataItemCode? Code { get; set; }
         /// <summary>Details about the processed relation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,8 +27,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>Result message</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RelationUpdatedMessage? Message { get; set; }
-        /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
+        /// <summary>Operation status</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200ResponseDataItemStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200ResponseDataItem"/> and sets the default values.
         /// </summary>
@@ -54,10 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200ResponseDataItemCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200ResponseDataItemDetails>(global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200ResponseDataItemDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RelationUpdatedMessage>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200ResponseDataItemStatus>(); } },
             };
         }
         /// <summary>
@@ -67,10 +67,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200ResponseDataItemCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200ResponseDataItemDetails>("details", Details);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RelationUpdatedMessage>("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200ResponseDataItemStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

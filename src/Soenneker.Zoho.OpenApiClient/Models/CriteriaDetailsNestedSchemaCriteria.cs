@@ -45,7 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaCriteria CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("comparator")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaCriteria();
             if("WorkflowRulesGroupedFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {

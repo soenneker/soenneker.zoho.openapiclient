@@ -36,8 +36,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>Represents the status category of the response.Possible values:**error** - The request encountered a validation error.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400ResponseStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400Response"/> and sets the default values.
         /// </summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400ResponseCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400ResponseDetails>(global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400ResponseDetails.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400ResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400ResponseCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400ResponseDetails>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus400ResponseStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

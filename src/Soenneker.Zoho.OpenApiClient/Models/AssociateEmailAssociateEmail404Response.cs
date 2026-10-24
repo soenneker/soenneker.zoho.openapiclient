@@ -8,15 +8,16 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Error response returned when the module name provided in the request path does not exist or is invalid.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AssociateEmailAssociateEmail404Response : ApiException, IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code for this response.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleCode? Code { get; set; }
+        /// <summary>Error code indicating the type of failure. Always INVALID_MODULE for this error.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorCode? Code { get; set; }
         /// <summary>Details providing additional context about the invalid module error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,10 +28,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>Represents the error message describing the invalid module name.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TheModuleNameGivenSeemsToBeInvalidMessage? MessageEscaped { get; set; }
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>Human-readable message describing the invalid module error.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorMessage? MessageEscaped { get; set; }
+        /// <summary>Status of the operation. Always &quot;error&quot; for this failure.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssociateEmailAssociateEmail404Response"/> and sets the default values.
         /// </summary>
@@ -56,10 +57,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorDetails>(global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TheModuleNameGivenSeemsToBeInvalidMessage>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
+                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorMessage>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorStatus>(); } },
             };
         }
         /// <summary>
@@ -69,10 +70,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TheModuleNameGivenSeemsToBeInvalidMessage>("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorMessage>("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

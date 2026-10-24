@@ -39,8 +39,6 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_inv
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser400Response">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response?> PostAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_invite.Portal_inviteRequestBuilder.Portal_inviteRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,12 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_inv
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser400Response.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser403Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To send a portal invitation to a single CRM record in your Zoho CRM organization, inviting or re-inviting the record as a portal user for the specified user type.

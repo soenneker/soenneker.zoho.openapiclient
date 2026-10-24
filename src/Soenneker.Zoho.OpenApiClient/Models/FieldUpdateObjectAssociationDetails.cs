@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the association details for a Field-Of-Lookup relationship, providing the lookup field and the related field that together define the association being updated.
+    /// Association details for Field-Of-Lookup (FOL) mapping. Links this field to a related field in another module through a lookup field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldUpdateObjectAssociationDetails : IAdditionalDataHolder, IParsable

@@ -32,7 +32,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingField Field { get; set; }
 #endif
         /// <summary>Identifies the mapping variant as an execution-time offset. The value is always &quot;execution_time&quot; for this schema and acts as the polymorphic discriminator across the AutomationFieldMappings union.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeType? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingType? Type { get; set; }
         /// <summary>Execution-time object specifying how to compute the date/datetime offset from a reference field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +68,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingField.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingValue>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_value", DisplayValue);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingField>("field", Field);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMappingValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workflow_rules.Item.Actions.Usage
 {
     /// <summary>
-    /// Builds and executes requests for operations under \workflow_rules\settings\automation\workflow_rules\{-id}\actions\usage
+    /// Builds and executes requests for operations under \workflow_rules\settings\automation\workflow_rules\{id}\actions\usage
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_rules/settings/automation/workflow_rules/{%2Did}/actions/usage?executed_from={executed_from}&executed_till={executed_till}", pathParameters)
+        public UsageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_rules/settings/automation/workflow_rules/{id}/actions/usage?executed_from={executed_from}&executed_till={executed_till}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_rules.Settings.Automation.Workfl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_rules/settings/automation/workflow_rules/{%2Did}/actions/usage?executed_from={executed_from}&executed_till={executed_till}", rawUrl)
+        public UsageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/workflow_rules/settings/automation/workflow_rules/{id}/actions/usage?executed_from={executed_from}&executed_till={executed_till}", rawUrl)
         {
         }
         /// <summary>

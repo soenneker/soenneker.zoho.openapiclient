@@ -23,8 +23,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectCriteriaProperty Criteria { get; set; }
 #endif
-        /// <summary>Defines which set of users should be considered for assignment.Possible values:**criteria** - Represents criteria.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaType? Type { get; set; }
+        /// <summary>Defines which set of users should be considered for assignment.Possible values:**criteria** - Represents criteria. </summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObject"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectCriteriaProperty>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectCriteriaProperty.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectCriteriaProperty>("criteria", Criteria);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaTypeAssignToResponseObjectType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

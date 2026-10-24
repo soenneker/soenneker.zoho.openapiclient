@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Nested schema for modified_by
+    /// Scoring rule modified by
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScoringRuleGetModifiedBy : IAdditionalDataHolder, IParsable

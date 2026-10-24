@@ -39,8 +39,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Send None to skip this field mapping. Any other value, or omitting the property, creates the mapping.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.NoneSelected? Selected { get; set; }
+        /// <summary>Send None to delete the existing mapping for this current_field. Any other value, or omitting the property, adds or updates the mapping.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedFieldSelected? Selected { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField"/> and sets the default values.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "selected", n => { Selected = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoneSelected>(); } },
+                { "selected", n => { Selected = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedFieldSelected>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("api_name", ApiName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NoneSelected>("selected", Selected);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedFieldSelected>("selected", Selected);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

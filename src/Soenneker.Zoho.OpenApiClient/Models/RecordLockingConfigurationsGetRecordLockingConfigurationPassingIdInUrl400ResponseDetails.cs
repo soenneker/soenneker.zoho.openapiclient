@@ -8,19 +8,11 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetails : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1? RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1 RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +37,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3 RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4? RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4 RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +67,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3 = new global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3();
             }
+            else if("RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4 = new global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4();
+            }
             return result;
         }
         /// <summary>
@@ -75,11 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1 != null)
-            {
-                return RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1.GetFieldDeserializers();
-            }
-            else if(RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf1 != null)
+            if(RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf1 != null)
             {
                 return RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf1.GetFieldDeserializers();
             }
@@ -91,6 +91,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 return RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3.GetFieldDeserializers();
             }
+            else if(RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4 != null)
+            {
+                return RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4.GetFieldDeserializers();
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -100,11 +104,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1>(null, RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsMember1);
-            }
-            else if(RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf1 != null)
+            if(RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf1>(null, RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf1);
             }
@@ -115,6 +115,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             else if(RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3>(null, RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3);
+            }
+            else if(RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4>(null, RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf4);
             }
         }
     }

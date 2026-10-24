@@ -7,48 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class LockingInformationsLockRecord201ResponseDataItemDetails : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class LockingInformationsLockRecord201ResponseDataItemDetails : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the details of the user who created the record.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1? LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1 LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1 { get; set; }
 #endif
-        /// <summary>Represents the timestamp of the locking information record creation.</summary>
-        public DateTimeOffset? CreatedTime { get; set; }
-        /// <summary>Represents the unique identifier of the newly created locking information record.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2? LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2 LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2 { get; set; }
 #endif
-        /// <summary>Represents the details of the user who last modified the record.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsModifiedBy? ModifiedBy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsModifiedBy ModifiedBy { get; set; }
-#endif
-        /// <summary>Represents the timestamp when the locking information record was last modified.</summary>
-        public DateTimeOffset? ModifiedTime { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetails"/> and sets the default values.
-        /// </summary>
-        public LockingInformationsLockRecord201ResponseDataItemDetails()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,7 +37,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetails();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetails();
+            if("LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1();
+            }
+            else if("LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,14 +55,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1 != null)
             {
-                { "Created_By", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsCreatedBy>(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsCreatedBy.CreateFromDiscriminatorValue); } },
-                { "Created_Time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "Modified_By", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsModifiedBy.CreateFromDiscriminatorValue); } },
-                { "Modified_Time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
-            };
+                return LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1.GetFieldDeserializers();
+            }
+            else if(LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2 != null)
+            {
+                return LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -81,12 +72,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsCreatedBy>("Created_By", CreatedBy);
-            writer.WriteDateTimeOffsetValue("Created_Time", CreatedTime);
-            writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsModifiedBy>("Modified_By", ModifiedBy);
-            writer.WriteDateTimeOffsetValue("Modified_Time", ModifiedTime);
-            writer.WriteAdditionalData(AdditionalData);
+            if(LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1>(null, LockingInformationsLockRecord201ResponseDataItemDetailsOneOf1);
+            }
+            else if(LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2>(null, LockingInformationsLockRecord201ResponseDataItemDetailsOneOf2);
+            }
         }
     }
 }

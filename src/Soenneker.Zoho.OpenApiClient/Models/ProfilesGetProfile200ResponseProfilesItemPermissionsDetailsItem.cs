@@ -74,10 +74,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of parent permission names this permission depends on, or null when there are no parent dependencies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItemPermissionsDetailsItemParentPermissions? ParentPermissions { get; set; }
+        public List<string>? ParentPermissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItemPermissionsDetailsItemParentPermissions ParentPermissions { get; set; }
+        public List<string> ParentPermissions { get; set; }
 #endif
         /// <summary>Tooltip text displayed when hovering over this permission in the CRM UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "module", n => { Module = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_permissions", n => { ParentPermissions = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItemPermissionsDetailsItemParentPermissions>(global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItemPermissionsDetailsItemParentPermissions.CreateFromDiscriminatorValue); } },
+                { "parent_permissions", n => { ParentPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tooltip_msg", n => { TooltipMsg = n.GetStringValue(); } },
             };
         }
@@ -143,7 +143,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("module", Module);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfile200ResponseProfilesItemPermissionsDetailsItemParentPermissions>("parent_permissions", ParentPermissions);
+            writer.WriteCollectionOfPrimitiveValues<string>("parent_permissions", ParentPermissions);
             writer.WriteStringValue("tooltip_msg", TooltipMsg);
             writer.WriteAdditionalData(AdditionalData);
         }

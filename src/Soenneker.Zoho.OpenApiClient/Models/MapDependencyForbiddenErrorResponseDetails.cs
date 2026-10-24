@@ -18,10 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Lists the permissions required to perform this operation. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponseDetailsPermissions? Permissions { get; set; }
+        public UntypedNode? Permissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponseDetailsPermissions Permissions { get; set; }
+        public UntypedNode Permissions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponseDetails"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponseDetailsPermissions>(global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponseDetailsPermissions.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponseDetailsPermissions>("permissions", Permissions);
+            writer.WriteObjectValue<UntypedNode>("permissions", Permissions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

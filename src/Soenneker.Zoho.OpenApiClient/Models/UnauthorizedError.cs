@@ -28,8 +28,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>Represents the error message for the authentication failure.Possible values:**Authentication failed** - The provided authentication credentials are invalid or missing.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailedMessage? MessageEscaped { get; set; }
+        /// <summary>Represents the error message returned when authentication fails. Possible values: **Authentication failed**.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorMessage? MessageEscaped { get; set; }
         /// <summary>Indicates the response status.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailureCode>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorDetailsProperty>(global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorDetailsProperty.CreateFromDiscriminatorValue); } },
-                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailedMessage>(); } },
+                { "message", n => { MessageEscaped = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorMessage>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailureCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorDetailsProperty>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AuthenticationFailedMessage>("message", MessageEscaped);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UnauthorizedErrorMessage>("message", MessageEscaped);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

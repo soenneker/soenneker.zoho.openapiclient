@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DefaultAssigneeResponseObjectResource : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1? DefaultAssigneeResponseObjectResourceOneOf1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceMember1? DefaultAssigneeResponseObjectResourceMember1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1 DefaultAssigneeResponseObjectResourceOneOf1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceMember1 DefaultAssigneeResponseObjectResourceMember1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,11 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResource();
-            if("DefaultAssigneeResponseObjectResourceOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DefaultAssigneeResponseObjectResourceOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1();
-            }
-            else if("DefaultAssigneeResponseObjectResourceOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("DefaultAssigneeResponseObjectResourceOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DefaultAssigneeResponseObjectResourceOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf2();
             }
@@ -55,9 +51,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DefaultAssigneeResponseObjectResourceOneOf1 != null)
+            if(DefaultAssigneeResponseObjectResourceMember1 != null)
             {
-                return DefaultAssigneeResponseObjectResourceOneOf1.GetFieldDeserializers();
+                return DefaultAssigneeResponseObjectResourceMember1.GetFieldDeserializers();
             }
             else if(DefaultAssigneeResponseObjectResourceOneOf2 != null)
             {
@@ -72,9 +68,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DefaultAssigneeResponseObjectResourceOneOf1 != null)
+            if(DefaultAssigneeResponseObjectResourceMember1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceOneOf1>(null, DefaultAssigneeResponseObjectResourceOneOf1);
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectResourceMember1>(null, DefaultAssigneeResponseObjectResourceMember1);
             }
             else if(DefaultAssigneeResponseObjectResourceOneOf2 != null)
             {

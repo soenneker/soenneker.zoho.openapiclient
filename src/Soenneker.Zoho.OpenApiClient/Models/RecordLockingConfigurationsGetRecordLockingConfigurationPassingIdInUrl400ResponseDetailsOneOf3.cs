@@ -18,10 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of required permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CrmImpliedCustomizeZohoCrmItem?>? Permissions { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3PermissionsItem?>? Permissions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CrmImpliedCustomizeZohoCrmItem?> Permissions { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3PermissionsItem?> Permissions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.CrmImpliedCustomizeZohoCrmItem>()?.AsList(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3PermissionsItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.CrmImpliedCustomizeZohoCrmItem>("permissions", Permissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsGetRecordLockingConfigurationPassingIdInUrl400ResponseDetailsOneOf3PermissionsItem>("permissions", Permissions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

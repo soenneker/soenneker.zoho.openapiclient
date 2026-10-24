@@ -39,7 +39,6 @@ namespace Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesDeleteRole200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesDeleteRole400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesDeleteRole200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles.Item.WithRoleItemRequestBuilder.WithRoleItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,11 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RolesDeleteRole400Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RolesDeleteRole200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RolesDeleteRole200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RolesDeleteRole200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RolesDeleteRole200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the details of a single role, specified by its ID in the URL.
@@ -81,7 +76,6 @@ namespace Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles.Item
         /// <param name="body">Represents the request body for updating a specific CRM role.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRole400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRole200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRoleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,11 +87,7 @@ namespace Soenneker.Zoho.OpenApiClient.Roles.Settings.Roles.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRole400Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRole200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRole200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRole200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RolesUpdateRole200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a role in your Zoho CRM organization and moves its users to another role.

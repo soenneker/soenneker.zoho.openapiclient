@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the date and time formatting configuration applied to date or datetime merge-field values in webhook request payloads. Applicable only when a date or datetime merge-field is used in headers, url_parameters, or body. Returns null when no date or datetime merge-fields are present.
+    /// Date and time formatting configuration for this webhook&apos;s payloads. Null when no date/datetime merge-fields are used.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationWebhooksResponseDateTimeFormat : IAdditionalDataHolder, IParsable

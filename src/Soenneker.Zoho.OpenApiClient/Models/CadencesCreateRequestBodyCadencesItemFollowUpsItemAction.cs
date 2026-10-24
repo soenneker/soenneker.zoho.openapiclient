@@ -8,38 +8,43 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a follow-up action in a Cadence, including its type, identifier, and configuration details.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CadencesCreateRequestBodyCadencesItemFollowUpsItemAction : IAdditionalDataHolder, IParsable
+    public partial class CadencesCreateRequestBodyCadencesItemFollowUpsItemAction : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Action configuration carrying module+layout+field_mappings for creating the Call record.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduleCallTypeFollowupActionRequestObjectDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications? CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduleCallTypeFollowupActionRequestObjectDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications { get; set; }
 #endif
-        /// <summary>Represents the unique identifier of the task action.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall? CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall { get; set; }
 #endif
-        /// <summary>Represents the type of the action.Possible values:**tasks** - Represents tasks. </summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TasksType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemAction"/> and sets the default values.
-        /// </summary>
-        public CadencesCreateRequestBodyCadencesItemFollowUpsItemAction()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks? CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification? CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +53,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemAction();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemAction();
+            if("email_notifications".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications = new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications();
+            }
+            else if("schedule_call".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall = new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall();
+            }
+            else if("tasks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks = new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks();
+            }
+            else if("whatsapp_message_notification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification = new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,12 +79,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications != null)
             {
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduleCallTypeFollowupActionRequestObjectDetails>(global::Soenneker.Zoho.OpenApiClient.Models.ScheduleCallTypeFollowupActionRequestObjectDetails.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TasksType>(); } },
-            };
+                return CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications.GetFieldDeserializers();
+            }
+            else if(CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall != null)
+            {
+                return CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall.GetFieldDeserializers();
+            }
+            else if(CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks != null)
+            {
+                return CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks.GetFieldDeserializers();
+            }
+            else if(CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification != null)
+            {
+                return CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -70,10 +104,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduleCallTypeFollowupActionRequestObjectDetails>("details", Details);
-            writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TasksType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications>(null, CadencesCreateRequestBodyCadencesItemFollowUpsItemActionEmailNotifications);
+            }
+            else if(CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall>(null, CadencesCreateRequestBodyCadencesItemFollowUpsItemActionScheduleCall);
+            }
+            else if(CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks>(null, CadencesCreateRequestBodyCadencesItemFollowUpsItemActionTasks);
+            }
+            else if(CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification>(null, CadencesCreateRequestBodyCadencesItemFollowUpsItemActionWhatsappMessageNotification);
+            }
         }
     }
 }

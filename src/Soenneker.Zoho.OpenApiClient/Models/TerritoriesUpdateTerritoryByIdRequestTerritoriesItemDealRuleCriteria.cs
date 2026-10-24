@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionRequest"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionRequest"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteria : IComposedTypeWrapper, IParsable
@@ -29,14 +29,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionRequest TerritoriesSimpleFilterCriterionRequest { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3? TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3 TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3"/></summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3? TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,15 +39,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteria CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("comparator")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteria();
             if("TerritoriesGroupedFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TerritoriesGroupedFilterCriterionRequest = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest();
             }
-            else if("TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3>() is global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3 territoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3Value)
             {
-                result.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3 = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3();
+                result.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3 = territoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3Value;
             }
             return result;
         }
@@ -70,10 +64,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             else if(TerritoriesSimpleFilterCriterionRequest != null)
             {
                 return TerritoriesSimpleFilterCriterionRequest.GetFieldDeserializers();
-            }
-            else if(TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3 != null)
-            {
-                return TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -92,9 +82,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionRequest>(null, TerritoriesSimpleFilterCriterionRequest);
             }
-            else if(TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3 != null)
+            else if(TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3>(null, TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaBranch3);
+                writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3>(null, TerritoriesUpdateTerritoryByIdRequestTerritoriesItemDealRuleCriteriaOneOf3);
             }
         }
     }

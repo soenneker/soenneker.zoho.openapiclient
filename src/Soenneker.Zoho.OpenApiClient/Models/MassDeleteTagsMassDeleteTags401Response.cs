@@ -16,8 +16,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code for the OAuth scope mismatch.Possible values:**OAUTH_SCOPE_MISMATCH** - The access token does not include the required scope for this operation.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.OAuthScopeMismatchCode? Code { get; set; }
+        /// <summary>Represents the error code that identifies the OAuth scope mismatch.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401ResponseOneOf1Code? Code { get; set; }
         /// <summary>Represents the details of the OAuth scope mismatch, including the request method and the URL that was called.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,8 +36,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
-        /// <summary>Indicates the response status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus? Status { get; set; }
+        /// <summary>Represents the status of the API call when the OAuth scope mismatch occurs.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401ResponseOneOf1Status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401Response"/> and sets the default values.
         /// </summary>
@@ -63,10 +63,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OAuthScopeMismatchCode>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401ResponseOneOf1Code>(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401ResponseOneOf1Details>(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401ResponseOneOf1Details.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401ResponseOneOf1Status>(); } },
             };
         }
         /// <summary>
@@ -76,10 +76,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OAuthScopeMismatchCode>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401ResponseOneOf1Code>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401ResponseOneOf1Details>("details", Details);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401ResponseOneOf1Status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents the layout associated with a Scoring Rule, including its display label, API name, and unique ID.
+    /// Layout info. If the rule should be created for all layouts, this field can be skipped or set value as null.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScoringRuleGetLayout : IAdditionalDataHolder, IParsable

@@ -26,18 +26,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of dates on which the service is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedAvailableDatesItem>? AvailableDates { get; set; }
+        public UntypedNode? AvailableDates { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedAvailableDatesItem> AvailableDates { get; set; }
+        public UntypedNode AvailableDates { get; set; }
 #endif
         /// <summary>Represents the list of business days on which the service is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedAvailableDaysItem>? AvailableDays { get; set; }
+        public UntypedNode? AvailableDays { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedAvailableDaysItem> AvailableDays { get; set; }
+        public UntypedNode AvailableDays { get; set; }
 #endif
         /// <summary>Represents the date from which the service is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -252,10 +252,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the taxes applied to the service cost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedTaxItem>? Tax { get; set; }
+        public UntypedNode? Tax { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedTaxItem> Tax { get; set; }
+        public UntypedNode Tax { get; set; }
 #endif
         /// <summary>Represents the date and time from which the service is unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -299,8 +299,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Availability_Type", n => { AvailabilityType = n.GetStringValue(); } },
-                { "Available_Dates", n => { AvailableDates = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedAvailableDatesItem>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedAvailableDatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "Available_Days", n => { AvailableDays = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedAvailableDaysItem>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedAvailableDaysItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "Available_Dates", n => { AvailableDates = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "Available_Days", n => { AvailableDays = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "Available_From", n => { AvailableFrom = n.GetStringValue(); } },
                 { "Available_Till", n => { AvailableTill = n.GetStringValue(); } },
                 { "Available_Timings", n => { AvailableTimings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetAvailableTimingsNested>(global::Soenneker.Zoho.OpenApiClient.Models.GetAvailableTimingsNested.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -331,7 +331,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "$sharing_permission", n => { SharingPermission = n.GetStringValue(); } },
                 { "Status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedStatus>(); } },
                 { "Tag", n => { Tag = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "Tax", n => { Tax = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedTaxItem>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedTaxItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "Tax", n => { Tax = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "Unavailable_From", n => { UnavailableFrom = n.GetStringValue(); } },
                 { "Unavailable_Till", n => { UnavailableTill = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
@@ -344,8 +344,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Availability_Type", AvailabilityType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedAvailableDatesItem>("Available_Dates", AvailableDates);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedAvailableDaysItem>("Available_Days", AvailableDays);
+            writer.WriteObjectValue<UntypedNode>("Available_Dates", AvailableDates);
+            writer.WriteObjectValue<UntypedNode>("Available_Days", AvailableDays);
             writer.WriteStringValue("Available_From", AvailableFrom);
             writer.WriteStringValue("Available_Till", AvailableTill);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GetAvailableTimingsNested>("Available_Timings", AvailableTimings);
@@ -376,7 +376,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("$sharing_permission", SharingPermission);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedStatus>("Status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("Tag", Tag);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetDataNestedTaxItem>("Tax", Tax);
+            writer.WriteObjectValue<UntypedNode>("Tax", Tax);
             writer.WriteStringValue("Unavailable_From", UnavailableFrom);
             writer.WriteObjectValue<UntypedNode>("Unavailable_Till", UnavailableTill);
             writer.WriteAdditionalData(AdditionalData);

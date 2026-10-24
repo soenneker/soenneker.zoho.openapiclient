@@ -26,10 +26,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the existing record that duplicates the requested value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetailsDuplicateRecord? DuplicateRecord { get; set; }
+        public UntypedNode? DuplicateRecord { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetailsDuplicateRecord DuplicateRecord { get; set; }
+        public UntypedNode DuplicateRecord { get; set; }
 #endif
         /// <summary>Represents the JSON path to the field that triggered the error in the request payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,10 +42,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates whether additional duplicate records exist beyond the one reported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetailsMoreRecords? MoreRecords { get; set; }
+        public UntypedNode? MoreRecords { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetailsMoreRecords MoreRecords { get; set; }
+        public UntypedNode MoreRecords { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetails"/> and sets the default values.
@@ -73,9 +73,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "duplicate_record", n => { DuplicateRecord = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetailsDuplicateRecord>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetailsDuplicateRecord.CreateFromDiscriminatorValue); } },
+                { "duplicate_record", n => { DuplicateRecord = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "json_path", n => { JsonPath = n.GetStringValue(); } },
-                { "more_records", n => { MoreRecords = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetailsMoreRecords>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetailsMoreRecords.CreateFromDiscriminatorValue); } },
+                { "more_records", n => { MoreRecords = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_name", ApiName);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetailsDuplicateRecord>("duplicate_record", DuplicateRecord);
+            writer.WriteObjectValue<UntypedNode>("duplicate_record", DuplicateRecord);
             writer.WriteStringValue("json_path", JsonPath);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDuplicateDataErrorDetailsMoreRecords>("more_records", MoreRecords);
+            writer.WriteObjectValue<UntypedNode>("more_records", MoreRecords);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,34 +8,27 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents an individual success response for either a record deletion or a scheduled batch delete job.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MassDeleteMassDelete200ResponseDataItem : IAdditionalDataHolder, IParsable
+    public partial class MassDeleteMassDelete200ResponseDataItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the status code that identifies the result of the Assignment Rule operation.Possible values:**SUCCESS** - Represents success.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode? Code { get; set; }
-        /// <summary>Contains the details of the deleted record, including the record ID. </summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf1? MassDeleteMassDelete200ResponseDataItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf1 MassDeleteMassDelete200ResponseDataItemOneOf1 { get; set; }
 #endif
-        /// <summary>Represents the success message for the response. </summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordIsDeletedMessage? Message { get; set; }
-        /// <summary>Represents the status of the Assignment Rule operation.Possible values:**success** - Represents success.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus? Status { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItem"/> and sets the default values.
-        /// </summary>
-        public MassDeleteMassDelete200ResponseDataItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf2? MassDeleteMassDelete200ResponseDataItemOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf2 MassDeleteMassDelete200ResponseDataItemOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +37,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItem();
+            var mappingValue = parseNode.GetChildNode("message")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItem();
+            if("record is deleted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MassDeleteMassDelete200ResponseDataItemOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf1();
+            }
+            else if("mass delete scheduled successfully".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MassDeleteMassDelete200ResponseDataItemOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,13 +55,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(MassDeleteMassDelete200ResponseDataItemOneOf1 != null)
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>(); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemDetails>(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemDetails.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordIsDeletedMessage>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>(); } },
-            };
+                return MassDeleteMassDelete200ResponseDataItemOneOf1.GetFieldDeserializers();
+            }
+            else if(MassDeleteMassDelete200ResponseDataItemOneOf2 != null)
+            {
+                return MassDeleteMassDelete200ResponseDataItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -67,11 +72,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessCode>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemDetails>("details", Details);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordIsDeletedMessage>("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SuccessStatus>("status", Status);
-            writer.WriteAdditionalData(AdditionalData);
+            if(MassDeleteMassDelete200ResponseDataItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf1>(null, MassDeleteMassDelete200ResponseDataItemOneOf1);
+            }
+            else if(MassDeleteMassDelete200ResponseDataItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf2>(null, MassDeleteMassDelete200ResponseDataItemOneOf2);
+            }
         }
     }
 }

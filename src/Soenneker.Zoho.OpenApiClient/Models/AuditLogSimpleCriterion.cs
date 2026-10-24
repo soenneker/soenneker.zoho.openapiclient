@@ -25,7 +25,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.AuditLogActionEqualCriterionField Field { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>Action to match.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.AuditLogActionEqualCriterionValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogSimpleCriterion"/> and sets the default values.

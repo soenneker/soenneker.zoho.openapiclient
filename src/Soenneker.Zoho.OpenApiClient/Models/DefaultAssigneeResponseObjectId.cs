@@ -8,26 +8,20 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdBranch1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdWrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdOneOf2"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DefaultAssigneeResponseObjectId : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdOneOf2"/></summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdOneOf2? DefaultAssigneeResponseObjectIdOneOf2 { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdBranch1? DefaultAssigneeResponseObjectIdBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdBranch1 DefaultAssigneeResponseObjectIdBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdWrapper? DefaultAssigneeResponseObjectIdWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdWrapper DefaultAssigneeResponseObjectIdWrapper { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectId();
-            if("DefaultAssigneeResponseObjectIdBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdOneOf2>() is global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdOneOf2 defaultAssigneeResponseObjectIdOneOf2Value)
             {
-                result.DefaultAssigneeResponseObjectIdBranch1 = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdBranch1();
+                result.DefaultAssigneeResponseObjectIdOneOf2 = defaultAssigneeResponseObjectIdOneOf2Value;
             }
-            else if("DefaultAssigneeResponseObjectIdWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetStringValue() is string stringValue)
             {
-                result.DefaultAssigneeResponseObjectIdWrapper = new global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdWrapper();
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,14 +49,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DefaultAssigneeResponseObjectIdBranch1 != null)
-            {
-                return DefaultAssigneeResponseObjectIdBranch1.GetFieldDeserializers();
-            }
-            else if(DefaultAssigneeResponseObjectIdWrapper != null)
-            {
-                return DefaultAssigneeResponseObjectIdWrapper.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,13 +58,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DefaultAssigneeResponseObjectIdBranch1 != null)
+            if(DefaultAssigneeResponseObjectIdOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdBranch1>(null, DefaultAssigneeResponseObjectIdBranch1);
+                writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdOneOf2>(null, DefaultAssigneeResponseObjectIdOneOf2);
             }
-            else if(DefaultAssigneeResponseObjectIdWrapper != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DefaultAssigneeResponseObjectIdWrapper>(null, DefaultAssigneeResponseObjectIdWrapper);
+                writer.WriteStringValue(null, String);
             }
         }
     }

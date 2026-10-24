@@ -33,8 +33,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public UntypedNode Resource { get; set; }
 #endif
-        /// <summary>Identifies the mapping strategy for this field assignment. The value must be `merge_field`, which instructs the automation engine to resolve the field value dynamically from a merge field token at execution time rather than from a static literal.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.MergeFieldType? Type { get; set; }
+        /// <summary>Assignment method indicating merge field resolution.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntryType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntry"/> and sets the default values.
         /// </summary>
@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "allow_agent_user", n => { AllowAgentUser = n.GetBoolValue(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntryDetails>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntryDetails.CreateFromDiscriminatorValue); } },
                 { "resource", n => { Resource = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MergeFieldType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntryType>(); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("allow_agent_user", AllowAgentUser);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntryDetails>("details", Details);
             writer.WriteObjectValue<UntypedNode>("resource", Resource);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MergeFieldType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntryType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

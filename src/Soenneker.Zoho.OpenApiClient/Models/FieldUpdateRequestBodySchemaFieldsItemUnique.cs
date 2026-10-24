@@ -8,19 +8,13 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldUpdateRequestBodySchemaFieldsItemUnique : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2? FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2 FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,13 +33,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUnique();
-            if("FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2 = new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2();
-            }
-            else if("FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1();
+            }
+            else if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
             }
             return result;
         }
@@ -55,11 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2 != null)
-            {
-                return FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2.GetFieldDeserializers();
-            }
-            else if(FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1 != null)
+            if(FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1 != null)
             {
                 return FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1.GetFieldDeserializers();
             }
@@ -72,13 +62,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2>(null, FieldUpdateRequestBodySchemaFieldsItemUniqueBranch2);
-            }
-            else if(FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1 != null)
+            if(FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1>(null, FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1);
+            }
+            else if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
             }
         }
     }

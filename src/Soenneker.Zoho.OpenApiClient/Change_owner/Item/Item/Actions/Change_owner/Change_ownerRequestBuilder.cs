@@ -40,8 +40,6 @@ namespace Soenneker.Zoho.OpenApiClient.Change_owner.Item.Item.Actions.Change_own
         /// <param name="body">Specify the owner details for the single record owner change request.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwner400Response">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwner403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwner200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Change_owner.Item.Item.Actions.Change_owner.Change_ownerRequestBuilder.Change_ownerRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,12 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Change_owner.Item.Item.Actions.Change_own
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwner400Response.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwner403Response.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwner200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwner200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwner200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwner200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To change the owner of a specific record in the specified CRM module in your Zoho CRM organization. Note: The module name `Deals` is accepted and internally resolved to `Potentials`. `Meetings` is internally resolved to `Events`.

@@ -11,39 +11,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// Represents the target field definition to which the text filter criterion was applied, conforming to the base field structure.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScoringRulesTextFilterCriterionResponseField : IAdditionalDataHolder, IParsable
+    public partial class ScoringRulesTextFilterCriterionResponseField : global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesFilterFieldBase, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the API name of the field used for filter application. Supports relationship notation, for example, Deals__r.Stage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ApiName { get; set; }
-#nullable restore
-#else
-        public string ApiName { get; set; }
-#endif
-        /// <summary>Represents the unique ID of the field used for filter operations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField"/> and sets the default values.
-        /// </summary>
-        public ScoringRulesTextFilterCriterionResponseField()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField();
@@ -52,24 +27,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("api_name", ApiName);
-            writer.WriteStringValue("id", Id);
-            writer.WriteAdditionalData(AdditionalData);
+            base.Serialize(writer);
         }
     }
 }
