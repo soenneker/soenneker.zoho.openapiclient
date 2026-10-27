@@ -37,15 +37,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueTo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueTo();
-            if("GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2();
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item>(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item> globalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item>(global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item> globalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1ItemValue)
             {
                 result.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item = globalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1ItemValue;
+            }
+            else {
+                result.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2();
             }
             return result;
         }
@@ -57,7 +55,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2 != null)
             {
-                return GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2.GetFieldDeserializers();
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -68,13 +66,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2>(null, GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2);
-            }
-            else if(GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item != null)
+            if(GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item != null)
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item>(null, GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1Item);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2>(null, GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf2);
             }
         }
     }

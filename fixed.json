@@ -55403,8 +55403,7 @@
             "required": true,
             "schema": {
               "pattern": "^[0-9]\u002B$",
-              "type": "string",
-              "format": "string"
+              "type": "string"
             }
           }
         ],
@@ -154325,8 +154324,7 @@
             "description": "Represents the unique 19-digit numeric ID of the workflow rule. Obtain valid IDs from the List Workflow Rules endpoint.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "string"
+              "type": "string"
             }
           }
         ],
@@ -154621,8 +154619,7 @@
             "description": "Represents the unique 19-digit numeric ID of the workflow rule. Obtain valid IDs from the List Workflow Rules endpoint.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "string"
+              "type": "string"
             }
           }
         ],
@@ -155113,8 +155110,7 @@
             "description": "Represents the unique 19-digit numeric ID of the workflow rule. Obtain valid IDs from the List Workflow Rules endpoint.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "string"
+              "type": "string"
             }
           }
         ],
@@ -155676,8 +155672,7 @@
             "description": "Represents the unique 19-digit numeric ID of the workflow rule to target. Obtain valid IDs from the List Workflow Rules endpoint.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "string"
+              "type": "string"
             }
           },
           {
@@ -188836,11 +188831,10 @@
           "message": {
             "type": "string",
             "description": "Represents theexplanation of the error suitable for display to end users.",
-            "format": "string",
             "example": "Invalid pipeline id"
           },
           "status": {
-            "$ref": "#/components/schemas/PipelineUpdateOrDeleteUrlErrorResponseStatus"
+            "$ref": "#/components/schemas/ErrorStatus"
           }
         },
         "additionalProperties": {
@@ -188867,7 +188861,6 @@
           "message": {
             "type": "string",
             "description": "Represents theexplanation of the error suitable for display to end users.",
-            "format": "string",
             "example": "invalid data"
           },
           "status": {
@@ -188891,13 +188884,11 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the explanation of the error suitable for display to end users.",
-            "format": "string"
+            "description": "Represents the explanation of the error suitable for display to end users."
           },
           "status": {
             "type": "string",
-            "description": "Overall status indicator (\u0027error\u0027 or \u0027success\u0027).",
-            "format": "string"
+            "description": "Overall status indicator (\u0027error\u0027 or \u0027success\u0027)."
           }
         },
         "additionalProperties": {
@@ -188924,7 +188915,6 @@
           "message": {
             "type": "string",
             "description": "Represents the error messsage.",
-            "format": "string",
             "example": "Invalid layoutid"
           },
           "status": {
@@ -210905,8 +210895,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the detailed error message describing the URL validation failure.",
-            "format": "string"
+            "description": "Represents the detailed error message describing the URL validation failure."
           },
           "status": {
             "$ref": "#/components/schemas/UserInvalidErrorSchemaInUrlStatus"
@@ -219789,13 +219778,11 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "Represents the name of the CRM user who created or last modified the workflow rule.",
-            "format": "string"
+            "description": "Represents the name of the CRM user who created or last modified the workflow rule."
           },
           "id": {
             "type": "string",
-            "description": "Represents the unique ID of the CRM user.",
-            "format": "string"
+            "description": "Represents the unique ID of the CRM user."
           }
         },
         "additionalProperties": {
@@ -219845,13 +219832,11 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "Represents the name of the CRM user who locked the workflow rule.",
-            "format": "string"
+            "description": "Represents the name of the CRM user who locked the workflow rule."
           },
           "id": {
             "type": "string",
-            "description": "Represents the unique ID of the CRM user who locked the workflow rule.",
-            "format": "string"
+            "description": "Represents the unique ID of the CRM user who locked the workflow rule."
           }
         },
         "additionalProperties": {
@@ -224679,8 +224664,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents unique identifier for the scheduled action.",
-            "format": "string"
+            "description": "Represents unique identifier for the scheduled action."
           },
           "actions": {
             "maxItems": 5,
@@ -245382,13 +245366,11 @@
           "api_name": {
             "type": "string",
             "description": "API field name that caused the error.",
-            "format": "string",
             "example": "display_value"
           },
           "json_path": {
             "type": "string",
             "description": "JSON path pointing to the exact location of the error in the request.",
-            "format": "string",
             "example": "$.pipeline[0].display_value"
           }
         },
@@ -245414,13 +245396,11 @@
           "api_name": {
             "type": "string",
             "description": "API field name that caused the error.",
-            "format": "string",
             "example": "display_value"
           },
           "json_path": {
             "type": "string",
             "description": "JSON path pointing to the exact location of the error in the request.",
-            "format": "string",
             "example": "$.pipeline[0].display_value"
           }
         },
@@ -245439,7 +245419,6 @@
           "id": {
             "type": "string",
             "description": "ID of the pipeline item that caused the error.",
-            "format": "string",
             "example": "2766660000054211007"
           }
         },
@@ -257850,7 +257829,6 @@
           "display_value": {
             "type": "string",
             "description": "Display name of the picklist value as shown to users.",
-            "format": "string",
             "example": "Standard (Standard)"
           },
           "default": {
@@ -257870,7 +257848,6 @@
           "actual_value": {
             "type": "string",
             "description": "Internal API value for the picklist option.",
-            "format": "string",
             "example": "Standard (Standard)"
           },
           "id": {
@@ -257896,7 +257873,6 @@
           "display_value": {
             "type": "string",
             "description": "User-facing display name for the picklist value.",
-            "format": "string",
             "example": "adfadf12adf"
           },
           "default": {
@@ -257953,13 +257929,11 @@
           "api_name": {
             "type": "string",
             "description": "API field name that caused the error.",
-            "format": "string",
             "example": "pipeline"
           },
           "json_path": {
             "type": "string",
             "description": "JSON path pointing to the exact location of the error in the request.",
-            "format": "string",
             "example": "$.pipeline"
           }
         },
@@ -257974,7 +257948,6 @@
           "permissions": {
             "type": "string",
             "description": "The required permission that is missing.",
-            "format": "string",
             "example": "Crm_Implied_Customize_Zoho_CRM"
           }
         },
@@ -258016,7 +257989,6 @@
           "message": {
             "type": "string",
             "description": "Represents the explanation of the specific error.",
-            "format": "string",
             "example": "Duplicate pipeline label found"
           },
           "status": {
@@ -258046,7 +258018,6 @@
           "message": {
             "type": "string",
             "description": "Represents the confirmation of the successful operation.",
-            "format": "string",
             "example": "Pipeline created"
           },
           "status": {
@@ -258070,7 +258041,6 @@
           "display_value": {
             "type": "string",
             "description": "Display name of the picklist value as shown to users.",
-            "format": "string",
             "example": "Standard (Standard)"
           },
           "default": {
@@ -258090,7 +258060,6 @@
           "actual_value": {
             "type": "string",
             "description": "Internal API value for the picklist option.",
-            "format": "string",
             "example": "Standard (Standard)"
           },
           "id": {
@@ -258111,7 +258080,6 @@
           "display_value": {
             "type": "string",
             "description": "User-facing display name for the picklist value.",
-            "format": "string",
             "example": "adfadf12adf"
           },
           "_delete": {
@@ -258151,7 +258119,6 @@
           "display_value": {
             "type": "string",
             "description": "User-facing display name for the picklist value.",
-            "format": "string",
             "example": "adfadf12adf"
           },
           "_delete": {
@@ -258195,7 +258162,6 @@
           "message": {
             "type": "string",
             "description": "Represents the explanation of the specific error.",
-            "format": "string",
             "example": "Duplicate pipeline label found"
           },
           "status": {
@@ -258250,7 +258216,6 @@
           "message": {
             "type": "string",
             "description": "Represents the confirmation of the pipeline transfer scheduling.",
-            "format": "string",
             "example": "transfer pipeline scheduled successfully"
           },
           "status": {
@@ -258280,7 +258245,6 @@
           "message": {
             "type": "string",
             "description": "error explanation.",
-            "format": "string",
             "example": "Invalid from id"
           },
           "status": {
@@ -266912,8 +266876,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the detailed error message describing the validation issue for the user entry.",
-            "format": "string"
+            "description": "Represents the detailed error message describing the validation issue for the user entry."
           },
           "status": {
             "$ref": "#/components/schemas/UserInvalidErrorSchemaOnRequestBodyUsersItemStatus"
@@ -266930,14 +266893,12 @@
           "api_name": {
             "minLength": 1,
             "type": "string",
-            "description": "Represents the API field name associated with the URL validation error.",
-            "format": "string"
+            "description": "Represents the API field name associated with the URL validation error."
           },
           "json_path": {
             "minLength": 1,
             "type": "string",
-            "description": "Represents the JSON path to the field that caused the URL validation error.",
-            "format": "string"
+            "description": "Represents the JSON path to the field that caused the URL validation error."
           },
           "supported_values": {
             "maxItems": 100,
@@ -266951,8 +266912,7 @@
           },
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the resource related to the URL validation error.",
-            "format": "string"
+            "description": "Represents the unique identifier of the resource related to the URL validation error."
           },
           "resource_path_index": {
             "type": "integer",
@@ -270260,8 +270220,7 @@
         "properties": {
           "message": {
             "type": "string",
-            "description": "Specify the reason or context for locking the rule. Valid only when **lock.status** is set to true.",
-            "format": "string"
+            "description": "Specify the reason or context for locking the rule. Valid only when **lock.status** is set to true."
           },
           "status": {
             "type": "boolean",
@@ -270295,8 +270254,7 @@
         "properties": {
           "message": {
             "type": "string",
-            "description": "Specify a note or label indicating the reason or context for locking the rule.",
-            "format": "string"
+            "description": "Specify a note or label indicating the reason or context for locking the rule."
           },
           "status": {
             "$ref": "#/components/schemas/WorkflowRulePutNestedSchemaLockStatus"
@@ -271363,18 +271321,15 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique ID of the executed action.",
-            "format": "string"
+            "description": "Represents the unique ID of the executed action."
           },
           "name": {
             "type": "string",
-            "description": "Represents the name of the executed action.",
-            "format": "string"
+            "description": "Represents the name of the executed action."
           },
           "type": {
             "type": "string",
-            "description": "Represents the type of action executed, such as **email_notifications**.",
-            "format": "string"
+            "description": "Represents the type of action executed, such as **email_notifications**."
           },
           "queue_count": {
             "type": "integer",
@@ -277239,7 +277194,6 @@
           "display_value": {
             "type": "string",
             "description": "User-facing display name of the pipeline stage.",
-            "format": "string",
             "example": "Needs Analysis"
           },
           "sequence_number": {
@@ -277251,7 +277205,6 @@
           "colour_code": {
             "type": "string",
             "description": "Hexadecimal color code associated with the stage for UI representation.",
-            "format": "string",
             "example": "#FF5733"
           },
           "forecast_category": {
@@ -277260,7 +277213,6 @@
           "actual_value": {
             "type": "string",
             "description": "Internal system value/API name for the stage.",
-            "format": "string",
             "example": "Needs Analysis"
           },
           "id": {
@@ -277272,7 +277224,6 @@
           "forecast_type": {
             "type": "string",
             "description": "Forecast type indicating stage status (e.g., \u0027Open\u0027, \u0027Closed Won\u0027, \u0027Closed Lost\u0027).",
-            "format": "string",
             "example": "Open"
           }
         },
@@ -277296,7 +277247,6 @@
           "display_value": {
             "type": "string",
             "description": "User-facing display name for the pipeline stage.",
-            "format": "string",
             "example": "Needs Analysis"
           },
           "sequence_number": {
@@ -277321,13 +277271,11 @@
           "api_name": {
             "type": "string",
             "description": "API field name that caused the error.",
-            "format": "string",
             "example": "display_value"
           },
           "json_path": {
             "type": "string",
             "description": "JSON path pointing to the exact location of the error in the request.",
-            "format": "string",
             "example": "$.pipeline[0].display_value"
           }
         },
@@ -277368,7 +277316,6 @@
           "display_value": {
             "type": "string",
             "description": "User-facing display name of the pipeline stage.",
-            "format": "string",
             "example": "Needs Analysis"
           },
           "sequence_number": {
@@ -277380,7 +277327,6 @@
           "colour_code": {
             "type": "string",
             "description": "Hexadecimal color code associated with the stage for UI representation.",
-            "format": "string",
             "example": "#FF5733"
           },
           "forecast_category": {
@@ -277389,7 +277335,6 @@
           "actual_value": {
             "type": "string",
             "description": "Internal system value/API name for the stage.",
-            "format": "string",
             "example": "Needs Analysis"
           },
           "id": {
@@ -277401,7 +277346,6 @@
           "forecast_type": {
             "type": "string",
             "description": "Forecast type indicating stage status (e.g., \u0027Open\u0027, \u0027Closed Won\u0027, \u0027Closed Lost\u0027).",
-            "format": "string",
             "example": "Open"
           }
         },
@@ -277444,7 +277388,6 @@
           "display_value": {
             "type": "string",
             "description": "User-facing display name for the pipeline stage.",
-            "format": "string",
             "example": "Needs Analysis"
           },
           "_delete": {
@@ -277496,7 +277439,6 @@
           "display_value": {
             "type": "string",
             "description": "User-facing display name for the pipeline stage.",
-            "format": "string",
             "example": "Needs Analysis"
           },
           "_delete": {
@@ -277588,21 +277530,18 @@
           "api_name": {
             "type": "string",
             "description": "Represents the API field name that failed validation.",
-            "format": "string",
             "example": "from"
           },
           "value": {
             "type": "string",
-            "description": "Represents the invalid value that caused the error.",
-            "format": "string"
+            "description": "Represents the invalid value that caused the error."
           },
           "exists_in": {
             "$ref": "#/components/schemas/PipelineTransferErrorResponseTransferPipelineItemDetailsExistsIn"
           },
           "json_path": {
             "type": "string",
-            "description": "JSON path to the exact location of the validation error.",
-            "format": "string"
+            "description": "JSON path to the exact location of the validation error."
           }
         },
         "additionalProperties": {
@@ -280675,14 +280614,12 @@
           "api_name": {
             "minLength": 1,
             "type": "string",
-            "description": "Represents the API field name associated with the validation error.",
-            "format": "string"
+            "description": "Represents the API field name associated with the validation error."
           },
           "json_path": {
             "minLength": 1,
             "type": "string",
-            "description": "Represents the JSON path to the field that caused the validation error.",
-            "format": "string"
+            "description": "Represents the JSON path to the field that caused the validation error."
           },
           "supported_values": {
             "maxItems": 100,
@@ -280696,8 +280633,7 @@
           },
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the resource related to the validation error.",
-            "format": "string"
+            "description": "Represents the unique identifier of the resource related to the validation error."
           },
           "resource_path_index": {
             "type": "integer",
@@ -280709,8 +280645,7 @@
           },
           "owner_status": {
             "type": "string",
-            "description": "Represents the status of the user being added to the territory, indicating why the operation failed.",
-            "format": "string"
+            "description": "Represents the status of the user being added to the territory, indicating why the operation failed."
           }
         },
         "additionalProperties": {
@@ -280723,14 +280658,12 @@
         "properties": {
           "api_name": {
             "type": "string",
-            "description": "Represents the API field name of the dependent field that caused the URL validation error.",
-            "format": "string"
+            "description": "Represents the API field name of the dependent field that caused the URL validation error."
           },
           "json_path": {
             "minLength": 1,
             "type": "string",
-            "description": "Represents the JSON path to the dependent field that caused the URL validation error.",
-            "format": "string"
+            "description": "Represents the JSON path to the dependent field that caused the URL validation error."
           },
           "resource_path_index": {
             "type": "integer",
@@ -283848,7 +283781,6 @@
           "name": {
             "type": "string",
             "description": "Represents the name of the forecast category (e.g., \u0027Pipeline\u0027, \u0027Closed\u0027, \u0027Omitted\u0027).",
-            "format": "string",
             "example": "Pipeline"
           },
           "id": {
@@ -283873,7 +283805,6 @@
           "name": {
             "type": "string",
             "description": "Represents the name of the forecast category (e.g., \u0027Pipeline\u0027, \u0027Closed\u0027, \u0027Omitted\u0027).",
-            "format": "string",
             "example": "Pipeline"
           },
           "id": {
@@ -283931,8 +283862,7 @@
         "properties": {
           "json_path": {
             "type": "string",
-            "description": "JSON path where the value already exists.",
-            "format": "string"
+            "description": "JSON path where the value already exists."
           }
         },
         "additionalProperties": {
@@ -284279,14 +284209,12 @@
         "properties": {
           "api_name": {
             "type": "string",
-            "description": "Represents the API field name of the dependent field that caused the validation error.",
-            "format": "string"
+            "description": "Represents the API field name of the dependent field that caused the validation error."
           },
           "json_path": {
             "minLength": 1,
             "type": "string",
-            "description": "Represents the JSON path to the dependent field that caused the validation error.",
-            "format": "string"
+            "description": "Represents the JSON path to the dependent field that caused the validation error."
           },
           "resource_path_index": {
             "type": "integer",
@@ -294130,8 +294058,7 @@
           "cvid": {
             "pattern": "^[0-9]\u002B$",
             "type": "string",
-            "description": "Specify the unique ID of the Custom View for which you want\nto delete records. Use the [Get Custom\nViews](custom_views.yaml#$.paths./settings/custom_views.get)\nAPI for valid values.\n\n\n\u003E Note:\n\n\u003E The cvid key is supported for mass delete via API in the\nfollowing editions:\n\n\u003E - Enterprise\n\n\u003E - Ultimate\n\n\u003E - CRM Plus\n\n\u003E - Zoho One Enterprise\n",
-            "format": "string"
+            "description": "Specify the unique ID of the Custom View for which you want\nto delete records. Use the [Get Custom\nViews](custom_views.yaml#$.paths./settings/custom_views.get)\nAPI for valid values.\n\n\n\u003E Note:\n\n\u003E The cvid key is supported for mass delete via API in the\nfollowing editions:\n\n\u003E - Enterprise\n\n\u003E - Ultimate\n\n\u003E - CRM Plus\n\n\u003E - Zoho One Enterprise\n"
           },
           "territory": {
             "$ref": "#/components/schemas/MassDeleteMassDeleteRequestTerritory"
@@ -299732,8 +299659,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Represents the unique identifier of a CRM record.",
-              "format": "string"
+              "description": "Represents the unique identifier of a CRM record."
             },
             "description": "Specify the list of record IDs whose emails you want to share. Accepts up to 100 record IDs per request."
           }
@@ -299833,8 +299759,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Represents the unique identifier of a CRM record.",
-              "format": "string"
+              "description": "Represents the unique identifier of a CRM record."
             },
             "description": "Specify the list of record IDs whose email sharing you want to revoke. Accepts up to 100 record IDs per request."
           }
@@ -304560,8 +304485,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the detailed error message describing the URL validation failure.",
-            "format": "string"
+            "description": "Represents the detailed error message describing the URL validation failure."
           },
           "status": {
             "$ref": "#/components/schemas/UserInvalidErrorSchemaInUrlStatus"
@@ -304911,8 +304835,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the detailed error message describing the URL validation failure.",
-            "format": "string"
+            "description": "Represents the detailed error message describing the URL validation failure."
           },
           "status": {
             "$ref": "#/components/schemas/UserInvalidErrorSchemaInUrlStatus"
@@ -315082,7 +315005,7 @@
         ]
       },
       "GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueTo": {
-        "oneOf": [
+        "anyOf": [
           {
             "$ref": "#/components/schemas/GlobalPicklistsUpdateGlobalPicklist400ResponseGlobalPicklistsItemDetailsLimitDueToOneOf1"
           },
@@ -317197,8 +317120,7 @@
             "items": {
               "pattern": "^[0-9]\u002B$",
               "type": "string",
-              "description": "Specify a unique record ID to delete.",
-              "format": "string"
+              "description": "Specify a unique record ID to delete."
             },
             "description": "Specify the list of record IDs to delete. Use the [Get Records API](record.yaml#$.paths./{module}.get) to get the valid record values. "
           }
@@ -317218,8 +317140,7 @@
           "cvid": {
             "pattern": "^[0-9]\u002B$",
             "type": "string",
-            "description": "Specify the unique ID of the Custom View for which you want to delete records.  Refer to the [Get Custom Views](custom_views.yaml#$.paths./settings/custom_views.get) resource for valid values.",
-            "format": "string"
+            "description": "Specify the unique ID of the Custom View for which you want to delete records.  Refer to the [Get Custom Views](custom_views.yaml#$.paths./settings/custom_views.get) resource for valid values."
           },
           "territory": {
             "$ref": "#/components/schemas/MassDeleteMassDeleteRequestOneOf2Territory"
@@ -317312,8 +317233,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message indicating that a mass delete job is already scheduled for the provided Custom View. ",
-            "format": "string"
+            "description": "Represents the error message indicating that a mass delete job is already scheduled for the provided Custom View. "
           },
           "details": {
             "$ref": "#/components/schemas/MassDeleteMassDelete400ResponseOneOf2Details"
@@ -317342,8 +317262,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message for the response. ",
-            "format": "string"
+            "description": "Represents the error message for the response. "
           },
           "details": {
             "$ref": "#/components/schemas/MassDeleteMassDelete400ResponseOneOf3Details"
@@ -317400,8 +317319,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message for the response. ",
-            "format": "string"
+            "description": "Represents the error message for the response. "
           },
           "details": {
             "$ref": "#/components/schemas/MassDeleteMassDelete400ResponseOneOf5Details"
@@ -317730,8 +317648,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message indicating that a mass update job is already scheduled for the provided Custom View.",
-            "format": "string"
+            "description": "Represents the error message indicating that a mass update job is already scheduled for the provided Custom View."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -317760,8 +317677,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message describing the module validation failure.",
-            "format": "string"
+            "description": "Represents the error message describing the module validation failure."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -317842,11 +317758,10 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message describing the validation failure for the missing parameter.",
-            "format": "string"
+            "description": "Represents the error message describing the validation failure for the missing parameter."
           },
           "status": {
-            "$ref": "#/components/schemas/MassUpdateGetMassUpdateStatus400ResponseOneOf1Status"
+            "$ref": "#/components/schemas/ErrorStatus"
           }
         },
         "additionalProperties": {
@@ -317872,8 +317787,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message describing the invalid parameter value.",
-            "format": "string"
+            "description": "Represents the error message describing the invalid parameter value."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -317899,8 +317813,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message describing the module validation failure.",
-            "format": "string"
+            "description": "Represents the error message describing the module validation failure."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -320929,8 +320842,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message describing the data type mismatch. Always present in the response.",
-            "format": "string"
+            "description": "Represents the error message describing the data type mismatch. Always present in the response."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -320959,8 +320871,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message describing why the operation is not allowed. Always present in the response.",
-            "format": "string"
+            "description": "Represents the error message describing why the operation is not allowed. Always present in the response."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -327744,7 +327655,7 @@
         "x-zs-$id": "LimitDueToSingleObjectSchema"
       },
       "GlobalPicklistsUpdateGlobalPicklistById400ResponseOneOf2GlobalPicklistsItemDetailsLimitDueTo": {
-        "oneOf": [
+        "anyOf": [
           {
             "$ref": "#/components/schemas/GlobalPicklistsUpdateGlobalPicklistById400ResponseOneOf2GlobalPicklistsItemDetailsLimitDueToOneOf1"
           },
@@ -328183,8 +328094,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message describing the reason for the deletion failure. ",
-            "format": "string"
+            "description": "Represents the error message describing the reason for the deletion failure. "
           },
           "details": {
             "$ref": "#/components/schemas/MassDeleteMassDelete207ResponseDataItemOneOf2Details"
@@ -329898,8 +329808,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message for the not-allowed result. Always present in the response.",
-            "format": "string"
+            "description": "Represents the error message for the not-allowed result. Always present in the response."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -330040,8 +329949,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message for the not-allowed result. Always present in the response.",
-            "format": "string"
+            "description": "Represents the error message for the not-allowed result. Always present in the response."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -335989,8 +335897,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message indicating that a required property is missing from the payload.",
-            "format": "string"
+            "description": "Represents the error message indicating that a required property is missing from the payload."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -336019,8 +335926,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message describing the validation failure for the record.",
-            "format": "string"
+            "description": "Represents the error message describing the validation failure for the record."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -336049,8 +335955,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message describing the mapping mismatch.",
-            "format": "string"
+            "description": "Represents the error message describing the mapping mismatch."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -336076,8 +335981,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message describing why the operation or module is not supported.",
-            "format": "string"
+            "description": "Represents the error message describing why the operation or module is not supported."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -336106,8 +336010,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message indicating that the record is locked.",
-            "format": "string"
+            "description": "Represents the error message indicating that the record is locked."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -336136,8 +336039,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message indicating that the record has already been converted and cannot be updated.",
-            "format": "string"
+            "description": "Represents the error message indicating that the record has already been converted and cannot be updated."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -347005,7 +346907,6 @@
             "pattern": "^[0-9]\u002B$",
             "type": "string",
             "description": "Specify the unique ID of the territory for which you want to delete records. Use the [Get Territories API](territories.yaml#$.paths./settings/territories.get) to get the ID of the territory.",
-            "format": "string",
             "x-zs-$ref": {
               "resource": "territories",
               "origins": [
@@ -347215,8 +347116,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the message describing the result of the operation.",
-            "format": "string"
+            "description": "Represents the message describing the result of the operation."
           },
           "status": {
             "$ref": "#/components/schemas/SuccessStatus"
@@ -351116,8 +351016,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Represents a required permission identifier.",
-              "format": "string"
+              "description": "Represents a required permission identifier."
             },
             "description": "Represents the list of required permission identifiers that the user lacks."
           }
@@ -351162,8 +351061,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Represents a required permission identifier.",
-              "format": "string"
+              "description": "Represents a required permission identifier."
             },
             "description": "Represents the list of required permission identifiers that the user lacks."
           }
@@ -351208,8 +351106,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Represents a required permission identifier.",
-              "format": "string"
+              "description": "Represents a required permission identifier."
             },
             "description": "Represents the list of required permission identifiers that the user lacks."
           }
@@ -351227,8 +351124,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Represents a required permission identifier.",
-              "format": "string"
+              "description": "Represents a required permission identifier."
             },
             "description": "Represents the list of required permission identifiers that the user lacks."
           }
@@ -359899,8 +359795,7 @@
           "id": {
             "pattern": "^[0-9]\u002B$",
             "type": "string",
-            "description": "Specify the unique ID of the territory for which you want to delete records. Refer to the [Get Territories](territories.yaml#$.paths./settings/territories.get) resource for valid values.",
-            "format": "string"
+            "description": "Specify the unique ID of the territory for which you want to delete records. Refer to the [Get Territories](territories.yaml#$.paths./settings/territories.get) resource for valid values."
           },
           "include_child": {
             "type": "boolean",
@@ -359917,13 +359812,11 @@
         "properties": {
           "api_name": {
             "type": "string",
-            "description": "Represents the API name of the missing required field. ",
-            "format": "string"
+            "description": "Represents the API name of the missing required field. "
           },
           "expected_data_type": {
             "type": "string",
-            "description": "Represents the expected data type of the missing required field. ",
-            "format": "string"
+            "description": "Represents the expected data type of the missing required field. "
           }
         },
         "additionalProperties": {
@@ -359956,19 +359849,16 @@
         "properties": {
           "api_name": {
             "type": "string",
-            "description": "Represents the API name of the invalid field. ",
-            "format": "string"
+            "description": "Represents the API name of the invalid field. "
           },
           "json_path": {
             "type": "string",
-            "description": "Represents the JSON path to the invalid field in the request. ",
-            "format": "string"
+            "description": "Represents the JSON path to the invalid field in the request. "
           },
           "id": {
             "pattern": "^[0-9]\u002B$",
             "type": "string",
-            "description": "Represents the invalid record ID that triggered the error. ",
-            "format": "string"
+            "description": "Represents the invalid record ID that triggered the error. "
           }
         },
         "additionalProperties": {
@@ -360141,7 +360031,7 @@
         "type": "object",
         "properties": {
           "api_name": {
-            "$ref": "#/components/schemas/MassUpdateMassUpdateRecords400ResponseOneOf1DetailsApiName"
+            "$ref": "#/components/schemas/CvidApiName"
           },
           "json_path": {
             "$ref": "#/components/schemas/DollarDotCvidJsonPath"
@@ -360159,7 +360049,7 @@
         "type": "object",
         "properties": {
           "api_name": {
-            "$ref": "#/components/schemas/MassUpdateMassUpdateRecords400ResponseOneOf2DetailsApiName"
+            "$ref": "#/components/schemas/CvidApiName"
           }
         },
         "additionalProperties": {
@@ -361609,13 +361499,11 @@
         "properties": {
           "expected_data_type": {
             "type": "string",
-            "description": "Represents the expected data type for the field. Always present in the response.",
-            "format": "string"
+            "description": "Represents the expected data type for the field. Always present in the response."
           },
           "api_name": {
             "type": "string",
-            "description": "Represents the API name of the field that has an incorrect data type. Always present in the response.",
-            "format": "string"
+            "description": "Represents the API name of the field that has an incorrect data type. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -361749,8 +361637,7 @@
           },
           "message": {
             "type": "string",
-            "description": "Represents the error message for the not-allowed result. Always present in the response.",
-            "format": "string"
+            "description": "Represents the error message for the not-allowed result. Always present in the response."
           },
           "status": {
             "$ref": "#/components/schemas/ErrorStatus"
@@ -364599,8 +364486,7 @@
           "id": {
             "pattern": "^[0-9]\u002B$",
             "type": "string",
-            "description": "Represents the ID of the deleted record. ",
-            "format": "string"
+            "description": "Represents the ID of the deleted record. "
           }
         },
         "additionalProperties": {
@@ -364617,8 +364503,7 @@
           "job_id": {
             "pattern": "^[0-9]\u002B$",
             "type": "string",
-            "description": "Represents the unique ID of the scheduled mass delete job. Use this ID with the [Mass Delete Status API](mass_delete.yaml\n#$.paths./{module}/actions/mass_delete.get) to track the job progress. ",
-            "format": "string"
+            "description": "Represents the unique ID of the scheduled mass delete job. Use this ID with the [Mass Delete Status API](mass_delete.yaml\n#$.paths./{module}/actions/mass_delete.get) to track the job progress. "
           }
         },
         "additionalProperties": {
@@ -364635,8 +364520,7 @@
           "id": {
             "pattern": "^[0-9]\u002B$",
             "type": "string",
-            "description": "Represents the ID of the successfully deleted record. ",
-            "format": "string"
+            "description": "Represents the ID of the successfully deleted record. "
           }
         },
         "additionalProperties": {
@@ -364653,8 +364537,7 @@
           "id": {
             "pattern": "^[0-9]\u002B$",
             "type": "string",
-            "description": "Represents the ID of the record that failed deletion. ",
-            "format": "string"
+            "description": "Represents the ID of the record that failed deletion. "
           }
         },
         "additionalProperties": {
@@ -364677,8 +364560,7 @@
           },
           "name": {
             "type": "string",
-            "description": "Represents the display name of the user who modified the record.",
-            "format": "string"
+            "description": "Represents the display name of the user who modified the record."
           }
         },
         "additionalProperties": {
@@ -364701,8 +364583,7 @@
           },
           "name": {
             "type": "string",
-            "description": "Represents the display name of the user who created the record.",
-            "format": "string"
+            "description": "Represents the display name of the user who created the record."
           }
         },
         "additionalProperties": {
@@ -365049,8 +364930,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the already-shared record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the already-shared record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -365066,8 +364946,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the successfully shared record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the successfully shared record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -365083,8 +364962,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the invalid record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the invalid record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -365117,8 +364995,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the duplicate record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the duplicate record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -365134,8 +365011,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -365151,8 +365027,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the successfully unshared record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the successfully unshared record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -365168,8 +365043,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the invalid record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the invalid record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -365202,8 +365076,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the duplicate record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the duplicate record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -367045,18 +366918,15 @@
         "properties": {
           "mapped_field": {
             "type": "string",
-            "description": "Represents the field that owns the mapping relationship.",
-            "format": "string"
+            "description": "Represents the field that owns the mapping relationship."
           },
           "api_name": {
             "type": "string",
-            "description": "Represents the API name of the field whose value does not match the mapping.",
-            "format": "string"
+            "description": "Represents the API name of the field whose value does not match the mapping."
           },
           "json_path": {
             "type": "string",
-            "description": "Represents the JSON path to the mismatched element in the request body.",
-            "format": "string"
+            "description": "Represents the JSON path to the mismatched element in the request body."
           }
         },
         "additionalProperties": {
@@ -375189,8 +375059,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the shared record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the shared record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -375206,8 +375075,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the unshared record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the unshared record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -375223,8 +375091,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the shared record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the shared record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -380300,8 +380167,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the already-shared record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the already-shared record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -380314,8 +380180,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the invalid record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the invalid record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -380348,8 +380213,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Represents the unique identifier of the duplicate record. Always present in the response.",
-            "format": "string"
+            "description": "Represents the unique identifier of the duplicate record. Always present in the response."
           }
         },
         "additionalProperties": {
@@ -397241,25 +397105,6 @@
             {
               "value": "Cannot delete old_value for a picklist field",
               "name": "CannotDeleteOldValueForAPicklistField"
-            }
-          ]
-        }
-      },
-      "PipelineUpdateOrDeleteUrlErrorResponseStatus": {
-        "enum": [
-          "error"
-        ],
-        "type": "string",
-        "description": "Overall status indicator (\u0027error\u0027 or \u0027success\u0027).",
-        "format": "string",
-        "example": "error",
-        "x-ms-enum": {
-          "name": "PipelineUpdateOrDeleteUrlErrorResponseStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "error",
-              "name": "Error"
             }
           ]
         }
@@ -417146,7 +416991,6 @@
         ],
         "type": "string",
         "description": "Name of the parameter that caused the validation error.",
-        "format": "string",
         "example": "layout_id",
         "x-ms-enum": {
           "name": "LayoutIdParamName",
@@ -425985,24 +425829,6 @@
             {
               "value": "the given module is not supported in api",
               "name": "TheGivenModuleIsNotSupportedInApi"
-            }
-          ]
-        }
-      },
-      "MassUpdateGetMassUpdateStatus400ResponseOneOf1Status": {
-        "enum": [
-          "error"
-        ],
-        "type": "string",
-        "description": "Represents the overall status of the API response.",
-        "format": "string",
-        "x-ms-enum": {
-          "name": "MassUpdateGetMassUpdateStatus400ResponseOneOf1Status",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "error",
-              "name": "Error"
             }
           ]
         }
@@ -435652,7 +435478,6 @@
         ],
         "type": "string",
         "description": "Represents the API name of the key that caused the scheduling conflict. ",
-        "format": "string",
         "x-ms-enum": {
           "name": "CvidApiName",
           "modelAsString": false,
@@ -435788,23 +435613,6 @@
           ]
         }
       },
-      "MassUpdateMassUpdateRecords400ResponseOneOf1DetailsApiName": {
-        "enum": [
-          "cvid"
-        ],
-        "type": "string",
-        "description": "Represents the API name of the key that caused the error.",
-        "x-ms-enum": {
-          "name": "MassUpdateMassUpdateRecords400ResponseOneOf1DetailsApiName",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "cvid",
-              "name": "Cvid"
-            }
-          ]
-        }
-      },
       "DollarDotCvidJsonPath": {
         "enum": [
           "$.cvid"
@@ -435818,23 +435626,6 @@
             {
               "value": "$.cvid",
               "name": "DollarDotCvid"
-            }
-          ]
-        }
-      },
-      "MassUpdateMassUpdateRecords400ResponseOneOf2DetailsApiName": {
-        "enum": [
-          "cvid"
-        ],
-        "type": "string",
-        "description": "Represents the API name of the key that caused the scheduling conflict.",
-        "x-ms-enum": {
-          "name": "MassUpdateMassUpdateRecords400ResponseOneOf2DetailsApiName",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "cvid",
-              "name": "Cvid"
             }
           ]
         }
@@ -463904,8 +463695,7 @@
         "description": "Specify the email address to search for across all email-type fields in the module. Partial matches are supported and searches multiple email fields simultaneously.  *Mandatory if criteria, phone, and word are not present.*",
         "schema": {
           "maxLength": 255,
-          "type": "string",
-          "format": "string"
+          "type": "string"
         },
         "examples": {
           "ExactEmail": {
@@ -467455,8 +467245,7 @@
         "description": "Represents the unique 19-digit numeric ID of the workflow rule. Obtain valid IDs from the List Workflow Rules endpoint.",
         "required": true,
         "schema": {
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       },
       "ParamQueryIdsSchema": {
@@ -467465,8 +467254,7 @@
         "description": "Specifies one or more workflow rule IDs to filter the results. Provide multiple IDs as comma-separated values.",
         "required": true,
         "schema": {
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       },
       "workflow_rules_ParamQueryModuleSchema": {
@@ -467474,8 +467262,7 @@
         "in": "query",
         "description": "Specifies the CRM module API name to filter workflow rules by, such as Leads, Contacts, or Deals.",
         "schema": {
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       },
       "ParamQueryExecutedFrom": {
@@ -467504,8 +467291,7 @@
         "description": "Represents the unique 19-digit numeric ID of the workflow rule to target. Obtain valid IDs from the List Workflow Rules endpoint.",
         "required": true,
         "schema": {
-          "type": "string",
-          "format": "string"
+          "type": "string"
         }
       },
       "ParamQueryPageSchema": {

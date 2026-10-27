@@ -39,7 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1SubformFields();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1SubformFieldsOneOf1Item>(global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1SubformFieldsOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1SubformFieldsOneOf1Item> sectionPropertiesBulkAdditionOneOf1SubformFieldsOneOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1SubformFieldsOneOf1Item>(global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1SubformFieldsOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAdditionOneOf1SubformFieldsOneOf1Item> sectionPropertiesBulkAdditionOneOf1SubformFieldsOneOf1ItemValue)
             {
                 result.SectionPropertiesBulkAdditionOneOf1SubformFieldsOneOf1Item = sectionPropertiesBulkAdditionOneOf1SubformFieldsOneOf1ItemValue;
             }

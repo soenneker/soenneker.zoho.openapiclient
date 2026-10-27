@@ -43,7 +43,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionResponseValueOneOf1Item>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionResponseValueOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionResponseValueOneOf1Item> territoriesTextFilterCriterionResponseValueOneOf1ItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionResponseValueOneOf1Item>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionResponseValueOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionResponseValueOneOf1Item> territoriesTextFilterCriterionResponseValueOneOf1ItemValue)
             {
                 result.TerritoriesTextFilterCriterionResponseValueOneOf1Item = territoriesTextFilterCriterionResponseValueOneOf1ItemValue;
             }

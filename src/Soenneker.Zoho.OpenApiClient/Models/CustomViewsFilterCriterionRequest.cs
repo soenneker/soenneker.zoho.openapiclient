@@ -66,7 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.GroupOperator = groupOperatorValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupItem>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupItem> groupValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupItem>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupItem> groupValue)
             {
                 result.Group = groupValue;
             }
