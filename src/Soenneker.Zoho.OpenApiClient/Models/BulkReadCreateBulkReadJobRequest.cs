@@ -12,26 +12,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BulkReadCreateBulkReadJobRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("callback") is { } nullNodeCallback && nullNodeCallback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Callback = null;
+            if (parseNode.GetChildNode("file_type") is { } nullNodeFileType && nullNodeFileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileType = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the callback configuration to receive a POST notification when the bulk read job completes or fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestCallback? Callback { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestCallback? Callback { get => _explicitNullValueCallback; set { _explicitNullValueCallback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callback"); else _explicitNullProperties?.Remove("callback"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestCallback? _explicitNullValueCallback = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestCallback Callback { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestCallback Callback { get => _explicitNullValueCallback; set { _explicitNullValueCallback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callback"); else _explicitNullProperties?.Remove("callback"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestCallback _explicitNullValueCallback = default!;
 #endif
         /// <summary>Specify the file format for the exported records.Possible values:**csv** - Exports records in CSV format.**ics** - Exports records in ICS format, applicable only when exporting from the **Events** module.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestFileType? FileType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestFileType? FileType { get => _explicitNullValueFileType; set { _explicitNullValueFileType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_type"); else _explicitNullProperties?.Remove("file_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestFileType? _explicitNullValueFileType = default!;
         /// <summary>Specify the query parameters for the bulk read job, including the target module, optional field selection, optional Custom View, and optional filter criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQuery? Query { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQuery? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQuery? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQuery Query { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQuery Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQuery _explicitNullValueQuery = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequest"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestCallback>("callback", Callback);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestFileType>("file_type", FileType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQuery>("query", Query);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

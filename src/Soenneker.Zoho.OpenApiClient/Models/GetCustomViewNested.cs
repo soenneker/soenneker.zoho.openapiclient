@@ -12,35 +12,53 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetCustomViewNested : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cvids") is { } nullNodeCvids && nullNodeCvids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvids = null;
+            if (parseNode.GetChildNode("cvmodules") is { } nullNodeCvmodules && nullNodeCvmodules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvmodules = null;
+            if (parseNode.GetChildNode("cvnames") is { } nullNodeCvnames && nullNodeCvnames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvnames = null;
+            if (parseNode.GetChildNode("inaccessible_custom_view_present") is { } nullNodeInaccessibleCustomViewPresent && nullNodeInaccessibleCustomViewPresent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InaccessibleCustomViewPresent = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of custom view IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Cvids { get; set; }
+        public UntypedNode? Cvids { get => _explicitNullValueCvids; set { _explicitNullValueCvids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvids"); else _explicitNullProperties?.Remove("cvids"); } }
+        private UntypedNode? _explicitNullValueCvids = default!;
 #nullable restore
 #else
-        public UntypedNode Cvids { get; set; }
+        public UntypedNode Cvids { get => _explicitNullValueCvids; set { _explicitNullValueCvids = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvids"); else _explicitNullProperties?.Remove("cvids"); } }
+        private UntypedNode _explicitNullValueCvids = default!;
 #endif
         /// <summary>List of modules with custom views</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Cvmodules { get; set; }
+        public UntypedNode? Cvmodules { get => _explicitNullValueCvmodules; set { _explicitNullValueCvmodules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvmodules"); else _explicitNullProperties?.Remove("cvmodules"); } }
+        private UntypedNode? _explicitNullValueCvmodules = default!;
 #nullable restore
 #else
-        public UntypedNode Cvmodules { get; set; }
+        public UntypedNode Cvmodules { get => _explicitNullValueCvmodules; set { _explicitNullValueCvmodules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvmodules"); else _explicitNullProperties?.Remove("cvmodules"); } }
+        private UntypedNode _explicitNullValueCvmodules = default!;
 #endif
         /// <summary>List of custom view names</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Cvnames { get; set; }
+        public UntypedNode? Cvnames { get => _explicitNullValueCvnames; set { _explicitNullValueCvnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvnames"); else _explicitNullProperties?.Remove("cvnames"); } }
+        private UntypedNode? _explicitNullValueCvnames = default!;
 #nullable restore
 #else
-        public UntypedNode Cvnames { get; set; }
+        public UntypedNode Cvnames { get => _explicitNullValueCvnames; set { _explicitNullValueCvnames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvnames"); else _explicitNullProperties?.Remove("cvnames"); } }
+        private UntypedNode _explicitNullValueCvnames = default!;
 #endif
         /// <summary>Indicates whether inaccessible custom views exist</summary>
-        public bool? InaccessibleCustomViewPresent { get; set; }
+        public bool? InaccessibleCustomViewPresent { get => _explicitNullValueInaccessibleCustomViewPresent; set { _explicitNullValueInaccessibleCustomViewPresent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inaccessible_custom_view_present"); else _explicitNullProperties?.Remove("inaccessible_custom_view_present"); } }
+        private bool? _explicitNullValueInaccessibleCustomViewPresent = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested"/> and sets the default values.
         /// </summary>
@@ -56,7 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("cvmodules", Cvmodules);
             writer.WriteObjectValue<UntypedNode>("cvnames", Cvnames);
             writer.WriteBoolValue("inaccessible_custom_view_present", InaccessibleCustomViewPresent);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

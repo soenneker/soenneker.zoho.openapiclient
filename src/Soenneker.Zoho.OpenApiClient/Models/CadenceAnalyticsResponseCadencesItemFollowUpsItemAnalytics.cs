@@ -12,7 +12,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalytics : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalytics();
             if("CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1();
+                
             }
             else if("CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2();
+                
             }
             else if("CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 = new global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3();
+                
             }
             else if("CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 = new global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1 == null && result.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2 == null && result.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 == null && result.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +111,32 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1 != null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 == null) { if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1); return; }
+            if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2 != null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 == null) { if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2); return; }
+            if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 != null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 == null) { if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3); return; }
+            if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 != null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2 == null && CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 == null) { if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1 != null)
             {
+                if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1>(null, CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1);
             }
             else if(CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2 != null)
             {
+                if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2>(null, CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf2);
             }
             else if(CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 != null)
             {
+                if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3>(null, CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3);
             }
             else if(CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 != null)
             {
+                if (CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4>(null, CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4);
             }
         }

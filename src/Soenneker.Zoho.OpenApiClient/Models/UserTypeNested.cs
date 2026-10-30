@@ -12,13 +12,28 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserTypeNested : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("deactive_user_count") is { } nullNodeDeactiveUserCount && nullNodeDeactiveUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactiveUserCount = null;
+            if (parseNode.GetChildNode("invitation_field") is { } nullNodeInvitationField && nullNodeInvitationField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitationField = null;
+            if (parseNode.GetChildNode("modules") is { } nullNodeModules && nullNodeModules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modules = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("personality_module") is { } nullNodePersonalityModule && nullNodePersonalityModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalityModule = null;
+        }
+
         /// <summary>Indicates whether the portal user type is active. Set to `true` to allow portal users to access the portal via this user type, or `false` to deactivate it.</summary>
-        public bool? Active { get; set; }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of portal users assigned to this user type who are currently deactivated.</summary>
-        public int? DeactiveUserCount { get; set; }
+        public int? DeactiveUserCount { get => _explicitNullValueDeactiveUserCount; set { _explicitNullValueDeactiveUserCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactive_user_count"); else _explicitNullProperties?.Remove("deactive_user_count"); } }
+        private int? _explicitNullValueDeactiveUserCount = default!;
         /// <summary>Denotes the unique numeric identifier of the portal user type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,34 +45,42 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The CRM field used as the invitation field for this portal user type. Portal invitations are sent to the contact value stored in this field. Required when creating a user type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField? InvitationField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField? InvitationField { get => _explicitNullValueInvitationField; set { _explicitNullValueInvitationField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitation_field"); else _explicitNullProperties?.Remove("invitation_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField? _explicitNullValueInvitationField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField InvitationField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField InvitationField { get => _explicitNullValueInvitationField; set { _explicitNullValueInvitationField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invitation_field"); else _explicitNullProperties?.Remove("invitation_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedInvitationField _explicitNullValueInvitationField = default!;
 #endif
         /// <summary>The list of CRM modules with their access configurations for this portal user type. Required when creating a user type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNested>? Modules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNested>? Modules { get => _explicitNullValueModules; set { _explicitNullValueModules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modules"); else _explicitNullProperties?.Remove("modules"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNested>? _explicitNullValueModules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNested> Modules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNested> Modules { get => _explicitNullValueModules; set { _explicitNullValueModules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modules"); else _explicitNullProperties?.Remove("modules"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNested> _explicitNullValueModules = default!;
 #endif
         /// <summary>The display name of the portal user type. For example, &quot;Client Portal&quot;, &quot;Vendor Portal&quot;, or &quot;Partner Portal&quot;. Must be alphanumeric with spaces only, maximum 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The personality module for this portal user type. Records in this module serve as portal user identities, and portal invitations are sent to records in this module. Required when creating a user type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule? PersonalityModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule? PersonalityModule { get => _explicitNullValuePersonalityModule; set { _explicitNullValuePersonalityModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personality_module"); else _explicitNullProperties?.Remove("personality_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule? _explicitNullValuePersonalityModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule PersonalityModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule PersonalityModule { get => _explicitNullValuePersonalityModule; set { _explicitNullValuePersonalityModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personality_module"); else _explicitNullProperties?.Remove("personality_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule _explicitNullValuePersonalityModule = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested"/> and sets the default values.
@@ -74,7 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +129,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesNested>("modules", Modules);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNestedPersonalityModule>("personality_module", PersonalityModule);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

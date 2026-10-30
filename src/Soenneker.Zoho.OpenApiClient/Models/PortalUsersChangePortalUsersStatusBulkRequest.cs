@@ -12,16 +12,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PortalUsersChangePortalUsersStatusBulkRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("change_status") is { } nullNodeChangeStatus && nullNodeChangeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangeStatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the list of portal user status change results. Contains one result object per requested status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequestChangeStatusItem>? ChangeStatus { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequestChangeStatusItem>? ChangeStatus { get => _explicitNullValueChangeStatus; set { _explicitNullValueChangeStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_status"); else _explicitNullProperties?.Remove("change_status"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequestChangeStatusItem>? _explicitNullValueChangeStatus = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequestChangeStatusItem> ChangeStatus { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequestChangeStatusItem> ChangeStatus { get => _explicitNullValueChangeStatus; set { _explicitNullValueChangeStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_status"); else _explicitNullProperties?.Remove("change_status"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequestChangeStatusItem> _explicitNullValueChangeStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequest"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersChangePortalUsersStatusBulkRequestChangeStatusItem>("change_status", ChangeStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

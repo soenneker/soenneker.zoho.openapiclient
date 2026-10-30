@@ -36,18 +36,18 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
         /// <summary>
         /// To retrieve the status of a previously scheduled mass change owner job in your Zoho CRM organization. The OAuth scope enforced is specific to the target module (for example, **ZohoCRM.change_owner.leads.READ** for Leads); modules without a dedicated scope fall back to a generic custom-module scope.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatusSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder.Mass_change_ownerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatusSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder.Mass_change_ownerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder.Mass_change_ownerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatusSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder.Mass_change_ownerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,8 +55,10 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatus200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatusSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerGetMassChangeOwnerStatusSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To bulk update the ownership of records in a specified module based on a Custom View, territory, or field-based criteria in your Zoho CRM organization. You cannot change the owner of related records using this API. You can change the owner of up to 50,000 records in a custom view. This API schedules the operation as a job and returns a job ID, which you can use to check the job status. Job statuses are available for up to 60 days. The Mass Change Owner API is available only in the Enterprise and Ultimate editions. The OAuth scope enforced is specific to the target module (for example, **ZohoCRM.change_owner.leads.CREATE** for Leads); modules without a dedicated scope fall back to a generic custom-module scope.
@@ -80,6 +82,8 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwner202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

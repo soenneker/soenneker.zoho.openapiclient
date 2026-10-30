@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To merge duplicate records in your Zoho CRM organization into a single master record. Supports field-level value selection from child records and file attachment management. If a child record has more than 1000 related records, the merge processes asynchronously and returns a job_id for status tracking.
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Find_and_merge.Item.Item.Actions.Merge
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the status of a scheduled merge job in your Zoho CRM organization. Use the optional job_id query parameter to filter results to a specific job.

@@ -59,6 +59,8 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.InvalidRuleIdErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleDeleteSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleDeleteSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -78,7 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseGetById>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseGetById.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseGetById>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponseGetById.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update a specific Scoring Rule by its ID in your Zoho CRM organization.
@@ -102,6 +104,8 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutScoringRuleById400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePutSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulePutSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

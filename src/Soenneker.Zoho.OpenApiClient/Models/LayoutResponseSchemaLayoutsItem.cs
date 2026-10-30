@@ -12,135 +12,198 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutResponseSchemaLayoutsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actions_allowed") is { } nullNodeActionsAllowed && nullNodeActionsAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionsAllowed = null;
+            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("convert_mapping") is { } nullNodeConvertMapping && nullNodeConvertMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvertMapping = null;
+            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("created_for") is { } nullNodeCreatedFor && nullNodeCreatedFor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFor = null;
+            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("display_label") is { } nullNodeDisplayLabel && nullNodeDisplayLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayLabel = null;
+            if (parseNode.GetChildNode("generated_type") is { } nullNodeGeneratedType && nullNodeGeneratedType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedType = null;
+            if (parseNode.GetChildNode("has_more_profiles") is { } nullNodeHasMoreProfiles && nullNodeHasMoreProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMoreProfiles = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("modified_by") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("portal_user_types") is { } nullNodePortalUserTypes && nullNodePortalUserTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortalUserTypes = null;
+            if (parseNode.GetChildNode("profiles") is { } nullNodeProfiles && nullNodeProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profiles = null;
+            if (parseNode.GetChildNode("sections") is { } nullNodeSections && nullNodeSections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sections = null;
+            if (parseNode.GetChildNode("show_business_card") is { } nullNodeShowBusinessCard && nullNodeShowBusinessCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowBusinessCard = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("total_profiles") is { } nullNodeTotalProfiles && nullNodeTotalProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalProfiles = null;
+            if (parseNode.GetChildNode("visible") is { } nullNodeVisible && nullNodeVisible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visible = null;
+        }
+
         /// <summary>Permissions indicating which operations are allowed on this layout</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed? ActionsAllowed { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed? ActionsAllowed { get => _explicitNullValueActionsAllowed; set { _explicitNullValueActionsAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_allowed"); else _explicitNullProperties?.Remove("actions_allowed"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed? _explicitNullValueActionsAllowed = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed ActionsAllowed { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed ActionsAllowed { get => _explicitNullValueActionsAllowed; set { _explicitNullValueActionsAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_allowed"); else _explicitNullProperties?.Remove("actions_allowed"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed _explicitNullValueActionsAllowed = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents an API identifier string composed of alphanumeric characters and underscores, used as a programmatic reference for fields, modules, and other CRM entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get; set; }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get; set; }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>The convert_mapping property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemConvertMapping? ConvertMapping { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemConvertMapping? ConvertMapping { get => _explicitNullValueConvertMapping; set { _explicitNullValueConvertMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convert_mapping"); else _explicitNullProperties?.Remove("convert_mapping"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemConvertMapping? _explicitNullValueConvertMapping = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemConvertMapping ConvertMapping { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemConvertMapping ConvertMapping { get => _explicitNullValueConvertMapping; set { _explicitNullValueConvertMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convert_mapping"); else _explicitNullProperties?.Remove("convert_mapping"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemConvertMapping _explicitNullValueConvertMapping = default!;
 #endif
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The created_for property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedFor? CreatedFor { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedFor? CreatedFor { get => _explicitNullValueCreatedFor; set { _explicitNullValueCreatedFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_for"); else _explicitNullProperties?.Remove("created_for"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedFor? _explicitNullValueCreatedFor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedFor CreatedFor { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedFor CreatedFor { get => _explicitNullValueCreatedFor; set { _explicitNullValueCreatedFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_for"); else _explicitNullProperties?.Remove("created_for"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedFor _explicitNullValueCreatedFor = default!;
 #endif
         /// <summary>The created_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedTime? CreatedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedTime? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedTime? _explicitNullValueCreatedTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedTime CreatedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedTime CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemCreatedTime _explicitNullValueCreatedTime = default!;
 #endif
         /// <summary>Represents the label of the layout as displayed in the CRM interface, shown in layout selection dropdowns and record settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayLabel { get; set; }
+        public string? DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
+        private string? _explicitNullValueDisplayLabel = default!;
 #nullable restore
 #else
-        public string DisplayLabel { get; set; }
+        public string DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
+        private string _explicitNullValueDisplayLabel = default!;
 #endif
         /// <summary>Indicates whether this layout originates from automatic system generation or from an administrator&apos;s manual configuration. Possible values: `system` — automatically generated by Zoho CRM. `custom` — created manually by an administrator.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemGeneratedType? GeneratedType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemGeneratedType? GeneratedType { get => _explicitNullValueGeneratedType; set { _explicitNullValueGeneratedType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_type"); else _explicitNullProperties?.Remove("generated_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemGeneratedType? _explicitNullValueGeneratedType = default!;
         /// <summary>Indicates whether additional profile associations exist for this layout beyond those included in the current response. Possible values: `true` — more profile associations are available; `false` — all profile associations are represented.</summary>
-        public bool? HasMoreProfiles { get; set; }
+        public bool? HasMoreProfiles { get => _explicitNullValueHasMoreProfiles; set { _explicitNullValueHasMoreProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more_profiles"); else _explicitNullProperties?.Remove("has_more_profiles"); } }
+        private bool? _explicitNullValueHasMoreProfiles = default!;
         /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The modified_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedBy? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedBy? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedBy ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedBy _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>The modified_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedTime? ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedTime? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedTime? _explicitNullValueModifiedTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedTime ModifiedTime { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedTime ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemModifiedTime _explicitNullValueModifiedTime = default!;
 #endif
         /// <summary>Represents the internal API name of the layout, used as a programmatic identifier in API operations and automation configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Contains the list of portal user type associations for this layout, each specifying which portal user category the layout is associated with and the default view configuration for that user type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemPortalUserTypesItem>? PortalUserTypes { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemPortalUserTypesItem>? PortalUserTypes { get => _explicitNullValuePortalUserTypes; set { _explicitNullValuePortalUserTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_user_types"); else _explicitNullProperties?.Remove("portal_user_types"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemPortalUserTypesItem>? _explicitNullValuePortalUserTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemPortalUserTypesItem> PortalUserTypes { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemPortalUserTypesItem> PortalUserTypes { get => _explicitNullValuePortalUserTypes; set { _explicitNullValuePortalUserTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_user_types"); else _explicitNullProperties?.Remove("portal_user_types"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemPortalUserTypesItem> _explicitNullValuePortalUserTypes = default!;
 #endif
         /// <summary>The profiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemProfiles? Profiles { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemProfiles? Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemProfiles? _explicitNullValueProfiles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemProfiles Profiles { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemProfiles Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemProfiles _explicitNullValueProfiles = default!;
 #endif
         /// <summary>Contains the ordered list of sections within this layout, each grouping a set of fields and defining display properties such as column count and tab traversal order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItem>? Sections { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItem>? Sections { get => _explicitNullValueSections; set { _explicitNullValueSections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sections"); else _explicitNullProperties?.Remove("sections"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItem>? _explicitNullValueSections = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItem> Sections { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItem> Sections { get => _explicitNullValueSections; set { _explicitNullValueSections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sections"); else _explicitNullProperties?.Remove("sections"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItem> _explicitNullValueSections = default!;
 #endif
         /// <summary>Indicates whether the business card view is enabled for this layout, allowing a compact summary of key fields to be shown in preview and lookup contexts. Possible values: `true` — business card view is active; `false` — business card view is not enabled.</summary>
-        public bool? ShowBusinessCard { get; set; }
+        public bool? ShowBusinessCard { get => _explicitNullValueShowBusinessCard; set { _explicitNullValueShowBusinessCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_business_card"); else _explicitNullProperties?.Remove("show_business_card"); } }
+        private bool? _explicitNullValueShowBusinessCard = default!;
         /// <summary>Represents the origin channel of this layout. Possible values: `crm` — the layout is built into the standard module definition. `platform_plugin` — the layout comes from a Zoho platform plugin. `marketplace_plugin` — the layout comes from a Marketplace extension. `campaign_integration` — the layout comes from a Campaigns integration.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSource? Source { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSource? _explicitNullValueSource = default!;
         /// <summary>Indicates the current operational status of the layout. Possible values: `active` — the layout is in use and can be assigned to profiles; `inactive` — the layout has been deactivated and is not available for new assignments.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemStatus? Status { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemStatus? _explicitNullValueStatus = default!;
         /// <summary>Indicates the total number of CRM profiles associated with this layout, which may exceed the number of profiles included in the current response when has_more_profiles is true.</summary>
-        public int? TotalProfiles { get; set; }
+        public int? TotalProfiles { get => _explicitNullValueTotalProfiles; set { _explicitNullValueTotalProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_profiles"); else _explicitNullProperties?.Remove("total_profiles"); } }
+        private int? _explicitNullValueTotalProfiles = default!;
         /// <summary>Indicates whether this layout is currently visible and accessible to users in the CRM interface. Possible values: `true` — the layout is visible and selectable; `false` — the layout is hidden.</summary>
-        public bool? Visible { get; set; }
+        public bool? Visible { get => _explicitNullValueVisible; set { _explicitNullValueVisible = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visible"); else _explicitNullProperties?.Remove("visible"); } }
+        private bool? _explicitNullValueVisible = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem"/> and sets the default values.
         /// </summary>
@@ -156,7 +219,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -217,6 +280,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemStatus>("status", Status);
             writer.WriteIntValue("total_profiles", TotalProfiles);
             writer.WriteBoolValue("visible", Visible);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

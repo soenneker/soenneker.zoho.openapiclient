@@ -12,32 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CoqlExecuteCoqlQuery200Response : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the list of records returned by the COQL query. Always returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseDataItem>? Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseDataItem> Data { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>Represents the field metadata for each column specified in the SELECT clause. Keys are field API names and values are field configuration objects. Returned only when **fields** is specified in the **include_meta** request body parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseFields? Fields { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseFields? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseFields? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseFields Fields { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseFields Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseFields _explicitNullValueFields = default!;
 #endif
         /// <summary>Represents the pagination metadata for the query result. Always returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseInfo? Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseInfo? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseInfo Info { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseInfo _explicitNullValueInfo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200Response"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseDataItem>("data", Data);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseFields>("fields", Fields);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200ResponseInfo>("info", Info);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

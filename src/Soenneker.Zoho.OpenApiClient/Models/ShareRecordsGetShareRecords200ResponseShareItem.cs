@@ -12,41 +12,65 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShareRecordsGetShareRecords200ResponseShareItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("permission") is { } nullNodePermission && nullNodePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permission = null;
+            if (parseNode.GetChildNode("shared_by") is { } nullNodeSharedBy && nullNodeSharedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedBy = null;
+            if (parseNode.GetChildNode("shared_through") is { } nullNodeSharedThrough && nullNodeSharedThrough.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedThrough = null;
+            if (parseNode.GetChildNode("shared_time") is { } nullNodeSharedTime && nullNodeSharedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedTime = null;
+            if (parseNode.GetChildNode("shared_with") is { } nullNodeSharedWith && nullNodeSharedWith.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedWith = null;
+            if (parseNode.GetChildNode("share_related_records") is { } nullNodeShareRelatedRecords && nullNodeShareRelatedRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareRelatedRecords = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the level of access granted to the entityfor the shared record. **Possible values**: - read_only- read_write- full_access</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemPermission? Permission { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemPermission? Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemPermission? _explicitNullValuePermission = default!;
         /// <summary>Represents the details of the user who shared the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedBy? SharedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedBy? SharedBy { get => _explicitNullValueSharedBy; set { _explicitNullValueSharedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_by"); else _explicitNullProperties?.Remove("shared_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedBy? _explicitNullValueSharedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedBy SharedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedBy SharedBy { get => _explicitNullValueSharedBy; set { _explicitNullValueSharedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_by"); else _explicitNullProperties?.Remove("shared_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedBy _explicitNullValueSharedBy = default!;
 #endif
         /// <summary>Represents the details of the record through which sharing is granted, including its module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedThrough? SharedThrough { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedThrough? SharedThrough { get => _explicitNullValueSharedThrough; set { _explicitNullValueSharedThrough = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_through"); else _explicitNullProperties?.Remove("shared_through"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedThrough? _explicitNullValueSharedThrough = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedThrough SharedThrough { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedThrough SharedThrough { get => _explicitNullValueSharedThrough; set { _explicitNullValueSharedThrough = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_through"); else _explicitNullProperties?.Remove("shared_through"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedThrough _explicitNullValueSharedThrough = default!;
 #endif
         /// <summary>Represents the date and time at which the record was shared, in ISO 8601 format.</summary>
-        public DateTimeOffset? SharedTime { get; set; }
+        public DateTimeOffset? SharedTime { get => _explicitNullValueSharedTime; set { _explicitNullValueSharedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_time"); else _explicitNullProperties?.Remove("shared_time"); } }
+        private DateTimeOffset? _explicitNullValueSharedTime = default!;
         /// <summary>Represents the details of the entity (user, role, or group) with which the record is shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedWith? SharedWith { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedWith? SharedWith { get => _explicitNullValueSharedWith; set { _explicitNullValueSharedWith = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_with"); else _explicitNullProperties?.Remove("shared_with"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedWith? _explicitNullValueSharedWith = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedWith SharedWith { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedWith SharedWith { get => _explicitNullValueSharedWith; set { _explicitNullValueSharedWith = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_with"); else _explicitNullProperties?.Remove("shared_with"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedWith _explicitNullValueSharedWith = default!;
 #endif
         /// <summary>Indicates whether the related records of the shared record are also shared with the entity.</summary>
-        public bool? ShareRelatedRecords { get; set; }
+        public bool? ShareRelatedRecords { get => _explicitNullValueShareRelatedRecords; set { _explicitNullValueShareRelatedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_related_records"); else _explicitNullProperties?.Remove("share_related_records"); } }
+        private bool? _explicitNullValueShareRelatedRecords = default!;
         /// <summary>Represents the type of sharing applied to therecord. **Possible values**: - private- public</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemType? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItem"/> and sets the default values.
         /// </summary>
@@ -62,7 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,6 +119,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemSharedWith>("shared_with", SharedWith);
             writer.WriteBoolValue("share_related_records", ShareRelatedRecords);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200ResponseShareItemType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

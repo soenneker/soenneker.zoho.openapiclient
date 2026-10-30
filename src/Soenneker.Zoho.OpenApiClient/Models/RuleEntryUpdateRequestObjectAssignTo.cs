@@ -8,58 +8,63 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf4"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf5"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf6"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RuleEntryUpdateRequestObjectAssignTo : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria? RuleEntryUpdateRequestObjectAssignToCriteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf1? RuleEntryUpdateRequestObjectAssignToOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria RuleEntryUpdateRequestObjectAssignToCriteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf1 RuleEntryUpdateRequestObjectAssignToOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup? RuleEntryUpdateRequestObjectAssignToGroup { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf2? RuleEntryUpdateRequestObjectAssignToOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup RuleEntryUpdateRequestObjectAssignToGroup { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf2 RuleEntryUpdateRequestObjectAssignToOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile? RuleEntryUpdateRequestObjectAssignToProfile { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf3? RuleEntryUpdateRequestObjectAssignToOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile RuleEntryUpdateRequestObjectAssignToProfile { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf3 RuleEntryUpdateRequestObjectAssignToOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole? RuleEntryUpdateRequestObjectAssignToRole { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf4? RuleEntryUpdateRequestObjectAssignToOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole RuleEntryUpdateRequestObjectAssignToRole { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf4 RuleEntryUpdateRequestObjectAssignToOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers? RuleEntryUpdateRequestObjectAssignToUsers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf5? RuleEntryUpdateRequestObjectAssignToOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers RuleEntryUpdateRequestObjectAssignToUsers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf5 RuleEntryUpdateRequestObjectAssignToOneOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers? RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf6? RuleEntryUpdateRequestObjectAssignToOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf6 RuleEntryUpdateRequestObjectAssignToOneOf6 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -71,31 +76,46 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignTo();
-            if("criteria".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("zia_suggested_users".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RuleEntryUpdateRequestObjectAssignToCriteria = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria();
-            }
-            else if("group".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RuleEntryUpdateRequestObjectAssignToGroup = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup();
-            }
-            else if("profile".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RuleEntryUpdateRequestObjectAssignToProfile = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile();
+                
             }
             else if("role".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RuleEntryUpdateRequestObjectAssignToRole = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole();
+                
+            }
+            else if("group".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("profile".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
             }
             else if("users".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RuleEntryUpdateRequestObjectAssignToUsers = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers();
+                
             }
-            else if("zia_suggested_users".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("criteria".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers = new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("zia_suggested_users".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("role".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("resource") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("group".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("resource") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("profile".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("resource") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("users".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("resources") != null))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("criteria".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("criteria") != null))();
+            if (result.RuleEntryUpdateRequestObjectAssignToOneOf1 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf2 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf3 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf4 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf5 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf6 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.RuleEntryUpdateRequestObjectAssignToOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf1(), parseNode);
+            if (result.RuleEntryUpdateRequestObjectAssignToOneOf1 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf2 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf3 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf4 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf5 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf6 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.RuleEntryUpdateRequestObjectAssignToOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf2(), parseNode);
+            if (result.RuleEntryUpdateRequestObjectAssignToOneOf1 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf2 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf3 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf4 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf5 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf6 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.RuleEntryUpdateRequestObjectAssignToOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf3(), parseNode);
+            if (result.RuleEntryUpdateRequestObjectAssignToOneOf1 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf2 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf3 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf4 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf5 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf6 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5) result.RuleEntryUpdateRequestObjectAssignToOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf4(), parseNode);
+            if (result.RuleEntryUpdateRequestObjectAssignToOneOf1 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf2 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf3 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf4 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf5 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf6 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5) result.RuleEntryUpdateRequestObjectAssignToOneOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf5(), parseNode);
+            if (result.RuleEntryUpdateRequestObjectAssignToOneOf1 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf2 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf3 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf4 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf5 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf6 == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.RuleEntryUpdateRequestObjectAssignToOneOf6 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf6(), parseNode);
+            if (result.RuleEntryUpdateRequestObjectAssignToOneOf1 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf2 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf3 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf4 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf5 == null && result.RuleEntryUpdateRequestObjectAssignToOneOf6 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,29 +123,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RuleEntryUpdateRequestObjectAssignToCriteria != null)
+            if(RuleEntryUpdateRequestObjectAssignToOneOf1 != null)
             {
-                return RuleEntryUpdateRequestObjectAssignToCriteria.GetFieldDeserializers();
+                return RuleEntryUpdateRequestObjectAssignToOneOf1.GetFieldDeserializers();
             }
-            else if(RuleEntryUpdateRequestObjectAssignToGroup != null)
+            else if(RuleEntryUpdateRequestObjectAssignToOneOf2 != null)
             {
-                return RuleEntryUpdateRequestObjectAssignToGroup.GetFieldDeserializers();
+                return RuleEntryUpdateRequestObjectAssignToOneOf2.GetFieldDeserializers();
             }
-            else if(RuleEntryUpdateRequestObjectAssignToProfile != null)
+            else if(RuleEntryUpdateRequestObjectAssignToOneOf3 != null)
             {
-                return RuleEntryUpdateRequestObjectAssignToProfile.GetFieldDeserializers();
+                return RuleEntryUpdateRequestObjectAssignToOneOf3.GetFieldDeserializers();
             }
-            else if(RuleEntryUpdateRequestObjectAssignToRole != null)
+            else if(RuleEntryUpdateRequestObjectAssignToOneOf4 != null)
             {
-                return RuleEntryUpdateRequestObjectAssignToRole.GetFieldDeserializers();
+                return RuleEntryUpdateRequestObjectAssignToOneOf4.GetFieldDeserializers();
             }
-            else if(RuleEntryUpdateRequestObjectAssignToUsers != null)
+            else if(RuleEntryUpdateRequestObjectAssignToOneOf5 != null)
             {
-                return RuleEntryUpdateRequestObjectAssignToUsers.GetFieldDeserializers();
+                return RuleEntryUpdateRequestObjectAssignToOneOf5.GetFieldDeserializers();
             }
-            else if(RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers != null)
+            else if(RuleEntryUpdateRequestObjectAssignToOneOf6 != null)
             {
-                return RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers.GetFieldDeserializers();
+                return RuleEntryUpdateRequestObjectAssignToOneOf6.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -135,30 +155,45 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (RuleEntryUpdateRequestObjectAssignToOneOf1 == null && RuleEntryUpdateRequestObjectAssignToOneOf2 == null && RuleEntryUpdateRequestObjectAssignToOneOf3 == null && RuleEntryUpdateRequestObjectAssignToOneOf4 == null && RuleEntryUpdateRequestObjectAssignToOneOf5 == null && RuleEntryUpdateRequestObjectAssignToOneOf6 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (RuleEntryUpdateRequestObjectAssignToOneOf1 != null && RuleEntryUpdateRequestObjectAssignToOneOf2 == null && RuleEntryUpdateRequestObjectAssignToOneOf3 == null && RuleEntryUpdateRequestObjectAssignToOneOf4 == null && RuleEntryUpdateRequestObjectAssignToOneOf5 == null && RuleEntryUpdateRequestObjectAssignToOneOf6 == null) { if (RuleEntryUpdateRequestObjectAssignToOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RuleEntryUpdateRequestObjectAssignToOneOf1); return; }
+            if (RuleEntryUpdateRequestObjectAssignToOneOf2 != null && RuleEntryUpdateRequestObjectAssignToOneOf1 == null && RuleEntryUpdateRequestObjectAssignToOneOf3 == null && RuleEntryUpdateRequestObjectAssignToOneOf4 == null && RuleEntryUpdateRequestObjectAssignToOneOf5 == null && RuleEntryUpdateRequestObjectAssignToOneOf6 == null) { if (RuleEntryUpdateRequestObjectAssignToOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RuleEntryUpdateRequestObjectAssignToOneOf2); return; }
+            if (RuleEntryUpdateRequestObjectAssignToOneOf3 != null && RuleEntryUpdateRequestObjectAssignToOneOf1 == null && RuleEntryUpdateRequestObjectAssignToOneOf2 == null && RuleEntryUpdateRequestObjectAssignToOneOf4 == null && RuleEntryUpdateRequestObjectAssignToOneOf5 == null && RuleEntryUpdateRequestObjectAssignToOneOf6 == null) { if (RuleEntryUpdateRequestObjectAssignToOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RuleEntryUpdateRequestObjectAssignToOneOf3); return; }
+            if (RuleEntryUpdateRequestObjectAssignToOneOf4 != null && RuleEntryUpdateRequestObjectAssignToOneOf1 == null && RuleEntryUpdateRequestObjectAssignToOneOf2 == null && RuleEntryUpdateRequestObjectAssignToOneOf3 == null && RuleEntryUpdateRequestObjectAssignToOneOf5 == null && RuleEntryUpdateRequestObjectAssignToOneOf6 == null) { if (RuleEntryUpdateRequestObjectAssignToOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RuleEntryUpdateRequestObjectAssignToOneOf4); return; }
+            if (RuleEntryUpdateRequestObjectAssignToOneOf5 != null && RuleEntryUpdateRequestObjectAssignToOneOf1 == null && RuleEntryUpdateRequestObjectAssignToOneOf2 == null && RuleEntryUpdateRequestObjectAssignToOneOf3 == null && RuleEntryUpdateRequestObjectAssignToOneOf4 == null && RuleEntryUpdateRequestObjectAssignToOneOf6 == null) { if (RuleEntryUpdateRequestObjectAssignToOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RuleEntryUpdateRequestObjectAssignToOneOf5); return; }
+            if (RuleEntryUpdateRequestObjectAssignToOneOf6 != null && RuleEntryUpdateRequestObjectAssignToOneOf1 == null && RuleEntryUpdateRequestObjectAssignToOneOf2 == null && RuleEntryUpdateRequestObjectAssignToOneOf3 == null && RuleEntryUpdateRequestObjectAssignToOneOf4 == null && RuleEntryUpdateRequestObjectAssignToOneOf5 == null) { if (RuleEntryUpdateRequestObjectAssignToOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RuleEntryUpdateRequestObjectAssignToOneOf6); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RuleEntryUpdateRequestObjectAssignToCriteria != null)
+            if(RuleEntryUpdateRequestObjectAssignToOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToCriteria>(null, RuleEntryUpdateRequestObjectAssignToCriteria);
+                if (RuleEntryUpdateRequestObjectAssignToOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf1>(null, RuleEntryUpdateRequestObjectAssignToOneOf1);
             }
-            else if(RuleEntryUpdateRequestObjectAssignToGroup != null)
+            else if(RuleEntryUpdateRequestObjectAssignToOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToGroup>(null, RuleEntryUpdateRequestObjectAssignToGroup);
+                if (RuleEntryUpdateRequestObjectAssignToOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf2>(null, RuleEntryUpdateRequestObjectAssignToOneOf2);
             }
-            else if(RuleEntryUpdateRequestObjectAssignToProfile != null)
+            else if(RuleEntryUpdateRequestObjectAssignToOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToProfile>(null, RuleEntryUpdateRequestObjectAssignToProfile);
+                if (RuleEntryUpdateRequestObjectAssignToOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf3>(null, RuleEntryUpdateRequestObjectAssignToOneOf3);
             }
-            else if(RuleEntryUpdateRequestObjectAssignToRole != null)
+            else if(RuleEntryUpdateRequestObjectAssignToOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToRole>(null, RuleEntryUpdateRequestObjectAssignToRole);
+                if (RuleEntryUpdateRequestObjectAssignToOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf4>(null, RuleEntryUpdateRequestObjectAssignToOneOf4);
             }
-            else if(RuleEntryUpdateRequestObjectAssignToUsers != null)
+            else if(RuleEntryUpdateRequestObjectAssignToOneOf5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToUsers>(null, RuleEntryUpdateRequestObjectAssignToUsers);
+                if (RuleEntryUpdateRequestObjectAssignToOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf5>(null, RuleEntryUpdateRequestObjectAssignToOneOf5);
             }
-            else if(RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers != null)
+            else if(RuleEntryUpdateRequestObjectAssignToOneOf6 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers>(null, RuleEntryUpdateRequestObjectAssignToZiaSuggestedUsers);
+                if (RuleEntryUpdateRequestObjectAssignToOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryUpdateRequestObjectAssignToOneOf6>(null, RuleEntryUpdateRequestObjectAssignToOneOf6);
             }
         }
     }

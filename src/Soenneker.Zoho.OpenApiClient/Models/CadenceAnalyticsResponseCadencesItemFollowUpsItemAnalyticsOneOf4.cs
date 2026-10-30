@@ -12,15 +12,28 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("delivered_whatsapp_count") is { } nullNodeDeliveredWhatsappCount && nullNodeDeliveredWhatsappCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveredWhatsappCount = null;
+            if (parseNode.GetChildNode("failed_whatsapp_count") is { } nullNodeFailedWhatsappCount && nullNodeFailedWhatsappCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedWhatsappCount = null;
+            if (parseNode.GetChildNode("whatsapp_count") is { } nullNodeWhatsappCount && nullNodeWhatsappCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of WhatsApp messages that were delivered.</summary>
-        public int? DeliveredWhatsappCount { get; set; }
+        public int? DeliveredWhatsappCount { get => _explicitNullValueDeliveredWhatsappCount; set { _explicitNullValueDeliveredWhatsappCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered_whatsapp_count"); else _explicitNullProperties?.Remove("delivered_whatsapp_count"); } }
+        private int? _explicitNullValueDeliveredWhatsappCount = default!;
         /// <summary>Represents the number of WhatsApp messages that failed to deliver.</summary>
-        public int? FailedWhatsappCount { get; set; }
+        public int? FailedWhatsappCount { get => _explicitNullValueFailedWhatsappCount; set { _explicitNullValueFailedWhatsappCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_whatsapp_count"); else _explicitNullProperties?.Remove("failed_whatsapp_count"); } }
+        private int? _explicitNullValueFailedWhatsappCount = default!;
         /// <summary>Represents the total number of WhatsApp messages sent by the follow-up action.</summary>
-        public int? WhatsappCount { get; set; }
+        public int? WhatsappCount { get => _explicitNullValueWhatsappCount; set { _explicitNullValueWhatsappCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_count"); else _explicitNullProperties?.Remove("whatsapp_count"); } }
+        private int? _explicitNullValueWhatsappCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf4(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("delivered_whatsapp_count", DeliveredWhatsappCount);
             writer.WriteIntValue("failed_whatsapp_count", FailedWhatsappCount);
             writer.WriteIntValue("whatsapp_count", WhatsappCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

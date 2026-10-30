@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_te
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetailResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a single inventory template by its ID with complete details including content and all metadata.

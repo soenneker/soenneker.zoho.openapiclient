@@ -12,29 +12,46 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Success code for the operation.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemCode? Code { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemCode? _explicitNullValueCode = default!;
         /// <summary>Additional details about the deleted configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemDetails? Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemDetails? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemDetails? _explicitNullValueDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemDetails Details { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemDetails Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemDetails _explicitNullValueDetails = default!;
 #endif
         /// <summary>Informational message about the deletion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>Indicates successful deletion.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemStatus? Status { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItem"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemDetails>("details", Details);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsDeleteRecordLockingConfigurationPassingIdInUrl200ResponseRecordLockingConfigurationsItemStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

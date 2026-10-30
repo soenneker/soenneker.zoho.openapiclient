@@ -12,32 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchemaMultiuserlookupLinkingDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("connected_lookup_field") is { } nullNodeConnectedLookupField && nullNodeConnectedLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedLookupField = null;
+            if (parseNode.GetChildNode("lookup_field") is { } nullNodeLookupField && nullNodeLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupField = null;
+            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the connected lookup field details for the multi-user lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsConnectedLookupField? ConnectedLookupField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsConnectedLookupField? ConnectedLookupField { get => _explicitNullValueConnectedLookupField; set { _explicitNullValueConnectedLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_lookup_field"); else _explicitNullProperties?.Remove("connected_lookup_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsConnectedLookupField? _explicitNullValueConnectedLookupField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsConnectedLookupField ConnectedLookupField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsConnectedLookupField ConnectedLookupField { get => _explicitNullValueConnectedLookupField; set { _explicitNullValueConnectedLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_lookup_field"); else _explicitNullProperties?.Remove("connected_lookup_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsConnectedLookupField _explicitNullValueConnectedLookupField = default!;
 #endif
         /// <summary>Represents the lookup field details for the multi-user lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsLookupField? LookupField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsLookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsLookupField? _explicitNullValueLookupField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsLookupField LookupField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsLookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsLookupField _explicitNullValueLookupField = default!;
 #endif
         /// <summary>Represents the module details for the multi-user lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsModule? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsModule Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsModule _explicitNullValueModule = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsConnectedLookupField>("connected_lookup_field", ConnectedLookupField);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsLookupField>("lookup_field", LookupField);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetailsModule>("module", Module);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

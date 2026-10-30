@@ -49,20 +49,20 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
         /// <summary>
         /// To delete one or more appointment records in your Zoho CRM organization. Note that this API will not delete any deals created on the completion of the deleted appointments.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteappointmentssResponse200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DeleteappointmentssResponse200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder.Appointments__sRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder.Appointments__sRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DeleteappointmentssResponse200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder.Appointments__sRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder.Appointments__sRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteappointmentssResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve appointment records from your Zoho CRM organization. Use the `page` and `per_page` parameters to paginate up to 2,000 records, or use the `page_token` received in a prior response to paginate beyond 2,000 records up to a maximum of 100,000. Each request returns a maximum of 200 records. Subform data is not included when retrieving multiple appointments. The API returns field values containing sensitive health data only when the Restrict Data access through API option is disabled in compliance settings.
@@ -80,43 +80,43 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create one or more appointment records in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssResponse200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsSSuccessResponse"/></returns>
         /// <param name="body">Represents the request body schema for creating appointment records.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssResponse200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsSSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssResponse200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsSSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsSSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update one or more appointment records in your Zoho CRM organization. You can update a maximum of 100 appointments per API call.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsSSuccessResponse"/></returns>
         /// <param name="body">Represents the request body schema for updating appointment records.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsS403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsSSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsSSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -124,8 +124,10 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsS403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsSSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To delete one or more appointment records in your Zoho CRM organization. Note that this API will not delete any deals created on the completion of the deleted appointments.

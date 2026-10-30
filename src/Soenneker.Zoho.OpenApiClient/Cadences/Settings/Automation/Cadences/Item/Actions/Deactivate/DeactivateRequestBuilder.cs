@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Ite
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

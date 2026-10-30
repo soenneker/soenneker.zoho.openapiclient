@@ -12,7 +12,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowTasksAutomationFieldMappings : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMapping"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,25 +58,36 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings();
-            if("composite".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("WorkflowTasksCompositeFieldMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkflowTasksCompositeFieldMapping = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMapping();
+                
             }
-            else if("ExecutionTimeFieldMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkflowTasksExecutionTimeFieldMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkflowTasksExecutionTimeFieldMapping = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMapping();
+                
             }
-            else if("MergeFieldMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkflowTasksMergeFieldMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkflowTasksMergeFieldMapping = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksMergeFieldMapping();
+                
             }
-            else if("static".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkflowTasksStaticFieldMapping".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkflowTasksStaticFieldMapping = new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMapping();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("field") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("static".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("value") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("field") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("merge_field".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("value") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("field") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("execution_time".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("value") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("field") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("composite".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("value") != null))();
+            if (result.WorkflowTasksCompositeFieldMapping == null && result.WorkflowTasksExecutionTimeFieldMapping == null && result.WorkflowTasksMergeFieldMapping == null && result.WorkflowTasksStaticFieldMapping == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.WorkflowTasksStaticFieldMapping = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMapping(), parseNode);
+            if (result.WorkflowTasksCompositeFieldMapping == null && result.WorkflowTasksExecutionTimeFieldMapping == null && result.WorkflowTasksMergeFieldMapping == null && result.WorkflowTasksStaticFieldMapping == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.WorkflowTasksMergeFieldMapping = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksMergeFieldMapping(), parseNode);
+            if (result.WorkflowTasksCompositeFieldMapping == null && result.WorkflowTasksExecutionTimeFieldMapping == null && result.WorkflowTasksMergeFieldMapping == null && result.WorkflowTasksStaticFieldMapping == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.WorkflowTasksExecutionTimeFieldMapping = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMapping(), parseNode);
+            if (result.WorkflowTasksCompositeFieldMapping == null && result.WorkflowTasksExecutionTimeFieldMapping == null && result.WorkflowTasksMergeFieldMapping == null && result.WorkflowTasksStaticFieldMapping == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.WorkflowTasksCompositeFieldMapping = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMapping(), parseNode);
+            if (result.WorkflowTasksCompositeFieldMapping == null && result.WorkflowTasksExecutionTimeFieldMapping == null && result.WorkflowTasksMergeFieldMapping == null && result.WorkflowTasksStaticFieldMapping == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (WorkflowTasksCompositeFieldMapping == null && WorkflowTasksExecutionTimeFieldMapping == null && WorkflowTasksMergeFieldMapping == null && WorkflowTasksStaticFieldMapping == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (WorkflowTasksCompositeFieldMapping != null && WorkflowTasksExecutionTimeFieldMapping == null && WorkflowTasksMergeFieldMapping == null && WorkflowTasksStaticFieldMapping == null) { if (WorkflowTasksCompositeFieldMapping is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkflowTasksCompositeFieldMapping); return; }
+            if (WorkflowTasksExecutionTimeFieldMapping != null && WorkflowTasksCompositeFieldMapping == null && WorkflowTasksMergeFieldMapping == null && WorkflowTasksStaticFieldMapping == null) { if (WorkflowTasksExecutionTimeFieldMapping is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkflowTasksExecutionTimeFieldMapping); return; }
+            if (WorkflowTasksMergeFieldMapping != null && WorkflowTasksCompositeFieldMapping == null && WorkflowTasksExecutionTimeFieldMapping == null && WorkflowTasksStaticFieldMapping == null) { if (WorkflowTasksMergeFieldMapping is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkflowTasksMergeFieldMapping); return; }
+            if (WorkflowTasksStaticFieldMapping != null && WorkflowTasksCompositeFieldMapping == null && WorkflowTasksExecutionTimeFieldMapping == null && WorkflowTasksMergeFieldMapping == null) { if (WorkflowTasksStaticFieldMapping is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkflowTasksStaticFieldMapping); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(WorkflowTasksCompositeFieldMapping != null)
             {
+                if (WorkflowTasksCompositeFieldMapping is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksCompositeFieldMapping>(null, WorkflowTasksCompositeFieldMapping);
             }
             else if(WorkflowTasksExecutionTimeFieldMapping != null)
             {
+                if (WorkflowTasksExecutionTimeFieldMapping is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksExecutionTimeFieldMapping>(null, WorkflowTasksExecutionTimeFieldMapping);
             }
             else if(WorkflowTasksMergeFieldMapping != null)
             {
+                if (WorkflowTasksMergeFieldMapping is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksMergeFieldMapping>(null, WorkflowTasksMergeFieldMapping);
             }
             else if(WorkflowTasksStaticFieldMapping != null)
             {
+                if (WorkflowTasksStaticFieldMapping is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksStaticFieldMapping>(null, WorkflowTasksStaticFieldMapping);
             }
         }

@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Item.Act
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

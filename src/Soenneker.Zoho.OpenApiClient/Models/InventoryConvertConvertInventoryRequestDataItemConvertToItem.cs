@@ -12,18 +12,30 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InventoryConvertConvertInventoryRequestDataItemConvertToItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("carry_over_tags") is { } nullNodeCarryOverTags && nullNodeCarryOverTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CarryOverTags = null;
+            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies whether the tags from the source record are carried over to the converted target record. Must be set to true or omitted; setting this to false returns a NOT_ALLOWED error.</summary>
-        public bool? CarryOverTags { get; set; }
+        public bool? CarryOverTags { get => _explicitNullValueCarryOverTags; set { _explicitNullValueCarryOverTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carry_over_tags"); else _explicitNullProperties?.Remove("carry_over_tags"); } }
+        private bool? _explicitNullValueCarryOverTags = default!;
         /// <summary>Specify the target inventory module to which the record is to be converted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItemModule? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItemModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItemModule Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItemModule _explicitNullValueModule = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItem"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("carry_over_tags", CarryOverTags);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventoryRequestDataItemConvertToItemModule>("module", Module);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,19 +12,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutsFieldSchemaDisplayFormatPropertiesOneOf1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("radio_display_type") is { } nullNodeRadioDisplayType && nullNodeRadioDisplayType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RadioDisplayType = null;
+            if (parseNode.GetChildNode("split") is { } nullNodeSplit && nullNodeSplit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Split = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the layout orientation used to render radio button options in the UI, such as arranging choices horizontally in a row or vertically in a stacked column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RadioDisplayType { get; set; }
+        public string? RadioDisplayType { get => _explicitNullValueRadioDisplayType; set { _explicitNullValueRadioDisplayType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radio_display_type"); else _explicitNullProperties?.Remove("radio_display_type"); } }
+        private string? _explicitNullValueRadioDisplayType = default!;
 #nullable restore
 #else
-        public string RadioDisplayType { get; set; }
+        public string RadioDisplayType { get => _explicitNullValueRadioDisplayType; set { _explicitNullValueRadioDisplayType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radio_display_type"); else _explicitNullProperties?.Remove("radio_display_type"); } }
+        private string _explicitNullValueRadioDisplayType = default!;
 #endif
         /// <summary>Indicates the formatting pattern applied to split a phone number into its dial-code prefix and local number segments when rendering the field in the UI.</summary>
-        public int? Split { get; set; }
+        public int? Split { get => _explicitNullValueSplit; set { _explicitNullValueSplit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("split"); else _explicitNullProperties?.Remove("split"); } }
+        private int? _explicitNullValueSplit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormatPropertiesOneOf1"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormatPropertiesOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormatPropertiesOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaDisplayFormatPropertiesOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("radio_display_type", RadioDisplayType);
             writer.WriteIntValue("split", Split);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

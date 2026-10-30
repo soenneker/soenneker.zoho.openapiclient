@@ -66,6 +66,8 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -91,13 +93,15 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates one or more shift hour configurations for the organization. Each entry in `shift_hours` identifies the shift hour to update and the fields to change, such as the time zone, active days, timing, break windows, holidays, or user assignments. The updated timing must fall within the configured business hours.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursSuccessResponse"/></returns>
         /// <param name="body">Represents the request body for updating one or more shift hour configurations. Each entry in `shift_hours` updates an existing shift with its timing, break hours, optional holidays, and assigned users.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,11 +109,11 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -118,8 +122,10 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHours200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves every shift hour configured for the organization, along with the timing, break hours, holidays, time zone, and assigned users of each shift, and an aggregate count of shifts that have at least one user assigned.

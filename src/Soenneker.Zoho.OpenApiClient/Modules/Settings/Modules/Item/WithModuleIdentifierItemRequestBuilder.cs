@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the singular label, plural label, and profile assignments for the module identified by {moduleIdentifier}. Immutable fields such as access_type and api_name cannot be changed; attempting to include them returns a NOT_ALLOWED error
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModuleByApiName200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves complete metadata for a specific CRM module identified by its API name, including fields, layouts, profiles, related lists, and feature capabilities. Returns 204 when the module is not available through this endpoint, or 400 when the identifier is invalid or the module is unsupported

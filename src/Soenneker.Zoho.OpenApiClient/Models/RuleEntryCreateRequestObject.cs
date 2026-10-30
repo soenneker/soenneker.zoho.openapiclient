@@ -12,40 +12,59 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RuleEntryCreateRequestObject : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assign_to") is { } nullNodeAssignTo && nullNodeAssignTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignTo = null;
+            if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
+            if (parseNode.GetChildNode("followup_actions") is { } nullNodeFollowupActions && nullNodeFollowupActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowupActions = null;
+            if (parseNode.GetChildNode("user_availability_based_on") is { } nullNodeUserAvailabilityBasedOn && nullNodeUserAvailabilityBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAvailabilityBasedOn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field defines the set of users to whom the records that enter the current rule entry must be assigned.  (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignTo? AssignTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignTo? AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignTo? _explicitNullValueAssignTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignTo AssignTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignTo AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignTo _explicitNullValueAssignTo = default!;
 #endif
         /// <summary>Defines the record criteria based on which records will be filtered and assignment logic defined for current rule entry will be applied. If criteria is not provided or is null, all records entering current rule entry will be assigned based on current rule entry&apos;s assignment logic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest? Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest? _explicitNullValueCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest Criteria { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest _explicitNullValueCriteria = default!;
 #endif
         /// <summary>Defines the list of different actions to be executed after owner assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsRequestObject>? FollowupActions { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsRequestObject>? FollowupActions { get => _explicitNullValueFollowupActions; set { _explicitNullValueFollowupActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followup_actions"); else _explicitNullProperties?.Remove("followup_actions"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsRequestObject>? _explicitNullValueFollowupActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsRequestObject> FollowupActions { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsRequestObject> FollowupActions { get => _explicitNullValueFollowupActions; set { _explicitNullValueFollowupActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followup_actions"); else _explicitNullProperties?.Remove("followup_actions"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsRequestObject> _explicitNullValueFollowupActions = default!;
 #endif
         /// <summary>Defines additional availability checks to be performed before choosing a user as owner. A user is assigned as owner only if it satisfies the mentioned availability conditions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectUserAvailabilityBasedOnItem?>? UserAvailabilityBasedOn { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectUserAvailabilityBasedOnItem?>? UserAvailabilityBasedOn { get => _explicitNullValueUserAvailabilityBasedOn; set { _explicitNullValueUserAvailabilityBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_availability_based_on"); else _explicitNullProperties?.Remove("user_availability_based_on"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectUserAvailabilityBasedOnItem?>? _explicitNullValueUserAvailabilityBasedOn = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectUserAvailabilityBasedOnItem?> UserAvailabilityBasedOn { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectUserAvailabilityBasedOnItem?> UserAvailabilityBasedOn { get => _explicitNullValueUserAvailabilityBasedOn; set { _explicitNullValueUserAvailabilityBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_availability_based_on"); else _explicitNullProperties?.Remove("user_availability_based_on"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectUserAvailabilityBasedOnItem?> _explicitNullValueUserAvailabilityBasedOn = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObject"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObject();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObject(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionRequest>("criteria", Criteria);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsRequestObject>("followup_actions", FollowupActions);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectUserAvailabilityBasedOnItem>("user_availability_based_on", UserAvailabilityBasedOn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

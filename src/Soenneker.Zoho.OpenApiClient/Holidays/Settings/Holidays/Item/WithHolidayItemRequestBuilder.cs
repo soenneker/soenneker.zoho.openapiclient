@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.HolidaysDeleteHoliday400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -72,7 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysGetHoliday200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update the name or date of a specific holiday record in Zoho CRM using its unique identifier.
@@ -92,7 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Holidays.Settings.Holidays.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHoliday200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To permanently delete a holiday from Zoho CRM using its unique identifier. The deletion cannot be undone.

@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.Item.Contact_Role
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesInternalServerErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteRelationsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteRelationsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,6 +78,8 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.Item.Contact_Role
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesInternalServerErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetDealContactRoleForContact200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetDealContactRoleForContact200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,6 +105,8 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_contact_roles.Item.Item.Contact_Role
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesInternalServerErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesAssociateContactRoleToDeal200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

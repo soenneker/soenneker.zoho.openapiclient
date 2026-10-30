@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DetailsNested1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("report_link") is { } nullNodeReportLink && nullNodeReportLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportLink = null;
+            if (parseNode.GetChildNode("sign_resource_id") is { } nullNodeSignResourceId && nullNodeSignResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignResourceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the URL of the sign mail merge job report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportLink { get; set; }
+        public string? ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
+        private string? _explicitNullValueReportLink = default!;
 #nullable restore
 #else
-        public string ReportLink { get; set; }
+        public string ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
+        private string _explicitNullValueReportLink = default!;
 #endif
         /// <summary>Represents the unique ID of the sign request resource created for the sign mail merge operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignResourceId { get; set; }
+        public string? SignResourceId { get => _explicitNullValueSignResourceId; set { _explicitNullValueSignResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_resource_id"); else _explicitNullProperties?.Remove("sign_resource_id"); } }
+        private string? _explicitNullValueSignResourceId = default!;
 #nullable restore
 #else
-        public string SignResourceId { get; set; }
+        public string SignResourceId { get => _explicitNullValueSignResourceId; set { _explicitNullValueSignResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_resource_id"); else _explicitNullProperties?.Remove("sign_resource_id"); } }
+        private string _explicitNullValueSignResourceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DetailsNested1"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.DetailsNested1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.DetailsNested1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.DetailsNested1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("report_link", ReportLink);
             writer.WriteStringValue("sign_resource_id", SignResourceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

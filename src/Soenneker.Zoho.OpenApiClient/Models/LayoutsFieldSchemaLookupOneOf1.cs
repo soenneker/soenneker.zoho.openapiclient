@@ -12,51 +12,75 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutsFieldSchemaLookupOneOf1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("display_label") is { } nullNodeDisplayLabel && nullNodeDisplayLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayLabel = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("query_details") is { } nullNodeQueryDetails && nullNodeQueryDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryDetails = null;
+            if (parseNode.GetChildNode("revalidate_filter_during_edit") is { } nullNodeRevalidateFilterDuringEdit && nullNodeRevalidateFilterDuringEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevalidateFilterDuringEdit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The api_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1ApiName? ApiName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1ApiName? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1ApiName? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1ApiName ApiName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1ApiName ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1ApiName _explicitNullValueApiName = default!;
 #endif
         /// <summary>The display_label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1DisplayLabel? DisplayLabel { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1DisplayLabel? DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1DisplayLabel? _explicitNullValueDisplayLabel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1DisplayLabel DisplayLabel { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1DisplayLabel DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1DisplayLabel _explicitNullValueDisplayLabel = default!;
 #endif
         /// <summary>Represents the unique system-generated identifier for the lookup field definition within the target module. May be null for lookups created implicitly by the system rather than explicitly configured by an administrator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Id? Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Id? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Id? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Id Id { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Id Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Id _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the target CRM module that this lookup field references, providing the module&apos;s identifying metadata — such as its name and encryption status — required to resolve and navigate the cross-module relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Module? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Module? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Module? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Module Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Module Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Module _explicitNullValueModule = default!;
 #endif
         /// <summary>Contains the query configuration used to filter the selectable records in the lookup dropdown, restricting available options based on field criteria or system-defined query identifiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetails? QueryDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetails? QueryDetails { get => _explicitNullValueQueryDetails; set { _explicitNullValueQueryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_details"); else _explicitNullProperties?.Remove("query_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetails? _explicitNullValueQueryDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetails QueryDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetails QueryDetails { get => _explicitNullValueQueryDetails; set { _explicitNullValueQueryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_details"); else _explicitNullProperties?.Remove("query_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetails _explicitNullValueQueryDetails = default!;
 #endif
         /// <summary>Indicates whether the lookup&apos;s filter criteria are re-evaluated each time the record is opened in edit mode, ensuring that the selectable records reflect current field values rather than the values at the time the record was first created. Possible values: `true` — filter criteria are reapplied during edit; `false` — filter criteria are applied only at initial field population.</summary>
-        public bool? RevalidateFilterDuringEdit { get; set; }
+        public bool? RevalidateFilterDuringEdit { get => _explicitNullValueRevalidateFilterDuringEdit; set { _explicitNullValueRevalidateFilterDuringEdit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revalidate_filter_during_edit"); else _explicitNullProperties?.Remove("revalidate_filter_during_edit"); } }
+        private bool? _explicitNullValueRevalidateFilterDuringEdit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1"/> and sets the default values.
         /// </summary>
@@ -72,7 +96,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1Module>("module", Module);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetails>("query_details", QueryDetails);
             writer.WriteBoolValue("revalidate_filter_during_edit", RevalidateFilterDuringEdit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

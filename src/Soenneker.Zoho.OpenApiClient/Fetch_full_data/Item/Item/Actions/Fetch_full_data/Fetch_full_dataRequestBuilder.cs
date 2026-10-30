@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Item.Actions.Fetch_f
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataInternalServerErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FetchFullDataFetchFullDataForSingleRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

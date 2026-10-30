@@ -12,16 +12,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsersTransferGetValidateBeforeTransferStatus200Response : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("validate_before_transfer") is { } nullNodeValidateBeforeTransfer && nullNodeValidateBeforeTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidateBeforeTransfer = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the list of pre-transfer validation results for the specified user. The array contains a maximum of one object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem>? ValidateBeforeTransfer { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem>? ValidateBeforeTransfer { get => _explicitNullValueValidateBeforeTransfer; set { _explicitNullValueValidateBeforeTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validate_before_transfer"); else _explicitNullProperties?.Remove("validate_before_transfer"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem>? _explicitNullValueValidateBeforeTransfer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem> ValidateBeforeTransfer { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem> ValidateBeforeTransfer { get => _explicitNullValueValidateBeforeTransfer; set { _explicitNullValueValidateBeforeTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validate_before_transfer"); else _explicitNullProperties?.Remove("validate_before_transfer"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem> _explicitNullValueValidateBeforeTransfer = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200Response"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem>("validate_before_transfer", ValidateBeforeTransfer);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

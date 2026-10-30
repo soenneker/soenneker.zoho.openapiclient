@@ -12,19 +12,36 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MassUpdateGetMassUpdateStatus200ResponseDataItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Failed_Count") is { } nullNodeFailedCount && nullNodeFailedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedCount = null;
+            if (parseNode.GetChildNode("Not_Updated_Count") is { } nullNodeNotUpdatedCount && nullNodeNotUpdatedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotUpdatedCount = null;
+            if (parseNode.GetChildNode("Status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("Total_Count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+            if (parseNode.GetChildNode("Updated_Count") is { } nullNodeUpdatedCount && nullNodeUpdatedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of records that failed to update due to validation errors or other processing failures during the mass update job.</summary>
-        public int? FailedCount { get; set; }
+        public int? FailedCount { get => _explicitNullValueFailedCount; set { _explicitNullValueFailedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Failed_Count"); else _explicitNullProperties?.Remove("Failed_Count"); } }
+        private int? _explicitNullValueFailedCount = default!;
         /// <summary>Represents the number of records that are not yet updated by the mass update job.</summary>
-        public int? NotUpdatedCount { get; set; }
+        public int? NotUpdatedCount { get => _explicitNullValueNotUpdatedCount; set { _explicitNullValueNotUpdatedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Not_Updated_Count"); else _explicitNullProperties?.Remove("Not_Updated_Count"); } }
+        private int? _explicitNullValueNotUpdatedCount = default!;
         /// <summary>Represents the current state of the mass update job.Possible values:COMPLETED - The mass update job has finishedprocessing all records.SCHEDULED - The mass update job has been queued andis waiting to start.QUEUED - The mass update job is queued in thesystem.RUNNING - The mass update job is currentlyprocessing records.SUSPENDED - The mass update job has been paused.FAILED - The mass update job has terminated due to afailure.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200ResponseDataItemStatus? Status { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200ResponseDataItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Status"); else _explicitNullProperties?.Remove("Status"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200ResponseDataItemStatus? _explicitNullValueStatus = default!;
         /// <summary>Represents the total number of records that were scheduled to be mass updated by the job.</summary>
-        public int? TotalCount { get; set; }
+        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Total_Count"); else _explicitNullProperties?.Remove("Total_Count"); } }
+        private int? _explicitNullValueTotalCount = default!;
         /// <summary>Represents the number of records that were successfully updated by the mass update job.</summary>
-        public int? UpdatedCount { get; set; }
+        public int? UpdatedCount { get => _explicitNullValueUpdatedCount; set { _explicitNullValueUpdatedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Updated_Count"); else _explicitNullProperties?.Remove("Updated_Count"); } }
+        private int? _explicitNullValueUpdatedCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200ResponseDataItem"/> and sets the default values.
         /// </summary>
@@ -40,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200ResponseDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200ResponseDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateGetMassUpdateStatus200ResponseDataItemStatus>("Status", Status);
             writer.WriteIntValue("Total_Count", TotalCount);
             writer.WriteIntValue("Updated_Count", UpdatedCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.Actions.Sign_mail_me
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To send a merged document to one or more recipients for signing or approval using a mail merge template associated with a specific record in your Zoho CRM organization. Before using this operation for the first time, you must access the Merge and Sign dialog in the Zoho Writer UI once.

@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Call_preferences.Settings.Call_preference
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -74,7 +76,7 @@ namespace Soenneker.Zoho.OpenApiClient.Call_preferences.Settings.Call_preference
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesUpdateCallPreferences200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the current Call Preferences configuration for your Zoho CRM organization. The response reports whether the **From Number** and **To Number** fields are currently enabled on records in the Calls module.

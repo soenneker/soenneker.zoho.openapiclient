@@ -12,29 +12,46 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationWebhooksResponseBody : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("form_data_content") is { } nullNodeFormDataContent && nullNodeFormDataContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormDataContent = null;
+            if (parseNode.GetChildNode("raw_data_content") is { } nullNodeRawDataContent && nullNodeRawDataContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawDataContent = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the body content format.Possible values:**JSON** - JSON format.**XML** - XML format.**Text** - Plain text format.**HTML** - HTML format.**null** - Valid for form_data and none body types.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormat? Format { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormat? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormat? _explicitNullValueFormat = default!;
         /// <summary>Form data content when body type is form_data. Contains module parameters, custom parameters, and an optional user-defined parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormDataContent? FormDataContent { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormDataContent? FormDataContent { get => _explicitNullValueFormDataContent; set { _explicitNullValueFormDataContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form_data_content"); else _explicitNullProperties?.Remove("form_data_content"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormDataContent? _explicitNullValueFormDataContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormDataContent FormDataContent { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormDataContent FormDataContent { get => _explicitNullValueFormDataContent; set { _explicitNullValueFormDataContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("form_data_content"); else _explicitNullProperties?.Remove("form_data_content"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormDataContent _explicitNullValueFormDataContent = default!;
 #endif
         /// <summary>Represents the raw string content sent as the request body. This field is required when the body type is raw.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawDataContent { get; set; }
+        public string? RawDataContent { get => _explicitNullValueRawDataContent; set { _explicitNullValueRawDataContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_data_content"); else _explicitNullProperties?.Remove("raw_data_content"); } }
+        private string? _explicitNullValueRawDataContent = default!;
 #nullable restore
 #else
-        public string RawDataContent { get; set; }
+        public string RawDataContent { get => _explicitNullValueRawDataContent; set { _explicitNullValueRawDataContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_data_content"); else _explicitNullProperties?.Remove("raw_data_content"); } }
+        private string _explicitNullValueRawDataContent = default!;
 #endif
         /// <summary>Specify the body type for the webhook request.Possible values:**form_data** - Sends data as key-value pairs in the request body.**raw** - Sends plain text, JSON, HTML, or XML content directly.**none** - No body content.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyType? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseBody"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyFormDataContent>("form_data_content", FormDataContent);
             writer.WriteStringValue("raw_data_content", RawDataContent);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookRequestBodyType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

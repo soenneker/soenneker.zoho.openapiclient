@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Item.Actions.Validat
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,19 +12,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BulkReadCreateBulkReadJobRequestQueryCriteria : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("group") is { } nullNodeGroup && nullNodeGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Group = null;
+            if (parseNode.GetChildNode("group_operator") is { } nullNodeGroupOperator && nullNodeGroupOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupOperator = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the list of filter conditions to apply to the bulk read export. Each condition must include a **field**, **value**, and **comparator**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem>? Group { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem>? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem>? _explicitNullValueGroup = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem> Group { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem> Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem> _explicitNullValueGroup = default!;
 #endif
         /// <summary>Specify the logical operator to combine the filter conditions in the **group** array.Possible values:**and** - All conditions must be satisfied.**or** - At least one condition must be satisfied.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupOperator? GroupOperator { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupOperator? GroupOperator { get => _explicitNullValueGroupOperator; set { _explicitNullValueGroupOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_operator"); else _explicitNullProperties?.Remove("group_operator"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupOperator? _explicitNullValueGroupOperator = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteria"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteria CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteria();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteria(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupItem>("group", Group);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJobRequestQueryCriteriaGroupOperator>("group_operator", GroupOperator);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShiftHoursGetShifts200Response : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("shift_count") is { } nullNodeShiftCount && nullNodeShiftCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftCount = null;
+            if (parseNode.GetChildNode("shift_hours") is { } nullNodeShiftHours && nullNodeShiftHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftHours = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents aggregate counts that summarize the shift hour configurations returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftCount? ShiftCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftCount? ShiftCount { get => _explicitNullValueShiftCount; set { _explicitNullValueShiftCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_count"); else _explicitNullProperties?.Remove("shift_count"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftCount? _explicitNullValueShiftCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftCount ShiftCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftCount ShiftCount { get => _explicitNullValueShiftCount; set { _explicitNullValueShiftCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_count"); else _explicitNullProperties?.Remove("shift_count"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftCount _explicitNullValueShiftCount = default!;
 #endif
         /// <summary>Lists the shift hour configurations returned in the response. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftHoursItem>? ShiftHours { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftHoursItem>? ShiftHours { get => _explicitNullValueShiftHours; set { _explicitNullValueShiftHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_hours"); else _explicitNullProperties?.Remove("shift_hours"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftHoursItem>? _explicitNullValueShiftHours = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftHoursItem> ShiftHours { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftHoursItem> ShiftHours { get => _explicitNullValueShiftHours; set { _explicitNullValueShiftHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_hours"); else _explicitNullProperties?.Remove("shift_hours"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftHoursItem> _explicitNullValueShiftHours = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftCount>("shift_count", ShiftCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetShifts200ResponseShiftHoursItem>("shift_hours", ShiftHours);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

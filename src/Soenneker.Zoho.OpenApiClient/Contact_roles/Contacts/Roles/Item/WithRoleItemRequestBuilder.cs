@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Contact_roles.Contacts.Roles.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -72,7 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Contact_roles.Contacts.Roles.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesGetContactRole200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesGetContactRole200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesGetContactRole200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesGetContactRole200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a specific contact role by its unique identifier in your Zoho CRM organization.
@@ -96,6 +98,8 @@ namespace Soenneker.Zoho.OpenApiClient.Contact_roles.Contacts.Roles.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRole400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRole200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRole200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

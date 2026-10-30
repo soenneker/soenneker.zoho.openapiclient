@@ -12,29 +12,46 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExecuteWhenT5TimeOffsetDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("trigger_module") is { } nullNodeTriggerModule && nullNodeTriggerModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerModule = null;
+            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the field reference returned in GET responses for time-offset triggers, including the trigger field details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsField _explicitNullValueField = default!;
 #endif
         /// <summary>Represents the time unit for the offset.Possible values:days - Offset in days.hours - Offset in hours.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsPeriod? Period { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsPeriod? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsPeriod? _explicitNullValuePeriod = default!;
         /// <summary>The module that actually triggers the rule. Defaults tothe rule&apos;s top-level module if omitted. Must be explicitly setwhen the trigger targets a different module  - e.g., a rule onLeads triggered by &apos;note created&apos; requires trigger_module ={api_name: &apos;Notes&apos;, id: &apos;...&apos;}. Use `getModules` to discovermodule api_name and id values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule? TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule? TriggerModule { get => _explicitNullValueTriggerModule; set { _explicitNullValueTriggerModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_module"); else _explicitNullProperties?.Remove("trigger_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule? _explicitNullValueTriggerModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule TriggerModule { get => _explicitNullValueTriggerModule; set { _explicitNullValueTriggerModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_module"); else _explicitNullProperties?.Remove("trigger_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule _explicitNullValueTriggerModule = default!;
 #endif
         /// <summary>Represents the time offset magnitude. Always a positive integer for time-offset triggers, such as 1 for one day or 3 for three hours.</summary>
-        public int? Unit { get; set; }
+        public int? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        private int? _explicitNullValueUnit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetails"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsPeriod>("period", Period);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT5TimeOffsetDetailsTriggerModule>("trigger_module", TriggerModule);
             writer.WriteIntValue("unit", Unit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

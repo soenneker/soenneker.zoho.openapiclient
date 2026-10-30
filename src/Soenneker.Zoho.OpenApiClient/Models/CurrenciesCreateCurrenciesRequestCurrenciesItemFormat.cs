@@ -12,17 +12,32 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CurrenciesCreateCurrenciesRequestCurrenciesItemFormat : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("decimal_places") is { } nullNodeDecimalPlaces && nullNodeDecimalPlaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecimalPlaces = null;
+            if (parseNode.GetChildNode("decimal_separator") is { } nullNodeDecimalSeparator && nullNodeDecimalSeparator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecimalSeparator = null;
+            if (parseNode.GetChildNode("numeral_system") is { } nullNodeNumeralSystem && nullNodeNumeralSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumeralSystem = null;
+            if (parseNode.GetChildNode("thousand_separator") is { } nullNodeThousandSeparator && nullNodeThousandSeparator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThousandSeparator = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of decimal places allowed for the currency. It can be **0, 2, and 3.**</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatDecimalPlaces? DecimalPlaces { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatDecimalPlaces? DecimalPlaces { get => _explicitNullValueDecimalPlaces; set { _explicitNullValueDecimalPlaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decimal_places"); else _explicitNullProperties?.Remove("decimal_places"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatDecimalPlaces? _explicitNullValueDecimalPlaces = default!;
         /// <summary>The decimal separator separates the integer part of the currency from its fractional part. It can be a **Period** or **Comma**, depending on the currency.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatDecimalSeparator? DecimalSeparator { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatDecimalSeparator? DecimalSeparator { get => _explicitNullValueDecimalSeparator; set { _explicitNullValueDecimalSeparator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decimal_separator"); else _explicitNullProperties?.Remove("decimal_separator"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatDecimalSeparator? _explicitNullValueDecimalSeparator = default!;
         /// <summary>Numbering system used for grouping digits.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatNumeralSystem? NumeralSystem { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatNumeralSystem? NumeralSystem { get => _explicitNullValueNumeralSystem; set { _explicitNullValueNumeralSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numeral_system"); else _explicitNullProperties?.Remove("numeral_system"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatNumeralSystem? _explicitNullValueNumeralSystem = default!;
         /// <summary>The thousand separator separates groups of thousands in a currency. It can be a **Period**, **Comma**, or **Space**, depending on the currency.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatThousandSeparator? ThousandSeparator { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatThousandSeparator? ThousandSeparator { get => _explicitNullValueThousandSeparator; set { _explicitNullValueThousandSeparator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thousand_separator"); else _explicitNullProperties?.Remove("thousand_separator"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatThousandSeparator? _explicitNullValueThousandSeparator = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormat"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormat();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormat(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatDecimalSeparator>("decimal_separator", DecimalSeparator);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatNumeralSystem>("numeral_system", NumeralSystem);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrenciesRequestCurrenciesItemFormatThousandSeparator>("thousand_separator", ThousandSeparator);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

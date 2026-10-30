@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Ite
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Links an email to a specified record in CRM.
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Ite
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Unlinks an email from a specified record in CRM.

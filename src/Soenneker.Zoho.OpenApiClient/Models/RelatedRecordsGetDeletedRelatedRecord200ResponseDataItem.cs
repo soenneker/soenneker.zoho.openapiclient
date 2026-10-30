@@ -12,32 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedRecordsGetDeletedRelatedRecord200ResponseDataItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("$member_info") is { } nullNodeMemberInfo && nullNodeMemberInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberInfo = null;
+            if (parseNode.GetChildNode("Moved_To__s") is { } nullNodeMovedToS && nullNodeMovedToS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MovedToS = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique identifier of the deleted record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Metadata about the related record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo? MemberInfo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo? MemberInfo { get => _explicitNullValueMemberInfo; set { _explicitNullValueMemberInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$member_info"); else _explicitNullProperties?.Remove("$member_info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo? _explicitNullValueMemberInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo MemberInfo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo MemberInfo { get => _explicitNullValueMemberInfo; set { _explicitNullValueMemberInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$member_info"); else _explicitNullProperties?.Remove("$member_info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo _explicitNullValueMemberInfo = default!;
 #endif
         /// <summary>Stage value to which the record was moved (stage history / picklist movement).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MovedToS { get; set; }
+        public string? MovedToS { get => _explicitNullValueMovedToS; set { _explicitNullValueMovedToS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Moved_To__s"); else _explicitNullProperties?.Remove("Moved_To__s"); } }
+        private string? _explicitNullValueMovedToS = default!;
 #nullable restore
 #else
-        public string MovedToS { get; set; }
+        public string MovedToS { get => _explicitNullValueMovedToS; set { _explicitNullValueMovedToS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Moved_To__s"); else _explicitNullProperties?.Remove("Moved_To__s"); } }
+        private string _explicitNullValueMovedToS = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItem"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo>("$member_info", MemberInfo);
             writer.WriteStringValue("Moved_To__s", MovedToS);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

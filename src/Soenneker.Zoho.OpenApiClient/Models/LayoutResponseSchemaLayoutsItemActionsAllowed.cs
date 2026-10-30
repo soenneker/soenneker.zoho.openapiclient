@@ -12,23 +12,44 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutResponseSchemaLayoutsItemActionsAllowed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("clone") is { } nullNodeClone && nullNodeClone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clone = null;
+            if (parseNode.GetChildNode("deactivate") is { } nullNodeDeactivate && nullNodeDeactivate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deactivate = null;
+            if (parseNode.GetChildNode("delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
+            if (parseNode.GetChildNode("downgrade") is { } nullNodeDowngrade && nullNodeDowngrade.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Downgrade = null;
+            if (parseNode.GetChildNode("edit") is { } nullNodeEdit && nullNodeEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edit = null;
+            if (parseNode.GetChildNode("rename") is { } nullNodeRename && nullNodeRename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rename = null;
+            if (parseNode.GetChildNode("set_layout_permissions") is { } nullNodeSetLayoutPermissions && nullNodeSetLayoutPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetLayoutPermissions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the layout can be duplicated to create a new layout with the same field and section configuration. Possible values: `true` — cloning the layout is permitted; `false` — the layout cannot be cloned.</summary>
-        public bool? Clone { get; set; }
+        public bool? Clone { get => _explicitNullValueClone; set { _explicitNullValueClone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clone"); else _explicitNullProperties?.Remove("clone"); } }
+        private bool? _explicitNullValueClone = default!;
         /// <summary>Indicates whether the layout can be deactivated, preventing it from being assigned to new records while preserving existing associations. Possible values: `true` — deactivating the layout is permitted; `false` — the layout cannot be deactivated.</summary>
-        public bool? Deactivate { get; set; }
+        public bool? Deactivate { get => _explicitNullValueDeactivate; set { _explicitNullValueDeactivate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivate"); else _explicitNullProperties?.Remove("deactivate"); } }
+        private bool? _explicitNullValueDeactivate = default!;
         /// <summary>Indicates whether the layout can be permanently removed from the module configuration. Possible values: `true` — deleting the layout is permitted; `false` — the layout cannot be deleted.</summary>
-        public bool? Delete { get; set; }
+        public bool? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        private bool? _explicitNullValueDelete = default!;
         /// <summary>Indicates whether the layout can be downgraded to a lower-tier configuration or reverted to a previous edition-level feature set. Possible values: `true` — downgrading the layout is permitted; `false` — the layout cannot be downgraded.</summary>
-        public bool? Downgrade { get; set; }
+        public bool? Downgrade { get => _explicitNullValueDowngrade; set { _explicitNullValueDowngrade = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downgrade"); else _explicitNullProperties?.Remove("downgrade"); } }
+        private bool? _explicitNullValueDowngrade = default!;
         /// <summary>Indicates whether the layout&apos;s field arrangement, sections, and configuration can be modified. Possible values: `true` — editing the layout is permitted; `false` — the layout is locked against edits.</summary>
-        public bool? Edit { get; set; }
+        public bool? Edit { get => _explicitNullValueEdit; set { _explicitNullValueEdit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit"); else _explicitNullProperties?.Remove("edit"); } }
+        private bool? _explicitNullValueEdit = default!;
         /// <summary>Indicates whether the layout&apos;s display name can be changed. Possible values: `true` — renaming the layout is permitted; `false` — the layout name is locked.</summary>
-        public bool? Rename { get; set; }
+        public bool? Rename { get => _explicitNullValueRename; set { _explicitNullValueRename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rename"); else _explicitNullProperties?.Remove("rename"); } }
+        private bool? _explicitNullValueRename = default!;
         /// <summary>Indicates whether profile-level permission assignments for the layout can be configured. Possible values: `true` — managing layout permissions is permitted; `false` — permission settings cannot be modified for this layout.</summary>
-        public bool? SetLayoutPermissions { get; set; }
+        public bool? SetLayoutPermissions { get => _explicitNullValueSetLayoutPermissions; set { _explicitNullValueSetLayoutPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("set_layout_permissions"); else _explicitNullProperties?.Remove("set_layout_permissions"); } }
+        private bool? _explicitNullValueSetLayoutPermissions = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed"/> and sets the default values.
         /// </summary>
@@ -44,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemActionsAllowed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +98,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("edit", Edit);
             writer.WriteBoolValue("rename", Rename);
             writer.WriteBoolValue("set_layout_permissions", SetLayoutPermissions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

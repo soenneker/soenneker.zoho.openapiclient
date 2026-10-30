@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Record_share_email.Item.Item.Actions.Unsh
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareEmails403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareEmails200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareEmails200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,23 +12,39 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DataSharingGetDataSharing200ResponseDataSharingItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("public_in_portals") is { } nullNodePublicInPortals && nullNodePublicInPortals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicInPortals = null;
+            if (parseNode.GetChildNode("rule_computation_running") is { } nullNodeRuleComputationRunning && nullNodeRuleComputationRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleComputationRunning = null;
+            if (parseNode.GetChildNode("share_type") is { } nullNodeShareType && nullNodeShareType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the module&apos;s API name and ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemModule? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemModule Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Indicates whether the module is configured in public portals. **Possible values:** ** true** - The module is configured in public portals. **false** - The module is not configured in public portals.</summary>
-        public bool? PublicInPortals { get; set; }
+        public bool? PublicInPortals { get => _explicitNullValuePublicInPortals; set { _explicitNullValuePublicInPortals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_in_portals"); else _explicitNullProperties?.Remove("public_in_portals"); } }
+        private bool? _explicitNullValuePublicInPortals = default!;
         /// <summary>Indicates whether a sharing rule computation is currently running for the module. If you rerun a rule configured for a module, this key is true until the process completes. If the value is false, no rules are currently running for the module. **Possible values:** **true** - A sharing rule computation is running for the module. **false** - No sharing rule computation is running for the module.</summary>
-        public bool? RuleComputationRunning { get; set; }
+        public bool? RuleComputationRunning { get => _explicitNullValueRuleComputationRunning; set { _explicitNullValueRuleComputationRunning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_computation_running"); else _explicitNullProperties?.Remove("rule_computation_running"); } }
+        private bool? _explicitNullValueRuleComputationRunning = default!;
         /// <summary>Represents the access level for the module. **Possible values:** **private** - Only the record owner and their superior can view the records in the module. **public_read_only** - Users can view others&apos; records but cannot modify or delete them. **public_read_write** - Users can view and modify others&apos; records but cannot delete them. **public** - Users can view, modify, and delete others&apos; records.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemShareType? ShareType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemShareType? ShareType { get => _explicitNullValueShareType; set { _explicitNullValueShareType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_type"); else _explicitNullProperties?.Remove("share_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemShareType? _explicitNullValueShareType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItem"/> and sets the default values.
         /// </summary>
@@ -44,7 +60,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +87,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("public_in_portals", PublicInPortals);
             writer.WriteBoolValue("rule_computation_running", RuleComputationRunning);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingGetDataSharing200ResponseDataSharingItemShareType>("share_type", ShareType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

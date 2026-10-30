@@ -68,13 +68,15 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsGetTags403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsGetTags404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GettagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GettagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create tags for a module in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PosttagsResponse201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsCreateTagsSuccessResponse"/></returns>
         /// <param name="body">Represents the request body schema for the create tag operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,11 +84,11 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TagsCreateTags404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PosttagsResponse201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PosttagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.TagsRequestBuilder.TagsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TagsCreateTagsSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PosttagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.TagsRequestBuilder.TagsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PosttagsResponse201> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PosttagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.TagsRequestBuilder.TagsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TagsCreateTagsSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PosttagsRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.TagsRequestBuilder.TagsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -95,8 +97,10 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsCreateTags403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsCreateTags404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PosttagsResponse201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PosttagsResponse201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TagsCreateTagsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TagsCreateTagsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update an existing tag in your Zoho CRM organization.
@@ -122,6 +126,8 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsUpdateTags403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsUpdateTags404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,16 +12,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DuplicateCheckPreferenceGetDuplicateCheckPreference200Response : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("duplicate_check_preference") is { } nullNodeDuplicateCheckPreference && nullNodeDuplicateCheckPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateCheckPreference = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Duplicate check preference details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference? DuplicateCheckPreference { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference? DuplicateCheckPreference { get => _explicitNullValueDuplicateCheckPreference; set { _explicitNullValueDuplicateCheckPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_check_preference"); else _explicitNullProperties?.Remove("duplicate_check_preference"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference? _explicitNullValueDuplicateCheckPreference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference DuplicateCheckPreference { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference DuplicateCheckPreference { get => _explicitNullValueDuplicateCheckPreference; set { _explicitNullValueDuplicateCheckPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_check_preference"); else _explicitNullProperties?.Remove("duplicate_check_preference"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference _explicitNullValueDuplicateCheckPreference = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference200Response"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceGetDuplicateCheckPreference200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreference>("duplicate_check_preference", DuplicateCheckPreference);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

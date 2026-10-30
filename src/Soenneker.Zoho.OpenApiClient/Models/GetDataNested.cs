@@ -12,320 +12,449 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDataNested : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Additional_Information") is { } nullNodeAdditionalInformation && nullNodeAdditionalInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalInformation = null;
+            if (parseNode.GetChildNode("Address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("Appointment_End_Time") is { } nullNodeAppointmentEndTime && nullNodeAppointmentEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppointmentEndTime = null;
+            if (parseNode.GetChildNode("Appointment_For") is { } nullNodeAppointmentFor && nullNodeAppointmentFor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppointmentFor = null;
+            if (parseNode.GetChildNode("Appointment_Name") is { } nullNodeAppointmentName && nullNodeAppointmentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppointmentName = null;
+            if (parseNode.GetChildNode("Appointment_Start_Time") is { } nullNodeAppointmentStartTime && nullNodeAppointmentStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppointmentStartTime = null;
+            if (parseNode.GetChildNode("Cancellation_Note") is { } nullNodeCancellationNote && nullNodeCancellationNote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancellationNote = null;
+            if (parseNode.GetChildNode("Cancellation_Reason") is { } nullNodeCancellationReason && nullNodeCancellationReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancellationReason = null;
+            if (parseNode.GetChildNode("Cancelled_By") is { } nullNodeCancelledBy && nullNodeCancelledBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelledBy = null;
+            if (parseNode.GetChildNode("Cancelled_Time") is { } nullNodeCancelledTime && nullNodeCancelledTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelledTime = null;
+            if (parseNode.GetChildNode("Contact_Name__s") is { } nullNodeContactNameS && nullNodeContactNameS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactNameS = null;
+            if (parseNode.GetChildNode("Created_By") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("Created_Time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("$currency_symbol") is { } nullNodeCurrencySymbol && nullNodeCurrencySymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencySymbol = null;
+            if (parseNode.GetChildNode("Date_1") is { } nullNodeDate1 && nullNodeDate1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date1 = null;
+            if (parseNode.GetChildNode("Duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("$editable") is { } nullNodeEditable && nullNodeEditable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Editable = null;
+            if (parseNode.GetChildNode("$field_states") is { } nullNodeFieldStates && nullNodeFieldStates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldStates = null;
+            if (parseNode.GetChildNode("$status") is { } nullNodeGetDataNestedStatus && nullNodeGetDataNestedStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GetDataNestedStatus = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("Job_Sheet_Created__s") is { } nullNodeJobSheetCreatedS && nullNodeJobSheetCreatedS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobSheetCreatedS = null;
+            if (parseNode.GetChildNode("Job_Sheet_Description__s") is { } nullNodeJobSheetDescriptionS && nullNodeJobSheetDescriptionS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobSheetDescriptionS = null;
+            if (parseNode.GetChildNode("Job_Sheet_Name__s") is { } nullNodeJobSheetNameS && nullNodeJobSheetNameS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobSheetNameS = null;
+            if (parseNode.GetChildNode("Job_Sheet_Section__s") is { } nullNodeJobSheetSectionS && nullNodeJobSheetSectionS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobSheetSectionS = null;
+            if (parseNode.GetChildNode("Last_Activity_Time") is { } nullNodeLastActivityTime && nullNodeLastActivityTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastActivityTime = null;
+            if (parseNode.GetChildNode("Location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("Modified_By") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("Modified_Time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("Owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("Record_Status__s") is { } nullNodeRecordStatusS && nullNodeRecordStatusS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordStatusS = null;
+            if (parseNode.GetChildNode("Remind_At") is { } nullNodeRemindAt && nullNodeRemindAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemindAt = null;
+            if (parseNode.GetChildNode("Reschedule_Count") is { } nullNodeRescheduleCount && nullNodeRescheduleCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RescheduleCount = null;
+            if (parseNode.GetChildNode("Rescheduled_By") is { } nullNodeRescheduledBy && nullNodeRescheduledBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RescheduledBy = null;
+            if (parseNode.GetChildNode("Rescheduled_From") is { } nullNodeRescheduledFrom && nullNodeRescheduledFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RescheduledFrom = null;
+            if (parseNode.GetChildNode("Rescheduled_Time") is { } nullNodeRescheduledTime && nullNodeRescheduledTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RescheduledTime = null;
+            if (parseNode.GetChildNode("Rescheduled_To") is { } nullNodeRescheduledTo && nullNodeRescheduledTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RescheduledTo = null;
+            if (parseNode.GetChildNode("Reschedule_Note") is { } nullNodeRescheduleNote && nullNodeRescheduleNote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RescheduleNote = null;
+            if (parseNode.GetChildNode("Reschedule_Reason") is { } nullNodeRescheduleReason && nullNodeRescheduleReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RescheduleReason = null;
+            if (parseNode.GetChildNode("Service_Name") is { } nullNodeServiceName && nullNodeServiceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceName = null;
+            if (parseNode.GetChildNode("$sharing_permission") is { } nullNodeSharingPermission && nullNodeSharingPermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingPermission = null;
+            if (parseNode.GetChildNode("Status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("Tag") is { } nullNodeTag && nullNodeTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tag = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents any additional details about the appointment or customer requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalInformation { get; set; }
+        public string? AdditionalInformation { get => _explicitNullValueAdditionalInformation; set { _explicitNullValueAdditionalInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Additional_Information"); else _explicitNullProperties?.Remove("Additional_Information"); } }
+        private string? _explicitNullValueAdditionalInformation = default!;
 #nullable restore
 #else
-        public string AdditionalInformation { get; set; }
+        public string AdditionalInformation { get => _explicitNullValueAdditionalInformation; set { _explicitNullValueAdditionalInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Additional_Information"); else _explicitNullProperties?.Remove("Additional_Information"); } }
+        private string _explicitNullValueAdditionalInformation = default!;
 #endif
         /// <summary>Represents the address where the service is delivered when the appointment location is Client Address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address { get; set; }
+        public string? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Address"); else _explicitNullProperties?.Remove("Address"); } }
+        private string? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public string Address { get; set; }
+        public string Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Address"); else _explicitNullProperties?.Remove("Address"); } }
+        private string _explicitNullValueAddress = default!;
 #endif
         /// <summary>Represents the scheduled end date and time of the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppointmentEndTime { get; set; }
+        public string? AppointmentEndTime { get => _explicitNullValueAppointmentEndTime; set { _explicitNullValueAppointmentEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Appointment_End_Time"); else _explicitNullProperties?.Remove("Appointment_End_Time"); } }
+        private string? _explicitNullValueAppointmentEndTime = default!;
 #nullable restore
 #else
-        public string AppointmentEndTime { get; set; }
+        public string AppointmentEndTime { get => _explicitNullValueAppointmentEndTime; set { _explicitNullValueAppointmentEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Appointment_End_Time"); else _explicitNullProperties?.Remove("Appointment_End_Time"); } }
+        private string _explicitNullValueAppointmentEndTime = default!;
 #endif
         /// <summary>Represents the customer for whom the appointment was created, including the record ID, name, and module information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetAppointmentForNested? AppointmentFor { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetAppointmentForNested? AppointmentFor { get => _explicitNullValueAppointmentFor; set { _explicitNullValueAppointmentFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Appointment_For"); else _explicitNullProperties?.Remove("Appointment_For"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetAppointmentForNested? _explicitNullValueAppointmentFor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetAppointmentForNested AppointmentFor { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetAppointmentForNested AppointmentFor { get => _explicitNullValueAppointmentFor; set { _explicitNullValueAppointmentFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Appointment_For"); else _explicitNullProperties?.Remove("Appointment_For"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetAppointmentForNested _explicitNullValueAppointmentFor = default!;
 #endif
         /// <summary>Represents the name of the appointment record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppointmentName { get; set; }
+        public string? AppointmentName { get => _explicitNullValueAppointmentName; set { _explicitNullValueAppointmentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Appointment_Name"); else _explicitNullProperties?.Remove("Appointment_Name"); } }
+        private string? _explicitNullValueAppointmentName = default!;
 #nullable restore
 #else
-        public string AppointmentName { get; set; }
+        public string AppointmentName { get => _explicitNullValueAppointmentName; set { _explicitNullValueAppointmentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Appointment_Name"); else _explicitNullProperties?.Remove("Appointment_Name"); } }
+        private string _explicitNullValueAppointmentName = default!;
 #endif
         /// <summary>Represents the scheduled start date and time of the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppointmentStartTime { get; set; }
+        public string? AppointmentStartTime { get => _explicitNullValueAppointmentStartTime; set { _explicitNullValueAppointmentStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Appointment_Start_Time"); else _explicitNullProperties?.Remove("Appointment_Start_Time"); } }
+        private string? _explicitNullValueAppointmentStartTime = default!;
 #nullable restore
 #else
-        public string AppointmentStartTime { get; set; }
+        public string AppointmentStartTime { get => _explicitNullValueAppointmentStartTime; set { _explicitNullValueAppointmentStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Appointment_Start_Time"); else _explicitNullProperties?.Remove("Appointment_Start_Time"); } }
+        private string _explicitNullValueAppointmentStartTime = default!;
 #endif
         /// <summary>Represents the note explaining the reason for cancelling the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CancellationNote { get; set; }
+        public string? CancellationNote { get => _explicitNullValueCancellationNote; set { _explicitNullValueCancellationNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cancellation_Note"); else _explicitNullProperties?.Remove("Cancellation_Note"); } }
+        private string? _explicitNullValueCancellationNote = default!;
 #nullable restore
 #else
-        public string CancellationNote { get; set; }
+        public string CancellationNote { get => _explicitNullValueCancellationNote; set { _explicitNullValueCancellationNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cancellation_Note"); else _explicitNullProperties?.Remove("Cancellation_Note"); } }
+        private string _explicitNullValueCancellationNote = default!;
 #endif
         /// <summary>Denotes who cancelled the appointment.Possible Values: &apos;By Customer&apos; and &apos;By Team&apos;. The default value is &apos;By Customer&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CancellationReason { get; set; }
+        public string? CancellationReason { get => _explicitNullValueCancellationReason; set { _explicitNullValueCancellationReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cancellation_Reason"); else _explicitNullProperties?.Remove("Cancellation_Reason"); } }
+        private string? _explicitNullValueCancellationReason = default!;
 #nullable restore
 #else
-        public string CancellationReason { get; set; }
+        public string CancellationReason { get => _explicitNullValueCancellationReason; set { _explicitNullValueCancellationReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cancellation_Reason"); else _explicitNullProperties?.Remove("Cancellation_Reason"); } }
+        private string _explicitNullValueCancellationReason = default!;
 #endif
         /// <summary>Represents the user who cancelled the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedCancelledByProperty? CancelledBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedCancelledByProperty? CancelledBy { get => _explicitNullValueCancelledBy; set { _explicitNullValueCancelledBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cancelled_By"); else _explicitNullProperties?.Remove("Cancelled_By"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedCancelledByProperty? _explicitNullValueCancelledBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedCancelledByProperty CancelledBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedCancelledByProperty CancelledBy { get => _explicitNullValueCancelledBy; set { _explicitNullValueCancelledBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cancelled_By"); else _explicitNullProperties?.Remove("Cancelled_By"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedCancelledByProperty _explicitNullValueCancelledBy = default!;
 #endif
         /// <summary>Represents the date and time when the appointment was cancelled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CancelledTime { get; set; }
+        public string? CancelledTime { get => _explicitNullValueCancelledTime; set { _explicitNullValueCancelledTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cancelled_Time"); else _explicitNullProperties?.Remove("Cancelled_Time"); } }
+        private string? _explicitNullValueCancelledTime = default!;
 #nullable restore
 #else
-        public string CancelledTime { get; set; }
+        public string CancelledTime { get => _explicitNullValueCancelledTime; set { _explicitNullValueCancelledTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cancelled_Time"); else _explicitNullProperties?.Remove("Cancelled_Time"); } }
+        private string _explicitNullValueCancelledTime = default!;
 #endif
         /// <summary>Represents the name and unique ID of the contact associated with the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactNameS { get; set; }
+        public string? ContactNameS { get => _explicitNullValueContactNameS; set { _explicitNullValueContactNameS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contact_Name__s"); else _explicitNullProperties?.Remove("Contact_Name__s"); } }
+        private string? _explicitNullValueContactNameS = default!;
 #nullable restore
 #else
-        public string ContactNameS { get; set; }
+        public string ContactNameS { get => _explicitNullValueContactNameS; set { _explicitNullValueContactNameS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contact_Name__s"); else _explicitNullProperties?.Remove("Contact_Name__s"); } }
+        private string _explicitNullValueContactNameS = default!;
 #endif
         /// <summary>Represents the user who created the appointment record, including the user ID, full name, and email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetCreatedByNested? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetCreatedByNested? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_By"); else _explicitNullProperties?.Remove("Created_By"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetCreatedByNested? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetCreatedByNested CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetCreatedByNested CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_By"); else _explicitNullProperties?.Remove("Created_By"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetCreatedByNested _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Represents the date and time when the appointment record was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedTime { get; set; }
+        public string? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_Time"); else _explicitNullProperties?.Remove("Created_Time"); } }
+        private string? _explicitNullValueCreatedTime = default!;
 #nullable restore
 #else
-        public string CreatedTime { get; set; }
+        public string CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_Time"); else _explicitNullProperties?.Remove("Created_Time"); } }
+        private string _explicitNullValueCreatedTime = default!;
 #endif
         /// <summary>Represents the currency symbol for the CRM organization&apos;s primary currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencySymbol { get; set; }
+        public string? CurrencySymbol { get => _explicitNullValueCurrencySymbol; set { _explicitNullValueCurrencySymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$currency_symbol"); else _explicitNullProperties?.Remove("$currency_symbol"); } }
+        private string? _explicitNullValueCurrencySymbol = default!;
 #nullable restore
 #else
-        public string CurrencySymbol { get; set; }
+        public string CurrencySymbol { get => _explicitNullValueCurrencySymbol; set { _explicitNullValueCurrencySymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$currency_symbol"); else _explicitNullProperties?.Remove("$currency_symbol"); } }
+        private string _explicitNullValueCurrencySymbol = default!;
 #endif
         /// <summary>Represents an additional date field for the appointment record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Date1 { get; set; }
+        public string? Date1 { get => _explicitNullValueDate1; set { _explicitNullValueDate1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Date_1"); else _explicitNullProperties?.Remove("Date_1"); } }
+        private string? _explicitNullValueDate1 = default!;
 #nullable restore
 #else
-        public string Date1 { get; set; }
+        public string Date1 { get => _explicitNullValueDate1; set { _explicitNullValueDate1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Date_1"); else _explicitNullProperties?.Remove("Date_1"); } }
+        private string _explicitNullValueDate1 = default!;
 #endif
         /// <summary>Represents the duration of the appointment in minutes.</summary>
-        public int? Duration { get; set; }
+        public int? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Duration"); else _explicitNullProperties?.Remove("Duration"); } }
+        private int? _explicitNullValueDuration = default!;
         /// <summary>Indicates whether the current user has permission to edit the appointment record.</summary>
-        public bool? Editable { get; set; }
+        public bool? Editable { get => _explicitNullValueEditable; set { _explicitNullValueEditable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$editable"); else _explicitNullProperties?.Remove("$editable"); } }
+        private bool? _explicitNullValueEditable = default!;
         /// <summary>Represents the state of fields with conditional visibility or special behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FieldStates { get; set; }
+        public string? FieldStates { get => _explicitNullValueFieldStates; set { _explicitNullValueFieldStates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$field_states"); else _explicitNullProperties?.Remove("$field_states"); } }
+        private string? _explicitNullValueFieldStates = default!;
 #nullable restore
 #else
-        public string FieldStates { get; set; }
+        public string FieldStates { get => _explicitNullValueFieldStates; set { _explicitNullValueFieldStates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$field_states"); else _explicitNullProperties?.Remove("$field_states"); } }
+        private string _explicitNullValueFieldStates = default!;
 #endif
         /// <summary>Represents the Custom View status indicator for the appointment record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GetDataNestedStatus { get; set; }
+        public string? GetDataNestedStatus { get => _explicitNullValueGetDataNestedStatus; set { _explicitNullValueGetDataNestedStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$status"); else _explicitNullProperties?.Remove("$status"); } }
+        private string? _explicitNullValueGetDataNestedStatus = default!;
 #nullable restore
 #else
-        public string GetDataNestedStatus { get; set; }
+        public string GetDataNestedStatus { get => _explicitNullValueGetDataNestedStatus; set { _explicitNullValueGetDataNestedStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$status"); else _explicitNullProperties?.Remove("$status"); } }
+        private string _explicitNullValueGetDataNestedStatus = default!;
 #endif
         /// <summary>Represents the unique ID of the appointment record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Indicates whether a job sheet has been created for this appointment. **Possible values**:- true - A job sheet has been created.- false - No job sheet has been created.</summary>
-        public bool? JobSheetCreatedS { get; set; }
+        public bool? JobSheetCreatedS { get => _explicitNullValueJobSheetCreatedS; set { _explicitNullValueJobSheetCreatedS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job_Sheet_Created__s"); else _explicitNullProperties?.Remove("Job_Sheet_Created__s"); } }
+        private bool? _explicitNullValueJobSheetCreatedS = default!;
         /// <summary>Represents the description of the job sheet associated with the completed appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobSheetDescriptionS { get; set; }
+        public string? JobSheetDescriptionS { get => _explicitNullValueJobSheetDescriptionS; set { _explicitNullValueJobSheetDescriptionS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job_Sheet_Description__s"); else _explicitNullProperties?.Remove("Job_Sheet_Description__s"); } }
+        private string? _explicitNullValueJobSheetDescriptionS = default!;
 #nullable restore
 #else
-        public string JobSheetDescriptionS { get; set; }
+        public string JobSheetDescriptionS { get => _explicitNullValueJobSheetDescriptionS; set { _explicitNullValueJobSheetDescriptionS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job_Sheet_Description__s"); else _explicitNullProperties?.Remove("Job_Sheet_Description__s"); } }
+        private string _explicitNullValueJobSheetDescriptionS = default!;
 #endif
         /// <summary>Represents the name of the job sheet created for the completed appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobSheetNameS { get; set; }
+        public string? JobSheetNameS { get => _explicitNullValueJobSheetNameS; set { _explicitNullValueJobSheetNameS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job_Sheet_Name__s"); else _explicitNullProperties?.Remove("Job_Sheet_Name__s"); } }
+        private string? _explicitNullValueJobSheetNameS = default!;
 #nullable restore
 #else
-        public string JobSheetNameS { get; set; }
+        public string JobSheetNameS { get => _explicitNullValueJobSheetNameS; set { _explicitNullValueJobSheetNameS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job_Sheet_Name__s"); else _explicitNullProperties?.Remove("Job_Sheet_Name__s"); } }
+        private string _explicitNullValueJobSheetNameS = default!;
 #endif
         /// <summary>Represents the job sheet section displayed to the user for a completed appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobSheetSectionS { get; set; }
+        public string? JobSheetSectionS { get => _explicitNullValueJobSheetSectionS; set { _explicitNullValueJobSheetSectionS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job_Sheet_Section__s"); else _explicitNullProperties?.Remove("Job_Sheet_Section__s"); } }
+        private string? _explicitNullValueJobSheetSectionS = default!;
 #nullable restore
 #else
-        public string JobSheetSectionS { get; set; }
+        public string JobSheetSectionS { get => _explicitNullValueJobSheetSectionS; set { _explicitNullValueJobSheetSectionS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job_Sheet_Section__s"); else _explicitNullProperties?.Remove("Job_Sheet_Section__s"); } }
+        private string _explicitNullValueJobSheetSectionS = default!;
 #endif
         /// <summary>Represents the date and time of the last activity on the appointment record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastActivityTime { get; set; }
+        public string? LastActivityTime { get => _explicitNullValueLastActivityTime; set { _explicitNullValueLastActivityTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Last_Activity_Time"); else _explicitNullProperties?.Remove("Last_Activity_Time"); } }
+        private string? _explicitNullValueLastActivityTime = default!;
 #nullable restore
 #else
-        public string LastActivityTime { get; set; }
+        public string LastActivityTime { get => _explicitNullValueLastActivityTime; set { _explicitNullValueLastActivityTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Last_Activity_Time"); else _explicitNullProperties?.Remove("Last_Activity_Time"); } }
+        private string _explicitNullValueLastActivityTime = default!;
 #endif
         /// <summary>Represents the location where the appointment service is offered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Location { get; set; }
+        public string? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Location"); else _explicitNullProperties?.Remove("Location"); } }
+        private string? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public string Location { get; set; }
+        public string Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Location"); else _explicitNullProperties?.Remove("Location"); } }
+        private string _explicitNullValueLocation = default!;
 #endif
         /// <summary>Represents the user who last modified the appointment record, including the user ID, full name, and email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetModifiedByNested? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetModifiedByNested? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetModifiedByNested? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetModifiedByNested ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetModifiedByNested ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetModifiedByNested _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>Represents the date and time when the appointment record was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedTime { get; set; }
+        public string? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_Time"); else _explicitNullProperties?.Remove("Modified_Time"); } }
+        private string? _explicitNullValueModifiedTime = default!;
 #nullable restore
 #else
-        public string ModifiedTime { get; set; }
+        public string ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_Time"); else _explicitNullProperties?.Remove("Modified_Time"); } }
+        private string _explicitNullValueModifiedTime = default!;
 #endif
         /// <summary>Represents the service member assigned as the appointment owner, including the user ID, full name, and email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetOwnerNested? Owner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetOwnerNested? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetOwnerNested? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetOwnerNested Owner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetOwnerNested Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetOwnerNested _explicitNullValueOwner = default!;
 #endif
         /// <summary>Represents the availability status of the appointment record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordStatusS { get; set; }
+        public string? RecordStatusS { get => _explicitNullValueRecordStatusS; set { _explicitNullValueRecordStatusS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Record_Status__s"); else _explicitNullProperties?.Remove("Record_Status__s"); } }
+        private string? _explicitNullValueRecordStatusS = default!;
 #nullable restore
 #else
-        public string RecordStatusS { get; set; }
+        public string RecordStatusS { get => _explicitNullValueRecordStatusS; set { _explicitNullValueRecordStatusS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Record_Status__s"); else _explicitNullProperties?.Remove("Record_Status__s"); } }
+        private string _explicitNullValueRecordStatusS = default!;
 #endif
         /// <summary>Represents the list of reminder configurations for the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRemindAtItem>? RemindAt { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRemindAtItem>? RemindAt { get => _explicitNullValueRemindAt; set { _explicitNullValueRemindAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Remind_At"); else _explicitNullProperties?.Remove("Remind_At"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRemindAtItem>? _explicitNullValueRemindAt = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRemindAtItem> RemindAt { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRemindAtItem> RemindAt { get => _explicitNullValueRemindAt; set { _explicitNullValueRemindAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Remind_At"); else _explicitNullProperties?.Remove("Remind_At"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRemindAtItem> _explicitNullValueRemindAt = default!;
 #endif
         /// <summary>Represents the number of times the appointment has been rescheduled.</summary>
-        public int? RescheduleCount { get; set; }
+        public int? RescheduleCount { get => _explicitNullValueRescheduleCount; set { _explicitNullValueRescheduleCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reschedule_Count"); else _explicitNullProperties?.Remove("Reschedule_Count"); } }
+        private int? _explicitNullValueRescheduleCount = default!;
         /// <summary>Represents the user who rescheduled the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRescheduledByProperty? RescheduledBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRescheduledByProperty? RescheduledBy { get => _explicitNullValueRescheduledBy; set { _explicitNullValueRescheduledBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Rescheduled_By"); else _explicitNullProperties?.Remove("Rescheduled_By"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRescheduledByProperty? _explicitNullValueRescheduledBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRescheduledByProperty RescheduledBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRescheduledByProperty RescheduledBy { get => _explicitNullValueRescheduledBy; set { _explicitNullValueRescheduledBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Rescheduled_By"); else _explicitNullProperties?.Remove("Rescheduled_By"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetDataNestedRescheduledByProperty _explicitNullValueRescheduledBy = default!;
 #endif
         /// <summary>Denotes the previous appointment time from which the appointment was rescheduled to the new time. The Rescheduled_From time should be lesser than the new appointment time. The value should be given in the ISO 8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RescheduledFrom { get; set; }
+        public string? RescheduledFrom { get => _explicitNullValueRescheduledFrom; set { _explicitNullValueRescheduledFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Rescheduled_From"); else _explicitNullProperties?.Remove("Rescheduled_From"); } }
+        private string? _explicitNullValueRescheduledFrom = default!;
 #nullable restore
 #else
-        public string RescheduledFrom { get; set; }
+        public string RescheduledFrom { get => _explicitNullValueRescheduledFrom; set { _explicitNullValueRescheduledFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Rescheduled_From"); else _explicitNullProperties?.Remove("Rescheduled_From"); } }
+        private string _explicitNullValueRescheduledFrom = default!;
 #endif
         /// <summary>Represents the date and time when the appointment was rescheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RescheduledTime { get; set; }
+        public string? RescheduledTime { get => _explicitNullValueRescheduledTime; set { _explicitNullValueRescheduledTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Rescheduled_Time"); else _explicitNullProperties?.Remove("Rescheduled_Time"); } }
+        private string? _explicitNullValueRescheduledTime = default!;
 #nullable restore
 #else
-        public string RescheduledTime { get; set; }
+        public string RescheduledTime { get => _explicitNullValueRescheduledTime; set { _explicitNullValueRescheduledTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Rescheduled_Time"); else _explicitNullProperties?.Remove("Rescheduled_Time"); } }
+        private string _explicitNullValueRescheduledTime = default!;
 #endif
         /// <summary>Represents the new appointment start time after rescheduling.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RescheduledTo { get; set; }
+        public string? RescheduledTo { get => _explicitNullValueRescheduledTo; set { _explicitNullValueRescheduledTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Rescheduled_To"); else _explicitNullProperties?.Remove("Rescheduled_To"); } }
+        private string? _explicitNullValueRescheduledTo = default!;
 #nullable restore
 #else
-        public string RescheduledTo { get; set; }
+        public string RescheduledTo { get => _explicitNullValueRescheduledTo; set { _explicitNullValueRescheduledTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Rescheduled_To"); else _explicitNullProperties?.Remove("Rescheduled_To"); } }
+        private string _explicitNullValueRescheduledTo = default!;
 #endif
         /// <summary>Represents the note explaining the reason for rescheduling the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RescheduleNote { get; set; }
+        public string? RescheduleNote { get => _explicitNullValueRescheduleNote; set { _explicitNullValueRescheduleNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reschedule_Note"); else _explicitNullProperties?.Remove("Reschedule_Note"); } }
+        private string? _explicitNullValueRescheduleNote = default!;
 #nullable restore
 #else
-        public string RescheduleNote { get; set; }
+        public string RescheduleNote { get => _explicitNullValueRescheduleNote; set { _explicitNullValueRescheduleNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reschedule_Note"); else _explicitNullProperties?.Remove("Reschedule_Note"); } }
+        private string _explicitNullValueRescheduleNote = default!;
 #endif
         /// <summary>Denotes who rescheduled the appointment.Possible Values: &apos;By Customer&apos; and &apos;By Team&apos;. The default value is &apos;By Customer&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RescheduleReason { get; set; }
+        public string? RescheduleReason { get => _explicitNullValueRescheduleReason; set { _explicitNullValueRescheduleReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reschedule_Reason"); else _explicitNullProperties?.Remove("Reschedule_Reason"); } }
+        private string? _explicitNullValueRescheduleReason = default!;
 #nullable restore
 #else
-        public string RescheduleReason { get; set; }
+        public string RescheduleReason { get => _explicitNullValueRescheduleReason; set { _explicitNullValueRescheduleReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reschedule_Reason"); else _explicitNullProperties?.Remove("Reschedule_Reason"); } }
+        private string _explicitNullValueRescheduleReason = default!;
 #endif
         /// <summary>Represents the service for which the appointment was created, including the service ID and name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetServiceNameNested? ServiceName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetServiceNameNested? ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Service_Name"); else _explicitNullProperties?.Remove("Service_Name"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetServiceNameNested? _explicitNullValueServiceName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetServiceNameNested ServiceName { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetServiceNameNested ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Service_Name"); else _explicitNullProperties?.Remove("Service_Name"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetServiceNameNested _explicitNullValueServiceName = default!;
 #endif
         /// <summary>Represents the sharing permission level of the appointment record for the current user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SharingPermission { get; set; }
+        public string? SharingPermission { get => _explicitNullValueSharingPermission; set { _explicitNullValueSharingPermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$sharing_permission"); else _explicitNullProperties?.Remove("$sharing_permission"); } }
+        private string? _explicitNullValueSharingPermission = default!;
 #nullable restore
 #else
-        public string SharingPermission { get; set; }
+        public string SharingPermission { get => _explicitNullValueSharingPermission; set { _explicitNullValueSharingPermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$sharing_permission"); else _explicitNullProperties?.Remove("$sharing_permission"); } }
+        private string _explicitNullValueSharingPermission = default!;
 #endif
         /// <summary>Represents the current status of the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Status"); else _explicitNullProperties?.Remove("Status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Status"); else _explicitNullProperties?.Remove("Status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>Represents the list of tags associated with the appointment record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tag { get; set; }
+        public List<string>? Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Tag"); else _explicitNullProperties?.Remove("Tag"); } }
+        private List<string>? _explicitNullValueTag = default!;
 #nullable restore
 #else
-        public List<string> Tag { get; set; }
+        public List<string> Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Tag"); else _explicitNullProperties?.Remove("Tag"); } }
+        private List<string> _explicitNullValueTag = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetDataNested"/> and sets the default values.
@@ -342,7 +471,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GetDataNested CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.GetDataNested();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GetDataNested(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -445,6 +574,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("$sharing_permission", SharingPermission);
             writer.WriteStringValue("Status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("Tag", Tag);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

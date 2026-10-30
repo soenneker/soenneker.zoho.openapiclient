@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteidResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteidResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteidResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteidResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the details of a single appointment record from your Zoho CRM organization.
@@ -71,6 +71,8 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsGetAppointmentById404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -92,7 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutappointmentssResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To delete a single appointment record from your Zoho CRM organization by its unique ID. Note that this operation will not delete any deals created upon completion of the appointment.

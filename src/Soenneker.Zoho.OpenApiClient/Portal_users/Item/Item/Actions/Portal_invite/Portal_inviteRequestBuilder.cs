@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item.Item.Actions.Portal_inv
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersSingleInviteUser200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To send a portal invitation to a single CRM record in your Zoho CRM organization, inviting or re-inviting the record as a portal user for the specified user type.

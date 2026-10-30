@@ -12,19 +12,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CancelMeetingsCancelMeetingsRequestDataItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cancelled_by") is { } nullNodeCancelledBy && nullNodeCancelledBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelledBy = null;
+            if (parseNode.GetChildNode("send_cancelling_mail") is { } nullNodeSendCancellingMail && nullNodeSendCancellingMail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendCancellingMail = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The user who cancelled the meeting. If specified, send_cancelling_mail must be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItemCancelledBy? CancelledBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItemCancelledBy? CancelledBy { get => _explicitNullValueCancelledBy; set { _explicitNullValueCancelledBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelled_by"); else _explicitNullProperties?.Remove("cancelled_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItemCancelledBy? _explicitNullValueCancelledBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItemCancelledBy CancelledBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItemCancelledBy CancelledBy { get => _explicitNullValueCancelledBy; set { _explicitNullValueCancelledBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelled_by"); else _explicitNullProperties?.Remove("cancelled_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItemCancelledBy _explicitNullValueCancelledBy = default!;
 #endif
         /// <summary>Indicates whether to send a meeting cancellation notification email to all participants. Mandatory. Possible values: true - Sends a cancellation notification email to all participants. false - Cancels the meeting without sending a notification email</summary>
-        public bool? SendCancellingMail { get; set; }
+        public bool? SendCancellingMail { get => _explicitNullValueSendCancellingMail; set { _explicitNullValueSendCancellingMail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_cancelling_mail"); else _explicitNullProperties?.Remove("send_cancelling_mail"); } }
+        private bool? _explicitNullValueSendCancellingMail = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItem"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CancelMeetingsCancelMeetingsRequestDataItemCancelledBy>("cancelled_by", CancelledBy);
             writer.WriteBoolValue("send_cancelling_mail", SendCancellingMail);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,19 +12,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("break_timing") is { } nullNodeBreakTiming && nullNodeBreakTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BreakTiming = null;
+            if (parseNode.GetChildNode("days") is { } nullNodeDays && nullNodeDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Days = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the start and end time of the break on the specified dayin `HH:MM` 24-hour format. A break must belonger than 15 minutes and shorter than 2hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BreakTiming { get; set; }
+        public List<string>? BreakTiming { get => _explicitNullValueBreakTiming; set { _explicitNullValueBreakTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_timing"); else _explicitNullProperties?.Remove("break_timing"); } }
+        private List<string>? _explicitNullValueBreakTiming = default!;
 #nullable restore
 #else
-        public List<string> BreakTiming { get; set; }
+        public List<string> BreakTiming { get => _explicitNullValueBreakTiming; set { _explicitNullValueBreakTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_timing"); else _explicitNullProperties?.Remove("break_timing"); } }
+        private List<string> _explicitNullValueBreakTiming = default!;
 #endif
         /// <summary>Represents the day of the week to whichthis custom break timing applies.**Possible values**: - Monday- Tuesday- Wednesday- Thursday- Friday- Saturday- Sunday</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItemDays? Days { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItemDays? Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItemDays? _explicitNullValueDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("break_timing", BreakTiming);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItemDays>("days", Days);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

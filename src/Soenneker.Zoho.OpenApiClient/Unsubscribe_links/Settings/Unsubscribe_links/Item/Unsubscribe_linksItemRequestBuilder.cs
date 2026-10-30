@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPermissionDeniedError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkRemovalResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkRemovalResultList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,6 +78,8 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPermissionDeniedError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RetrieveUnsubscribeLinksResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RetrieveUnsubscribeLinksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -97,7 +101,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateUnsubscribeLinksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateUnsubscribeLinksSuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateUnsubscribeLinksSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateUnsubscribeLinksSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To delete a specific unsubscribe link. Note that the default unsubscribe link cannot be deleted.

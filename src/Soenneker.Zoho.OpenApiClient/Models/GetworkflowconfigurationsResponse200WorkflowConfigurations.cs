@@ -12,32 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetworkflowconfigurationsResponse200WorkflowConfigurations : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("related_triggers_details") is { } nullNodeRelatedTriggersDetails && nullNodeRelatedTriggersDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedTriggersDetails = null;
+            if (parseNode.GetChildNode("triggers") is { } nullNodeTriggers && nullNodeTriggers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Triggers = null;
+        }
+
         /// <summary>List of available action types for the module. Each action defines an operation that can be performed when the workflow rule fires, along with its per-type limit (applies independently to instant_actions and scheduled_actions), scheduling support, and whether it is an associate action (reusable entity referenced by ID) or non-associate action (defined inline).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction>? Actions { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction>? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction> Actions { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction> _explicitNullValueActions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of related modules (e.g., Notes, Calls, Activities) whose record events can trigger workflow rules on the parent module. Each entry contains the related module&apos;s identity and available trigger types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetail>? RelatedTriggersDetails { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetail>? RelatedTriggersDetails { get => _explicitNullValueRelatedTriggersDetails; set { _explicitNullValueRelatedTriggersDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_triggers_details"); else _explicitNullProperties?.Remove("related_triggers_details"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetail>? _explicitNullValueRelatedTriggersDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetail> RelatedTriggersDetails { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetail> RelatedTriggersDetails { get => _explicitNullValueRelatedTriggersDetails; set { _explicitNullValueRelatedTriggersDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_triggers_details"); else _explicitNullProperties?.Remove("related_triggers_details"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetail> _explicitNullValueRelatedTriggersDetails = default!;
 #endif
         /// <summary>Represents the list of trigger types available for the module. Each entry defines an event that can initiate a workflow rule, along with the action types supported for that trigger (for example, create, edit, delete, field_update, date_or_datetime).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger>? Triggers { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger>? Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger>? _explicitNullValueTriggers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger> Triggers { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger> Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger> _explicitNullValueTriggers = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction>("actions", Actions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsRelatedTriggerDetail>("related_triggers_details", RelatedTriggersDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger>("triggers", Triggers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

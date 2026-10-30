@@ -57,6 +57,8 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsInternalServerErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

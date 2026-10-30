@@ -12,32 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available_count") is { } nullNodeAvailableCount && nullNodeAvailableCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableCount = null;
+            if (parseNode.GetChildNode("limits") is { } nullNodeLimits && nullNodeLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limits = null;
+            if (parseNode.GetChildNode("used_count") is { } nullNodeUsedCount && nullNodeUsedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsedCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Available count details for the feature</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsAvailableCount? AvailableCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsAvailableCount? AvailableCount { get => _explicitNullValueAvailableCount; set { _explicitNullValueAvailableCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_count"); else _explicitNullProperties?.Remove("available_count"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsAvailableCount? _explicitNullValueAvailableCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsAvailableCount AvailableCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsAvailableCount AvailableCount { get => _explicitNullValueAvailableCount; set { _explicitNullValueAvailableCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_count"); else _explicitNullProperties?.Remove("available_count"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsAvailableCount _explicitNullValueAvailableCount = default!;
 #endif
         /// <summary>Limit details for the feature</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsLimits? Limits { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsLimits? Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsLimits? _explicitNullValueLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsLimits Limits { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsLimits Limits { get => _explicitNullValueLimits; set { _explicitNullValueLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limits"); else _explicitNullProperties?.Remove("limits"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsLimits _explicitNullValueLimits = default!;
 #endif
         /// <summary>used count of the feature</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsUsedCount? UsedCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsUsedCount? UsedCount { get => _explicitNullValueUsedCount; set { _explicitNullValueUsedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_count"); else _explicitNullProperties?.Remove("used_count"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsUsedCount? _explicitNullValueUsedCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsUsedCount UsedCount { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsUsedCount UsedCount { get => _explicitNullValueUsedCount; set { _explicitNullValueUsedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used_count"); else _explicitNullProperties?.Remove("used_count"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsUsedCount _explicitNullValueUsedCount = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails"/> and sets the default values.
@@ -54,7 +70,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsAvailableCount>("available_count", AvailableCount);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsLimits>("limits", Limits);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetailsUsedCount>("used_count", UsedCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

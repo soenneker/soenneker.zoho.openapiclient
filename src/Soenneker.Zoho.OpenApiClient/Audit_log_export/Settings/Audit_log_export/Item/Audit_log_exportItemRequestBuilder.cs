@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Audit_log_export.Settings.Audit_log_expor
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportForbiddenResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportGetAuditLogExportsById200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

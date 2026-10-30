@@ -61,7 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <summary>
         /// To permanently delete more records from the specified module in your Zoho CRM organization, use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record IDs. A maximum of 100 records can be deleted per API call. By default, all workflows related to this API are executed. All subforms related to the deleted records are also deleted.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecordsSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteUnauthorizedResponse">When receiving a 401 status code</exception>
@@ -70,11 +70,11 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecordsSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecordsSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Record.Item.WithModuleItemRequestBuilder.WithModuleItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -84,8 +84,10 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeletePermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInvalidUrlResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInternalErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecordsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecordsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves records from the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module ID and API name. Use &quot;sort_by&quot; and &quot;sort_order&quot; to control the sorting of records. To fetch up to 2000 records, use &quot;page&quot; (1-10) and &quot;per_page&quot; (maximum 200). To fetch more than 2000 records, use the &quot;page_token&quot; returned in the response. Consecutive page tokens can be used to navigate through up to 100,000 records. The &quot;$has_more&quot; key is returned when fetching a specific record and indicates whether more records are available in subforms, multi-select lookup fields, and multi-user lookup fields. To retrieve details of a related list, use the [Get Related Records API](related_records.yaml#$.paths./{parentRecordModule}/{parentRecord}/{relatedList}.get).
@@ -113,13 +115,15 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates one or more records in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name. Use the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the available field API names and data types. You can create up to 100 records in a single API call. Specify the required field API names and their corresponding values in the request body.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsSuccessResponse"/></returns>
         /// <param name="body">The request body for Records Post</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,11 +133,11 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -144,13 +148,15 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordCreateRecordsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates one or more existing records in the specified module in your Zoho CRM organization. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve the module API name and the [Get Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the field API names.A maximum of 100 records can be updated per API call. Use only Field API names in the input. You can update all fields supported by the Insert Records API operation.When updating multiple records, the response array maintains the same order as the input records, allowing each response to be mapped to its corresponding input record. To update multiple subform records, specify the subform API name as a key within the record and provide the subform records as a JSON array. Use the subform field API names as keys within each subform record. For detailed information on subforms, refer to the [Manipulating Subform using Zoho CRM APIs](https://help.zoho.com/portal/en/community/topic/kaizen-124-accessing-subform-using-zoho-crm-apis).Use the [Modules API](modules.yaml#$.paths./settings/modules.get) and [Fields Metadata API](fields.yaml#$.paths./settings/fields.get) to retrieve the API names of the subform and its fields. To update an existing subform record, include its record ID in the subform JSON array. Use the [Get Records API](record.yaml#$.paths./module.get) with the subform API name to retrieve subform record IDs.When adding a new subform record, it is appended to the existing records. Passing an empty JSON array for a subform deletes all its records. To delete a specific subform record, specify its record ID and set &quot;_delete&quot; to &quot;null&quot;. Deleting the parent record also deletes all its subform records.  
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsSuccessResponse"/></returns>
         /// <param name="body">Request body containing the updated resource data to modify the existing record.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,11 +167,11 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -177,8 +183,10 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
                 { "412", global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecords412Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordUpdateRecordsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To permanently delete more records from the specified module in your Zoho CRM organization, use the [Get Records API](record.yaml#$.paths./module.get) to retrieve the record IDs. A maximum of 100 records can be deleted per API call. By default, all workflows related to this API are executed. All subforms related to the deleted records are also deleted.

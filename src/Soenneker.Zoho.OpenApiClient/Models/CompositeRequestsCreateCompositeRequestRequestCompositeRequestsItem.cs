@@ -12,50 +12,74 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
+            if (parseNode.GetChildNode("sub_request_id") is { } nullNodeSubRequestId && nullNodeSubRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubRequestId = null;
+            if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the request body for the sub-request.&gt; **Note**&gt; - **Using References in Composite API Requests**: You can reference the output of one sub-request in another within the same API call.&gt; - **Reference Structure**: `@{sub_request_id:JSONPath}`&gt;   Where,&gt;   - `sub_request_id` is the ID of the sub-request whose response you want to reference.&gt;   - `JSONPath` is the path to the specific field in that response.&gt;   For example, if you create a Lead in one sub-request (sub_request_id : 1) and need to update it in another, you can use `@{1:$.data[0].details.id}` to dynamically fetch the Lead ID from sub-request 1 and use it in sub-request 2 to modify the same record. &gt; - The `rollback_on_fail` and `parallel_execution` keys cannot both be set to `true`. If both are enabled, the API returns the `AMBIGUITY_DURING_PROCESSING` error.&gt; - All Delete APIs (except Notification APIs) support only record IDs in the URL. Bulk delete operations are not supported.&gt; - When `rollback_on_fail` is `false`:&gt;   - Workflows, approvals, and other automation actions are triggered as intended.&gt;   - The Composite API consumes one API credit.&gt; - When `rollback_on_fail` is `true`:&gt;    - **Workflows**&gt;      - Automation actions execute only after all sub-requests complete successfully and no rollback occurs. If one or more sub-requests fail and a rollback happens, the automation actions are not triggered.&gt;      - For example, consider the case where a workflow is triggered every time a lead is created with the company name starting with &apos;S&apos;. In sub-request 1, a lead is created, whose Company name starts with &apos;S&apos;, and sub-request 2 edits the newly created record&apos;s company name so that it does not start with &apos;S&apos;. Only after executing both the sub-requests the workflow will be executed. But in this case, the workflow will not be triggered because the newly created Lead&apos;s company name is already updated in sub-request 2, and the criterion for the workflow is not met. Consider another case, where in sub-request 1, a lead is created, whose Company name is &apos;Silicon Solutions&apos;, and sub-request 2 edits this newly created record&apos;s website. If none of the other sub-requests change the company name of this newly created record, after executing all the sub-requests successfully, the workflow will be triggered.&gt;    - When a rollback occurs, the Composite API consumes one API credit.&gt;    - When all sub-requests succeed, the Composite API consumes two API credits.&gt; - Each Composite API request consumes **five concurrency credits**, regardless of the number of sub-requests.&gt; - Each composite API reduces the sub-concurrency by one, while the sub-requests consume their respective sub-concurrencies.### Allowed APIsThe following table gives the list of APIs allowed in a composite request. For these APIs, there are restrictions on the number of records that you can create, update, or delete in a composite request.|  API | No. of records allowed || --- | --- || Get Org, Get Metadata, Convert a Lead, Get Layout Rules, Get Validation Rules, Get Custom Links, Get/Add/Update Roles, Get Profiles, Get Records&apos; Count, Get/Update Blueprint, Get Variables/Variable Groups, Get Tags, Add/Remove Tags for a record, Get List of Attachments, Delete Photo, Get Currencies, Get Shared Record Details, Get Assignment Rules, Get/Add/Update Pipeline, Get Wizards, Get List of From Addresses, Delete Notifications | No Restriction | | Add/Update/Delete Users, Update/Delink Related Records, Add/Delete Variables, Create/Update/Delete Notes, Create/Update/Merge Tags, Add/Update Currency, Add/Update/PATCH Notifications, Create/Update/Upsert/Delete Records | 1 || Get Territories, Get Notes, Get Email/Inventory Templates, Get Notifications, Get/Search Records, Get Related Records, Get records through a COQL query, Get Deleted Records, Get Users | 25 |</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemBody? Body { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemBody? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemBody? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemBody Body { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemBody Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemBody _explicitNullValueBody = default!;
 #endif
         /// <summary>Specify the HTTP headers for the sub-request. The **authorization** and **x-crm-org** headers are restricted and cannot be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemHeaders? Headers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemHeaders Headers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>Specify the HTTP method for the corresponding sub-request.Possible values:**GET** - Retrieve data from the API.**POST** - Create a new resource.**PUT** - Update an existing resource.**DELETE** - Remove a resource.**PATCH** - Partially update a resource.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemMethod? Method { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemMethod? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemMethod? _explicitNullValueMethod = default!;
         /// <summary>Specify the parameters for the sub-request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemParams? Params { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemParams? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemParams? _explicitNullValueParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemParams Params { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemParams Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemParams _explicitNullValueParams = default!;
 #endif
         /// <summary>Specify a unique identifier for the sub-request. Use this ID to reference the output of this sub-request. The accepted regex is `[a-zA-Z0-9][a-zA-Z0-9_]*`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubRequestId { get; set; }
+        public string? SubRequestId { get => _explicitNullValueSubRequestId; set { _explicitNullValueSubRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_request_id"); else _explicitNullProperties?.Remove("sub_request_id"); } }
+        private string? _explicitNullValueSubRequestId = default!;
 #nullable restore
 #else
-        public string SubRequestId { get; set; }
+        public string SubRequestId { get => _explicitNullValueSubRequestId; set { _explicitNullValueSubRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_request_id"); else _explicitNullProperties?.Remove("sub_request_id"); } }
+        private string _explicitNullValueSubRequestId = default!;
 #endif
         /// <summary>Specify the URI path of the corresponding sub-request. The URI must follow the pattern **/crm/{version}/{endpoint}** with the regex `/crm(/.*)?/v[0-9]+([.][0-9]+)?/.*`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri { get; set; }
+        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string? _explicitNullValueUri = default!;
 #nullable restore
 #else
-        public string Uri { get; set; }
+        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string _explicitNullValueUri = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem"/> and sets the default values.
@@ -72,7 +96,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItemParams>("params", Params);
             writer.WriteStringValue("sub_request_id", SubRequestId);
             writer.WriteStringValue("uri", Uri);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

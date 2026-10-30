@@ -12,351 +12,555 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ModulesGetModuleByApiName200ResponseModulesItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_type") is { } nullNodeAccessType && nullNodeAccessType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessType = null;
+            if (parseNode.GetChildNode("activity_badge") is { } nullNodeActivityBadge && nullNodeActivityBadge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActivityBadge = null;
+            if (parseNode.GetChildNode("actual_plural_label") is { } nullNodeActualPluralLabel && nullNodeActualPluralLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualPluralLabel = null;
+            if (parseNode.GetChildNode("actual_singular_label") is { } nullNodeActualSingularLabel && nullNodeActualSingularLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualSingularLabel = null;
+            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("api_supported") is { } nullNodeApiSupported && nullNodeApiSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiSupported = null;
+            if (parseNode.GetChildNode("arguments") is { } nullNodeArguments && nullNodeArguments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Arguments = null;
+            if (parseNode.GetChildNode("business_card_field_limit") is { } nullNodeBusinessCardFieldLimit && nullNodeBusinessCardFieldLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessCardFieldLimit = null;
+            if (parseNode.GetChildNode("business_card_fields") is { } nullNodeBusinessCardFields && nullNodeBusinessCardFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessCardFields = null;
+            if (parseNode.GetChildNode("cc_enabled") is { } nullNodeCcEnabled && nullNodeCcEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CcEnabled = null;
+            if (parseNode.GetChildNode("chart_view") is { } nullNodeChartView && nullNodeChartView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChartView = null;
+            if (parseNode.GetChildNode("chart_view_supported") is { } nullNodeChartViewSupported && nullNodeChartViewSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChartViewSupported = null;
+            if (parseNode.GetChildNode("convertable") is { } nullNodeConvertable && nullNodeConvertable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Convertable = null;
+            if (parseNode.GetChildNode("creatable") is { } nullNodeCreatable && nullNodeCreatable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creatable = null;
+            if (parseNode.GetChildNode("custom_view") is { } nullNodeCustomView && nullNodeCustomView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomView = null;
+            if (parseNode.GetChildNode("default_mapping_fields") is { } nullNodeDefaultMappingFields && nullNodeDefaultMappingFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultMappingFields = null;
+            if (parseNode.GetChildNode("deletable") is { } nullNodeDeletable && nullNodeDeletable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletable = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("display_field") is { } nullNodeDisplayField && nullNodeDisplayField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayField = null;
+            if (parseNode.GetChildNode("editable") is { } nullNodeEditable && nullNodeEditable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Editable = null;
+            if (parseNode.GetChildNode("email_parser_supported") is { } nullNodeEmailParserSupported && nullNodeEmailParserSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailParserSupported = null;
+            if (parseNode.GetChildNode("emailTemplate_support") is { } nullNodeEmailTemplateSupport && nullNodeEmailTemplateSupport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailTemplateSupport = null;
+            if (parseNode.GetChildNode("feeds_required") is { } nullNodeFeedsRequired && nullNodeFeedsRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedsRequired = null;
+            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("$field_states") is { } nullNodeFieldStates && nullNodeFieldStates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldStates = null;
+            if (parseNode.GetChildNode("filter_status") is { } nullNodeFilterStatus && nullNodeFilterStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterStatus = null;
+            if (parseNode.GetChildNode("filter_supported") is { } nullNodeFilterSupported && nullNodeFilterSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterSupported = null;
+            if (parseNode.GetChildNode("generated_type") is { } nullNodeGeneratedType && nullNodeGeneratedType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedType = null;
+            if (parseNode.GetChildNode("global_search_supported") is { } nullNodeGlobalSearchSupported && nullNodeGlobalSearchSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalSearchSupported = null;
+            if (parseNode.GetChildNode("has_more_profiles") is { } nullNodeHasMoreProfiles && nullNodeHasMoreProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMoreProfiles = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("inventory_template_supported") is { } nullNodeInventoryTemplateSupported && nullNodeInventoryTemplateSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InventoryTemplateSupported = null;
+            if (parseNode.GetChildNode("isBlueprintSupported") is { } nullNodeIsBlueprintSupported && nullNodeIsBlueprintSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBlueprintSupported = null;
+            if (parseNode.GetChildNode("kanban_view") is { } nullNodeKanbanView && nullNodeKanbanView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KanbanView = null;
+            if (parseNode.GetChildNode("kanban_view_supported") is { } nullNodeKanbanViewSupported && nullNodeKanbanViewSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KanbanViewSupported = null;
+            if (parseNode.GetChildNode("layouts") is { } nullNodeLayouts && nullNodeLayouts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layouts = null;
+            if (parseNode.GetChildNode("lookupable") is { } nullNodeLookupable && nullNodeLookupable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lookupable = null;
+            if (parseNode.GetChildNode("lookup_field_properties") is { } nullNodeLookupFieldProperties && nullNodeLookupFieldProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupFieldProperties = null;
+            if (parseNode.GetChildNode("masked_fields_count") is { } nullNodeMaskedFieldsCount && nullNodeMaskedFieldsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaskedFieldsCount = null;
+            if (parseNode.GetChildNode("modified_by") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("module_name") is { } nullNodeModuleName && nullNodeModuleName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleName = null;
+            if (parseNode.GetChildNode("module_type") is { } nullNodeModuleType && nullNodeModuleType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleType = null;
+            if (parseNode.GetChildNode("$on_demand_properties") is { } nullNodeOnDemandProperties && nullNodeOnDemandProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnDemandProperties = null;
+            if (parseNode.GetChildNode("$others_awaiting") is { } nullNodeOthersAwaiting && nullNodeOthersAwaiting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OthersAwaiting = null;
+            if (parseNode.GetChildNode("parent_module") is { } nullNodeParentModule && nullNodeParentModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentModule = null;
+            if (parseNode.GetChildNode("per_page") is { } nullNodePerPage && nullNodePerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerPage = null;
+            if (parseNode.GetChildNode("plural_label") is { } nullNodePluralLabel && nullNodePluralLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralLabel = null;
+            if (parseNode.GetChildNode("presence_sub_menu") is { } nullNodePresenceSubMenu && nullNodePresenceSubMenu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PresenceSubMenu = null;
+            if (parseNode.GetChildNode("private_profile") is { } nullNodePrivateProfile && nullNodePrivateProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateProfile = null;
+            if (parseNode.GetChildNode("profile_count") is { } nullNodeProfileCount && nullNodeProfileCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileCount = null;
+            if (parseNode.GetChildNode("profiles") is { } nullNodeProfiles && nullNodeProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profiles = null;
+            if (parseNode.GetChildNode("$properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("public_fields_configured") is { } nullNodePublicFieldsConfigured && nullNodePublicFieldsConfigured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicFieldsConfigured = null;
+            if (parseNode.GetChildNode("quick_create") is { } nullNodeQuickCreate && nullNodeQuickCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuickCreate = null;
+            if (parseNode.GetChildNode("recycle_bin_on_delete") is { } nullNodeRecycleBinOnDelete && nullNodeRecycleBinOnDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecycleBinOnDelete = null;
+            if (parseNode.GetChildNode("related_list_properties") is { } nullNodeRelatedListProperties && nullNodeRelatedListProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedListProperties = null;
+            if (parseNode.GetChildNode("related_lists") is { } nullNodeRelatedLists && nullNodeRelatedLists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedLists = null;
+            if (parseNode.GetChildNode("scoring_supported") is { } nullNodeScoringSupported && nullNodeScoringSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoringSupported = null;
+            if (parseNode.GetChildNode("search_layout_fields") is { } nullNodeSearchLayoutFields && nullNodeSearchLayoutFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchLayoutFields = null;
+            if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
+            if (parseNode.GetChildNode("show_as_tab") is { } nullNodeShowAsTab && nullNodeShowAsTab.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowAsTab = null;
+            if (parseNode.GetChildNode("show_emailparser") is { } nullNodeShowEmailparser && nullNodeShowEmailparser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowEmailparser = null;
+            if (parseNode.GetChildNode("showfacebooksync") is { } nullNodeShowfacebooksync && nullNodeShowfacebooksync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Showfacebooksync = null;
+            if (parseNode.GetChildNode("show_googlesync") is { } nullNodeShowGooglesync && nullNodeShowGooglesync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowGooglesync = null;
+            if (parseNode.GetChildNode("showleadchainsync") is { } nullNodeShowleadchainsync && nullNodeShowleadchainsync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Showleadchainsync = null;
+            if (parseNode.GetChildNode("showlinkedinsync") is { } nullNodeShowlinkedinsync && nullNodeShowlinkedinsync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Showlinkedinsync = null;
+            if (parseNode.GetChildNode("show_social") is { } nullNodeShowSocial && nullNodeShowSocial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowSocial = null;
+            if (parseNode.GetChildNode("showtiktoksync") is { } nullNodeShowtiktoksync && nullNodeShowtiktoksync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Showtiktoksync = null;
+            if (parseNode.GetChildNode("show_visitor") is { } nullNodeShowVisitor && nullNodeShowVisitor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowVisitor = null;
+            if (parseNode.GetChildNode("show_webform") is { } nullNodeShowWebform && nullNodeShowWebform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowWebform = null;
+            if (parseNode.GetChildNode("singular_label") is { } nullNodeSingularLabel && nullNodeSingularLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingularLabel = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("static_subform_properties") is { } nullNodeStaticSubformProperties && nullNodeStaticSubformProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaticSubformProperties = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("sub_menu_available") is { } nullNodeSubMenuAvailable && nullNodeSubMenuAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubMenuAvailable = null;
+            if (parseNode.GetChildNode("territory") is { } nullNodeTerritory && nullNodeTerritory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Territory = null;
+            if (parseNode.GetChildNode("track_current_data") is { } nullNodeTrackCurrentData && nullNodeTrackCurrentData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackCurrentData = null;
+            if (parseNode.GetChildNode("triggers_supported") is { } nullNodeTriggersSupported && nullNodeTriggersSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggersSupported = null;
+            if (parseNode.GetChildNode("viewable") is { } nullNodeViewable && nullNodeViewable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Viewable = null;
+            if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+            if (parseNode.GetChildNode("webform_supported") is { } nullNodeWebformSupported && nullNodeWebformSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebformSupported = null;
+            if (parseNode.GetChildNode("web_link") is { } nullNodeWebLink && nullNodeWebLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebLink = null;
+            if (parseNode.GetChildNode("zia_view") is { } nullNodeZiaView && nullNodeZiaView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZiaView = null;
+        }
+
         /// <summary>Access control scope for the module. Possible values: org_based - organization-wide access; team_based - team-specific access. Immutable after module creation; cannot be changed via PUT.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemAccessType? AccessType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemAccessType? AccessType { get => _explicitNullValueAccessType; set { _explicitNullValueAccessType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_type"); else _explicitNullProperties?.Remove("access_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemAccessType? _explicitNullValueAccessType = default!;
         /// <summary>Activity badge status for the module. Possible values: Enabled - badge is active; Not_Supported - module does not support activity badges; Disabled - badge is inactive.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemActivityBadge? ActivityBadge { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemActivityBadge? ActivityBadge { get => _explicitNullValueActivityBadge; set { _explicitNullValueActivityBadge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity_badge"); else _explicitNullProperties?.Remove("activity_badge"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemActivityBadge? _explicitNullValueActivityBadge = default!;
         /// <summary>System-level plural label for the module as stored in the database, representing the untranslated base value. Maximum 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActualPluralLabel { get; set; }
+        public string? ActualPluralLabel { get => _explicitNullValueActualPluralLabel; set { _explicitNullValueActualPluralLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_plural_label"); else _explicitNullProperties?.Remove("actual_plural_label"); } }
+        private string? _explicitNullValueActualPluralLabel = default!;
 #nullable restore
 #else
-        public string ActualPluralLabel { get; set; }
+        public string ActualPluralLabel { get => _explicitNullValueActualPluralLabel; set { _explicitNullValueActualPluralLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_plural_label"); else _explicitNullProperties?.Remove("actual_plural_label"); } }
+        private string _explicitNullValueActualPluralLabel = default!;
 #endif
         /// <summary>System-level singular label for the module as stored in the database, representing the untranslated base value. Maximum 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActualSingularLabel { get; set; }
+        public string? ActualSingularLabel { get => _explicitNullValueActualSingularLabel; set { _explicitNullValueActualSingularLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_singular_label"); else _explicitNullProperties?.Remove("actual_singular_label"); } }
+        private string? _explicitNullValueActualSingularLabel = default!;
 #nullable restore
 #else
-        public string ActualSingularLabel { get; set; }
+        public string ActualSingularLabel { get => _explicitNullValueActualSingularLabel; set { _explicitNullValueActualSingularLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_singular_label"); else _explicitNullProperties?.Remove("actual_singular_label"); } }
+        private string _explicitNullValueActualSingularLabel = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Case-sensitive API name used to reference this module in API requests (e.g., &apos;Leads&apos;, &apos;Contacts&apos;, &apos;CustomModule1&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get; set; }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get; set; }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>True when the module is accessible via the Zoho CRM API; false for modules that are not externally queryable through API endpoints.</summary>
-        public bool? ApiSupported { get; set; }
+        public bool? ApiSupported { get => _explicitNullValueApiSupported; set { _explicitNullValueApiSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_supported"); else _explicitNullProperties?.Remove("api_supported"); } }
+        private bool? _explicitNullValueApiSupported = default!;
         /// <summary>Array of argument objects (up to 10) used to substitute dynamic parameters in web tab URLs (e.g., https://...&amp;id=${Users.User Id}&amp;name=${Users.First Name}). Duplicates are allowed and order is preserved for multi-occurrence parameters; empty for non-web-tab modules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem>? Arguments { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem>? Arguments { get => _explicitNullValueArguments; set { _explicitNullValueArguments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arguments"); else _explicitNullProperties?.Remove("arguments"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem>? _explicitNullValueArguments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem> Arguments { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem> Arguments { get => _explicitNullValueArguments; set { _explicitNullValueArguments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arguments"); else _explicitNullProperties?.Remove("arguments"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem> _explicitNullValueArguments = default!;
 #endif
         /// <summary>Maximum number of fields allowed in the business card view for this module. Non-negative integer; 0 means no fields are configured.</summary>
-        public int? BusinessCardFieldLimit { get; set; }
+        public int? BusinessCardFieldLimit { get => _explicitNullValueBusinessCardFieldLimit; set { _explicitNullValueBusinessCardFieldLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_card_field_limit"); else _explicitNullProperties?.Remove("business_card_field_limit"); } }
+        private int? _explicitNullValueBusinessCardFieldLimit = default!;
         /// <summary>Fields displayed in the business card view (up to 15). Present only when &apos;business_card_fields&apos; is included in the include parameter. Can be empty array, array of objects with api_name and id, or array of string API names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BusinessCardFields { get; set; }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? BusinessCardFields { get => _explicitNullValueBusinessCardFields; set { _explicitNullValueBusinessCardFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_card_fields"); else _explicitNullProperties?.Remove("business_card_fields"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueBusinessCardFields = default!;
 #nullable restore
 #else
-        public List<string> BusinessCardFields { get; set; }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> BusinessCardFields { get => _explicitNullValueBusinessCardFields; set { _explicitNullValueBusinessCardFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_card_fields"); else _explicitNullProperties?.Remove("business_card_fields"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueBusinessCardFields = default!;
 #endif
         /// <summary>True when CommandCenter (workflow orchestration) is enabled for this module; false when not configured or unsupported.</summary>
-        public bool? CcEnabled { get; set; }
+        public bool? CcEnabled { get => _explicitNullValueCcEnabled; set { _explicitNullValueCcEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc_enabled"); else _explicitNullProperties?.Remove("cc_enabled"); } }
+        private bool? _explicitNullValueCcEnabled = default!;
         /// <summary>True when chart view is currently enabled for this module. Distinct from chart_view_supported, which reflects capability.</summary>
-        public bool? ChartView { get; set; }
+        public bool? ChartView { get => _explicitNullValueChartView; set { _explicitNullValueChartView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chart_view"); else _explicitNullProperties?.Remove("chart_view"); } }
+        private bool? _explicitNullValueChartView = default!;
         /// <summary>True when the module&apos;s data structure supports chart visualization. A false value means chart view cannot be enabled regardless of settings.</summary>
-        public bool? ChartViewSupported { get; set; }
+        public bool? ChartViewSupported { get => _explicitNullValueChartViewSupported; set { _explicitNullValueChartViewSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chart_view_supported"); else _explicitNullProperties?.Remove("chart_view_supported"); } }
+        private bool? _explicitNullValueChartViewSupported = default!;
         /// <summary>True when records in this module can be converted to records in another module (e.g., Leads to Contacts/Accounts).</summary>
-        public bool? Convertable { get; set; }
+        public bool? Convertable { get => _explicitNullValueConvertable; set { _explicitNullValueConvertable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convertable"); else _explicitNullProperties?.Remove("convertable"); } }
+        private bool? _explicitNullValueConvertable = default!;
         /// <summary>True when new records can be created in this module; false for read-only modules such as analytics or configuration entities.</summary>
-        public bool? Creatable { get; set; }
+        public bool? Creatable { get => _explicitNullValueCreatable; set { _explicitNullValueCreatable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creatable"); else _explicitNullProperties?.Remove("creatable"); } }
+        private bool? _explicitNullValueCreatable = default!;
         /// <summary>Default custom view configuration for the module, including filter criteria, display fields, sort settings, and sharing options. Exposed only when &apos;custom_view&apos; is included in the include parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomView? CustomView { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomView? CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomView? _explicitNullValueCustomView = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomView CustomView { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomView CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomView _explicitNullValueCustomView = default!;
 #endif
         /// <summary>Array of default field mapping objects (up to 25) for data import and integration operations. Exposed only for SALESORDERS, INVOICES, QUOTES, QUOTEDITEMS, ORDEREDITEMS, and INVOICEDITEMS modules; each entry identifies a field by api_name and id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDefaultMappingFieldsItem>? DefaultMappingFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDefaultMappingFieldsItem>? DefaultMappingFields { get => _explicitNullValueDefaultMappingFields; set { _explicitNullValueDefaultMappingFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_mapping_fields"); else _explicitNullProperties?.Remove("default_mapping_fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDefaultMappingFieldsItem>? _explicitNullValueDefaultMappingFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDefaultMappingFieldsItem> DefaultMappingFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDefaultMappingFieldsItem> DefaultMappingFields { get => _explicitNullValueDefaultMappingFields; set { _explicitNullValueDefaultMappingFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_mapping_fields"); else _explicitNullProperties?.Remove("default_mapping_fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDefaultMappingFieldsItem> _explicitNullValueDefaultMappingFields = default!;
 #endif
         /// <summary>True when records in this module can be permanently deleted; false for protected modules such as configuration entities or system-managed records.</summary>
-        public bool? Deletable { get; set; }
+        public bool? Deletable { get => _explicitNullValueDeletable; set { _explicitNullValueDeletable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletable"); else _explicitNullProperties?.Remove("deletable"); } }
+        private bool? _explicitNullValueDeletable = default!;
         /// <summary>User-defined description of the module. Null when no description has been set. Maximum 255 characters; empty string should not be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Field designation used as the record display name or title in this module. Either a string containing the field&apos;s API name, or an object with api_name and id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayField? DisplayField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayField? DisplayField { get => _explicitNullValueDisplayField; set { _explicitNullValueDisplayField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_field"); else _explicitNullProperties?.Remove("display_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayField? _explicitNullValueDisplayField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayField DisplayField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayField DisplayField { get => _explicitNullValueDisplayField; set { _explicitNullValueDisplayField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_field"); else _explicitNullProperties?.Remove("display_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemDisplayField _explicitNullValueDisplayField = default!;
 #endif
         /// <summary>True when existing records in this module can be edited by users with appropriate permissions; false for read-only modules.</summary>
-        public bool? Editable { get; set; }
+        public bool? Editable { get => _explicitNullValueEditable; set { _explicitNullValueEditable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editable"); else _explicitNullProperties?.Remove("editable"); } }
+        private bool? _explicitNullValueEditable = default!;
         /// <summary>True when email parsing is supported for this module, enabling automatic record creation or updates from inbound emails.</summary>
-        public bool? EmailParserSupported { get; set; }
+        public bool? EmailParserSupported { get => _explicitNullValueEmailParserSupported; set { _explicitNullValueEmailParserSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_parser_supported"); else _explicitNullProperties?.Remove("email_parser_supported"); } }
+        private bool? _explicitNullValueEmailParserSupported = default!;
         /// <summary>True when email templates can be used to send emails from records in this module; false when email template functionality is not supported.</summary>
-        public bool? EmailTemplateSupport { get; set; }
+        public bool? EmailTemplateSupport { get => _explicitNullValueEmailTemplateSupport; set { _explicitNullValueEmailTemplateSupport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emailTemplate_support"); else _explicitNullProperties?.Remove("emailTemplate_support"); } }
+        private bool? _explicitNullValueEmailTemplateSupport = default!;
         /// <summary>True when activity feeds are enabled for this module, displaying a timeline of record activities and updates.</summary>
-        public bool? FeedsRequired { get; set; }
+        public bool? FeedsRequired { get => _explicitNullValueFeedsRequired; set { _explicitNullValueFeedsRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds_required"); else _explicitNullProperties?.Remove("feeds_required"); } }
+        private bool? _explicitNullValueFeedsRequired = default!;
         /// <summary>Array of complete field metadata objects (up to 1000) for all fields in this module. Populated only when &apos;fields&apos; is included in the include query parameter and when the service is creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemFieldsItem>? Fields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemFieldsItem>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemFieldsItem>? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemFieldsItem> Fields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemFieldsItem> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemFieldsItem> _explicitNullValueFields = default!;
 #endif
         /// <summary>Nullable array of field-state identifiers (up to 1 entry, max 20 characters each) that govern dynamic field visibility and validation rules within this module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FieldStates { get; set; }
+        public List<string>? FieldStates { get => _explicitNullValueFieldStates; set { _explicitNullValueFieldStates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$field_states"); else _explicitNullProperties?.Remove("$field_states"); } }
+        private List<string>? _explicitNullValueFieldStates = default!;
 #nullable restore
 #else
-        public List<string> FieldStates { get; set; }
+        public List<string> FieldStates { get => _explicitNullValueFieldStates; set { _explicitNullValueFieldStates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$field_states"); else _explicitNullProperties?.Remove("$field_states"); } }
+        private List<string> _explicitNullValueFieldStates = default!;
 #endif
         /// <summary>True when custom view filters are currently active for this module; false when no active filter state is set.</summary>
-        public bool? FilterStatus { get; set; }
+        public bool? FilterStatus { get => _explicitNullValueFilterStatus; set { _explicitNullValueFilterStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_status"); else _explicitNullProperties?.Remove("filter_status"); } }
+        private bool? _explicitNullValueFilterStatus = default!;
         /// <summary>True when this module supports custom view filtering; false for modules that do not allow filter configuration.</summary>
-        public bool? FilterSupported { get; set; }
+        public bool? FilterSupported { get => _explicitNullValueFilterSupported; set { _explicitNullValueFilterSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_supported"); else _explicitNullProperties?.Remove("filter_supported"); } }
+        private bool? _explicitNullValueFilterSupported = default!;
         /// <summary>Classification of how this module was generated. Possible values: default - standard system module; custom - user-created module; web - web tab module; linking - many-to-many linking module; subform - dynamic subform module; static_subform - static subform; field_tracker - field change tracker; picklisttracker - picklist change tracker.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemGeneratedType? GeneratedType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemGeneratedType? GeneratedType { get => _explicitNullValueGeneratedType; set { _explicitNullValueGeneratedType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_type"); else _explicitNullProperties?.Remove("generated_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemGeneratedType? _explicitNullValueGeneratedType = default!;
         /// <summary>True when records in this module appear in global search results; false when the module is excluded from global search.</summary>
-        public bool? GlobalSearchSupported { get; set; }
+        public bool? GlobalSearchSupported { get => _explicitNullValueGlobalSearchSupported; set { _explicitNullValueGlobalSearchSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("global_search_supported"); else _explicitNullProperties?.Remove("global_search_supported"); } }
+        private bool? _explicitNullValueGlobalSearchSupported = default!;
         /// <summary>True when the profiles array is truncated and additional profiles exist beyond those returned (pagination indicator); false when the full profile list is included.</summary>
-        public bool? HasMoreProfiles { get; set; }
+        public bool? HasMoreProfiles { get => _explicitNullValueHasMoreProfiles; set { _explicitNullValueHasMoreProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more_profiles"); else _explicitNullProperties?.Remove("has_more_profiles"); } }
+        private bool? _explicitNullValueHasMoreProfiles = default!;
         /// <summary>Unique numeric identifier (as string) for this module. Required field; used as the stable reference across all API operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>True when inventory templates (e.g., for quotes, invoices) can be configured for this module; false when not supported.</summary>
-        public bool? InventoryTemplateSupported { get; set; }
+        public bool? InventoryTemplateSupported { get => _explicitNullValueInventoryTemplateSupported; set { _explicitNullValueInventoryTemplateSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_template_supported"); else _explicitNullProperties?.Remove("inventory_template_supported"); } }
+        private bool? _explicitNullValueInventoryTemplateSupported = default!;
         /// <summary>True when Blueprint process automation can be configured for this module; false when Blueprint is not available for this module type.</summary>
-        public bool? IsBlueprintSupported { get; set; }
+        public bool? IsBlueprintSupported { get => _explicitNullValueIsBlueprintSupported; set { _explicitNullValueIsBlueprintSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isBlueprintSupported"); else _explicitNullProperties?.Remove("isBlueprintSupported"); } }
+        private bool? _explicitNullValueIsBlueprintSupported = default!;
         /// <summary>True when kanban view is currently enabled for this module. Distinct from kanban_view_supported, which reflects capability regardless of current setting.</summary>
-        public bool? KanbanView { get; set; }
+        public bool? KanbanView { get => _explicitNullValueKanbanView; set { _explicitNullValueKanbanView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kanban_view"); else _explicitNullProperties?.Remove("kanban_view"); } }
+        private bool? _explicitNullValueKanbanView = default!;
         /// <summary>True when the module&apos;s data structure supports kanban view. A false value means kanban view cannot be enabled regardless of settings.</summary>
-        public bool? KanbanViewSupported { get; set; }
+        public bool? KanbanViewSupported { get => _explicitNullValueKanbanViewSupported; set { _explicitNullValueKanbanViewSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kanban_view_supported"); else _explicitNullProperties?.Remove("kanban_view_supported"); } }
+        private bool? _explicitNullValueKanbanViewSupported = default!;
         /// <summary>Array of layout configuration objects (up to 7) available for this module, ordered by relevance of profiles and record creation for the current user. Populated only when &apos;layouts&apos; is included in the include query parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem>? Layouts { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem>? Layouts { get => _explicitNullValueLayouts; set { _explicitNullValueLayouts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layouts"); else _explicitNullProperties?.Remove("layouts"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem>? _explicitNullValueLayouts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem> Layouts { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem> Layouts { get => _explicitNullValueLayouts; set { _explicitNullValueLayouts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layouts"); else _explicitNullProperties?.Remove("layouts"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItem> _explicitNullValueLayouts = default!;
 #endif
         /// <summary>True when this module can be targeted as a lookup field by other modules.</summary>
-        public bool? Lookupable { get; set; }
+        public bool? Lookupable { get => _explicitNullValueLookupable; set { _explicitNullValueLookupable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookupable"); else _explicitNullProperties?.Remove("lookupable"); } }
+        private bool? _explicitNullValueLookupable = default!;
         /// <summary>Configuration properties governing lookup field behavior for this module. Null when the module has no lookup field configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLookupFieldProperties? LookupFieldProperties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLookupFieldProperties? LookupFieldProperties { get => _explicitNullValueLookupFieldProperties; set { _explicitNullValueLookupFieldProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field_properties"); else _explicitNullProperties?.Remove("lookup_field_properties"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLookupFieldProperties? _explicitNullValueLookupFieldProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLookupFieldProperties LookupFieldProperties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLookupFieldProperties LookupFieldProperties { get => _explicitNullValueLookupFieldProperties; set { _explicitNullValueLookupFieldProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field_properties"); else _explicitNullProperties?.Remove("lookup_field_properties"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLookupFieldProperties _explicitNullValueLookupFieldProperties = default!;
 #endif
         /// <summary>Count of masked fields in this module. Exposed only when the &apos;fields&apos; include parameter is specified.</summary>
-        public int? MaskedFieldsCount { get; set; }
+        public int? MaskedFieldsCount { get => _explicitNullValueMaskedFieldsCount; set { _explicitNullValueMaskedFieldsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("masked_fields_count"); else _explicitNullProperties?.Remove("masked_fields_count"); } }
+        private int? _explicitNullValueMaskedFieldsCount = default!;
         /// <summary>Represents the user who last modified this module configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemModifiedBy? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemModifiedBy? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemModifiedBy ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemModifiedBy _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>ISO 8601 timestamp with timezone offset recording when the module configuration was last modified. Null when the module has never been modified after creation.</summary>
-        public DateTimeOffset? ModifiedTime { get; set; }
+        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
+        private DateTimeOffset? _explicitNullValueModifiedTime = default!;
         /// <summary>System-level API name identifying the module, used in API requests and responses. Maximum 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModuleName { get; set; }
+        public string? ModuleName { get => _explicitNullValueModuleName; set { _explicitNullValueModuleName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_name"); else _explicitNullProperties?.Remove("module_name"); } }
+        private string? _explicitNullValueModuleName = default!;
 #nullable restore
 #else
-        public string ModuleName { get; set; }
+        public string ModuleName { get => _explicitNullValueModuleName; set { _explicitNullValueModuleName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_name"); else _explicitNullProperties?.Remove("module_name"); } }
+        private string _explicitNullValueModuleName = default!;
 #endif
         /// <summary>Categorizes the module as ENTITIES for standard data modules or CONFIGURATION_ENTITIES for configuration and settings modules.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemModuleType? ModuleType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemModuleType? ModuleType { get => _explicitNullValueModuleType; set { _explicitNullValueModuleType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_type"); else _explicitNullProperties?.Remove("module_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemModuleType? _explicitNullValueModuleType = default!;
         /// <summary>Nullable array of string identifiers (up to 100, max 50 chars each) for module properties that are loaded on-demand rather than included in the default response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OnDemandProperties { get; set; }
+        public List<string>? OnDemandProperties { get => _explicitNullValueOnDemandProperties; set { _explicitNullValueOnDemandProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$on_demand_properties"); else _explicitNullProperties?.Remove("$on_demand_properties"); } }
+        private List<string>? _explicitNullValueOnDemandProperties = default!;
 #nullable restore
 #else
-        public List<string> OnDemandProperties { get; set; }
+        public List<string> OnDemandProperties { get => _explicitNullValueOnDemandProperties; set { _explicitNullValueOnDemandProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$on_demand_properties"); else _explicitNullProperties?.Remove("$on_demand_properties"); } }
+        private List<string> _explicitNullValueOnDemandProperties = default!;
 #endif
         /// <summary>True when other users are awaiting action on records in this module. Exposed only for the Approvals module.</summary>
-        public bool? OthersAwaiting { get; set; }
+        public bool? OthersAwaiting { get => _explicitNullValueOthersAwaiting; set { _explicitNullValueOthersAwaiting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$others_awaiting"); else _explicitNullProperties?.Remove("$others_awaiting"); } }
+        private bool? _explicitNullValueOthersAwaiting = default!;
         /// <summary>Reference to the parent module for child modules such as subforms and field trackers. Returns an empty object {} for standalone modules. This is populated with api_name and id for modules with parent relationships.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemParentModule? ParentModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemParentModule? ParentModule { get => _explicitNullValueParentModule; set { _explicitNullValueParentModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_module"); else _explicitNullProperties?.Remove("parent_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemParentModule? _explicitNullValueParentModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemParentModule ParentModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemParentModule ParentModule { get => _explicitNullValueParentModule; set { _explicitNullValueParentModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_module"); else _explicitNullProperties?.Remove("parent_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemParentModule _explicitNullValueParentModule = default!;
 #endif
         /// <summary>Default number of records displayed per page when listing data for this module.</summary>
-        public int? PerPage { get; set; }
+        public int? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
+        private int? _explicitNullValuePerPage = default!;
         /// <summary>Localized plural display label for the module as shown in the UI, reflecting the active language setting. Maximum 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PluralLabel { get; set; }
+        public string? PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
+        private string? _explicitNullValuePluralLabel = default!;
 #nullable restore
 #else
-        public string PluralLabel { get; set; }
+        public string PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
+        private string _explicitNullValuePluralLabel = default!;
 #endif
         /// <summary>True when the presence submenu is available for this module.</summary>
-        public bool? PresenceSubMenu { get; set; }
+        public bool? PresenceSubMenu { get => _explicitNullValuePresenceSubMenu; set { _explicitNullValuePresenceSubMenu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("presence_sub_menu"); else _explicitNullProperties?.Remove("presence_sub_menu"); } }
+        private bool? _explicitNullValuePresenceSubMenu = default!;
         /// <summary>Private profile configuration for team-based access control. Populated only when access_type is &apos;team_based&apos; with profile name and ID; null for org_based modules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile? PrivateProfile { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile? PrivateProfile { get => _explicitNullValuePrivateProfile; set { _explicitNullValuePrivateProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_profile"); else _explicitNullProperties?.Remove("private_profile"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile? _explicitNullValuePrivateProfile = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile PrivateProfile { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile PrivateProfile { get => _explicitNullValuePrivateProfile; set { _explicitNullValuePrivateProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_profile"); else _explicitNullProperties?.Remove("private_profile"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile _explicitNullValuePrivateProfile = default!;
 #endif
         /// <summary>Count of profiles assigned to this module; 0 indicates no profile assignments are configured. Maximum 203 profiles per module.</summary>
-        public int? ProfileCount { get; set; }
+        public int? ProfileCount { get => _explicitNullValueProfileCount; set { _explicitNullValueProfileCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_count"); else _explicitNullProperties?.Remove("profile_count"); } }
+        private int? _explicitNullValueProfileCount = default!;
         /// <summary>Profiles with access to this module; contains up to 203 entries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem>? Profiles { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem>? Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem>? _explicitNullValueProfiles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem> Profiles { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem> Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem> _explicitNullValueProfiles = default!;
 #endif
         /// <summary>Nullable array of extended property objects (up to 50) representing additional module capabilities; each item is either a string property name or an object with arbitrary key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Properties { get; set; }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$properties"); else _explicitNullProperties?.Remove("$properties"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public List<string> Properties { get; set; }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$properties"); else _explicitNullProperties?.Remove("$properties"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueProperties = default!;
 #endif
         /// <summary>True when public fields have been configured for this module.</summary>
-        public bool? PublicFieldsConfigured { get; set; }
+        public bool? PublicFieldsConfigured { get => _explicitNullValuePublicFieldsConfigured; set { _explicitNullValuePublicFieldsConfigured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_fields_configured"); else _explicitNullProperties?.Remove("public_fields_configured"); } }
+        private bool? _explicitNullValuePublicFieldsConfigured = default!;
         /// <summary>True when quick create functionality is enabled for this module.</summary>
-        public bool? QuickCreate { get; set; }
+        public bool? QuickCreate { get => _explicitNullValueQuickCreate; set { _explicitNullValueQuickCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quick_create"); else _explicitNullProperties?.Remove("quick_create"); } }
+        private bool? _explicitNullValueQuickCreate = default!;
         /// <summary>True when deleted records are moved to the recycle bin instead of being permanently deleted.</summary>
-        public bool? RecycleBinOnDelete { get; set; }
+        public bool? RecycleBinOnDelete { get => _explicitNullValueRecycleBinOnDelete; set { _explicitNullValueRecycleBinOnDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recycle_bin_on_delete"); else _explicitNullProperties?.Remove("recycle_bin_on_delete"); } }
+        private bool? _explicitNullValueRecycleBinOnDelete = default!;
         /// <summary>Configuration and settings for related lists in this module; null when no related-list properties are defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListProperties? RelatedListProperties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListProperties? RelatedListProperties { get => _explicitNullValueRelatedListProperties; set { _explicitNullValueRelatedListProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_list_properties"); else _explicitNullProperties?.Remove("related_list_properties"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListProperties? _explicitNullValueRelatedListProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListProperties RelatedListProperties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListProperties RelatedListProperties { get => _explicitNullValueRelatedListProperties; set { _explicitNullValueRelatedListProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_list_properties"); else _explicitNullProperties?.Remove("related_list_properties"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListProperties _explicitNullValueRelatedListProperties = default!;
 #endif
         /// <summary>Related lists (subforms and related modules) displayed in this module&apos;s detail view; populated only when &apos;related_lists&apos; is included in the include query parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem>? RelatedLists { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem>? RelatedLists { get => _explicitNullValueRelatedLists; set { _explicitNullValueRelatedLists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_lists"); else _explicitNullProperties?.Remove("related_lists"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem>? _explicitNullValueRelatedLists = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem> RelatedLists { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem> RelatedLists { get => _explicitNullValueRelatedLists; set { _explicitNullValueRelatedLists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_lists"); else _explicitNullProperties?.Remove("related_lists"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem> _explicitNullValueRelatedLists = default!;
 #endif
         /// <summary>True when lead or contact scoring is supported for this module</summary>
-        public bool? ScoringSupported { get; set; }
+        public bool? ScoringSupported { get => _explicitNullValueScoringSupported; set { _explicitNullValueScoringSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoring_supported"); else _explicitNullProperties?.Remove("scoring_supported"); } }
+        private bool? _explicitNullValueScoringSupported = default!;
         /// <summary>Up to 10 fields displayed in the search result layout for this module</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SearchLayoutFields { get; set; }
+        public List<string>? SearchLayoutFields { get => _explicitNullValueSearchLayoutFields; set { _explicitNullValueSearchLayoutFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_layout_fields"); else _explicitNullProperties?.Remove("search_layout_fields"); } }
+        private List<string>? _explicitNullValueSearchLayoutFields = default!;
 #nullable restore
 #else
-        public List<string> SearchLayoutFields { get; set; }
+        public List<string> SearchLayoutFields { get => _explicitNullValueSearchLayoutFields; set { _explicitNullValueSearchLayoutFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_layout_fields"); else _explicitNullProperties?.Remove("search_layout_fields"); } }
+        private List<string> _explicitNullValueSearchLayoutFields = default!;
 #endif
         /// <summary>Numeric position of this module in the navigation list; lower values appear first, ranging from 1 to 200</summary>
-        public int? SequenceNumber { get; set; }
+        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        private int? _explicitNullValueSequenceNumber = default!;
         /// <summary>True when this module is rendered as a tab in the navigation UI</summary>
-        public bool? ShowAsTab { get; set; }
+        public bool? ShowAsTab { get => _explicitNullValueShowAsTab; set { _explicitNullValueShowAsTab = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_as_tab"); else _explicitNullProperties?.Remove("show_as_tab"); } }
+        private bool? _explicitNullValueShowAsTab = default!;
         /// <summary>True when the Email Parser feature is enabled for this module</summary>
-        public bool? ShowEmailparser { get; set; }
+        public bool? ShowEmailparser { get => _explicitNullValueShowEmailparser; set { _explicitNullValueShowEmailparser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_emailparser"); else _explicitNullProperties?.Remove("show_emailparser"); } }
+        private bool? _explicitNullValueShowEmailparser = default!;
         /// <summary>Indicates if the Facebook LeadChain Sync feature is enabled for this module</summary>
-        public bool? Showfacebooksync { get; set; }
+        public bool? Showfacebooksync { get => _explicitNullValueShowfacebooksync; set { _explicitNullValueShowfacebooksync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showfacebooksync"); else _explicitNullProperties?.Remove("showfacebooksync"); } }
+        private bool? _explicitNullValueShowfacebooksync = default!;
         /// <summary>True when Google Contact Sync is enabled for this module</summary>
-        public bool? ShowGooglesync { get; set; }
+        public bool? ShowGooglesync { get => _explicitNullValueShowGooglesync; set { _explicitNullValueShowGooglesync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_googlesync"); else _explicitNullProperties?.Remove("show_googlesync"); } }
+        private bool? _explicitNullValueShowGooglesync = default!;
         /// <summary>True when lead chain synchronization is enabled for this module; only exposed for the Leads module</summary>
-        public bool? Showleadchainsync { get; set; }
+        public bool? Showleadchainsync { get => _explicitNullValueShowleadchainsync; set { _explicitNullValueShowleadchainsync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showleadchainsync"); else _explicitNullProperties?.Remove("showleadchainsync"); } }
+        private bool? _explicitNullValueShowleadchainsync = default!;
         /// <summary>True when the LinkedIn LeadChain Sync feature is enabled for this module</summary>
-        public bool? Showlinkedinsync { get; set; }
+        public bool? Showlinkedinsync { get => _explicitNullValueShowlinkedinsync; set { _explicitNullValueShowlinkedinsync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showlinkedinsync"); else _explicitNullProperties?.Remove("showlinkedinsync"); } }
+        private bool? _explicitNullValueShowlinkedinsync = default!;
         /// <summary>True when social tab features are enabled for this module</summary>
-        public bool? ShowSocial { get; set; }
+        public bool? ShowSocial { get => _explicitNullValueShowSocial; set { _explicitNullValueShowSocial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_social"); else _explicitNullProperties?.Remove("show_social"); } }
+        private bool? _explicitNullValueShowSocial = default!;
         /// <summary>True when the TikTok LeadChain Sync feature is enabled for this module</summary>
-        public bool? Showtiktoksync { get; set; }
+        public bool? Showtiktoksync { get => _explicitNullValueShowtiktoksync; set { _explicitNullValueShowtiktoksync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showtiktoksync"); else _explicitNullProperties?.Remove("showtiktoksync"); } }
+        private bool? _explicitNullValueShowtiktoksync = default!;
         /// <summary>True when the ZLiveDesk visitor tracking feature is enabled for this module</summary>
-        public bool? ShowVisitor { get; set; }
+        public bool? ShowVisitor { get => _explicitNullValueShowVisitor; set { _explicitNullValueShowVisitor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_visitor"); else _explicitNullProperties?.Remove("show_visitor"); } }
+        private bool? _explicitNullValueShowVisitor = default!;
         /// <summary>True when the web forms feature is enabled for this module</summary>
-        public bool? ShowWebform { get; set; }
+        public bool? ShowWebform { get => _explicitNullValueShowWebform; set { _explicitNullValueShowWebform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_webform"); else _explicitNullProperties?.Remove("show_webform"); } }
+        private bool? _explicitNullValueShowWebform = default!;
         /// <summary>Localized singular display label for the module, up to 50 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SingularLabel { get; set; }
+        public string? SingularLabel { get => _explicitNullValueSingularLabel; set { _explicitNullValueSingularLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_label"); else _explicitNullProperties?.Remove("singular_label"); } }
+        private string? _explicitNullValueSingularLabel = default!;
 #nullable restore
 #else
-        public string SingularLabel { get; set; }
+        public string SingularLabel { get => _explicitNullValueSingularLabel; set { _explicitNullValueSingularLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_label"); else _explicitNullProperties?.Remove("singular_label"); } }
+        private string _explicitNullValueSingularLabel = default!;
 #endif
         /// <summary>Origin of the module configuration. Possible values: crm - native CRM module; platform_plugin - module from a platform plugin; marketplace_plugin - module from a marketplace plugin; campaign_integration - module created via campaign integration</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemSource? Source { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemSource? _explicitNullValueSource = default!;
         /// <summary>Static subform configuration properties defined for fields within this module</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemStaticSubformProperties? StaticSubformProperties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemStaticSubformProperties? StaticSubformProperties { get => _explicitNullValueStaticSubformProperties; set { _explicitNullValueStaticSubformProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_subform_properties"); else _explicitNullProperties?.Remove("static_subform_properties"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemStaticSubformProperties? _explicitNullValueStaticSubformProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemStaticSubformProperties StaticSubformProperties { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemStaticSubformProperties StaticSubformProperties { get => _explicitNullValueStaticSubformProperties; set { _explicitNullValueStaticSubformProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_subform_properties"); else _explicitNullProperties?.Remove("static_subform_properties"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemStaticSubformProperties _explicitNullValueStaticSubformProperties = default!;
 #endif
         /// <summary>Represents the visibility status of the module. Possible values: visible - module is active and visible; scheduled_for_deletion - module is queued for removal; user_hidden - hidden by user preference; system_hidden - hidden by system configuration</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemStatus? Status { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemStatus? _explicitNullValueStatus = default!;
         /// <summary>True when a submenu is available for this module in the UI navigation</summary>
-        public bool? SubMenuAvailable { get; set; }
+        public bool? SubMenuAvailable { get => _explicitNullValueSubMenuAvailable; set { _explicitNullValueSubMenuAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_menu_available"); else _explicitNullProperties?.Remove("sub_menu_available"); } }
+        private bool? _explicitNullValueSubMenuAvailable = default!;
         /// <summary>Territory restriction applied to the module; null when territory management is not enabled for the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemTerritory? Territory { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemTerritory? Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemTerritory? _explicitNullValueTerritory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemTerritory Territory { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemTerritory Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemTerritory _explicitNullValueTerritory = default!;
 #endif
         /// <summary>True when current data tracking is enabled for records in this module</summary>
-        public bool? TrackCurrentData { get; set; }
+        public bool? TrackCurrentData { get => _explicitNullValueTrackCurrentData; set { _explicitNullValueTrackCurrentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track_current_data"); else _explicitNullProperties?.Remove("track_current_data"); } }
+        private bool? _explicitNullValueTrackCurrentData = default!;
         /// <summary>True when workflow triggers are supported for this module</summary>
-        public bool? TriggersSupported { get; set; }
+        public bool? TriggersSupported { get => _explicitNullValueTriggersSupported; set { _explicitNullValueTriggersSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers_supported"); else _explicitNullProperties?.Remove("triggers_supported"); } }
+        private bool? _explicitNullValueTriggersSupported = default!;
         /// <summary>True when records in this module can be viewed by the current user</summary>
-        public bool? Viewable { get; set; }
+        public bool? Viewable { get => _explicitNullValueViewable; set { _explicitNullValueViewable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewable"); else _explicitNullProperties?.Remove("viewable"); } }
+        private bool? _explicitNullValueViewable = default!;
         /// <summary>Bitwise integer flags controlling module and feature visibility, ranging from 1 to 16383. Base value 1 means fully visible. Add flag values to suppress specific UI surfaces: 2=web UI hidden, 4=tab menu, 8=lookup, 16=related list, 32=multi-select lookup, 64=module settings, 128=automation, 256=templates, 512=import, 1024=export, 4096=reports, 8192=API. </summary>
-        public int? Visibility { get; set; }
+        public int? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private int? _explicitNullValueVisibility = default!;
         /// <summary>True when web forms can be created for this module</summary>
-        public bool? WebformSupported { get; set; }
+        public bool? WebformSupported { get => _explicitNullValueWebformSupported; set { _explicitNullValueWebformSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webform_supported"); else _explicitNullProperties?.Remove("webform_supported"); } }
+        private bool? _explicitNullValueWebformSupported = default!;
         /// <summary>URL associated with this module; null when no web link is configured</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebLink { get; set; }
+        public string? WebLink { get => _explicitNullValueWebLink; set { _explicitNullValueWebLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_link"); else _explicitNullProperties?.Remove("web_link"); } }
+        private string? _explicitNullValueWebLink = default!;
 #nullable restore
 #else
-        public string WebLink { get; set; }
+        public string WebLink { get => _explicitNullValueWebLink; set { _explicitNullValueWebLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_link"); else _explicitNullProperties?.Remove("web_link"); } }
+        private string _explicitNullValueWebLink = default!;
 #endif
         /// <summary>True when Zia AI view is enabled for this module; applicable only to the Deals module</summary>
-        public bool? ZiaView { get; set; }
+        public bool? ZiaView { get => _explicitNullValueZiaView; set { _explicitNullValueZiaView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zia_view"); else _explicitNullProperties?.Remove("zia_view"); } }
+        private bool? _explicitNullValueZiaView = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItem"/> and sets the default values.
         /// </summary>
@@ -372,7 +576,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -390,7 +594,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "api_supported", n => { ApiSupported = n.GetBoolValue(); } },
                 { "arguments", n => { Arguments = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "business_card_field_limit", n => { BusinessCardFieldLimit = n.GetIntValue(); } },
-                { "business_card_fields", n => { BusinessCardFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "business_card_fields", n => { BusinessCardFields = n.GetCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cc_enabled", n => { CcEnabled = n.GetBoolValue(); } },
                 { "chart_view", n => { ChartView = n.GetBoolValue(); } },
                 { "chart_view_supported", n => { ChartViewSupported = n.GetBoolValue(); } },
@@ -434,7 +638,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "private_profile", n => { PrivateProfile = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile.CreateFromDiscriminatorValue); } },
                 { "profile_count", n => { ProfileCount = n.GetIntValue(); } },
                 { "profiles", n => { Profiles = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "$properties", n => { Properties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "$properties", n => { Properties = n.GetCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "public_fields_configured", n => { PublicFieldsConfigured = n.GetBoolValue(); } },
                 { "quick_create", n => { QuickCreate = n.GetBoolValue(); } },
                 { "recycle_bin_on_delete", n => { RecycleBinOnDelete = n.GetBoolValue(); } },
@@ -483,7 +687,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("api_supported", ApiSupported);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemArgumentsItem>("arguments", Arguments);
             writer.WriteIntValue("business_card_field_limit", BusinessCardFieldLimit);
-            writer.WriteCollectionOfPrimitiveValues<string>("business_card_fields", BusinessCardFields);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("business_card_fields", BusinessCardFields);
             writer.WriteBoolValue("cc_enabled", CcEnabled);
             writer.WriteBoolValue("chart_view", ChartView);
             writer.WriteBoolValue("chart_view_supported", ChartViewSupported);
@@ -527,7 +731,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemPrivateProfile>("private_profile", PrivateProfile);
             writer.WriteIntValue("profile_count", ProfileCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemProfilesItem>("profiles", Profiles);
-            writer.WriteCollectionOfPrimitiveValues<string>("$properties", Properties);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("$properties", Properties);
             writer.WriteBoolValue("public_fields_configured", PublicFieldsConfigured);
             writer.WriteBoolValue("quick_create", QuickCreate);
             writer.WriteBoolValue("recycle_bin_on_delete", RecycleBinOnDelete);
@@ -559,6 +763,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("webform_supported", WebformSupported);
             writer.WriteStringValue("web_link", WebLink);
             writer.WriteBoolValue("zia_view", ZiaView);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

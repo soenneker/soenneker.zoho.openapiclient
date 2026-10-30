@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExpectedDependentFieldMissingDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dependee") is { } nullNodeDependee && nullNodeDependee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dependee = null;
+            if (parseNode.GetChildNode("expected_fields") is { } nullNodeExpectedFields && nullNodeExpectedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedFields = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the expected dependent field that is missing from the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee? Dependee { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee? Dependee { get => _explicitNullValueDependee; set { _explicitNullValueDependee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependee"); else _explicitNullProperties?.Remove("dependee"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee? _explicitNullValueDependee = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee Dependee { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee Dependee { get => _explicitNullValueDependee; set { _explicitNullValueDependee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependee"); else _explicitNullProperties?.Remove("dependee"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee _explicitNullValueDependee = default!;
 #endif
         /// <summary>Represents the list of expected fields that are missing from the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsExpectedFieldsItem>? ExpectedFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsExpectedFieldsItem>? ExpectedFields { get => _explicitNullValueExpectedFields; set { _explicitNullValueExpectedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_fields"); else _explicitNullProperties?.Remove("expected_fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsExpectedFieldsItem>? _explicitNullValueExpectedFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsExpectedFieldsItem> ExpectedFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsExpectedFieldsItem> ExpectedFields { get => _explicitNullValueExpectedFields; set { _explicitNullValueExpectedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_fields"); else _explicitNullProperties?.Remove("expected_fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsExpectedFieldsItem> _explicitNullValueExpectedFields = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsDependee>("dependee", Dependee);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ExpectedDependentFieldMissingDetailsExpectedFieldsItem>("expected_fields", ExpectedFields);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

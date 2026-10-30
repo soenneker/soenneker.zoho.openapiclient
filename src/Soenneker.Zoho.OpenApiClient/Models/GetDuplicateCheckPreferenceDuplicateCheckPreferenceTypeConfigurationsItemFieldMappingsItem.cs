@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("current_field") is { } nullNodeCurrentField && nullNodeCurrentField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentField = null;
+            if (parseNode.GetChildNode("mapped_field") is { } nullNodeMappedField && nullNodeMappedField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MappedField = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Current field details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemCurrentField? CurrentField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemCurrentField? CurrentField { get => _explicitNullValueCurrentField; set { _explicitNullValueCurrentField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_field"); else _explicitNullProperties?.Remove("current_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemCurrentField? _explicitNullValueCurrentField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemCurrentField CurrentField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemCurrentField CurrentField { get => _explicitNullValueCurrentField; set { _explicitNullValueCurrentField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_field"); else _explicitNullProperties?.Remove("current_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemCurrentField _explicitNullValueCurrentField = default!;
 #endif
         /// <summary>Mapped field details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField? MappedField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField? MappedField { get => _explicitNullValueMappedField; set { _explicitNullValueMappedField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapped_field"); else _explicitNullProperties?.Remove("mapped_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField? _explicitNullValueMappedField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField MappedField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField MappedField { get => _explicitNullValueMappedField; set { _explicitNullValueMappedField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapped_field"); else _explicitNullProperties?.Remove("mapped_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField _explicitNullValueMappedField = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemCurrentField>("current_field", CurrentField);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetDuplicateCheckPreferenceDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItemMappedField>("mapped_field", MappedField);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

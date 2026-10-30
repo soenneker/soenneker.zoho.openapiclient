@@ -12,32 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("move_subordinate") is { } nullNodeMoveSubordinate && nullNodeMoveSubordinate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MoveSubordinate = null;
+            if (parseNode.GetChildNode("transfer") is { } nullNodeTransfer && nullNodeTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transfer = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the unique identifier of the user whose data is to be transferred and who is to be deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Provides the details of the user to whom subordinates will be moved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemMoveSubordinate? MoveSubordinate { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemMoveSubordinate? MoveSubordinate { get => _explicitNullValueMoveSubordinate; set { _explicitNullValueMoveSubordinate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_subordinate"); else _explicitNullProperties?.Remove("move_subordinate"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemMoveSubordinate? _explicitNullValueMoveSubordinate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemMoveSubordinate MoveSubordinate { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemMoveSubordinate MoveSubordinate { get => _explicitNullValueMoveSubordinate; set { _explicitNullValueMoveSubordinate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_subordinate"); else _explicitNullProperties?.Remove("move_subordinate"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemMoveSubordinate _explicitNullValueMoveSubordinate = default!;
 #endif
         /// <summary>Provides the transfer settings for records, assignments, and criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemTransfer? Transfer { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemTransfer? Transfer { get => _explicitNullValueTransfer; set { _explicitNullValueTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer"); else _explicitNullProperties?.Remove("transfer"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemTransfer? _explicitNullValueTransfer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemTransfer Transfer { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemTransfer Transfer { get => _explicitNullValueTransfer; set { _explicitNullValueTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer"); else _explicitNullProperties?.Remove("transfer"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemTransfer _explicitNullValueTransfer = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItem"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemMoveSubordinate>("move_subordinate", MoveSubordinate);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutIdRequestTransferAndDeleteItemTransfer>("transfer", Transfer);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

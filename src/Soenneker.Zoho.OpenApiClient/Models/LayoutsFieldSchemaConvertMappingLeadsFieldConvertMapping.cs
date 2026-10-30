@@ -12,32 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
+            if (parseNode.GetChildNode("Contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
+            if (parseNode.GetChildNode("Deals") is { } nullNodeDeals && nullNodeDeals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deals = null;
+        }
+
         /// <summary>Represents the API name of the destination field in the **Accounts** module to which this field&apos;s value is mapped during record conversion, or null when no mapping to Accounts is defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingAccounts? Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingAccounts? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accounts"); else _explicitNullProperties?.Remove("Accounts"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingAccounts? _explicitNullValueAccounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingAccounts Accounts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingAccounts Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accounts"); else _explicitNullProperties?.Remove("Accounts"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingAccounts _explicitNullValueAccounts = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the destination field in the **Contacts** module to which this field&apos;s value is mapped during record conversion, or null when no mapping to Contacts is defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingContacts? Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingContacts? Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contacts"); else _explicitNullProperties?.Remove("Contacts"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingContacts? _explicitNullValueContacts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingContacts Contacts { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingContacts Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contacts"); else _explicitNullProperties?.Remove("Contacts"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingContacts _explicitNullValueContacts = default!;
 #endif
         /// <summary>Represents the API name of the destination field in the **Deals** module to which this field&apos;s value is mapped during record conversion, or null when no mapping to Deals is defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingDeals? Deals { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingDeals? Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingDeals? _explicitNullValueDeals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingDeals Deals { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingDeals Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingDeals _explicitNullValueDeals = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMapping(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingAccounts>("Accounts", Accounts);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingContacts>("Contacts", Contacts);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingLeadsFieldConvertMappingDeals>("Deals", Deals);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

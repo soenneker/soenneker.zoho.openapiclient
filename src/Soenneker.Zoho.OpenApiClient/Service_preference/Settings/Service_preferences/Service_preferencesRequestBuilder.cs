@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Service_preference.Settings.Service_prefe
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the service preference settings of the organization. Use this API to enable or disable the job sheet, which controls whether a job sheet can be generated for a service appointment once the appointment is marked complete.
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Service_preference.Settings.Service_prefe
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreference200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreference200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreference200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreference200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the service preference settings of the organization, including whether the job sheet is enabled for service appointments. Use this API to check whether a job sheet can be generated once a service appointment is marked complete.

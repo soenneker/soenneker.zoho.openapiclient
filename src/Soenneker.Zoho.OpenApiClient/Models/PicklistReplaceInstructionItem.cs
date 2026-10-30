@@ -12,26 +12,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PicklistReplaceInstructionItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("delete_old_value") is { } nullNodeDeleteOldValue && nullNodeDeleteOldValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteOldValue = null;
+            if (parseNode.GetChildNode("new_value") is { } nullNodeNewValue && nullNodeNewValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewValue = null;
+            if (parseNode.GetChildNode("old_value") is { } nullNodeOldValue && nullNodeOldValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Boolean value to delete the old_value along with replace</summary>
-        public bool? DeleteOldValue { get; set; }
+        public bool? DeleteOldValue { get => _explicitNullValueDeleteOldValue; set { _explicitNullValueDeleteOldValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_old_value"); else _explicitNullProperties?.Remove("delete_old_value"); } }
+        private bool? _explicitNullValueDeleteOldValue = default!;
         /// <summary>The option to be replaced with the option (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue? NewValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue? NewValue { get => _explicitNullValueNewValue; set { _explicitNullValueNewValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_value"); else _explicitNullProperties?.Remove("new_value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue? _explicitNullValueNewValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue NewValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue NewValue { get => _explicitNullValueNewValue; set { _explicitNullValueNewValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_value"); else _explicitNullProperties?.Remove("new_value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue _explicitNullValueNewValue = default!;
 #endif
         /// <summary>The option which is to be replaced (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue? OldValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue? OldValue { get => _explicitNullValueOldValue; set { _explicitNullValueOldValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_value"); else _explicitNullProperties?.Remove("old_value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue? _explicitNullValueOldValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue OldValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue OldValue { get => _explicitNullValueOldValue; set { _explicitNullValueOldValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_value"); else _explicitNullProperties?.Remove("old_value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue _explicitNullValueOldValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItem"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("delete_old_value", DeleteOldValue);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemNewValue>("new_value", NewValue);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceInstructionItemOldValue>("old_value", OldValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -62,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModules200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create a custom module in your Zoho CRM organization. Only one module can be created per request. The required permission depends on the access type: **Crm_Implied_Customize_Zoho_CRM** for org-based modules and **Crm_Implied_Create_Team_Module** for team-based modules. Submitting the same api_name multiple times will result in validation errors. The optional access_type controls module access model (org_based/team_based).
@@ -88,24 +88,26 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules
             {
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModules401Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModules403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModules201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModules201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates existing modules in the CRM. Allows modification of module labels (`singular_label`, `plural_label`) and profile assignments. Supports batch updates of up to 100 modules per request. Returns 200 when all modules update successfully, or 207 Multi-Status when some succeed and others fail. Module `access_type` cannot be updated and must not be included in the request body. This operation is idempotent - submitting the same request multiple times produces the same result.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesSuccessResponse"/></returns>
         /// <param name="body">Batch update request containing an array of module objects to update. Each module requires `id`; other fields are optional.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -113,8 +115,10 @@ namespace Soenneker.Zoho.OpenApiClient.Modules.Settings.Modules
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the list of all modules available in the Zoho CRM account, including standard, custom, subform, and linking (MxN) modules. Supports optional filtering by `status`, `feature_name`, and `include` to control the scope and depth of the response. When both `status` and `feature_name` are provided, modules must satisfy both criteria. Returns all matching modules in a single response without pagination.

@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteservicessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteservicessResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeleteservicessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeleteservicessResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the full details of a single service record from your Zoho CRM organization using its unique ID, including its availability configuration, members, pricing, tax details, and subform data.
@@ -67,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetServiceByIdResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetServiceByIdResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetServiceByIdResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetServiceByIdResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update a single service record in your Zoho CRM organization, identified by its unique ID. Only the fields supplied in the request payload are modified on the targeted service.
@@ -91,6 +91,8 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.PutservicesByIdError400Wrapper.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PutServiceByIdResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PutServiceByIdResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

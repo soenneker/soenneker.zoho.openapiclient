@@ -12,144 +12,212 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldUpdateConfigurationForList : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("apply_assignment_threshold") is { } nullNodeApplyAssignmentThreshold && nullNodeApplyAssignmentThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplyAssignmentThreshold = null;
+            if (parseNode.GetChildNode("associated") is { } nullNodeAssociated && nullNodeAssociated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Associated = null;
+            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("deletable") is { } nullNodeDeletable && nullNodeDeletable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletable = null;
+            if (parseNode.GetChildNode("dependent_fields") is { } nullNodeDependentFields && nullNodeDependentFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DependentFields = null;
+            if (parseNode.GetChildNode("editable") is { } nullNodeEditable && nullNodeEditable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Editable = null;
+            if (parseNode.GetChildNode("feature_type") is { } nullNodeFeatureType && nullNodeFeatureType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureType = null;
+            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("lock_status") is { } nullNodeLockStatus && nullNodeLockStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockStatus = null;
+            if (parseNode.GetChildNode("modified_by") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("notify") is { } nullNodeNotify && nullNodeNotify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notify = null;
+            if (parseNode.GetChildNode("parent_module") is { } nullNodeParentModule && nullNodeParentModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentModule = null;
+            if (parseNode.GetChildNode("related_module") is { } nullNodeRelatedModule && nullNodeRelatedModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedModule = null;
+            if (parseNode.GetChildNode("related_records") is { } nullNodeRelatedRecords && nullNodeRelatedRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedRecords = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("update_type") is { } nullNodeUpdateType && nullNodeUpdateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateType = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether assignment-threshold rules (record count limits per user) should be enforced when updating the field. Only applicable when the target field is an Owner field and the org has assignment thresholds configured. When true, the system checks whether the new owner has reached their record limit before applying the update. Ignored for non-Owner fields.</summary>
-        public bool? ApplyAssignmentThreshold { get; set; }
+        public bool? ApplyAssignmentThreshold { get => _explicitNullValueApplyAssignmentThreshold; set { _explicitNullValueApplyAssignmentThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_assignment_threshold"); else _explicitNullProperties?.Remove("apply_assignment_threshold"); } }
+        private bool? _explicitNullValueApplyAssignmentThreshold = default!;
         /// <summary>Whether this action is currently linked to any automation rule, approval process, or blueprint.</summary>
-        public bool? Associated { get; set; }
+        public bool? Associated { get => _explicitNullValueAssociated; set { _explicitNullValueAssociated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated"); else _explicitNullProperties?.Remove("associated"); } }
+        private bool? _explicitNullValueAssociated = default!;
         /// <summary>User who created this field update action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Date-time when this field update action was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedTime { get; set; }
+        public string? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        private string? _explicitNullValueCreatedTime = default!;
 #nullable restore
 #else
-        public string CreatedTime { get; set; }
+        public string CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        private string _explicitNullValueCreatedTime = default!;
 #endif
         /// <summary>Represents whether the current user can delete this field update action.</summary>
-        public bool? Deletable { get; set; }
+        public bool? Deletable { get => _explicitNullValueDeletable; set { _explicitNullValueDeletable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletable"); else _explicitNullProperties?.Remove("deletable"); } }
+        private bool? _explicitNullValueDeletable = default!;
         /// <summary>Dependent fields that must be set alongside the target field when dependency rules apply. Includes patterns such as Pipeline -&gt; Stage and Layout -&gt; Pipeline -&gt; Stage (nested). Nested dependencies can be represented through dependent_fields within each item. Null when the target field has no dependency rules configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>? DependentFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>? DependentFields { get => _explicitNullValueDependentFields; set { _explicitNullValueDependentFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependent_fields"); else _explicitNullProperties?.Remove("dependent_fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested>? _explicitNullValueDependentFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested> DependentFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested> DependentFields { get => _explicitNullValueDependentFields; set { _explicitNullValueDependentFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependent_fields"); else _explicitNullProperties?.Remove("dependent_fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.DependentFieldsNested> _explicitNullValueDependentFields = default!;
 #endif
         /// <summary>Whether the current user can edit this field update action.</summary>
-        public bool? Editable { get; set; }
+        public bool? Editable { get => _explicitNullValueEditable; set { _explicitNullValueEditable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editable"); else _explicitNullProperties?.Remove("editable"); } }
+        private bool? _explicitNullValueEditable = default!;
         /// <summary>Automation feature where this field update action is used. Supports baseline features plus connected_workflows. No cadence support.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListFeatureType? FeatureType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListFeatureType? FeatureType { get => _explicitNullValueFeatureType; set { _explicitNullValueFeatureType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_type"); else _explicitNullProperties?.Remove("feature_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListFeatureType? _explicitNullValueFeatureType = default!;
         /// <summary>The target CRM field that this action updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListField? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListField Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListField _explicitNullValueField = default!;
 #endif
         /// <summary>Unique identifier of the field update action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Indicates whether this field update action is locked for edit/delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListLockStatus? LockStatus { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListLockStatus? LockStatus { get => _explicitNullValueLockStatus; set { _explicitNullValueLockStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lock_status"); else _explicitNullProperties?.Remove("lock_status"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListLockStatus? _explicitNullValueLockStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListLockStatus LockStatus { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListLockStatus LockStatus { get => _explicitNullValueLockStatus; set { _explicitNullValueLockStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lock_status"); else _explicitNullProperties?.Remove("lock_status"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListLockStatus _explicitNullValueLockStatus = default!;
 #endif
         /// <summary>User who last modified this field update action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModifiedBy? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModifiedBy? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModifiedBy ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModifiedBy _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>Date-time when this field update action was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedTime { get; set; }
+        public string? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
+        private string? _explicitNullValueModifiedTime = default!;
 #nullable restore
 #else
-        public string ModifiedTime { get; set; }
+        public string ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
+        private string _explicitNullValueModifiedTime = default!;
 #endif
         /// <summary>Primary CRM module on which this field update action is configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModule? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModule Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Display name of the field update action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Whether to send an email notification to the new record owner when the Owner field is updated via this action. Only applicable when the target field is an Owner field. When true, the newly assigned owner receives an email informing them of the ownership change. Ignored for non-Owner fields.</summary>
-        public bool? Notify { get; set; }
+        public bool? Notify { get => _explicitNullValueNotify; set { _explicitNullValueNotify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify"); else _explicitNullProperties?.Remove("notify"); } }
+        private bool? _explicitNullValueNotify = default!;
         /// <summary>Parent module context when the field update is configured on a child module. Null when the field update is on a top-level module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListParentModule? ParentModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListParentModule? ParentModule { get => _explicitNullValueParentModule; set { _explicitNullValueParentModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_module"); else _explicitNullProperties?.Remove("parent_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListParentModule? _explicitNullValueParentModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListParentModule ParentModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListParentModule ParentModule { get => _explicitNullValueParentModule; set { _explicitNullValueParentModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_module"); else _explicitNullProperties?.Remove("parent_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListParentModule _explicitNullValueParentModule = default!;
 #endif
         /// <summary>Related module context when the automation is configured on related records; null when not applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListRelatedModule? RelatedModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListRelatedModule? RelatedModule { get => _explicitNullValueRelatedModule; set { _explicitNullValueRelatedModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_module"); else _explicitNullProperties?.Remove("related_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListRelatedModule? _explicitNullValueRelatedModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListRelatedModule RelatedModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListRelatedModule RelatedModule { get => _explicitNullValueRelatedModule; set { _explicitNullValueRelatedModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_module"); else _explicitNullProperties?.Remove("related_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListRelatedModule _explicitNullValueRelatedModule = default!;
 #endif
         /// <summary>List of related modules whose record ownership should also be transferred along with the parent record when the Owner field is updated. Only applicable when the target field is an Owner field. Common activity modules (Tasks, Calls, Events) are available for all modules. Additional related modules are available depending on the parent module: Accounts can also include Contacts and Deals; Contacts can also include Deals. Null when the target field is not an Owner field or when no related modules are selected for ownership transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>? RelatedRecords { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>? RelatedRecords { get => _explicitNullValueRelatedRecords; set { _explicitNullValueRelatedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_records"); else _explicitNullProperties?.Remove("related_records"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>? _explicitNullValueRelatedRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule> RelatedRecords { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule> RelatedRecords { get => _explicitNullValueRelatedRecords; set { _explicitNullValueRelatedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_records"); else _explicitNullProperties?.Remove("related_records"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule> _explicitNullValueRelatedRecords = default!;
 #endif
         /// <summary>Source application that created or manages this action (e.g., crm).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get; set; }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public string Source { get; set; }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string _explicitNullValueSource = default!;
 #endif
         /// <summary>Response-only field update type. Create/update supports only static, while GET responses may include merge_field for pre-existing actions.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType? _explicitNullValueType = default!;
         /// <summary>Specifies how the new value is applied to a multi-select picklist or Owner field: overwrite replaces the existing value, append adds to the existing entries. Omit or set to null for single-value fields.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType? UpdateType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType? UpdateType { get => _explicitNullValueUpdateType; set { _explicitNullValueUpdateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_type"); else _explicitNullProperties?.Remove("update_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType? _explicitNullValueUpdateType = default!;
         /// <summary>The value configured for the field update. The shape depends on the target field type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList"/> and sets the default values.
@@ -166,7 +234,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -231,6 +299,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType>("update_type", UpdateType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue>("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

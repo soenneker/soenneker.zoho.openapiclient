@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Users_transfer.Users.Item.Actions.Transfe
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransfer403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransfer200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransfer200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

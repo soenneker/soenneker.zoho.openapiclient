@@ -12,48 +12,70 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchemaHistoryTrackingOneOf1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("duration_configuration") is { } nullNodeDurationConfiguration && nullNodeDurationConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationConfiguration = null;
+            if (parseNode.GetChildNode("duration_configured_field") is { } nullNodeDurationConfiguredField && nullNodeDurationConfiguredField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationConfiguredField = null;
+            if (parseNode.GetChildNode("followed_fields") is { } nullNodeFollowedFields && nullNodeFollowedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowedFields = null;
+            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("related_list_name") is { } nullNodeRelatedListName && nullNodeRelatedListName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedListName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the duration configuration for history tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DurationConfiguration { get; set; }
+        public string? DurationConfiguration { get => _explicitNullValueDurationConfiguration; set { _explicitNullValueDurationConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_configuration"); else _explicitNullProperties?.Remove("duration_configuration"); } }
+        private string? _explicitNullValueDurationConfiguration = default!;
 #nullable restore
 #else
-        public string DurationConfiguration { get; set; }
+        public string DurationConfiguration { get => _explicitNullValueDurationConfiguration; set { _explicitNullValueDurationConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_configuration"); else _explicitNullProperties?.Remove("duration_configuration"); } }
+        private string _explicitNullValueDurationConfiguration = default!;
 #endif
         /// <summary>Represents the duration configured field details for history tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField? DurationConfiguredField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField? DurationConfiguredField { get => _explicitNullValueDurationConfiguredField; set { _explicitNullValueDurationConfiguredField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_configured_field"); else _explicitNullProperties?.Remove("duration_configured_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField? _explicitNullValueDurationConfiguredField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField DurationConfiguredField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField DurationConfiguredField { get => _explicitNullValueDurationConfiguredField; set { _explicitNullValueDurationConfiguredField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_configured_field"); else _explicitNullProperties?.Remove("duration_configured_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1DurationConfiguredField _explicitNullValueDurationConfiguredField = default!;
 #endif
         /// <summary>Represents the list of fields being followed for history tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1FollowedFieldsItem>? FollowedFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1FollowedFieldsItem>? FollowedFields { get => _explicitNullValueFollowedFields; set { _explicitNullValueFollowedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followed_fields"); else _explicitNullProperties?.Remove("followed_fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1FollowedFieldsItem>? _explicitNullValueFollowedFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1FollowedFieldsItem> FollowedFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1FollowedFieldsItem> FollowedFields { get => _explicitNullValueFollowedFields; set { _explicitNullValueFollowedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followed_fields"); else _explicitNullProperties?.Remove("followed_fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1FollowedFieldsItem> _explicitNullValueFollowedFields = default!;
 #endif
         /// <summary>Represents the module details for history tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1Module? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1Module? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1Module? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1Module Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1Module Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1Module _explicitNullValueModule = default!;
 #endif
         /// <summary>Represents the name of the related list for history tracking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelatedListName { get; set; }
+        public string? RelatedListName { get => _explicitNullValueRelatedListName; set { _explicitNullValueRelatedListName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_list_name"); else _explicitNullProperties?.Remove("related_list_name"); } }
+        private string? _explicitNullValueRelatedListName = default!;
 #nullable restore
 #else
-        public string RelatedListName { get; set; }
+        public string RelatedListName { get => _explicitNullValueRelatedListName; set { _explicitNullValueRelatedListName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_list_name"); else _explicitNullProperties?.Remove("related_list_name"); } }
+        private string _explicitNullValueRelatedListName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1FollowedFieldsItem>("followed_fields", FollowedFields);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHistoryTrackingOneOf1Module>("module", Module);
             writer.WriteStringValue("related_list_name", RelatedListName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

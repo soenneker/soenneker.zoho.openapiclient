@@ -36,25 +36,27 @@ namespace Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pic
         /// <summary>
         /// Delete picklist field option
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesDeletePickListValuesByPickListValueidSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PermissionDeniedErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pick_list_values.Item.WithPickListValueItemRequestBuilder.WithPickListValueItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesDeletePickListValuesByPickListValueidSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pick_list_values.Item.WithPickListValueItemRequestBuilder.WithPickListValueItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pick_list_values.Item.WithPickListValueItemRequestBuilder.WithPickListValueItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesDeletePickListValuesByPickListValueidSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pick_list_values.Item.WithPickListValueItemRequestBuilder.WithPickListValueItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.PermissionDeniedErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DirectPicklistOptionDeletionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesDeletePickListValuesByPickListValueidSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesDeletePickListValuesByPickListValueidSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Picklist field option GET
@@ -76,6 +78,8 @@ namespace Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pic
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.PermissionDeniedErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PicklistOptionLookupResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PicklistOptionLookupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

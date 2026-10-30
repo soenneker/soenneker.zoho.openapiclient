@@ -78,6 +78,8 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_t
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersDeletePortalUsers403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersDeletePortalUsers200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersDeletePortalUsers200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -97,7 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_t
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetPortalUsers200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetPortalUsers200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetPortalUsers200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetPortalUsers200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To delete one or more portal users from your Zoho CRM organization for the specified portal and user type.

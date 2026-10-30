@@ -70,6 +70,8 @@ namespace Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersDeassociateUsersFromTerritories200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -97,6 +99,8 @@ namespace Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersGetTerritoryUsers200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -124,6 +128,8 @@ namespace Soenneker.Zoho.OpenApiClient.Territory_users.Settings.Territories.Item
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersAssociateUsersToTerritory403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersAssociateUsersToTerritory500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersAssociateUsersToTerritory200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryUsersAssociateUsersToTerritory200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

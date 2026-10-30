@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Fields.Settings.Fields.Item.Actions.Sched
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.FieldsGetScheduledJobs403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistJobsResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistJobsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

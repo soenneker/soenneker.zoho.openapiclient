@@ -12,60 +12,89 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssignOwnerActionSchemaDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("apply_assignment_threshold") is { } nullNodeApplyAssignmentThreshold && nullNodeApplyAssignmentThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplyAssignmentThreshold = null;
+            if (parseNode.GetChildNode("assign_to") is { } nullNodeAssignTo && nullNodeAssignTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignTo = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("lookup_field") is { } nullNodeLookupField && nullNodeLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupField = null;
+            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("notify") is { } nullNodeNotify && nullNodeNotify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notify = null;
+            if (parseNode.GetChildNode("related_records") is { } nullNodeRelatedRecords && nullNodeRelatedRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedRecords = null;
+            if (parseNode.GetChildNode("user_availability_based_on") is { } nullNodeUserAvailabilityBasedOn && nullNodeUserAvailabilityBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAvailabilityBasedOn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to enforce assignment-threshold rules (record count limits per user) when assigning ownership. When true, the system checks whether the new owner has reached their record limit before applying the assignment. Only effective when the org has assignment thresholds configured.</summary>
-        public bool? ApplyAssignmentThreshold { get; set; }
+        public bool? ApplyAssignmentThreshold { get => _explicitNullValueApplyAssignmentThreshold; set { _explicitNullValueApplyAssignmentThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_assignment_threshold"); else _explicitNullProperties?.Remove("apply_assignment_threshold"); } }
+        private bool? _explicitNullValueApplyAssignmentThreshold = default!;
         /// <summary>Specifies how the new owner is determined. Each entry defines an assignment method  - a specific user, role, group, assignment rule, profile, merge field, or criteria-based filter. For round-robin assignment across multiple users, provide multiple entries of type=user. For criteria-based assignment, provide a single entry of type=criteria with filter conditions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem>? AssignTo { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem>? AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem>? _explicitNullValueAssignTo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem> AssignTo { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem> AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem> _explicitNullValueAssignTo = default!;
 #endif
         /// <summary>Server-generated unique identifier for this assign owner action. Present only in GET responses; not required in POST or PUT requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The lookup field linking the trigger module to the target module. Required only for cross-module assign owner actions (where the action&apos;s module differs from the workflow rule&apos;s trigger module). For same-module assignments, this field is omitted and the action operates directly on the triggering record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField? LookupField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField? _explicitNullValueLookupField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField LookupField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField _explicitNullValueLookupField = default!;
 #endif
         /// <summary>Target module for the ownership assignment. Must match the workflow rule&apos;s trigger module for direct assignments, or the lookup field&apos;s related module for cross-module assignments. At least api_name or id must be provided; if both are given and they do not match, the API returns AMBIGUITY_DURING_PROCESSING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Whether to send an email notification to the new owner when the record is reassigned. When true, the newly assigned owner receives an email informing them of the ownership change.</summary>
-        public bool? Notify { get; set; }
+        public bool? Notify { get => _explicitNullValueNotify; set { _explicitNullValueNotify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify"); else _explicitNullProperties?.Remove("notify"); } }
+        private bool? _explicitNullValueNotify = default!;
         /// <summary>Related modules whose open record ownership should also be transferred when the parent record is reassigned. Common activity modules (Tasks, Calls, Events) are available for all modules. Additional modules depend on the parent module: Accounts can also include Contacts and Deals; Contacts can also include Deals. Null when no related modules are selected for ownership transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord>? RelatedRecords { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord>? RelatedRecords { get => _explicitNullValueRelatedRecords; set { _explicitNullValueRelatedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_records"); else _explicitNullProperties?.Remove("related_records"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord>? _explicitNullValueRelatedRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord> RelatedRecords { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord> RelatedRecords { get => _explicitNullValueRelatedRecords; set { _explicitNullValueRelatedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_records"); else _explicitNullProperties?.Remove("related_records"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord> _explicitNullValueRelatedRecords = default!;
 #endif
         /// <summary>Restricts assignment to users who are currently available. When set to [&quot;online_status&quot;], only users logged in to the Zoho CRM web interface are eligible for assignment. If the selected user is offline, the assignment is skipped or deferred. Null means no availability check is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.OnlineStatusItem?>? UserAvailabilityBasedOn { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.OnlineStatusItem?>? UserAvailabilityBasedOn { get => _explicitNullValueUserAvailabilityBasedOn; set { _explicitNullValueUserAvailabilityBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_availability_based_on"); else _explicitNullProperties?.Remove("user_availability_based_on"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.OnlineStatusItem?>? _explicitNullValueUserAvailabilityBasedOn = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.OnlineStatusItem?> UserAvailabilityBasedOn { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.OnlineStatusItem?> UserAvailabilityBasedOn { get => _explicitNullValueUserAvailabilityBasedOn; set { _explicitNullValueUserAvailabilityBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_availability_based_on"); else _explicitNullProperties?.Remove("user_availability_based_on"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.OnlineStatusItem?> _explicitNullValueUserAvailabilityBasedOn = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaDetails"/> and sets the default values.
@@ -84,7 +113,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AssignOwnerActionSchemaDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +148,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("notify", Notify);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord>("related_records", RelatedRecords);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.OnlineStatusItem>("user_availability_based_on", UserAvailabilityBasedOn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

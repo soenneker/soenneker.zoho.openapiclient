@@ -12,7 +12,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContactRolesUpdateContactRoles400ResponseOneOf1ContactRolesItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type List&lt;global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,30 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles400ResponseOneOf1ContactRolesItem();
             if("DuplicateDataErrorSchemaPut".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DuplicateDataErrorSchemaPut = new global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataErrorSchemaPut();
+                
             }
             else if("InvalidDataErrorSchemaPut".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InvalidDataErrorSchemaPut = new global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataErrorSchemaPut();
+                
             }
             else if("MandatoryFieldNotFoundErrorSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MandatoryFieldNotFoundErrorSchema = new global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldNotFoundErrorSchema();
+                
             }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem>(global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem> arrayOfDuplicateSchemaItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem>(global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.ArrayOfDuplicateSchemaItem> arrayOfDuplicateSchemaItemValue)
             {
                 result.ArrayOfDuplicateSchemaItem = arrayOfDuplicateSchemaItemValue;
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null && (parseNode.GetChildNode("code")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("MANDATORY_NOT_FOUND".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("message") != null && parseNode.GetChildNode("details") != null && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("error".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null && (parseNode.GetChildNode("code")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("INVALID_DATA".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("message") != null && parseNode.GetChildNode("details") != null && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("error".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null && (parseNode.GetChildNode("code")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("DUPLICATE_DATA".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("message") != null && parseNode.GetChildNode("details") != null && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("error".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.ArrayOfDuplicateSchemaItem == null && result.DuplicateDataErrorSchemaPut == null && result.InvalidDataErrorSchemaPut == null && result.MandatoryFieldNotFoundErrorSchema == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.MandatoryFieldNotFoundErrorSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldNotFoundErrorSchema(), parseNode);
+            if (result.ArrayOfDuplicateSchemaItem == null && result.DuplicateDataErrorSchemaPut == null && result.InvalidDataErrorSchemaPut == null && result.MandatoryFieldNotFoundErrorSchema == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.InvalidDataErrorSchemaPut = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataErrorSchemaPut(), parseNode);
+            if (result.ArrayOfDuplicateSchemaItem == null && result.DuplicateDataErrorSchemaPut == null && result.InvalidDataErrorSchemaPut == null && result.MandatoryFieldNotFoundErrorSchema == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.DuplicateDataErrorSchemaPut = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataErrorSchemaPut(), parseNode);
+            if (result.ArrayOfDuplicateSchemaItem == null && result.DuplicateDataErrorSchemaPut == null && result.InvalidDataErrorSchemaPut == null && result.MandatoryFieldNotFoundErrorSchema == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,17 +113,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ArrayOfDuplicateSchemaItem == null && DuplicateDataErrorSchemaPut == null && InvalidDataErrorSchemaPut == null && MandatoryFieldNotFoundErrorSchema == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (DuplicateDataErrorSchemaPut != null && ArrayOfDuplicateSchemaItem == null && InvalidDataErrorSchemaPut == null && MandatoryFieldNotFoundErrorSchema == null) { if (DuplicateDataErrorSchemaPut is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DuplicateDataErrorSchemaPut); return; }
+            if (InvalidDataErrorSchemaPut != null && ArrayOfDuplicateSchemaItem == null && DuplicateDataErrorSchemaPut == null && MandatoryFieldNotFoundErrorSchema == null) { if (InvalidDataErrorSchemaPut is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InvalidDataErrorSchemaPut); return; }
+            if (MandatoryFieldNotFoundErrorSchema != null && ArrayOfDuplicateSchemaItem == null && DuplicateDataErrorSchemaPut == null && InvalidDataErrorSchemaPut == null) { if (MandatoryFieldNotFoundErrorSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MandatoryFieldNotFoundErrorSchema); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(DuplicateDataErrorSchemaPut != null)
             {
+                if (DuplicateDataErrorSchemaPut is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DuplicateDataErrorSchemaPut>(null, DuplicateDataErrorSchemaPut);
             }
             else if(InvalidDataErrorSchemaPut != null)
             {
+                if (InvalidDataErrorSchemaPut is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataErrorSchemaPut>(null, InvalidDataErrorSchemaPut);
             }
             else if(MandatoryFieldNotFoundErrorSchema != null)
             {
+                if (MandatoryFieldNotFoundErrorSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MandatoryFieldNotFoundErrorSchema>(null, MandatoryFieldNotFoundErrorSchema);
             }
             else if(ArrayOfDuplicateSchemaItem != null)

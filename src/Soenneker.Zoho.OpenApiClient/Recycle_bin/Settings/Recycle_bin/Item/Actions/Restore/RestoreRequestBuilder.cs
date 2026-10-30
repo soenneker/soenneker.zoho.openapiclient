@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Item.Act
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ResultList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ResultList.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To restore a single deleted record from the Recycle Bin in your Zoho CRM account. The record is moved back to its original module along with all its associated child records, such as Notes and Attachments. When the total number of restored records, including child records, is 1000 or fewer, the restoration completes immediately and returns a 200 response. When the total exceeds 1000, the operation is scheduled as a background job. Admin users can restore any record; non-admin users can restore only the records they own unless their profile grants broader access.

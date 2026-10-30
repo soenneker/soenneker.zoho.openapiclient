@@ -12,7 +12,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelatedList : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookup"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedList();
             if("RelatedListMultiselectLookup".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RelatedListMultiselectLookup = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookup();
+                
             }
             else if("RelatedListNonMultiselectLookup".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RelatedListNonMultiselectLookup = new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("sequence_number") != null && parseNode.GetChildNode("display_label") != null && parseNode.GetChildNode("api_name") != null && parseNode.GetChildNode("module") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("action") != null && parseNode.GetChildNode("href") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag9 && ("multiselectlookup".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("customize_sort") != null && parseNode.GetChildNode("customize_fields") != null && parseNode.GetChildNode("customize_display_label") != null && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag14 && ("visible".Equals(tag14.GetValue(), global::System.StringComparison.Ordinal) || "user_hidden".Equals(tag14.GetValue(), global::System.StringComparison.Ordinal) || "scheduled_for_deletion".Equals(tag14.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("sequence_number") != null && parseNode.GetChildNode("display_label") != null && parseNode.GetChildNode("api_name") != null && parseNode.GetChildNode("module") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("action") != null && parseNode.GetChildNode("href") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag9 && ("default".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal) || "custom".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal) || "custom_lookup".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal) || "custom_related_list".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal) || "queries".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal) || "grouped".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal) || "combined_view".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal) || "slyteui".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("customize_sort") != null && parseNode.GetChildNode("customize_fields") != null && parseNode.GetChildNode("customize_display_label") != null && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag14 && ("visible".Equals(tag14.GetValue(), global::System.StringComparison.Ordinal) || "user_hidden".Equals(tag14.GetValue(), global::System.StringComparison.Ordinal) || "scheduled_for_deletion".Equals(tag14.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.RelatedListMultiselectLookup == null && result.RelatedListNonMultiselectLookup == null && matchesUnionBranch0 && !matchesUnionBranch1) result.RelatedListMultiselectLookup = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookup(), parseNode);
+            if (result.RelatedListMultiselectLookup == null && result.RelatedListNonMultiselectLookup == null && matchesUnionBranch1 && !matchesUnionBranch0) result.RelatedListNonMultiselectLookup = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup(), parseNode);
+            if (result.RelatedListMultiselectLookup == null && result.RelatedListNonMultiselectLookup == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (RelatedListMultiselectLookup == null && RelatedListNonMultiselectLookup == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (RelatedListMultiselectLookup != null && RelatedListNonMultiselectLookup == null) { if (RelatedListMultiselectLookup is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RelatedListMultiselectLookup); return; }
+            if (RelatedListNonMultiselectLookup != null && RelatedListMultiselectLookup == null) { if (RelatedListNonMultiselectLookup is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RelatedListNonMultiselectLookup); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(RelatedListMultiselectLookup != null)
             {
+                if (RelatedListMultiselectLookup is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookup>(null, RelatedListMultiselectLookup);
             }
             else if(RelatedListNonMultiselectLookup != null)
             {
+                if (RelatedListNonMultiselectLookup is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookup>(null, RelatedListNonMultiselectLookup);
             }
         }

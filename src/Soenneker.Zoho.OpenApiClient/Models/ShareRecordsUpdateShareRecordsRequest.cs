@@ -12,20 +12,34 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShareRecordsUpdateShareRecordsRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("notify_on_completion") is { } nullNodeNotifyOnCompletion && nullNodeNotifyOnCompletion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyOnCompletion = null;
+            if (parseNode.GetChildNode("notify_shared_members") is { } nullNodeNotifySharedMembers && nullNodeNotifySharedMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifySharedMembers = null;
+            if (parseNode.GetChildNode("share") is { } nullNodeShare && nullNodeShare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Share = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to send an email notification to the recordowner once the share action is completed. **Possible values*: - true- false</summary>
-        public bool? NotifyOnCompletion { get; set; }
+        public bool? NotifyOnCompletion { get => _explicitNullValueNotifyOnCompletion; set { _explicitNullValueNotifyOnCompletion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_on_completion"); else _explicitNullProperties?.Remove("notify_on_completion"); } }
+        private bool? _explicitNullValueNotifyOnCompletion = default!;
         /// <summary>Specify whether to send a notification to the members withwhom the record is shared. **Possible values**: - true- false</summary>
-        public bool? NotifySharedMembers { get; set; }
+        public bool? NotifySharedMembers { get => _explicitNullValueNotifySharedMembers; set { _explicitNullValueNotifySharedMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_shared_members"); else _explicitNullProperties?.Remove("notify_shared_members"); } }
+        private bool? _explicitNullValueNotifySharedMembers = default!;
         /// <summary>Specify the list of share entries to update. Each entry defines a recipient, the access level, and the type of sharing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItem>? Share { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItem>? Share { get => _explicitNullValueShare; set { _explicitNullValueShare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share"); else _explicitNullProperties?.Remove("share"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItem>? _explicitNullValueShare = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItem> Share { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItem> Share { get => _explicitNullValueShare; set { _explicitNullValueShare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share"); else _explicitNullProperties?.Remove("share"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItem> _explicitNullValueShare = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequest"/> and sets the default values.
@@ -42,7 +56,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("notify_on_completion", NotifyOnCompletion);
             writer.WriteBoolValue("notify_shared_members", NotifySharedMembers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequestShareItem>("share", Share);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

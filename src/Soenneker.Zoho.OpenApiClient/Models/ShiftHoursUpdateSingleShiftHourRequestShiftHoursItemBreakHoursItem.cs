@@ -12,40 +12,59 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("break_days") is { } nullNodeBreakDays && nullNodeBreakDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BreakDays = null;
+            if (parseNode.GetChildNode("custom_timing") is { } nullNodeCustomTiming && nullNodeCustomTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomTiming = null;
+            if (parseNode.GetChildNode("daily_timing") is { } nullNodeDailyTiming && nullNodeDailyTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyTiming = null;
+            if (parseNode.GetChildNode("same_as_everyday") is { } nullNodeSameAsEveryday && nullNodeSameAsEveryday.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameAsEveryday = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lists the days of the week on which the break hour applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemBreakDaysItem?>? BreakDays { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemBreakDaysItem?>? BreakDays { get => _explicitNullValueBreakDays; set { _explicitNullValueBreakDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_days"); else _explicitNullProperties?.Remove("break_days"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemBreakDaysItem?>? _explicitNullValueBreakDays = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemBreakDaysItem?> BreakDays { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemBreakDaysItem?> BreakDays { get => _explicitNullValueBreakDays; set { _explicitNullValueBreakDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_days"); else _explicitNullProperties?.Remove("break_days"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemBreakDaysItem?> _explicitNullValueBreakDays = default!;
 #endif
         /// <summary>Lists per-day break timing overrides. This field is **mandatory** when the parent **same_as_everyday** is **false**. A day can have at most two breaks and the total break time on a day cannot exceed two hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem>? CustomTiming { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem>? CustomTiming { get => _explicitNullValueCustomTiming; set { _explicitNullValueCustomTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_timing"); else _explicitNullProperties?.Remove("custom_timing"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem>? _explicitNullValueCustomTiming = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem> CustomTiming { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem> CustomTiming { get => _explicitNullValueCustomTiming; set { _explicitNullValueCustomTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_timing"); else _explicitNullProperties?.Remove("custom_timing"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem> _explicitNullValueCustomTiming = default!;
 #endif
         /// <summary>Represents the start and end time of the breakin `HH:MM` 24-hour format, applied uniformly toevery day the break is scheduled. This field is **mandatory** when the parent**same_as_everyday** is **true**. A day can haveat most two breaks and the total break time on aday cannot exceed two hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DailyTiming { get; set; }
+        public List<string>? DailyTiming { get => _explicitNullValueDailyTiming; set { _explicitNullValueDailyTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_timing"); else _explicitNullProperties?.Remove("daily_timing"); } }
+        private List<string>? _explicitNullValueDailyTiming = default!;
 #nullable restore
 #else
-        public List<string> DailyTiming { get; set; }
+        public List<string> DailyTiming { get => _explicitNullValueDailyTiming; set { _explicitNullValueDailyTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_timing"); else _explicitNullProperties?.Remove("daily_timing"); } }
+        private List<string> _explicitNullValueDailyTiming = default!;
 #endif
         /// <summary>Indicates whether the shift hour follows the same timing on every active day. When the value is **true**, the **daily_timing** array becomes mandatory; when the value is **false**, the **custom_timing** array becomes mandatory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SameAsEveryday { get; set; }
+        public string? SameAsEveryday { get => _explicitNullValueSameAsEveryday; set { _explicitNullValueSameAsEveryday = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("same_as_everyday"); else _explicitNullProperties?.Remove("same_as_everyday"); } }
+        private string? _explicitNullValueSameAsEveryday = default!;
 #nullable restore
 #else
-        public string SameAsEveryday { get; set; }
+        public string SameAsEveryday { get => _explicitNullValueSameAsEveryday; set { _explicitNullValueSameAsEveryday = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("same_as_everyday"); else _explicitNullProperties?.Remove("same_as_everyday"); } }
+        private string _explicitNullValueSameAsEveryday = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItem"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateSingleShiftHourRequestShiftHoursItemBreakHoursItemCustomTimingItem>("custom_timing", CustomTiming);
             writer.WriteCollectionOfPrimitiveValues<string>("daily_timing", DailyTiming);
             writer.WriteStringValue("same_as_everyday", SameAsEveryday);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

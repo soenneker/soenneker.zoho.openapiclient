@@ -12,36 +12,56 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SectionProperties : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bulk_addition") is { } nullNodeBulkAddition && nullNodeBulkAddition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BulkAddition = null;
+            if (parseNode.GetChildNode("maximum_rows") is { } nullNodeMaximumRows && nullNodeMaximumRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumRows = null;
+            if (parseNode.GetChildNode("preference") is { } nullNodePreference && nullNodePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preference = null;
+            if (parseNode.GetChildNode("reorder_rows") is { } nullNodeReorderRows && nullNodeReorderRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReorderRows = null;
+            if (parseNode.GetChildNode("tooltip") is { } nullNodeTooltip && nullNodeTooltip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tooltip = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bulk_addition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition? BulkAddition { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition? BulkAddition { get => _explicitNullValueBulkAddition; set { _explicitNullValueBulkAddition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulk_addition"); else _explicitNullProperties?.Remove("bulk_addition"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition? _explicitNullValueBulkAddition = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition BulkAddition { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition BulkAddition { get => _explicitNullValueBulkAddition; set { _explicitNullValueBulkAddition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulk_addition"); else _explicitNullProperties?.Remove("bulk_addition"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesBulkAddition _explicitNullValueBulkAddition = default!;
 #endif
         /// <summary>Indicates the maximum number of rows that can be added to the subform section, controlling how many related records can be embedded in a single parent record&apos;s layout.</summary>
-        public int? MaximumRows { get; set; }
+        public int? MaximumRows { get => _explicitNullValueMaximumRows; set { _explicitNullValueMaximumRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_rows"); else _explicitNullProperties?.Remove("maximum_rows"); } }
+        private int? _explicitNullValueMaximumRows = default!;
         /// <summary>Contains the conditional display criteria for the section, defining the field conditions that must be satisfied for the section to be shown or for certain section behaviors to be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem>? Preference { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem>? Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem>? _explicitNullValuePreference = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem> Preference { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem> Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem> _explicitNullValuePreference = default!;
 #endif
         /// <summary>Indicates whether users are permitted to reorder existing rows within the subform section by dragging them to a new position. Possible values: `true` — row reordering is allowed; `false` — rows cannot be reordered.</summary>
-        public bool? ReorderRows { get; set; }
+        public bool? ReorderRows { get => _explicitNullValueReorderRows; set { _explicitNullValueReorderRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reorder_rows"); else _explicitNullProperties?.Remove("reorder_rows"); } }
+        private bool? _explicitNullValueReorderRows = default!;
         /// <summary>The tooltip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip? Tooltip { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip? Tooltip { get => _explicitNullValueTooltip; set { _explicitNullValueTooltip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tooltip"); else _explicitNullProperties?.Remove("tooltip"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip? _explicitNullValueTooltip = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip Tooltip { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip Tooltip { get => _explicitNullValueTooltip; set { _explicitNullValueTooltip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tooltip"); else _explicitNullProperties?.Remove("tooltip"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip _explicitNullValueTooltip = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties"/> and sets the default values.
@@ -58,7 +78,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.SectionProperties(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesPreferenceItem>("preference", Preference);
             writer.WriteBoolValue("reorder_rows", ReorderRows);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionPropertiesTooltip>("tooltip", Tooltip);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

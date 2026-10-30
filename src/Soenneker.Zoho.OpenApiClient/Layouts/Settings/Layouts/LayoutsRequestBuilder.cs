@@ -72,6 +72,8 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsNotFoundResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LayoutSuccessResponseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

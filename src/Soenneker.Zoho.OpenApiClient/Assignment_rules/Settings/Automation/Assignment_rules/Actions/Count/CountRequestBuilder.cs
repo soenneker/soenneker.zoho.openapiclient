@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ErrorResponseNoPermissionToAccessApi.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CountSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CountSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

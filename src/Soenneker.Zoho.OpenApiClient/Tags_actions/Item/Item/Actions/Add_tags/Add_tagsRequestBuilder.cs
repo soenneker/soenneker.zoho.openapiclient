@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Item.Actions.Add_tags
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsPostAddTagsWithId403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostaddtagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

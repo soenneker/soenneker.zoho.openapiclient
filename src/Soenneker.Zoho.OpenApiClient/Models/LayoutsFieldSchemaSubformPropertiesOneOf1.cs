@@ -12,19 +12,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutsFieldSchemaSubformPropertiesOneOf1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_width") is { } nullNodeCustomWidth && nullNodeCustomWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomWidth = null;
+            if (parseNode.GetChildNode("pinned_column") is { } nullNodePinnedColumn && nullNodePinnedColumn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PinnedColumn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the custom column width in pixels assigned to this field when it is displayed as a column in a subform, overriding the default column sizing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1CustomWidth? CustomWidth { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1CustomWidth? CustomWidth { get => _explicitNullValueCustomWidth; set { _explicitNullValueCustomWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_width"); else _explicitNullProperties?.Remove("custom_width"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1CustomWidth? _explicitNullValueCustomWidth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1CustomWidth CustomWidth { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1CustomWidth CustomWidth { get => _explicitNullValueCustomWidth; set { _explicitNullValueCustomWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_width"); else _explicitNullProperties?.Remove("custom_width"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1CustomWidth _explicitNullValueCustomWidth = default!;
 #endif
         /// <summary>Indicates whether this field&apos;s column is frozen in place when users scroll horizontally through a subform, keeping the field visible regardless of scroll position. Possible values: `true` — the column is pinned; `false` — the column scrolls with the subform.</summary>
-        public bool? PinnedColumn { get; set; }
+        public bool? PinnedColumn { get => _explicitNullValuePinnedColumn; set { _explicitNullValuePinnedColumn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pinned_column"); else _explicitNullProperties?.Remove("pinned_column"); } }
+        private bool? _explicitNullValuePinnedColumn = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaSubformPropertiesOneOf1CustomWidth>("custom_width", CustomWidth);
             writer.WriteBoolValue("pinned_column", PinnedColumn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,35 +13,60 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExecuteWhenT4DateBasedDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("execute_at") is { } nullNodeExecuteAt && nullNodeExecuteAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecuteAt = null;
+            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("recur_cycle") is { } nullNodeRecurCycle && nullNodeRecurCycle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurCycle = null;
+            if (parseNode.GetChildNode("repeat") is { } nullNodeRepeat && nullNodeRepeat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repeat = null;
+            if (parseNode.GetChildNode("trigger_module") is { } nullNodeTriggerModule && nullNodeTriggerModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerModule = null;
+            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the exact time of day at which to fire the trigger, in 24-hour HH:mm format. Applicable only to datetime fields.</summary>
-        public Time? ExecuteAt { get; set; }
+#nullable enable
+        public string? ExecuteAt { get => _explicitNullValueExecuteAt; set { _explicitNullValueExecuteAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_at"); else _explicitNullProperties?.Remove("execute_at"); } }
+        private string? _explicitNullValueExecuteAt = default!;
+#nullable restore
         /// <summary>Represents the date or datetime field to monitor for triggering the rule. Use the getFields endpoint to discover available date and datetime fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsField? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsField Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsField _explicitNullValueField = default!;
 #endif
         /// <summary>Represents the time unit for the offset relative to the monitored date field. For example, **days**, **weeks**, or **months**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsPeriod? Period { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsPeriod? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsPeriod? _explicitNullValuePeriod = default!;
         /// <summary>Represents the recurrence frequency for the date-based trigger.Possible values:once - Fires once.monthly - Fires monthly on the same date.yearly - Fires yearly on the same date.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsRecurCycle? RecurCycle { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsRecurCycle? RecurCycle { get => _explicitNullValueRecurCycle; set { _explicitNullValueRecurCycle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recur_cycle"); else _explicitNullProperties?.Remove("recur_cycle"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsRecurCycle? _explicitNullValueRecurCycle = default!;
         /// <summary>Indicates whether the trigger fires repeatedly. When true, the trigger fires on each recurrence as configured.</summary>
-        public bool? Repeat { get; set; }
+        public bool? Repeat { get => _explicitNullValueRepeat; set { _explicitNullValueRepeat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeat"); else _explicitNullProperties?.Remove("repeat"); } }
+        private bool? _explicitNullValueRepeat = default!;
         /// <summary>Specifies the module that triggers the workflow rule. If omitted,it defaults to the rule&apos;s top-level module. Specify this when the triggertargets a different module. For example, a workflow rule on Leads triggeredwhen a note is created requires &apos;trigger_module&apos;: {&quot;api_name&quot;: &quot;Notes&quot;,&apos;id&apos;: &apos;...&apos;}. Use &apos;getModules&apos; to retrieve the module API name and ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule? TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule? TriggerModule { get => _explicitNullValueTriggerModule; set { _explicitNullValueTriggerModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_module"); else _explicitNullProperties?.Remove("trigger_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule? _explicitNullValueTriggerModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule TriggerModule { get => _explicitNullValueTriggerModule; set { _explicitNullValueTriggerModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_module"); else _explicitNullProperties?.Remove("trigger_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule _explicitNullValueTriggerModule = default!;
 #endif
         /// <summary>Represents the offset magnitude relative to the monitored date field value. Negative values indicate before the date; positive values indicate after.</summary>
-        public int? Unit { get; set; }
+        public int? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        private int? _explicitNullValueUnit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetails"/> and sets the default values.
         /// </summary>
@@ -57,7 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +92,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "execute_at", n => { ExecuteAt = n.GetTimeValue(); } },
+                { "execute_at", n => { ExecuteAt = n.GetStringValue(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsField>(global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsField.CreateFromDiscriminatorValue); } },
                 { "period", n => { Period = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsPeriod>(); } },
                 { "recur_cycle", n => { RecurCycle = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsRecurCycle>(); } },
@@ -83,13 +108,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteTimeValue("execute_at", ExecuteAt);
+            writer.WriteStringValue("execute_at", ExecuteAt);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsPeriod>("period", Period);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsRecurCycle>("recur_cycle", RecurCycle);
             writer.WriteBoolValue("repeat", Repeat);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT4DateBasedDetailsTriggerModule>("trigger_module", TriggerModule);
             writer.WriteIntValue("unit", Unit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

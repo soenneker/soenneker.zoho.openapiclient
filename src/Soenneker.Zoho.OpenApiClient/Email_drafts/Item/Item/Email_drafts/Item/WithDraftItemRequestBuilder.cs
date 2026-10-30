@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Item
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsDeleteEmailDrafts400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionForbiddenResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsDeleteEmailDrafts200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsDeleteEmailDrafts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -80,6 +82,8 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Item
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionForbiddenResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,6 +111,8 @@ namespace Soenneker.Zoho.OpenApiClient.Email_drafts.Item.Item.Email_drafts.Item
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDrafts400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.NoPermissionForbiddenResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDrafts200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDrafts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

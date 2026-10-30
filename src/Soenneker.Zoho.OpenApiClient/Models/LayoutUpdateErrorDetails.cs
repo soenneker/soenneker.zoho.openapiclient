@@ -12,69 +12,101 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutUpdateErrorDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ambiguity_due_to") is { } nullNodeAmbiguityDueTo && nullNodeAmbiguityDueTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmbiguityDueTo = null;
+            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("dependee") is { } nullNodeDependee && nullNodeDependee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dependee = null;
+            if (parseNode.GetChildNode("expected_data_type") is { } nullNodeExpectedDataType && nullNodeExpectedDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDataType = null;
+            if (parseNode.GetChildNode("expected_fields") is { } nullNodeExpectedFields && nullNodeExpectedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedFields = null;
+            if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("limit_due_to") is { } nullNodeLimitDueTo && nullNodeLimitDueTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitDueTo = null;
+            if (parseNode.GetChildNode("maximum_length") is { } nullNodeMaximumLength && nullNodeMaximumLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumLength = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the list of fields that caused an ambiguity error during layout update processing, identifying conflicting or duplicate field references in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem>? AmbiguityDueTo { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem>? AmbiguityDueTo { get => _explicitNullValueAmbiguityDueTo; set { _explicitNullValueAmbiguityDueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ambiguity_due_to"); else _explicitNullProperties?.Remove("ambiguity_due_to"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem>? _explicitNullValueAmbiguityDueTo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem> AmbiguityDueTo { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem> AmbiguityDueTo { get => _explicitNullValueAmbiguityDueTo; set { _explicitNullValueAmbiguityDueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ambiguity_due_to"); else _explicitNullProperties?.Remove("ambiguity_due_to"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsAmbiguityDueToItem> _explicitNullValueAmbiguityDueTo = default!;
 #endif
         /// <summary>Represents the API name of the field whose value or configuration caused the layout update error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get; set; }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get; set; }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>Contains information about the dependent field that caused a mismatch or dependency violation during the layout update operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee? Dependee { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee? Dependee { get => _explicitNullValueDependee; set { _explicitNullValueDependee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependee"); else _explicitNullProperties?.Remove("dependee"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee? _explicitNullValueDependee = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee Dependee { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee Dependee { get => _explicitNullValueDependee; set { _explicitNullValueDependee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependee"); else _explicitNullProperties?.Remove("dependee"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsDependee _explicitNullValueDependee = default!;
 #endif
         /// <summary>Indicates the data type that the API expected for the field that failed validation during the layout update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedDataType { get; set; }
+        public string? ExpectedDataType { get => _explicitNullValueExpectedDataType; set { _explicitNullValueExpectedDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_data_type"); else _explicitNullProperties?.Remove("expected_data_type"); } }
+        private string? _explicitNullValueExpectedDataType = default!;
 #nullable restore
 #else
-        public string ExpectedDataType { get; set; }
+        public string ExpectedDataType { get => _explicitNullValueExpectedDataType; set { _explicitNullValueExpectedDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_data_type"); else _explicitNullProperties?.Remove("expected_data_type"); } }
+        private string _explicitNullValueExpectedDataType = default!;
 #endif
         /// <summary>Contains the list of fields of which at least one must be provided for the layout update to proceed, describing a conditional required field constraint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem>? ExpectedFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem>? ExpectedFields { get => _explicitNullValueExpectedFields; set { _explicitNullValueExpectedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_fields"); else _explicitNullProperties?.Remove("expected_fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem>? _explicitNullValueExpectedFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem> ExpectedFields { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem> ExpectedFields { get => _explicitNullValueExpectedFields; set { _explicitNullValueExpectedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_fields"); else _explicitNullProperties?.Remove("expected_fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsExpectedFieldsItem> _explicitNullValueExpectedFields = default!;
 #endif
         /// <summary>Represents the JSON path to the field within the layout update request payload that caused the error, enabling precise identification of the offending input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonPath { get; set; }
+        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        private string? _explicitNullValueJsonPath = default!;
 #nullable restore
 #else
-        public string JsonPath { get; set; }
+        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        private string _explicitNullValueJsonPath = default!;
 #endif
         /// <summary>Indicates the maximum allowed value or count that was exceeded during the layout update, providing the threshold value for the violated constraint.</summary>
-        public int? Limit { get; set; }
+        public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private int? _explicitNullValueLimit = default!;
         /// <summary>Contains the list of fields responsible for causing a limit to be exceeded during the layout update, identifying which fields contributed to the constraint violation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem>? LimitDueTo { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem>? LimitDueTo { get => _explicitNullValueLimitDueTo; set { _explicitNullValueLimitDueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit_due_to"); else _explicitNullProperties?.Remove("limit_due_to"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem>? _explicitNullValueLimitDueTo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem> LimitDueTo { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem> LimitDueTo { get => _explicitNullValueLimitDueTo; set { _explicitNullValueLimitDueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit_due_to"); else _explicitNullProperties?.Remove("limit_due_to"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem> _explicitNullValueLimitDueTo = default!;
 #endif
         /// <summary>Indicates the maximum character length allowed for the field that failed validation during the layout update.</summary>
-        public int? MaximumLength { get; set; }
+        public int? MaximumLength { get => _explicitNullValueMaximumLength; set { _explicitNullValueMaximumLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_length"); else _explicitNullProperties?.Remove("maximum_length"); } }
+        private int? _explicitNullValueMaximumLength = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetails"/> and sets the default values.
         /// </summary>
@@ -90,7 +122,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,6 +159,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("limit", Limit);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.LayoutUpdateErrorDetailsLimitDueToItem>("limit_due_to", LimitDueTo);
             writer.WriteIntValue("maximum_length", MaximumLength);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

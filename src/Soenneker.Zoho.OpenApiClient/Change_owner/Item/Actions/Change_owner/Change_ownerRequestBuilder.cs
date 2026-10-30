@@ -36,22 +36,22 @@ namespace Soenneker.Zoho.OpenApiClient.Change_owner.Item.Actions.Change_owner
         /// <summary>
         /// Updates the owner of multiple records in the module. Note: The module name `Deals` is accepted and internally resolved to `Potentials`. `Meetings` is internally resolved to `Events`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulk200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkSuccessResponse"/></returns>
         /// <param name="body">Specify the record IDs and owner details for the bulk owner change request.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulk200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Change_owner.Item.Actions.Change_owner.Change_ownerRequestBuilder.Change_ownerRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Change_owner.Item.Actions.Change_owner.Change_ownerRequestBuilder.Change_ownerRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulk200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Change_owner.Item.Actions.Change_owner.Change_ownerRequestBuilder.Change_ownerRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Change_owner.Item.Actions.Change_owner.Change_ownerRequestBuilder.Change_ownerRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulk200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulk200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulkSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the owner of multiple records in the module. Note: The module name `Deals` is accepted and internally resolved to `Potentials`. `Meetings` is internally resolved to `Events`.

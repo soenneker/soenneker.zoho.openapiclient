@@ -12,21 +12,35 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompositeRequestsCreateCompositeRequestRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("__composite_requests") is { } nullNodeCompositeRequests && nullNodeCompositeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompositeRequests = null;
+            if (parseNode.GetChildNode("parallel_execution") is { } nullNodeParallelExecution && nullNodeParallelExecution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParallelExecution = null;
+            if (parseNode.GetChildNode("rollback_on_fail") is { } nullNodeRollbackOnFail && nullNodeRollbackOnFail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RollbackOnFail = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the API requests to execute as sub-requests within the composite call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem>? CompositeRequests { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem>? CompositeRequests { get => _explicitNullValueCompositeRequests; set { _explicitNullValueCompositeRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__composite_requests"); else _explicitNullProperties?.Remove("__composite_requests"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem>? _explicitNullValueCompositeRequests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem> CompositeRequests { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem> CompositeRequests { get => _explicitNullValueCompositeRequests; set { _explicitNullValueCompositeRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__composite_requests"); else _explicitNullProperties?.Remove("__composite_requests"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem> _explicitNullValueCompositeRequests = default!;
 #endif
         /// <summary>Specify whether  to process all independent sub-requests (sub-requests with no dependencies/references) in parallel. The default value is true. If &quot;rollback_on_fail&quot; is true, then the default value of this key is false.Possible values:**true** - Execute independent sub-requests in parallel.**false** - Execute sub-requests sequentially.This key cannot be **true** when **rollback_on_fail** is **true**.</summary>
-        public bool? ParallelExecution { get; set; }
+        public bool? ParallelExecution { get => _explicitNullValueParallelExecution; set { _explicitNullValueParallelExecution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parallel_execution"); else _explicitNullProperties?.Remove("parallel_execution"); } }
+        private bool? _explicitNullValueParallelExecution = default!;
         /// <summary>Specify whether to rollback the composite API request if any of the sub-requests fail. The default value is false.Possible values:**true** - Rollback all operations if any sub-request fails. Workflow automation actions execute only after all sub-requests succeed.**false** - Process each sub-request independently without rollback.This key cannot be **true** when **parallel_execution** is **true**.</summary>
-        public bool? RollbackOnFail { get; set; }
+        public bool? RollbackOnFail { get => _explicitNullValueRollbackOnFail; set { _explicitNullValueRollbackOnFail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollback_on_fail"); else _explicitNullProperties?.Remove("rollback_on_fail"); } }
+        private bool? _explicitNullValueRollbackOnFail = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequest"/> and sets the default values.
         /// </summary>
@@ -44,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequestRequestCompositeRequestsItem>("__composite_requests", CompositeRequests);
             writer.WriteBoolValue("parallel_execution", ParallelExecution);
             writer.WriteBoolValue("rollback_on_fail", RollbackOnFail);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

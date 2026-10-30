@@ -36,18 +36,18 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Action
         /// <summary>
         /// To change the sort field and sort order for one or more Custom Views in the specified module of your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortSuccessResponse"/></returns>
         /// <param name="body">Represents the request body for changing the sort order of one or more Custom Views.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Actions.Change_sort.Change_sortRequestBuilder.Change_sortRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -55,8 +55,10 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Action
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To change the sort field and sort order for one or more Custom Views in the specified module of your Zoho CRM organization.

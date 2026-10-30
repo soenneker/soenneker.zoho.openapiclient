@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "32B20AD0A7D17CFE277A5BA8AD284DAA5C352E9B148F204A08C0BA8083BC5060E07EFF654C0C0B29454EEB1B7552D400C757F967991D1C14B5C07BF97F1DC8D7",
+  "descriptionHash": "64F2FA6FFFD99C9319B23932D75C902743959D76B24B7F660023A7AD3DEE982C029C31F322556DBD3C159769EB6D9B2472B988DF7154F43B43E4B0558C8207C6",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "ZohoOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Zoho.OpenApiClient",

@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CoqlExecuteCoqlQueryRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("include_meta") is { } nullNodeIncludeMeta && nullNodeIncludeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeMeta = null;
+            if (parseNode.GetChildNode("select_query") is { } nullNodeSelectQuery && nullNodeSelectQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectQuery = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the list of metadata types to include in the response.Possible values:**fields** - Includes field metadata for the SELECT columns in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsItem?>? IncludeMeta { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsItem?>? IncludeMeta { get => _explicitNullValueIncludeMeta; set { _explicitNullValueIncludeMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_meta"); else _explicitNullProperties?.Remove("include_meta"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsItem?>? _explicitNullValueIncludeMeta = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsItem?> IncludeMeta { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsItem?> IncludeMeta { get => _explicitNullValueIncludeMeta; set { _explicitNullValueIncludeMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_meta"); else _explicitNullProperties?.Remove("include_meta"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsItem?> _explicitNullValueIncludeMeta = default!;
 #endif
         /// <summary>Specify the COQL SELECT query to retrieve records. The query must reference module and field API names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SelectQuery { get; set; }
+        public string? SelectQuery { get => _explicitNullValueSelectQuery; set { _explicitNullValueSelectQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("select_query"); else _explicitNullProperties?.Remove("select_query"); } }
+        private string? _explicitNullValueSelectQuery = default!;
 #nullable restore
 #else
-        public string SelectQuery { get; set; }
+        public string SelectQuery { get => _explicitNullValueSelectQuery; set { _explicitNullValueSelectQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("select_query"); else _explicitNullProperties?.Remove("select_query"); } }
+        private string _explicitNullValueSelectQuery = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQueryRequest"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQueryRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQueryRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQueryRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldsItem>("include_meta", IncludeMeta);
             writer.WriteStringValue("select_query", SelectQuery);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

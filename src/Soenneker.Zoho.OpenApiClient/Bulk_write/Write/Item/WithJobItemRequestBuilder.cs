@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_write.Write.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the details of a previously created bulk write job in your Zoho CRM organization, including its current status, per-resource and per-file processing counts, the creator, and the download URL of the result archive once the job completes. The download URL remains accessible for up to seven days after the job completes.

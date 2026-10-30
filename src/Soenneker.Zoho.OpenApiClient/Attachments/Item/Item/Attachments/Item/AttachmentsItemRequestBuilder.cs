@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsDeleteAttachment200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Download the file content of a specific attachment by its ID. This endpoint returns the actual file (image, PDF, document, etc.). Returns an error for link attachments, as they cannot be downloaded.
@@ -80,6 +80,8 @@ namespace Soenneker.Zoho.OpenApiClient.Attachments.Item.Item.Attachments.Item
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

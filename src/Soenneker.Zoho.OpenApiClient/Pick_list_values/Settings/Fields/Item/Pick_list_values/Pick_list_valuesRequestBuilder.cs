@@ -66,6 +66,8 @@ namespace Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pic
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesGetPickListValues403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesGetPickListValues200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PickListValuesGetPickListValues200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -74,6 +74,8 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroups200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -99,6 +101,8 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroup201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

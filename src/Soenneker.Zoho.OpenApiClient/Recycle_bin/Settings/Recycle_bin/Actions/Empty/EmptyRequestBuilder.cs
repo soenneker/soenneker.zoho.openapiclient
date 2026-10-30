@@ -36,18 +36,18 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Actions.
         /// <summary>
         /// To permanently delete every record from the Recycle Bin in your Zoho CRM account. This action is irreversible - the records cannot be restored after this operation completes. When the Recycle Bin contains 1000 or fewer records, including child records such as Notes and Attachments, Zoho CRM deletes the records immediately and returns a 200 response. When the count exceeds 1000, the deletion runs as a background job and returns a 202 response. Only users with the Admin profile can empty the Recycle Bin.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBinSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin401Response">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBinSuccessResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBinSuccessResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -55,8 +55,10 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Actions.
             {
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin401Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBin200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBinSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinEmptyRecycleBinSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To permanently delete every record from the Recycle Bin in your Zoho CRM account. This action is irreversible - the records cannot be restored after this operation completes. When the Recycle Bin contains 1000 or fewer records, including child records such as Notes and Attachments, Zoho CRM deletes the records immediately and returns a 200 response. When the count exceeds 1000, the deletion runs as a background job and returns a 202 response. Only users with the Admin profile can empty the Recycle Bin.

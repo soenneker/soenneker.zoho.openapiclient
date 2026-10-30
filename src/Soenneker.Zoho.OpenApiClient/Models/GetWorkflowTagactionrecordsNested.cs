@@ -12,32 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetWorkflowTagactionrecordsNested : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Blueprint") is { } nullNodeBlueprint && nullNodeBlueprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blueprint = null;
+            if (parseNode.GetChildNode("Orchestration") is { } nullNodeOrchestration && nullNodeOrchestration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Orchestration = null;
+            if (parseNode.GetChildNode("Workflow") is { } nullNodeWorkflow && nullNodeWorkflow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workflow = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Nested schema for Blueprint configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetBlueprintNested? Blueprint { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetBlueprintNested? Blueprint { get => _explicitNullValueBlueprint; set { _explicitNullValueBlueprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Blueprint"); else _explicitNullProperties?.Remove("Blueprint"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetBlueprintNested? _explicitNullValueBlueprint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetBlueprintNested Blueprint { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetBlueprintNested Blueprint { get => _explicitNullValueBlueprint; set { _explicitNullValueBlueprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Blueprint"); else _explicitNullProperties?.Remove("Blueprint"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetBlueprintNested _explicitNullValueBlueprint = default!;
 #endif
         /// <summary>Nested schema for Orchestration configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetOrchestrationNested? Orchestration { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetOrchestrationNested? Orchestration { get => _explicitNullValueOrchestration; set { _explicitNullValueOrchestration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Orchestration"); else _explicitNullProperties?.Remove("Orchestration"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetOrchestrationNested? _explicitNullValueOrchestration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetOrchestrationNested Orchestration { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetOrchestrationNested Orchestration { get => _explicitNullValueOrchestration; set { _explicitNullValueOrchestration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Orchestration"); else _explicitNullProperties?.Remove("Orchestration"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetOrchestrationNested _explicitNullValueOrchestration = default!;
 #endif
         /// <summary>Nested schema for Workflow configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowNested? Workflow { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowNested? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Workflow"); else _explicitNullProperties?.Remove("Workflow"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowNested? _explicitNullValueWorkflow = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowNested Workflow { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowNested Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Workflow"); else _explicitNullProperties?.Remove("Workflow"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowNested _explicitNullValueWorkflow = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetBlueprintNested>("Blueprint", Blueprint);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetOrchestrationNested>("Orchestration", Orchestration);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowNested>("Workflow", Workflow);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

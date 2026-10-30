@@ -12,16 +12,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServicePreferenceUpdateServicePreferenceRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("service_preferences") is { } nullNodeServicePreferences && nullNodeServicePreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServicePreferences = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the service preference settings to update for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequestServicePreferences? ServicePreferences { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequestServicePreferences? ServicePreferences { get => _explicitNullValueServicePreferences; set { _explicitNullValueServicePreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_preferences"); else _explicitNullProperties?.Remove("service_preferences"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequestServicePreferences? _explicitNullValueServicePreferences = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequestServicePreferences ServicePreferences { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequestServicePreferences ServicePreferences { get => _explicitNullValueServicePreferences; set { _explicitNullValueServicePreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_preferences"); else _explicitNullProperties?.Remove("service_preferences"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequestServicePreferences _explicitNullValueServicePreferences = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequest"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceUpdateServicePreferenceRequestServicePreferences>("service_preferences", ServicePreferences);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

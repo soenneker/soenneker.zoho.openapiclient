@@ -12,72 +12,103 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnsubscribeLinkBaseFields : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_location_url") is { } nullNodeCustomLocationUrl && nullNodeCustomLocationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomLocationUrl = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("page_type") is { } nullNodePageType && nullNodePageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageType = null;
+            if (parseNode.GetChildNode("standard_page_message") is { } nullNodeStandardPageMessage && nullNodeStandardPageMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StandardPageMessage = null;
+            if (parseNode.GetChildNode("submission_action_type") is { } nullNodeSubmissionActionType && nullNodeSubmissionActionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmissionActionType = null;
+            if (parseNode.GetChildNode("submission_message") is { } nullNodeSubmissionMessage && nullNodeSubmissionMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmissionMessage = null;
+            if (parseNode.GetChildNode("submission_redirect_url") is { } nullNodeSubmissionRedirectUrl && nullNodeSubmissionRedirectUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmissionRedirectUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the custom webpage URL for hosting the unsubscribe link. Required when page_type is custom. Required when page_type is custom. Required when page_type is custom.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomLocationUrl { get; set; }
+        public string? CustomLocationUrl { get => _explicitNullValueCustomLocationUrl; set { _explicitNullValueCustomLocationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_location_url"); else _explicitNullProperties?.Remove("custom_location_url"); } }
+        private string? _explicitNullValueCustomLocationUrl = default!;
 #nullable restore
 #else
-        public string CustomLocationUrl { get; set; }
+        public string CustomLocationUrl { get => _explicitNullValueCustomLocationUrl; set { _explicitNullValueCustomLocationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_location_url"); else _explicitNullProperties?.Remove("custom_location_url"); } }
+        private string _explicitNullValueCustomLocationUrl = default!;
 #endif
         /// <summary>Represents the unique identifier of the unsubscribe link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the unique name for the unsubscribe link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Specifies where the unsubscribe page is hosted: standard (Zoho CRM page) or custom (your own webpage)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PageType { get; set; }
+        public string? PageType { get => _explicitNullValuePageType; set { _explicitNullValuePageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_type"); else _explicitNullProperties?.Remove("page_type"); } }
+        private string? _explicitNullValuePageType = default!;
 #nullable restore
 #else
-        public string PageType { get; set; }
+        public string PageType { get => _explicitNullValuePageType; set { _explicitNullValuePageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_type"); else _explicitNullProperties?.Remove("page_type"); } }
+        private string _explicitNullValuePageType = default!;
 #endif
         /// <summary>The message displayed on the standard unsubscribe page. Can be rich text (HTML) or plain text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StandardPageMessage { get; set; }
+        public string? StandardPageMessage { get => _explicitNullValueStandardPageMessage; set { _explicitNullValueStandardPageMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standard_page_message"); else _explicitNullProperties?.Remove("standard_page_message"); } }
+        private string? _explicitNullValueStandardPageMessage = default!;
 #nullable restore
 #else
-        public string StandardPageMessage { get; set; }
+        public string StandardPageMessage { get => _explicitNullValueStandardPageMessage; set { _explicitNullValueStandardPageMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standard_page_message"); else _explicitNullProperties?.Remove("standard_page_message"); } }
+        private string _explicitNullValueStandardPageMessage = default!;
 #endif
         /// <summary>The action after unsubscribe: display_message (show a message) or redirect (redirect to a URL)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubmissionActionType { get; set; }
+        public string? SubmissionActionType { get => _explicitNullValueSubmissionActionType; set { _explicitNullValueSubmissionActionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_action_type"); else _explicitNullProperties?.Remove("submission_action_type"); } }
+        private string? _explicitNullValueSubmissionActionType = default!;
 #nullable restore
 #else
-        public string SubmissionActionType { get; set; }
+        public string SubmissionActionType { get => _explicitNullValueSubmissionActionType; set { _explicitNullValueSubmissionActionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_action_type"); else _explicitNullProperties?.Remove("submission_action_type"); } }
+        private string _explicitNullValueSubmissionActionType = default!;
 #endif
         /// <summary>Represents the message displayed when the user clicks the unsubscribe button. Required when submission_action_type is display_message. unsubscribe button. Required when submission_action_type is display_message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubmissionMessage { get; set; }
+        public string? SubmissionMessage { get => _explicitNullValueSubmissionMessage; set { _explicitNullValueSubmissionMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_message"); else _explicitNullProperties?.Remove("submission_message"); } }
+        private string? _explicitNullValueSubmissionMessage = default!;
 #nullable restore
 #else
-        public string SubmissionMessage { get; set; }
+        public string SubmissionMessage { get => _explicitNullValueSubmissionMessage; set { _explicitNullValueSubmissionMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_message"); else _explicitNullProperties?.Remove("submission_message"); } }
+        private string _explicitNullValueSubmissionMessage = default!;
 #endif
         /// <summary>Represents the URL to redirect users to after unsubscribing. Required when submission_action_type is redirect. Required when submission_action_type is redirect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubmissionRedirectUrl { get; set; }
+        public string? SubmissionRedirectUrl { get => _explicitNullValueSubmissionRedirectUrl; set { _explicitNullValueSubmissionRedirectUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_redirect_url"); else _explicitNullProperties?.Remove("submission_redirect_url"); } }
+        private string? _explicitNullValueSubmissionRedirectUrl = default!;
 #nullable restore
 #else
-        public string SubmissionRedirectUrl { get; set; }
+        public string SubmissionRedirectUrl { get => _explicitNullValueSubmissionRedirectUrl; set { _explicitNullValueSubmissionRedirectUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_redirect_url"); else _explicitNullProperties?.Remove("submission_redirect_url"); } }
+        private string _explicitNullValueSubmissionRedirectUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkBaseFields"/> and sets the default values.
@@ -94,7 +125,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkBaseFields CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkBaseFields();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkBaseFields(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,6 +160,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("submission_action_type", SubmissionActionType);
             writer.WriteStringValue("submission_message", SubmissionMessage);
             writer.WriteStringValue("submission_redirect_url", SubmissionRedirectUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

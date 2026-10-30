@@ -12,28 +12,47 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRulesSimpleFilterCriterionRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("comparator") is { } nullNodeComparator && nullNodeComparator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comparator = null;
+            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the text comparison operator applied to the criterion.Possible values:like - Matches records where the field value contains the specified pattern.not_like - Matches records where the field value does not contain the specified pattern.starts_with - Matches records where the field value begins with the specified string.ends_with - Matches records where the field value ends with the specified string.contains - Matches records where the field value contains the specified string.not_contains - Matches records where the field value does not contain the specified string.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestComparator? Comparator { get; set; }
+#nullable enable
+        public string? Comparator { get => _explicitNullValueComparator; set { _explicitNullValueComparator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparator"); else _explicitNullProperties?.Remove("comparator"); } }
+        private string? _explicitNullValueComparator = default!;
+#nullable restore
         /// <summary>Represents the target field definition to which the text filter criterion is applied, conforming to the base field structure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestField? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestField Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestField _explicitNullValueField = default!;
 #endif
         /// <summary>Indicates the value resolution mode of the criterion, distinguishing whether the filter value is a literal value, a merge field reference, a predefined system variable, or another field reference.Possible values:value - The value is a direct literal.merge_field - The value is a merge field reference.pre_defined - The value is a predefined system variable placeholder.field - The value references another field.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestType? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestType? _explicitNullValueType = default!;
         /// <summary>Represents the string filter value used in the text comparator. Accepts a scalar string or an array of string values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestValue? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestValue Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesSimpleFilterCriterionRequest"/> and sets the default values.
@@ -50,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesSimpleFilterCriterionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesSimpleFilterCriterionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesSimpleFilterCriterionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comparator", n => { Comparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestComparator>(); } },
+                { "comparator", n => { Comparator = n.GetStringValue(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestField.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestValue>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestValue.CreateFromDiscriminatorValue); } },
@@ -73,10 +92,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestComparator>("comparator", Comparator);
+            writer.WriteStringValue("comparator", Comparator);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesTextFilterCriterionRequestValue>("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

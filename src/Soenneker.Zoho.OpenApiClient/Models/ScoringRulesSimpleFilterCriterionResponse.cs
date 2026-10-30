@@ -12,30 +12,51 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScoringRulesSimpleFilterCriterionResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("comparator") is { } nullNodeComparator && nullNodeComparator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comparator = null;
+            if (parseNode.GetChildNode("$disrupted") is { } nullNodeDisrupted && nullNodeDisrupted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disrupted = null;
+            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the text comparison operator returned for the criterion.Possible values:like - Matches records where the field value contains the specified pattern.not_like - Matches records where the field value does not contain the specified pattern.starts_with - Matches records where the field value begins with the specified string.ends_with - Matches records where the field value ends with the specified string.contains - Matches records where the field value contains the specified string.not_contains - Matches records where the field value does not contain the specified string.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseComparator? Comparator { get; set; }
+#nullable enable
+        public string? Comparator { get => _explicitNullValueComparator; set { _explicitNullValueComparator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparator"); else _explicitNullProperties?.Remove("comparator"); } }
+        private string? _explicitNullValueComparator = default!;
+#nullable restore
         /// <summary>Indicates whether the text filter criterion is in a disrupted state, typically due to an invalid or unresolvable field or value reference.</summary>
-        public bool? Disrupted { get; set; }
+        public bool? Disrupted { get => _explicitNullValueDisrupted; set { _explicitNullValueDisrupted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$disrupted"); else _explicitNullProperties?.Remove("$disrupted"); } }
+        private bool? _explicitNullValueDisrupted = default!;
         /// <summary>Represents the target field definition to which the text filter criterion was applied, conforming to the base field structure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField _explicitNullValueField = default!;
 #endif
         /// <summary>Indicates the value resolution mode of the criterion, distinguishing whether the filter value is a literal value, a merge field reference, a predefined system variable, or another field reference.Possible values:value - The value is a direct literal.merge_field - The value is a merge field reference.pre_defined - The value is a predefined system variable placeholder.field - The value references another field.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseType? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseType? _explicitNullValueType = default!;
         /// <summary>Represents the string filter value returned for the text comparator. Contains a scalar string or an array of string values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValue? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValue Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesSimpleFilterCriterionResponse"/> and sets the default values.
@@ -52,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesSimpleFilterCriterionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesSimpleFilterCriterionResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesSimpleFilterCriterionResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comparator", n => { Comparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseComparator>(); } },
+                { "comparator", n => { Comparator = n.GetStringValue(); } },
                 { "$disrupted", n => { Disrupted = n.GetBoolValue(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseType>(); } },
@@ -76,11 +97,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseComparator>("comparator", Comparator);
+            writer.WriteStringValue("comparator", Comparator);
             writer.WriteBoolValue("$disrupted", Disrupted);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseField>("field", Field);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValue>("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

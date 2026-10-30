@@ -12,26 +12,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ModulesCreateModulesRequestModulesItemDisplayField : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_number") is { } nullNodeAutoNumber && nullNodeAutoNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoNumber = null;
+            if (parseNode.GetChildNode("data_type") is { } nullNodeDataType && nullNodeDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataType = null;
+            if (parseNode.GetChildNode("field_label") is { } nullNodeFieldLabel && nullNodeFieldLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldLabel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the auto-number configuration for the display field. Required when **data_type** is **autonumber**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldAutoNumber? AutoNumber { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldAutoNumber? AutoNumber { get => _explicitNullValueAutoNumber; set { _explicitNullValueAutoNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_number"); else _explicitNullProperties?.Remove("auto_number"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldAutoNumber? _explicitNullValueAutoNumber = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldAutoNumber AutoNumber { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldAutoNumber AutoNumber { get => _explicitNullValueAutoNumber; set { _explicitNullValueAutoNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_number"); else _explicitNullProperties?.Remove("auto_number"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldAutoNumber _explicitNullValueAutoNumber = default!;
 #endif
         /// <summary>Specify the data type of the display field.Possible values:**autonumber** - Automatically generates a unique number sequence for each record.**text** - Allows users to enter text values manually.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldDataType? DataType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldDataType? DataType { get => _explicitNullValueDataType; set { _explicitNullValueDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_type"); else _explicitNullProperties?.Remove("data_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldDataType? _explicitNullValueDataType = default!;
         /// <summary>Specify the unique display label of the field used as the module&apos;s display field. Either this property or **data_type** must be provided when specifying the display field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FieldLabel { get; set; }
+        public string? FieldLabel { get => _explicitNullValueFieldLabel; set { _explicitNullValueFieldLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_label"); else _explicitNullProperties?.Remove("field_label"); } }
+        private string? _explicitNullValueFieldLabel = default!;
 #nullable restore
 #else
-        public string FieldLabel { get; set; }
+        public string FieldLabel { get => _explicitNullValueFieldLabel; set { _explicitNullValueFieldLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_label"); else _explicitNullProperties?.Remove("field_label"); } }
+        private string _explicitNullValueFieldLabel = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldAutoNumber>("auto_number", AutoNumber);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayFieldDataType>("data_type", DataType);
             writer.WriteStringValue("field_label", FieldLabel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

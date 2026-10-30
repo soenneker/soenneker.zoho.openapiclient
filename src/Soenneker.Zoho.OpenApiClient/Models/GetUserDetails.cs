@@ -13,24 +13,85 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetUserDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alias") is { } nullNodeAlias && nullNodeAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alias = null;
+            if (parseNode.GetChildNode("city") is { } nullNodeCity && nullNodeCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) City = null;
+            if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("country_locale") is { } nullNodeCountryLocale && nullNodeCountryLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryLocale = null;
+            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("$current_shift") is { } nullNodeCurrentShift && nullNodeCurrentShift.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentShift = null;
+            if (parseNode.GetChildNode("customize_info") is { } nullNodeCustomizeInfo && nullNodeCustomizeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomizeInfo = null;
+            if (parseNode.GetChildNode("date_format") is { } nullNodeDateFormat && nullNodeDateFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateFormat = null;
+            if (parseNode.GetChildNode("decimal_separator") is { } nullNodeDecimalSeparator && nullNodeDecimalSeparator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecimalSeparator = null;
+            if (parseNode.GetChildNode("default_tab_group") is { } nullNodeDefaultTabGroup && nullNodeDefaultTabGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultTabGroup = null;
+            if (parseNode.GetChildNode("distance_preference__s") is { } nullNodeDistancePreferenceS && nullNodeDistancePreferenceS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DistancePreferenceS = null;
+            if (parseNode.GetChildNode("dob") is { } nullNodeDob && nullNodeDob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dob = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("fax") is { } nullNodeFax && nullNodeFax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fax = null;
+            if (parseNode.GetChildNode("first_name") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("image_link") is { } nullNodeImageLink && nullNodeImageLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageLink = null;
+            if (parseNode.GetChildNode("imap_status") is { } nullNodeImapStatus && nullNodeImapStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImapStatus = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("last_name") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("locale") is { } nullNodeLocale && nullNodeLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locale = null;
+            if (parseNode.GetChildNode("microsoft") is { } nullNodeMicrosoft && nullNodeMicrosoft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Microsoft = null;
+            if (parseNode.GetChildNode("mobile") is { } nullNodeMobile && nullNodeMobile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mobile = null;
+            if (parseNode.GetChildNode("Modified_By") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("Modified_Time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("name_format__s") is { } nullNodeNameFormatS && nullNodeNameFormatS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameFormatS = null;
+            if (parseNode.GetChildNode("$next_shift") is { } nullNodeNextShift && nullNodeNextShift.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextShift = null;
+            if (parseNode.GetChildNode("ntc_enabled") is { } nullNodeNtcEnabled && nullNodeNtcEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NtcEnabled = null;
+            if (parseNode.GetChildNode("ntc_notification_type") is { } nullNodeNtcNotificationType && nullNodeNtcNotificationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NtcNotificationType = null;
+            if (parseNode.GetChildNode("number_separator") is { } nullNodeNumberSeparator && nullNodeNumberSeparator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberSeparator = null;
+            if (parseNode.GetChildNode("personal_account") is { } nullNodePersonalAccount && nullNodePersonalAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalAccount = null;
+            if (parseNode.GetChildNode("phone") is { } nullNodePhone && nullNodePhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phone = null;
+            if (parseNode.GetChildNode("profile") is { } nullNodeProfile && nullNodeProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profile = null;
+            if (parseNode.GetChildNode("Reporting_To") is { } nullNodeReportingTo && nullNodeReportingTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportingTo = null;
+            if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("rtl_enabled") is { } nullNodeRtlEnabled && nullNodeRtlEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RtlEnabled = null;
+            if (parseNode.GetChildNode("sandboxDeveloper") is { } nullNodeSandboxDeveloper && nullNodeSandboxDeveloper.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SandboxDeveloper = null;
+            if (parseNode.GetChildNode("share_among_subordinates") is { } nullNodeShareAmongSubordinates && nullNodeShareAmongSubordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareAmongSubordinates = null;
+            if (parseNode.GetChildNode("$shift_effective_from") is { } nullNodeShiftEffectiveFrom && nullNodeShiftEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftEffectiveFrom = null;
+            if (parseNode.GetChildNode("signature") is { } nullNodeSignature && nullNodeSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signature = null;
+            if (parseNode.GetChildNode("sort_order_preference__s") is { } nullNodeSortOrderPreferenceS && nullNodeSortOrderPreferenceS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrderPreferenceS = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("status_reason__s") is { } nullNodeStatusReasonS && nullNodeStatusReasonS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusReasonS = null;
+            if (parseNode.GetChildNode("street") is { } nullNodeStreet && nullNodeStreet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Street = null;
+            if (parseNode.GetChildNode("telephony_enabled") is { } nullNodeTelephonyEnabled && nullNodeTelephonyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TelephonyEnabled = null;
+            if (parseNode.GetChildNode("time_format") is { } nullNodeTimeFormat && nullNodeTimeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeFormat = null;
+            if (parseNode.GetChildNode("time_zone") is { } nullNodeTimeZone && nullNodeTimeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZone = null;
+            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+            if (parseNode.GetChildNode("zip") is { } nullNodeZip && nullNodeZip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zip = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the alias or short name associated with the user. Returns null if no alias is configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alias { get; set; }
+        public string? Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
+        private string? _explicitNullValueAlias = default!;
 #nullable restore
 #else
-        public string Alias { get; set; }
+        public string Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
+        private string _explicitNullValueAlias = default!;
 #endif
         /// <summary>Represents the city associated with the user&apos;s address. Returns null if no city is configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City { get; set; }
+        public string? City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
+        private string? _explicitNullValueCity = default!;
 #nullable restore
 #else
-        public string City { get; set; }
+        public string City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
+        private string _explicitNullValueCity = default!;
 #endif
         /// <summary>Indicates whether the user has accepted the invitation to join the organization.\n\nPossible values:\ntrue - The user has accepted the invitation.\nfalse - The user has not yet accepted the invitation.</summary>
         public bool? Confirm { get; private set; }
@@ -39,62 +100,82 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the country associated with the user&apos;s address. Returns null if no country is configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public string? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private string? _explicitNullValueCountry = default!;
 #nullable restore
 #else
-        public string Country { get; set; }
+        public string Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private string _explicitNullValueCountry = default!;
 #endif
         /// <summary>Represents the locale associated with the user&apos;s country.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCountryLocale? CountryLocale { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCountryLocale? CountryLocale { get => _explicitNullValueCountryLocale; set { _explicitNullValueCountryLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_locale"); else _explicitNullProperties?.Remove("country_locale"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCountryLocale? _explicitNullValueCountryLocale = default!;
         /// <summary>Represents the user who created this user record. Returns null if the creator information is not available. Refer to the [Get Users](users.yaml#$.paths./users.get) endpoint for details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Represents the date and time when this user record was first added to the system, in ISO 8601 format. Returns null if the creation time is not available.</summary>
-        public DateTimeOffset? CreatedTime { get; set; }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>Represents the shift currently assigned to the user, including the shift&apos;s ID and name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCurrentShift? CurrentShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCurrentShift? CurrentShift { get => _explicitNullValueCurrentShift; set { _explicitNullValueCurrentShift = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$current_shift"); else _explicitNullProperties?.Remove("$current_shift"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCurrentShift? _explicitNullValueCurrentShift = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCurrentShift CurrentShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCurrentShift CurrentShift { get => _explicitNullValueCurrentShift; set { _explicitNullValueCurrentShift = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$current_shift"); else _explicitNullProperties?.Remove("$current_shift"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCurrentShift _explicitNullValueCurrentShift = default!;
 #endif
         /// <summary>Represents a collection of user interface customization preferences associated with the user&apos;s account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo? CustomizeInfo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo? CustomizeInfo { get => _explicitNullValueCustomizeInfo; set { _explicitNullValueCustomizeInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customize_info"); else _explicitNullProperties?.Remove("customize_info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo? _explicitNullValueCustomizeInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo CustomizeInfo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo CustomizeInfo { get => _explicitNullValueCustomizeInfo; set { _explicitNullValueCustomizeInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customize_info"); else _explicitNullProperties?.Remove("customize_info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo _explicitNullValueCustomizeInfo = default!;
 #endif
         /// <summary>Represents the user&apos;s preferred date format used for displaying date values throughout the application.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDateFormat? DateFormat { get; set; }
+#nullable enable
+        public string? DateFormat { get => _explicitNullValueDateFormat; set { _explicitNullValueDateFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_format"); else _explicitNullProperties?.Remove("date_format"); } }
+        private string? _explicitNullValueDateFormat = default!;
+#nullable restore
         /// <summary>Represents the user&apos;s preferred decimal separator character used when displaying numerical values.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDecimalSeparator? DecimalSeparator { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDecimalSeparator? DecimalSeparator { get => _explicitNullValueDecimalSeparator; set { _explicitNullValueDecimalSeparator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decimal_separator"); else _explicitNullProperties?.Remove("decimal_separator"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDecimalSeparator? _explicitNullValueDecimalSeparator = default!;
         /// <summary>Represents the default tab group assigned to the user, determining which group of tabs is presented upon login.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultTabGroup { get; set; }
+        public string? DefaultTabGroup { get => _explicitNullValueDefaultTabGroup; set { _explicitNullValueDefaultTabGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_tab_group"); else _explicitNullProperties?.Remove("default_tab_group"); } }
+        private string? _explicitNullValueDefaultTabGroup = default!;
 #nullable restore
 #else
-        public string DefaultTabGroup { get; set; }
+        public string DefaultTabGroup { get => _explicitNullValueDefaultTabGroup; set { _explicitNullValueDefaultTabGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_tab_group"); else _explicitNullProperties?.Remove("default_tab_group"); } }
+        private string _explicitNullValueDefaultTabGroup = default!;
 #endif
         /// <summary>Represents the user&apos;s preferred unit of measurement for displaying distance values.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDistancePreferenceS? DistancePreferenceS { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDistancePreferenceS? DistancePreferenceS { get => _explicitNullValueDistancePreferenceS; set { _explicitNullValueDistancePreferenceS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distance_preference__s"); else _explicitNullProperties?.Remove("distance_preference__s"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDistancePreferenceS? _explicitNullValueDistancePreferenceS = default!;
         /// <summary>Represents the user&apos;s date of birth. Returns null if no date of birth has been set.</summary>
-        public Date? Dob { get; set; }
+        public Date? Dob { get => _explicitNullValueDob; set { _explicitNullValueDob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dob"); else _explicitNullProperties?.Remove("dob"); } }
+        private Date? _explicitNullValueDob = default!;
         /// <summary>Represents the email address associated with the user&apos;s account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>Represents the encrypted Zoho User ID (ZUID), used to securely identify the user without showing their actual ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,18 +188,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the user&apos;s fax number. Returns null if no fax number is configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fax { get; set; }
+        public string? Fax { get => _explicitNullValueFax; set { _explicitNullValueFax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fax"); else _explicitNullProperties?.Remove("fax"); } }
+        private string? _explicitNullValueFax = default!;
 #nullable restore
 #else
-        public string Fax { get; set; }
+        public string Fax { get => _explicitNullValueFax; set { _explicitNullValueFax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fax"); else _explicitNullProperties?.Remove("fax"); } }
+        private string _explicitNullValueFax = default!;
 #endif
         /// <summary>Represents the user&apos;s first name. Returns null if no first name is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public string? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_name"); else _explicitNullProperties?.Remove("first_name"); } }
+        private string? _explicitNullValueFirstName = default!;
 #nullable restore
 #else
-        public string FirstName { get; set; }
+        public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_name"); else _explicitNullProperties?.Remove("first_name"); } }
+        private string _explicitNullValueFirstName = default!;
 #endif
         /// <summary>Represents the user&apos;s full name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,13 +224,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the URL of the user&apos;s profile image as provided by the Identity and Access Management (IAM) system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageLink { get; set; }
+        public string? ImageLink { get => _explicitNullValueImageLink; set { _explicitNullValueImageLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_link"); else _explicitNullProperties?.Remove("image_link"); } }
+        private string? _explicitNullValueImageLink = default!;
 #nullable restore
 #else
-        public string ImageLink { get; set; }
+        public string ImageLink { get => _explicitNullValueImageLink; set { _explicitNullValueImageLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_link"); else _explicitNullProperties?.Remove("image_link"); } }
+        private string _explicitNullValueImageLink = default!;
 #endif
         /// <summary>Indicates whether IMAP access is enabled for the user.\nPossible values:\ntrue - IMAP access is enabled.\nfalse - IMAP access is disabled.</summary>
-        public bool? ImapStatus { get; set; }
+        public bool? ImapStatus { get => _explicitNullValueImapStatus; set { _explicitNullValueImapStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imap_status"); else _explicitNullProperties?.Remove("imap_status"); } }
+        private bool? _explicitNullValueImapStatus = default!;
         /// <summary>Represents the user who extended the invitation to this user. Returns null if no inviting user is associated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,125 +245,164 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the date and time at which the most recent invitation was sent to this user. Returns null if no invitation has been sent.</summary>
         public DateTimeOffset? InvitedTimeS { get; private set; }
         /// <summary>Represents the preferred language of the user. This value can be updated only by the user themselves.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsLanguage? Language { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsLanguage? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsLanguage? _explicitNullValueLanguage = default!;
         /// <summary>Represents the user&apos;s last name. Returns null if no last name is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get; set; }
+        public string? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_name"); else _explicitNullProperties?.Remove("last_name"); } }
+        private string? _explicitNullValueLastName = default!;
 #nullable restore
 #else
-        public string LastName { get; set; }
+        public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_name"); else _explicitNullProperties?.Remove("last_name"); } }
+        private string _explicitNullValueLastName = default!;
 #endif
         /// <summary>Represents the locale of the user.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsLocale? Locale { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsLocale? Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsLocale? _explicitNullValueLocale = default!;
         /// <summary>Indicates whether the user is authenticated via a Microsoft account.\nPossible values:\ntrue - The user is a Microsoft account user.\nfalse - The user is not a Microsoft account user.</summary>
-        public bool? Microsoft { get; set; }
+        public bool? Microsoft { get => _explicitNullValueMicrosoft; set { _explicitNullValueMicrosoft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microsoft"); else _explicitNullProperties?.Remove("microsoft"); } }
+        private bool? _explicitNullValueMicrosoft = default!;
         /// <summary>Represents the user&apos;s mobile phone number. Returns null when no mobile number is associated with the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mobile { get; set; }
+        public string? Mobile { get => _explicitNullValueMobile; set { _explicitNullValueMobile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile"); else _explicitNullProperties?.Remove("mobile"); } }
+        private string? _explicitNullValueMobile = default!;
 #nullable restore
 #else
-        public string Mobile { get; set; }
+        public string Mobile { get => _explicitNullValueMobile; set { _explicitNullValueMobile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mobile"); else _explicitNullProperties?.Remove("mobile"); } }
+        private string _explicitNullValueMobile = default!;
 #endif
         /// <summary>Represents the user who last modified this user record. Returns null if no modification has occurred. Refer to the [Get Users](users.yaml#$.paths./users.get) endpoint for details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsModifiedBy? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsModifiedBy? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsModifiedBy ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsModifiedBy _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>Represents the date and time at which this user record was last modified, in ISO 8601 format. Returns null if no modification has occurred.</summary>
-        public DateTimeOffset? ModifiedTime { get; set; }
+        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_Time"); else _explicitNullProperties?.Remove("Modified_Time"); } }
+        private DateTimeOffset? _explicitNullValueModifiedTime = default!;
         /// <summary>Represents the format used to display the user&apos;s name.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNameFormatS? NameFormatS { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNameFormatS? NameFormatS { get => _explicitNullValueNameFormatS; set { _explicitNullValueNameFormatS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_format__s"); else _explicitNullProperties?.Remove("name_format__s"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNameFormatS? _explicitNullValueNameFormatS = default!;
         /// <summary>Represents the upcoming shift scheduled for the user, including the shift&apos;s ID and name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNextShift? NextShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNextShift? NextShift { get => _explicitNullValueNextShift; set { _explicitNullValueNextShift = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$next_shift"); else _explicitNullProperties?.Remove("$next_shift"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNextShift? _explicitNullValueNextShift = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNextShift NextShift { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNextShift NextShift { get => _explicitNullValueNextShift; set { _explicitNullValueNextShift = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$next_shift"); else _explicitNullProperties?.Remove("$next_shift"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNextShift _explicitNullValueNextShift = default!;
 #endif
         /// <summary>Indicates whether Notification Template Configuration (NTC) is enabled for the user.\n\nPossible values:\ntrue - NTC is enabled and notification templates are applied to the user.\nfalse - NTC is disabled and notification templates are not applied to the user.</summary>
-        public bool? NtcEnabled { get; set; }
+        public bool? NtcEnabled { get => _explicitNullValueNtcEnabled; set { _explicitNullValueNtcEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ntc_enabled"); else _explicitNullProperties?.Remove("ntc_enabled"); } }
+        private bool? _explicitNullValueNtcEnabled = default!;
         /// <summary>Represents the list of Notification Template Configuration (NTC) notification type identifiers assigned to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<long?>? NtcNotificationType { get; set; }
+        public List<long?>? NtcNotificationType { get => _explicitNullValueNtcNotificationType; set { _explicitNullValueNtcNotificationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ntc_notification_type"); else _explicitNullProperties?.Remove("ntc_notification_type"); } }
+        private List<long?>? _explicitNullValueNtcNotificationType = default!;
 #nullable restore
 #else
-        public List<long?> NtcNotificationType { get; set; }
+        public List<long?> NtcNotificationType { get => _explicitNullValueNtcNotificationType; set { _explicitNullValueNtcNotificationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ntc_notification_type"); else _explicitNullProperties?.Remove("ntc_notification_type"); } }
+        private List<long?> _explicitNullValueNtcNotificationType = default!;
 #endif
         /// <summary>Represents the character used as a separator when formatting numbers for the user. This field is case-insensitive.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNumberSeparator? NumberSeparator { get; set; }
+#nullable enable
+        public string? NumberSeparator { get => _explicitNullValueNumberSeparator; set { _explicitNullValueNumberSeparator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_separator"); else _explicitNullProperties?.Remove("number_separator"); } }
+        private string? _explicitNullValueNumberSeparator = default!;
+#nullable restore
         /// <summary>Represents the user&apos;s current UTC offset in milliseconds, adjusted for Daylight Saving Time (DST) where applicable. For example, a timezone of UTC+5:30 yields an offset value of 19800000 (5.5 hours × 3600 seconds × 1000 milliseconds). This value may be added to the current UTC time to derive the user&apos;s local time.</summary>
         public int? Offset { get; private set; }
         /// <summary>Indicates whether the user has a personal account associated with their profile.\n\nPossible values:\ntrue - The user has a personal account.\nfalse - The user does not have a personal account.</summary>
-        public bool? PersonalAccount { get; set; }
+        public bool? PersonalAccount { get => _explicitNullValuePersonalAccount; set { _explicitNullValuePersonalAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personal_account"); else _explicitNullProperties?.Remove("personal_account"); } }
+        private bool? _explicitNullValuePersonalAccount = default!;
         /// <summary>Represents the user&apos;s phone number. Returns null when no phone number is associated with the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone { get; set; }
+        public string? Phone { get => _explicitNullValuePhone; set { _explicitNullValuePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone"); else _explicitNullProperties?.Remove("phone"); } }
+        private string? _explicitNullValuePhone = default!;
 #nullable restore
 #else
-        public string Phone { get; set; }
+        public string Phone { get => _explicitNullValuePhone; set { _explicitNullValuePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone"); else _explicitNullProperties?.Remove("phone"); } }
+        private string _explicitNullValuePhone = default!;
 #endif
         /// <summary>Represents the profile associated with the user, including the profile&apos;s unique identifier and display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsProfile? Profile { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsProfile? Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsProfile? _explicitNullValueProfile = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsProfile Profile { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsProfile Profile { get => _explicitNullValueProfile; set { _explicitNullValueProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile"); else _explicitNullProperties?.Remove("profile"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsProfile _explicitNullValueProfile = default!;
 #endif
         /// <summary>Represents the user to whom this user reports within the organizational hierarchy. Returns null if no reporting manager is assigned. Refer to the [Get Users](users.yaml#$.paths./users.get) endpoint for details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsReportingTo? ReportingTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsReportingTo? ReportingTo { get => _explicitNullValueReportingTo; set { _explicitNullValueReportingTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reporting_To"); else _explicitNullProperties?.Remove("Reporting_To"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsReportingTo? _explicitNullValueReportingTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsReportingTo ReportingTo { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsReportingTo ReportingTo { get => _explicitNullValueReportingTo; set { _explicitNullValueReportingTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reporting_To"); else _explicitNullProperties?.Remove("Reporting_To"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsReportingTo _explicitNullValueReportingTo = default!;
 #endif
         /// <summary>Represents the role assigned to the user, containing the role&apos;s unique identifier and display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsRole? Role { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsRole? _explicitNullValueRole = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsRole Role { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsRole Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsRole _explicitNullValueRole = default!;
 #endif
         /// <summary>Indicates whether Right-to-Left (RTL) text direction is enabled for the user&apos;s interface.\n\nPossible values:\ntrue - RTL text direction is enabled for the user.\nfalse - RTL text direction is not enabled for the user.</summary>
-        public bool? RtlEnabled { get; set; }
+        public bool? RtlEnabled { get => _explicitNullValueRtlEnabled; set { _explicitNullValueRtlEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtl_enabled"); else _explicitNullProperties?.Remove("rtl_enabled"); } }
+        private bool? _explicitNullValueRtlEnabled = default!;
         /// <summary>Indicates whether the user is designated as a sandbox developer.\n\nPossible values:\ntrue - The user is a sandbox developer.\nfalse - The user is not a sandbox developer.</summary>
-        public bool? SandboxDeveloper { get; set; }
+        public bool? SandboxDeveloper { get => _explicitNullValueSandboxDeveloper; set { _explicitNullValueSandboxDeveloper = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sandboxDeveloper"); else _explicitNullProperties?.Remove("sandboxDeveloper"); } }
+        private bool? _explicitNullValueSandboxDeveloper = default!;
         /// <summary>Indicates whether the user&apos;s records are shared with their subordinates.\n\nPossible values:\ntrue - Records are shared with subordinates.\nfalse - Records are not shared with subordinates.</summary>
-        public bool? ShareAmongSubordinates { get; set; }
+        public bool? ShareAmongSubordinates { get => _explicitNullValueShareAmongSubordinates; set { _explicitNullValueShareAmongSubordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_among_subordinates"); else _explicitNullProperties?.Remove("share_among_subordinates"); } }
+        private bool? _explicitNullValueShareAmongSubordinates = default!;
         /// <summary>Represents the date on which the user&apos;s upcoming shift becomes effective.</summary>
-        public Date? ShiftEffectiveFrom { get; set; }
+        public Date? ShiftEffectiveFrom { get => _explicitNullValueShiftEffectiveFrom; set { _explicitNullValueShiftEffectiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$shift_effective_from"); else _explicitNullProperties?.Remove("$shift_effective_from"); } }
+        private Date? _explicitNullValueShiftEffectiveFrom = default!;
         /// <summary>Represents the email signature configured for the user. Returns null if no signature has been set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get; set; }
+        public string? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private string? _explicitNullValueSignature = default!;
 #nullable restore
 #else
-        public string Signature { get; set; }
+        public string Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private string _explicitNullValueSignature = default!;
 #endif
         /// <summary>Represents the user&apos;s preferred sort order for displaying records.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsSortOrderPreferenceS? SortOrderPreferenceS { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsSortOrderPreferenceS? SortOrderPreferenceS { get => _explicitNullValueSortOrderPreferenceS; set { _explicitNullValueSortOrderPreferenceS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order_preference__s"); else _explicitNullProperties?.Remove("sort_order_preference__s"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsSortOrderPreferenceS? _explicitNullValueSortOrderPreferenceS = default!;
         /// <summary>Represents the user&apos;s state or province. Returns null if no state is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string _explicitNullValueState = default!;
 #endif
         /// <summary>Represents the current status of the user in the Zoho CRM organization.Possible values:active - The user is active and can access the CRM.inactive - The user is deactivated and cannot access the CRM.deleted - The user account has been deleted.disabled - The user account is disabled.closed - The user account is closed.disabled dormant - The user account is disabled and dormant.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus? Status { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus? _explicitNullValueStatus = default!;
         /// <summary>Represents the reason for the user&apos;s current status. Returns null if no reason is associated with the current status.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS? StatusReasonS { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS? StatusReasonS { get => _explicitNullValueStatusReasonS; set { _explicitNullValueStatusReasonS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_reason__s"); else _explicitNullProperties?.Remove("status_reason__s"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS? _explicitNullValueStatusReasonS = default!;
         /// <summary>Represents the details of the user who last updated the status of this user. Returns null if no status update has been recorded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -289,13 +416,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the user&apos;s street address. Returns null if no street address is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Street { get; set; }
+        public string? Street { get => _explicitNullValueStreet; set { _explicitNullValueStreet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("street"); else _explicitNullProperties?.Remove("street"); } }
+        private string? _explicitNullValueStreet = default!;
 #nullable restore
 #else
-        public string Street { get; set; }
+        public string Street { get => _explicitNullValueStreet; set { _explicitNullValueStreet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("street"); else _explicitNullProperties?.Remove("street"); } }
+        private string _explicitNullValueStreet = default!;
 #endif
         /// <summary>Indicates whether telephony is enabled for the user.\nPossible values:\ntrue - Telephony is enabled for the user.\nfalse - Telephony is not enabled for the user.</summary>
-        public bool? TelephonyEnabled { get; set; }
+        public bool? TelephonyEnabled { get => _explicitNullValueTelephonyEnabled; set { _explicitNullValueTelephonyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("telephony_enabled"); else _explicitNullProperties?.Remove("telephony_enabled"); } }
+        private bool? _explicitNullValueTelephonyEnabled = default!;
         /// <summary>Represents the theme configuration applied to the user&apos;s CRM interface. Includes color and display settings for the background, screen, header, normal tab, and selected tab elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -305,32 +435,39 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsTheme Theme { get; private set; }
 #endif
         /// <summary>Represents the time format preferred by the user for displaying time values.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsTimeFormat? TimeFormat { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsTimeFormat? TimeFormat { get => _explicitNullValueTimeFormat; set { _explicitNullValueTimeFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_format"); else _explicitNullProperties?.Remove("time_format"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsTimeFormat? _explicitNullValueTimeFormat = default!;
         /// <summary>Represents the time zone of the user. This value can be updated only by the user themselves.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone { get; set; }
+        public string? TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_zone"); else _explicitNullProperties?.Remove("time_zone"); } }
+        private string? _explicitNullValueTimeZone = default!;
 #nullable restore
 #else
-        public string TimeZone { get; set; }
+        public string TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_zone"); else _explicitNullProperties?.Remove("time_zone"); } }
+        private string _explicitNullValueTimeZone = default!;
 #endif
         /// <summary>Represents the account type of the user.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsTypeS? TypeS { get; private set; }
         /// <summary>Represents the user&apos;s website URL. Returns null if no website is configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public string Website { get; set; }
+        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string _explicitNullValueWebsite = default!;
 #endif
         /// <summary>Represents the user&apos;s postal code or ZIP code. Returns null if no postal code is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Zip { get; set; }
+        public string? Zip { get => _explicitNullValueZip; set { _explicitNullValueZip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip"); else _explicitNullProperties?.Remove("zip"); } }
+        private string? _explicitNullValueZip = default!;
 #nullable restore
 #else
-        public string Zip { get; set; }
+        public string Zip { get => _explicitNullValueZip; set { _explicitNullValueZip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip"); else _explicitNullProperties?.Remove("zip"); } }
+        private string _explicitNullValueZip = default!;
 #endif
         /// <summary>Represents the Zoho User ID (ZUID) associated with the user&apos;s Zoho account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -355,7 +492,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -375,7 +512,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "$current_shift", n => { CurrentShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCurrentShift>(global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCurrentShift.CreateFromDiscriminatorValue); } },
                 { "customize_info", n => { CustomizeInfo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo>(global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo.CreateFromDiscriminatorValue); } },
-                { "date_format", n => { DateFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDateFormat>(); } },
+                { "date_format", n => { DateFormat = n.GetStringValue(); } },
                 { "decimal_separator", n => { DecimalSeparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDecimalSeparator>(); } },
                 { "default_tab_group", n => { DefaultTabGroup = n.GetStringValue(); } },
                 { "distance_preference__s", n => { DistancePreferenceS = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDistancePreferenceS>(); } },
@@ -401,7 +538,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "$next_shift", n => { NextShift = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNextShift>(global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNextShift.CreateFromDiscriminatorValue); } },
                 { "ntc_enabled", n => { NtcEnabled = n.GetBoolValue(); } },
                 { "ntc_notification_type", n => { NtcNotificationType = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
-                { "number_separator", n => { NumberSeparator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNumberSeparator>(); } },
+                { "number_separator", n => { NumberSeparator = n.GetStringValue(); } },
                 { "offset", n => { Offset = n.GetIntValue(); } },
                 { "personal_account", n => { PersonalAccount = n.GetBoolValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
@@ -445,7 +582,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCurrentShift>("$current_shift", CurrentShift);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo>("customize_info", CustomizeInfo);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDateFormat>("date_format", DateFormat);
+            writer.WriteStringValue("date_format", DateFormat);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDecimalSeparator>("decimal_separator", DecimalSeparator);
             writer.WriteStringValue("default_tab_group", DefaultTabGroup);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsDistancePreferenceS>("distance_preference__s", DistancePreferenceS);
@@ -466,7 +603,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNextShift>("$next_shift", NextShift);
             writer.WriteBoolValue("ntc_enabled", NtcEnabled);
             writer.WriteCollectionOfPrimitiveValues<long?>("ntc_notification_type", NtcNotificationType);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsNumberSeparator>("number_separator", NumberSeparator);
+            writer.WriteStringValue("number_separator", NumberSeparator);
             writer.WriteBoolValue("personal_account", PersonalAccount);
             writer.WriteStringValue("phone", Phone);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsProfile>("profile", Profile);
@@ -487,6 +624,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("time_zone", TimeZone);
             writer.WriteStringValue("website", Website);
             writer.WriteStringValue("zip", Zip);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

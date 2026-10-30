@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.Item
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsDeleteTags403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsDeleteTags404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DeletetagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DeletetagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -82,6 +84,8 @@ namespace Soenneker.Zoho.OpenApiClient.Tags.Settings.Tags.Item
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsUpdateTagById403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.TagsUpdateTagById404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PuttagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

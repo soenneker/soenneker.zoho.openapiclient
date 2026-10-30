@@ -49,23 +49,23 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete.Item.Actions.Mass_delete
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To delete records in bulk from a specified module in your Zoho CRM organization, either by providing record IDs for synchronous deletion or a Custom View ID for asynchronous batch deletion.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteSuccessResponse"/></returns>
         /// <param name="body">Specify either a list of record IDs or a Custom View ID to identify the records to delete. Use the **territory** property to filter by territory when using a Custom View ID.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -73,8 +73,10 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete.Item.Actions.Mass_delete
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the status and record counts of a previously scheduled mass delete job in your Zoho CRM organization.

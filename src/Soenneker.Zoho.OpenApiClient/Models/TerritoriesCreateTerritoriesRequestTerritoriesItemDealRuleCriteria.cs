@@ -8,13 +8,18 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionRequest"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteria : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3"/></summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3? TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3 { get; set; }
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1"/></summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1? TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,15 +46,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("comparator")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteria();
-            if(parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3>() is global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3 territoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3Value)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1>() is global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1 territoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1Value)
             {
-                result.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3 = territoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3Value;
+                result.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1 = territoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1Value;
             }
             else if("TerritoriesGroupedFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TerritoriesGroupedFilterCriterionRequest = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("group") != null && parseNode.GetChildNode("group_operator") != null && (parseNode.GetChildNode("group_operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("AND".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "OR".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "and".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "or".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1 == null && result.TerritoriesGroupedFilterCriterionRequest == null && result.TerritoriesSimpleFilterCriterionRequest == null && matchesUnionBranch0) result.TerritoriesGroupedFilterCriterionRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest(), parseNode);
+            if (result.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1 == null && result.TerritoriesGroupedFilterCriterionRequest == null && result.TerritoriesSimpleFilterCriterionRequest == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.TerritoriesGroupedFilterCriterionRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest(), parseNode);
+            if (result.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1 == null && result.TerritoriesGroupedFilterCriterionRequest == null && result.TerritoriesSimpleFilterCriterionRequest == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,17 +84,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1 == null && TerritoriesGroupedFilterCriterionRequest == null && TerritoriesSimpleFilterCriterionRequest == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (TerritoriesGroupedFilterCriterionRequest != null && TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1 == null && TerritoriesSimpleFilterCriterionRequest == null) { if (TerritoriesGroupedFilterCriterionRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TerritoriesGroupedFilterCriterionRequest); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3 != null)
+            if(TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1 != null)
             {
-                writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3>(null, TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaOneOf3);
+                writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1>(null, TerritoriesCreateTerritoriesRequestTerritoriesItemDealRuleCriteriaMember1);
             }
             else if(TerritoriesGroupedFilterCriterionRequest != null)
             {
+                if (TerritoriesGroupedFilterCriterionRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionRequest>(null, TerritoriesGroupedFilterCriterionRequest);
             }
             else if(TerritoriesSimpleFilterCriterionRequest != null)
             {
+                if (TerritoriesSimpleFilterCriterionRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionRequest>(null, TerritoriesSimpleFilterCriterionRequest);
             }
         }

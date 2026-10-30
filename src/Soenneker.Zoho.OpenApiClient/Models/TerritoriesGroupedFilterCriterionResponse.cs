@@ -12,21 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerritoriesGroupedFilterCriterionResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("$disrupted") is { } nullNodeDisrupted && nullNodeDisrupted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disrupted = null;
+            if (parseNode.GetChildNode("group") is { } nullNodeGroup && nullNodeGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Group = null;
+            if (parseNode.GetChildNode("group_operator") is { } nullNodeGroupOperator && nullNodeGroupOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupOperator = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the grouped filter criterion is in a disrupted state, typically due to an invalid or unresolvable condition within the group.</summary>
-        public bool? Disrupted { get; set; }
+        public bool? Disrupted { get => _explicitNullValueDisrupted; set { _explicitNullValueDisrupted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$disrupted"); else _explicitNullProperties?.Remove("$disrupted"); } }
+        private bool? _explicitNullValueDisrupted = default!;
         /// <summary>Contains an array of filter conditions grouped together and evaluated with the specified logical operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupItem>? Group { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupItem>? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupItem>? _explicitNullValueGroup = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupItem> Group { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupItem> Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupItem> _explicitNullValueGroup = default!;
 #endif
         /// <summary>Represents the logical operator applied between the filter conditions in the group.Possible values:AND - All conditions in the group must be satisfied.OR - At least one condition in the group must be satisfied.and - Equivalent to AND; all conditions in the group must be satisfied.or - Equivalent to OR; at least one condition in the group must be satisfied.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupOperator? GroupOperator { get; set; }
+#nullable enable
+        public string? GroupOperator { get => _explicitNullValueGroupOperator; set { _explicitNullValueGroupOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_operator"); else _explicitNullProperties?.Remove("group_operator"); } }
+        private string? _explicitNullValueGroupOperator = default!;
+#nullable restore
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse"/> and sets the default values.
         /// </summary>
@@ -42,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "$disrupted", n => { Disrupted = n.GetBoolValue(); } },
                 { "group", n => { Group = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupItem>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "group_operator", n => { GroupOperator = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupOperator>(); } },
+                { "group_operator", n => { GroupOperator = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,7 +82,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("$disrupted", Disrupted);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupItem>("group", Group);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponseGroupOperator>("group_operator", GroupOperator);
+            writer.WriteStringValue("group_operator", GroupOperator);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

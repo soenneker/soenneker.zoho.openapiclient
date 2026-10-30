@@ -12,32 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MapDependencyCreateMapDependencyRequestMapDependencyItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("child") is { } nullNodeChild && nullNodeChild.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Child = null;
+            if (parseNode.GetChildNode("parent") is { } nullNodeParent && nullNodeParent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parent = null;
+            if (parseNode.GetChildNode("pick_list_values") is { } nullNodePickListValues && nullNodePickListValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PickListValues = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Child field details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemChild? Child { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemChild? Child { get => _explicitNullValueChild; set { _explicitNullValueChild = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("child"); else _explicitNullProperties?.Remove("child"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemChild? _explicitNullValueChild = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemChild Child { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemChild Child { get => _explicitNullValueChild; set { _explicitNullValueChild = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("child"); else _explicitNullProperties?.Remove("child"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemChild _explicitNullValueChild = default!;
 #endif
         /// <summary>Parent field details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemParent? Parent { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemParent? Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemParent? _explicitNullValueParent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemParent Parent { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemParent Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemParent _explicitNullValueParent = default!;
 #endif
         /// <summary>Each JSON object in this array corresponds to a specific picklist value in the parent field, and consists of the following keys:- **display_value** - string, optional - The display name of the picklist value of the parent field.- **actual_value** - string, optional - The actual name of the picklist value of the parent field.- **id** - string, mandatory - The unique ID of the picklist value of the parent field.- **maps** - JSON array, mandatory - The **display_value**, **actual_value**, and id of the picklist value of the child field that should be mapped with the parent field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate>? PickListValues { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate>? PickListValues { get => _explicitNullValuePickListValues; set { _explicitNullValuePickListValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pick_list_values"); else _explicitNullProperties?.Remove("pick_list_values"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate>? _explicitNullValuePickListValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate> PickListValues { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate> PickListValues { get => _explicitNullValuePickListValues; set { _explicitNullValuePickListValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pick_list_values"); else _explicitNullProperties?.Remove("pick_list_values"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate> _explicitNullValuePickListValues = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItem"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemChild>("child", Child);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItemParent>("parent", Parent);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingCreate>("pick_list_values", PickListValues);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

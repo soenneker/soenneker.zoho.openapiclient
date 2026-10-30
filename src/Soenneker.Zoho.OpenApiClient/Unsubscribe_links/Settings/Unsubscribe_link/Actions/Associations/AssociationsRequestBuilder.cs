@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPermissionDeniedError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.FetchAssociatedPlacesResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.FetchAssociatedPlacesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

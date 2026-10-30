@@ -36,22 +36,22 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Item.Actions.Remove_territori
         /// <summary>
         /// To remove one or more territories from multiple records in your Zoho CRM organization. Supported modules are Leads, Accounts, Contacts, and Deals. The removal can be processed synchronously or scheduled as a background job, depending on the number of records.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRemoveSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordsSuccessResponse"/></returns>
         /// <param name="body">Specify the records and their associated territories to remove.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRemoveSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordsSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRemoveSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordsSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRemoveSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRemoveSuccessResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRemoveTerritoriesFromRecordsSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To remove one or more territories from multiple records in your Zoho CRM organization. Supported modules are Leads, Accounts, Contacts, and Deals. The removal can be processed synchronously or scheduled as a background job, depending on the number of records.

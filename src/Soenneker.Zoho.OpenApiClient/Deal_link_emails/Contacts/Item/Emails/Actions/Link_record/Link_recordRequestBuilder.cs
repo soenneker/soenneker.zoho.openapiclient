@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To link a deal with one or more of a contact&apos;s emails. An email can only be linked to a single deal at a time. Zoho CRM automatically links a contact&apos;s incoming emails to the deals using the [Deal Prediction Mechanism](https://help.zoho.com/portal/en/kb/crm/connect-with-customers/email/user-functions/articles/email-association-with-deal#Auto-link_Emails_by_Deal_Prediction_Mechanism). You can also manage these links using the Link Deal to Emails API and [Unlink Deal from Emails API](deal_link_emails.yaml#$.paths./Contacts/{contactId}/Emails/{messageId}/actions/link_record.delete).
@@ -73,6 +73,8 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

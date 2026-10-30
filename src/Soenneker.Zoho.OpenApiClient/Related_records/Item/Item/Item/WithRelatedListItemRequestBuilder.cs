@@ -68,6 +68,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkRelatedRecords500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -93,6 +95,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -120,6 +124,8 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecords403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateRelatedRecords500Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Coql
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CoqlExecuteCoqlQuery200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve records from one or more Zoho CRM modules using a COQL SELECT query, with support for cross-module joins, aggregate functions, and flexible filtering.

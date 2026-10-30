@@ -12,19 +12,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("business_timing") is { } nullNodeBusinessTiming && nullNodeBusinessTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessTiming = null;
+            if (parseNode.GetChildNode("days") is { } nullNodeDays && nullNodeDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Days = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Start and end times for this specific day in 24-hour HH:MM format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BusinessTiming { get; set; }
+        public List<string>? BusinessTiming { get => _explicitNullValueBusinessTiming; set { _explicitNullValueBusinessTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_timing"); else _explicitNullProperties?.Remove("business_timing"); } }
+        private List<string>? _explicitNullValueBusinessTiming = default!;
 #nullable restore
 #else
-        public List<string> BusinessTiming { get; set; }
+        public List<string> BusinessTiming { get => _explicitNullValueBusinessTiming; set { _explicitNullValueBusinessTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_timing"); else _explicitNullProperties?.Remove("business_timing"); } }
+        private List<string> _explicitNullValueBusinessTiming = default!;
 #endif
         /// <summary>Specific day of the week for custom business hours</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItemDays? Days { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItemDays? Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItemDays? _explicitNullValueDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItem"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("business_timing", BusinessTiming);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHoursCustomTimingItemDays>("days", Days);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

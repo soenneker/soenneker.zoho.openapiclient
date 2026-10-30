@@ -12,29 +12,51 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetUserDetailsCustomizeInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bc_view") is { } nullNodeBcView && nullNodeBcView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BcView = null;
+            if (parseNode.GetChildNode("notes_desc") is { } nullNodeNotesDesc && nullNodeNotesDesc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotesDesc = null;
+            if (parseNode.GetChildNode("show_detail_view") is { } nullNodeShowDetailView && nullNodeShowDetailView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowDetailView = null;
+            if (parseNode.GetChildNode("show_home") is { } nullNodeShowHome && nullNodeShowHome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowHome = null;
+            if (parseNode.GetChildNode("show_left_panel") is { } nullNodeShowLeftPanel && nullNodeShowLeftPanel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowLeftPanel = null;
+            if (parseNode.GetChildNode("show_right_panel") is { } nullNodeShowRightPanel && nullNodeShowRightPanel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowRightPanel = null;
+            if (parseNode.GetChildNode("unpin_recent_item") is { } nullNodeUnpinRecentItem && nullNodeUnpinRecentItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnpinRecentItem = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the breadcrumb view is displayed for the user.\nPossible values:\ntrue - The breadcrumb view is displayed.\nfalse - The breadcrumb view is not displayed.</summary>
-        public bool? BcView { get; set; }
+        public bool? BcView { get => _explicitNullValueBcView; set { _explicitNullValueBcView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bc_view"); else _explicitNullProperties?.Remove("bc_view"); } }
+        private bool? _explicitNullValueBcView = default!;
         /// <summary>Indicates whether notes are displayed in descending order for the user.\nPossible values:\ntrue - Notes are displayed in descending order.\nfalse - Notes are not displayed in descending order.</summary>
-        public bool? NotesDesc { get; set; }
+        public bool? NotesDesc { get => _explicitNullValueNotesDesc; set { _explicitNullValueNotesDesc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes_desc"); else _explicitNullProperties?.Remove("notes_desc"); } }
+        private bool? _explicitNullValueNotesDesc = default!;
         /// <summary>Indicates whether the detail view panel is displayed for the user.\nPossible values:\ntrue - The detail view panel is displayed.\nfalse - The detail view panel is not displayed.</summary>
-        public bool? ShowDetailView { get; set; }
+        public bool? ShowDetailView { get => _explicitNullValueShowDetailView; set { _explicitNullValueShowDetailView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_detail_view"); else _explicitNullProperties?.Remove("show_detail_view"); } }
+        private bool? _explicitNullValueShowDetailView = default!;
         /// <summary>Indicates whether the home screen is displayed for the user.\nPossible values:\ntrue - The home screen is displayed.\nfalse - The home screen is not displayed.</summary>
-        public bool? ShowHome { get; set; }
+        public bool? ShowHome { get => _explicitNullValueShowHome; set { _explicitNullValueShowHome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_home"); else _explicitNullProperties?.Remove("show_home"); } }
+        private bool? _explicitNullValueShowHome = default!;
         /// <summary>Indicates whether the left panel is displayed in the user interface.\n\nPossible values:\ntrue - The left panel is shown.\nfalse - The left panel is hidden.</summary>
-        public bool? ShowLeftPanel { get; set; }
+        public bool? ShowLeftPanel { get => _explicitNullValueShowLeftPanel; set { _explicitNullValueShowLeftPanel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_left_panel"); else _explicitNullProperties?.Remove("show_left_panel"); } }
+        private bool? _explicitNullValueShowLeftPanel = default!;
         /// <summary>Indicates whether the right panel is displayed in the user interface.\n\nPossible values:\ntrue - The right panel is shown.\nfalse - The right panel is hidden.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShowRightPanel { get; set; }
+        public string? ShowRightPanel { get => _explicitNullValueShowRightPanel; set { _explicitNullValueShowRightPanel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_right_panel"); else _explicitNullProperties?.Remove("show_right_panel"); } }
+        private string? _explicitNullValueShowRightPanel = default!;
 #nullable restore
 #else
-        public string ShowRightPanel { get; set; }
+        public string ShowRightPanel { get => _explicitNullValueShowRightPanel; set { _explicitNullValueShowRightPanel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_right_panel"); else _explicitNullProperties?.Remove("show_right_panel"); } }
+        private string _explicitNullValueShowRightPanel = default!;
 #endif
         /// <summary>Indicates whether the recent item is unpinned from its fixed position in the user interface.\n\nPossible values:\ntrue - The recent item is unpinned.\nfalse - The recent item remains pinned.</summary>
-        public bool? UnpinRecentItem { get; set; }
+        public bool? UnpinRecentItem { get => _explicitNullValueUnpinRecentItem; set { _explicitNullValueUnpinRecentItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unpin_recent_item"); else _explicitNullProperties?.Remove("unpin_recent_item"); } }
+        private bool? _explicitNullValueUnpinRecentItem = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo"/> and sets the default values.
         /// </summary>
@@ -50,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsCustomizeInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +105,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("show_left_panel", ShowLeftPanel);
             writer.WriteStringValue("show_right_panel", ShowRightPanel);
             writer.WriteBoolValue("unpin_recent_item", UnpinRecentItem);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

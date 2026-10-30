@@ -70,6 +70,8 @@ namespace Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetAllWizards200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

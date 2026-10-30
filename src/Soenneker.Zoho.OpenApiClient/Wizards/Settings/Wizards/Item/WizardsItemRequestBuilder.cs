@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Wizards.Settings.Wizards.Item
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails403Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

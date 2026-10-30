@@ -12,7 +12,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationAssignOwnerDetailsAssignToItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntry"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem();
             if("AutomationAssignToCriteriaEntry".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AutomationAssignToCriteriaEntry = new global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntry();
+                
             }
             else if("AutomationAssignToMergeFieldEntry".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AutomationAssignToMergeFieldEntry = new global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntry();
+                
             }
             else if("AutomationAssignToResourceEntry".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AutomationAssignToResourceEntry = new global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntry();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("user".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "role".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "group".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "assignment_rule".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "profile".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("resource") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("merge_field".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("details") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("criteria".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("details") != null))();
+            if (result.AutomationAssignToCriteriaEntry == null && result.AutomationAssignToMergeFieldEntry == null && result.AutomationAssignToResourceEntry == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.AutomationAssignToResourceEntry = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntry(), parseNode);
+            if (result.AutomationAssignToCriteriaEntry == null && result.AutomationAssignToMergeFieldEntry == null && result.AutomationAssignToResourceEntry == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.AutomationAssignToMergeFieldEntry = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntry(), parseNode);
+            if (result.AutomationAssignToCriteriaEntry == null && result.AutomationAssignToMergeFieldEntry == null && result.AutomationAssignToResourceEntry == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.AutomationAssignToCriteriaEntry = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntry(), parseNode);
+            if (result.AutomationAssignToCriteriaEntry == null && result.AutomationAssignToMergeFieldEntry == null && result.AutomationAssignToResourceEntry == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AutomationAssignToCriteriaEntry == null && AutomationAssignToMergeFieldEntry == null && AutomationAssignToResourceEntry == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AutomationAssignToCriteriaEntry != null && AutomationAssignToMergeFieldEntry == null && AutomationAssignToResourceEntry == null) { if (AutomationAssignToCriteriaEntry is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AutomationAssignToCriteriaEntry); return; }
+            if (AutomationAssignToMergeFieldEntry != null && AutomationAssignToCriteriaEntry == null && AutomationAssignToResourceEntry == null) { if (AutomationAssignToMergeFieldEntry is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AutomationAssignToMergeFieldEntry); return; }
+            if (AutomationAssignToResourceEntry != null && AutomationAssignToCriteriaEntry == null && AutomationAssignToMergeFieldEntry == null) { if (AutomationAssignToResourceEntry is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AutomationAssignToResourceEntry); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(AutomationAssignToCriteriaEntry != null)
             {
+                if (AutomationAssignToCriteriaEntry is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntry>(null, AutomationAssignToCriteriaEntry);
             }
             else if(AutomationAssignToMergeFieldEntry != null)
             {
+                if (AutomationAssignToMergeFieldEntry is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToMergeFieldEntry>(null, AutomationAssignToMergeFieldEntry);
             }
             else if(AutomationAssignToResourceEntry != null)
             {
+                if (AutomationAssignToResourceEntry is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToResourceEntry>(null, AutomationAssignToResourceEntry);
             }
         }

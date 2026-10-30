@@ -12,13 +12,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CallPreferencesGetCallPreferences200ResponseCallPreferences : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("show_from_number") is { } nullNodeShowFromNumber && nullNodeShowFromNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowFromNumber = null;
+            if (parseNode.GetChildNode("show_to_number") is { } nullNodeShowToNumber && nullNodeShowToNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowToNumber = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the **From Number** field is currently enabled on records in the Calls module. **Possible values:****true** - The **From Number** field is enabled and appears on Call records.**false** - The **From Number** field is disabled and is hidden from Call records.</summary>
-        public bool? ShowFromNumber { get; set; }
+        public bool? ShowFromNumber { get => _explicitNullValueShowFromNumber; set { _explicitNullValueShowFromNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_from_number"); else _explicitNullProperties?.Remove("show_from_number"); } }
+        private bool? _explicitNullValueShowFromNumber = default!;
         /// <summary>Indicates whether the **To Number** field is currently enabled on records in the Calls module. **Possible values:****true** - The **To Number** field is enabled and appears on Call records.**false** - The **To Number** field is disabled and is hidden from Call records.</summary>
-        public bool? ShowToNumber { get; set; }
+        public bool? ShowToNumber { get => _explicitNullValueShowToNumber; set { _explicitNullValueShowToNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_to_number"); else _explicitNullProperties?.Remove("show_to_number"); } }
+        private bool? _explicitNullValueShowToNumber = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("show_from_number", ShowFromNumber);
             writer.WriteBoolValue("show_to_number", ShowToNumber);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

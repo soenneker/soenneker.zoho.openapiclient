@@ -13,6 +13,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FilterCriterionResponse : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the grouped filter criterion is in a disrupted state, typically due to an invalid or unresolvable condition within the group.</summary>
@@ -60,15 +64,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("comparator")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.FilterCriterionResponse();
-            if(parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupOperator>() is global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupOperator groupOperatorValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue0 && ("AND".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "OR".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "and".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "or".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupOperator>() is global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupOperator groupOperatorValue)
             {
                 result.GroupOperator = groupOperatorValue;
             }
             else if("GroupedFilterCriterionResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GroupedFilterCriterionResponse = new global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponse();
+                
             }
-            else if(parseNode.GetBoolValue() is bool disruptedValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean && parseNode.GetBoolValue() is bool disruptedValue)
             {
                 result.Disrupted = disruptedValue;
             }
@@ -76,7 +80,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.Group = groupValue;
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("group") != null && parseNode.GetChildNode("group_operator") != null && (parseNode.GetChildNode("group_operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("AND".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "OR".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "and".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "or".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.Disrupted == null && result.Group == null && result.GroupedFilterCriterionResponse == null && result.GroupOperator == null && result.SimpleFilterCriterionResponse == null && matchesUnionBranch0) result.GroupedFilterCriterionResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponse(), parseNode);
+            if (result.Disrupted == null && result.Group == null && result.GroupedFilterCriterionResponse == null && result.GroupOperator == null && result.SimpleFilterCriterionResponse == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.GroupedFilterCriterionResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponse(), parseNode);
+            if (result.Disrupted == null && result.Group == null && result.GroupedFilterCriterionResponse == null && result.GroupOperator == null && result.SimpleFilterCriterionResponse == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,9 +110,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Disrupted == null && Group == null && GroupedFilterCriterionResponse == null && GroupOperator == null && SimpleFilterCriterionResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (GroupedFilterCriterionResponse != null && Disrupted == null && Group == null && GroupOperator == null && SimpleFilterCriterionResponse == null) { if (GroupedFilterCriterionResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GroupedFilterCriterionResponse); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(GroupedFilterCriterionResponse != null)
             {
+                if (GroupedFilterCriterionResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponse>(null, GroupedFilterCriterionResponse);
             }
             else if(GroupOperator != null)
@@ -111,6 +126,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             else if(SimpleFilterCriterionResponse != null)
             {
+                if (SimpleFilterCriterionResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SimpleFilterCriterionResponse>(null, SimpleFilterCriterionResponse);
             }
             else if(Disrupted != null)
@@ -121,7 +137,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.GroupedFilterCriterionResponseGroupItem>(null, Group);
             }
-            writer.WriteAdditionalData(AdditionalData);
+            
         }
     }
 }

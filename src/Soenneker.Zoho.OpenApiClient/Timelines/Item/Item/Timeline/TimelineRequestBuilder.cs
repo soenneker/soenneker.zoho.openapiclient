@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve a paginated list of timeline entries for a specific record in your Zoho CRM organization. Each timeline entry captures an audited event such as field changes, ownership transfers, workflow actions, Approval Process progressions, Scoring Rule updates, and signal events from extensions.

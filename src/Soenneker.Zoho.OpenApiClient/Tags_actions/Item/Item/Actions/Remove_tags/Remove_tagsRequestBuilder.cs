@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Tags_actions.Item.Item.Actions.Remove_tag
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsPostRemoveTagsWithId403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostremovetagsResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostremovetagsResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -36,18 +36,18 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences_execution.Item.Actions.Enrol_in_
         /// <summary>
         /// Enrolls CRM records into one or more cadences.**Notes**- Only Manual Enrollment cadences can be enrolled through this API.- Available only in Enterprise edition and above.- Supports Leads, Contacts, Deals, Vendors, and custom modules.- A request may contain up to 5 cadence IDs.- A request may contain up to 100 record IDs.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PostcadencesResponse200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesExecutionPostEnrolInCadencesSuccessResponse"/></returns>
         /// <param name="body">Represents the request payload for enrolling or un-enrolling records in one or more Cadences.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesExecutionPostEnrolInCadences403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostcadencesResponse200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostCadencesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CadencesExecutionPostEnrolInCadencesSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostCadencesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostcadencesResponse200> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostCadencesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CadencesExecutionPostEnrolInCadencesSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostCadencesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -55,8 +55,10 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences_execution.Item.Actions.Enrol_in_
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.CadencesExecutionPostEnrolInCadences403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostcadencesResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostcadencesResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CadencesExecutionPostEnrolInCadencesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CadencesExecutionPostEnrolInCadencesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enrolls CRM records into one or more cadences.**Notes**- Only Manual Enrollment cadences can be enrolled through this API.- Available only in Enterprise edition and above.- Supports Leads, Contacts, Deals, Vendors, and custom modules.- A request may contain up to 5 cadence IDs.- A request may contain up to 100 record IDs.

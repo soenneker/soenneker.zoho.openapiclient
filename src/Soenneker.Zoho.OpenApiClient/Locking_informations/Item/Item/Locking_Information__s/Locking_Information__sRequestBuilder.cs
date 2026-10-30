@@ -62,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To lock a record in the specified module of your Zoho CRM account with a reason for locking.
@@ -86,6 +86,8 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

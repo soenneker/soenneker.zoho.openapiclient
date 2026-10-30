@@ -12,17 +12,32 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FollowUpSummary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("call_follow_up_count") is { } nullNodeCallFollowUpCount && nullNodeCallFollowUpCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallFollowUpCount = null;
+            if (parseNode.GetChildNode("email_follow_up_count") is { } nullNodeEmailFollowUpCount && nullNodeEmailFollowUpCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailFollowUpCount = null;
+            if (parseNode.GetChildNode("task_follow_up_count") is { } nullNodeTaskFollowUpCount && nullNodeTaskFollowUpCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskFollowUpCount = null;
+            if (parseNode.GetChildNode("whatsapp_follow_up_count") is { } nullNodeWhatsappFollowUpCount && nullNodeWhatsappFollowUpCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappFollowUpCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of scheduled call follow-up actions in the Cadence.</summary>
-        public int? CallFollowUpCount { get; set; }
+        public int? CallFollowUpCount { get => _explicitNullValueCallFollowUpCount; set { _explicitNullValueCallFollowUpCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_follow_up_count"); else _explicitNullProperties?.Remove("call_follow_up_count"); } }
+        private int? _explicitNullValueCallFollowUpCount = default!;
         /// <summary>Represents the number of email notification follow-up actions in the Cadence.</summary>
-        public int? EmailFollowUpCount { get; set; }
+        public int? EmailFollowUpCount { get => _explicitNullValueEmailFollowUpCount; set { _explicitNullValueEmailFollowUpCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_follow_up_count"); else _explicitNullProperties?.Remove("email_follow_up_count"); } }
+        private int? _explicitNullValueEmailFollowUpCount = default!;
         /// <summary>Represents the number of task follow-up actions in the Cadence.</summary>
-        public int? TaskFollowUpCount { get; set; }
+        public int? TaskFollowUpCount { get => _explicitNullValueTaskFollowUpCount; set { _explicitNullValueTaskFollowUpCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("task_follow_up_count"); else _explicitNullProperties?.Remove("task_follow_up_count"); } }
+        private int? _explicitNullValueTaskFollowUpCount = default!;
         /// <summary>Represents the number of WhatsApp message follow-up actions in the Cadence.</summary>
-        public int? WhatsappFollowUpCount { get; set; }
+        public int? WhatsappFollowUpCount { get => _explicitNullValueWhatsappFollowUpCount; set { _explicitNullValueWhatsappFollowUpCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_follow_up_count"); else _explicitNullProperties?.Remove("whatsapp_follow_up_count"); } }
+        private int? _explicitNullValueWhatsappFollowUpCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpSummary"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FollowUpSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("email_follow_up_count", EmailFollowUpCount);
             writer.WriteIntValue("task_follow_up_count", TaskFollowUpCount);
             writer.WriteIntValue("whatsapp_follow_up_count", WhatsappFollowUpCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

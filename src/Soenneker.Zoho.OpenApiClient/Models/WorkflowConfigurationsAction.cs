@@ -12,35 +12,58 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowConfigurationsAction : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("associate_action") is { } nullNodeAssociateAction && nullNodeAssociateAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociateAction = null;
+            if (parseNode.GetChildNode("is_clickable") is { } nullNodeIsClickable && nullNodeIsClickable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsClickable = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("limit_per_action") is { } nullNodeLimitPerAction && nullNodeLimitPerAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitPerAction = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("supported_in_scheduled_action") is { } nullNodeSupportedInScheduledAction && nullNodeSupportedInScheduledAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedInScheduledAction = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API identifier of the action type used when creating or modifying workflow rules (for example, field_updates, email_notifications, webhooks, assign_owner, add_tags, remove_tags, create_record, add_meeting, schedule_call, convert, functions, flow).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get; set; }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get; set; }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>Indicates whether this action type is an associate action. Associate actions link or associate records between modules (for example, linking a Contact to a Deal or associating a Product with an Order). Associate actions differ from standard data-write actions such as field_updates or email_notifications.Possible values: **true** - This action type is an associate action. **false** - This action type is a standard non-associate action.</summary>
-        public bool? AssociateAction { get; set; }
+        public bool? AssociateAction { get => _explicitNullValueAssociateAction; set { _explicitNullValueAssociateAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associate_action"); else _explicitNullProperties?.Remove("associate_action"); } }
+        private bool? _explicitNullValueAssociateAction = default!;
         /// <summary>Indicates whether this action type can be edited directly from the workflow configuration UI page. Not relevant for API usage.</summary>
-        public bool? IsClickable { get; set; }
+        public bool? IsClickable { get => _explicitNullValueIsClickable; set { _explicitNullValueIsClickable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_clickable"); else _explicitNullProperties?.Remove("is_clickable"); } }
+        private bool? _explicitNullValueIsClickable = default!;
         /// <summary>Maximum number of instances of this action type allowed per workflow rule. Applies independently to instant_actions and scheduled_actions - for instance, if limit=5, you can add up to 5 instances in instant_actions and up to 5 in scheduled_actions. Returns LIMIT_EXCEEDED if exceeded.</summary>
-        public int? Limit { get; set; }
+        public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private int? _explicitNullValueLimit = default!;
         /// <summary>Represents the maximum number of items within a single action instance. For example, add_tags and remove_tags allow a maximum of 10 tags per action. Returns null if no per-action item limit applies.</summary>
-        public int? LimitPerAction { get; set; }
+        public int? LimitPerAction { get => _explicitNullValueLimitPerAction; set { _explicitNullValueLimitPerAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit_per_action"); else _explicitNullProperties?.Remove("limit_per_action"); } }
+        private int? _explicitNullValueLimitPerAction = default!;
         /// <summary>Represents the display name of the action type as shown in the CRM UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Indicates whether this action type can be used as a scheduled (time-delayed) action in a workflow rule. **Possible values:** true - This action type is supported in scheduled_actions (for example, time-delayed email_notifications or field_updates). false - This action type is only supported in instant_actions.</summary>
-        public bool? SupportedInScheduledAction { get; set; }
+        public bool? SupportedInScheduledAction { get => _explicitNullValueSupportedInScheduledAction; set { _explicitNullValueSupportedInScheduledAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_in_scheduled_action"); else _explicitNullProperties?.Remove("supported_in_scheduled_action"); } }
+        private bool? _explicitNullValueSupportedInScheduledAction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction"/> and sets the default values.
         /// </summary>
@@ -56,7 +79,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsAction(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +112,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("limit_per_action", LimitPerAction);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("supported_in_scheduled_action", SupportedInScheduledAction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

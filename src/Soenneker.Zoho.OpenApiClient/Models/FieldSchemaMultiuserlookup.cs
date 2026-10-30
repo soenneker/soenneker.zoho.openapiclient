@@ -12,19 +12,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchemaMultiuserlookup : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("linking_details") is { } nullNodeLinkingDetails && nullNodeLinkingDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkingDetails = null;
+            if (parseNode.GetChildNode("record_access") is { } nullNodeRecordAccess && nullNodeRecordAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordAccess = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the linking details for the multi-user lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails? LinkingDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails? LinkingDetails { get => _explicitNullValueLinkingDetails; set { _explicitNullValueLinkingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linking_details"); else _explicitNullProperties?.Remove("linking_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails? _explicitNullValueLinkingDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails LinkingDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails LinkingDetails { get => _explicitNullValueLinkingDetails; set { _explicitNullValueLinkingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linking_details"); else _explicitNullProperties?.Remove("linking_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails _explicitNullValueLinkingDetails = default!;
 #endif
         /// <summary>Indicates if record access is enabled for the multi-user lookup.</summary>
-        public bool? RecordAccess { get; set; }
+        public bool? RecordAccess { get => _explicitNullValueRecordAccess; set { _explicitNullValueRecordAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_access"); else _explicitNullProperties?.Remove("record_access"); } }
+        private bool? _explicitNullValueRecordAccess = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookup"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookup();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookup(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaMultiuserlookupLinkingDetails>("linking_details", LinkingDetails);
             writer.WriteBoolValue("record_access", RecordAccess);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

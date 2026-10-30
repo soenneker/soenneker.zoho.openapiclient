@@ -12,22 +12,38 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApisGetAvailableApis200ResponseApisItemOperationTypesItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_credits") is { } nullNodeMaxCredits && nullNodeMaxCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCredits = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("min_credits") is { } nullNodeMinCredits && nullNodeMinCredits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinCredits = null;
+            if (parseNode.GetChildNode("oauth_scope") is { } nullNodeOauthScope && nullNodeOauthScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthScope = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the maximum credits that the API consumes.</summary>
-        public int? MaxCredits { get; set; }
+        public int? MaxCredits { get => _explicitNullValueMaxCredits; set { _explicitNullValueMaxCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_credits"); else _explicitNullProperties?.Remove("max_credits"); } }
+        private int? _explicitNullValueMaxCredits = default!;
         /// <summary>Represents the supported request method forthat API. Possible values:**GET** - Retrieve data.**POST** - Create data.**PUT** - Update data.**PATCH** - Partially update data.**DELETE** - Remove data.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItemMethod? Method { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItemMethod? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItemMethod? _explicitNullValueMethod = default!;
         /// <summary>Represents the minimum credits that the API consumes.</summary>
-        public int? MinCredits { get; set; }
+        public int? MinCredits { get => _explicitNullValueMinCredits; set { _explicitNullValueMinCredits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_credits"); else _explicitNullProperties?.Remove("min_credits"); } }
+        private int? _explicitNullValueMinCredits = default!;
         /// <summary>Represents the OAuth scope required to perform this operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OauthScope { get; set; }
+        public string? OauthScope { get => _explicitNullValueOauthScope; set { _explicitNullValueOauthScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_scope"); else _explicitNullProperties?.Remove("oauth_scope"); } }
+        private string? _explicitNullValueOauthScope = default!;
 #nullable restore
 #else
-        public string OauthScope { get; set; }
+        public string OauthScope { get => _explicitNullValueOauthScope; set { _explicitNullValueOauthScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth_scope"); else _explicitNullProperties?.Remove("oauth_scope"); } }
+        private string _explicitNullValueOauthScope = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem"/> and sets the default values.
@@ -44,7 +60,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +87,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItemMethod>("method", Method);
             writer.WriteIntValue("min_credits", MinCredits);
             writer.WriteStringValue("oauth_scope", OauthScope);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

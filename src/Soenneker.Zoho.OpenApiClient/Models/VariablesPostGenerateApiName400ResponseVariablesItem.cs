@@ -12,7 +12,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariablesPostGenerateApiName400ResponseVariablesItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ErrorApiNameGenerationMandatoryMissingResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400ResponseVariablesItem();
             if("required field not found".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ErrorApiNameGenerationMandatoryMissingResponse = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorApiNameGenerationMandatoryMissingResponse();
+                
             }
             else if("Invalid data".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ErrorInvalidDataResponse = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorInvalidDataResponse();
+                
             }
             else if("Invalid data type".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ErrorInvalidDataTypeResponse = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorInvalidDataTypeResponse();
+                
             }
             else if("Required field is missing".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ErrorMandatoryFieldMissingResponse = new global::Soenneker.Zoho.OpenApiClient.Models.ErrorMandatoryFieldMissingResponse();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null && (parseNode.GetChildNode("code")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("MANDATORY_NOT_FOUND".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("details") != null && parseNode.GetChildNode("message") != null && (parseNode.GetChildNode("message")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("required field not found".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("error".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null && (parseNode.GetChildNode("code")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("MANDATORY_NOT_FOUND".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("details") != null && parseNode.GetChildNode("message") != null && (parseNode.GetChildNode("message")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("Required field is missing".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("error".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null && (parseNode.GetChildNode("code")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("INVALID_DATA".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("details") != null && parseNode.GetChildNode("message") != null && (parseNode.GetChildNode("message")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("Invalid data type".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("error".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null && (parseNode.GetChildNode("code")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("INVALID_DATA".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("details") != null && parseNode.GetChildNode("message") != null && (parseNode.GetChildNode("message")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("Invalid data".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("error".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.ErrorApiNameGenerationMandatoryMissingResponse == null && result.ErrorInvalidDataResponse == null && result.ErrorInvalidDataTypeResponse == null && result.ErrorMandatoryFieldMissingResponse == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ErrorApiNameGenerationMandatoryMissingResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ErrorApiNameGenerationMandatoryMissingResponse(), parseNode);
+            if (result.ErrorApiNameGenerationMandatoryMissingResponse == null && result.ErrorInvalidDataResponse == null && result.ErrorInvalidDataTypeResponse == null && result.ErrorMandatoryFieldMissingResponse == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ErrorMandatoryFieldMissingResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ErrorMandatoryFieldMissingResponse(), parseNode);
+            if (result.ErrorApiNameGenerationMandatoryMissingResponse == null && result.ErrorInvalidDataResponse == null && result.ErrorInvalidDataTypeResponse == null && result.ErrorMandatoryFieldMissingResponse == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.ErrorInvalidDataTypeResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ErrorInvalidDataTypeResponse(), parseNode);
+            if (result.ErrorApiNameGenerationMandatoryMissingResponse == null && result.ErrorInvalidDataResponse == null && result.ErrorInvalidDataTypeResponse == null && result.ErrorMandatoryFieldMissingResponse == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.ErrorInvalidDataResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ErrorInvalidDataResponse(), parseNode);
+            if (result.ErrorApiNameGenerationMandatoryMissingResponse == null && result.ErrorInvalidDataResponse == null && result.ErrorInvalidDataTypeResponse == null && result.ErrorMandatoryFieldMissingResponse == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ErrorApiNameGenerationMandatoryMissingResponse == null && ErrorInvalidDataResponse == null && ErrorInvalidDataTypeResponse == null && ErrorMandatoryFieldMissingResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ErrorApiNameGenerationMandatoryMissingResponse != null && ErrorInvalidDataResponse == null && ErrorInvalidDataTypeResponse == null && ErrorMandatoryFieldMissingResponse == null) { if (ErrorApiNameGenerationMandatoryMissingResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ErrorApiNameGenerationMandatoryMissingResponse); return; }
+            if (ErrorInvalidDataResponse != null && ErrorApiNameGenerationMandatoryMissingResponse == null && ErrorInvalidDataTypeResponse == null && ErrorMandatoryFieldMissingResponse == null) { if (ErrorInvalidDataResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ErrorInvalidDataResponse); return; }
+            if (ErrorInvalidDataTypeResponse != null && ErrorApiNameGenerationMandatoryMissingResponse == null && ErrorInvalidDataResponse == null && ErrorMandatoryFieldMissingResponse == null) { if (ErrorInvalidDataTypeResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ErrorInvalidDataTypeResponse); return; }
+            if (ErrorMandatoryFieldMissingResponse != null && ErrorApiNameGenerationMandatoryMissingResponse == null && ErrorInvalidDataResponse == null && ErrorInvalidDataTypeResponse == null) { if (ErrorMandatoryFieldMissingResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ErrorMandatoryFieldMissingResponse); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ErrorApiNameGenerationMandatoryMissingResponse != null)
             {
+                if (ErrorApiNameGenerationMandatoryMissingResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorApiNameGenerationMandatoryMissingResponse>(null, ErrorApiNameGenerationMandatoryMissingResponse);
             }
             else if(ErrorInvalidDataResponse != null)
             {
+                if (ErrorInvalidDataResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorInvalidDataResponse>(null, ErrorInvalidDataResponse);
             }
             else if(ErrorInvalidDataTypeResponse != null)
             {
+                if (ErrorInvalidDataTypeResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorInvalidDataTypeResponse>(null, ErrorInvalidDataTypeResponse);
             }
             else if(ErrorMandatoryFieldMissingResponse != null)
             {
+                if (ErrorMandatoryFieldMissingResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ErrorMandatoryFieldMissingResponse>(null, ErrorMandatoryFieldMissingResponse);
             }
         }

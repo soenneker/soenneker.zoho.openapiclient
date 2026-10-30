@@ -12,37 +12,62 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_booking_outside_businesshours") is { } nullNodeAllowBookingOutsideBusinesshours && nullNodeAllowBookingOutsideBusinesshours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowBookingOutsideBusinesshours = null;
+            if (parseNode.GetChildNode("allow_booking_outside_service_availability") is { } nullNodeAllowBookingOutsideServiceAvailability && nullNodeAllowBookingOutsideServiceAvailability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowBookingOutsideServiceAvailability = null;
+            if (parseNode.GetChildNode("deal_record_configuration") is { } nullNodeDealRecordConfiguration && nullNodeDealRecordConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DealRecordConfiguration = null;
+            if (parseNode.GetChildNode("sharing_details") is { } nullNodeSharingDetails && nullNodeSharingDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingDetails = null;
+            if (parseNode.GetChildNode("sharing_enabled") is { } nullNodeSharingEnabled && nullNodeSharingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingEnabled = null;
+            if (parseNode.GetChildNode("show_job_sheet") is { } nullNodeShowJobSheet && nullNodeShowJobSheet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowJobSheet = null;
+            if (parseNode.GetChildNode("when_appointment_completed") is { } nullNodeWhenAppointmentCompleted && nullNodeWhenAppointmentCompleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhenAppointmentCompleted = null;
+            if (parseNode.GetChildNode("when_duration_exceeds") is { } nullNodeWhenDurationExceeds && nullNodeWhenDurationExceeds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhenDurationExceeds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes if you can create appointments outside business hours. You can configure this preference only when **allow_booking_outside_service_availability:true**.Possible values:**true** - You can create appointments outside business hours.**false** - You cannot create appointments outside business hours.</summary>
-        public bool? AllowBookingOutsideBusinesshours { get; set; }
+        public bool? AllowBookingOutsideBusinesshours { get => _explicitNullValueAllowBookingOutsideBusinesshours; set { _explicitNullValueAllowBookingOutsideBusinesshours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_booking_outside_businesshours"); else _explicitNullProperties?.Remove("allow_booking_outside_businesshours"); } }
+        private bool? _explicitNullValueAllowBookingOutsideBusinesshours = default!;
         /// <summary>Denotes if you can create appointments outside service availability.Possible values:**true** - You can create appointments outside service availability.**false** - You cannot create appointments outside service availability.</summary>
-        public bool? AllowBookingOutsideServiceAvailability { get; set; }
+        public bool? AllowBookingOutsideServiceAvailability { get => _explicitNullValueAllowBookingOutsideServiceAvailability; set { _explicitNullValueAllowBookingOutsideServiceAvailability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_booking_outside_service_availability"); else _explicitNullProperties?.Remove("allow_booking_outside_service_availability"); } }
+        private bool? _explicitNullValueAllowBookingOutsideServiceAvailability = default!;
         /// <summary>Specify the configuration for creating Deal records when an appointment is completed, including the layout and field mappings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfiguration? DealRecordConfiguration { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfiguration? DealRecordConfiguration { get => _explicitNullValueDealRecordConfiguration; set { _explicitNullValueDealRecordConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deal_record_configuration"); else _explicitNullProperties?.Remove("deal_record_configuration"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfiguration? _explicitNullValueDealRecordConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfiguration DealRecordConfiguration { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfiguration DealRecordConfiguration { get => _explicitNullValueDealRecordConfiguration; set { _explicitNullValueDealRecordConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deal_record_configuration"); else _explicitNullProperties?.Remove("deal_record_configuration"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfiguration _explicitNullValueDealRecordConfiguration = default!;
 #endif
         /// <summary>Sharing configuration for appointment-associated records. Defines the permission level granted to the appointment owner for the associated record. Required when sharing_enabled is set to true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails? SharingDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails? SharingDetails { get => _explicitNullValueSharingDetails; set { _explicitNullValueSharingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing_details"); else _explicitNullProperties?.Remove("sharing_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails? _explicitNullValueSharingDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails SharingDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails SharingDetails { get => _explicitNullValueSharingDetails; set { _explicitNullValueSharingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing_details"); else _explicitNullProperties?.Remove("sharing_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails _explicitNullValueSharingDetails = default!;
 #endif
         /// <summary>Set to true to enable sharing of the associated record in appointments with the appointment owner. When set to true, sharing_details must also be provided.</summary>
-        public bool? SharingEnabled { get; set; }
+        public bool? SharingEnabled { get => _explicitNullValueSharingEnabled; set { _explicitNullValueSharingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing_enabled"); else _explicitNullProperties?.Remove("sharing_enabled"); } }
+        private bool? _explicitNullValueSharingEnabled = default!;
         /// <summary>Represents whether filling out the job sheet is mandatory for marking an appointment as &apos;completed&apos;. You can mandate job sheets only when **when_duration_exceeds: ask_appointment_provider_to_complete**.Possible values:**true** - Job sheet is mandatory for appointment completion.**false** - Job sheet is not mandatory for appointment completion.</summary>
-        public bool? ShowJobSheet { get; set; }
+        public bool? ShowJobSheet { get => _explicitNullValueShowJobSheet; set { _explicitNullValueShowJobSheet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_job_sheet"); else _explicitNullProperties?.Remove("show_job_sheet"); } }
+        private bool? _explicitNullValueShowJobSheet = default!;
         /// <summary>Represents whether a deal has to be created, when an appointment is completed.Possible values:**create_deal** - Deal is created when any appointment is marked &apos;Completed&apos;.**do_not_create_deal** - Deal is not created when any appointment is marked &apos;Completed&apos;.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesWhenAppointmentCompleted? WhenAppointmentCompleted { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesWhenAppointmentCompleted? WhenAppointmentCompleted { get => _explicitNullValueWhenAppointmentCompleted; set { _explicitNullValueWhenAppointmentCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("when_appointment_completed"); else _explicitNullProperties?.Remove("when_appointment_completed"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesWhenAppointmentCompleted? _explicitNullValueWhenAppointmentCompleted = default!;
         /// <summary>Represents who has to mark the appointment as &apos;Completed&apos; when the service duration gets over.Possible values:**mark_as_complete** - The appointment is automatically marked as &apos;completed&apos;.**ask_appointment_provider_to_complete** - User have to manually mark the appointment as &apos;completed&apos;.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesWhenDurationExceeds? WhenDurationExceeds { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesWhenDurationExceeds? WhenDurationExceeds { get => _explicitNullValueWhenDurationExceeds; set { _explicitNullValueWhenDurationExceeds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("when_duration_exceeds"); else _explicitNullProperties?.Remove("when_duration_exceeds"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesWhenDurationExceeds? _explicitNullValueWhenDurationExceeds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences"/> and sets the default values.
         /// </summary>
@@ -58,7 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +118,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("show_job_sheet", ShowJobSheet);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesWhenAppointmentCompleted>("when_appointment_completed", WhenAppointmentCompleted);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesWhenDurationExceeds>("when_duration_exceeds", WhenDurationExceeds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,6 +13,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomViewsFilterCriterionRequest : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequest"/></summary>
@@ -60,9 +64,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest();
             if("CustomViewsGroupedFilterCriterionRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CustomViewsGroupedFilterCriterionRequest = new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequest();
+                
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupOperator>() is global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupOperator groupOperatorValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue0 && ("AND".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "OR".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "and".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "or".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupOperator>() is global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupOperator groupOperatorValue)
             {
                 result.GroupOperator = groupOperatorValue;
             }
@@ -70,7 +74,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.Group = groupValue;
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("group") != null && parseNode.GetChildNode("group_operator") != null && (parseNode.GetChildNode("group_operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("AND".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "OR".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "and".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "or".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.CustomViewsGroupedFilterCriterionRequest == null && result.CustomViewsSimpleFilterCriterionRequest == null && result.Group == null && result.GroupOperator == null && matchesUnionBranch0) result.CustomViewsGroupedFilterCriterionRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequest(), parseNode);
+            if (result.CustomViewsGroupedFilterCriterionRequest == null && result.CustomViewsSimpleFilterCriterionRequest == null && result.Group == null && result.GroupOperator == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.CustomViewsGroupedFilterCriterionRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequest(), parseNode);
+            if (result.CustomViewsGroupedFilterCriterionRequest == null && result.CustomViewsSimpleFilterCriterionRequest == null && result.Group == null && result.GroupOperator == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,13 +104,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CustomViewsGroupedFilterCriterionRequest == null && CustomViewsSimpleFilterCriterionRequest == null && Group == null && GroupOperator == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CustomViewsGroupedFilterCriterionRequest != null && CustomViewsSimpleFilterCriterionRequest == null && Group == null && GroupOperator == null) { if (CustomViewsGroupedFilterCriterionRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CustomViewsGroupedFilterCriterionRequest); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CustomViewsGroupedFilterCriterionRequest != null)
             {
+                if (CustomViewsGroupedFilterCriterionRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequest>(null, CustomViewsGroupedFilterCriterionRequest);
             }
             else if(CustomViewsSimpleFilterCriterionRequest != null)
             {
+                if (CustomViewsSimpleFilterCriterionRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsSimpleFilterCriterionRequest>(null, CustomViewsSimpleFilterCriterionRequest);
             }
             else if(GroupOperator != null)
@@ -111,7 +127,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGroupedFilterCriterionRequestGroupItem>(null, Group);
             }
-            writer.WriteAdditionalData(AdditionalData);
+            
         }
     }
 }

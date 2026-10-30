@@ -62,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Contact_roles.Contacts.Roles
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRoles200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRoles200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRoles200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRoles200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the list of contact roles available in your Zoho CRM organization.
@@ -80,23 +80,23 @@ namespace Soenneker.Zoho.OpenApiClient.Contact_roles.Contacts.Roles
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesGetContactRoles200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesGetContactRoles200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesGetContactRoles200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesGetContactRoles200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates one or more contact roles in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRoles200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRolesSuccessResponse"/></returns>
         /// <param name="body">Specify the contact role details to create in the CRM organization.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRoles400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRoles200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRolesSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRoles200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRolesSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -104,24 +104,26 @@ namespace Soenneker.Zoho.OpenApiClient.Contact_roles.Contacts.Roles
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRoles400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRoles200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRoles200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRolesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesCreateContactRolesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the properties of one or more existing contact roles in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRolesSuccessResponse"/></returns>
         /// <param name="body">Specify the contact role details to update in the CRM organization.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRolesSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRolesSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRolesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -129,8 +131,10 @@ namespace Soenneker.Zoho.OpenApiClient.Contact_roles.Contacts.Roles
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRolesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRolesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes one or more contact roles by their unique identifiers in your Zoho CRM organization.

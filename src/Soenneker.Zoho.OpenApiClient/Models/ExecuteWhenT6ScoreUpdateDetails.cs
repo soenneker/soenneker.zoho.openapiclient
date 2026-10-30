@@ -12,29 +12,46 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExecuteWhenT6ScoreUpdateDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("repeat") is { } nullNodeRepeat && nullNodeRepeat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repeat = null;
+            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+            if (parseNode.GetChildNode("trigger_module") is { } nullNodeTriggerModule && nullNodeTriggerModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerModule = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the rule fires every time the score condition is met. When false, the rule fires only on the first occurrence.</summary>
-        public bool? Repeat { get; set; }
+        public bool? Repeat { get => _explicitNullValueRepeat; set { _explicitNullValueRepeat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeat"); else _explicitNullProperties?.Remove("repeat"); } }
+        private bool? _explicitNullValueRepeat = default!;
         /// <summary>Represents the array of Scoring Rule references to monitor. Required when **type** is set to **Selective_Rules**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem>? Rules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem>? _explicitNullValueRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem> Rules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem> _explicitNullValueRules = default!;
 #endif
         /// <summary>The module that actually triggers the rule. Defaults to the rule&apos;s top-level module if omitted. Must be explicitly set when the trigger targets a different module, such as a rule on Leads triggered by a note creation event, which requires the trigger module to reference the Notes module. To discover module API names and identifiers, retrieve the available modules from the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule? TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule? TriggerModule { get => _explicitNullValueTriggerModule; set { _explicitNullValueTriggerModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_module"); else _explicitNullProperties?.Remove("trigger_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule? _explicitNullValueTriggerModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule TriggerModule { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule TriggerModule { get => _explicitNullValueTriggerModule; set { _explicitNullValueTriggerModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_module"); else _explicitNullProperties?.Remove("trigger_module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule _explicitNullValueTriggerModule = default!;
 #endif
         /// <summary>Represents the trigger type for scoring rules. Supports score increase and score decrease trigger events.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsType? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetails"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsRulesItem>("rules", Rules);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsTriggerModule>("trigger_module", TriggerModule);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT6ScoreUpdateDetailsType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

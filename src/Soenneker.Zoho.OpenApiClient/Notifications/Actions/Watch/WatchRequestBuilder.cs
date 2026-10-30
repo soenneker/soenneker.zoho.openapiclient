@@ -36,7 +36,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <summary>
         /// To disable one or more notification channels in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotificationsSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
@@ -44,11 +44,11 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotificationsSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotificationsSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -57,8 +57,10 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotificationsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotificationsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the list of active notification channels configured for your Zoho CRM organization.
@@ -84,13 +86,15 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To partially update the properties of a notification channel in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoSuccessResponse"/></returns>
         /// <param name="body">Contains the notification channel fields to be partially updated.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,11 +103,11 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200Response?> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoSuccessResponse?> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200Response> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoSuccessResponse> PatchAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch.WatchRequestBuilder.WatchRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -113,13 +117,15 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfo200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create one or more notification channels in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications201Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotificationsSuccessResponse"/></returns>
         /// <param name="body">The request body must contain a watch array. You can include a maximum of **50** objects per request.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,11 +134,11 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications201Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotificationsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotificationsSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotificationsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications201Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotificationsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotificationsSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotificationsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -142,13 +148,15 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotifications201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotificationsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsCreateNotificationsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To replace all properties of an existing notification channel in your Zoho CRM organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetailsSuccessResponse"/></returns>
         /// <param name="body">Contains the complete notification channel configurations that will replace the existing settings.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,11 +165,11 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails200Response?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetailsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetailsSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetailsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails200Response> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetailsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetailsSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetailsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -171,8 +179,10 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetails200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetailsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationDetailsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To disable one or more notification channels in your Zoho CRM organization.

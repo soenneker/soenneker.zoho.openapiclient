@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.Actions.Send_mail_me
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostsendmailmergeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostsendmailmergeResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostsendmailmergeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostsendmailmergeResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To send a personalized email to one or more recipients using a mail merge template associated with a specific record in your Zoho CRM organization. You can include recipients in the To, CC, and BCC fields, and optionally attach the merged document either as an inline image or a separate file.

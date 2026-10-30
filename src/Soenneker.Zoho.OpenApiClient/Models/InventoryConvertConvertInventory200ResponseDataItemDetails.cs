@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InventoryConvertConvertInventory200ResponseDataItemDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Invoices") is { } nullNodeInvoices && nullNodeInvoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invoices = null;
+            if (parseNode.GetChildNode("Sales_Orders") is { } nullNodeSalesOrders && nullNodeSalesOrders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesOrders = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the details of the converted Invoice record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsInvoices? Invoices { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsInvoices? Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Invoices"); else _explicitNullProperties?.Remove("Invoices"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsInvoices? _explicitNullValueInvoices = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsInvoices Invoices { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsInvoices Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Invoices"); else _explicitNullProperties?.Remove("Invoices"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsInvoices _explicitNullValueInvoices = default!;
 #endif
         /// <summary>Represents the details of the converted Sales Order record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsSalesOrders? SalesOrders { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsSalesOrders? SalesOrders { get => _explicitNullValueSalesOrders; set { _explicitNullValueSalesOrders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Sales_Orders"); else _explicitNullProperties?.Remove("Sales_Orders"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsSalesOrders? _explicitNullValueSalesOrders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsSalesOrders SalesOrders { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsSalesOrders SalesOrders { get => _explicitNullValueSalesOrders; set { _explicitNullValueSalesOrders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Sales_Orders"); else _explicitNullProperties?.Remove("Sales_Orders"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsSalesOrders _explicitNullValueSalesOrders = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetails"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsInvoices>("Invoices", Invoices);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.InventoryConvertConvertInventory200ResponseDataItemDetailsSalesOrders>("Sales_Orders", SalesOrders);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

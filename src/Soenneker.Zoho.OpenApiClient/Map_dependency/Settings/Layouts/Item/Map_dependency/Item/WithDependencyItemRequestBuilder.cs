@@ -59,6 +59,8 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.NotFoundErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyInternalServerErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyDeleteMapDependency200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -86,6 +88,8 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById400Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.NotFoundErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyInternalServerErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyGetMapDependencyById200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -115,6 +119,8 @@ namespace Soenneker.Zoho.OpenApiClient.Map_dependency.Settings.Layouts.Item.Map_
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyForbiddenErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.NotFoundErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyInternalServerErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependency200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

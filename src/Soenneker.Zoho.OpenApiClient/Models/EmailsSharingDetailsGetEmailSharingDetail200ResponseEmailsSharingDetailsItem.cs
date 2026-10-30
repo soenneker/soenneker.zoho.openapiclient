@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available_types") is { } nullNodeAvailableTypes && nullNodeAvailableTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableTypes = null;
+            if (parseNode.GetChildNode("shared_from_users") is { } nullNodeSharedFromUsers && nullNodeSharedFromUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedFromUsers = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the available email filter options for the record&apos;s email view. Always returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemAvailableTypesItem?>? AvailableTypes { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemAvailableTypesItem?>? AvailableTypes { get => _explicitNullValueAvailableTypes; set { _explicitNullValueAvailableTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_types"); else _explicitNullProperties?.Remove("available_types"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemAvailableTypesItem?>? _explicitNullValueAvailableTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemAvailableTypesItem?> AvailableTypes { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemAvailableTypesItem?> AvailableTypes { get => _explicitNullValueAvailableTypes; set { _explicitNullValueAvailableTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_types"); else _explicitNullProperties?.Remove("available_types"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemAvailableTypesItem?> _explicitNullValueAvailableTypes = default!;
 #endif
         /// <summary>Specifies the list of users whose email accounts are accessible when viewing the record&apos;s emails. Always returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemSharedFromUsersItem>? SharedFromUsers { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemSharedFromUsersItem>? SharedFromUsers { get => _explicitNullValueSharedFromUsers; set { _explicitNullValueSharedFromUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_from_users"); else _explicitNullProperties?.Remove("shared_from_users"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemSharedFromUsersItem>? _explicitNullValueSharedFromUsers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemSharedFromUsersItem> SharedFromUsers { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemSharedFromUsersItem> SharedFromUsers { get => _explicitNullValueSharedFromUsers; set { _explicitNullValueSharedFromUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_from_users"); else _explicitNullProperties?.Remove("shared_from_users"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemSharedFromUsersItem> _explicitNullValueSharedFromUsers = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemAvailableTypesItem>("available_types", AvailableTypes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItemSharedFromUsersItem>("shared_from_users", SharedFromUsers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

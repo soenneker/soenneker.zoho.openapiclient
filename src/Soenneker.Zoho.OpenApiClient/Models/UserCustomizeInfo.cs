@@ -12,40 +12,64 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserCustomizeInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bc_view") is { } nullNodeBcView && nullNodeBcView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BcView = null;
+            if (parseNode.GetChildNode("notes_desc") is { } nullNodeNotesDesc && nullNodeNotesDesc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotesDesc = null;
+            if (parseNode.GetChildNode("show_detail_view") is { } nullNodeShowDetailView && nullNodeShowDetailView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowDetailView = null;
+            if (parseNode.GetChildNode("show_home") is { } nullNodeShowHome && nullNodeShowHome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowHome = null;
+            if (parseNode.GetChildNode("show_left_panel") is { } nullNodeShowLeftPanel && nullNodeShowLeftPanel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowLeftPanel = null;
+            if (parseNode.GetChildNode("show_right_panel") is { } nullNodeShowRightPanel && nullNodeShowRightPanel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowRightPanel = null;
+            if (parseNode.GetChildNode("unpin_recent_item") is { } nullNodeUnpinRecentItem && nullNodeUnpinRecentItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnpinRecentItem = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the business card view preference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty? BcView { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty? BcView { get => _explicitNullValueBcView; set { _explicitNullValueBcView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bc_view"); else _explicitNullProperties?.Remove("bc_view"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty? _explicitNullValueBcView = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty BcView { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty BcView { get => _explicitNullValueBcView; set { _explicitNullValueBcView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bc_view"); else _explicitNullProperties?.Remove("bc_view"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoBcViewProperty _explicitNullValueBcView = default!;
 #endif
         /// <summary>Indicates whether the notes description is visible.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty? NotesDesc { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty? NotesDesc { get => _explicitNullValueNotesDesc; set { _explicitNullValueNotesDesc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes_desc"); else _explicitNullProperties?.Remove("notes_desc"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty? _explicitNullValueNotesDesc = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty NotesDesc { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty NotesDesc { get => _explicitNullValueNotesDesc; set { _explicitNullValueNotesDesc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes_desc"); else _explicitNullProperties?.Remove("notes_desc"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoNotesDescProperty _explicitNullValueNotesDesc = default!;
 #endif
         /// <summary>Indicates whether the detail view is visible.</summary>
-        public bool? ShowDetailView { get; set; }
+        public bool? ShowDetailView { get => _explicitNullValueShowDetailView; set { _explicitNullValueShowDetailView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_detail_view"); else _explicitNullProperties?.Remove("show_detail_view"); } }
+        private bool? _explicitNullValueShowDetailView = default!;
         /// <summary>Indicates whether the home page is visible.</summary>
-        public bool? ShowHome { get; set; }
+        public bool? ShowHome { get => _explicitNullValueShowHome; set { _explicitNullValueShowHome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_home"); else _explicitNullProperties?.Remove("show_home"); } }
+        private bool? _explicitNullValueShowHome = default!;
         /// <summary>Indicates whether the left panel is visible.</summary>
-        public bool? ShowLeftPanel { get; set; }
+        public bool? ShowLeftPanel { get => _explicitNullValueShowLeftPanel; set { _explicitNullValueShowLeftPanel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_left_panel"); else _explicitNullProperties?.Remove("show_left_panel"); } }
+        private bool? _explicitNullValueShowLeftPanel = default!;
         /// <summary>Indicates whether the right panel is visible.</summary>
-        public bool? ShowRightPanel { get; set; }
+        public bool? ShowRightPanel { get => _explicitNullValueShowRightPanel; set { _explicitNullValueShowRightPanel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_right_panel"); else _explicitNullProperties?.Remove("show_right_panel"); } }
+        private bool? _explicitNullValueShowRightPanel = default!;
         /// <summary>Indicates whether recent items are unpinned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty? UnpinRecentItem { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty? UnpinRecentItem { get => _explicitNullValueUnpinRecentItem; set { _explicitNullValueUnpinRecentItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unpin_recent_item"); else _explicitNullProperties?.Remove("unpin_recent_item"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty? _explicitNullValueUnpinRecentItem = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty UnpinRecentItem { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty UnpinRecentItem { get => _explicitNullValueUnpinRecentItem; set { _explicitNullValueUnpinRecentItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unpin_recent_item"); else _explicitNullProperties?.Remove("unpin_recent_item"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty _explicitNullValueUnpinRecentItem = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo"/> and sets the default values.
@@ -62,7 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,6 +119,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("show_left_panel", ShowLeftPanel);
             writer.WriteBoolValue("show_right_panel", ShowRightPanel);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserCustomizeInfoUnpinRecentItemProperty>("unpin_recent_item", UnpinRecentItem);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

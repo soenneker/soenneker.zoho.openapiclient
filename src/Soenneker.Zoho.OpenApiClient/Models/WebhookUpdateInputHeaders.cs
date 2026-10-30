@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhookUpdateInputHeaders : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_parameters") is { } nullNodeCustomParameters && nullNodeCustomParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomParameters = null;
+            if (parseNode.GetChildNode("module_parameters") is { } nullNodeModuleParameters && nullNodeModuleParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleParameters = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the static key-value pairs sent as HTTP headers with every webhook execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>? CustomParameters { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>? CustomParameters { get => _explicitNullValueCustomParameters; set { _explicitNullValueCustomParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_parameters"); else _explicitNullProperties?.Remove("custom_parameters"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>? _explicitNullValueCustomParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters> CustomParameters { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters> CustomParameters { get => _explicitNullValueCustomParameters; set { _explicitNullValueCustomParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_parameters"); else _explicitNullProperties?.Remove("custom_parameters"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters> _explicitNullValueCustomParameters = default!;
 #endif
         /// <summary>Represents the module merge-field parameters sent as HTTP headers. The key must be present but may be an empty array when only custom parameters are needed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>? ModuleParameters { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>? ModuleParameters { get => _explicitNullValueModuleParameters; set { _explicitNullValueModuleParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_parameters"); else _explicitNullProperties?.Remove("module_parameters"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>? _explicitNullValueModuleParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters> ModuleParameters { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters> ModuleParameters { get => _explicitNullValueModuleParameters; set { _explicitNullValueModuleParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_parameters"); else _explicitNullProperties?.Remove("module_parameters"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters> _explicitNullValueModuleParameters = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhookUpdateInputHeaders"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.WebhookUpdateInputHeaders CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.WebhookUpdateInputHeaders();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.WebhookUpdateInputHeaders(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>("custom_parameters", CustomParameters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>("module_parameters", ModuleParameters);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

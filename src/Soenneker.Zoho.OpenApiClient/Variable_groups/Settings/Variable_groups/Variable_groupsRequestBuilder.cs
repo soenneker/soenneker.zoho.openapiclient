@@ -72,24 +72,26 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsPermissionDeniedError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update the details of one or more variable groups in your Zoho CRM organization. The request accepts a maximum of 10 variable group items. When individual items succeed or fail independently, the API returns a 207 multi-status response with per-item results.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsUpdateVariableGroupsSuccessResponse"/></returns>
         /// <param name="body">Represents the request body for the bulk update variable groups operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsPermissionDeniedError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupCollectionResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupUpdateRequestAlt body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsUpdateVariableGroupsSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupUpdateRequestAlt body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupCollectionResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupUpdateRequestAlt body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsUpdateVariableGroupsSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupUpdateRequestAlt body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -97,8 +99,10 @@ namespace Soenneker.Zoho.OpenApiClient.Variable_groups.Settings.Variable_groups
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsPermissionDeniedError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupCollectionResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsUpdateVariableGroupsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupsUpdateVariableGroupsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve a list of all variable groups in your Zoho CRM organization.

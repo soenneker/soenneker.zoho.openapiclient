@@ -12,25 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bounced_email_count") is { } nullNodeBouncedEmailCount && nullNodeBouncedEmailCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BouncedEmailCount = null;
+            if (parseNode.GetChildNode("clicked_email_count") is { } nullNodeClickedEmailCount && nullNodeClickedEmailCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickedEmailCount = null;
+            if (parseNode.GetChildNode("email_count") is { } nullNodeEmailCount && nullNodeEmailCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailCount = null;
+            if (parseNode.GetChildNode("opened_email_count") is { } nullNodeOpenedEmailCount && nullNodeOpenedEmailCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenedEmailCount = null;
+            if (parseNode.GetChildNode("replied_email_count") is { } nullNodeRepliedEmailCount && nullNodeRepliedEmailCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepliedEmailCount = null;
+            if (parseNode.GetChildNode("sent_email_count") is { } nullNodeSentEmailCount && nullNodeSentEmailCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentEmailCount = null;
+            if (parseNode.GetChildNode("unsent_email_count") is { } nullNodeUnsentEmailCount && nullNodeUnsentEmailCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnsentEmailCount = null;
+            if (parseNode.GetChildNode("unsubscribed_email_count") is { } nullNodeUnsubscribedEmailCount && nullNodeUnsubscribedEmailCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnsubscribedEmailCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of emails that bounced.</summary>
-        public int? BouncedEmailCount { get; set; }
+        public int? BouncedEmailCount { get => _explicitNullValueBouncedEmailCount; set { _explicitNullValueBouncedEmailCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounced_email_count"); else _explicitNullProperties?.Remove("bounced_email_count"); } }
+        private int? _explicitNullValueBouncedEmailCount = default!;
         /// <summary>Represents the number of emails where at least one link was clicked.</summary>
-        public int? ClickedEmailCount { get; set; }
+        public int? ClickedEmailCount { get => _explicitNullValueClickedEmailCount; set { _explicitNullValueClickedEmailCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicked_email_count"); else _explicitNullProperties?.Remove("clicked_email_count"); } }
+        private int? _explicitNullValueClickedEmailCount = default!;
         /// <summary>Represents the total number of emails sent by the follow-up action.</summary>
-        public int? EmailCount { get; set; }
+        public int? EmailCount { get => _explicitNullValueEmailCount; set { _explicitNullValueEmailCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_count"); else _explicitNullProperties?.Remove("email_count"); } }
+        private int? _explicitNullValueEmailCount = default!;
         /// <summary>Represents the number of emails that were opened by recipients.</summary>
-        public int? OpenedEmailCount { get; set; }
+        public int? OpenedEmailCount { get => _explicitNullValueOpenedEmailCount; set { _explicitNullValueOpenedEmailCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened_email_count"); else _explicitNullProperties?.Remove("opened_email_count"); } }
+        private int? _explicitNullValueOpenedEmailCount = default!;
         /// <summary>Represents the number of emails that received a reply.</summary>
-        public int? RepliedEmailCount { get; set; }
+        public int? RepliedEmailCount { get => _explicitNullValueRepliedEmailCount; set { _explicitNullValueRepliedEmailCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replied_email_count"); else _explicitNullProperties?.Remove("replied_email_count"); } }
+        private int? _explicitNullValueRepliedEmailCount = default!;
         /// <summary>Represents the number of emails that were successfully sent.</summary>
-        public int? SentEmailCount { get; set; }
+        public int? SentEmailCount { get => _explicitNullValueSentEmailCount; set { _explicitNullValueSentEmailCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_email_count"); else _explicitNullProperties?.Remove("sent_email_count"); } }
+        private int? _explicitNullValueSentEmailCount = default!;
         /// <summary>Represents the number of emails that were not sent.</summary>
-        public int? UnsentEmailCount { get; set; }
+        public int? UnsentEmailCount { get => _explicitNullValueUnsentEmailCount; set { _explicitNullValueUnsentEmailCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsent_email_count"); else _explicitNullProperties?.Remove("unsent_email_count"); } }
+        private int? _explicitNullValueUnsentEmailCount = default!;
         /// <summary>Represents the number of recipients who unsubscribed after receiving the email.</summary>
-        public int? UnsubscribedEmailCount { get; set; }
+        public int? UnsubscribedEmailCount { get => _explicitNullValueUnsubscribedEmailCount; set { _explicitNullValueUnsubscribedEmailCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsubscribed_email_count"); else _explicitNullProperties?.Remove("unsubscribed_email_count"); } }
+        private int? _explicitNullValueUnsubscribedEmailCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3"/> and sets the default values.
         /// </summary>
@@ -46,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf3(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +104,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("sent_email_count", SentEmailCount);
             writer.WriteIntValue("unsent_email_count", UnsentEmailCount);
             writer.WriteIntValue("unsubscribed_email_count", UnsubscribedEmailCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

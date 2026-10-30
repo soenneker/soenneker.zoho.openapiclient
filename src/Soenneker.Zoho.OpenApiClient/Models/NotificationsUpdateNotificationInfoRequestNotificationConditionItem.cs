@@ -12,27 +12,42 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NotificationsUpdateNotificationInfoRequestNotificationConditionItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("field_selection") is { } nullNodeFieldSelection && nullNodeFieldSelection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldSelection = null;
+            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the field selection criteria, including the grouping operator and field references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection? FieldSelection { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection? FieldSelection { get => _explicitNullValueFieldSelection; set { _explicitNullValueFieldSelection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_selection"); else _explicitNullProperties?.Remove("field_selection"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection? _explicitNullValueFieldSelection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection FieldSelection { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection FieldSelection { get => _explicitNullValueFieldSelection; set { _explicitNullValueFieldSelection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_selection"); else _explicitNullProperties?.Remove("field_selection"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection _explicitNullValueFieldSelection = default!;
 #endif
         /// <summary>Specify the CRM module context for the field-selection condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemModule? Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemModule Module { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Specify the condition type.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSelectionType? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSelectionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldSelectionType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItem"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemFieldSelection>("field_selection", FieldSelection);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsUpdateNotificationInfoRequestNotificationConditionItemModule>("module", Module);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldSelectionType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

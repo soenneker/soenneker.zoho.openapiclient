@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DealLinkEmailsLinkEmailToRecordRequestEmailsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("linked_record") is { } nullNodeLinkedRecord && nullNodeLinkedRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedRecord = null;
+            if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Record to which the email is to be linked</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemLinkedRecord? LinkedRecord { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemLinkedRecord? LinkedRecord { get => _explicitNullValueLinkedRecord; set { _explicitNullValueLinkedRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_record"); else _explicitNullProperties?.Remove("linked_record"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemLinkedRecord? _explicitNullValueLinkedRecord = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemLinkedRecord LinkedRecord { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemLinkedRecord LinkedRecord { get => _explicitNullValueLinkedRecord; set { _explicitNullValueLinkedRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_record"); else _explicitNullProperties?.Remove("linked_record"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemLinkedRecord _explicitNullValueLinkedRecord = default!;
 #endif
         /// <summary>Owner of the email</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemOwner? Owner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemOwner Owner { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItem"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemLinkedRecord>("linked_record", LinkedRecord);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequestEmailsItemOwner>("owner", Owner);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

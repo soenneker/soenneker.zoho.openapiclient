@@ -8,50 +8,55 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember4"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember5"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf4"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf5"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PutfiscalyearRequestFiscalYear : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember1"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember1? PutfiscalyearRequestFiscalYearMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf1? PutfiscalyearRequestFiscalYearOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember1 PutfiscalyearRequestFiscalYearMember1 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf1 PutfiscalyearRequestFiscalYearOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember2? PutfiscalyearRequestFiscalYearMember2 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf2? PutfiscalyearRequestFiscalYearOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember2 PutfiscalyearRequestFiscalYearMember2 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf2 PutfiscalyearRequestFiscalYearOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember3? PutfiscalyearRequestFiscalYearMember3 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf3? PutfiscalyearRequestFiscalYearOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember3 PutfiscalyearRequestFiscalYearMember3 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf3 PutfiscalyearRequestFiscalYearOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember4? PutfiscalyearRequestFiscalYearMember4 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf4? PutfiscalyearRequestFiscalYearOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember4 PutfiscalyearRequestFiscalYearMember4 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf4 PutfiscalyearRequestFiscalYearOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember5? PutfiscalyearRequestFiscalYearMember5 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf5? PutfiscalyearRequestFiscalYearOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember5 PutfiscalyearRequestFiscalYearMember5 { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf5 PutfiscalyearRequestFiscalYearOneOf5 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +68,34 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYear();
-            return result;
+            if("PutfiscalyearRequestFiscalYearOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("PutfiscalyearRequestFiscalYearOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("PutfiscalyearRequestFiscalYearOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("PutfiscalyearRequestFiscalYearOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("display_based_on") != null && (parseNode.GetChildNode("display_based_on")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("start_month".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "end_month".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("start_month") != null && (parseNode.GetChildNode("start_month")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("JANUARY".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "FEBRUARY".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "MARCH".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "APRIL".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "MAY".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "JUNE".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "JULY".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "AUGUST".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "SEPTEMBER".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "OCTOBER".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "NOVEMBER".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "DECEMBER".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("display_based_on") == null || (parseNode.GetChildNode("display_based_on")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("start_month".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "end_month".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("calendar_type") != null && (parseNode.GetChildNode("calendar_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("gregorian".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("start_month") == null || (parseNode.GetChildNode("start_month")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("JANUARY".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "FEBRUARY".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "MARCH".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "APRIL".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "MAY".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "JUNE".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "JULY".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "AUGUST".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "SEPTEMBER".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "OCTOBER".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "NOVEMBER".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "DECEMBER".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("display_based_on") == null || (parseNode.GetChildNode("display_based_on")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("start_month".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "end_month".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("calendar_type") != null && (parseNode.GetChildNode("calendar_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("custom".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("interval_display_option") != null && (parseNode.GetChildNode("interval_display_option")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("year".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "quarter".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("start_date") != null && parseNode.GetChildNode("structure") != null && (parseNode.GetChildNode("structure")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("4-4-5".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "4-5-4".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "5-4-4".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "3-3-3-4".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "3-3-4-3".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "3-4-3-3".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "4-3-3-3".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("display_based_on") == null || (parseNode.GetChildNode("display_based_on")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag7 && ("start_month".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "end_month".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("start_month") == null || (parseNode.GetChildNode("start_month")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag8 && ("JANUARY".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "FEBRUARY".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "MARCH".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "APRIL".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "MAY".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "JUNE".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "JULY".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "AUGUST".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "SEPTEMBER".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "OCTOBER".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "NOVEMBER".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "DECEMBER".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.PutfiscalyearRequestFiscalYearOneOf1 == null && result.PutfiscalyearRequestFiscalYearOneOf2 == null && result.PutfiscalyearRequestFiscalYearOneOf3 == null && result.PutfiscalyearRequestFiscalYearOneOf4 == null && result.PutfiscalyearRequestFiscalYearOneOf5 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.PutfiscalyearRequestFiscalYearOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf1(), parseNode);
+            if (result.PutfiscalyearRequestFiscalYearOneOf1 == null && result.PutfiscalyearRequestFiscalYearOneOf2 == null && result.PutfiscalyearRequestFiscalYearOneOf3 == null && result.PutfiscalyearRequestFiscalYearOneOf4 == null && result.PutfiscalyearRequestFiscalYearOneOf5 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.PutfiscalyearRequestFiscalYearOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf2(), parseNode);
+            if (result.PutfiscalyearRequestFiscalYearOneOf1 == null && result.PutfiscalyearRequestFiscalYearOneOf2 == null && result.PutfiscalyearRequestFiscalYearOneOf3 == null && result.PutfiscalyearRequestFiscalYearOneOf4 == null && result.PutfiscalyearRequestFiscalYearOneOf5 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.PutfiscalyearRequestFiscalYearOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf3(), parseNode);
+            if (result.PutfiscalyearRequestFiscalYearOneOf1 == null && result.PutfiscalyearRequestFiscalYearOneOf2 == null && result.PutfiscalyearRequestFiscalYearOneOf3 == null && result.PutfiscalyearRequestFiscalYearOneOf4 == null && result.PutfiscalyearRequestFiscalYearOneOf5 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.PutfiscalyearRequestFiscalYearOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf4(), parseNode);
+            if (result.PutfiscalyearRequestFiscalYearOneOf1 == null && result.PutfiscalyearRequestFiscalYearOneOf2 == null && result.PutfiscalyearRequestFiscalYearOneOf3 == null && result.PutfiscalyearRequestFiscalYearOneOf4 == null && result.PutfiscalyearRequestFiscalYearOneOf5 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,25 +103,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PutfiscalyearRequestFiscalYearMember1 != null)
+            if(PutfiscalyearRequestFiscalYearOneOf1 != null)
             {
-                return PutfiscalyearRequestFiscalYearMember1.GetFieldDeserializers();
+                return PutfiscalyearRequestFiscalYearOneOf1.GetFieldDeserializers();
             }
-            else if(PutfiscalyearRequestFiscalYearMember2 != null)
+            else if(PutfiscalyearRequestFiscalYearOneOf2 != null)
             {
-                return PutfiscalyearRequestFiscalYearMember2.GetFieldDeserializers();
+                return PutfiscalyearRequestFiscalYearOneOf2.GetFieldDeserializers();
             }
-            else if(PutfiscalyearRequestFiscalYearMember3 != null)
+            else if(PutfiscalyearRequestFiscalYearOneOf3 != null)
             {
-                return PutfiscalyearRequestFiscalYearMember3.GetFieldDeserializers();
+                return PutfiscalyearRequestFiscalYearOneOf3.GetFieldDeserializers();
             }
-            else if(PutfiscalyearRequestFiscalYearMember4 != null)
+            else if(PutfiscalyearRequestFiscalYearOneOf4 != null)
             {
-                return PutfiscalyearRequestFiscalYearMember4.GetFieldDeserializers();
+                return PutfiscalyearRequestFiscalYearOneOf4.GetFieldDeserializers();
             }
-            else if(PutfiscalyearRequestFiscalYearMember5 != null)
+            else if(PutfiscalyearRequestFiscalYearOneOf5 != null)
             {
-                return PutfiscalyearRequestFiscalYearMember5.GetFieldDeserializers();
+                return PutfiscalyearRequestFiscalYearOneOf5.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -99,26 +131,38 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (PutfiscalyearRequestFiscalYearOneOf1 == null && PutfiscalyearRequestFiscalYearOneOf2 == null && PutfiscalyearRequestFiscalYearOneOf3 == null && PutfiscalyearRequestFiscalYearOneOf4 == null && PutfiscalyearRequestFiscalYearOneOf5 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (PutfiscalyearRequestFiscalYearOneOf1 != null && PutfiscalyearRequestFiscalYearOneOf2 == null && PutfiscalyearRequestFiscalYearOneOf3 == null && PutfiscalyearRequestFiscalYearOneOf4 == null && PutfiscalyearRequestFiscalYearOneOf5 == null) { if (PutfiscalyearRequestFiscalYearOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PutfiscalyearRequestFiscalYearOneOf1); return; }
+            if (PutfiscalyearRequestFiscalYearOneOf2 != null && PutfiscalyearRequestFiscalYearOneOf1 == null && PutfiscalyearRequestFiscalYearOneOf3 == null && PutfiscalyearRequestFiscalYearOneOf4 == null && PutfiscalyearRequestFiscalYearOneOf5 == null) { if (PutfiscalyearRequestFiscalYearOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PutfiscalyearRequestFiscalYearOneOf2); return; }
+            if (PutfiscalyearRequestFiscalYearOneOf3 != null && PutfiscalyearRequestFiscalYearOneOf1 == null && PutfiscalyearRequestFiscalYearOneOf2 == null && PutfiscalyearRequestFiscalYearOneOf4 == null && PutfiscalyearRequestFiscalYearOneOf5 == null) { if (PutfiscalyearRequestFiscalYearOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PutfiscalyearRequestFiscalYearOneOf3); return; }
+            if (PutfiscalyearRequestFiscalYearOneOf4 != null && PutfiscalyearRequestFiscalYearOneOf1 == null && PutfiscalyearRequestFiscalYearOneOf2 == null && PutfiscalyearRequestFiscalYearOneOf3 == null && PutfiscalyearRequestFiscalYearOneOf5 == null) { if (PutfiscalyearRequestFiscalYearOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PutfiscalyearRequestFiscalYearOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(PutfiscalyearRequestFiscalYearMember1 != null)
+            if(PutfiscalyearRequestFiscalYearOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember1>(null, PutfiscalyearRequestFiscalYearMember1);
+                if (PutfiscalyearRequestFiscalYearOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf1>(null, PutfiscalyearRequestFiscalYearOneOf1);
             }
-            else if(PutfiscalyearRequestFiscalYearMember2 != null)
+            else if(PutfiscalyearRequestFiscalYearOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember2>(null, PutfiscalyearRequestFiscalYearMember2);
+                if (PutfiscalyearRequestFiscalYearOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf2>(null, PutfiscalyearRequestFiscalYearOneOf2);
             }
-            else if(PutfiscalyearRequestFiscalYearMember3 != null)
+            else if(PutfiscalyearRequestFiscalYearOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember3>(null, PutfiscalyearRequestFiscalYearMember3);
+                if (PutfiscalyearRequestFiscalYearOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf3>(null, PutfiscalyearRequestFiscalYearOneOf3);
             }
-            else if(PutfiscalyearRequestFiscalYearMember4 != null)
+            else if(PutfiscalyearRequestFiscalYearOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember4>(null, PutfiscalyearRequestFiscalYearMember4);
+                if (PutfiscalyearRequestFiscalYearOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf4>(null, PutfiscalyearRequestFiscalYearOneOf4);
             }
-            else if(PutfiscalyearRequestFiscalYearMember5 != null)
+            else if(PutfiscalyearRequestFiscalYearOneOf5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearMember5>(null, PutfiscalyearRequestFiscalYearMember5);
+                if (PutfiscalyearRequestFiscalYearOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf5>(null, PutfiscalyearRequestFiscalYearOneOf5);
             }
         }
     }

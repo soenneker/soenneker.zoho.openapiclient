@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldMappingForReadItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("crm_field") is { } nullNodeCrmField && nullNodeCrmField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrmField = null;
+            if (parseNode.GetChildNode("enrich_field") is { } nullNodeEnrichField && nullNodeEnrichField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnrichField = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>CRM field object with additional display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemCrmField? CrmField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemCrmField? CrmField { get => _explicitNullValueCrmField; set { _explicitNullValueCrmField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crm_field"); else _explicitNullProperties?.Remove("crm_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemCrmField? _explicitNullValueCrmField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemCrmField CrmField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemCrmField CrmField { get => _explicitNullValueCrmField; set { _explicitNullValueCrmField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crm_field"); else _explicitNullProperties?.Remove("crm_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemCrmField _explicitNullValueCrmField = default!;
 #endif
         /// <summary>Zia enrichment field metadata with display label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemEnrichField? EnrichField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemEnrichField? EnrichField { get => _explicitNullValueEnrichField; set { _explicitNullValueEnrichField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrich_field"); else _explicitNullProperties?.Remove("enrich_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemEnrichField? _explicitNullValueEnrichField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemEnrichField EnrichField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemEnrichField EnrichField { get => _explicitNullValueEnrichField; set { _explicitNullValueEnrichField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrich_field"); else _explicitNullProperties?.Remove("enrich_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemEnrichField _explicitNullValueEnrichField = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItem"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemCrmField>("crm_field", CrmField);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForReadItemEnrichField>("enrich_field", EnrichField);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

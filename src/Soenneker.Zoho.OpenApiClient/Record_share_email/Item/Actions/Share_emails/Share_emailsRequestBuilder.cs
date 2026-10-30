@@ -36,18 +36,18 @@ namespace Soenneker.Zoho.OpenApiClient.Record_share_email.Item.Actions.Share_ema
         /// <summary>
         /// To share email threads linked to multiple CRM records with colleagues in the same organization. Accepts up to 100 record IDs per request. Supports partial success - each record in the response is processed independently, and individual results indicate success or failure.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmailsSuccessResponse"/></returns>
         /// <param name="body">Represents the request body schema for sharing emails in bulk, containing an array of record IDs.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmailsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmailsSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmailsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails200Response> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmailsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmailsSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmailsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -55,8 +55,10 @@ namespace Soenneker.Zoho.OpenApiClient.Record_share_email.Item.Actions.Share_ema
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmailsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmailsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To share email threads linked to multiple CRM records with colleagues in the same organization. Accepts up to 100 record IDs per request. Supports partial success - each record in the response is processed independently, and individual results indicate success or failure.

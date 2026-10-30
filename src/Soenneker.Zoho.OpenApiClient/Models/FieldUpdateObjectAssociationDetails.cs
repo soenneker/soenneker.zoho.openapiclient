@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldUpdateObjectAssociationDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("lookup_field") is { } nullNodeLookupField && nullNodeLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupField = null;
+            if (parseNode.GetChildNode("related_field") is { } nullNodeRelatedField && nullNodeRelatedField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedField = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the lookup field used to establish the association, identifiable by its ID, API name, or a combination of both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1LookupField? LookupField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1LookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1LookupField? _explicitNullValueLookupField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1LookupField LookupField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1LookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1LookupField _explicitNullValueLookupField = default!;
 #endif
         /// <summary>Represents the related field on the associated module used to complete the lookup association, identifiable by its ID or API name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1RelatedField? RelatedField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1RelatedField? RelatedField { get => _explicitNullValueRelatedField; set { _explicitNullValueRelatedField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_field"); else _explicitNullProperties?.Remove("related_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1RelatedField? _explicitNullValueRelatedField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1RelatedField RelatedField { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1RelatedField RelatedField { get => _explicitNullValueRelatedField; set { _explicitNullValueRelatedField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_field"); else _explicitNullProperties?.Remove("related_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1RelatedField _explicitNullValueRelatedField = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObjectAssociationDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1LookupField>("lookup_field", LookupField);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PatchAssociationDetailsOneOf1RelatedField>("related_field", RelatedField);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

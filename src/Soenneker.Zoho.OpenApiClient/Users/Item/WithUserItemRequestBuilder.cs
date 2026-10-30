@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Users.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.UsersDeleteUser403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersDeleteUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersDeleteUser200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -72,7 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Users.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersGetSingleUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersGetSingleUser200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersGetSingleUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersGetSingleUser200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update the details of a specific user in your Zoho CRM organization by user ID.
@@ -98,6 +100,8 @@ namespace Soenneker.Zoho.OpenApiClient.Users.Item
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateSingleUser400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateSingleUser403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateSingleUser200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UsersUpdateSingleUser200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,34 +12,52 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MultiselectLookupConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("connected_details") is { } nullNodeConnectedDetails && nullNodeConnectedDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedDetails = null;
+            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("field_enabled") is { } nullNodeFieldEnabled && nullNodeFieldEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldEnabled = null;
+            if (parseNode.GetChildNode("linking_details") is { } nullNodeLinkingDetails && nullNodeLinkingDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkingDetails = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Details of the connected module and field in the multiselectlookup relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigConnectedDetails? ConnectedDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigConnectedDetails? ConnectedDetails { get => _explicitNullValueConnectedDetails; set { _explicitNullValueConnectedDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_details"); else _explicitNullProperties?.Remove("connected_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigConnectedDetails? _explicitNullValueConnectedDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigConnectedDetails ConnectedDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigConnectedDetails ConnectedDetails { get => _explicitNullValueConnectedDetails; set { _explicitNullValueConnectedDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_details"); else _explicitNullProperties?.Remove("connected_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigConnectedDetails _explicitNullValueConnectedDetails = default!;
 #endif
         /// <summary>Lookup field configuration for the multiselectlookup relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigField? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigField Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigField _explicitNullValueField = default!;
 #endif
         /// <summary>Indicates whether the multiselectlookup field is enabled. Possible values: **true**, **false**. </summary>
-        public bool? FieldEnabled { get; set; }
+        public bool? FieldEnabled { get => _explicitNullValueFieldEnabled; set { _explicitNullValueFieldEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_enabled"); else _explicitNullProperties?.Remove("field_enabled"); } }
+        private bool? _explicitNullValueFieldEnabled = default!;
         /// <summary>Details of the linking module that connects the two entities in the multiselectlookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigLinkingDetails? LinkingDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigLinkingDetails? LinkingDetails { get => _explicitNullValueLinkingDetails; set { _explicitNullValueLinkingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linking_details"); else _explicitNullProperties?.Remove("linking_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigLinkingDetails? _explicitNullValueLinkingDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigLinkingDetails LinkingDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigLinkingDetails LinkingDetails { get => _explicitNullValueLinkingDetails; set { _explicitNullValueLinkingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linking_details"); else _explicitNullProperties?.Remove("linking_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigLinkingDetails _explicitNullValueLinkingDetails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfig"/> and sets the default values.
@@ -56,7 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigField>("field", Field);
             writer.WriteBoolValue("field_enabled", FieldEnabled);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MultiselectLookupConfigLinkingDetails>("linking_details", LinkingDetails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

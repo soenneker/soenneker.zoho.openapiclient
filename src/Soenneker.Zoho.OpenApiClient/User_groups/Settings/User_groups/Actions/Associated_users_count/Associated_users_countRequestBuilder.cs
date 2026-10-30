@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Settings.User_groups.Actions.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount404Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,114 +12,162 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailDraftsUpdateEmailDraftsRequestEmailDraftsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attachments") is { } nullNodeAttachments && nullNodeAttachments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attachments = null;
+            if (parseNode.GetChildNode("bcc") is { } nullNodeBcc && nullNodeBcc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bcc = null;
+            if (parseNode.GetChildNode("cc") is { } nullNodeCc && nullNodeCc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cc = null;
+            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
+            if (parseNode.GetChildNode("inventory_details") is { } nullNodeInventoryDetails && nullNodeInventoryDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InventoryDetails = null;
+            if (parseNode.GetChildNode("linked_record") is { } nullNodeLinkedRecord && nullNodeLinkedRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedRecord = null;
+            if (parseNode.GetChildNode("plainTextContent") is { } nullNodePlainTextContent && nullNodePlainTextContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlainTextContent = null;
+            if (parseNode.GetChildNode("reply_to") is { } nullNodeReplyTo && nullNodeReplyTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplyTo = null;
+            if (parseNode.GetChildNode("rich_text") is { } nullNodeRichText && nullNodeRichText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RichText = null;
+            if (parseNode.GetChildNode("schedule_details") is { } nullNodeScheduleDetails && nullNodeScheduleDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleDetails = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+            if (parseNode.GetChildNode("to") is { } nullNodeTo && nullNodeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) To = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Attachments list; replaces existing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemAttachmentsItem>? Attachments { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemAttachmentsItem>? Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemAttachmentsItem>? _explicitNullValueAttachments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemAttachmentsItem> Attachments { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemAttachmentsItem> Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemAttachmentsItem> _explicitNullValueAttachments = default!;
 #endif
         /// <summary>BCC recipients. Replaces the existing list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemBccItem>? Bcc { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemBccItem>? Bcc { get => _explicitNullValueBcc; set { _explicitNullValueBcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bcc"); else _explicitNullProperties?.Remove("bcc"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemBccItem>? _explicitNullValueBcc = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemBccItem> Bcc { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemBccItem> Bcc { get => _explicitNullValueBcc; set { _explicitNullValueBcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bcc"); else _explicitNullProperties?.Remove("bcc"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemBccItem> _explicitNullValueBcc = default!;
 #endif
         /// <summary>CC recipients. Replaces the existing list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemCcItem>? Cc { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemCcItem>? Cc { get => _explicitNullValueCc; set { _explicitNullValueCc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc"); else _explicitNullProperties?.Remove("cc"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemCcItem>? _explicitNullValueCc = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemCcItem> Cc { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemCcItem> Cc { get => _explicitNullValueCc; set { _explicitNullValueCc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc"); else _explicitNullProperties?.Remove("cc"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemCcItem> _explicitNullValueCc = default!;
 #endif
         /// <summary>HTML body when rich_text is true; null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private string? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public string Content { get; set; }
+        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private string _explicitNullValueContent = default!;
 #endif
         /// <summary>Specifies the sender email address. Must be a configured outgoing address for the user. Use the [From Addresses API](from_addresses.yaml#$.paths./settings/emails/actions/from_addresses.get) to retrieve valid from addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? From { get; set; }
+        public string? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        private string? _explicitNullValueFrom = default!;
 #nullable restore
 #else
-        public string From { get; set; }
+        public string From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        private string _explicitNullValueFrom = default!;
 #endif
         /// <summary>Inventory email details; null to remove.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemInventoryDetails? InventoryDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemInventoryDetails? InventoryDetails { get => _explicitNullValueInventoryDetails; set { _explicitNullValueInventoryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_details"); else _explicitNullProperties?.Remove("inventory_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemInventoryDetails? _explicitNullValueInventoryDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemInventoryDetails InventoryDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemInventoryDetails InventoryDetails { get => _explicitNullValueInventoryDetails; set { _explicitNullValueInventoryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_details"); else _explicitNullProperties?.Remove("inventory_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemInventoryDetails _explicitNullValueInventoryDetails = default!;
 #endif
         /// <summary>CRM record to link this draft to; null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemLinkedRecord? LinkedRecord { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemLinkedRecord? LinkedRecord { get => _explicitNullValueLinkedRecord; set { _explicitNullValueLinkedRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_record"); else _explicitNullProperties?.Remove("linked_record"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemLinkedRecord? _explicitNullValueLinkedRecord = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemLinkedRecord LinkedRecord { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemLinkedRecord LinkedRecord { get => _explicitNullValueLinkedRecord; set { _explicitNullValueLinkedRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_record"); else _explicitNullProperties?.Remove("linked_record"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemLinkedRecord _explicitNullValueLinkedRecord = default!;
 #endif
         /// <summary>Plain text body when rich_text is false; null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlainTextContent { get; set; }
+        public string? PlainTextContent { get => _explicitNullValuePlainTextContent; set { _explicitNullValuePlainTextContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plainTextContent"); else _explicitNullProperties?.Remove("plainTextContent"); } }
+        private string? _explicitNullValuePlainTextContent = default!;
 #nullable restore
 #else
-        public string PlainTextContent { get; set; }
+        public string PlainTextContent { get => _explicitNullValuePlainTextContent; set { _explicitNullValuePlainTextContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plainTextContent"); else _explicitNullProperties?.Remove("plainTextContent"); } }
+        private string _explicitNullValuePlainTextContent = default!;
 #endif
         /// <summary>Reply-to email address; null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReplyTo { get; set; }
+        public string? ReplyTo { get => _explicitNullValueReplyTo; set { _explicitNullValueReplyTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to"); else _explicitNullProperties?.Remove("reply_to"); } }
+        private string? _explicitNullValueReplyTo = default!;
 #nullable restore
 #else
-        public string ReplyTo { get; set; }
+        public string ReplyTo { get => _explicitNullValueReplyTo; set { _explicitNullValueReplyTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to"); else _explicitNullProperties?.Remove("reply_to"); } }
+        private string _explicitNullValueReplyTo = default!;
 #endif
         /// <summary>true for HTML editor; false for plain text.</summary>
-        public bool? RichText { get; set; }
+        public bool? RichText { get => _explicitNullValueRichText; set { _explicitNullValueRichText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rich_text"); else _explicitNullProperties?.Remove("rich_text"); } }
+        private bool? _explicitNullValueRichText = default!;
         /// <summary>Scheduling details; null to remove schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemScheduleDetails? ScheduleDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemScheduleDetails? ScheduleDetails { get => _explicitNullValueScheduleDetails; set { _explicitNullValueScheduleDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_details"); else _explicitNullProperties?.Remove("schedule_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemScheduleDetails? _explicitNullValueScheduleDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemScheduleDetails ScheduleDetails { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemScheduleDetails ScheduleDetails { get => _explicitNullValueScheduleDetails; set { _explicitNullValueScheduleDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_details"); else _explicitNullProperties?.Remove("schedule_details"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemScheduleDetails _explicitNullValueScheduleDetails = default!;
 #endif
         /// <summary>Source identifier string stored at draft creation time (e.g., campaign name or integration identifier).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get; set; }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public string Source { get; set; }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string _explicitNullValueSource = default!;
 #endif
         /// <summary>Email subject; null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get; set; }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get; set; }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>Primary recipients. Replaces the existing list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemToItem>? To { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemToItem>? To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemToItem>? _explicitNullValueTo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemToItem> To { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemToItem> To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemToItem> _explicitNullValueTo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItem"/> and sets the default values.
@@ -136,7 +184,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -183,6 +231,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("subject", Subject);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsUpdateEmailDraftsRequestEmailDraftsItemToItem>("to", To);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

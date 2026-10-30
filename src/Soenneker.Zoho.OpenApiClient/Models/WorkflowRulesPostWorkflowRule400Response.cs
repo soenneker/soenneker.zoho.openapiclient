@@ -13,7 +13,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRulesPostWorkflowRule400Response : ApiException, IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("workflow_rules") is { } nullNodeWorkflowRules && nullNodeWorkflowRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRules = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The primary error message.</summary>
@@ -21,10 +29,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of error objects</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem>? WorkflowRules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem>? WorkflowRules { get => _explicitNullValueWorkflowRules; set { _explicitNullValueWorkflowRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rules"); else _explicitNullProperties?.Remove("workflow_rules"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem>? _explicitNullValueWorkflowRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem> WorkflowRules { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem> WorkflowRules { get => _explicitNullValueWorkflowRules; set { _explicitNullValueWorkflowRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rules"); else _explicitNullProperties?.Remove("workflow_rules"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem> _explicitNullValueWorkflowRules = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400Response"/> and sets the default values.
@@ -41,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem>("workflow_rules", WorkflowRules);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

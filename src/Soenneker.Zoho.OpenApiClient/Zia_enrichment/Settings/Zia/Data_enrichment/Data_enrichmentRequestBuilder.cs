@@ -68,6 +68,8 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_enrichment.Settings.Zia.Data_enrichme
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentGetZiaEnrichmentConfiguration400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentGetZiaEnrichmentConfiguration403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentGetZiaEnrichmentConfiguration200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentGetZiaEnrichmentConfiguration200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -93,6 +95,8 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_enrichment.Settings.Zia.Data_enrichme
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentCreateZiaEnrichmentConfigurations403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentCreateZiaEnrichmentConfigurations201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentCreateZiaEnrichmentConfigurations201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

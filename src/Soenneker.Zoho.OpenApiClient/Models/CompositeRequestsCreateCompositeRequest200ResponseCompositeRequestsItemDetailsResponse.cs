@@ -12,27 +12,42 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("status_code") is { } nullNodeStatusCode && nullNodeStatusCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusCode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the response body from the wrapped API call. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseBody? Body { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseBody? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseBody? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseBody Body { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseBody Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseBody _explicitNullValueBody = default!;
 #endif
         /// <summary>Contains the response headers from the wrapped API call. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseHeaders? Headers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseHeaders Headers { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>Represents the status code from the wrapped API call. </summary>
-        public int? StatusCode { get; set; }
+        public int? StatusCode { get => _explicitNullValueStatusCode; set { _explicitNullValueStatusCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_code"); else _explicitNullProperties?.Remove("status_code"); } }
+        private int? _explicitNullValueStatusCode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponse"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseBody>("body", Body);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItemDetailsResponseHeaders>("headers", Headers);
             writer.WriteIntValue("status_code", StatusCode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

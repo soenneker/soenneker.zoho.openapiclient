@@ -12,32 +12,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationWebhooksResponseUrlParameters : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_parameters") is { } nullNodeCustomParameters && nullNodeCustomParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomParameters = null;
+            if (parseNode.GetChildNode("module_parameters") is { } nullNodeModuleParameters && nullNodeModuleParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleParameters = null;
+            if (parseNode.GetChildNode("user_defined_parameters") is { } nullNodeUserDefinedParameters && nullNodeUserDefinedParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserDefinedParameters = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the static key-value pairs appended as URL query parameters to every webhook request. Each entry must have a unique name.- name (string, optional)Specify a name to the custom header.- value (string, optional)Specify a value to the custom header.&quot;custom_parameters&quot;: [    {        &quot;name&quot;: &quot;OAuth&quot;,        &quot;value&quot;: &quot;2.0&quot;    }]. A maximum  of 10 entries is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>? CustomParameters { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>? CustomParameters { get => _explicitNullValueCustomParameters; set { _explicitNullValueCustomParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_parameters"); else _explicitNullProperties?.Remove("custom_parameters"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>? _explicitNullValueCustomParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters> CustomParameters { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters> CustomParameters { get => _explicitNullValueCustomParameters; set { _explicitNullValueCustomParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_parameters"); else _explicitNullProperties?.Remove("custom_parameters"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters> _explicitNullValueCustomParameters = default!;
 #endif
         /// <summary>Represents the module merge-field parameters appended as URL query parameters. Values are resolved at runtime from the triggering CRM record using the merge-field format (for example, ${!Leads.Email}). Use the [Get Fields Metadata](fields.yaml#$.paths./settings/fields.get) resource to retrieve valid field API names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>? ModuleParameters { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>? ModuleParameters { get => _explicitNullValueModuleParameters; set { _explicitNullValueModuleParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_parameters"); else _explicitNullProperties?.Remove("module_parameters"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>? _explicitNullValueModuleParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters> ModuleParameters { get; set; }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters> ModuleParameters { get => _explicitNullValueModuleParameters; set { _explicitNullValueModuleParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_parameters"); else _explicitNullProperties?.Remove("module_parameters"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters> _explicitNullValueModuleParameters = default!;
 #endif
         /// <summary>A single user-defined parameter appended as a URL query parameter. Note: The API uses plural &apos;user_defined_parameters&apos; here but singular &apos;user_defined_parameter&apos; in form_data_content  - both are single objects, not arrays.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters? UserDefinedParameters { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters? UserDefinedParameters { get => _explicitNullValueUserDefinedParameters; set { _explicitNullValueUserDefinedParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_defined_parameters"); else _explicitNullProperties?.Remove("user_defined_parameters"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters? _explicitNullValueUserDefinedParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters UserDefinedParameters { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters UserDefinedParameters { get => _explicitNullValueUserDefinedParameters; set { _explicitNullValueUserDefinedParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_defined_parameters"); else _explicitNullProperties?.Remove("user_defined_parameters"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters _explicitNullValueUserDefinedParameters = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseUrlParameters"/> and sets the default values.
@@ -54,7 +70,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseUrlParameters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseUrlParameters();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AutomationWebhooksResponseUrlParameters(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>("custom_parameters", CustomParameters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>("module_parameters", ModuleParameters);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookUrlParametersUserDefinedParameters>("user_defined_parameters", UserDefinedParameters);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

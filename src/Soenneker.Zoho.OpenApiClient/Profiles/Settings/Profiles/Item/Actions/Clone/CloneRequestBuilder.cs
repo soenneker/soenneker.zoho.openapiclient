@@ -57,6 +57,8 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.Actions.C
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CloneProfileResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CloneProfileResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

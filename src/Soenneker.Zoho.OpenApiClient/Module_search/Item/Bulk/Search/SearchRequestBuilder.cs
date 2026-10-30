@@ -65,6 +65,8 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Bulk.Search
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
                 { "502", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchBulkSearchRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchBulkSearchRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -55,20 +55,20 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin
         /// <summary>
         /// To permanently delete one or more records from the Recycle Bin in your Zoho CRM account. When deleting a parent record, Zoho CRM also removes all its associated child records from the Recycle Bin, such as Notes and Attachments. When the total number of records to delete is 1000 or fewer, the operation completes immediately and returns a 200 response with per-item results. When the total exceeds 1000, the deletion runs as a background job and returns a 202 response. Partial successes return a 207 multi-status response with individual success and error entries per record.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ResultList"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecordsSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ResultList?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Recycle_binRequestBuilder.Recycle_binRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecordsSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Recycle_binRequestBuilder.Recycle_binRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ResultList> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Recycle_binRequestBuilder.Recycle_binRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecordsSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Recycle_binRequestBuilder.Recycle_binRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ResultList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecordsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecordsSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve a paginated list of records currently present in the Recycle Bin in your Zoho CRM account. The response contains up to 200 records per page, along with pagination metadata. The list can be filtered by display name, source module, the user who deleted the records, or the deletion timestamp. Sorting is supported by display name, deletion time, or deleted-by user in ascending or descending order.
@@ -86,7 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To permanently delete one or more records from the Recycle Bin in your Zoho CRM account. When deleting a parent record, Zoho CRM also removes all its associated child records from the Recycle Bin, such as Notes and Attachments. When the total number of records to delete is 1000 or fewer, the operation completes immediately and returns a 200 response with per-item results. When the total exceeds 1000, the deletion runs as a background job and returns a 202 response. Partial successes return a 207 multi-status response with individual success and error entries per record.

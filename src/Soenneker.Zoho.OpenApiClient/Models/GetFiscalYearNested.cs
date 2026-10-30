@@ -12,80 +12,114 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetFiscalYearNested : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("calendar_type") is { } nullNodeCalendarType && nullNodeCalendarType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalendarType = null;
+            if (parseNode.GetChildNode("display_based_on") is { } nullNodeDisplayBasedOn && nullNodeDisplayBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayBasedOn = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("interval_display_option") is { } nullNodeIntervalDisplayOption && nullNodeIntervalDisplayOption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntervalDisplayOption = null;
+            if (parseNode.GetChildNode("past_surplus_weeks") is { } nullNodePastSurplusWeeks && nullNodePastSurplusWeeks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PastSurplusWeeks = null;
+            if (parseNode.GetChildNode("start_date") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+            if (parseNode.GetChildNode("start_month") is { } nullNodeStartMonth && nullNodeStartMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartMonth = null;
+            if (parseNode.GetChildNode("structure") is { } nullNodeStructure && nullNodeStructure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Structure = null;
+            if (parseNode.GetChildNode("surplus_week") is { } nullNodeSurplusWeek && nullNodeSurplusWeek.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SurplusWeek = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the calendar type configured for the fiscal year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CalendarType { get; set; }
+        public string? CalendarType { get => _explicitNullValueCalendarType; set { _explicitNullValueCalendarType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendar_type"); else _explicitNullProperties?.Remove("calendar_type"); } }
+        private string? _explicitNullValueCalendarType = default!;
 #nullable restore
 #else
-        public string CalendarType { get; set; }
+        public string CalendarType { get => _explicitNullValueCalendarType; set { _explicitNullValueCalendarType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendar_type"); else _explicitNullProperties?.Remove("calendar_type"); } }
+        private string _explicitNullValueCalendarType = default!;
 #endif
         /// <summary>Represents whether the fiscal year label is based on the start month or end month of the fiscal period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayBasedOn { get; set; }
+        public string? DisplayBasedOn { get => _explicitNullValueDisplayBasedOn; set { _explicitNullValueDisplayBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_based_on"); else _explicitNullProperties?.Remove("display_based_on"); } }
+        private string? _explicitNullValueDisplayBasedOn = default!;
 #nullable restore
 #else
-        public string DisplayBasedOn { get; set; }
+        public string DisplayBasedOn { get => _explicitNullValueDisplayBasedOn; set { _explicitNullValueDisplayBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_based_on"); else _explicitNullProperties?.Remove("display_based_on"); } }
+        private string _explicitNullValueDisplayBasedOn = default!;
 #endif
         /// <summary>Represents the unique identifier of the fiscal year configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the display format configured for fiscal periods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntervalDisplayOption { get; set; }
+        public string? IntervalDisplayOption { get => _explicitNullValueIntervalDisplayOption; set { _explicitNullValueIntervalDisplayOption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval_display_option"); else _explicitNullProperties?.Remove("interval_display_option"); } }
+        private string? _explicitNullValueIntervalDisplayOption = default!;
 #nullable restore
 #else
-        public string IntervalDisplayOption { get; set; }
+        public string IntervalDisplayOption { get => _explicitNullValueIntervalDisplayOption; set { _explicitNullValueIntervalDisplayOption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval_display_option"); else _explicitNullProperties?.Remove("interval_display_option"); } }
+        private string _explicitNullValueIntervalDisplayOption = default!;
 #endif
         /// <summary>Represents the surplus week configurations from past fiscal years.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? PastSurplusWeeks { get; set; }
+        public UntypedNode? PastSurplusWeeks { get => _explicitNullValuePastSurplusWeeks; set { _explicitNullValuePastSurplusWeeks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("past_surplus_weeks"); else _explicitNullProperties?.Remove("past_surplus_weeks"); } }
+        private UntypedNode? _explicitNullValuePastSurplusWeeks = default!;
 #nullable restore
 #else
-        public UntypedNode PastSurplusWeeks { get; set; }
+        public UntypedNode PastSurplusWeeks { get => _explicitNullValuePastSurplusWeeks; set { _explicitNullValuePastSurplusWeeks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("past_surplus_weeks"); else _explicitNullProperties?.Remove("past_surplus_weeks"); } }
+        private UntypedNode _explicitNullValuePastSurplusWeeks = default!;
 #endif
         /// <summary>Represents the start date of the custom fiscal year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartDate { get; set; }
+        public string? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
+        private string? _explicitNullValueStartDate = default!;
 #nullable restore
 #else
-        public string StartDate { get; set; }
+        public string StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
+        private string _explicitNullValueStartDate = default!;
 #endif
         /// <summary>Represents the start month of the fiscal year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartMonth { get; set; }
+        public string? StartMonth { get => _explicitNullValueStartMonth; set { _explicitNullValueStartMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_month"); else _explicitNullProperties?.Remove("start_month"); } }
+        private string? _explicitNullValueStartMonth = default!;
 #nullable restore
 #else
-        public string StartMonth { get; set; }
+        public string StartMonth { get => _explicitNullValueStartMonth; set { _explicitNullValueStartMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_month"); else _explicitNullProperties?.Remove("start_month"); } }
+        private string _explicitNullValueStartMonth = default!;
 #endif
         /// <summary>Represents the week distribution structure configured for the custom fiscal year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Structure { get; set; }
+        public string? Structure { get => _explicitNullValueStructure; set { _explicitNullValueStructure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structure"); else _explicitNullProperties?.Remove("structure"); } }
+        private string? _explicitNullValueStructure = default!;
 #nullable restore
 #else
-        public string Structure { get; set; }
+        public string Structure { get => _explicitNullValueStructure; set { _explicitNullValueStructure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structure"); else _explicitNullProperties?.Remove("structure"); } }
+        private string _explicitNullValueStructure = default!;
 #endif
         /// <summary>Represents the surplus week configuration, including the quarter, period, and year in which the surplus week is placed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetSurplusWeekNested? SurplusWeek { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetSurplusWeekNested? SurplusWeek { get => _explicitNullValueSurplusWeek; set { _explicitNullValueSurplusWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surplus_week"); else _explicitNullProperties?.Remove("surplus_week"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetSurplusWeekNested? _explicitNullValueSurplusWeek = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetSurplusWeekNested SurplusWeek { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetSurplusWeekNested SurplusWeek { get => _explicitNullValueSurplusWeek; set { _explicitNullValueSurplusWeek = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surplus_week"); else _explicitNullProperties?.Remove("surplus_week"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetSurplusWeekNested _explicitNullValueSurplusWeek = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested"/> and sets the default values.
@@ -102,7 +136,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GetFiscalYearNested(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,6 +173,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("start_month", StartMonth);
             writer.WriteStringValue("structure", Structure);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetSurplusWeekNested>("surplus_week", SurplusWeek);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

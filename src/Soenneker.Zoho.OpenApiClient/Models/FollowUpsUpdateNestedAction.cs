@@ -8,42 +8,47 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FollowUpsUpdateNestedAction : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications? FollowUpsUpdateNestedActionEmailNotifications { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf1? FollowUpsUpdateNestedActionOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications FollowUpsUpdateNestedActionEmailNotifications { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf1 FollowUpsUpdateNestedActionOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall? FollowUpsUpdateNestedActionScheduleCall { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf2? FollowUpsUpdateNestedActionOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall FollowUpsUpdateNestedActionScheduleCall { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf2 FollowUpsUpdateNestedActionOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks? FollowUpsUpdateNestedActionTasks { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf3? FollowUpsUpdateNestedActionOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks FollowUpsUpdateNestedActionTasks { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf3 FollowUpsUpdateNestedActionOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification? FollowUpsUpdateNestedActionWhatsappMessageNotification { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf4? FollowUpsUpdateNestedActionOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification FollowUpsUpdateNestedActionWhatsappMessageNotification { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf4 FollowUpsUpdateNestedActionOneOf4 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,23 +60,34 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction();
-            if("email_notifications".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("tasks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FollowUpsUpdateNestedActionEmailNotifications = new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications();
+                
+            }
+            else if("email_notifications".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
             }
             else if("schedule_call".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FollowUpsUpdateNestedActionScheduleCall = new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall();
-            }
-            else if("tasks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FollowUpsUpdateNestedActionTasks = new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks();
+                
             }
             else if("whatsapp_message_notification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FollowUpsUpdateNestedActionWhatsappMessageNotification = new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("tasks".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("email_notifications".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("schedule_call".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("whatsapp_message_notification".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.FollowUpsUpdateNestedActionOneOf1 == null && result.FollowUpsUpdateNestedActionOneOf2 == null && result.FollowUpsUpdateNestedActionOneOf3 == null && result.FollowUpsUpdateNestedActionOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.FollowUpsUpdateNestedActionOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf1(), parseNode);
+            if (result.FollowUpsUpdateNestedActionOneOf1 == null && result.FollowUpsUpdateNestedActionOneOf2 == null && result.FollowUpsUpdateNestedActionOneOf3 == null && result.FollowUpsUpdateNestedActionOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.FollowUpsUpdateNestedActionOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf2(), parseNode);
+            if (result.FollowUpsUpdateNestedActionOneOf1 == null && result.FollowUpsUpdateNestedActionOneOf2 == null && result.FollowUpsUpdateNestedActionOneOf3 == null && result.FollowUpsUpdateNestedActionOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.FollowUpsUpdateNestedActionOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf3(), parseNode);
+            if (result.FollowUpsUpdateNestedActionOneOf1 == null && result.FollowUpsUpdateNestedActionOneOf2 == null && result.FollowUpsUpdateNestedActionOneOf3 == null && result.FollowUpsUpdateNestedActionOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.FollowUpsUpdateNestedActionOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf4(), parseNode);
+            if (result.FollowUpsUpdateNestedActionOneOf1 == null && result.FollowUpsUpdateNestedActionOneOf2 == null && result.FollowUpsUpdateNestedActionOneOf3 == null && result.FollowUpsUpdateNestedActionOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,21 +95,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(FollowUpsUpdateNestedActionEmailNotifications != null)
+            if(FollowUpsUpdateNestedActionOneOf1 != null)
             {
-                return FollowUpsUpdateNestedActionEmailNotifications.GetFieldDeserializers();
+                return FollowUpsUpdateNestedActionOneOf1.GetFieldDeserializers();
             }
-            else if(FollowUpsUpdateNestedActionScheduleCall != null)
+            else if(FollowUpsUpdateNestedActionOneOf2 != null)
             {
-                return FollowUpsUpdateNestedActionScheduleCall.GetFieldDeserializers();
+                return FollowUpsUpdateNestedActionOneOf2.GetFieldDeserializers();
             }
-            else if(FollowUpsUpdateNestedActionTasks != null)
+            else if(FollowUpsUpdateNestedActionOneOf3 != null)
             {
-                return FollowUpsUpdateNestedActionTasks.GetFieldDeserializers();
+                return FollowUpsUpdateNestedActionOneOf3.GetFieldDeserializers();
             }
-            else if(FollowUpsUpdateNestedActionWhatsappMessageNotification != null)
+            else if(FollowUpsUpdateNestedActionOneOf4 != null)
             {
-                return FollowUpsUpdateNestedActionWhatsappMessageNotification.GetFieldDeserializers();
+                return FollowUpsUpdateNestedActionOneOf4.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -103,22 +119,33 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (FollowUpsUpdateNestedActionOneOf1 == null && FollowUpsUpdateNestedActionOneOf2 == null && FollowUpsUpdateNestedActionOneOf3 == null && FollowUpsUpdateNestedActionOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (FollowUpsUpdateNestedActionOneOf1 != null && FollowUpsUpdateNestedActionOneOf2 == null && FollowUpsUpdateNestedActionOneOf3 == null && FollowUpsUpdateNestedActionOneOf4 == null) { if (FollowUpsUpdateNestedActionOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FollowUpsUpdateNestedActionOneOf1); return; }
+            if (FollowUpsUpdateNestedActionOneOf2 != null && FollowUpsUpdateNestedActionOneOf1 == null && FollowUpsUpdateNestedActionOneOf3 == null && FollowUpsUpdateNestedActionOneOf4 == null) { if (FollowUpsUpdateNestedActionOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FollowUpsUpdateNestedActionOneOf2); return; }
+            if (FollowUpsUpdateNestedActionOneOf3 != null && FollowUpsUpdateNestedActionOneOf1 == null && FollowUpsUpdateNestedActionOneOf2 == null && FollowUpsUpdateNestedActionOneOf4 == null) { if (FollowUpsUpdateNestedActionOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FollowUpsUpdateNestedActionOneOf3); return; }
+            if (FollowUpsUpdateNestedActionOneOf4 != null && FollowUpsUpdateNestedActionOneOf1 == null && FollowUpsUpdateNestedActionOneOf2 == null && FollowUpsUpdateNestedActionOneOf3 == null) { if (FollowUpsUpdateNestedActionOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FollowUpsUpdateNestedActionOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(FollowUpsUpdateNestedActionEmailNotifications != null)
+            if(FollowUpsUpdateNestedActionOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionEmailNotifications>(null, FollowUpsUpdateNestedActionEmailNotifications);
+                if (FollowUpsUpdateNestedActionOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf1>(null, FollowUpsUpdateNestedActionOneOf1);
             }
-            else if(FollowUpsUpdateNestedActionScheduleCall != null)
+            else if(FollowUpsUpdateNestedActionOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionScheduleCall>(null, FollowUpsUpdateNestedActionScheduleCall);
+                if (FollowUpsUpdateNestedActionOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf2>(null, FollowUpsUpdateNestedActionOneOf2);
             }
-            else if(FollowUpsUpdateNestedActionTasks != null)
+            else if(FollowUpsUpdateNestedActionOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionTasks>(null, FollowUpsUpdateNestedActionTasks);
+                if (FollowUpsUpdateNestedActionOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf3>(null, FollowUpsUpdateNestedActionOneOf3);
             }
-            else if(FollowUpsUpdateNestedActionWhatsappMessageNotification != null)
+            else if(FollowUpsUpdateNestedActionOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionWhatsappMessageNotification>(null, FollowUpsUpdateNestedActionWhatsappMessageNotification);
+                if (FollowUpsUpdateNestedActionOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf4>(null, FollowUpsUpdateNestedActionOneOf4);
             }
         }
     }

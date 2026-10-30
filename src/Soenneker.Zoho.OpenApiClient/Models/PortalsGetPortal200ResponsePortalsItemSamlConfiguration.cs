@@ -12,45 +12,68 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PortalsGetPortal200ResponsePortalsItemSamlConfiguration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("login_url") is { } nullNodeLoginUrl && nullNodeLoginUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoginUrl = null;
+            if (parseNode.GetChildNode("logout_url") is { } nullNodeLogoutUrl && nullNodeLogoutUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoutUrl = null;
+            if (parseNode.GetChildNode("modified_by") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("public_key") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+        }
+
         /// <summary>Indicates whether the SAML configuration is active for the portal. Possible values: **true** - SAML SSO is enabled.</summary>
-        public bool? Active { get; set; }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the Zoho CRM user who created this SAML configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Represents the SAML SSO login URL where the portal redirects users for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoginUrl { get; set; }
+        public string? LoginUrl { get => _explicitNullValueLoginUrl; set { _explicitNullValueLoginUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_url"); else _explicitNullProperties?.Remove("login_url"); } }
+        private string? _explicitNullValueLoginUrl = default!;
 #nullable restore
 #else
-        public string LoginUrl { get; set; }
+        public string LoginUrl { get => _explicitNullValueLoginUrl; set { _explicitNullValueLoginUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_url"); else _explicitNullProperties?.Remove("login_url"); } }
+        private string _explicitNullValueLoginUrl = default!;
 #endif
         /// <summary>Represents the SAML SSO logout URL where the portal redirects users when they sign out. Must begin with `https://www.`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoutUrl { get; set; }
+        public string? LogoutUrl { get => _explicitNullValueLogoutUrl; set { _explicitNullValueLogoutUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logout_url"); else _explicitNullProperties?.Remove("logout_url"); } }
+        private string? _explicitNullValueLogoutUrl = default!;
 #nullable restore
 #else
-        public string LogoutUrl { get; set; }
+        public string LogoutUrl { get => _explicitNullValueLogoutUrl; set { _explicitNullValueLogoutUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logout_url"); else _explicitNullProperties?.Remove("logout_url"); } }
+        private string _explicitNullValueLogoutUrl = default!;
 #endif
         /// <summary>Represents the Zoho CRM user who last modified this SAML configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationModifiedBy? ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationModifiedBy? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationModifiedBy ModifiedBy { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationModifiedBy _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>Represents the SAML X.509 public key certificate used to verify assertions from the identity provider.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.Value46070E5E400D8163PublicKey? PublicKey { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.Value46070E5E400D8163PublicKey? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.Value46070E5E400D8163PublicKey? _explicitNullValuePublicKey = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration"/> and sets the default values.
         /// </summary>
@@ -66,7 +89,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +122,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("logout_url", LogoutUrl);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfigurationModifiedBy>("modified_by", ModifiedBy);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.Value46070E5E400D8163PublicKey>("public_key", PublicKey);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

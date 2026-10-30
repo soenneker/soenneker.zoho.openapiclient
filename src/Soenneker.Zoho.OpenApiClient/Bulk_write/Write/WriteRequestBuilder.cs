@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_write.Write
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJob201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create a bulk write job in your Zoho CRM organization that creates, updates, or upserts records in a target module from a previously uploaded file. The job is processed asynchronously; the response returns the job identifier that the get job details operation uses to poll job status, and an optional callback URL is notified on completion or failure.

@@ -12,27 +12,52 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowRulesCountResponseSchemaRulesCount : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_rules_configured") is { } nullNodeActiveRulesConfigured && nullNodeActiveRulesConfigured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveRulesConfigured = null;
+            if (parseNode.GetChildNode("active_rules_limit") is { } nullNodeActiveRulesLimit && nullNodeActiveRulesLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveRulesLimit = null;
+            if (parseNode.GetChildNode("active_rules_limit_per_module") is { } nullNodeActiveRulesLimitPerModule && nullNodeActiveRulesLimitPerModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveRulesLimitPerModule = null;
+            if (parseNode.GetChildNode("rules_per_process_limit") is { } nullNodeRulesPerProcessLimit && nullNodeRulesPerProcessLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesPerProcessLimit = null;
+            if (parseNode.GetChildNode("scheduled_actions_per_rule_limit") is { } nullNodeScheduledActionsPerRuleLimit && nullNodeScheduledActionsPerRuleLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledActionsPerRuleLimit = null;
+            if (parseNode.GetChildNode("total_actions_per_rule_limit") is { } nullNodeTotalActionsPerRuleLimit && nullNodeTotalActionsPerRuleLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalActionsPerRuleLimit = null;
+            if (parseNode.GetChildNode("total_rules_configured") is { } nullNodeTotalRulesConfigured && nullNodeTotalRulesConfigured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRulesConfigured = null;
+            if (parseNode.GetChildNode("total_rules_limit") is { } nullNodeTotalRulesLimit && nullNodeTotalRulesLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRulesLimit = null;
+            if (parseNode.GetChildNode("total_rules_limit_per_module") is { } nullNodeTotalRulesLimitPerModule && nullNodeTotalRulesLimitPerModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalRulesLimitPerModule = null;
+        }
+
         /// <summary>Represents the number of currently active workflow rules configured in the organization.</summary>
-        public int? ActiveRulesConfigured { get; set; }
+        public int? ActiveRulesConfigured { get => _explicitNullValueActiveRulesConfigured; set { _explicitNullValueActiveRulesConfigured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_rules_configured"); else _explicitNullProperties?.Remove("active_rules_configured"); } }
+        private int? _explicitNullValueActiveRulesConfigured = default!;
         /// <summary>Represents the maximum number of active workflow rules allowed in the organization.</summary>
-        public int? ActiveRulesLimit { get; set; }
+        public int? ActiveRulesLimit { get => _explicitNullValueActiveRulesLimit; set { _explicitNullValueActiveRulesLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_rules_limit"); else _explicitNullProperties?.Remove("active_rules_limit"); } }
+        private int? _explicitNullValueActiveRulesLimit = default!;
         /// <summary>Represents the maximum number of active workflow rules allowed per CRM module.</summary>
-        public int? ActiveRulesLimitPerModule { get; set; }
+        public int? ActiveRulesLimitPerModule { get => _explicitNullValueActiveRulesLimitPerModule; set { _explicitNullValueActiveRulesLimitPerModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_rules_limit_per_module"); else _explicitNullProperties?.Remove("active_rules_limit_per_module"); } }
+        private int? _explicitNullValueActiveRulesLimitPerModule = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the maximum number of workflow rules allowed per business process.</summary>
-        public int? RulesPerProcessLimit { get; set; }
+        public int? RulesPerProcessLimit { get => _explicitNullValueRulesPerProcessLimit; set { _explicitNullValueRulesPerProcessLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_per_process_limit"); else _explicitNullProperties?.Remove("rules_per_process_limit"); } }
+        private int? _explicitNullValueRulesPerProcessLimit = default!;
         /// <summary>Represents the maximum number of scheduled action groups allowed per workflow rule.</summary>
-        public int? ScheduledActionsPerRuleLimit { get; set; }
+        public int? ScheduledActionsPerRuleLimit { get => _explicitNullValueScheduledActionsPerRuleLimit; set { _explicitNullValueScheduledActionsPerRuleLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_actions_per_rule_limit"); else _explicitNullProperties?.Remove("scheduled_actions_per_rule_limit"); } }
+        private int? _explicitNullValueScheduledActionsPerRuleLimit = default!;
         /// <summary>Represents the maximum total number of actions (instant and scheduled combined) allowed per workflow rule.</summary>
-        public int? TotalActionsPerRuleLimit { get; set; }
+        public int? TotalActionsPerRuleLimit { get => _explicitNullValueTotalActionsPerRuleLimit; set { _explicitNullValueTotalActionsPerRuleLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_actions_per_rule_limit"); else _explicitNullProperties?.Remove("total_actions_per_rule_limit"); } }
+        private int? _explicitNullValueTotalActionsPerRuleLimit = default!;
         /// <summary>Represents the total number of workflow rules configured in the organization, including both active and inactive rules.</summary>
-        public int? TotalRulesConfigured { get; set; }
+        public int? TotalRulesConfigured { get => _explicitNullValueTotalRulesConfigured; set { _explicitNullValueTotalRulesConfigured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_rules_configured"); else _explicitNullProperties?.Remove("total_rules_configured"); } }
+        private int? _explicitNullValueTotalRulesConfigured = default!;
         /// <summary>Represents the maximum total number of workflow rules allowed in the organization.</summary>
-        public int? TotalRulesLimit { get; set; }
+        public int? TotalRulesLimit { get => _explicitNullValueTotalRulesLimit; set { _explicitNullValueTotalRulesLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_rules_limit"); else _explicitNullProperties?.Remove("total_rules_limit"); } }
+        private int? _explicitNullValueTotalRulesLimit = default!;
         /// <summary>Represents the maximum number of workflow rules allowed per CRM module.</summary>
-        public int? TotalRulesLimitPerModule { get; set; }
+        public int? TotalRulesLimitPerModule { get => _explicitNullValueTotalRulesLimitPerModule; set { _explicitNullValueTotalRulesLimitPerModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_rules_limit_per_module"); else _explicitNullProperties?.Remove("total_rules_limit_per_module"); } }
+        private int? _explicitNullValueTotalRulesLimitPerModule = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount"/> and sets the default values.
         /// </summary>
@@ -48,7 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,6 +110,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteIntValue("total_rules_configured", TotalRulesConfigured);
             writer.WriteIntValue("total_rules_limit", TotalRulesLimit);
             writer.WriteIntValue("total_rules_limit_per_module", TotalRulesLimitPerModule);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

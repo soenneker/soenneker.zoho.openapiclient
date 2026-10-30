@@ -12,17 +12,32 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldSchemaOperationType : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api_create") is { } nullNodeApiCreate && nullNodeApiCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiCreate = null;
+            if (parseNode.GetChildNode("api_update") is { } nullNodeApiUpdate && nullNodeApiUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiUpdate = null;
+            if (parseNode.GetChildNode("web_create") is { } nullNodeWebCreate && nullNodeWebCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebCreate = null;
+            if (parseNode.GetChildNode("web_update") is { } nullNodeWebUpdate && nullNodeWebUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebUpdate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the field can be created through the API.</summary>
-        public bool? ApiCreate { get; set; }
+        public bool? ApiCreate { get => _explicitNullValueApiCreate; set { _explicitNullValueApiCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_create"); else _explicitNullProperties?.Remove("api_create"); } }
+        private bool? _explicitNullValueApiCreate = default!;
         /// <summary>Indicates whether the field can be updated through the API.</summary>
-        public bool? ApiUpdate { get; set; }
+        public bool? ApiUpdate { get => _explicitNullValueApiUpdate; set { _explicitNullValueApiUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_update"); else _explicitNullProperties?.Remove("api_update"); } }
+        private bool? _explicitNullValueApiUpdate = default!;
         /// <summary>Indicates whether the field can be created through the web.</summary>
-        public bool? WebCreate { get; set; }
+        public bool? WebCreate { get => _explicitNullValueWebCreate; set { _explicitNullValueWebCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_create"); else _explicitNullProperties?.Remove("web_create"); } }
+        private bool? _explicitNullValueWebCreate = default!;
         /// <summary>Indicates whether the field can be updated through the web.</summary>
-        public bool? WebUpdate { get; set; }
+        public bool? WebUpdate { get => _explicitNullValueWebUpdate; set { _explicitNullValueWebUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("web_update"); else _explicitNullProperties?.Remove("web_update"); } }
+        private bool? _explicitNullValueWebUpdate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaOperationType"/> and sets the default values.
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaOperationType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaOperationType();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaOperationType(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("api_update", ApiUpdate);
             writer.WriteBoolValue("web_create", WebCreate);
             writer.WriteBoolValue("web_update", WebUpdate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

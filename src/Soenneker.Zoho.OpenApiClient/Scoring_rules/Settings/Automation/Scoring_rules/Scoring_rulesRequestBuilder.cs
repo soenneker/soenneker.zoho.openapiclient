@@ -49,20 +49,20 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
         /// <summary>
         /// Permanently deletes multiple scoring rules
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesDeleteAllResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesDeleteScoringRulesSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesDeleteAllResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring_rules.Scoring_rulesRequestBuilder.Scoring_rulesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesDeleteScoringRulesSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring_rules.Scoring_rulesRequestBuilder.Scoring_rulesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesDeleteAllResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring_rules.Scoring_rulesRequestBuilder.Scoring_rulesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesDeleteScoringRulesSuccessResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring_rules.Scoring_rulesRequestBuilder.Scoring_rulesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesDeleteAllResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesDeleteAllResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesDeleteScoringRulesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesDeleteScoringRulesSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve a list of Scoring Rules configured in your Zoho CRM organization.
@@ -84,24 +84,26 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.InvalidModuleParamErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetScoringRulesListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetScoringRulesListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates one or more scoring rules for specified modules and layouts. Only Leads and Contacts modules support signal rules. Deals, Accounts and Custom Modules do not support signal rules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPostScoringRulesSuccessResponse"/></returns>
         /// <param name="body">Represents the request body for the create Scoring Rules operation, containing an array of Scoring Rule definitions.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPostScoringRules400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPostScoringRulesSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPostScoringRulesSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -109,24 +111,26 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPostScoringRules400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CreateScoringRuleSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPostScoringRulesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPostScoringRulesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates one or more scoring rules. Returns 200 (all success) or 207 (partial success).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutScoringRulesSuccessResponse"/></returns>
         /// <param name="body">Request body for updating multiple scoring rules.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutScoringRules400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UpdateScoringRulesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutScoringRulesSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UpdateScoringRulesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UpdateScoringRulesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutScoringRulesSuccessResponse> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UpdateScoringRulesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -134,8 +138,10 @@ namespace Soenneker.Zoho.OpenApiClient.Scoring_rules.Settings.Automation.Scoring
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutScoringRules400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutScoringRulesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesPutScoringRulesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Permanently deletes multiple scoring rules

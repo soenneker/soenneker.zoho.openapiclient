@@ -8,11 +8,16 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaOneOf3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerritoryGetSchemaLeadRuleCriteria : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,8 +34,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionResponse TerritoriesSimpleFilterCriterionResponse { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaOneOf3"/></summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaOneOf3? TerritoryGetSchemaLeadRuleCriteriaOneOf3 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaMember1"/></summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaMember1? TerritoryGetSchemaLeadRuleCriteriaMember1 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,13 +48,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteria();
             if("TerritoriesGroupedFilterCriterionResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TerritoriesGroupedFilterCriterionResponse = new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse();
+                
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaOneOf3>() is global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaOneOf3 territoryGetSchemaLeadRuleCriteriaOneOf3Value)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaMember1>() is global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaMember1 territoryGetSchemaLeadRuleCriteriaMember1Value)
             {
-                result.TerritoryGetSchemaLeadRuleCriteriaOneOf3 = territoryGetSchemaLeadRuleCriteriaOneOf3Value;
+                result.TerritoryGetSchemaLeadRuleCriteriaMember1 = territoryGetSchemaLeadRuleCriteriaMember1Value;
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("group") != null && parseNode.GetChildNode("group_operator") != null && (parseNode.GetChildNode("group_operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("AND".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "OR".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "and".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "or".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.TerritoriesGroupedFilterCriterionResponse == null && result.TerritoriesSimpleFilterCriterionResponse == null && result.TerritoryGetSchemaLeadRuleCriteriaMember1 == null && matchesUnionBranch0) result.TerritoriesGroupedFilterCriterionResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse(), parseNode);
+            if (result.TerritoriesGroupedFilterCriterionResponse == null && result.TerritoriesSimpleFilterCriterionResponse == null && result.TerritoryGetSchemaLeadRuleCriteriaMember1 == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.TerritoriesGroupedFilterCriterionResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse(), parseNode);
+            if (result.TerritoriesGroupedFilterCriterionResponse == null && result.TerritoriesSimpleFilterCriterionResponse == null && result.TerritoryGetSchemaLeadRuleCriteriaMember1 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,18 +84,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (TerritoriesGroupedFilterCriterionResponse == null && TerritoriesSimpleFilterCriterionResponse == null && TerritoryGetSchemaLeadRuleCriteriaMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (TerritoriesGroupedFilterCriterionResponse != null && TerritoriesSimpleFilterCriterionResponse == null && TerritoryGetSchemaLeadRuleCriteriaMember1 == null) { if (TerritoriesGroupedFilterCriterionResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TerritoriesGroupedFilterCriterionResponse); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(TerritoriesGroupedFilterCriterionResponse != null)
             {
+                if (TerritoriesGroupedFilterCriterionResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesGroupedFilterCriterionResponse>(null, TerritoriesGroupedFilterCriterionResponse);
             }
             else if(TerritoriesSimpleFilterCriterionResponse != null)
             {
+                if (TerritoriesSimpleFilterCriterionResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionResponse>(null, TerritoriesSimpleFilterCriterionResponse);
             }
-            else if(TerritoryGetSchemaLeadRuleCriteriaOneOf3 != null)
+            else if(TerritoryGetSchemaLeadRuleCriteriaMember1 != null)
             {
-                writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaOneOf3>(null, TerritoryGetSchemaLeadRuleCriteriaOneOf3);
+                writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteriaMember1>(null, TerritoryGetSchemaLeadRuleCriteriaMember1);
             }
         }
     }

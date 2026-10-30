@@ -55,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables.Actions.Gene
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariablesApiNameGenerationResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariablesApiNameGenerationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

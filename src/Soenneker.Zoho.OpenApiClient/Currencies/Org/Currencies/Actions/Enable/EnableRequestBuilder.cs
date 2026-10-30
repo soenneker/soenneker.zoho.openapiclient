@@ -51,7 +51,7 @@ namespace Soenneker.Zoho.OpenApiClient.Currencies.Org.Currencies.Actions.Enable
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrency200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrency200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrency200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrency200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update existing base currency details.
@@ -71,7 +71,7 @@ namespace Soenneker.Zoho.OpenApiClient.Currencies.Org.Currencies.Actions.Enable
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateBaseCurrency200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateBaseCurrency200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateBaseCurrency200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateBaseCurrency200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enable multi-currency for the organization and set the base currency.

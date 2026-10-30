@@ -12,94 +12,137 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("$editable") is { } nullNodeEditable && nullNodeEditable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Editable = null;
+            if (parseNode.GetChildNode("Feature_Type__s") is { } nullNodeFeatureTypeS && nullNodeFeatureTypeS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureTypeS = null;
+            if (parseNode.GetChildNode("$field_states") is { } nullNodeFieldStates && nullNodeFieldStates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldStates = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("Locked_By__s") is { } nullNodeLockedByS && nullNodeLockedByS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockedByS = null;
+            if (parseNode.GetChildNode("Locked_For__s") is { } nullNodeLockedForS && nullNodeLockedForS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockedForS = null;
+            if (parseNode.GetChildNode("Locked_Reason__s") is { } nullNodeLockedReasonS && nullNodeLockedReasonS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockedReasonS = null;
+            if (parseNode.GetChildNode("Locked_Time__s") is { } nullNodeLockedTimeS && nullNodeLockedTimeS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockedTimeS = null;
+            if (parseNode.GetChildNode("Lock_Source__s") is { } nullNodeLockSourceS && nullNodeLockSourceS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockSourceS = null;
+            if (parseNode.GetChildNode("Record_Locking_Configuration_Id__s") is { } nullNodeRecordLockingConfigurationIdS && nullNodeRecordLockingConfigurationIdS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordLockingConfigurationIdS = null;
+            if (parseNode.GetChildNode("Record_Locking_Rule_Id__s") is { } nullNodeRecordLockingRuleIdS && nullNodeRecordLockingRuleIdS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordLockingRuleIdS = null;
+            if (parseNode.GetChildNode("$sharing_permission") is { } nullNodeSharingPermission && nullNodeSharingPermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingPermission = null;
+            if (parseNode.GetChildNode("$zia_visions") is { } nullNodeZiaVisions && nullNodeZiaVisions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZiaVisions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the locked record is editable by the current user. Possible values: **true** - The record is editable. **false** - The record is not editable.</summary>
-        public bool? Editable { get; set; }
+        public bool? Editable { get => _explicitNullValueEditable; set { _explicitNullValueEditable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$editable"); else _explicitNullProperties?.Remove("$editable"); } }
+        private bool? _explicitNullValueEditable = default!;
         /// <summary>Represents the feature type associated with the locking information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FeatureTypeS { get; set; }
+        public string? FeatureTypeS { get => _explicitNullValueFeatureTypeS; set { _explicitNullValueFeatureTypeS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Feature_Type__s"); else _explicitNullProperties?.Remove("Feature_Type__s"); } }
+        private string? _explicitNullValueFeatureTypeS = default!;
 #nullable restore
 #else
-        public string FeatureTypeS { get; set; }
+        public string FeatureTypeS { get => _explicitNullValueFeatureTypeS; set { _explicitNullValueFeatureTypeS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Feature_Type__s"); else _explicitNullProperties?.Remove("Feature_Type__s"); } }
+        private string _explicitNullValueFeatureTypeS = default!;
 #endif
         /// <summary>Represents the field-level lock states of the record. Returns **null** when no field-level locking is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FieldStates { get; set; }
+        public string? FieldStates { get => _explicitNullValueFieldStates; set { _explicitNullValueFieldStates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$field_states"); else _explicitNullProperties?.Remove("$field_states"); } }
+        private string? _explicitNullValueFieldStates = default!;
 #nullable restore
 #else
-        public string FieldStates { get; set; }
+        public string FieldStates { get => _explicitNullValueFieldStates; set { _explicitNullValueFieldStates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$field_states"); else _explicitNullProperties?.Remove("$field_states"); } }
+        private string _explicitNullValueFieldStates = default!;
 #endif
         /// <summary>Represents the unique identifier of the locking information record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>An object containing the details of the user who locked the record. Returns **null** for automatically locked records where no specific user performed the lock.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedByS? LockedByS { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedByS? LockedByS { get => _explicitNullValueLockedByS; set { _explicitNullValueLockedByS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_By__s"); else _explicitNullProperties?.Remove("Locked_By__s"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedByS? _explicitNullValueLockedByS = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedByS LockedByS { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedByS LockedByS { get => _explicitNullValueLockedByS; set { _explicitNullValueLockedByS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_By__s"); else _explicitNullProperties?.Remove("Locked_By__s"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedByS _explicitNullValueLockedByS = default!;
 #endif
         /// <summary>Represents the details of the record that is locked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedForS? LockedForS { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedForS? LockedForS { get => _explicitNullValueLockedForS; set { _explicitNullValueLockedForS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_For__s"); else _explicitNullProperties?.Remove("Locked_For__s"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedForS? _explicitNullValueLockedForS = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedForS LockedForS { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedForS LockedForS { get => _explicitNullValueLockedForS; set { _explicitNullValueLockedForS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_For__s"); else _explicitNullProperties?.Remove("Locked_For__s"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockedForS _explicitNullValueLockedForS = default!;
 #endif
         /// <summary>Represents the reason for locking the record. Returns **null** for automatically locked records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LockedReasonS { get; set; }
+        public string? LockedReasonS { get => _explicitNullValueLockedReasonS; set { _explicitNullValueLockedReasonS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_Reason__s"); else _explicitNullProperties?.Remove("Locked_Reason__s"); } }
+        private string? _explicitNullValueLockedReasonS = default!;
 #nullable restore
 #else
-        public string LockedReasonS { get; set; }
+        public string LockedReasonS { get => _explicitNullValueLockedReasonS; set { _explicitNullValueLockedReasonS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_Reason__s"); else _explicitNullProperties?.Remove("Locked_Reason__s"); } }
+        private string _explicitNullValueLockedReasonS = default!;
 #endif
         /// <summary>Represents the timestamp when the record was locked.</summary>
-        public DateTimeOffset? LockedTimeS { get; set; }
+        public DateTimeOffset? LockedTimeS { get => _explicitNullValueLockedTimeS; set { _explicitNullValueLockedTimeS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_Time__s"); else _explicitNullProperties?.Remove("Locked_Time__s"); } }
+        private DateTimeOffset? _explicitNullValueLockedTimeS = default!;
         /// <summary>Indicates the source of the record lock. Possible values: **Manual** - The record was locked manually by a user. **Automatic** - The record was locked automatically by a rule. **Both** - The record has both manual and automatic locks.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockSourceS? LockSourceS { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockSourceS? LockSourceS { get => _explicitNullValueLockSourceS; set { _explicitNullValueLockSourceS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Lock_Source__s"); else _explicitNullProperties?.Remove("Lock_Source__s"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItemLockSourceS? _explicitNullValueLockSourceS = default!;
         /// <summary>Represents the unique identifier of the record locking configuration applied to this record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordLockingConfigurationIdS { get; set; }
+        public string? RecordLockingConfigurationIdS { get => _explicitNullValueRecordLockingConfigurationIdS; set { _explicitNullValueRecordLockingConfigurationIdS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Record_Locking_Configuration_Id__s"); else _explicitNullProperties?.Remove("Record_Locking_Configuration_Id__s"); } }
+        private string? _explicitNullValueRecordLockingConfigurationIdS = default!;
 #nullable restore
 #else
-        public string RecordLockingConfigurationIdS { get; set; }
+        public string RecordLockingConfigurationIdS { get => _explicitNullValueRecordLockingConfigurationIdS; set { _explicitNullValueRecordLockingConfigurationIdS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Record_Locking_Configuration_Id__s"); else _explicitNullProperties?.Remove("Record_Locking_Configuration_Id__s"); } }
+        private string _explicitNullValueRecordLockingConfigurationIdS = default!;
 #endif
         /// <summary>Represents the unique identifier of the record locking rule. Returns **null** for manually locked records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordLockingRuleIdS { get; set; }
+        public string? RecordLockingRuleIdS { get => _explicitNullValueRecordLockingRuleIdS; set { _explicitNullValueRecordLockingRuleIdS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Record_Locking_Rule_Id__s"); else _explicitNullProperties?.Remove("Record_Locking_Rule_Id__s"); } }
+        private string? _explicitNullValueRecordLockingRuleIdS = default!;
 #nullable restore
 #else
-        public string RecordLockingRuleIdS { get; set; }
+        public string RecordLockingRuleIdS { get => _explicitNullValueRecordLockingRuleIdS; set { _explicitNullValueRecordLockingRuleIdS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Record_Locking_Rule_Id__s"); else _explicitNullProperties?.Remove("Record_Locking_Rule_Id__s"); } }
+        private string _explicitNullValueRecordLockingRuleIdS = default!;
 #endif
         /// <summary>Represents the sharing permission level of the current user on the locked record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SharingPermission { get; set; }
+        public string? SharingPermission { get => _explicitNullValueSharingPermission; set { _explicitNullValueSharingPermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$sharing_permission"); else _explicitNullProperties?.Remove("$sharing_permission"); } }
+        private string? _explicitNullValueSharingPermission = default!;
 #nullable restore
 #else
-        public string SharingPermission { get; set; }
+        public string SharingPermission { get => _explicitNullValueSharingPermission; set { _explicitNullValueSharingPermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$sharing_permission"); else _explicitNullProperties?.Remove("$sharing_permission"); } }
+        private string _explicitNullValueSharingPermission = default!;
 #endif
         /// <summary>Represents Zia Visions data associated with the record. Returns **null** when Zia Visions data is not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZiaVisions { get; set; }
+        public string? ZiaVisions { get => _explicitNullValueZiaVisions; set { _explicitNullValueZiaVisions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$zia_visions"); else _explicitNullProperties?.Remove("$zia_visions"); } }
+        private string? _explicitNullValueZiaVisions = default!;
 #nullable restore
 #else
-        public string ZiaVisions { get; set; }
+        public string ZiaVisions { get => _explicitNullValueZiaVisions; set { _explicitNullValueZiaVisions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$zia_visions"); else _explicitNullProperties?.Remove("$zia_visions"); } }
+        private string _explicitNullValueZiaVisions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItem"/> and sets the default values.
@@ -116,7 +159,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200ResponseDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -161,6 +204,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("Record_Locking_Rule_Id__s", RecordLockingRuleIdS);
             writer.WriteStringValue("$sharing_permission", SharingPermission);
             writer.WriteStringValue("$zia_visions", ZiaVisions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

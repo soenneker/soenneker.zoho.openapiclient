@@ -12,7 +12,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ModulesUpdateModules400ResponseModulesItemOneOf1Details : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400ResponseModulesItemOneOf1Details();
             if("ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 = new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1();
+                
             }
             else if("ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 = new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("api_name") != null && parseNode.GetChildNode("json_path") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("resource_path_index") != null))();
+            if (result.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 == null && result.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1(), parseNode);
+            if (result.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 == null && result.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2(), parseNode);
+            if (result.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 == null && result.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 == null && ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 != null && ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 == null) { if (ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1); return; }
+            if (ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 != null && ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 == null) { if (ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 != null)
             {
+                if (ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1>(null, ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf1);
             }
             else if(ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 != null)
             {
+                if (ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2>(null, ModulesUpdateModules400ResponseModulesItemOneOf1DetailsOneOf2);
             }
         }

@@ -12,40 +12,59 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomViewsCustomViewInfoTranslation : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_by_me") is { } nullNodeCreatedByMe && nullNodeCreatedByMe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedByMe = null;
+            if (parseNode.GetChildNode("other_users_views") is { } nullNodeOtherUsersViews && nullNodeOtherUsersViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherUsersViews = null;
+            if (parseNode.GetChildNode("public_views") is { } nullNodePublicViews && nullNodePublicViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicViews = null;
+            if (parseNode.GetChildNode("shared_with_me") is { } nullNodeSharedWithMe && nullNodeSharedWithMe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedWithMe = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the display label for the created by me category of Custom Views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedByMe { get; set; }
+        public string? CreatedByMe { get => _explicitNullValueCreatedByMe; set { _explicitNullValueCreatedByMe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_me"); else _explicitNullProperties?.Remove("created_by_me"); } }
+        private string? _explicitNullValueCreatedByMe = default!;
 #nullable restore
 #else
-        public string CreatedByMe { get; set; }
+        public string CreatedByMe { get => _explicitNullValueCreatedByMe; set { _explicitNullValueCreatedByMe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by_me"); else _explicitNullProperties?.Remove("created_by_me"); } }
+        private string _explicitNullValueCreatedByMe = default!;
 #endif
         /// <summary>Represents the display label for the other users&apos; views category of Custom Views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OtherUsersViews { get; set; }
+        public string? OtherUsersViews { get => _explicitNullValueOtherUsersViews; set { _explicitNullValueOtherUsersViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_users_views"); else _explicitNullProperties?.Remove("other_users_views"); } }
+        private string? _explicitNullValueOtherUsersViews = default!;
 #nullable restore
 #else
-        public string OtherUsersViews { get; set; }
+        public string OtherUsersViews { get => _explicitNullValueOtherUsersViews; set { _explicitNullValueOtherUsersViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("other_users_views"); else _explicitNullProperties?.Remove("other_users_views"); } }
+        private string _explicitNullValueOtherUsersViews = default!;
 #endif
         /// <summary>Represents the display label for the public views category of Custom Views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicViews { get; set; }
+        public string? PublicViews { get => _explicitNullValuePublicViews; set { _explicitNullValuePublicViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_views"); else _explicitNullProperties?.Remove("public_views"); } }
+        private string? _explicitNullValuePublicViews = default!;
 #nullable restore
 #else
-        public string PublicViews { get; set; }
+        public string PublicViews { get => _explicitNullValuePublicViews; set { _explicitNullValuePublicViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_views"); else _explicitNullProperties?.Remove("public_views"); } }
+        private string _explicitNullValuePublicViews = default!;
 #endif
         /// <summary>Represents the display label for the shared with me category of Custom Views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SharedWithMe { get; set; }
+        public string? SharedWithMe { get => _explicitNullValueSharedWithMe; set { _explicitNullValueSharedWithMe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_with_me"); else _explicitNullProperties?.Remove("shared_with_me"); } }
+        private string? _explicitNullValueSharedWithMe = default!;
 #nullable restore
 #else
-        public string SharedWithMe { get; set; }
+        public string SharedWithMe { get => _explicitNullValueSharedWithMe; set { _explicitNullValueSharedWithMe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_with_me"); else _explicitNullProperties?.Remove("shared_with_me"); } }
+        private string _explicitNullValueSharedWithMe = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsCustomViewInfoTranslation"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsCustomViewInfoTranslation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsCustomViewInfoTranslation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsCustomViewInfoTranslation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("other_users_views", OtherUsersViews);
             writer.WriteStringValue("public_views", PublicViews);
             writer.WriteStringValue("shared_with_me", SharedWithMe);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

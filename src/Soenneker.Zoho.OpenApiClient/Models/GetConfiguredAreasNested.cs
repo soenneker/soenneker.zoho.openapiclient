@@ -12,24 +12,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetConfiguredAreasNested : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_view") is { } nullNodeCustomView && nullNodeCustomView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomView = null;
+            if (parseNode.GetChildNode("workflow_tagActionRecords") is { } nullNodeWorkflowTagActionRecords && nullNodeWorkflowTagActionRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowTagActionRecords = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Nested schema for custom_view configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested? CustomView { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested? CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested? _explicitNullValueCustomView = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested CustomView { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested _explicitNullValueCustomView = default!;
 #endif
         /// <summary>Nested schema for workflow tag action records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested? WorkflowTagActionRecords { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested? WorkflowTagActionRecords { get => _explicitNullValueWorkflowTagActionRecords; set { _explicitNullValueWorkflowTagActionRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_tagActionRecords"); else _explicitNullProperties?.Remove("workflow_tagActionRecords"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested? _explicitNullValueWorkflowTagActionRecords = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested WorkflowTagActionRecords { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested WorkflowTagActionRecords { get => _explicitNullValueWorkflowTagActionRecords; set { _explicitNullValueWorkflowTagActionRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_tagActionRecords"); else _explicitNullProperties?.Remove("workflow_tagActionRecords"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested _explicitNullValueWorkflowTagActionRecords = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested>("custom_view", CustomView);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested>("workflow_tagActionRecords", WorkflowTagActionRecords);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

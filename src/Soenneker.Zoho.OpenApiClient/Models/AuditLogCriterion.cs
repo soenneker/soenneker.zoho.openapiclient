@@ -13,6 +13,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuditLogCriterion : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogGroupedCriterion"/></summary>
@@ -60,9 +64,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.AuditLogCriterion();
             if("AuditLogGroupedCriterion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AuditLogGroupedCriterion = new global::Soenneker.Zoho.OpenApiClient.Models.AuditLogGroupedCriterion();
+                
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AndGroupOperator>() is global::Soenneker.Zoho.OpenApiClient.Models.AndGroupOperator groupOperatorValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue0 && ("and".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AndGroupOperator>() is global::Soenneker.Zoho.OpenApiClient.Models.AndGroupOperator groupOperatorValue)
             {
                 result.GroupOperator = groupOperatorValue;
             }
@@ -70,7 +74,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 result.Group = groupValue;
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("group_operator") != null && (parseNode.GetChildNode("group_operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("and".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("group") != null))();
+            if (result.AuditLogGroupedCriterion == null && result.AuditLogSimpleCriterion == null && result.Group == null && result.GroupOperator == null && matchesUnionBranch0) result.AuditLogGroupedCriterion = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AuditLogGroupedCriterion(), parseNode);
+            if (result.AuditLogGroupedCriterion == null && result.AuditLogSimpleCriterion == null && result.Group == null && result.GroupOperator == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.AuditLogGroupedCriterion = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AuditLogGroupedCriterion(), parseNode);
+            if (result.AuditLogGroupedCriterion == null && result.AuditLogSimpleCriterion == null && result.Group == null && result.GroupOperator == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,13 +104,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AuditLogGroupedCriterion == null && AuditLogSimpleCriterion == null && Group == null && GroupOperator == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AuditLogGroupedCriterion != null && AuditLogSimpleCriterion == null && Group == null && GroupOperator == null) { if (AuditLogGroupedCriterion is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuditLogGroupedCriterion); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(AuditLogGroupedCriterion != null)
             {
+                if (AuditLogGroupedCriterion is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogGroupedCriterion>(null, AuditLogGroupedCriterion);
             }
             else if(AuditLogSimpleCriterion != null)
             {
+                if (AuditLogSimpleCriterion is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogSimpleCriterion>(null, AuditLogSimpleCriterion);
             }
             else if(GroupOperator != null)
@@ -111,7 +127,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogGroupedCriterionGroupItem>(null, Group);
             }
-            writer.WriteAdditionalData(AdditionalData);
+            
         }
     }
 }

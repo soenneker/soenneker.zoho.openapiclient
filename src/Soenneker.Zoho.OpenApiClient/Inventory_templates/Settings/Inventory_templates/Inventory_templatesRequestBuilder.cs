@@ -62,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_te
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve a paginated list of inventory templates configured in your Zoho CRM organization, with optional filtering by module, category, and field criteria, and sorting by name or usage and modification timestamps.

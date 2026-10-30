@@ -68,7 +68,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all available CRM variables. Returns the API name, display name, description, type, value, and variable group for each variable. Requires the ZohoCRM.settings.variables.READ scope.
@@ -90,28 +90,30 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.VariablesPermissionDeniedError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariablesListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariablesListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates one or more CRM variables. The name, api_name, and variable_group keys are mandatory. The type key specifies the data type of the variable. Possible types: integer, text, percent, decimal, currency, date, datetime, email, phone, url, checkbox, textarea, long. Requires the ZohoCRM.settings.variables.CREATE scope.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchOperationCreated"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.VariablesCreateVariablesSuccessResponse"/></returns>
         /// <param name="body">Request body wrapper that carries an array of variable definitions to be processed in a single batch.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchOperationCreated?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariablesCreateVariablesSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchOperationCreated> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.VariablesCreateVariablesSuccessResponse> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchOperationCreated>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchOperationCreated.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariablesCreateVariablesSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariablesCreateVariablesSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates one or more CRM variables in a single request. The id key is mandatory in the request body to identify each variable. You cannot update the type or variable group of a variable. Requires the ZohoCRM.settings.variables.UPDATE scope.
@@ -131,7 +133,7 @@ namespace Soenneker.Zoho.OpenApiClient.Variables.Settings.Variables
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchUpdateResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchUpdateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchUpdateResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.VariablesBatchUpdateResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes one or more CRM variables by their IDs. Pass variable IDs as a comma-separated list in the ids query parameter, or pass rids in the rids query parameter. A variable that is associated with other features such as email templates, webhooks, or functions cannot be deleted until the association is removed. Requires the ZohoCRM.settings.variables.DELETE scope.

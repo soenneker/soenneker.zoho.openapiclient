@@ -64,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Bulk_read.Read
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.BulkReadCreateBulkReadJob201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create a bulk read job in Zoho CRM. A bulk read job exports records from a specified CRM module to a CSV or ICS file. The job runs asynchronously; use the Get Bulk Read Job Details API to monitor the job status, and use the Download Bulk Read Result API to retrieve the exported file once the job is complete.

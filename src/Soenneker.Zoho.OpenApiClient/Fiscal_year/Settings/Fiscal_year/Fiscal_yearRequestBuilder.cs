@@ -49,7 +49,7 @@ namespace Soenneker.Zoho.OpenApiClient.Fiscal_year.Settings.Fiscal_year
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetfiscalyearResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetfiscalyearResponse200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetfiscalyearResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetfiscalyearResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the fiscal year configuration for the organization. Only administrators can update fiscal year settings.
@@ -75,6 +75,8 @@ namespace Soenneker.Zoho.OpenApiClient.Fiscal_year.Settings.Fiscal_year
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearUpdateFiscalYear400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearUpdateFiscalYear403Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateFiscalYearResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateFiscalYearResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

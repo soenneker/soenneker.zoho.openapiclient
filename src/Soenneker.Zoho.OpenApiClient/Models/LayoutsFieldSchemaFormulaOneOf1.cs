@@ -12,48 +12,75 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutsFieldSchemaFormulaOneOf1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assume_default") is { } nullNodeAssumeDefault && nullNodeAssumeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssumeDefault = null;
+            if (parseNode.GetChildNode("dynamic") is { } nullNodeDynamic && nullNodeDynamic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dynamic = null;
+            if (parseNode.GetChildNode("evaluation_order") is { } nullNodeEvaluationOrder && nullNodeEvaluationOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationOrder = null;
+            if (parseNode.GetChildNode("expression") is { } nullNodeExpression && nullNodeExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expression = null;
+            if (parseNode.GetChildNode("return_type") is { } nullNodeReturnType && nullNodeReturnType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnType = null;
+            if (parseNode.GetChildNode("stop_compute_conditionally") is { } nullNodeStopComputeConditionally && nullNodeStopComputeConditionally.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopComputeConditionally = null;
+            if (parseNode.GetChildNode("stop_compute_expression") is { } nullNodeStopComputeExpression && nullNodeStopComputeExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopComputeExpression = null;
+            if (parseNode.GetChildNode("sub_return_type") is { } nullNodeSubReturnType && nullNodeSubReturnType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubReturnType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether null or missing operand values in the formula expression are treated as zero or an equivalent default, rather than causing the formula result to be null. Possible values: `true` — null operands are substituted with default values; `false` — null operands propagate as null through the calculation.</summary>
-        public bool? AssumeDefault { get; set; }
+        public bool? AssumeDefault { get => _explicitNullValueAssumeDefault; set { _explicitNullValueAssumeDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assume_default"); else _explicitNullProperties?.Remove("assume_default"); } }
+        private bool? _explicitNullValueAssumeDefault = default!;
         /// <summary>Indicates whether the formula is recalculated in real time as dependent field values change, rather than being evaluated only at save time. Possible values: `true` — the formula updates dynamically during record editing; `false` — the formula is evaluated only when the record is saved.</summary>
-        public bool? Dynamic { get; set; }
+        public bool? Dynamic { get => _explicitNullValueDynamic; set { _explicitNullValueDynamic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic"); else _explicitNullProperties?.Remove("dynamic"); } }
+        private bool? _explicitNullValueDynamic = default!;
         /// <summary>Indicates the relative priority in which this formula field is evaluated when multiple formula fields exist in the same module and share dependencies, ensuring upstream values are resolved before downstream ones.</summary>
-        public int? EvaluationOrder { get; set; }
+        public int? EvaluationOrder { get => _explicitNullValueEvaluationOrder; set { _explicitNullValueEvaluationOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_order"); else _explicitNullProperties?.Remove("evaluation_order"); } }
+        private int? _explicitNullValueEvaluationOrder = default!;
         /// <summary>Contains the formula expression string that defines the calculation logic, composed of function calls, field API name references, and operators that the CRM engine evaluates to produce the field&apos;s computed value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expression { get; set; }
+        public string? Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
+        private string? _explicitNullValueExpression = default!;
 #nullable restore
 #else
-        public string Expression { get; set; }
+        public string Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
+        private string _explicitNullValueExpression = default!;
 #endif
         /// <summary>Identifies the data type produced by the formula expression, such as string, integer, decimal, date, or Boolean, which determines how the computed value is stored and displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReturnType { get; set; }
+        public string? ReturnType { get => _explicitNullValueReturnType; set { _explicitNullValueReturnType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_type"); else _explicitNullProperties?.Remove("return_type"); } }
+        private string? _explicitNullValueReturnType = default!;
 #nullable restore
 #else
-        public string ReturnType { get; set; }
+        public string ReturnType { get => _explicitNullValueReturnType; set { _explicitNullValueReturnType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_type"); else _explicitNullProperties?.Remove("return_type"); } }
+        private string _explicitNullValueReturnType = default!;
 #endif
         /// <summary>Indicates whether the formula evaluation halts when a specified logical condition is met. Possible values: `true` — the formula stops computing once the stop condition expression evaluates to true; `false` — the formula computes to completion regardless of intermediate conditions.</summary>
-        public bool? StopComputeConditionally { get; set; }
+        public bool? StopComputeConditionally { get => _explicitNullValueStopComputeConditionally; set { _explicitNullValueStopComputeConditionally = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_compute_conditionally"); else _explicitNullProperties?.Remove("stop_compute_conditionally"); } }
+        private bool? _explicitNullValueStopComputeConditionally = default!;
         /// <summary>Contains the logical expression evaluated at runtime to determine whether formula computation should be interrupted. When the expression resolves to true and stop_compute_conditionally is enabled, further formula processing is skipped and the current interim value is retained.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression? StopComputeExpression { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression? StopComputeExpression { get => _explicitNullValueStopComputeExpression; set { _explicitNullValueStopComputeExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_compute_expression"); else _explicitNullProperties?.Remove("stop_compute_expression"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression? _explicitNullValueStopComputeExpression = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression StopComputeExpression { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression StopComputeExpression { get => _explicitNullValueStopComputeExpression; set { _explicitNullValueStopComputeExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_compute_expression"); else _explicitNullProperties?.Remove("stop_compute_expression"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression _explicitNullValueStopComputeExpression = default!;
 #endif
         /// <summary>Represents a secondary classification of the formula&apos;s output type, refining the primary return type to indicate a more specific data size or unit. Possible values: `small` — a compact representation of the return type. `medium` — a standard-size representation. `large` — a large-size representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType? SubReturnType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType? SubReturnType { get => _explicitNullValueSubReturnType; set { _explicitNullValueSubReturnType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_return_type"); else _explicitNullProperties?.Remove("sub_return_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType? _explicitNullValueSubReturnType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType SubReturnType { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType SubReturnType { get => _explicitNullValueSubReturnType; set { _explicitNullValueSubReturnType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_return_type"); else _explicitNullProperties?.Remove("sub_return_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType _explicitNullValueSubReturnType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1"/> and sets the default values.
@@ -70,7 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +132,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("stop_compute_conditionally", StopComputeConditionally);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1StopComputeExpression>("stop_compute_expression", StopComputeExpression);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaFormulaOneOf1SubReturnType>("sub_return_type", SubReturnType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

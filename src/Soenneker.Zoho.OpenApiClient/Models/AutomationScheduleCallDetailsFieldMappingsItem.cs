@@ -8,55 +8,48 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a single field-to-value mapping used within automation actions such as workflow tasks, create_record, add_meeting, and schedule_call. Each mapping identifies a target field via api_name or ID, declares a type discriminator that determines value interpretation, and supplies a value whose shape varies by type: static supplies a literal value, merge_field supplies a runtime-resolved token string, execution_time supplies a date or datetime offset object, and composite supplies structured participant data for the Events Participants field. The field_mappings array must include all fields the target module requires; omitting any produces a REQUIRED_DATA_NOT_FOUND error.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf1"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf2"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf3"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomationScheduleCallDetailsFieldMappingsItem : IAdditionalDataHolder, IParsable
-    {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Controls whether agent users are eligible for record assignment. Possible values:**true** — agent users are included in the assignment pool alongside standard users.**false** — agent users are excluded from assignment.Applies to mapping types role, group, profile, merge_field, and criteria. Does not apply to user or assignment_rule types.</summary>
-        public bool? AllowAgentUser { get; set; }
-        /// <summary>The server-computed representation of the mapped value, included in GET responses. Omitted from create and update requests.</summary>
+    public partial class AutomationScheduleCallDetailsFieldMappingsItem : IComposedTypeWrapper, IParsable
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf1? AutomationScheduleCallDetailsFieldMappingsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public string DisplayValue { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf1 AutomationScheduleCallDetailsFieldMappingsItemOneOf1 { get; set; }
 #endif
-        /// <summary>Target field to populate when the automation executes. api_name is required. If id is also provided, both must refer to the same field; otherwise the API returns AMBIGUITY_DURING_PROCESSING.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingField? Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf2? AutomationScheduleCallDetailsFieldMappingsItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingField Field { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf2 AutomationScheduleCallDetailsFieldMappingsItemOneOf2 { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf3? AutomationScheduleCallDetailsFieldMappingsItemOneOf3 { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf3 AutomationScheduleCallDetailsFieldMappingsItemOneOf3 { get; set; }
 #endif
-        /// <summary>The literal value assigned to the target field at automation execution time. The expected shape is determined by the target field data_type, discoverable via GET /settings/fields?module={module}. For most field types, supply a string (for example, &quot;High&quot;, &quot;Not Started&quot;, &quot;1234&quot;). For multi-select picklist fields (data_type: multiselectpicklist), supply an array of option strings. For fields that reference an entity such as an owner or layout (data_type: ownerlookup), supply an object with at minimum the entity ID.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValue? Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf4? AutomationScheduleCallDetailsFieldMappingsItemOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValue Value { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf4 AutomationScheduleCallDetailsFieldMappingsItemOneOf4 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItem"/> and sets the default values.
-        /// </summary>
-        public AutomationScheduleCallDetailsFieldMappingsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            AllowAgentUser = false;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,7 +58,36 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItem();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItem();
+            if("static".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("merge_field".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("execution_time".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("composite".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("field") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("static".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("value") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("field") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("merge_field".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("value") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("field") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("execution_time".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("value") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("field") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("composite".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("value") != null))();
+            if (result.AutomationScheduleCallDetailsFieldMappingsItemOneOf1 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf2 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf3 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.AutomationScheduleCallDetailsFieldMappingsItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf1(), parseNode);
+            if (result.AutomationScheduleCallDetailsFieldMappingsItemOneOf1 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf2 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf3 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.AutomationScheduleCallDetailsFieldMappingsItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf2(), parseNode);
+            if (result.AutomationScheduleCallDetailsFieldMappingsItemOneOf1 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf2 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf3 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.AutomationScheduleCallDetailsFieldMappingsItemOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf3(), parseNode);
+            if (result.AutomationScheduleCallDetailsFieldMappingsItemOneOf1 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf2 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf3 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.AutomationScheduleCallDetailsFieldMappingsItemOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf4(), parseNode);
+            if (result.AutomationScheduleCallDetailsFieldMappingsItemOneOf1 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf2 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf3 == null && result.AutomationScheduleCallDetailsFieldMappingsItemOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,14 +95,23 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AutomationScheduleCallDetailsFieldMappingsItemOneOf1 != null)
             {
-                { "allow_agent_user", n => { AllowAgentUser = n.GetBoolValue(); } },
-                { "display_value", n => { DisplayValue = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingField.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValue>(global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValue.CreateFromDiscriminatorValue); } },
-            };
+                return AutomationScheduleCallDetailsFieldMappingsItemOneOf1.GetFieldDeserializers();
+            }
+            else if(AutomationScheduleCallDetailsFieldMappingsItemOneOf2 != null)
+            {
+                return AutomationScheduleCallDetailsFieldMappingsItemOneOf2.GetFieldDeserializers();
+            }
+            else if(AutomationScheduleCallDetailsFieldMappingsItemOneOf3 != null)
+            {
+                return AutomationScheduleCallDetailsFieldMappingsItemOneOf3.GetFieldDeserializers();
+            }
+            else if(AutomationScheduleCallDetailsFieldMappingsItemOneOf4 != null)
+            {
+                return AutomationScheduleCallDetailsFieldMappingsItemOneOf4.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,13 +119,34 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AutomationScheduleCallDetailsFieldMappingsItemOneOf1 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf2 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf3 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AutomationScheduleCallDetailsFieldMappingsItemOneOf1 != null && AutomationScheduleCallDetailsFieldMappingsItemOneOf2 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf3 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf4 == null) { if (AutomationScheduleCallDetailsFieldMappingsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AutomationScheduleCallDetailsFieldMappingsItemOneOf1); return; }
+            if (AutomationScheduleCallDetailsFieldMappingsItemOneOf2 != null && AutomationScheduleCallDetailsFieldMappingsItemOneOf1 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf3 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf4 == null) { if (AutomationScheduleCallDetailsFieldMappingsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AutomationScheduleCallDetailsFieldMappingsItemOneOf2); return; }
+            if (AutomationScheduleCallDetailsFieldMappingsItemOneOf3 != null && AutomationScheduleCallDetailsFieldMappingsItemOneOf1 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf2 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf4 == null) { if (AutomationScheduleCallDetailsFieldMappingsItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AutomationScheduleCallDetailsFieldMappingsItemOneOf3); return; }
+            if (AutomationScheduleCallDetailsFieldMappingsItemOneOf4 != null && AutomationScheduleCallDetailsFieldMappingsItemOneOf1 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf2 == null && AutomationScheduleCallDetailsFieldMappingsItemOneOf3 == null) { if (AutomationScheduleCallDetailsFieldMappingsItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AutomationScheduleCallDetailsFieldMappingsItemOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("allow_agent_user", AllowAgentUser);
-            writer.WriteStringValue("display_value", DisplayValue);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingField>("field", Field);
-            writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.StaticFieldMappingValue>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(AutomationScheduleCallDetailsFieldMappingsItemOneOf1 != null)
+            {
+                if (AutomationScheduleCallDetailsFieldMappingsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf1>(null, AutomationScheduleCallDetailsFieldMappingsItemOneOf1);
+            }
+            else if(AutomationScheduleCallDetailsFieldMappingsItemOneOf2 != null)
+            {
+                if (AutomationScheduleCallDetailsFieldMappingsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf2>(null, AutomationScheduleCallDetailsFieldMappingsItemOneOf2);
+            }
+            else if(AutomationScheduleCallDetailsFieldMappingsItemOneOf3 != null)
+            {
+                if (AutomationScheduleCallDetailsFieldMappingsItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf3>(null, AutomationScheduleCallDetailsFieldMappingsItemOneOf3);
+            }
+            else if(AutomationScheduleCallDetailsFieldMappingsItemOneOf4 != null)
+            {
+                if (AutomationScheduleCallDetailsFieldMappingsItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationScheduleCallDetailsFieldMappingsItemOneOf4>(null, AutomationScheduleCallDetailsFieldMappingsItemOneOf4);
+            }
         }
     }
 }

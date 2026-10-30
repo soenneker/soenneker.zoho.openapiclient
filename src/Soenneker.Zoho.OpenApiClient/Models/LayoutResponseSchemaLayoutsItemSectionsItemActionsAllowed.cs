@@ -12,23 +12,44 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LayoutResponseSchemaLayoutsItemSectionsItemActionsAllowed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("add_field") is { } nullNodeAddField && nullNodeAddField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddField = null;
+            if (parseNode.GetChildNode("change_column_count") is { } nullNodeChangeColumnCount && nullNodeChangeColumnCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangeColumnCount = null;
+            if (parseNode.GetChildNode("change_tab_traversal") is { } nullNodeChangeTabTraversal && nullNodeChangeTabTraversal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangeTabTraversal = null;
+            if (parseNode.GetChildNode("delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
+            if (parseNode.GetChildNode("remove_field") is { } nullNodeRemoveField && nullNodeRemoveField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveField = null;
+            if (parseNode.GetChildNode("rename") is { } nullNodeRename && nullNodeRename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rename = null;
+            if (parseNode.GetChildNode("reorder") is { } nullNodeReorder && nullNodeReorder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reorder = null;
+        }
+
         /// <summary>Indicates whether new fields may be introduced into the layout section. Possible values: `true` — adding fields to the section is permitted; `false` — adding fields to the section is not permitted.</summary>
-        public bool? AddField { get; set; }
+        public bool? AddField { get => _explicitNullValueAddField; set { _explicitNullValueAddField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_field"); else _explicitNullProperties?.Remove("add_field"); } }
+        private bool? _explicitNullValueAddField = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the number of columns displayed within the layout section may be modified. Possible values: `true` — adjusting the column count for the section is permitted; `false` — adjusting the column count for the section is not permitted.</summary>
-        public bool? ChangeColumnCount { get; set; }
+        public bool? ChangeColumnCount { get => _explicitNullValueChangeColumnCount; set { _explicitNullValueChangeColumnCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_column_count"); else _explicitNullProperties?.Remove("change_column_count"); } }
+        private bool? _explicitNullValueChangeColumnCount = default!;
         /// <summary>Indicates whether the keyboard tab traversal order of fields within the layout section may be modified. Possible values: `true` — changing the tab traversal order is permitted; `false` — changing the tab traversal order is not permitted.</summary>
-        public bool? ChangeTabTraversal { get; set; }
+        public bool? ChangeTabTraversal { get => _explicitNullValueChangeTabTraversal; set { _explicitNullValueChangeTabTraversal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_tab_traversal"); else _explicitNullProperties?.Remove("change_tab_traversal"); } }
+        private bool? _explicitNullValueChangeTabTraversal = default!;
         /// <summary>Indicates whether the layout section may be permanently removed from the layout. Possible values: `true` — deleting the section is permitted; `false` — deleting the section is not permitted.</summary>
-        public bool? Delete { get; set; }
+        public bool? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        private bool? _explicitNullValueDelete = default!;
         /// <summary>Indicates whether existing fields may be detached from the layout section. Possible values: `true` — removing fields from the section is permitted; `false` — removing fields from the section is not permitted.</summary>
-        public bool? RemoveField { get; set; }
+        public bool? RemoveField { get => _explicitNullValueRemoveField; set { _explicitNullValueRemoveField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove_field"); else _explicitNullProperties?.Remove("remove_field"); } }
+        private bool? _explicitNullValueRemoveField = default!;
         /// <summary>Indicates whether the display name of the layout section may be changed. Possible values: `true` — renaming the section is permitted; `false` — renaming the section is not permitted.</summary>
-        public bool? Rename { get; set; }
+        public bool? Rename { get => _explicitNullValueRename; set { _explicitNullValueRename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rename"); else _explicitNullProperties?.Remove("rename"); } }
+        private bool? _explicitNullValueRename = default!;
         /// <summary>Indicates whether the relative ordering of sections or fields within the layout may be changed. Possible values: `true` — reordering is permitted; `false` — reordering is not permitted.</summary>
-        public bool? Reorder { get; set; }
+        public bool? Reorder { get => _explicitNullValueReorder; set { _explicitNullValueReorder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reorder"); else _explicitNullProperties?.Remove("reorder"); } }
+        private bool? _explicitNullValueReorder = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItemActionsAllowed"/> and sets the default values.
         /// </summary>
@@ -44,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public static global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItemActionsAllowed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItemActionsAllowed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutResponseSchemaLayoutsItemSectionsItemActionsAllowed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +98,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("remove_field", RemoveField);
             writer.WriteBoolValue("rename", Rename);
             writer.WriteBoolValue("reorder", Reorder);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

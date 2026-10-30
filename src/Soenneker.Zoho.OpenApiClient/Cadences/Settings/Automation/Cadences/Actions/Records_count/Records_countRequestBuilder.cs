@@ -36,18 +36,18 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Act
         /// <summary>
         /// To retrieve the record counts for the specified Cadences from your Zoho CRM organization. For each Cadence ID supplied in the **ids** query parameter, the response returns the number of records currently associated with that Cadence. A maximum of 100 Cadence IDs can be supplied per request.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCount200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCountSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCount400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCount200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Actions.Records_count.Records_countRequestBuilder.Records_countRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCountSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Actions.Records_count.Records_countRequestBuilder.Records_countRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCount200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Actions.Records_count.Records_countRequestBuilder.Records_countRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCountSuccessResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Actions.Records_count.Records_countRequestBuilder.Records_countRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,8 +55,10 @@ namespace Soenneker.Zoho.OpenApiClient.Cadences.Settings.Automation.Cadences.Act
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCount400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.AllErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCount200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCount200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCountSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCountSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the record counts for the specified Cadences from your Zoho CRM organization. For each Cadence ID supplied in the **ids** query parameter, the response returns the number of records currently associated with that Cadence. A maximum of 100 Cadence IDs can be supplied per request.

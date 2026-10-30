@@ -53,6 +53,8 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.Portal_invite
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersGetScheduledInviteUsersInfo200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -74,7 +76,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Item.Actions.Portal_invite
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the status of a scheduled portal invitation job in your Zoho CRM organization using the job identifier returned when invitations were scheduled.
