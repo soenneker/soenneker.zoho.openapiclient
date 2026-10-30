@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inventory_templates") is { } nullNodeInventoryTemplates && nullNodeInventoryTemplates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InventoryTemplates = null;
+            if (parseNode.GetChildNode("inventory_templates") is null) { _explicitNullValueInventoryTemplates = default!; _explicitNullProperties?.Remove("inventory_templates"); }
+            else if (parseNode.GetChildNode("inventory_templates") is { } nullNodeInventoryTemplates && nullNodeInventoryTemplates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InventoryTemplates = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents an array containing the details of a single inventory template. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetail>? InventoryTemplates { get => _explicitNullValueInventoryTemplates; set { _explicitNullValueInventoryTemplates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_templates"); else _explicitNullProperties?.Remove("inventory_templates"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetail>? InventoryTemplates { get => _explicitNullValueInventoryTemplates; set { _explicitNullValueInventoryTemplates = value; AdditionalData?.Remove("inventory_templates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_templates"); else _explicitNullProperties?.Remove("inventory_templates"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetail>? _explicitNullValueInventoryTemplates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetail> InventoryTemplates { get => _explicitNullValueInventoryTemplates; set { _explicitNullValueInventoryTemplates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_templates"); else _explicitNullProperties?.Remove("inventory_templates"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetail> InventoryTemplates { get => _explicitNullValueInventoryTemplates; set { _explicitNullValueInventoryTemplates = value; AdditionalData?.Remove("inventory_templates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_templates"); else _explicitNullProperties?.Remove("inventory_templates"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateDetail> _explicitNullValueInventoryTemplates = default!;
 #endif
         /// <summary>

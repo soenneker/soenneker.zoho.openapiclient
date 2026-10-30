@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
-            if (parseNode.GetChildNode("profiles") is { } nullNodeProfiles && nullNodeProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profiles = null;
+            if (parseNode.GetChildNode("info") is null) { _explicitNullValueInfo = default!; _explicitNullProperties?.Remove("info"); }
+            else if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
+            if (parseNode.GetChildNode("profiles") is null) { _explicitNullValueProfiles = default!; _explicitNullProperties?.Remove("profiles"); }
+            else if (parseNode.GetChildNode("profiles") is { } nullNodeProfiles && nullNodeProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profiles = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Pagination and license usage information for the profiles list response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfo? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfo _explicitNullValueInfo = default!;
 #endif
         /// <summary>List of profiles returned for this page (up to 200 entries).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItem>? Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItem>? Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; AdditionalData?.Remove("profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItem>? _explicitNullValueProfiles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItem> Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItem> Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; AdditionalData?.Remove("profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseProfilesItem> _explicitNullValueProfiles = default!;
 #endif
         /// <summary>

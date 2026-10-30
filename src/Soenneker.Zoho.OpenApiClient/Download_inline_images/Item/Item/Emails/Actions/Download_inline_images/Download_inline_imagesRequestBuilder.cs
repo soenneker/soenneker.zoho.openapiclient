@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.Emails.A
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Download_inline_images.Item.Item.Emails.Actions.Download_inline_images.Download_inline_imagesRequestBuilder.Download_inline_imagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/download_inline_images/{module}/{recordId}/Emails/actions/download_inline_images", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "image/png, application/json");
             return requestInfo;

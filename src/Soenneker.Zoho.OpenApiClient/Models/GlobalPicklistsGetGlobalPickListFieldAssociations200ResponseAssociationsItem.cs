@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
-            if (parseNode.GetChildNode("layouts") is { } nullNodeLayouts && nullNodeLayouts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layouts = null;
-            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("field") is null) { _explicitNullValueField = default!; _explicitNullProperties?.Remove("field"); }
+            else if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("layouts") is null) { _explicitNullValueLayouts = default!; _explicitNullProperties?.Remove("layouts"); }
+            else if (parseNode.GetChildNode("layouts") is { } nullNodeLayouts && nullNodeLayouts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layouts = null;
+            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
+            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Field details associated with the global picklist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemField _explicitNullValueField = default!;
 #endif
         /// <summary>List of layouts associated with the field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemLayoutsItem>? Layouts { get => _explicitNullValueLayouts; set { _explicitNullValueLayouts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layouts"); else _explicitNullProperties?.Remove("layouts"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemLayoutsItem>? Layouts { get => _explicitNullValueLayouts; set { _explicitNullValueLayouts = value; AdditionalData?.Remove("layouts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layouts"); else _explicitNullProperties?.Remove("layouts"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemLayoutsItem>? _explicitNullValueLayouts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemLayoutsItem> Layouts { get => _explicitNullValueLayouts; set { _explicitNullValueLayouts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layouts"); else _explicitNullProperties?.Remove("layouts"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemLayoutsItem> Layouts { get => _explicitNullValueLayouts; set { _explicitNullValueLayouts = value; AdditionalData?.Remove("layouts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layouts"); else _explicitNullProperties?.Remove("layouts"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemLayoutsItem> _explicitNullValueLayouts = default!;
 #endif
         /// <summary>Module details associated with the field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetGlobalPickListFieldAssociations200ResponseAssociationsItemModule _explicitNullValueModule = default!;
 #endif
         /// <summary>

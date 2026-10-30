@@ -18,15 +18,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attachment_name") is { } nullNodeAttachmentName && nullNodeAttachmentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachmentName = null;
-            if (parseNode.GetChildNode("bcc_email") is { } nullNodeBccEmail && nullNodeBccEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BccEmail = null;
-            if (parseNode.GetChildNode("cc_email") is { } nullNodeCcEmail && nullNodeCcEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CcEmail = null;
-            if (parseNode.GetChildNode("from_address") is { } nullNodeFromAddress && nullNodeFromAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromAddress = null;
-            if (parseNode.GetChildNode("mail_merge_template") is { } nullNodeMailMergeTemplate && nullNodeMailMergeTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailMergeTemplate = null;
-            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
-            if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
-            if (parseNode.GetChildNode("to_address") is { } nullNodeToAddress && nullNodeToAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToAddress = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("attachment_name") is null) { _explicitNullValueAttachmentName = default!; _explicitNullProperties?.Remove("attachment_name"); }
+            else if (parseNode.GetChildNode("attachment_name") is { } nullNodeAttachmentName && nullNodeAttachmentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachmentName = null;
+            if (parseNode.GetChildNode("bcc_email") is null) { _explicitNullValueBccEmail = default!; _explicitNullProperties?.Remove("bcc_email"); }
+            else if (parseNode.GetChildNode("bcc_email") is { } nullNodeBccEmail && nullNodeBccEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BccEmail = null;
+            if (parseNode.GetChildNode("cc_email") is null) { _explicitNullValueCcEmail = default!; _explicitNullProperties?.Remove("cc_email"); }
+            else if (parseNode.GetChildNode("cc_email") is { } nullNodeCcEmail && nullNodeCcEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CcEmail = null;
+            if (parseNode.GetChildNode("from_address") is null) { _explicitNullValueFromAddress = default!; _explicitNullProperties?.Remove("from_address"); }
+            else if (parseNode.GetChildNode("from_address") is { } nullNodeFromAddress && nullNodeFromAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromAddress = null;
+            if (parseNode.GetChildNode("mail_merge_template") is null) { _explicitNullValueMailMergeTemplate = default!; _explicitNullProperties?.Remove("mail_merge_template"); }
+            else if (parseNode.GetChildNode("mail_merge_template") is { } nullNodeMailMergeTemplate && nullNodeMailMergeTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailMergeTemplate = null;
+            if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
+            else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("subject") is null) { _explicitNullValueSubject = default!; _explicitNullProperties?.Remove("subject"); }
+            else if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+            if (parseNode.GetChildNode("to_address") is null) { _explicitNullValueToAddress = default!; _explicitNullProperties?.Remove("to_address"); }
+            else if (parseNode.GetChildNode("to_address") is { } nullNodeToAddress && nullNodeToAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToAddress = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,85 +43,85 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the name of the attachment to include in the mail merge email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttachmentName { get => _explicitNullValueAttachmentName; set { _explicitNullValueAttachmentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachment_name"); else _explicitNullProperties?.Remove("attachment_name"); } }
+        public string? AttachmentName { get => _explicitNullValueAttachmentName; set { _explicitNullValueAttachmentName = value; AdditionalData?.Remove("attachment_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachment_name"); else _explicitNullProperties?.Remove("attachment_name"); } }
         private string? _explicitNullValueAttachmentName = default!;
 #nullable restore
 #else
-        public string AttachmentName { get => _explicitNullValueAttachmentName; set { _explicitNullValueAttachmentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachment_name"); else _explicitNullProperties?.Remove("attachment_name"); } }
+        public string AttachmentName { get => _explicitNullValueAttachmentName; set { _explicitNullValueAttachmentName = value; AdditionalData?.Remove("attachment_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachment_name"); else _explicitNullProperties?.Remove("attachment_name"); } }
         private string _explicitNullValueAttachmentName = default!;
 #endif
         /// <summary>Represents the list of email addresses to include in the BCC field of the mail merge email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BccEmailNested>? BccEmail { get => _explicitNullValueBccEmail; set { _explicitNullValueBccEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bcc_email"); else _explicitNullProperties?.Remove("bcc_email"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BccEmailNested>? BccEmail { get => _explicitNullValueBccEmail; set { _explicitNullValueBccEmail = value; AdditionalData?.Remove("bcc_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bcc_email"); else _explicitNullProperties?.Remove("bcc_email"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.BccEmailNested>? _explicitNullValueBccEmail = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BccEmailNested> BccEmail { get => _explicitNullValueBccEmail; set { _explicitNullValueBccEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bcc_email"); else _explicitNullProperties?.Remove("bcc_email"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BccEmailNested> BccEmail { get => _explicitNullValueBccEmail; set { _explicitNullValueBccEmail = value; AdditionalData?.Remove("bcc_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bcc_email"); else _explicitNullProperties?.Remove("bcc_email"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.BccEmailNested> _explicitNullValueBccEmail = default!;
 #endif
         /// <summary>Represents the list of email addresses to include in the CC field of the mail merge email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CcEmailNested>? CcEmail { get => _explicitNullValueCcEmail; set { _explicitNullValueCcEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc_email"); else _explicitNullProperties?.Remove("cc_email"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CcEmailNested>? CcEmail { get => _explicitNullValueCcEmail; set { _explicitNullValueCcEmail = value; AdditionalData?.Remove("cc_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc_email"); else _explicitNullProperties?.Remove("cc_email"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CcEmailNested>? _explicitNullValueCcEmail = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CcEmailNested> CcEmail { get => _explicitNullValueCcEmail; set { _explicitNullValueCcEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc_email"); else _explicitNullProperties?.Remove("cc_email"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CcEmailNested> CcEmail { get => _explicitNullValueCcEmail; set { _explicitNullValueCcEmail = value; AdditionalData?.Remove("cc_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc_email"); else _explicitNullProperties?.Remove("cc_email"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CcEmailNested> _explicitNullValueCcEmail = default!;
 #endif
         /// <summary>The email ID you want to use to send emails from. This email address must be the one of the org-verified email addresses or the current user&apos;s email ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedFromAddress? FromAddress { get => _explicitNullValueFromAddress; set { _explicitNullValueFromAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_address"); else _explicitNullProperties?.Remove("from_address"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedFromAddress? FromAddress { get => _explicitNullValueFromAddress; set { _explicitNullValueFromAddress = value; AdditionalData?.Remove("from_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_address"); else _explicitNullProperties?.Remove("from_address"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedFromAddress? _explicitNullValueFromAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedFromAddress FromAddress { get => _explicitNullValueFromAddress; set { _explicitNullValueFromAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_address"); else _explicitNullProperties?.Remove("from_address"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedFromAddress FromAddress { get => _explicitNullValueFromAddress; set { _explicitNullValueFromAddress = value; AdditionalData?.Remove("from_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_address"); else _explicitNullProperties?.Remove("from_address"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedFromAddress _explicitNullValueFromAddress = default!;
 #endif
         /// <summary>Mailmerge Object to pass Template details (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedMailMergeTemplate? MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedMailMergeTemplate? MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; AdditionalData?.Remove("mail_merge_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedMailMergeTemplate? _explicitNullValueMailMergeTemplate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedMailMergeTemplate MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedMailMergeTemplate MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; AdditionalData?.Remove("mail_merge_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedMailMergeTemplate _explicitNullValueMailMergeTemplate = default!;
 #endif
         /// <summary>Represents the body or content of the email you want to send. It can include up to **100,000 characters**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>Represents the subject line of the mail merge email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>Represents the list of email addresses to send the mail merge email to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested>? ToAddress { get => _explicitNullValueToAddress; set { _explicitNullValueToAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_address"); else _explicitNullProperties?.Remove("to_address"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested>? ToAddress { get => _explicitNullValueToAddress; set { _explicitNullValueToAddress = value; AdditionalData?.Remove("to_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_address"); else _explicitNullProperties?.Remove("to_address"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested>? _explicitNullValueToAddress = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested> ToAddress { get => _explicitNullValueToAddress; set { _explicitNullValueToAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_address"); else _explicitNullProperties?.Remove("to_address"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested> ToAddress { get => _explicitNullValueToAddress; set { _explicitNullValueToAddress = value; AdditionalData?.Remove("to_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_address"); else _explicitNullProperties?.Remove("to_address"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested> _explicitNullValueToAddress = default!;
 #endif
         /// <summary>Represents the attachment type for the mail merge email.Possible values:**inline** - Includes the mail merge document as an inline image in the email.**attachment** - Attaches the mail merge document as a separate file in the email.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNested"/> and sets the default values.
@@ -147,7 +156,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "to_address", n => { ToAddress = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested>(global::Soenneker.Zoho.OpenApiClient.Models.ToAddressNested.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailMergeNestedType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

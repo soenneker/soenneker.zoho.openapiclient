@@ -74,7 +74,7 @@ namespace Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.User_groups.Users.Item.Actions.Associated_groups.Associated_groupsRequestBuilder.Associated_groupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/user_groups/users/{user}/actions/associated_groups", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

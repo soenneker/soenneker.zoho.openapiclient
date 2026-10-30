@@ -18,17 +18,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("strictly_reporting") is { } nullNodeStrictlyReporting && nullNodeStrictlyReporting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StrictlyReporting = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("strictly_reporting") is null) { _explicitNullValueStrictlyReporting = default!; _explicitNullProperties?.Remove("strictly_reporting"); }
+            else if (parseNode.GetChildNode("strictly_reporting") is { } nullNodeStrictlyReporting && nullNodeStrictlyReporting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StrictlyReporting = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether data visibility is restricted to the direct reporting chain.Possible values:**true** - Data is visible only to the CEO and administrators.**false** - Data is visible to any user higher in the hierarchy.</summary>
-        public bool? StrictlyReporting { get => _explicitNullValueStrictlyReporting; set { _explicitNullValueStrictlyReporting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strictly_reporting"); else _explicitNullProperties?.Remove("strictly_reporting"); } }
+        public bool? StrictlyReporting { get => _explicitNullValueStrictlyReporting; set { _explicitNullValueStrictlyReporting = value; AdditionalData?.Remove("strictly_reporting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strictly_reporting"); else _explicitNullProperties?.Remove("strictly_reporting"); } }
         private bool? _explicitNullValueStrictlyReporting = default!;
         /// <summary>Represents the hierarchy type configured for the organization. Possible values:**Role_Hierarchy** - Access is based on the user&apos;s role in the hierarchy.**Reporting_To_Hierarchy** - Access is based on the user&apos;s reporting structure.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferencesType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferencesType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferencesType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferences"/> and sets the default values.
@@ -56,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "strictly_reporting", n => { StrictlyReporting = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferencesType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OrgDetailsHierarchyPreferencesType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

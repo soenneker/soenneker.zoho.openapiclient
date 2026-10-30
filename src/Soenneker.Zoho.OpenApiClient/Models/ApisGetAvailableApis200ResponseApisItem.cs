@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("operation_types") is { } nullNodeOperationTypes && nullNodeOperationTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationTypes = null;
-            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("operation_types") is null) { _explicitNullValueOperationTypes = default!; _explicitNullProperties?.Remove("operation_types"); }
+            else if (parseNode.GetChildNode("operation_types") is { } nullNodeOperationTypes && nullNodeOperationTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationTypes = null;
+            if (parseNode.GetChildNode("path") is null) { _explicitNullValuePath = default!; _explicitNullProperties?.Remove("path"); }
+            else if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains the supported HTTP operations for that API in that version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem>? OperationTypes { get => _explicitNullValueOperationTypes; set { _explicitNullValueOperationTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_types"); else _explicitNullProperties?.Remove("operation_types"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem>? OperationTypes { get => _explicitNullValueOperationTypes; set { _explicitNullValueOperationTypes = value; AdditionalData?.Remove("operation_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_types"); else _explicitNullProperties?.Remove("operation_types"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem>? _explicitNullValueOperationTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem> OperationTypes { get => _explicitNullValueOperationTypes; set { _explicitNullValueOperationTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_types"); else _explicitNullProperties?.Remove("operation_types"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem> OperationTypes { get => _explicitNullValueOperationTypes; set { _explicitNullValueOperationTypes = value; AdditionalData?.Remove("operation_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_types"); else _explicitNullProperties?.Remove("operation_types"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItemOperationTypesItem> _explicitNullValueOperationTypes = default!;
 #endif
         /// <summary>Represents the API endpoint for the API version in the request URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string _explicitNullValuePath = default!;
 #endif
         /// <summary>

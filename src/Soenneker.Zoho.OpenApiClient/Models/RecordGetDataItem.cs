@@ -18,15 +18,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Created_By") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
-            if (parseNode.GetChildNode("Created_Time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("Modified_By") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
-            if (parseNode.GetChildNode("Modified_Time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
-            if (parseNode.GetChildNode("Owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
-            if (parseNode.GetChildNode("$state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
-            if (parseNode.GetChildNode("Wizard") is { } nullNodeWizard && nullNodeWizard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wizard = null;
-            if (parseNode.GetChildNode("$wizard_connection_path") is { } nullNodeWizardConnectionPath && nullNodeWizardConnectionPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WizardConnectionPath = null;
+            if (parseNode.GetChildNode("Created_By") is null) { _explicitNullValueCreatedBy = default!; _explicitNullProperties?.Remove("Created_By"); }
+            else if (parseNode.GetChildNode("Created_By") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("Created_Time") is null) { _explicitNullValueCreatedTime = default!; _explicitNullProperties?.Remove("Created_Time"); }
+            else if (parseNode.GetChildNode("Created_Time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("Modified_By") is null) { _explicitNullValueModifiedBy = default!; _explicitNullProperties?.Remove("Modified_By"); }
+            else if (parseNode.GetChildNode("Modified_By") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("Modified_Time") is null) { _explicitNullValueModifiedTime = default!; _explicitNullProperties?.Remove("Modified_Time"); }
+            else if (parseNode.GetChildNode("Modified_Time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("Owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("Owner"); }
+            else if (parseNode.GetChildNode("Owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("$state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("$state"); }
+            else if (parseNode.GetChildNode("$state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("Wizard") is null) { _explicitNullValueWizard = default!; _explicitNullProperties?.Remove("Wizard"); }
+            else if (parseNode.GetChildNode("Wizard") is { } nullNodeWizard && nullNodeWizard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wizard = null;
+            if (parseNode.GetChildNode("$wizard_connection_path") is null) { _explicitNullValueWizardConnectionPath = default!; _explicitNullProperties?.Remove("$wizard_connection_path"); }
+            else if (parseNode.GetChildNode("$wizard_connection_path") is { } nullNodeWizardConnectionPath && nullNodeWizardConnectionPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WizardConnectionPath = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,77 +43,77 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains information about the user who originally created the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_By"); else _explicitNullProperties?.Remove("Created_By"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("Created_By"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_By"); else _explicitNullProperties?.Remove("Created_By"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_By"); else _explicitNullProperties?.Remove("Created_By"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("Created_By"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_By"); else _explicitNullProperties?.Remove("Created_By"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Represents the timestamp when the record was originally created.</summary>
-        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_Time"); else _explicitNullProperties?.Remove("Created_Time"); } }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; AdditionalData?.Remove("Created_Time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_Time"); else _explicitNullProperties?.Remove("Created_Time"); } }
         private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>Represents the unique identifier of the RecordGETDataItem record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Contains information about the user who last modified the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; AdditionalData?.Remove("Modified_By"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemModifiedBy? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; AdditionalData?.Remove("Modified_By"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemModifiedBy _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>Represents the timestamp when the record was last modified.</summary>
-        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_Time"); else _explicitNullProperties?.Remove("Modified_Time"); } }
+        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; AdditionalData?.Remove("Modified_Time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_Time"); else _explicitNullProperties?.Remove("Modified_Time"); } }
         private DateTimeOffset? _explicitNullValueModifiedTime = default!;
         /// <summary>Represents the owner value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("Owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("Owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>This will be as Save or Draft. &apos;save&apos; indicates the record is not in any active Blueprint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$state"); else _explicitNullProperties?.Remove("$state"); } }
+        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("$state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$state"); else _explicitNullProperties?.Remove("$state"); } }
         private string? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$state"); else _explicitNullProperties?.Remove("$state"); } }
+        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("$state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$state"); else _explicitNullProperties?.Remove("$state"); } }
         private string _explicitNullValueState = default!;
 #endif
         /// <summary>Represents the wizard value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemWizard? Wizard { get => _explicitNullValueWizard; set { _explicitNullValueWizard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Wizard"); else _explicitNullProperties?.Remove("Wizard"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemWizard? Wizard { get => _explicitNullValueWizard; set { _explicitNullValueWizard = value; AdditionalData?.Remove("Wizard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Wizard"); else _explicitNullProperties?.Remove("Wizard"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemWizard? _explicitNullValueWizard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemWizard Wizard { get => _explicitNullValueWizard; set { _explicitNullValueWizard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Wizard"); else _explicitNullProperties?.Remove("Wizard"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemWizard Wizard { get => _explicitNullValueWizard; set { _explicitNullValueWizard = value; AdditionalData?.Remove("Wizard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Wizard"); else _explicitNullProperties?.Remove("Wizard"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordGetDataItemWizard _explicitNullValueWizard = default!;
 #endif
         /// <summary>$wizard_connection_path information denoted by comma separated connection ids between wizard screens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WizardConnectionPath { get => _explicitNullValueWizardConnectionPath; set { _explicitNullValueWizardConnectionPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$wizard_connection_path"); else _explicitNullProperties?.Remove("$wizard_connection_path"); } }
+        public string? WizardConnectionPath { get => _explicitNullValueWizardConnectionPath; set { _explicitNullValueWizardConnectionPath = value; AdditionalData?.Remove("$wizard_connection_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$wizard_connection_path"); else _explicitNullProperties?.Remove("$wizard_connection_path"); } }
         private string? _explicitNullValueWizardConnectionPath = default!;
 #nullable restore
 #else
-        public string WizardConnectionPath { get => _explicitNullValueWizardConnectionPath; set { _explicitNullValueWizardConnectionPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$wizard_connection_path"); else _explicitNullProperties?.Remove("$wizard_connection_path"); } }
+        public string WizardConnectionPath { get => _explicitNullValueWizardConnectionPath; set { _explicitNullValueWizardConnectionPath = value; AdditionalData?.Remove("$wizard_connection_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$wizard_connection_path"); else _explicitNullProperties?.Remove("$wizard_connection_path"); } }
         private string _explicitNullValueWizardConnectionPath = default!;
 #endif
         /// <summary>

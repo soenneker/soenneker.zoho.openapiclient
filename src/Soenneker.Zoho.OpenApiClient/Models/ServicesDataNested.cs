@@ -19,157 +19,175 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Availability_Type") is { } nullNodeAvailabilityType && nullNodeAvailabilityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailabilityType = null;
-            if (parseNode.GetChildNode("Available_Dates") is { } nullNodeAvailableDates && nullNodeAvailableDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableDates = null;
-            if (parseNode.GetChildNode("Available_Days") is { } nullNodeAvailableDays && nullNodeAvailableDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableDays = null;
-            if (parseNode.GetChildNode("Available_From") is { } nullNodeAvailableFrom && nullNodeAvailableFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableFrom = null;
-            if (parseNode.GetChildNode("Available_Till") is { } nullNodeAvailableTill && nullNodeAvailableTill.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableTill = null;
-            if (parseNode.GetChildNode("Available_Timings") is { } nullNodeAvailableTimings && nullNodeAvailableTimings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableTimings = null;
-            if (parseNode.GetChildNode("Description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("Duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
-            if (parseNode.GetChildNode("Job_Sheet_Required") is { } nullNodeJobSheetRequired && nullNodeJobSheetRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobSheetRequired = null;
-            if (parseNode.GetChildNode("Layout") is { } nullNodeLayout && nullNodeLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layout = null;
-            if (parseNode.GetChildNode("Location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
-            if (parseNode.GetChildNode("Members") is { } nullNodeMembers && nullNodeMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Members = null;
-            if (parseNode.GetChildNode("Owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
-            if (parseNode.GetChildNode("Price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
-            if (parseNode.GetChildNode("Service_Name") is { } nullNodeServiceName && nullNodeServiceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceName = null;
-            if (parseNode.GetChildNode("Tax") is { } nullNodeTax && nullNodeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tax = null;
-            if (parseNode.GetChildNode("$zia_owner_assignment") is { } nullNodeZiaOwnerAssignment && nullNodeZiaOwnerAssignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZiaOwnerAssignment = null;
-            if (parseNode.GetChildNode("zia_suggested_users") is { } nullNodeZiaSuggestedUsers && nullNodeZiaSuggestedUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZiaSuggestedUsers = null;
+            if (parseNode.GetChildNode("Availability_Type") is null) { _explicitNullValueAvailabilityType = default!; _explicitNullProperties?.Remove("Availability_Type"); }
+            else if (parseNode.GetChildNode("Availability_Type") is { } nullNodeAvailabilityType && nullNodeAvailabilityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailabilityType = null;
+            if (parseNode.GetChildNode("Available_Dates") is null) { _explicitNullValueAvailableDates = default!; _explicitNullProperties?.Remove("Available_Dates"); }
+            else if (parseNode.GetChildNode("Available_Dates") is { } nullNodeAvailableDates && nullNodeAvailableDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableDates = null;
+            if (parseNode.GetChildNode("Available_Days") is null) { _explicitNullValueAvailableDays = default!; _explicitNullProperties?.Remove("Available_Days"); }
+            else if (parseNode.GetChildNode("Available_Days") is { } nullNodeAvailableDays && nullNodeAvailableDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableDays = null;
+            if (parseNode.GetChildNode("Available_From") is null) { _explicitNullValueAvailableFrom = default!; _explicitNullProperties?.Remove("Available_From"); }
+            else if (parseNode.GetChildNode("Available_From") is { } nullNodeAvailableFrom && nullNodeAvailableFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableFrom = null;
+            if (parseNode.GetChildNode("Available_Till") is null) { _explicitNullValueAvailableTill = default!; _explicitNullProperties?.Remove("Available_Till"); }
+            else if (parseNode.GetChildNode("Available_Till") is { } nullNodeAvailableTill && nullNodeAvailableTill.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableTill = null;
+            if (parseNode.GetChildNode("Available_Timings") is null) { _explicitNullValueAvailableTimings = default!; _explicitNullProperties?.Remove("Available_Timings"); }
+            else if (parseNode.GetChildNode("Available_Timings") is { } nullNodeAvailableTimings && nullNodeAvailableTimings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableTimings = null;
+            if (parseNode.GetChildNode("Description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("Description"); }
+            else if (parseNode.GetChildNode("Description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("Duration") is null) { _explicitNullValueDuration = default!; _explicitNullProperties?.Remove("Duration"); }
+            else if (parseNode.GetChildNode("Duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("Job_Sheet_Required") is null) { _explicitNullValueJobSheetRequired = default!; _explicitNullProperties?.Remove("Job_Sheet_Required"); }
+            else if (parseNode.GetChildNode("Job_Sheet_Required") is { } nullNodeJobSheetRequired && nullNodeJobSheetRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobSheetRequired = null;
+            if (parseNode.GetChildNode("Layout") is null) { _explicitNullValueLayout = default!; _explicitNullProperties?.Remove("Layout"); }
+            else if (parseNode.GetChildNode("Layout") is { } nullNodeLayout && nullNodeLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layout = null;
+            if (parseNode.GetChildNode("Location") is null) { _explicitNullValueLocation = default!; _explicitNullProperties?.Remove("Location"); }
+            else if (parseNode.GetChildNode("Location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("Members") is null) { _explicitNullValueMembers = default!; _explicitNullProperties?.Remove("Members"); }
+            else if (parseNode.GetChildNode("Members") is { } nullNodeMembers && nullNodeMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Members = null;
+            if (parseNode.GetChildNode("Owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("Owner"); }
+            else if (parseNode.GetChildNode("Owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("Price") is null) { _explicitNullValuePrice = default!; _explicitNullProperties?.Remove("Price"); }
+            else if (parseNode.GetChildNode("Price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("Service_Name") is null) { _explicitNullValueServiceName = default!; _explicitNullProperties?.Remove("Service_Name"); }
+            else if (parseNode.GetChildNode("Service_Name") is { } nullNodeServiceName && nullNodeServiceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceName = null;
+            if (parseNode.GetChildNode("Tax") is null) { _explicitNullValueTax = default!; _explicitNullProperties?.Remove("Tax"); }
+            else if (parseNode.GetChildNode("Tax") is { } nullNodeTax && nullNodeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tax = null;
+            if (parseNode.GetChildNode("$zia_owner_assignment") is null) { _explicitNullValueZiaOwnerAssignment = default!; _explicitNullProperties?.Remove("$zia_owner_assignment"); }
+            else if (parseNode.GetChildNode("$zia_owner_assignment") is { } nullNodeZiaOwnerAssignment && nullNodeZiaOwnerAssignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZiaOwnerAssignment = null;
+            if (parseNode.GetChildNode("zia_suggested_users") is null) { _explicitNullValueZiaSuggestedUsers = default!; _explicitNullProperties?.Remove("zia_suggested_users"); }
+            else if (parseNode.GetChildNode("zia_suggested_users") is { } nullNodeZiaSuggestedUsers && nullNodeZiaSuggestedUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZiaSuggestedUsers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify how the service availability is defined. **Possible values**: - Every Business Days - service is available on every business day.- Specific Date Range - service is available within anAvailable_From and Available_Till range.- Specific Date(s) - service is available on the dates listed inAvailable_Dates.- Specific Day(s) - service is available on the weekdays listed inAvailable_Days.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedAvailabilityType? AvailabilityType { get => _explicitNullValueAvailabilityType; set { _explicitNullValueAvailabilityType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Availability_Type"); else _explicitNullProperties?.Remove("Availability_Type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedAvailabilityType? AvailabilityType { get => _explicitNullValueAvailabilityType; set { _explicitNullValueAvailabilityType = value; AdditionalData?.Remove("Availability_Type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Availability_Type"); else _explicitNullProperties?.Remove("Availability_Type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedAvailabilityType? _explicitNullValueAvailabilityType = default!;
         /// <summary>Specify the list of dates on which the service is available, in YYYY-MM-DD format. This key is mandatory when Availability_Type is Specific Date(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AvailableDates { get => _explicitNullValueAvailableDates; set { _explicitNullValueAvailableDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Dates"); else _explicitNullProperties?.Remove("Available_Dates"); } }
+        public List<string>? AvailableDates { get => _explicitNullValueAvailableDates; set { _explicitNullValueAvailableDates = value; AdditionalData?.Remove("Available_Dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Dates"); else _explicitNullProperties?.Remove("Available_Dates"); } }
         private List<string>? _explicitNullValueAvailableDates = default!;
 #nullable restore
 #else
-        public List<string> AvailableDates { get => _explicitNullValueAvailableDates; set { _explicitNullValueAvailableDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Dates"); else _explicitNullProperties?.Remove("Available_Dates"); } }
+        public List<string> AvailableDates { get => _explicitNullValueAvailableDates; set { _explicitNullValueAvailableDates = value; AdditionalData?.Remove("Available_Dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Dates"); else _explicitNullProperties?.Remove("Available_Dates"); } }
         private List<string> _explicitNullValueAvailableDates = default!;
 #endif
         /// <summary>Specify the list of business days on which the service is available. This key is mandatory when Availability_Type is Specific Day(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AvailableDays { get => _explicitNullValueAvailableDays; set { _explicitNullValueAvailableDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Days"); else _explicitNullProperties?.Remove("Available_Days"); } }
+        public List<string>? AvailableDays { get => _explicitNullValueAvailableDays; set { _explicitNullValueAvailableDays = value; AdditionalData?.Remove("Available_Days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Days"); else _explicitNullProperties?.Remove("Available_Days"); } }
         private List<string>? _explicitNullValueAvailableDays = default!;
 #nullable restore
 #else
-        public List<string> AvailableDays { get => _explicitNullValueAvailableDays; set { _explicitNullValueAvailableDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Days"); else _explicitNullProperties?.Remove("Available_Days"); } }
+        public List<string> AvailableDays { get => _explicitNullValueAvailableDays; set { _explicitNullValueAvailableDays = value; AdditionalData?.Remove("Available_Days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Days"); else _explicitNullProperties?.Remove("Available_Days"); } }
         private List<string> _explicitNullValueAvailableDays = default!;
 #endif
         /// <summary>Specify the date from which the service is available, in YYYY-MM-DD format. The key is mandatory when Availability_Type is Specific Date Range.</summary>
-        public Date? AvailableFrom { get => _explicitNullValueAvailableFrom; set { _explicitNullValueAvailableFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_From"); else _explicitNullProperties?.Remove("Available_From"); } }
+        public Date? AvailableFrom { get => _explicitNullValueAvailableFrom; set { _explicitNullValueAvailableFrom = value; AdditionalData?.Remove("Available_From"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_From"); else _explicitNullProperties?.Remove("Available_From"); } }
         private Date? _explicitNullValueAvailableFrom = default!;
         /// <summary>Specify the date until which the service is available, in YYYY-MM-DD format. The key is mandatory when Availability_Type is Specific Date Range.</summary>
-        public Date? AvailableTill { get => _explicitNullValueAvailableTill; set { _explicitNullValueAvailableTill = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Till"); else _explicitNullProperties?.Remove("Available_Till"); } }
+        public Date? AvailableTill { get => _explicitNullValueAvailableTill; set { _explicitNullValueAvailableTill = value; AdditionalData?.Remove("Available_Till"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Till"); else _explicitNullProperties?.Remove("Available_Till"); } }
         private Date? _explicitNullValueAvailableTill = default!;
         /// <summary>Specify the available time windows for the service on each available day or date. The total available time must be at least equal to the service Duration. If not mentioned, the configured business hours are used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AvailableTimingsNested>? AvailableTimings { get => _explicitNullValueAvailableTimings; set { _explicitNullValueAvailableTimings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Timings"); else _explicitNullProperties?.Remove("Available_Timings"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AvailableTimingsNested>? AvailableTimings { get => _explicitNullValueAvailableTimings; set { _explicitNullValueAvailableTimings = value; AdditionalData?.Remove("Available_Timings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Timings"); else _explicitNullProperties?.Remove("Available_Timings"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.AvailableTimingsNested>? _explicitNullValueAvailableTimings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AvailableTimingsNested> AvailableTimings { get => _explicitNullValueAvailableTimings; set { _explicitNullValueAvailableTimings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Timings"); else _explicitNullProperties?.Remove("Available_Timings"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AvailableTimingsNested> AvailableTimings { get => _explicitNullValueAvailableTimings; set { _explicitNullValueAvailableTimings = value; AdditionalData?.Remove("Available_Timings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Available_Timings"); else _explicitNullProperties?.Remove("Available_Timings"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.AvailableTimingsNested> _explicitNullValueAvailableTimings = default!;
 #endif
         /// <summary>Specify a description of the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Description"); else _explicitNullProperties?.Remove("Description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("Description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Description"); else _explicitNullProperties?.Remove("Description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Description"); else _explicitNullProperties?.Remove("Description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("Description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Description"); else _explicitNullProperties?.Remove("Description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Specify the duration of the service, in minutes. Must be greater than 5 minutes and less than 24 hours.</summary>
-        public int? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Duration"); else _explicitNullProperties?.Remove("Duration"); } }
+        public int? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("Duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Duration"); else _explicitNullProperties?.Remove("Duration"); } }
         private int? _explicitNullValueDuration = default!;
         /// <summary>Specify whether a job sheet is required for the service. **Possible values**: Yes, No.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedJobSheetRequired? JobSheetRequired { get => _explicitNullValueJobSheetRequired; set { _explicitNullValueJobSheetRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job_Sheet_Required"); else _explicitNullProperties?.Remove("Job_Sheet_Required"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedJobSheetRequired? JobSheetRequired { get => _explicitNullValueJobSheetRequired; set { _explicitNullValueJobSheetRequired = value; AdditionalData?.Remove("Job_Sheet_Required"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Job_Sheet_Required"); else _explicitNullProperties?.Remove("Job_Sheet_Required"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedJobSheetRequired? _explicitNullValueJobSheetRequired = default!;
         /// <summary>Layout id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("Layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout? _explicitNullValueLayout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("Layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout _explicitNullValueLayout = default!;
 #endif
         /// <summary>Specify where the service is delivered. **Possible values**: Client Address, Business Address, BusinessAddress and Client Address.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLocation? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Location"); else _explicitNullProperties?.Remove("Location"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLocation? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("Location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Location"); else _explicitNullProperties?.Remove("Location"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLocation? _explicitNullValueLocation = default!;
         /// <summary>Specify the users who deliver the service. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested>? Members { get => _explicitNullValueMembers; set { _explicitNullValueMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Members"); else _explicitNullProperties?.Remove("Members"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested>? Members { get => _explicitNullValueMembers; set { _explicitNullValueMembers = value; AdditionalData?.Remove("Members"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Members"); else _explicitNullProperties?.Remove("Members"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested>? _explicitNullValueMembers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested> Members { get => _explicitNullValueMembers; set { _explicitNullValueMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Members"); else _explicitNullProperties?.Remove("Members"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested> Members { get => _explicitNullValueMembers; set { _explicitNullValueMembers = value; AdditionalData?.Remove("Members"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Members"); else _explicitNullProperties?.Remove("Members"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested> _explicitNullValueMembers = default!;
 #endif
         /// <summary>owner of the service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("Owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("Owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>Specify the price charged for the service in the organization currency, with up to 16 digits and 2 decimal places.</summary>
-        public int? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Price"); else _explicitNullProperties?.Remove("Price"); } }
+        public int? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; AdditionalData?.Remove("Price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Price"); else _explicitNullProperties?.Remove("Price"); } }
         private int? _explicitNullValuePrice = default!;
         /// <summary>Specify the name of the service. The key accepts alphanumeric characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Service_Name"); else _explicitNullProperties?.Remove("Service_Name"); } }
+        public string? ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; AdditionalData?.Remove("Service_Name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Service_Name"); else _explicitNullProperties?.Remove("Service_Name"); } }
         private string? _explicitNullValueServiceName = default!;
 #nullable restore
 #else
-        public string ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Service_Name"); else _explicitNullProperties?.Remove("Service_Name"); } }
+        public string ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; AdditionalData?.Remove("Service_Name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Service_Name"); else _explicitNullProperties?.Remove("Service_Name"); } }
         private string _explicitNullValueServiceName = default!;
 #endif
         /// <summary>Specify the taxes applied to the service cost. Each entry carries a tax ID and the tax value label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TaxNested>? Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Tax"); else _explicitNullProperties?.Remove("Tax"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TaxNested>? Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; AdditionalData?.Remove("Tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Tax"); else _explicitNullProperties?.Remove("Tax"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TaxNested>? _explicitNullValueTax = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TaxNested> Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Tax"); else _explicitNullProperties?.Remove("Tax"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TaxNested> Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; AdditionalData?.Remove("Tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Tax"); else _explicitNullProperties?.Remove("Tax"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TaxNested> _explicitNullValueTax = default!;
 #endif
         /// <summary>Specify the Zia owner-assignment recommendation behavior for the service record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZiaOwnerAssignment { get => _explicitNullValueZiaOwnerAssignment; set { _explicitNullValueZiaOwnerAssignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$zia_owner_assignment"); else _explicitNullProperties?.Remove("$zia_owner_assignment"); } }
+        public string? ZiaOwnerAssignment { get => _explicitNullValueZiaOwnerAssignment; set { _explicitNullValueZiaOwnerAssignment = value; AdditionalData?.Remove("$zia_owner_assignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$zia_owner_assignment"); else _explicitNullProperties?.Remove("$zia_owner_assignment"); } }
         private string? _explicitNullValueZiaOwnerAssignment = default!;
 #nullable restore
 #else
-        public string ZiaOwnerAssignment { get => _explicitNullValueZiaOwnerAssignment; set { _explicitNullValueZiaOwnerAssignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$zia_owner_assignment"); else _explicitNullProperties?.Remove("$zia_owner_assignment"); } }
+        public string ZiaOwnerAssignment { get => _explicitNullValueZiaOwnerAssignment; set { _explicitNullValueZiaOwnerAssignment = value; AdditionalData?.Remove("$zia_owner_assignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$zia_owner_assignment"); else _explicitNullProperties?.Remove("$zia_owner_assignment"); } }
         private string _explicitNullValueZiaOwnerAssignment = default!;
 #endif
         /// <summary>Specify the Zia-suggested users payload associated with the service record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty? ZiaSuggestedUsers { get => _explicitNullValueZiaSuggestedUsers; set { _explicitNullValueZiaSuggestedUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zia_suggested_users"); else _explicitNullProperties?.Remove("zia_suggested_users"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty? ZiaSuggestedUsers { get => _explicitNullValueZiaSuggestedUsers; set { _explicitNullValueZiaSuggestedUsers = value; AdditionalData?.Remove("zia_suggested_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zia_suggested_users"); else _explicitNullProperties?.Remove("zia_suggested_users"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty? _explicitNullValueZiaSuggestedUsers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty ZiaSuggestedUsers { get => _explicitNullValueZiaSuggestedUsers; set { _explicitNullValueZiaSuggestedUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zia_suggested_users"); else _explicitNullProperties?.Remove("zia_suggested_users"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty ZiaSuggestedUsers { get => _explicitNullValueZiaSuggestedUsers; set { _explicitNullValueZiaSuggestedUsers = value; AdditionalData?.Remove("zia_suggested_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zia_suggested_users"); else _explicitNullProperties?.Remove("zia_suggested_users"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedZiaSuggestedUsersProperty _explicitNullValueZiaSuggestedUsers = default!;
 #endif
         /// <summary>
@@ -197,7 +215,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Availability_Type", n => { AvailabilityType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedAvailabilityType>(); } },
+                { "Availability_Type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedAvailabilityType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAvailabilityType = default; _explicitNullProperties?.Remove("Availability_Type"); AdditionalData["Availability_Type"] = unknown; } else { AvailabilityType = parsed; AdditionalData.Remove("Availability_Type"); } } },
                 { "Available_Dates", n => { AvailableDates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "Available_Days", n => { AvailableDays = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "Available_From", n => { AvailableFrom = n.GetDateValue(); } },
@@ -205,9 +223,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "Available_Timings", n => { AvailableTimings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AvailableTimingsNested>(global::Soenneker.Zoho.OpenApiClient.Models.AvailableTimingsNested.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Description", n => { Description = n.GetStringValue(); } },
                 { "Duration", n => { Duration = n.GetIntValue(); } },
-                { "Job_Sheet_Required", n => { JobSheetRequired = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedJobSheetRequired>(); } },
+                { "Job_Sheet_Required", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedJobSheetRequired>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueJobSheetRequired = default; _explicitNullProperties?.Remove("Job_Sheet_Required"); AdditionalData["Job_Sheet_Required"] = unknown; } else { JobSheetRequired = parsed; AdditionalData.Remove("Job_Sheet_Required"); } } },
                 { "Layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLayout.CreateFromDiscriminatorValue); } },
-                { "Location", n => { Location = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLocation>(); } },
+                { "Location", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedLocation>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLocation = default; _explicitNullProperties?.Remove("Location"); AdditionalData["Location"] = unknown; } else { Location = parsed; AdditionalData.Remove("Location"); } } },
                 { "Members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.MembersNested>(global::Soenneker.Zoho.OpenApiClient.Models.MembersNested.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Owner", n => { Owner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner>(global::Soenneker.Zoho.OpenApiClient.Models.ServicesDataNestedOwner.CreateFromDiscriminatorValue); } },
                 { "Price", n => { Price = n.GetIntValue(); } },

@@ -18,71 +18,78 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_agent_user") is { } nullNodeAllowAgentUser && nullNodeAllowAgentUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowAgentUser = null;
-            if (parseNode.GetChildNode("assign_to") is { } nullNodeAssignTo && nullNodeAssignTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignTo = null;
-            if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
-            if (parseNode.GetChildNode("followup_actions") is { } nullNodeFollowupActions && nullNodeFollowupActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowupActions = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
-            if (parseNode.GetChildNode("user_availability_based_on") is { } nullNodeUserAvailabilityBasedOn && nullNodeUserAvailabilityBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAvailabilityBasedOn = null;
+            if (parseNode.GetChildNode("allow_agent_user") is null) { _explicitNullValueAllowAgentUser = default!; _explicitNullProperties?.Remove("allow_agent_user"); }
+            else if (parseNode.GetChildNode("allow_agent_user") is { } nullNodeAllowAgentUser && nullNodeAllowAgentUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowAgentUser = null;
+            if (parseNode.GetChildNode("assign_to") is null) { _explicitNullValueAssignTo = default!; _explicitNullProperties?.Remove("assign_to"); }
+            else if (parseNode.GetChildNode("assign_to") is { } nullNodeAssignTo && nullNodeAssignTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignTo = null;
+            if (parseNode.GetChildNode("criteria") is null) { _explicitNullValueCriteria = default!; _explicitNullProperties?.Remove("criteria"); }
+            else if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
+            if (parseNode.GetChildNode("followup_actions") is null) { _explicitNullValueFollowupActions = default!; _explicitNullProperties?.Remove("followup_actions"); }
+            else if (parseNode.GetChildNode("followup_actions") is { } nullNodeFollowupActions && nullNodeFollowupActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowupActions = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("sequence_number") is null) { _explicitNullValueSequenceNumber = default!; _explicitNullProperties?.Remove("sequence_number"); }
+            else if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
+            if (parseNode.GetChildNode("user_availability_based_on") is null) { _explicitNullValueUserAvailabilityBasedOn = default!; _explicitNullProperties?.Remove("user_availability_based_on"); }
+            else if (parseNode.GetChildNode("user_availability_based_on") is { } nullNodeUserAvailabilityBasedOn && nullNodeUserAvailabilityBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAvailabilityBasedOn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether Digital Employee (agent) users are eligible for assignment in this rule entry.</summary>
-        public bool? AllowAgentUser { get => _explicitNullValueAllowAgentUser; set { _explicitNullValueAllowAgentUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_agent_user"); else _explicitNullProperties?.Remove("allow_agent_user"); } }
+        public bool? AllowAgentUser { get => _explicitNullValueAllowAgentUser; set { _explicitNullValueAllowAgentUser = value; AdditionalData?.Remove("allow_agent_user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_agent_user"); else _explicitNullProperties?.Remove("allow_agent_user"); } }
         private bool? _explicitNullValueAllowAgentUser = default!;
         /// <summary>Assign to response object schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject? AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject? AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; AdditionalData?.Remove("assign_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject? _explicitNullValueAssignTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; AdditionalData?.Remove("assign_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.AssignToResponseObject _explicitNullValueAssignTo = default!;
 #endif
         /// <summary>Defines the record criteria based on which records is filtered and assignment logic defined for current rule entry is applied. If criteria is not provided or is null, all records entering current rule entry is assigned based on current rule entry&apos;s assignment logic. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty? _explicitNullValueCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectCriteriaProperty _explicitNullValueCriteria = default!;
 #endif
         /// <summary>Defines the list of different actions to be executed after owner assignment. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject>? FollowupActions { get => _explicitNullValueFollowupActions; set { _explicitNullValueFollowupActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followup_actions"); else _explicitNullProperties?.Remove("followup_actions"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject>? FollowupActions { get => _explicitNullValueFollowupActions; set { _explicitNullValueFollowupActions = value; AdditionalData?.Remove("followup_actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followup_actions"); else _explicitNullProperties?.Remove("followup_actions"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject>? _explicitNullValueFollowupActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject> FollowupActions { get => _explicitNullValueFollowupActions; set { _explicitNullValueFollowupActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followup_actions"); else _explicitNullProperties?.Remove("followup_actions"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject> FollowupActions { get => _explicitNullValueFollowupActions; set { _explicitNullValueFollowupActions = value; AdditionalData?.Remove("followup_actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followup_actions"); else _explicitNullProperties?.Remove("followup_actions"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FollowupActionsResponseObject> _explicitNullValueFollowupActions = default!;
 #endif
         /// <summary>ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the sequence number returned for the Assignment Rule operation. </summary>
-        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; AdditionalData?.Remove("sequence_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
         private int? _explicitNullValueSequenceNumber = default!;
         /// <summary>Defines additional availability checks to be performed before choosing a user as owner. A user is assigned as owner only if it satisfies the mentioned availability conditions. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem?>? UserAvailabilityBasedOn { get => _explicitNullValueUserAvailabilityBasedOn; set { _explicitNullValueUserAvailabilityBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_availability_based_on"); else _explicitNullProperties?.Remove("user_availability_based_on"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem?>? UserAvailabilityBasedOn { get => _explicitNullValueUserAvailabilityBasedOn; set { _explicitNullValueUserAvailabilityBasedOn = value; AdditionalData?.Remove("user_availability_based_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_availability_based_on"); else _explicitNullProperties?.Remove("user_availability_based_on"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem?>? _explicitNullValueUserAvailabilityBasedOn = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem?> UserAvailabilityBasedOn { get => _explicitNullValueUserAvailabilityBasedOn; set { _explicitNullValueUserAvailabilityBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_availability_based_on"); else _explicitNullProperties?.Remove("user_availability_based_on"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem?> UserAvailabilityBasedOn { get => _explicitNullValueUserAvailabilityBasedOn; set { _explicitNullValueUserAvailabilityBasedOn = value; AdditionalData?.Remove("user_availability_based_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_availability_based_on"); else _explicitNullProperties?.Remove("user_availability_based_on"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryResponseObjectUserAvailabilityBasedOnItem?> _explicitNullValueUserAvailabilityBasedOn = default!;
 #endif
         /// <summary>

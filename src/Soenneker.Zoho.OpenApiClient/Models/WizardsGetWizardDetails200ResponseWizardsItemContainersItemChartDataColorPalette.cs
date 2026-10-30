@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("button_background") is { } nullNodeButtonBackground && nullNodeButtonBackground.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ButtonBackground = null;
+            if (parseNode.GetChildNode("button_background") is null) { _explicitNullValueButtonBackground = default!; _explicitNullProperties?.Remove("button_background"); }
+            else if (parseNode.GetChildNode("button_background") is { } nullNodeButtonBackground && nullNodeButtonBackground.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ButtonBackground = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of hex color values applied to button backgrounds in the wizard canvas.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ButtonBackground { get => _explicitNullValueButtonBackground; set { _explicitNullValueButtonBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("button_background"); else _explicitNullProperties?.Remove("button_background"); } }
+        public List<string>? ButtonBackground { get => _explicitNullValueButtonBackground; set { _explicitNullValueButtonBackground = value; AdditionalData?.Remove("button_background"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("button_background"); else _explicitNullProperties?.Remove("button_background"); } }
         private List<string>? _explicitNullValueButtonBackground = default!;
 #nullable restore
 #else
-        public List<string> ButtonBackground { get => _explicitNullValueButtonBackground; set { _explicitNullValueButtonBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("button_background"); else _explicitNullProperties?.Remove("button_background"); } }
+        public List<string> ButtonBackground { get => _explicitNullValueButtonBackground; set { _explicitNullValueButtonBackground = value; AdditionalData?.Remove("button_background"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("button_background"); else _explicitNullProperties?.Remove("button_background"); } }
         private List<string> _explicitNullValueButtonBackground = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("report_link") is { } nullNodeReportLink && nullNodeReportLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportLink = null;
-            if (parseNode.GetChildNode("sign_resource_id") is { } nullNodeSignResourceId && nullNodeSignResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignResourceId = null;
+            if (parseNode.GetChildNode("report_link") is null) { _explicitNullValueReportLink = default!; _explicitNullProperties?.Remove("report_link"); }
+            else if (parseNode.GetChildNode("report_link") is { } nullNodeReportLink && nullNodeReportLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportLink = null;
+            if (parseNode.GetChildNode("sign_resource_id") is null) { _explicitNullValueSignResourceId = default!; _explicitNullProperties?.Remove("sign_resource_id"); }
+            else if (parseNode.GetChildNode("sign_resource_id") is { } nullNodeSignResourceId && nullNodeSignResourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignResourceId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the URL of the sign mail merge job report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
+        public string? ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; AdditionalData?.Remove("report_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
         private string? _explicitNullValueReportLink = default!;
 #nullable restore
 #else
-        public string ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
+        public string ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; AdditionalData?.Remove("report_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
         private string _explicitNullValueReportLink = default!;
 #endif
         /// <summary>Represents the unique ID of the sign request resource created for the sign mail merge operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignResourceId { get => _explicitNullValueSignResourceId; set { _explicitNullValueSignResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_resource_id"); else _explicitNullProperties?.Remove("sign_resource_id"); } }
+        public string? SignResourceId { get => _explicitNullValueSignResourceId; set { _explicitNullValueSignResourceId = value; AdditionalData?.Remove("sign_resource_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_resource_id"); else _explicitNullProperties?.Remove("sign_resource_id"); } }
         private string? _explicitNullValueSignResourceId = default!;
 #nullable restore
 #else
-        public string SignResourceId { get => _explicitNullValueSignResourceId; set { _explicitNullValueSignResourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_resource_id"); else _explicitNullProperties?.Remove("sign_resource_id"); } }
+        public string SignResourceId { get => _explicitNullValueSignResourceId; set { _explicitNullValueSignResourceId = value; AdditionalData?.Remove("sign_resource_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_resource_id"); else _explicitNullProperties?.Remove("sign_resource_id"); } }
         private string _explicitNullValueSignResourceId = default!;
 #endif
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("comparator") is { } nullNodeComparator && nullNodeComparator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comparator = null;
-            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("comparator") is null) { _explicitNullValueComparator = default!; _explicitNullProperties?.Remove("comparator"); }
+            else if (parseNode.GetChildNode("comparator") is { } nullNodeComparator && nullNodeComparator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comparator = null;
+            if (parseNode.GetChildNode("field") is null) { _explicitNullValueField = default!; _explicitNullProperties?.Remove("field"); }
+            else if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the comparison operator to apply between the field and the value. Possible values: **equal**, **not_equal**, **contains**, **not_contains**, **starts_with**, **ends_with**, **greater_than**, **less_than**. The set of comparators supported depends on the field: **display_name** and **deleted_by** support equal, not_equal, contains, not_contains, starts_with, ends_with; **module** supports equal and not_equal; **deleted_time** supports equal, not_equal, greater_than, less_than.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comparator { get => _explicitNullValueComparator; set { _explicitNullValueComparator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparator"); else _explicitNullProperties?.Remove("comparator"); } }
+        public string? Comparator { get => _explicitNullValueComparator; set { _explicitNullValueComparator = value; AdditionalData?.Remove("comparator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparator"); else _explicitNullProperties?.Remove("comparator"); } }
         private string? _explicitNullValueComparator = default!;
 #nullable restore
 #else
-        public string Comparator { get => _explicitNullValueComparator; set { _explicitNullValueComparator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparator"); else _explicitNullProperties?.Remove("comparator"); } }
+        public string Comparator { get => _explicitNullValueComparator; set { _explicitNullValueComparator = value; AdditionalData?.Remove("comparator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparator"); else _explicitNullProperties?.Remove("comparator"); } }
         private string _explicitNullValueComparator = default!;
 #endif
         /// <summary>Specify the field to filter on. The field is identified by its API name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemField _explicitNullValueField = default!;
 #endif
         /// <summary>Specify the value to compare the field against. The data type depends on the field being filtered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequestFiltersGroupItemValue _explicitNullValueValue = default!;
 #endif
         /// <summary>

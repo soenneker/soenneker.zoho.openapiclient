@@ -47,10 +47,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("replace_picklist_values") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("replace_picklist_values") != null))();
-            if (result.GlobalPicklistsReplacePicklistValues200Response == null && result.GlobalPicklistsReplacePicklistValues202Response == null && matchesUnionBranch0 && !matchesUnionBranch1) result.GlobalPicklistsReplacePicklistValues200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200Response(), parseNode);
-            if (result.GlobalPicklistsReplacePicklistValues200Response == null && result.GlobalPicklistsReplacePicklistValues202Response == null && matchesUnionBranch1 && !matchesUnionBranch0) result.GlobalPicklistsReplacePicklistValues202Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues202Response(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("replace_picklist_values") && (!shapeMembers1.ContainsKey("replace_picklist_values") || (((shapeMembers1["replace_picklist_values"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("replace_picklist_values") && (!shapeMembers1.ContainsKey("replace_picklist_values") || (((shapeMembers1["replace_picklist_values"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.GlobalPicklistsReplacePicklistValues200Response == null && result.GlobalPicklistsReplacePicklistValues202Response == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.GlobalPicklistsReplacePicklistValues200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200Response(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.GlobalPicklistsReplacePicklistValues202Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues202Response(), parseNode);
             if (result.GlobalPicklistsReplacePicklistValues200Response == null && result.GlobalPicklistsReplacePicklistValues202Response == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -60,6 +64,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(GlobalPicklistsReplacePicklistValues200Response != null || GlobalPicklistsReplacePicklistValues202Response != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(GlobalPicklistsReplacePicklistValues200Response, GlobalPicklistsReplacePicklistValues202Response);
@@ -74,8 +80,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (GlobalPicklistsReplacePicklistValues200Response == null && GlobalPicklistsReplacePicklistValues202Response == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (GlobalPicklistsReplacePicklistValues200Response != null && GlobalPicklistsReplacePicklistValues202Response == null) { if (GlobalPicklistsReplacePicklistValues200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GlobalPicklistsReplacePicklistValues200Response); return; }
-            if (GlobalPicklistsReplacePicklistValues202Response != null && GlobalPicklistsReplacePicklistValues200Response == null) { if (GlobalPicklistsReplacePicklistValues202Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GlobalPicklistsReplacePicklistValues202Response); return; }
+            int selectedUnionBranches = 0;
+            if (GlobalPicklistsReplacePicklistValues200Response != null) selectedUnionBranches++;
+            if (GlobalPicklistsReplacePicklistValues202Response != null) selectedUnionBranches++;
+            if (GlobalPicklistsReplacePicklistValues200Response != null && selectedUnionBranches == 1) { if (GlobalPicklistsReplacePicklistValues200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GlobalPicklistsReplacePicklistValues200Response); return; }
+            if (GlobalPicklistsReplacePicklistValues202Response != null && selectedUnionBranches == 1) { if (GlobalPicklistsReplacePicklistValues202Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GlobalPicklistsReplacePicklistValues202Response); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsReplacePicklistValues200Response>(null, GlobalPicklistsReplacePicklistValues200Response, GlobalPicklistsReplacePicklistValues202Response);

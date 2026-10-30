@@ -18,21 +18,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("share_permission") is { } nullNodeSharePermission && nullNodeSharePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharePermission = null;
-            if (parseNode.GetChildNode("share_preference_enabled") is { } nullNodeSharePreferenceEnabled && nullNodeSharePreferenceEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharePreferenceEnabled = null;
-            if (parseNode.GetChildNode("share_with_superiors") is { } nullNodeShareWithSuperiors && nullNodeShareWithSuperiors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareWithSuperiors = null;
+            if (parseNode.GetChildNode("share_permission") is null) { _explicitNullValueSharePermission = default!; _explicitNullProperties?.Remove("share_permission"); }
+            else if (parseNode.GetChildNode("share_permission") is { } nullNodeSharePermission && nullNodeSharePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharePermission = null;
+            if (parseNode.GetChildNode("share_preference_enabled") is null) { _explicitNullValueSharePreferenceEnabled = default!; _explicitNullProperties?.Remove("share_preference_enabled"); }
+            else if (parseNode.GetChildNode("share_preference_enabled") is { } nullNodeSharePreferenceEnabled && nullNodeSharePreferenceEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharePreferenceEnabled = null;
+            if (parseNode.GetChildNode("share_with_superiors") is null) { _explicitNullValueShareWithSuperiors = default!; _explicitNullProperties?.Remove("share_with_superiors"); }
+            else if (parseNode.GetChildNode("share_with_superiors") is { } nullNodeShareWithSuperiors && nullNodeShareWithSuperiors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareWithSuperiors = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the sharing permission level.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingPropertiesSharePermission? SharePermission { get => _explicitNullValueSharePermission; set { _explicitNullValueSharePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_permission"); else _explicitNullProperties?.Remove("share_permission"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingPropertiesSharePermission? SharePermission { get => _explicitNullValueSharePermission; set { _explicitNullValueSharePermission = value; AdditionalData?.Remove("share_permission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_permission"); else _explicitNullProperties?.Remove("share_permission"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingPropertiesSharePermission? _explicitNullValueSharePermission = default!;
         /// <summary>Specify the enable share preferences.</summary>
-        public bool? SharePreferenceEnabled { get => _explicitNullValueSharePreferenceEnabled; set { _explicitNullValueSharePreferenceEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_preference_enabled"); else _explicitNullProperties?.Remove("share_preference_enabled"); } }
+        public bool? SharePreferenceEnabled { get => _explicitNullValueSharePreferenceEnabled; set { _explicitNullValueSharePreferenceEnabled = value; AdditionalData?.Remove("share_preference_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_preference_enabled"); else _explicitNullProperties?.Remove("share_preference_enabled"); } }
         private bool? _explicitNullValueSharePreferenceEnabled = default!;
         /// <summary>Specify the enable share preferences.</summary>
-        public bool? ShareWithSuperiors { get => _explicitNullValueShareWithSuperiors; set { _explicitNullValueShareWithSuperiors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_with_superiors"); else _explicitNullProperties?.Remove("share_with_superiors"); } }
+        public bool? ShareWithSuperiors { get => _explicitNullValueShareWithSuperiors; set { _explicitNullValueShareWithSuperiors = value; AdditionalData?.Remove("share_with_superiors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_with_superiors"); else _explicitNullProperties?.Remove("share_with_superiors"); } }
         private bool? _explicitNullValueShareWithSuperiors = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingProperties"/> and sets the default values.
@@ -59,7 +62,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "share_permission", n => { SharePermission = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingPropertiesSharePermission>(); } },
+                { "share_permission", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingPropertiesSharePermission>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSharePermission = default; _explicitNullProperties?.Remove("share_permission"); AdditionalData["share_permission"] = unknown; } else { SharePermission = parsed; AdditionalData.Remove("share_permission"); } } },
                 { "share_preference_enabled", n => { SharePreferenceEnabled = n.GetBoolValue(); } },
                 { "share_with_superiors", n => { ShareWithSuperiors = n.GetBoolValue(); } },
             };

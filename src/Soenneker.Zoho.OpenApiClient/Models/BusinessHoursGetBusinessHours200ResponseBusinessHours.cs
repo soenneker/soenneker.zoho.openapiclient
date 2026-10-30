@@ -18,14 +18,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("business_days") is { } nullNodeBusinessDays && nullNodeBusinessDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessDays = null;
-            if (parseNode.GetChildNode("custom_timing") is { } nullNodeCustomTiming && nullNodeCustomTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomTiming = null;
-            if (parseNode.GetChildNode("daily_timing") is { } nullNodeDailyTiming && nullNodeDailyTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyTiming = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("same_as_everyday") is { } nullNodeSameAsEveryday && nullNodeSameAsEveryday.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameAsEveryday = null;
-            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("week_starts_on") is { } nullNodeWeekStartsOn && nullNodeWeekStartsOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WeekStartsOn = null;
+            if (parseNode.GetChildNode("business_days") is null) { _explicitNullValueBusinessDays = default!; _explicitNullProperties?.Remove("business_days"); }
+            else if (parseNode.GetChildNode("business_days") is { } nullNodeBusinessDays && nullNodeBusinessDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessDays = null;
+            if (parseNode.GetChildNode("custom_timing") is null) { _explicitNullValueCustomTiming = default!; _explicitNullProperties?.Remove("custom_timing"); }
+            else if (parseNode.GetChildNode("custom_timing") is { } nullNodeCustomTiming && nullNodeCustomTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomTiming = null;
+            if (parseNode.GetChildNode("daily_timing") is null) { _explicitNullValueDailyTiming = default!; _explicitNullProperties?.Remove("daily_timing"); }
+            else if (parseNode.GetChildNode("daily_timing") is { } nullNodeDailyTiming && nullNodeDailyTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyTiming = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("same_as_everyday") is null) { _explicitNullValueSameAsEveryday = default!; _explicitNullProperties?.Remove("same_as_everyday"); }
+            else if (parseNode.GetChildNode("same_as_everyday") is { } nullNodeSameAsEveryday && nullNodeSameAsEveryday.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameAsEveryday = null;
+            if (parseNode.GetChildNode("timezone") is null) { _explicitNullValueTimezone = default!; _explicitNullProperties?.Remove("timezone"); }
+            else if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("week_starts_on") is null) { _explicitNullValueWeekStartsOn = default!; _explicitNullProperties?.Remove("week_starts_on"); }
+            else if (parseNode.GetChildNode("week_starts_on") is { } nullNodeWeekStartsOn && nullNodeWeekStartsOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WeekStartsOn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,61 +41,61 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The specific days of the week on which the organization is open for business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursBusinessDaysItem?>? BusinessDays { get => _explicitNullValueBusinessDays; set { _explicitNullValueBusinessDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_days"); else _explicitNullProperties?.Remove("business_days"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursBusinessDaysItem?>? BusinessDays { get => _explicitNullValueBusinessDays; set { _explicitNullValueBusinessDays = value; AdditionalData?.Remove("business_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_days"); else _explicitNullProperties?.Remove("business_days"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursBusinessDaysItem?>? _explicitNullValueBusinessDays = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursBusinessDaysItem?> BusinessDays { get => _explicitNullValueBusinessDays; set { _explicitNullValueBusinessDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_days"); else _explicitNullProperties?.Remove("business_days"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursBusinessDaysItem?> BusinessDays { get => _explicitNullValueBusinessDays; set { _explicitNullValueBusinessDays = value; AdditionalData?.Remove("business_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_days"); else _explicitNullProperties?.Remove("business_days"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursBusinessDaysItem?> _explicitNullValueBusinessDays = default!;
 #endif
         /// <summary>Different business hours for different days when same_as_everyday is false</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursCustomTimingItem>? CustomTiming { get => _explicitNullValueCustomTiming; set { _explicitNullValueCustomTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_timing"); else _explicitNullProperties?.Remove("custom_timing"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursCustomTimingItem>? CustomTiming { get => _explicitNullValueCustomTiming; set { _explicitNullValueCustomTiming = value; AdditionalData?.Remove("custom_timing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_timing"); else _explicitNullProperties?.Remove("custom_timing"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursCustomTimingItem>? _explicitNullValueCustomTiming = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursCustomTimingItem> CustomTiming { get => _explicitNullValueCustomTiming; set { _explicitNullValueCustomTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_timing"); else _explicitNullProperties?.Remove("custom_timing"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursCustomTimingItem> CustomTiming { get => _explicitNullValueCustomTiming; set { _explicitNullValueCustomTiming = value; AdditionalData?.Remove("custom_timing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_timing"); else _explicitNullProperties?.Remove("custom_timing"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursCustomTimingItem> _explicitNullValueCustomTiming = default!;
 #endif
         /// <summary>Default working hours applied to all business days (start and end time)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DailyTiming { get => _explicitNullValueDailyTiming; set { _explicitNullValueDailyTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_timing"); else _explicitNullProperties?.Remove("daily_timing"); } }
+        public List<string>? DailyTiming { get => _explicitNullValueDailyTiming; set { _explicitNullValueDailyTiming = value; AdditionalData?.Remove("daily_timing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_timing"); else _explicitNullProperties?.Remove("daily_timing"); } }
         private List<string>? _explicitNullValueDailyTiming = default!;
 #nullable restore
 #else
-        public List<string> DailyTiming { get => _explicitNullValueDailyTiming; set { _explicitNullValueDailyTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_timing"); else _explicitNullProperties?.Remove("daily_timing"); } }
+        public List<string> DailyTiming { get => _explicitNullValueDailyTiming; set { _explicitNullValueDailyTiming = value; AdditionalData?.Remove("daily_timing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_timing"); else _explicitNullProperties?.Remove("daily_timing"); } }
         private List<string> _explicitNullValueDailyTiming = default!;
 #endif
         /// <summary>The unique identifier assigned to this business hours configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>If true, the same operating hours apply to all business days. If false, hours vary by day and are defined in custom_timing.</summary>
-        public bool? SameAsEveryday { get => _explicitNullValueSameAsEveryday; set { _explicitNullValueSameAsEveryday = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("same_as_everyday"); else _explicitNullProperties?.Remove("same_as_everyday"); } }
+        public bool? SameAsEveryday { get => _explicitNullValueSameAsEveryday; set { _explicitNullValueSameAsEveryday = value; AdditionalData?.Remove("same_as_everyday"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("same_as_everyday"); else _explicitNullProperties?.Remove("same_as_everyday"); } }
         private bool? _explicitNullValueSameAsEveryday = default!;
         /// <summary>Timezone for business hours (IANA timezone identifier)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; AdditionalData?.Remove("timezone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
         private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; AdditionalData?.Remove("timezone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
         private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>The type of business hours configuration: &apos;24_by_7&apos; for 24/7 operation, &apos;24_by_5&apos; for 24-hour weekday operation, or &apos;custom&apos; for a customized schedule.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursType? _explicitNullValueType = default!;
         /// <summary>The day on which the organization&apos;s work week begins.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursWeekStartsOn? WeekStartsOn { get => _explicitNullValueWeekStartsOn; set { _explicitNullValueWeekStartsOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("week_starts_on"); else _explicitNullProperties?.Remove("week_starts_on"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursWeekStartsOn? WeekStartsOn { get => _explicitNullValueWeekStartsOn; set { _explicitNullValueWeekStartsOn = value; AdditionalData?.Remove("week_starts_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("week_starts_on"); else _explicitNullProperties?.Remove("week_starts_on"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursWeekStartsOn? _explicitNullValueWeekStartsOn = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHours"/> and sets the default values.
@@ -120,8 +128,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "same_as_everyday", n => { SameAsEveryday = n.GetBoolValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursType>(); } },
-                { "week_starts_on", n => { WeekStartsOn = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursWeekStartsOn>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "week_starts_on", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursGetBusinessHours200ResponseBusinessHoursWeekStartsOn>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWeekStartsOn = default; _explicitNullProperties?.Remove("week_starts_on"); AdditionalData["week_starts_on"] = unknown; } else { WeekStartsOn = parsed; AdditionalData.Remove("week_starts_on"); } } },
             };
         }
         /// <summary>

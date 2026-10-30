@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Layout") is { } nullNodeLayout && nullNodeLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layout = null;
-            if (parseNode.GetChildNode("Wizard") is { } nullNodeWizard && nullNodeWizard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wizard = null;
+            if (parseNode.GetChildNode("Layout") is null) { _explicitNullValueLayout = default!; _explicitNullProperties?.Remove("Layout"); }
+            else if (parseNode.GetChildNode("Layout") is { } nullNodeLayout && nullNodeLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layout = null;
+            if (parseNode.GetChildNode("Wizard") is null) { _explicitNullValueWizard = default!; _explicitNullProperties?.Remove("Wizard"); }
+            else if (parseNode.GetChildNode("Wizard") is { } nullNodeWizard && nullNodeWizard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wizard = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the layout value. Use the [Get Layouts Metadata API](layouts.yaml#$.paths./settings/layouts.get) to retrieve the Layout ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("Layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemLayout? _explicitNullValueLayout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("Layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemLayout _explicitNullValueLayout = default!;
 #endif
         /// <summary>Represents the wizard value. Use the [Get Wizards API](wizards.yaml#$.paths./settings/wizards.get) to retrieve the Wizard ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemWizard? Wizard { get => _explicitNullValueWizard; set { _explicitNullValueWizard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Wizard"); else _explicitNullProperties?.Remove("Wizard"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemWizard? Wizard { get => _explicitNullValueWizard; set { _explicitNullValueWizard = value; AdditionalData?.Remove("Wizard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Wizard"); else _explicitNullProperties?.Remove("Wizard"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemWizard? _explicitNullValueWizard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemWizard Wizard { get => _explicitNullValueWizard; set { _explicitNullValueWizard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Wizard"); else _explicitNullProperties?.Remove("Wizard"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemWizard Wizard { get => _explicitNullValueWizard; set { _explicitNullValueWizard = value; AdditionalData?.Remove("Wizard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Wizard"); else _explicitNullProperties?.Remove("Wizard"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordWriteDataItemWizard _explicitNullValueWizard = default!;
 #endif
         /// <summary>

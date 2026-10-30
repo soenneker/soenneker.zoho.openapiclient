@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("holidays") is { } nullNodeHolidays && nullNodeHolidays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Holidays = null;
+            if (parseNode.GetChildNode("holidays") is null) { _explicitNullValueHolidays = default!; _explicitNullProperties?.Remove("holidays"); }
+            else if (parseNode.GetChildNode("holidays") is { } nullNodeHolidays && nullNodeHolidays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Holidays = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains the operation result for each holiday submitted in the update request. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200ResponseHolidaysItem>? Holidays { get => _explicitNullValueHolidays; set { _explicitNullValueHolidays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("holidays"); else _explicitNullProperties?.Remove("holidays"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200ResponseHolidaysItem>? Holidays { get => _explicitNullValueHolidays; set { _explicitNullValueHolidays = value; AdditionalData?.Remove("holidays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("holidays"); else _explicitNullProperties?.Remove("holidays"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200ResponseHolidaysItem>? _explicitNullValueHolidays = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200ResponseHolidaysItem> Holidays { get => _explicitNullValueHolidays; set { _explicitNullValueHolidays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("holidays"); else _explicitNullProperties?.Remove("holidays"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200ResponseHolidaysItem> Holidays { get => _explicitNullValueHolidays; set { _explicitNullValueHolidays = value; AdditionalData?.Remove("holidays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("holidays"); else _explicitNullProperties?.Remove("holidays"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.HolidaysUpdateHolidays200ResponseHolidaysItem> _explicitNullValueHolidays = default!;
 #endif
         /// <summary>

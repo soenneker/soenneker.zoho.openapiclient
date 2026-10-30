@@ -18,99 +18,111 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access_type") is { } nullNodeAccessType && nullNodeAccessType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessType = null;
-            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
-            if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
-            if (parseNode.GetChildNode("cross_filters") is { } nullNodeCrossFilters && nullNodeCrossFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrossFilters = null;
-            if (parseNode.GetChildNode("favorite") is { } nullNodeFavorite && nullNodeFavorite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Favorite = null;
-            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
-            if (parseNode.GetChildNode("locked") is { } nullNodeLocked && nullNodeLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locked = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("shared_to") is { } nullNodeSharedTo && nullNodeSharedTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedTo = null;
-            if (parseNode.GetChildNode("sort_by") is { } nullNodeSortBy && nullNodeSortBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortBy = null;
-            if (parseNode.GetChildNode("sort_order") is { } nullNodeSortOrder && nullNodeSortOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrder = null;
-            if (parseNode.GetChildNode("wrap_text") is { } nullNodeWrapText && nullNodeWrapText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WrapText = null;
+            if (parseNode.GetChildNode("access_type") is null) { _explicitNullValueAccessType = default!; _explicitNullProperties?.Remove("access_type"); }
+            else if (parseNode.GetChildNode("access_type") is { } nullNodeAccessType && nullNodeAccessType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessType = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("criteria") is null) { _explicitNullValueCriteria = default!; _explicitNullProperties?.Remove("criteria"); }
+            else if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
+            if (parseNode.GetChildNode("cross_filters") is null) { _explicitNullValueCrossFilters = default!; _explicitNullProperties?.Remove("cross_filters"); }
+            else if (parseNode.GetChildNode("cross_filters") is { } nullNodeCrossFilters && nullNodeCrossFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrossFilters = null;
+            if (parseNode.GetChildNode("favorite") is null) { _explicitNullValueFavorite = default!; _explicitNullProperties?.Remove("favorite"); }
+            else if (parseNode.GetChildNode("favorite") is { } nullNodeFavorite && nullNodeFavorite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Favorite = null;
+            if (parseNode.GetChildNode("fields") is null) { _explicitNullValueFields = default!; _explicitNullProperties?.Remove("fields"); }
+            else if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("locked") is null) { _explicitNullValueLocked = default!; _explicitNullProperties?.Remove("locked"); }
+            else if (parseNode.GetChildNode("locked") is { } nullNodeLocked && nullNodeLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locked = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("shared_to") is null) { _explicitNullValueSharedTo = default!; _explicitNullProperties?.Remove("shared_to"); }
+            else if (parseNode.GetChildNode("shared_to") is { } nullNodeSharedTo && nullNodeSharedTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharedTo = null;
+            if (parseNode.GetChildNode("sort_by") is null) { _explicitNullValueSortBy = default!; _explicitNullProperties?.Remove("sort_by"); }
+            else if (parseNode.GetChildNode("sort_by") is { } nullNodeSortBy && nullNodeSortBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortBy = null;
+            if (parseNode.GetChildNode("sort_order") is null) { _explicitNullValueSortOrder = default!; _explicitNullProperties?.Remove("sort_order"); }
+            else if (parseNode.GetChildNode("sort_order") is { } nullNodeSortOrder && nullNodeSortOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrder = null;
+            if (parseNode.GetChildNode("wrap_text") is null) { _explicitNullValueWrapText = default!; _explicitNullProperties?.Remove("wrap_text"); }
+            else if (parseNode.GetChildNode("wrap_text") is { } nullNodeWrapText && nullNodeWrapText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WrapText = null;
         }
 
         /// <summary>Represents the access type for the Custom View.Possible values:**shared** - The view is shared with selected users, roles, groups, or territories.**public** - The view is accessible to all users in the organization.**only_to_me** - The view is private and accessible only to the creator.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemAccessType? AccessType { get => _explicitNullValueAccessType; set { _explicitNullValueAccessType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_type"); else _explicitNullProperties?.Remove("access_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemAccessType? AccessType { get => _explicitNullValueAccessType; set { _explicitNullValueAccessType = value; AdditionalData?.Remove("access_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_type"); else _explicitNullProperties?.Remove("access_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemAccessType? _explicitNullValueAccessType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the category for the Custom View.Possible values:**public_views** - Views accessible to all users in the organization.**other_users_views** - Views created by other users in the organization.**shared_with_me** - Views shared with the current user.**created_by_me** - Views created by the current user.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemCategory? _explicitNullValueCategory = default!;
         /// <summary>Represents the filter criteria of the Custom View</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest? _explicitNullValueCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest _explicitNullValueCriteria = default!;
 #endif
         /// <summary>Represents the cross-filter criteria of the Custom View</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersRequestItem>? CrossFilters { get => _explicitNullValueCrossFilters; set { _explicitNullValueCrossFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cross_filters"); else _explicitNullProperties?.Remove("cross_filters"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersRequestItem>? CrossFilters { get => _explicitNullValueCrossFilters; set { _explicitNullValueCrossFilters = value; AdditionalData?.Remove("cross_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cross_filters"); else _explicitNullProperties?.Remove("cross_filters"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersRequestItem>? _explicitNullValueCrossFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersRequestItem> CrossFilters { get => _explicitNullValueCrossFilters; set { _explicitNullValueCrossFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cross_filters"); else _explicitNullProperties?.Remove("cross_filters"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersRequestItem> CrossFilters { get => _explicitNullValueCrossFilters; set { _explicitNullValueCrossFilters = value; AdditionalData?.Remove("cross_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cross_filters"); else _explicitNullProperties?.Remove("cross_filters"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersRequestItem> _explicitNullValueCrossFilters = default!;
 #endif
         /// <summary>Represents the favorite order for the Custom View. A null value indicates the view is not marked as a favorite.</summary>
-        public int? Favorite { get => _explicitNullValueFavorite; set { _explicitNullValueFavorite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorite"); else _explicitNullProperties?.Remove("favorite"); } }
+        public int? Favorite { get => _explicitNullValueFavorite; set { _explicitNullValueFavorite = value; AdditionalData?.Remove("favorite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorite"); else _explicitNullProperties?.Remove("favorite"); } }
         private int? _explicitNullValueFavorite = default!;
         /// <summary>Represents the list of fields included in the Custom View, each with display and pin configuration details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewFieldItem>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewFieldItem>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewFieldItem>? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewFieldItem> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewFieldItem> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewFieldItem> _explicitNullValueFields = default!;
 #endif
         /// <summary>Indicates whether the Custom View is locked.Possible values:**true** - The view is locked.**false** - The view is not locked.</summary>
-        public bool? Locked { get => _explicitNullValueLocked; set { _explicitNullValueLocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locked"); else _explicitNullProperties?.Remove("locked"); } }
+        public bool? Locked { get => _explicitNullValueLocked; set { _explicitNullValueLocked = value; AdditionalData?.Remove("locked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locked"); else _explicitNullProperties?.Remove("locked"); } }
         private bool? _explicitNullValueLocked = default!;
         /// <summary>Represents the name of the Custom View.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Represents the list of users, roles, groups, or territories the Custom View is shared with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem>? SharedTo { get => _explicitNullValueSharedTo; set { _explicitNullValueSharedTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_to"); else _explicitNullProperties?.Remove("shared_to"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem>? SharedTo { get => _explicitNullValueSharedTo; set { _explicitNullValueSharedTo = value; AdditionalData?.Remove("shared_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_to"); else _explicitNullProperties?.Remove("shared_to"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem>? _explicitNullValueSharedTo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem> SharedTo { get => _explicitNullValueSharedTo; set { _explicitNullValueSharedTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_to"); else _explicitNullProperties?.Remove("shared_to"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem> SharedTo { get => _explicitNullValueSharedTo; set { _explicitNullValueSharedTo = value; AdditionalData?.Remove("shared_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared_to"); else _explicitNullProperties?.Remove("shared_to"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem> _explicitNullValueSharedTo = default!;
 #endif
         /// <summary>Represents the field used to sort the records in the Custom View.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldReference? SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldReference? SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; AdditionalData?.Remove("sort_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldReference? _explicitNullValueSortBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldReference SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldReference SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; AdditionalData?.Remove("sort_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldReference _explicitNullValueSortBy = default!;
 #endif
         /// <summary>Represents the sort order applied to the records in the Custom View.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemSortOrder? _explicitNullValueSortOrder = default!;
         /// <summary>Indicates whether text wrapping is enabled for the Custom View.Possible values:**true** - Text wrapping is enabled.**false** - Text wrapping is disabled.</summary>
-        public bool? WrapText { get => _explicitNullValueWrapText; set { _explicitNullValueWrapText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrap_text"); else _explicitNullProperties?.Remove("wrap_text"); } }
+        public bool? WrapText { get => _explicitNullValueWrapText; set { _explicitNullValueWrapText = value; AdditionalData?.Remove("wrap_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrap_text"); else _explicitNullProperties?.Remove("wrap_text"); } }
         private bool? _explicitNullValueWrapText = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItem"/> and sets the default values.
@@ -137,8 +149,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_type", n => { AccessType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemAccessType>(); } },
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemCategory>(); } },
+                { "access_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemAccessType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccessType = default; _explicitNullProperties?.Remove("access_type"); AdditionalData["access_type"] = unknown; } else { AccessType = parsed; AdditionalData.Remove("access_type"); } } },
+                { "category", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCategory = default; _explicitNullProperties?.Remove("category"); AdditionalData["category"] = unknown; } else { Category = parsed; AdditionalData.Remove("category"); } } },
                 { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest.CreateFromDiscriminatorValue); } },
                 { "cross_filters", n => { CrossFilters = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersRequestItem>(global::Soenneker.Zoho.OpenApiClient.Models.CrossFiltersRequestItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "favorite", n => { Favorite = n.GetIntValue(); } },
@@ -147,7 +159,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "shared_to", n => { SharedTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem>(global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sort_by", n => { SortBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>(global::Soenneker.Zoho.OpenApiClient.Models.FieldReference.CreateFromDiscriminatorValue); } },
-                { "sort_order", n => { SortOrder = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemSortOrder>(); } },
+                { "sort_order", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostItemSortOrder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSortOrder = default; _explicitNullProperties?.Remove("sort_order"); AdditionalData["sort_order"] = unknown; } else { SortOrder = parsed; AdditionalData.Remove("sort_order"); } } },
                 { "wrap_text", n => { WrapText = n.GetBoolValue(); } },
             };
         }

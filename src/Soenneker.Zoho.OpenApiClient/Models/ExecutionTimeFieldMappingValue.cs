@@ -18,53 +18,59 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notify_type") is { } nullNodeNotifyType && nullNodeNotifyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyType = null;
-            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
-            if (parseNode.GetChildNode("sign") is { } nullNodeSign && nullNodeSign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sign = null;
-            if (parseNode.GetChildNode("time") is { } nullNodeTime && nullNodeTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Time = null;
-            if (parseNode.GetChildNode("trigger_field") is { } nullNodeTriggerField && nullNodeTriggerField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerField = null;
-            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+            if (parseNode.GetChildNode("notify_type") is null) { _explicitNullValueNotifyType = default!; _explicitNullProperties?.Remove("notify_type"); }
+            else if (parseNode.GetChildNode("notify_type") is { } nullNodeNotifyType && nullNodeNotifyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyType = null;
+            if (parseNode.GetChildNode("period") is null) { _explicitNullValuePeriod = default!; _explicitNullProperties?.Remove("period"); }
+            else if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("sign") is null) { _explicitNullValueSign = default!; _explicitNullProperties?.Remove("sign"); }
+            else if (parseNode.GetChildNode("sign") is { } nullNodeSign && nullNodeSign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sign = null;
+            if (parseNode.GetChildNode("time") is null) { _explicitNullValueTime = default!; _explicitNullProperties?.Remove("time"); }
+            else if (parseNode.GetChildNode("time") is { } nullNodeTime && nullNodeTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Time = null;
+            if (parseNode.GetChildNode("trigger_field") is null) { _explicitNullValueTriggerField = default!; _explicitNullProperties?.Remove("trigger_field"); }
+            else if (parseNode.GetChildNode("trigger_field") is { } nullNodeTriggerField && nullNodeTriggerField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerField = null;
+            if (parseNode.GetChildNode("unit") is null) { _explicitNullValueUnit = default!; _explicitNullProperties?.Remove("unit"); }
+            else if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The notification channel used to deliver the reminder. Applies exclusively when the target field carries data type ALARM (i.e., Remind_At); date and datetime fields do not use this property. Possible values:**popup** — triggers an in-app notification.**email** — sends a message to the task owner.**emailandpopup** — delivers both simultaneously.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValueNotifyType? NotifyType { get => _explicitNullValueNotifyType; set { _explicitNullValueNotifyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_type"); else _explicitNullProperties?.Remove("notify_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValueNotifyType? NotifyType { get => _explicitNullValueNotifyType; set { _explicitNullValueNotifyType = value; AdditionalData?.Remove("notify_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_type"); else _explicitNullProperties?.Remove("notify_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValueNotifyType? _explicitNullValueNotifyType = default!;
         /// <summary>The calendar or time unit applied to the offset. Possible values:**days** — counts all calendar days including weekends and holidays; supported by every action type.**business_days** — excludes weekends and requires the organisation&apos;s business-day setting to be enabled; supported by all action types.**hours** — available only for create_record, add_meeting, and schedule_call.**minutes** — available only for create_record, add_meeting, and schedule_call.workflow_tasks accept only **days** or **business_days**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValuePeriod? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValuePeriod? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; AdditionalData?.Remove("period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValuePeriod? _explicitNullValuePeriod = default!;
         /// <summary>The direction of the offset relative to the trigger date. Possible values:**plus** — places the computed value after the trigger (for example, a due date two days after record creation).**minus** — places the computed value before the trigger (for example, a reminder one day before the due date).For datetime fields (data_type=datetime) a value is expected; omitting it returns a DEPENDENT_FIELD_MISSING error. For date-only fields (data_type=date) the value defaults to **plus** when absent. When targeting Remind_At (data_type=ALARM), **minus** is the only applicable direction.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValueSign? Sign { get => _explicitNullValueSign; set { _explicitNullValueSign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign"); else _explicitNullProperties?.Remove("sign"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValueSign? Sign { get => _explicitNullValueSign; set { _explicitNullValueSign = value; AdditionalData?.Remove("sign"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign"); else _explicitNullProperties?.Remove("sign"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValueSign? _explicitNullValueSign = default!;
         /// <summary>The time-of-day component of the computed value, expressed in 24-hour HH:mm format (for example, &quot;13:00&quot;, &quot;01:30&quot;). Applies when the target field carries data type datetime or ALARM (as reported by GET /settings/fields). Supplying this property for a date-only field (data_type=date) produces a validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
+        public string? Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; AdditionalData?.Remove("time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
         private string? _explicitNullValueTime = default!;
 #nullable restore
 #else
-        public string Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
+        public string Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; AdditionalData?.Remove("time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
         private string _explicitNullValueTime = default!;
 #endif
         /// <summary>The reference date or datetime field from which the offset is measured. Accepts a merge-field token that resolves to a Date or DateTime field on the parent module (for example, &quot;${!Leads.Modified_Time}&quot;, &quot;${!Tasks.Due_Date}&quot;), or the reserved constant &quot;${CURRENTTIME}&quot; to use the automation execution timestamp. When computing a Remind_At (ALARM) value, &quot;${!Tasks.Due_Date}&quot; is the typical anchor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TriggerField { get => _explicitNullValueTriggerField; set { _explicitNullValueTriggerField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_field"); else _explicitNullProperties?.Remove("trigger_field"); } }
+        public string? TriggerField { get => _explicitNullValueTriggerField; set { _explicitNullValueTriggerField = value; AdditionalData?.Remove("trigger_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_field"); else _explicitNullProperties?.Remove("trigger_field"); } }
         private string? _explicitNullValueTriggerField = default!;
 #nullable restore
 #else
-        public string TriggerField { get => _explicitNullValueTriggerField; set { _explicitNullValueTriggerField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_field"); else _explicitNullProperties?.Remove("trigger_field"); } }
+        public string TriggerField { get => _explicitNullValueTriggerField; set { _explicitNullValueTriggerField = value; AdditionalData?.Remove("trigger_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_field"); else _explicitNullProperties?.Remove("trigger_field"); } }
         private string _explicitNullValueTriggerField = default!;
 #endif
         /// <summary>The number of period units to offset from the trigger date, supplied as a non-negative integer string (for example, &quot;1&quot;, &quot;30&quot;). Passing &quot;0&quot; produces a same-day result, such as scheduling a Remind_At on the same day as the due date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private string? _explicitNullValueUnit = default!;
 #nullable restore
 #else
-        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private string _explicitNullValueUnit = default!;
 #endif
         /// <summary>
@@ -92,9 +98,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "notify_type", n => { NotifyType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValueNotifyType>(); } },
-                { "period", n => { Period = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValuePeriod>(); } },
-                { "sign", n => { Sign = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValueSign>(); } },
+                { "notify_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValueNotifyType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNotifyType = default; _explicitNullProperties?.Remove("notify_type"); AdditionalData["notify_type"] = unknown; } else { NotifyType = parsed; AdditionalData.Remove("notify_type"); } } },
+                { "period", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValuePeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePeriod = default; _explicitNullProperties?.Remove("period"); AdditionalData["period"] = unknown; } else { Period = parsed; AdditionalData.Remove("period"); } } },
+                { "sign", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ExecutionTimeValueSign>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSign = default; _explicitNullProperties?.Remove("sign"); AdditionalData["sign"] = unknown; } else { Sign = parsed; AdditionalData.Remove("sign"); } } },
                 { "time", n => { Time = n.GetStringValue(); } },
                 { "trigger_field", n => { TriggerField = n.GetStringValue(); } },
                 { "unit", n => { Unit = n.GetStringValue(); } },

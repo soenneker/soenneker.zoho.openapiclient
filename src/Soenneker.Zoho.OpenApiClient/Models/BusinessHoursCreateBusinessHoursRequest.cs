@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("business_hours") is { } nullNodeBusinessHours && nullNodeBusinessHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessHours = null;
+            if (parseNode.GetChildNode("business_hours") is null) { _explicitNullValueBusinessHours = default!; _explicitNullProperties?.Remove("business_hours"); }
+            else if (parseNode.GetChildNode("business_hours") is { } nullNodeBusinessHours && nullNodeBusinessHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessHours = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The business hours configuration object containing all settings for the organization&apos;s working schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHours? BusinessHours { get => _explicitNullValueBusinessHours; set { _explicitNullValueBusinessHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_hours"); else _explicitNullProperties?.Remove("business_hours"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHours? BusinessHours { get => _explicitNullValueBusinessHours; set { _explicitNullValueBusinessHours = value; AdditionalData?.Remove("business_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_hours"); else _explicitNullProperties?.Remove("business_hours"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHours? _explicitNullValueBusinessHours = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHours BusinessHours { get => _explicitNullValueBusinessHours; set { _explicitNullValueBusinessHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_hours"); else _explicitNullProperties?.Remove("business_hours"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHours BusinessHours { get => _explicitNullValueBusinessHours; set { _explicitNullValueBusinessHours = value; AdditionalData?.Remove("business_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_hours"); else _explicitNullProperties?.Remove("business_hours"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.BusinessHoursCreateBusinessHoursRequestBusinessHours _explicitNullValueBusinessHours = default!;
 #endif
         /// <summary>

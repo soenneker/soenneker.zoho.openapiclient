@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pick_list_values_associations") is { } nullNodePickListValuesAssociations && nullNodePickListValuesAssociations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PickListValuesAssociations = null;
+            if (parseNode.GetChildNode("pick_list_values_associations") is null) { _explicitNullValuePickListValuesAssociations = default!; _explicitNullProperties?.Remove("pick_list_values_associations"); }
+            else if (parseNode.GetChildNode("pick_list_values_associations") is { } nullNodePickListValuesAssociations && nullNodePickListValuesAssociations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PickListValuesAssociations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of picklist value associations grouped by association type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItem>? PickListValuesAssociations { get => _explicitNullValuePickListValuesAssociations; set { _explicitNullValuePickListValuesAssociations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pick_list_values_associations"); else _explicitNullProperties?.Remove("pick_list_values_associations"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItem>? PickListValuesAssociations { get => _explicitNullValuePickListValuesAssociations; set { _explicitNullValuePickListValuesAssociations = value; AdditionalData?.Remove("pick_list_values_associations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pick_list_values_associations"); else _explicitNullProperties?.Remove("pick_list_values_associations"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItem>? _explicitNullValuePickListValuesAssociations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItem> PickListValuesAssociations { get => _explicitNullValuePickListValuesAssociations; set { _explicitNullValuePickListValuesAssociations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pick_list_values_associations"); else _explicitNullProperties?.Remove("pick_list_values_associations"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItem> PickListValuesAssociations { get => _explicitNullValuePickListValuesAssociations; set { _explicitNullValuePickListValuesAssociations = value; AdditionalData?.Remove("pick_list_values_associations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pick_list_values_associations"); else _explicitNullProperties?.Remove("pick_list_values_associations"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200ResponsePickListValuesAssociationsItem> _explicitNullValuePickListValuesAssociations = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("master_record_fields") is { } nullNodeMasterRecordFields && nullNodeMasterRecordFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MasterRecordFields = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("master_record_fields") is null) { _explicitNullValueMasterRecordFields = default!; _explicitNullProperties?.Remove("master_record_fields"); }
+            else if (parseNode.GetChildNode("master_record_fields") is { } nullNodeMasterRecordFields && nullNodeMasterRecordFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MasterRecordFields = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the child records to be merged into the master record. The array must contain a minimum of one and a maximum of two child record objects. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>Specify the fields from the master record whose values should be retained in the merged record. Use this for file upload or image upload fields in the master record. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItem>? MasterRecordFields { get => _explicitNullValueMasterRecordFields; set { _explicitNullValueMasterRecordFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("master_record_fields"); else _explicitNullProperties?.Remove("master_record_fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItem>? MasterRecordFields { get => _explicitNullValueMasterRecordFields; set { _explicitNullValueMasterRecordFields = value; AdditionalData?.Remove("master_record_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("master_record_fields"); else _explicitNullProperties?.Remove("master_record_fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItem>? _explicitNullValueMasterRecordFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItem> MasterRecordFields { get => _explicitNullValueMasterRecordFields; set { _explicitNullValueMasterRecordFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("master_record_fields"); else _explicitNullProperties?.Remove("master_record_fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItem> MasterRecordFields { get => _explicitNullValueMasterRecordFields; set { _explicitNullValueMasterRecordFields = value; AdditionalData?.Remove("master_record_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("master_record_fields"); else _explicitNullProperties?.Remove("master_record_fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecordsRequestMergeItemMasterRecordFieldsItem> _explicitNullValueMasterRecordFields = default!;
 #endif
         /// <summary>

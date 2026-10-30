@@ -18,34 +18,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action_type") is { } nullNodeActionType && nullNodeActionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionType = null;
-            if (parseNode.GetChildNode("recipient") is { } nullNodeRecipient && nullNodeRecipient.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recipient = null;
-            if (parseNode.GetChildNode("recipient_name") is { } nullNodeRecipientName && nullNodeRecipientName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecipientName = null;
+            if (parseNode.GetChildNode("action_type") is null) { _explicitNullValueActionType = default!; _explicitNullProperties?.Remove("action_type"); }
+            else if (parseNode.GetChildNode("action_type") is { } nullNodeActionType && nullNodeActionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionType = null;
+            if (parseNode.GetChildNode("recipient") is null) { _explicitNullValueRecipient = default!; _explicitNullProperties?.Remove("recipient"); }
+            else if (parseNode.GetChildNode("recipient") is { } nullNodeRecipient && nullNodeRecipient.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recipient = null;
+            if (parseNode.GetChildNode("recipient_name") is null) { _explicitNullValueRecipientName = default!; _explicitNullProperties?.Remove("recipient_name"); }
+            else if (parseNode.GetChildNode("recipient_name") is { } nullNodeRecipientName && nullNodeRecipientName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecipientName = null;
         }
 
         /// <summary>Represents the action the recipient must perform on the mail merge document.Possible values:**sign** - The recipient must sign the document.**approve** - The recipient must approve the document.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedActionType? ActionType { get => _explicitNullValueActionType; set { _explicitNullValueActionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_type"); else _explicitNullProperties?.Remove("action_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedActionType? ActionType { get => _explicitNullValueActionType; set { _explicitNullValueActionType = value; AdditionalData?.Remove("action_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_type"); else _explicitNullProperties?.Remove("action_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedActionType? _explicitNullValueActionType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Recipient Object (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedRecipient? Recipient { get => _explicitNullValueRecipient; set { _explicitNullValueRecipient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient"); else _explicitNullProperties?.Remove("recipient"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedRecipient? Recipient { get => _explicitNullValueRecipient; set { _explicitNullValueRecipient = value; AdditionalData?.Remove("recipient"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient"); else _explicitNullProperties?.Remove("recipient"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedRecipient? _explicitNullValueRecipient = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedRecipient Recipient { get => _explicitNullValueRecipient; set { _explicitNullValueRecipient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient"); else _explicitNullProperties?.Remove("recipient"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedRecipient Recipient { get => _explicitNullValueRecipient; set { _explicitNullValueRecipient = value; AdditionalData?.Remove("recipient"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient"); else _explicitNullProperties?.Remove("recipient"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedRecipient _explicitNullValueRecipient = default!;
 #endif
         /// <summary>Represents the name of the recipient who must sign or approve the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientName { get => _explicitNullValueRecipientName; set { _explicitNullValueRecipientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_name"); else _explicitNullProperties?.Remove("recipient_name"); } }
+        public string? RecipientName { get => _explicitNullValueRecipientName; set { _explicitNullValueRecipientName = value; AdditionalData?.Remove("recipient_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_name"); else _explicitNullProperties?.Remove("recipient_name"); } }
         private string? _explicitNullValueRecipientName = default!;
 #nullable restore
 #else
-        public string RecipientName { get => _explicitNullValueRecipientName; set { _explicitNullValueRecipientName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_name"); else _explicitNullProperties?.Remove("recipient_name"); } }
+        public string RecipientName { get => _explicitNullValueRecipientName; set { _explicitNullValueRecipientName = value; AdditionalData?.Remove("recipient_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipient_name"); else _explicitNullProperties?.Remove("recipient_name"); } }
         private string _explicitNullValueRecipientName = default!;
 #endif
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action_type", n => { ActionType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedActionType>(); } },
+                { "action_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedActionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActionType = default; _explicitNullProperties?.Remove("action_type"); AdditionalData["action_type"] = unknown; } else { ActionType = parsed; AdditionalData.Remove("action_type"); } } },
                 { "recipient", n => { Recipient = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedRecipient>(global::Soenneker.Zoho.OpenApiClient.Models.SignersNestedRecipient.CreateFromDiscriminatorValue); } },
                 { "recipient_name", n => { RecipientName = n.GetStringValue(); } },
             };

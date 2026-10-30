@@ -18,12 +18,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("execute_when") is { } nullNodeExecuteWhen && nullNodeExecuteWhen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecuteWhen = null;
-            if (parseNode.GetChildNode("lock") is { } nullNodeLock && nullNodeLock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lock = null;
-            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("conditions") is null) { _explicitNullValueConditions = default!; _explicitNullProperties?.Remove("conditions"); }
+            else if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("execute_when") is null) { _explicitNullValueExecuteWhen = default!; _explicitNullProperties?.Remove("execute_when"); }
+            else if (parseNode.GetChildNode("execute_when") is { } nullNodeExecuteWhen && nullNodeExecuteWhen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecuteWhen = null;
+            if (parseNode.GetChildNode("lock") is null) { _explicitNullValueLock = default!; _explicitNullProperties?.Remove("lock"); }
+            else if (parseNode.GetChildNode("lock") is { } nullNodeLock && nullNodeLock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lock = null;
+            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
+            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,61 +37,61 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the conditions that define the branching logic of the workflow rule. Each condition evaluates records against criteria and executes its own set of actions. At least one condition is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; AdditionalData?.Remove("conditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema>? _explicitNullValueConditions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema> Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema> Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; AdditionalData?.Remove("conditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ConditionsNestedSchema> _explicitNullValueConditions = default!;
 #endif
         /// <summary>Specify an optional description for the workflow rule. Set to null to clear an existing description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Specifies when the workflow rule is triggered. This is a required JSON object with &quot;type&quot; and &quot;details&quot; properties. For example: {&quot;type&quot;: &quot;create_or_edit&quot;, &quot;details&quot;: {&quot;trigger_module&quot;: {&quot;api_name&quot;: &quot;Leads&quot;, &quot;id&quot;: &quot;...&quot;}, &quot;repeat&quot;: false}}. Passing a string instead of a JSON object, such as &quot;create_or_edit&quot;, returns an &quot;INVALID_DATA&quot; error. The &quot;details.trigger_module&quot; must match the module associated with the workflow rule. Use &quot;getWorkflowConfigurations&quot; to retrieve the available triggers and their supported actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen? ExecuteWhen { get => _explicitNullValueExecuteWhen; set { _explicitNullValueExecuteWhen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_when"); else _explicitNullProperties?.Remove("execute_when"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen? ExecuteWhen { get => _explicitNullValueExecuteWhen; set { _explicitNullValueExecuteWhen = value; AdditionalData?.Remove("execute_when"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_when"); else _explicitNullProperties?.Remove("execute_when"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen? _explicitNullValueExecuteWhen = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen ExecuteWhen { get => _explicitNullValueExecuteWhen; set { _explicitNullValueExecuteWhen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_when"); else _explicitNullProperties?.Remove("execute_when"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen ExecuteWhen { get => _explicitNullValueExecuteWhen; set { _explicitNullValueExecuteWhen = value; AdditionalData?.Remove("execute_when"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_when"); else _explicitNullProperties?.Remove("execute_when"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaExecuteWhen _explicitNullValueExecuteWhen = default!;
 #endif
         /// <summary>Specify the lock configuration to prevent other users from editing the rule. Only administrators can lock or unlock rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock? Lock { get => _explicitNullValueLock; set { _explicitNullValueLock = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lock"); else _explicitNullProperties?.Remove("lock"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock? Lock { get => _explicitNullValueLock; set { _explicitNullValueLock = value; AdditionalData?.Remove("lock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lock"); else _explicitNullProperties?.Remove("lock"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock? _explicitNullValueLock = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock Lock { get => _explicitNullValueLock; set { _explicitNullValueLock = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lock"); else _explicitNullProperties?.Remove("lock"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock Lock { get => _explicitNullValueLock; set { _explicitNullValueLock = value; AdditionalData?.Remove("lock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lock"); else _explicitNullProperties?.Remove("lock"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaLock _explicitNullValueLock = default!;
 #endif
         /// <summary>The module to which the workflow rule applies. Use the [Get Modules API](modules.yaml#$.paths./settings/modules.get) to retrieve module IDs. Required. Must be a workflow-supported module. If both id and api_name are provided, they must match. Use `getWorkflowConfigurations` to discover supported modules. Cannot be changed after creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePostNestedSchemaModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Specify the workflow rule name. Required. Cannot exceed 100 characters. Special characters are not allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cadences") is { } nullNodeCadences && nullNodeCadences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cadences = null;
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("cadences") is null) { _explicitNullValueCadences = default!; _explicitNullProperties?.Remove("cadences"); }
+            else if (parseNode.GetChildNode("cadences") is { } nullNodeCadences && nullNodeCadences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cadences = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the identifier and name details of the Cadence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccessCadences? Cadences { get => _explicitNullValueCadences; set { _explicitNullValueCadences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadences"); else _explicitNullProperties?.Remove("cadences"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccessCadences? Cadences { get => _explicitNullValueCadences; set { _explicitNullValueCadences = value; AdditionalData?.Remove("cadences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadences"); else _explicitNullProperties?.Remove("cadences"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccessCadences? _explicitNullValueCadences = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccessCadences Cadences { get => _explicitNullValueCadences; set { _explicitNullValueCadences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadences"); else _explicitNullProperties?.Remove("cadences"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccessCadences Cadences { get => _explicitNullValueCadences; set { _explicitNullValueCadences = value; AdditionalData?.Remove("cadences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadences"); else _explicitNullProperties?.Remove("cadences"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccessCadences _explicitNullValueCadences = default!;
 #endif
         /// <summary>Represents the number of records currently enrolled in the Cadence.</summary>
-        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccess"/> and sets the default values.

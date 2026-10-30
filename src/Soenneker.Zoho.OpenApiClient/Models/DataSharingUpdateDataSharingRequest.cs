@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data_sharing") is { } nullNodeDataSharing && nullNodeDataSharing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataSharing = null;
+            if (parseNode.GetChildNode("data_sharing") is null) { _explicitNullValueDataSharing = default!; _explicitNullProperties?.Remove("data_sharing"); }
+            else if (parseNode.GetChildNode("data_sharing") is { } nullNodeDataSharing && nullNodeDataSharing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataSharing = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains the details of your organization&apos;s default data-sharing permissions for modules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItem>? DataSharing { get => _explicitNullValueDataSharing; set { _explicitNullValueDataSharing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_sharing"); else _explicitNullProperties?.Remove("data_sharing"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItem>? DataSharing { get => _explicitNullValueDataSharing; set { _explicitNullValueDataSharing = value; AdditionalData?.Remove("data_sharing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_sharing"); else _explicitNullProperties?.Remove("data_sharing"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItem>? _explicitNullValueDataSharing = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItem> DataSharing { get => _explicitNullValueDataSharing; set { _explicitNullValueDataSharing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_sharing"); else _explicitNullProperties?.Remove("data_sharing"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItem> DataSharing { get => _explicitNullValueDataSharing; set { _explicitNullValueDataSharing = value; AdditionalData?.Remove("data_sharing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_sharing"); else _explicitNullProperties?.Remove("data_sharing"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItem> _explicitNullValueDataSharing = default!;
 #endif
         /// <summary>

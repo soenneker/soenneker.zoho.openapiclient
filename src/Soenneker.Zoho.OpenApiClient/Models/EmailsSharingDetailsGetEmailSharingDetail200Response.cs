@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("__emails_sharing_details") is { } nullNodeEmailsSharingDetails && nullNodeEmailsSharingDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailsSharingDetails = null;
+            if (parseNode.GetChildNode("__emails_sharing_details") is null) { _explicitNullValueEmailsSharingDetails = default!; _explicitNullProperties?.Remove("__emails_sharing_details"); }
+            else if (parseNode.GetChildNode("__emails_sharing_details") is { } nullNodeEmailsSharingDetails && nullNodeEmailsSharingDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailsSharingDetails = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>A JSON array representing the list of email sharing configurations for the record, including the users whose emails can be shared and the available email filter options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem>? EmailsSharingDetails { get => _explicitNullValueEmailsSharingDetails; set { _explicitNullValueEmailsSharingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__emails_sharing_details"); else _explicitNullProperties?.Remove("__emails_sharing_details"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem>? EmailsSharingDetails { get => _explicitNullValueEmailsSharingDetails; set { _explicitNullValueEmailsSharingDetails = value; AdditionalData?.Remove("__emails_sharing_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__emails_sharing_details"); else _explicitNullProperties?.Remove("__emails_sharing_details"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem>? _explicitNullValueEmailsSharingDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem> EmailsSharingDetails { get => _explicitNullValueEmailsSharingDetails; set { _explicitNullValueEmailsSharingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__emails_sharing_details"); else _explicitNullProperties?.Remove("__emails_sharing_details"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem> EmailsSharingDetails { get => _explicitNullValueEmailsSharingDetails; set { _explicitNullValueEmailsSharingDetails = value; AdditionalData?.Remove("__emails_sharing_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__emails_sharing_details"); else _explicitNullProperties?.Remove("__emails_sharing_details"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailsSharingDetailsGetEmailSharingDetail200ResponseEmailsSharingDetailsItem> _explicitNullValueEmailsSharingDetails = default!;
 #endif
         /// <summary>

@@ -18,50 +18,55 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("feature_type") is { } nullNodeFeatureType && nullNodeFeatureType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureType = null;
-            if (parseNode.GetChildNode("field_mappings") is { } nullNodeFieldMappings && nullNodeFieldMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldMappings = null;
-            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("notify") is { } nullNodeNotify && nullNodeNotify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notify = null;
+            if (parseNode.GetChildNode("feature_type") is null) { _explicitNullValueFeatureType = default!; _explicitNullProperties?.Remove("feature_type"); }
+            else if (parseNode.GetChildNode("feature_type") is { } nullNodeFeatureType && nullNodeFeatureType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureType = null;
+            if (parseNode.GetChildNode("field_mappings") is null) { _explicitNullValueFieldMappings = default!; _explicitNullProperties?.Remove("field_mappings"); }
+            else if (parseNode.GetChildNode("field_mappings") is { } nullNodeFieldMappings && nullNodeFieldMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldMappings = null;
+            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
+            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("notify") is null) { _explicitNullValueNotify = default!; _explicitNullProperties?.Remove("notify"); }
+            else if (parseNode.GetChildNode("notify") is { } nullNodeNotify && nullNodeNotify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notify = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The automation feature this task definition belongs to. Defaults to &quot;workflow&quot; if omitted. A task can only be associated with the feature it was created for - a task with feature_type=&quot;workflow&quot; can only be attached to workflow rules, not to blueprints or kiosks. Supported values are defined in the enum.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateInputFeatureType? FeatureType { get => _explicitNullValueFeatureType; set { _explicitNullValueFeatureType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_type"); else _explicitNullProperties?.Remove("feature_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateInputFeatureType? FeatureType { get => _explicitNullValueFeatureType; set { _explicitNullValueFeatureType = value; AdditionalData?.Remove("feature_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_type"); else _explicitNullProperties?.Remove("feature_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateInputFeatureType? _explicitNullValueFeatureType = default!;
         /// <summary>REQUIRED. Field mappings for task fields. Mandatory mappings: Subject (static or merge_field), Due_Date (execution_time), Status (static: Not Started, Deferred, In Progress, Completed, Waiting on someone else), Priority (static: Highest, High, Normal, Low, Lowest). Optional: Description, Owner, Remind_At (execution_time). Each entry requires field ({api_name, id}), type, and value. Types: static (literal values), merge_field (${!Module.Field} tokens), execution_time (for Date/DateTime/ALARM - requires period, unit, trigger_field, sign). Workflow tasks support period: days, business_days only. Max 20 entries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings>? _explicitNullValueFieldMappings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings> _explicitNullValueFieldMappings = default!;
 #endif
         /// <summary>PURPOSE: The CRM module this task definition belongs to. Specifies which module&apos;s records will trigger task creation - not the Tasks module itself. PREREQUISITES: Call GET /settings/modules to discover available module api_names and IDs. api_name is required, id is optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateModuleRef? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateModuleRef? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateModuleRef? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateModuleRef Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateModuleRef Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateModuleRef _explicitNullValueModule = default!;
 #endif
         /// <summary>Display name for this task definition. Must be identical to the value provided in the Subject field_mapping entry. If they do not match, the API returns INVALID_DATA. For merge_field type Subject mappings, set name to the same token string (e.g., &quot;${!Leads.Last_Name}&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Whether notification should be sent to the task owner when this automation task executes.</summary>
-        public bool? Notify { get => _explicitNullValueNotify; set { _explicitNullValueNotify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify"); else _explicitNullProperties?.Remove("notify"); } }
+        public bool? Notify { get => _explicitNullValueNotify; set { _explicitNullValueNotify = value; AdditionalData?.Remove("notify"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify"); else _explicitNullProperties?.Remove("notify"); } }
         private bool? _explicitNullValueNotify = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateInput"/> and sets the default values.
@@ -89,7 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "feature_type", n => { FeatureType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateInputFeatureType>(); } },
+                { "feature_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateInputFeatureType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFeatureType = default; _explicitNullProperties?.Remove("feature_type"); AdditionalData["feature_type"] = unknown; } else { FeatureType = parsed; AdditionalData.Remove("feature_type"); } } },
                 { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksAutomationFieldMappings.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateModuleRef>(global::Soenneker.Zoho.OpenApiClient.Models.TaskCreateOrUpdateModuleRef.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },

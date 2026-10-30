@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("transfer_pipeline") is { } nullNodeTransferPipeline && nullNodeTransferPipeline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferPipeline = null;
+            if (parseNode.GetChildNode("transfer_pipeline") is null) { _explicitNullValueTransferPipeline = default!; _explicitNullProperties?.Remove("transfer_pipeline"); }
+            else if (parseNode.GetChildNode("transfer_pipeline") is { } nullNodeTransferPipeline && nullNodeTransferPipeline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferPipeline = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of pipeline transfer mappings showing source and target configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItem>? TransferPipeline { get => _explicitNullValueTransferPipeline; set { _explicitNullValueTransferPipeline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_pipeline"); else _explicitNullProperties?.Remove("transfer_pipeline"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItem>? TransferPipeline { get => _explicitNullValueTransferPipeline; set { _explicitNullValueTransferPipeline = value; AdditionalData?.Remove("transfer_pipeline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_pipeline"); else _explicitNullProperties?.Remove("transfer_pipeline"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItem>? _explicitNullValueTransferPipeline = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItem> TransferPipeline { get => _explicitNullValueTransferPipeline; set { _explicitNullValueTransferPipeline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_pipeline"); else _explicitNullProperties?.Remove("transfer_pipeline"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItem> TransferPipeline { get => _explicitNullValueTransferPipeline; set { _explicitNullValueTransferPipeline = value; AdditionalData?.Remove("transfer_pipeline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_pipeline"); else _explicitNullProperties?.Remove("transfer_pipeline"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItem> _explicitNullValueTransferPipeline = default!;
 #endif
         /// <summary>

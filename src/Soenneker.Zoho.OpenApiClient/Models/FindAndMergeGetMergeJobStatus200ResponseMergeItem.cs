@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("job_id") is { } nullNodeJobId && nullNodeJobId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobId = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("job_id") is null) { _explicitNullValueJobId = default!; _explicitNullProperties?.Remove("job_id"); }
+            else if (parseNode.GetChildNode("job_id") is { } nullNodeJobId && nullNodeJobId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobId = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the unique identifier of the merge job.  </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        public string? JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; AdditionalData?.Remove("job_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
         private string? _explicitNullValueJobId = default!;
 #nullable restore
 #else
-        public string JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        public string JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; AdditionalData?.Remove("job_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
         private string _explicitNullValueJobId = default!;
 #endif
         /// <summary>Represents the current processing status of the merge job. Possible values:**SCHEDULED** - The merge job is queued and waiting to be processed.**running** - The merge job is currently being processed.**completed** - The merge job has finished successfully.**failed** - The merge job encountered an error and did not complete. </summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200ResponseMergeItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200ResponseMergeItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200ResponseMergeItemStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200ResponseMergeItem"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "job_id", n => { JobId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200ResponseMergeItemStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeGetMergeJobStatus200ResponseMergeItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

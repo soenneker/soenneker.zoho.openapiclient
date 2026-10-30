@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("__zia_org_enrichment") is { } nullNodeZiaOrgEnrichment && nullNodeZiaOrgEnrichment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZiaOrgEnrichment = null;
+            if (parseNode.GetChildNode("__zia_org_enrichment") is null) { _explicitNullValueZiaOrgEnrichment = default!; _explicitNullProperties?.Remove("__zia_org_enrichment"); }
+            else if (parseNode.GetChildNode("__zia_org_enrichment") is { } nullNodeZiaOrgEnrichment && nullNodeZiaOrgEnrichment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZiaOrgEnrichment = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains the details of the requested organization enrichment job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItem>? ZiaOrgEnrichment { get => _explicitNullValueZiaOrgEnrichment; set { _explicitNullValueZiaOrgEnrichment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__zia_org_enrichment"); else _explicitNullProperties?.Remove("__zia_org_enrichment"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItem>? ZiaOrgEnrichment { get => _explicitNullValueZiaOrgEnrichment; set { _explicitNullValueZiaOrgEnrichment = value; AdditionalData?.Remove("__zia_org_enrichment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__zia_org_enrichment"); else _explicitNullProperties?.Remove("__zia_org_enrichment"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItem>? _explicitNullValueZiaOrgEnrichment = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItem> ZiaOrgEnrichment { get => _explicitNullValueZiaOrgEnrichment; set { _explicitNullValueZiaOrgEnrichment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__zia_org_enrichment"); else _explicitNullProperties?.Remove("__zia_org_enrichment"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItem> ZiaOrgEnrichment { get => _explicitNullValueZiaOrgEnrichment; set { _explicitNullValueZiaOrgEnrichment = value; AdditionalData?.Remove("__zia_org_enrichment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__zia_org_enrichment"); else _explicitNullProperties?.Remove("__zia_org_enrichment"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentGetOrgEnrichmentById200ResponseZiaOrgEnrichmentItem> _explicitNullValueZiaOrgEnrichment = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("replace_pick_list_values") is { } nullNodeReplacePickListValues && nullNodeReplacePickListValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplacePickListValues = null;
+            if (parseNode.GetChildNode("replace_pick_list_values") is null) { _explicitNullValueReplacePickListValues = default!; _explicitNullProperties?.Remove("replace_pick_list_values"); }
+            else if (parseNode.GetChildNode("replace_pick_list_values") is { } nullNodeReplacePickListValues && nullNodeReplacePickListValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplacePickListValues = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Description of the replace option on schedule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResult>? ReplacePickListValues { get => _explicitNullValueReplacePickListValues; set { _explicitNullValueReplacePickListValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replace_pick_list_values"); else _explicitNullProperties?.Remove("replace_pick_list_values"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResult>? ReplacePickListValues { get => _explicitNullValueReplacePickListValues; set { _explicitNullValueReplacePickListValues = value; AdditionalData?.Remove("replace_pick_list_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replace_pick_list_values"); else _explicitNullProperties?.Remove("replace_pick_list_values"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResult>? _explicitNullValueReplacePickListValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResult> ReplacePickListValues { get => _explicitNullValueReplacePickListValues; set { _explicitNullValueReplacePickListValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replace_pick_list_values"); else _explicitNullProperties?.Remove("replace_pick_list_values"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResult> ReplacePickListValues { get => _explicitNullValueReplacePickListValues; set { _explicitNullValueReplacePickListValues = value; AdditionalData?.Remove("replace_pick_list_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replace_pick_list_values"); else _explicitNullProperties?.Remove("replace_pick_list_values"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistReplaceScheduleResult> _explicitNullValueReplacePickListValues = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("module_specific_count") is { } nullNodeModuleSpecificCount && nullNodeModuleSpecificCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleSpecificCount = null;
+            if (parseNode.GetChildNode("module_specific_count") is null) { _explicitNullValueModuleSpecificCount = default!; _explicitNullProperties?.Remove("module_specific_count"); }
+            else if (parseNode.GetChildNode("module_specific_count") is { } nullNodeModuleSpecificCount && nullNodeModuleSpecificCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleSpecificCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents action counts broken down by CRM module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificActionsCountSchema>? ModuleSpecificCount { get => _explicitNullValueModuleSpecificCount; set { _explicitNullValueModuleSpecificCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_specific_count"); else _explicitNullProperties?.Remove("module_specific_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificActionsCountSchema>? ModuleSpecificCount { get => _explicitNullValueModuleSpecificCount; set { _explicitNullValueModuleSpecificCount = value; AdditionalData?.Remove("module_specific_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_specific_count"); else _explicitNullProperties?.Remove("module_specific_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificActionsCountSchema>? _explicitNullValueModuleSpecificCount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificActionsCountSchema> ModuleSpecificCount { get => _explicitNullValueModuleSpecificCount; set { _explicitNullValueModuleSpecificCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_specific_count"); else _explicitNullProperties?.Remove("module_specific_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificActionsCountSchema> ModuleSpecificCount { get => _explicitNullValueModuleSpecificCount; set { _explicitNullValueModuleSpecificCount = value; AdditionalData?.Remove("module_specific_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_specific_count"); else _explicitNullProperties?.Remove("module_specific_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModuleSpecificActionsCountSchema> _explicitNullValueModuleSpecificCount = default!;
 #endif
         /// <summary>

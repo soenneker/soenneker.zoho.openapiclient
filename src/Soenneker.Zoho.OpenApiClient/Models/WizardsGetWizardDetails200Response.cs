@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("wizards") is { } nullNodeWizards && nullNodeWizards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wizards = null;
+            if (parseNode.GetChildNode("wizards") is null) { _explicitNullValueWizards = default!; _explicitNullProperties?.Remove("wizards"); }
+            else if (parseNode.GetChildNode("wizards") is { } nullNodeWizards && nullNodeWizards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wizards = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of wizards in the response. For this operation, the array contains exactly one wizard object corresponding to the requested identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItem>? Wizards { get => _explicitNullValueWizards; set { _explicitNullValueWizards = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wizards"); else _explicitNullProperties?.Remove("wizards"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItem>? Wizards { get => _explicitNullValueWizards; set { _explicitNullValueWizards = value; AdditionalData?.Remove("wizards"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wizards"); else _explicitNullProperties?.Remove("wizards"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItem>? _explicitNullValueWizards = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItem> Wizards { get => _explicitNullValueWizards; set { _explicitNullValueWizards = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wizards"); else _explicitNullProperties?.Remove("wizards"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItem> Wizards { get => _explicitNullValueWizards; set { _explicitNullValueWizards = value; AdditionalData?.Remove("wizards"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wizards"); else _explicitNullProperties?.Remove("wizards"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItem> _explicitNullValueWizards = default!;
 #endif
         /// <summary>

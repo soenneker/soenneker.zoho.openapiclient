@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("Manager") is { } nullNodeManager && nullNodeManager.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Manager = null;
-            if (parseNode.GetChildNode("Name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("Reporting_To") is { } nullNodeReportingTo && nullNodeReportingTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportingTo = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("Manager") is null) { _explicitNullValueManager = default!; _explicitNullProperties?.Remove("Manager"); }
+            else if (parseNode.GetChildNode("Manager") is { } nullNodeManager && nullNodeManager.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Manager = null;
+            if (parseNode.GetChildNode("Name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("Name"); }
+            else if (parseNode.GetChildNode("Name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("Reporting_To") is null) { _explicitNullValueReportingTo = default!; _explicitNullProperties?.Remove("Reporting_To"); }
+            else if (parseNode.GetChildNode("Reporting_To") is { } nullNodeReportingTo && nullNodeReportingTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportingTo = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the unique ID of the territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the manager of the territory. Valid user IDs and names can be retrieved using the [Get Users](users.json#$.paths./{users}.get) API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemManager? Manager { get => _explicitNullValueManager; set { _explicitNullValueManager = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Manager"); else _explicitNullProperties?.Remove("Manager"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemManager? Manager { get => _explicitNullValueManager; set { _explicitNullValueManager = value; AdditionalData?.Remove("Manager"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Manager"); else _explicitNullProperties?.Remove("Manager"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemManager? _explicitNullValueManager = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemManager Manager { get => _explicitNullValueManager; set { _explicitNullValueManager = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Manager"); else _explicitNullProperties?.Remove("Manager"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemManager Manager { get => _explicitNullValueManager; set { _explicitNullValueManager = value; AdditionalData?.Remove("Manager"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Manager"); else _explicitNullProperties?.Remove("Manager"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemManager _explicitNullValueManager = default!;
 #endif
         /// <summary>Represents the name of the territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Name"); else _explicitNullProperties?.Remove("Name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("Name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Name"); else _explicitNullProperties?.Remove("Name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Name"); else _explicitNullProperties?.Remove("Name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("Name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Name"); else _explicitNullProperties?.Remove("Name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Represents the parent territory that this territory reports to in the hierarchy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemReportingTo? ReportingTo { get => _explicitNullValueReportingTo; set { _explicitNullValueReportingTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reporting_To"); else _explicitNullProperties?.Remove("Reporting_To"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemReportingTo? ReportingTo { get => _explicitNullValueReportingTo; set { _explicitNullValueReportingTo = value; AdditionalData?.Remove("Reporting_To"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reporting_To"); else _explicitNullProperties?.Remove("Reporting_To"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemReportingTo? _explicitNullValueReportingTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemReportingTo ReportingTo { get => _explicitNullValueReportingTo; set { _explicitNullValueReportingTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reporting_To"); else _explicitNullProperties?.Remove("Reporting_To"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemReportingTo ReportingTo { get => _explicitNullValueReportingTo; set { _explicitNullValueReportingTo = value; AdditionalData?.Remove("Reporting_To"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Reporting_To"); else _explicitNullProperties?.Remove("Reporting_To"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetResponseTerritoriesItemReportingTo _explicitNullValueReportingTo = default!;
 #endif
         /// <summary>

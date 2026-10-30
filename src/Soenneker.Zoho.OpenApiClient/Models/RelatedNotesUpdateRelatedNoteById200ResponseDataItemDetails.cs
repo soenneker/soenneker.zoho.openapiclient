@@ -18,11 +18,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Created_By") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
-            if (parseNode.GetChildNode("Created_Time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("Modified_By") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
-            if (parseNode.GetChildNode("Modified_Time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("Created_By") is null) { _explicitNullValueCreatedBy = default!; _explicitNullProperties?.Remove("Created_By"); }
+            else if (parseNode.GetChildNode("Created_By") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("Created_Time") is null) { _explicitNullValueCreatedTime = default!; _explicitNullProperties?.Remove("Created_Time"); }
+            else if (parseNode.GetChildNode("Created_Time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("Modified_By") is null) { _explicitNullValueModifiedBy = default!; _explicitNullProperties?.Remove("Modified_By"); }
+            else if (parseNode.GetChildNode("Modified_By") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("Modified_Time") is null) { _explicitNullValueModifiedTime = default!; _explicitNullProperties?.Remove("Modified_Time"); }
+            else if (parseNode.GetChildNode("Modified_Time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,38 +35,38 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the user who created the note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_By"); else _explicitNullProperties?.Remove("Created_By"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("Created_By"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_By"); else _explicitNullProperties?.Remove("Created_By"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_By"); else _explicitNullProperties?.Remove("Created_By"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("Created_By"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_By"); else _explicitNullProperties?.Remove("Created_By"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Represents the creation date and time of the note.</summary>
-        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_Time"); else _explicitNullProperties?.Remove("Created_Time"); } }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; AdditionalData?.Remove("Created_Time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Created_Time"); else _explicitNullProperties?.Remove("Created_Time"); } }
         private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>Represents the unique identifier of the updated note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the user who last modified the note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; AdditionalData?.Remove("Modified_By"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsModifiedBy? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; AdditionalData?.Remove("Modified_By"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_By"); else _explicitNullProperties?.Remove("Modified_By"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetailsModifiedBy _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>Represents the date and time when the note was last modified.</summary>
-        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_Time"); else _explicitNullProperties?.Remove("Modified_Time"); } }
+        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; AdditionalData?.Remove("Modified_Time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Modified_Time"); else _explicitNullProperties?.Remove("Modified_Time"); } }
         private DateTimeOffset? _explicitNullValueModifiedTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesUpdateRelatedNoteById200ResponseDataItemDetails"/> and sets the default values.

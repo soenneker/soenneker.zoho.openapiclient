@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
-            if (parseNode.GetChildNode("maximum_length") is { } nullNodeMaximumLength && nullNodeMaximumLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumLength = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("json_path") is null) { _explicitNullValueJsonPath = default!; _explicitNullProperties?.Remove("json_path"); }
+            else if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
+            if (parseNode.GetChildNode("maximum_length") is null) { _explicitNullValueMaximumLength = default!; _explicitNullProperties?.Remove("maximum_length"); }
+            else if (parseNode.GetChildNode("maximum_length") is { } nullNodeMaximumLength && nullNodeMaximumLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumLength = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>API name of the field whose submitted value exceeded the maximum allowed character length.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>JSONPath to the field whose value exceeded the maximum allowed length.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
         private string? _explicitNullValueJsonPath = default!;
 #nullable restore
 #else
-        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
         private string _explicitNullValueJsonPath = default!;
 #endif
         /// <summary>Maximum number of characters permitted for the field.</summary>
-        public int? MaximumLength { get => _explicitNullValueMaximumLength; set { _explicitNullValueMaximumLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_length"); else _explicitNullProperties?.Remove("maximum_length"); } }
+        public int? MaximumLength { get => _explicitNullValueMaximumLength; set { _explicitNullValueMaximumLength = value; AdditionalData?.Remove("maximum_length"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_length"); else _explicitNullProperties?.Remove("maximum_length"); } }
         private int? _explicitNullValueMaximumLength = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400ResponseModulesItemOneOf2DetailsOneOf2"/> and sets the default values.

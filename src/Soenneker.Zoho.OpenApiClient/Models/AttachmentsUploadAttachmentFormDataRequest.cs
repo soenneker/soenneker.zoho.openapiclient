@@ -54,10 +54,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("file") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("attachmentUrl") != null))();
-            if (result.AttachmentsUploadAttachmentFormDataRequestOneOf1 == null && result.AttachmentsUploadAttachmentFormDataRequestOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.AttachmentsUploadAttachmentFormDataRequestOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsUploadAttachmentFormDataRequestOneOf1(), parseNode);
-            if (result.AttachmentsUploadAttachmentFormDataRequestOneOf1 == null && result.AttachmentsUploadAttachmentFormDataRequestOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.AttachmentsUploadAttachmentFormDataRequestOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsUploadAttachmentFormDataRequestOneOf2(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("file") && (!shapeMembers1.ContainsKey("file") || (((shapeMembers1["file"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("attachmentUrl") && (!shapeMembers1.ContainsKey("attachmentUrl") || (((shapeMembers1["attachmentUrl"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("title") || ((((shapeMembers1["title"] == null || shapeMembers1["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.AttachmentsUploadAttachmentFormDataRequestOneOf1 == null && result.AttachmentsUploadAttachmentFormDataRequestOneOf2 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.AttachmentsUploadAttachmentFormDataRequestOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsUploadAttachmentFormDataRequestOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.AttachmentsUploadAttachmentFormDataRequestOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.AttachmentsUploadAttachmentFormDataRequestOneOf2(), parseNode);
             if (result.AttachmentsUploadAttachmentFormDataRequestOneOf1 == null && result.AttachmentsUploadAttachmentFormDataRequestOneOf2 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -67,6 +71,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(AttachmentsUploadAttachmentFormDataRequestOneOf1 != null)
             {
                 return AttachmentsUploadAttachmentFormDataRequestOneOf1.GetFieldDeserializers();
@@ -85,8 +91,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (AttachmentsUploadAttachmentFormDataRequestOneOf1 == null && AttachmentsUploadAttachmentFormDataRequestOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (AttachmentsUploadAttachmentFormDataRequestOneOf1 != null && AttachmentsUploadAttachmentFormDataRequestOneOf2 == null) { if (AttachmentsUploadAttachmentFormDataRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AttachmentsUploadAttachmentFormDataRequestOneOf1); return; }
-            if (AttachmentsUploadAttachmentFormDataRequestOneOf2 != null && AttachmentsUploadAttachmentFormDataRequestOneOf1 == null) { if (AttachmentsUploadAttachmentFormDataRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AttachmentsUploadAttachmentFormDataRequestOneOf2); return; }
+            int selectedUnionBranches = 0;
+            if (AttachmentsUploadAttachmentFormDataRequestOneOf1 != null) selectedUnionBranches++;
+            if (AttachmentsUploadAttachmentFormDataRequestOneOf2 != null) selectedUnionBranches++;
+            if (AttachmentsUploadAttachmentFormDataRequestOneOf1 != null && selectedUnionBranches == 1) { if (AttachmentsUploadAttachmentFormDataRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AttachmentsUploadAttachmentFormDataRequestOneOf1); return; }
+            if (AttachmentsUploadAttachmentFormDataRequestOneOf2 != null && selectedUnionBranches == 1) { if (AttachmentsUploadAttachmentFormDataRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AttachmentsUploadAttachmentFormDataRequestOneOf2); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(AttachmentsUploadAttachmentFormDataRequestOneOf1 != null)

@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("apply_feature_execution") is { } nullNodeApplyFeatureExecution && nullNodeApplyFeatureExecution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplyFeatureExecution = null;
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("skip_feature_execution") is { } nullNodeSkipFeatureExecution && nullNodeSkipFeatureExecution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipFeatureExecution = null;
-            if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
+            if (parseNode.GetChildNode("apply_feature_execution") is null) { _explicitNullValueApplyFeatureExecution = default!; _explicitNullProperties?.Remove("apply_feature_execution"); }
+            else if (parseNode.GetChildNode("apply_feature_execution") is { } nullNodeApplyFeatureExecution && nullNodeApplyFeatureExecution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplyFeatureExecution = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("skip_feature_execution") is null) { _explicitNullValueSkipFeatureExecution = default!; _explicitNullProperties?.Remove("skip_feature_execution"); }
+            else if (parseNode.GetChildNode("skip_feature_execution") is { } nullNodeSkipFeatureExecution && nullNodeSkipFeatureExecution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipFeatureExecution = null;
+            if (parseNode.GetChildNode("trigger") is null) { _explicitNullValueTrigger = default!; _explicitNullProperties?.Remove("trigger"); }
+            else if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the apply feature execution value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaApplyFeatureExecutionItem>? ApplyFeatureExecution { get => _explicitNullValueApplyFeatureExecution; set { _explicitNullValueApplyFeatureExecution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_feature_execution"); else _explicitNullProperties?.Remove("apply_feature_execution"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaApplyFeatureExecutionItem>? ApplyFeatureExecution { get => _explicitNullValueApplyFeatureExecution; set { _explicitNullValueApplyFeatureExecution = value; AdditionalData?.Remove("apply_feature_execution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_feature_execution"); else _explicitNullProperties?.Remove("apply_feature_execution"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaApplyFeatureExecutionItem>? _explicitNullValueApplyFeatureExecution = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaApplyFeatureExecutionItem> ApplyFeatureExecution { get => _explicitNullValueApplyFeatureExecution; set { _explicitNullValueApplyFeatureExecution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_feature_execution"); else _explicitNullProperties?.Remove("apply_feature_execution"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaApplyFeatureExecutionItem> ApplyFeatureExecution { get => _explicitNullValueApplyFeatureExecution; set { _explicitNullValueApplyFeatureExecution = value; AdditionalData?.Remove("apply_feature_execution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_feature_execution"); else _explicitNullProperties?.Remove("apply_feature_execution"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaApplyFeatureExecutionItem> _explicitNullValueApplyFeatureExecution = default!;
 #endif
         /// <summary>Represents the data value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordPutWriteDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordPutWriteDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordPutWriteDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordPutWriteDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordPutWriteDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordPutWriteDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>Represents the skip feature execution value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaSkipFeatureExecutionItem>? SkipFeatureExecution { get => _explicitNullValueSkipFeatureExecution; set { _explicitNullValueSkipFeatureExecution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_feature_execution"); else _explicitNullProperties?.Remove("skip_feature_execution"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaSkipFeatureExecutionItem>? SkipFeatureExecution { get => _explicitNullValueSkipFeatureExecution; set { _explicitNullValueSkipFeatureExecution = value; AdditionalData?.Remove("skip_feature_execution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_feature_execution"); else _explicitNullProperties?.Remove("skip_feature_execution"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaSkipFeatureExecutionItem>? _explicitNullValueSkipFeatureExecution = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaSkipFeatureExecutionItem> SkipFeatureExecution { get => _explicitNullValueSkipFeatureExecution; set { _explicitNullValueSkipFeatureExecution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_feature_execution"); else _explicitNullProperties?.Remove("skip_feature_execution"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaSkipFeatureExecutionItem> SkipFeatureExecution { get => _explicitNullValueSkipFeatureExecution; set { _explicitNullValueSkipFeatureExecution = value; AdditionalData?.Remove("skip_feature_execution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_feature_execution"); else _explicitNullProperties?.Remove("skip_feature_execution"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaSkipFeatureExecutionItem> _explicitNullValueSkipFeatureExecution = default!;
 #endif
         /// <summary>Represents the trigger value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaTriggerItem?>? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaTriggerItem?>? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaTriggerItem?>? _explicitNullValueTrigger = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaTriggerItem?> Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaTriggerItem?> Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutInputSchemaTriggerItem?> _explicitNullValueTrigger = default!;
 #endif
         /// <summary>

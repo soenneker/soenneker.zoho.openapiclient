@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("permission_type") is { } nullNodePermissionType && nullNodePermissionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionType = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("permission_type") is null) { _explicitNullValuePermissionType = default!; _explicitNullProperties?.Remove("permission_type"); }
+            else if (parseNode.GetChildNode("permission_type") is { } nullNodePermissionType && nullNodePermissionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Id of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Specify the permission level for this profile.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemProfilesItemPermissionType? PermissionType { get => _explicitNullValuePermissionType; set { _explicitNullValuePermissionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_type"); else _explicitNullProperties?.Remove("permission_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemProfilesItemPermissionType? PermissionType { get => _explicitNullValuePermissionType; set { _explicitNullValuePermissionType = value; AdditionalData?.Remove("permission_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_type"); else _explicitNullProperties?.Remove("permission_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemProfilesItemPermissionType? _explicitNullValuePermissionType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemProfilesItem"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "permission_type", n => { PermissionType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemProfilesItemPermissionType>(); } },
+                { "permission_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemProfilesItemPermissionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePermissionType = default; _explicitNullProperties?.Remove("permission_type"); AdditionalData["permission_type"] = unknown; } else { PermissionType = parsed; AdditionalData.Remove("permission_type"); } } },
             };
         }
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("download_mail_merge") is { } nullNodeDownloadMailMerge && nullNodeDownloadMailMerge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DownloadMailMerge = null;
+            if (parseNode.GetChildNode("download_mail_merge") is null) { _explicitNullValueDownloadMailMerge = default!; _explicitNullProperties?.Remove("download_mail_merge"); }
+            else if (parseNode.GetChildNode("download_mail_merge") is { } nullNodeDownloadMailMerge && nullNodeDownloadMailMerge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DownloadMailMerge = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of download mail merge response objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MailMergePostDownloadMailMerge200ResponseDownloadMailMergeItem>? DownloadMailMerge { get => _explicitNullValueDownloadMailMerge; set { _explicitNullValueDownloadMailMerge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("download_mail_merge"); else _explicitNullProperties?.Remove("download_mail_merge"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MailMergePostDownloadMailMerge200ResponseDownloadMailMergeItem>? DownloadMailMerge { get => _explicitNullValueDownloadMailMerge; set { _explicitNullValueDownloadMailMerge = value; AdditionalData?.Remove("download_mail_merge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("download_mail_merge"); else _explicitNullProperties?.Remove("download_mail_merge"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MailMergePostDownloadMailMerge200ResponseDownloadMailMergeItem>? _explicitNullValueDownloadMailMerge = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MailMergePostDownloadMailMerge200ResponseDownloadMailMergeItem> DownloadMailMerge { get => _explicitNullValueDownloadMailMerge; set { _explicitNullValueDownloadMailMerge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("download_mail_merge"); else _explicitNullProperties?.Remove("download_mail_merge"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MailMergePostDownloadMailMerge200ResponseDownloadMailMergeItem> DownloadMailMerge { get => _explicitNullValueDownloadMailMerge; set { _explicitNullValueDownloadMailMerge = value; AdditionalData?.Remove("download_mail_merge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("download_mail_merge"); else _explicitNullProperties?.Remove("download_mail_merge"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MailMergePostDownloadMailMerge200ResponseDownloadMailMergeItem> _explicitNullValueDownloadMailMerge = default!;
 #endif
         /// <summary>

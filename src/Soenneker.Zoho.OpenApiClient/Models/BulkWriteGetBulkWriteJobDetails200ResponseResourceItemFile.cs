@@ -18,40 +18,46 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("added_count") is { } nullNodeAddedCount && nullNodeAddedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedCount = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("skipped_count") is { } nullNodeSkippedCount && nullNodeSkippedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedCount = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("total_count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
-            if (parseNode.GetChildNode("updated_count") is { } nullNodeUpdatedCount && nullNodeUpdatedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedCount = null;
+            if (parseNode.GetChildNode("added_count") is null) { _explicitNullValueAddedCount = default!; _explicitNullProperties?.Remove("added_count"); }
+            else if (parseNode.GetChildNode("added_count") is { } nullNodeAddedCount && nullNodeAddedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedCount = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("skipped_count") is null) { _explicitNullValueSkippedCount = default!; _explicitNullProperties?.Remove("skipped_count"); }
+            else if (parseNode.GetChildNode("skipped_count") is { } nullNodeSkippedCount && nullNodeSkippedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedCount = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("total_count") is null) { _explicitNullValueTotalCount = default!; _explicitNullProperties?.Remove("total_count"); }
+            else if (parseNode.GetChildNode("total_count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+            if (parseNode.GetChildNode("updated_count") is null) { _explicitNullValueUpdatedCount = default!; _explicitNullProperties?.Remove("updated_count"); }
+            else if (parseNode.GetChildNode("updated_count") is { } nullNodeUpdatedCount && nullNodeUpdatedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedCount = null;
         }
 
         /// <summary>Represents the number of records that were created from the file. </summary>
-        public int? AddedCount { get => _explicitNullValueAddedCount; set { _explicitNullValueAddedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_count"); else _explicitNullProperties?.Remove("added_count"); } }
+        public int? AddedCount { get => _explicitNullValueAddedCount; set { _explicitNullValueAddedCount = value; AdditionalData?.Remove("added_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_count"); else _explicitNullProperties?.Remove("added_count"); } }
         private int? _explicitNullValueAddedCount = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the file name read from the uploaded archive. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Represents the number of records that were skipped during processing.  The error column in the result file explains why each record was skipped.</summary>
-        public int? SkippedCount { get => _explicitNullValueSkippedCount; set { _explicitNullValueSkippedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped_count"); else _explicitNullProperties?.Remove("skipped_count"); } }
+        public int? SkippedCount { get => _explicitNullValueSkippedCount; set { _explicitNullValueSkippedCount = value; AdditionalData?.Remove("skipped_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped_count"); else _explicitNullProperties?.Remove("skipped_count"); } }
         private int? _explicitNullValueSkippedCount = default!;
         /// <summary>Represents the processing status of the file within this resource entry. Possible values:**COMPLETED** - The file was fully processed.**ADDED** - The file was queued for processing.**INPROGRESS** - The file is currently being processed.**SKIPPED** - The file was skipped.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFileStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFileStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFileStatus? _explicitNullValueStatus = default!;
         /// <summary>Represents the total number of records that were created, updated, or skipped during processing. </summary>
-        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
+        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("total_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
         private int? _explicitNullValueTotalCount = default!;
         /// <summary>Represents the number of records that were updated from the file. </summary>
-        public int? UpdatedCount { get => _explicitNullValueUpdatedCount; set { _explicitNullValueUpdatedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_count"); else _explicitNullProperties?.Remove("updated_count"); } }
+        public int? UpdatedCount { get => _explicitNullValueUpdatedCount; set { _explicitNullValueUpdatedCount = value; AdditionalData?.Remove("updated_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_count"); else _explicitNullProperties?.Remove("updated_count"); } }
         private int? _explicitNullValueUpdatedCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFile"/> and sets the default values.
@@ -81,7 +87,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "added_count", n => { AddedCount = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "skipped_count", n => { SkippedCount = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFileStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseResourceItemFileStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "total_count", n => { TotalCount = n.GetIntValue(); } },
                 { "updated_count", n => { UpdatedCount = n.GetIntValue(); } },
             };

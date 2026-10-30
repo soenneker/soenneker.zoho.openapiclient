@@ -18,13 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("best_time") is { } nullNodeBestTime && nullNodeBestTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BestTime = null;
+            if (parseNode.GetChildNode("best_time") is null) { _explicitNullValueBestTime = default!; _explicitNullProperties?.Remove("best_time"); }
+            else if (parseNode.GetChildNode("best_time") is { } nullNodeBestTime && nullNodeBestTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BestTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether to send the email notification at the best time for the recipient. When set to true, the platform determines the optimal send time.</summary>
-        public bool? BestTime { get => _explicitNullValueBestTime; set { _explicitNullValueBestTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("best_time"); else _explicitNullProperties?.Remove("best_time"); } }
+        public bool? BestTime { get => _explicitNullValueBestTime; set { _explicitNullValueBestTime = value; AdditionalData?.Remove("best_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("best_time"); else _explicitNullProperties?.Remove("best_time"); } }
         private bool? _explicitNullValueBestTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailNotificationAssociateActionSchemaRelatedDetails"/> and sets the default values.

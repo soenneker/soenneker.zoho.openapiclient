@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("break_timing") is { } nullNodeBreakTiming && nullNodeBreakTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BreakTiming = null;
-            if (parseNode.GetChildNode("days") is { } nullNodeDays && nullNodeDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Days = null;
+            if (parseNode.GetChildNode("break_timing") is null) { _explicitNullValueBreakTiming = default!; _explicitNullProperties?.Remove("break_timing"); }
+            else if (parseNode.GetChildNode("break_timing") is { } nullNodeBreakTiming && nullNodeBreakTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BreakTiming = null;
+            if (parseNode.GetChildNode("days") is null) { _explicitNullValueDays = default!; _explicitNullProperties?.Remove("days"); }
+            else if (parseNode.GetChildNode("days") is { } nullNodeDays && nullNodeDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Days = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the start and end time of the break on the specified dayin `HH:MM` 24-hour format. A break must belonger than 15 minutes and shorter than 2hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BreakTiming { get => _explicitNullValueBreakTiming; set { _explicitNullValueBreakTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_timing"); else _explicitNullProperties?.Remove("break_timing"); } }
+        public List<string>? BreakTiming { get => _explicitNullValueBreakTiming; set { _explicitNullValueBreakTiming = value; AdditionalData?.Remove("break_timing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_timing"); else _explicitNullProperties?.Remove("break_timing"); } }
         private List<string>? _explicitNullValueBreakTiming = default!;
 #nullable restore
 #else
-        public List<string> BreakTiming { get => _explicitNullValueBreakTiming; set { _explicitNullValueBreakTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_timing"); else _explicitNullProperties?.Remove("break_timing"); } }
+        public List<string> BreakTiming { get => _explicitNullValueBreakTiming; set { _explicitNullValueBreakTiming = value; AdditionalData?.Remove("break_timing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_timing"); else _explicitNullProperties?.Remove("break_timing"); } }
         private List<string> _explicitNullValueBreakTiming = default!;
 #endif
         /// <summary>Represents the day of the week to whichthis custom break timing applies.**Possible values**: - Monday- Tuesday- Wednesday- Thursday- Friday- Saturday- Sunday</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItemBreakHoursItemCustomTimingItemDays? Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItemBreakHoursItemCustomTimingItemDays? Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; AdditionalData?.Remove("days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItemBreakHoursItemCustomTimingItemDays? _explicitNullValueDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItemBreakHoursItemCustomTimingItem"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "break_timing", n => { BreakTiming = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "days", n => { Days = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItemBreakHoursItemCustomTimingItemDays>(); } },
+                { "days", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursUpdateShiftHoursRequestShiftHoursItemBreakHoursItemCustomTimingItemDays>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDays = default; _explicitNullProperties?.Remove("days"); AdditionalData["days"] = unknown; } else { Days = parsed; AdditionalData.Remove("days"); } } },
             };
         }
         /// <summary>

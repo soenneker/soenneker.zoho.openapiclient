@@ -8,6 +8,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     public enum PortalUsersSingleInviteUserLanguageParameter
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "")]
+        EmptyString,
+
         [EnumMember(Value = "it_IT")]
         #pragma warning disable CS1591
         ItIt,

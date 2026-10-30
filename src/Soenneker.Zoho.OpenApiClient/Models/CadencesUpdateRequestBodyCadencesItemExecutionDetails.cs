@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("unenroll_properties") is { } nullNodeUnenrollProperties && nullNodeUnenrollProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnenrollProperties = null;
+            if (parseNode.GetChildNode("unenroll_properties") is null) { _explicitNullValueUnenrollProperties = default!; _explicitNullProperties?.Remove("unenroll_properties"); }
+            else if (parseNode.GetChildNode("unenroll_properties") is { } nullNodeUnenrollProperties && nullNodeUnenrollProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnenrollProperties = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the updated conditions under which records are automatically unenrolled from the Cadence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnenrollPropertiesNested>? UnenrollProperties { get => _explicitNullValueUnenrollProperties; set { _explicitNullValueUnenrollProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unenroll_properties"); else _explicitNullProperties?.Remove("unenroll_properties"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnenrollPropertiesNested>? UnenrollProperties { get => _explicitNullValueUnenrollProperties; set { _explicitNullValueUnenrollProperties = value; AdditionalData?.Remove("unenroll_properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unenroll_properties"); else _explicitNullProperties?.Remove("unenroll_properties"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UnenrollPropertiesNested>? _explicitNullValueUnenrollProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnenrollPropertiesNested> UnenrollProperties { get => _explicitNullValueUnenrollProperties; set { _explicitNullValueUnenrollProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unenroll_properties"); else _explicitNullProperties?.Remove("unenroll_properties"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnenrollPropertiesNested> UnenrollProperties { get => _explicitNullValueUnenrollProperties; set { _explicitNullValueUnenrollProperties = value; AdditionalData?.Remove("unenroll_properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unenroll_properties"); else _explicitNullProperties?.Remove("unenroll_properties"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UnenrollPropertiesNested> _explicitNullValueUnenrollProperties = default!;
 #endif
         /// <summary>

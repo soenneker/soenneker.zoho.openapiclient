@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
-            if (parseNode.GetChildNode("start_number") is { } nullNodeStartNumber && nullNodeStartNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartNumber = null;
-            if (parseNode.GetChildNode("suffix") is { } nullNodeSuffix && nullNodeSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Suffix = null;
+            if (parseNode.GetChildNode("prefix") is null) { _explicitNullValuePrefix = default!; _explicitNullProperties?.Remove("prefix"); }
+            else if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
+            if (parseNode.GetChildNode("start_number") is null) { _explicitNullValueStartNumber = default!; _explicitNullProperties?.Remove("start_number"); }
+            else if (parseNode.GetChildNode("start_number") is { } nullNodeStartNumber && nullNodeStartNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartNumber = null;
+            if (parseNode.GetChildNode("suffix") is null) { _explicitNullValueSuffix = default!; _explicitNullProperties?.Remove("suffix"); }
+            else if (parseNode.GetChildNode("suffix") is { } nullNodeSuffix && nullNodeSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Suffix = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the prefix of the starting number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; AdditionalData?.Remove("prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
         private string? _explicitNullValuePrefix = default!;
 #nullable restore
 #else
-        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; AdditionalData?.Remove("prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
         private string _explicitNullValuePrefix = default!;
 #endif
         /// <summary>Specify the starting number for the auto number field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartNumber { get => _explicitNullValueStartNumber; set { _explicitNullValueStartNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_number"); else _explicitNullProperties?.Remove("start_number"); } }
+        public string? StartNumber { get => _explicitNullValueStartNumber; set { _explicitNullValueStartNumber = value; AdditionalData?.Remove("start_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_number"); else _explicitNullProperties?.Remove("start_number"); } }
         private string? _explicitNullValueStartNumber = default!;
 #nullable restore
 #else
-        public string StartNumber { get => _explicitNullValueStartNumber; set { _explicitNullValueStartNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_number"); else _explicitNullProperties?.Remove("start_number"); } }
+        public string StartNumber { get => _explicitNullValueStartNumber; set { _explicitNullValueStartNumber = value; AdditionalData?.Remove("start_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_number"); else _explicitNullProperties?.Remove("start_number"); } }
         private string _explicitNullValueStartNumber = default!;
 #endif
         /// <summary>Specify the suffix of the starting number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Suffix { get => _explicitNullValueSuffix; set { _explicitNullValueSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suffix"); else _explicitNullProperties?.Remove("suffix"); } }
+        public string? Suffix { get => _explicitNullValueSuffix; set { _explicitNullValueSuffix = value; AdditionalData?.Remove("suffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suffix"); else _explicitNullProperties?.Remove("suffix"); } }
         private string? _explicitNullValueSuffix = default!;
 #nullable restore
 #else
-        public string Suffix { get => _explicitNullValueSuffix; set { _explicitNullValueSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suffix"); else _explicitNullProperties?.Remove("suffix"); } }
+        public string Suffix { get => _explicitNullValueSuffix; set { _explicitNullValueSuffix = value; AdditionalData?.Remove("suffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suffix"); else _explicitNullProperties?.Remove("suffix"); } }
         private string _explicitNullValueSuffix = default!;
 #endif
         /// <summary>

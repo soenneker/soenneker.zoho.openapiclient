@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enrich_based_on") is { } nullNodeEnrichBasedOn && nullNodeEnrichBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnrichBasedOn = null;
+            if (parseNode.GetChildNode("enrich_based_on") is null) { _explicitNullValueEnrichBasedOn = default!; _explicitNullProperties?.Remove("enrich_based_on"); }
+            else if (parseNode.GetChildNode("enrich_based_on") is { } nullNodeEnrichBasedOn && nullNodeEnrichBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnrichBasedOn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the details of the fields on whose values you want to trigger enrichment.  Note that you must provide at least one of the following values in the input. Based on these values, Zia will look for information on the web and enrich fields as per [Enrichment Configuration.](zia_enrichment.yaml#$.paths./settings/zia/data_enrichment.get)) Note that the values of these keys must be at least three characters long and only in English.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItemEnrichBasedOn? EnrichBasedOn { get => _explicitNullValueEnrichBasedOn; set { _explicitNullValueEnrichBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrich_based_on"); else _explicitNullProperties?.Remove("enrich_based_on"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItemEnrichBasedOn? EnrichBasedOn { get => _explicitNullValueEnrichBasedOn; set { _explicitNullValueEnrichBasedOn = value; AdditionalData?.Remove("enrich_based_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrich_based_on"); else _explicitNullProperties?.Remove("enrich_based_on"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItemEnrichBasedOn? _explicitNullValueEnrichBasedOn = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItemEnrichBasedOn EnrichBasedOn { get => _explicitNullValueEnrichBasedOn; set { _explicitNullValueEnrichBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrich_based_on"); else _explicitNullProperties?.Remove("enrich_based_on"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItemEnrichBasedOn EnrichBasedOn { get => _explicitNullValueEnrichBasedOn; set { _explicitNullValueEnrichBasedOn = value; AdditionalData?.Remove("enrich_based_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrich_based_on"); else _explicitNullProperties?.Remove("enrich_based_on"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentSubmitOrgEnrichmentRequestRequestZiaOrgEnrichmentItemEnrichBasedOn _explicitNullValueEnrichBasedOn = default!;
 #endif
         /// <summary>

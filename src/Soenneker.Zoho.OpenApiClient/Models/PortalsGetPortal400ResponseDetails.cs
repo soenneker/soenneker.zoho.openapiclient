@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("unsupported_environment") is { } nullNodeUnsupportedEnvironment && nullNodeUnsupportedEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnsupportedEnvironment = null;
+            if (parseNode.GetChildNode("unsupported_environment") is null) { _explicitNullValueUnsupportedEnvironment = default!; _explicitNullProperties?.Remove("unsupported_environment"); }
+            else if (parseNode.GetChildNode("unsupported_environment") is { } nullNodeUnsupportedEnvironment && nullNodeUnsupportedEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnsupportedEnvironment = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the environment type that does not support this API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnsupportedEnvironment { get => _explicitNullValueUnsupportedEnvironment; set { _explicitNullValueUnsupportedEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsupported_environment"); else _explicitNullProperties?.Remove("unsupported_environment"); } }
+        public string? UnsupportedEnvironment { get => _explicitNullValueUnsupportedEnvironment; set { _explicitNullValueUnsupportedEnvironment = value; AdditionalData?.Remove("unsupported_environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsupported_environment"); else _explicitNullProperties?.Remove("unsupported_environment"); } }
         private string? _explicitNullValueUnsupportedEnvironment = default!;
 #nullable restore
 #else
-        public string UnsupportedEnvironment { get => _explicitNullValueUnsupportedEnvironment; set { _explicitNullValueUnsupportedEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsupported_environment"); else _explicitNullProperties?.Remove("unsupported_environment"); } }
+        public string UnsupportedEnvironment { get => _explicitNullValueUnsupportedEnvironment; set { _explicitNullValueUnsupportedEnvironment = value; AdditionalData?.Remove("unsupported_environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unsupported_environment"); else _explicitNullProperties?.Remove("unsupported_environment"); } }
         private string _explicitNullValueUnsupportedEnvironment = default!;
 #endif
         /// <summary>

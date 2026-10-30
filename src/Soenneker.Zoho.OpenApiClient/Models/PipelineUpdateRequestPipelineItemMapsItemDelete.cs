@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("permanent") is { } nullNodePermanent && nullNodePermanent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permanent = null;
+            if (parseNode.GetChildNode("permanent") is null) { _explicitNullValuePermanent = default!; _explicitNullProperties?.Remove("permanent"); }
+            else if (parseNode.GetChildNode("permanent") is { } nullNodePermanent && nullNodePermanent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permanent = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates if the deletion was permanent (true), soft delete (false), or status unknown/null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Permanent { get => _explicitNullValuePermanent; set { _explicitNullValuePermanent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanent"); else _explicitNullProperties?.Remove("permanent"); } }
+        public UntypedNode? Permanent { get => _explicitNullValuePermanent; set { _explicitNullValuePermanent = value; AdditionalData?.Remove("permanent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanent"); else _explicitNullProperties?.Remove("permanent"); } }
         private UntypedNode? _explicitNullValuePermanent = default!;
 #nullable restore
 #else
-        public UntypedNode Permanent { get => _explicitNullValuePermanent; set { _explicitNullValuePermanent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanent"); else _explicitNullProperties?.Remove("permanent"); } }
+        public UntypedNode Permanent { get => _explicitNullValuePermanent; set { _explicitNullValuePermanent = value; AdditionalData?.Remove("permanent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanent"); else _explicitNullProperties?.Remove("permanent"); } }
         private UntypedNode _explicitNullValuePermanent = default!;
 #endif
         /// <summary>

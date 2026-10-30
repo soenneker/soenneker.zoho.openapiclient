@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("negative_score") is { } nullNodeNegativeScore && nullNodeNegativeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeScore = null;
-            if (parseNode.GetChildNode("positive_score") is { } nullNodePositiveScore && nullNodePositiveScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveScore = null;
-            if (parseNode.GetChildNode("touch_point") is { } nullNodeTouchPoint && nullNodeTouchPoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TouchPoint = null;
-            if (parseNode.GetChildNode("zia_type") is { } nullNodeZiaType && nullNodeZiaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZiaType = null;
+            if (parseNode.GetChildNode("negative_score") is null) { _explicitNullValueNegativeScore = default!; _explicitNullProperties?.Remove("negative_score"); }
+            else if (parseNode.GetChildNode("negative_score") is { } nullNodeNegativeScore && nullNodeNegativeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeScore = null;
+            if (parseNode.GetChildNode("positive_score") is null) { _explicitNullValuePositiveScore = default!; _explicitNullProperties?.Remove("positive_score"); }
+            else if (parseNode.GetChildNode("positive_score") is { } nullNodePositiveScore && nullNodePositiveScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveScore = null;
+            if (parseNode.GetChildNode("touch_point") is null) { _explicitNullValueTouchPoint = default!; _explicitNullProperties?.Remove("touch_point"); }
+            else if (parseNode.GetChildNode("touch_point") is { } nullNodeTouchPoint && nullNodeTouchPoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TouchPoint = null;
+            if (parseNode.GetChildNode("zia_type") is null) { _explicitNullValueZiaType = default!; _explicitNullProperties?.Remove("zia_type"); }
+            else if (parseNode.GetChildNode("zia_type") is { } nullNodeZiaType && nullNodeZiaType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZiaType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,35 +33,35 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the negative score change recorded for the record by the Scoring Rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleNegativeScore? NegativeScore { get => _explicitNullValueNegativeScore; set { _explicitNullValueNegativeScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_score"); else _explicitNullProperties?.Remove("negative_score"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleNegativeScore? NegativeScore { get => _explicitNullValueNegativeScore; set { _explicitNullValueNegativeScore = value; AdditionalData?.Remove("negative_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_score"); else _explicitNullProperties?.Remove("negative_score"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleNegativeScore? _explicitNullValueNegativeScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleNegativeScore NegativeScore { get => _explicitNullValueNegativeScore; set { _explicitNullValueNegativeScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_score"); else _explicitNullProperties?.Remove("negative_score"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleNegativeScore NegativeScore { get => _explicitNullValueNegativeScore; set { _explicitNullValueNegativeScore = value; AdditionalData?.Remove("negative_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_score"); else _explicitNullProperties?.Remove("negative_score"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleNegativeScore _explicitNullValueNegativeScore = default!;
 #endif
         /// <summary>Represents the positive score change recorded for the record by the Scoring Rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRulePositiveScore? PositiveScore { get => _explicitNullValuePositiveScore; set { _explicitNullValuePositiveScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_score"); else _explicitNullProperties?.Remove("positive_score"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRulePositiveScore? PositiveScore { get => _explicitNullValuePositiveScore; set { _explicitNullValuePositiveScore = value; AdditionalData?.Remove("positive_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_score"); else _explicitNullProperties?.Remove("positive_score"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRulePositiveScore? _explicitNullValuePositiveScore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRulePositiveScore PositiveScore { get => _explicitNullValuePositiveScore; set { _explicitNullValuePositiveScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_score"); else _explicitNullProperties?.Remove("positive_score"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRulePositiveScore PositiveScore { get => _explicitNullValuePositiveScore; set { _explicitNullValuePositiveScore = value; AdditionalData?.Remove("positive_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_score"); else _explicitNullProperties?.Remove("positive_score"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRulePositiveScore _explicitNullValuePositiveScore = default!;
 #endif
         /// <summary>Represents the touchpoint score details associated with the Scoring Rule event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleTouchPoint? TouchPoint { get => _explicitNullValueTouchPoint; set { _explicitNullValueTouchPoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("touch_point"); else _explicitNullProperties?.Remove("touch_point"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleTouchPoint? TouchPoint { get => _explicitNullValueTouchPoint; set { _explicitNullValueTouchPoint = value; AdditionalData?.Remove("touch_point"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("touch_point"); else _explicitNullProperties?.Remove("touch_point"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleTouchPoint? _explicitNullValueTouchPoint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleTouchPoint TouchPoint { get => _explicitNullValueTouchPoint; set { _explicitNullValueTouchPoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("touch_point"); else _explicitNullProperties?.Remove("touch_point"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleTouchPoint TouchPoint { get => _explicitNullValueTouchPoint; set { _explicitNullValueTouchPoint = value; AdditionalData?.Remove("touch_point"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("touch_point"); else _explicitNullProperties?.Remove("touch_point"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRuleTouchPoint _explicitNullValueTouchPoint = default!;
 #endif
         /// <summary>Indicates whether the Scoring Rule event was triggered by Zia, the AI assistant in Zoho CRM.</summary>
-        public bool? ZiaType { get => _explicitNullValueZiaType; set { _explicitNullValueZiaType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zia_type"); else _explicitNullProperties?.Remove("zia_type"); } }
+        public bool? ZiaType { get => _explicitNullValueZiaType; set { _explicitNullValueZiaType = value; AdditionalData?.Remove("zia_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zia_type"); else _explicitNullProperties?.Remove("zia_type"); } }
         private bool? _explicitNullValueZiaType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsScoringRule"/> and sets the default values.

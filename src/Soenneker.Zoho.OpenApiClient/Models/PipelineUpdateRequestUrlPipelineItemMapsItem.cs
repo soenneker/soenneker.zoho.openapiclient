@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("_delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
-            if (parseNode.GetChildNode("display_value") is { } nullNodeDisplayValue && nullNodeDisplayValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayValue = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
+            if (parseNode.GetChildNode("_delete") is null) { _explicitNullValueDelete = default!; _explicitNullProperties?.Remove("_delete"); }
+            else if (parseNode.GetChildNode("_delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
+            if (parseNode.GetChildNode("display_value") is null) { _explicitNullValueDisplayValue = default!; _explicitNullProperties?.Remove("display_value"); }
+            else if (parseNode.GetChildNode("display_value") is { } nullNodeDisplayValue && nullNodeDisplayValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayValue = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("sequence_number") is null) { _explicitNullValueSequenceNumber = default!; _explicitNullProperties?.Remove("sequence_number"); }
+            else if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,35 +33,35 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Deletion metadata object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineUpdateRequestUrlPipelineItemMapsItemDelete? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_delete"); else _explicitNullProperties?.Remove("_delete"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineUpdateRequestUrlPipelineItemMapsItemDelete? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_delete"); else _explicitNullProperties?.Remove("_delete"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PipelineUpdateRequestUrlPipelineItemMapsItemDelete? _explicitNullValueDelete = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineUpdateRequestUrlPipelineItemMapsItemDelete Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_delete"); else _explicitNullProperties?.Remove("_delete"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineUpdateRequestUrlPipelineItemMapsItemDelete Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_delete"); else _explicitNullProperties?.Remove("_delete"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PipelineUpdateRequestUrlPipelineItemMapsItemDelete _explicitNullValueDelete = default!;
 #endif
         /// <summary>User-facing display name for the pipeline stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
+        public string? DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; AdditionalData?.Remove("display_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
         private string? _explicitNullValueDisplayValue = default!;
 #nullable restore
 #else
-        public string DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
+        public string DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; AdditionalData?.Remove("display_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
         private string _explicitNullValueDisplayValue = default!;
 #endif
         /// <summary>Unique identifier of the target pipeline stage to map.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Optional position of this stage mapping in the pipeline sequence (overrides default positioning).</summary>
-        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; AdditionalData?.Remove("sequence_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
         private int? _explicitNullValueSequenceNumber = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PipelineUpdateRequestUrlPipelineItemMapsItem"/> and sets the default values.

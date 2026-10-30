@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("saml_configuration") is { } nullNodeSamlConfiguration && nullNodeSamlConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamlConfiguration = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("saml_configuration") is null) { _explicitNullValueSamlConfiguration = default!; _explicitNullProperties?.Remove("saml_configuration"); }
+            else if (parseNode.GetChildNode("saml_configuration") is { } nullNodeSamlConfiguration && nullNodeSamlConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamlConfiguration = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the updated display name for the portal. The name must be between 6 and 30 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Specify the SAML configuration to apply to the portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortalRequestPortalsItemSamlConfiguration? SamlConfiguration { get => _explicitNullValueSamlConfiguration; set { _explicitNullValueSamlConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_configuration"); else _explicitNullProperties?.Remove("saml_configuration"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortalRequestPortalsItemSamlConfiguration? SamlConfiguration { get => _explicitNullValueSamlConfiguration; set { _explicitNullValueSamlConfiguration = value; AdditionalData?.Remove("saml_configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_configuration"); else _explicitNullProperties?.Remove("saml_configuration"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortalRequestPortalsItemSamlConfiguration? _explicitNullValueSamlConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortalRequestPortalsItemSamlConfiguration SamlConfiguration { get => _explicitNullValueSamlConfiguration; set { _explicitNullValueSamlConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_configuration"); else _explicitNullProperties?.Remove("saml_configuration"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortalRequestPortalsItemSamlConfiguration SamlConfiguration { get => _explicitNullValueSamlConfiguration; set { _explicitNullValueSamlConfiguration = value; AdditionalData?.Remove("saml_configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_configuration"); else _explicitNullProperties?.Remove("saml_configuration"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PortalsUpdatePortalRequestPortalsItemSamlConfiguration _explicitNullValueSamlConfiguration = default!;
 #endif
         /// <summary>

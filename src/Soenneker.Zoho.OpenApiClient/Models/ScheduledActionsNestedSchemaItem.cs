@@ -18,41 +18,44 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
-            if (parseNode.GetChildNode("execute_after") is { } nullNodeExecuteAfter && nullNodeExecuteAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecuteAfter = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("actions") is null) { _explicitNullValueActions = default!; _explicitNullProperties?.Remove("actions"); }
+            else if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("execute_after") is null) { _explicitNullValueExecuteAfter = default!; _explicitNullProperties?.Remove("execute_after"); }
+            else if (parseNode.GetChildNode("execute_after") is { } nullNodeExecuteAfter && nullNodeExecuteAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecuteAfter = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Represents the array of action objects for this scheduled group. Uses the same associate and non-associate action structure as instant actions, but only action types that support scheduled execution are allowed. Per-type limits apply independently to instant and scheduled actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemActionsItem>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemActionsItem>? _explicitNullValueActions = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchemaActionsItem>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchemaActionsItem>? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemActionsItem> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemActionsItem> _explicitNullValueActions = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchemaActionsItem> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchemaActionsItem> _explicitNullValueActions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the delay before the scheduled actions execute. Required. Cannot be an empty object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter? ExecuteAfter { get => _explicitNullValueExecuteAfter; set { _explicitNullValueExecuteAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_after"); else _explicitNullProperties?.Remove("execute_after"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter? ExecuteAfter { get => _explicitNullValueExecuteAfter; set { _explicitNullValueExecuteAfter = value; AdditionalData?.Remove("execute_after"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_after"); else _explicitNullProperties?.Remove("execute_after"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter? _explicitNullValueExecuteAfter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter ExecuteAfter { get => _explicitNullValueExecuteAfter; set { _explicitNullValueExecuteAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_after"); else _explicitNullProperties?.Remove("execute_after"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter ExecuteAfter { get => _explicitNullValueExecuteAfter; set { _explicitNullValueExecuteAfter = value; AdditionalData?.Remove("execute_after"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_after"); else _explicitNullProperties?.Remove("execute_after"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter _explicitNullValueExecuteAfter = default!;
 #endif
         /// <summary>Represents unique Id of the scheduled action</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>
@@ -82,7 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemActionsItem>(global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchemaActionsItem>(global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchemaActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "execute_after", n => { ExecuteAfter = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter>(global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
             };
@@ -94,7 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemActionsItem>("actions", Actions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsNestedSchemaActionsItem>("actions", Actions);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter>("execute_after", ExecuteAfter);
             writer.WriteStringValue("id", Id);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

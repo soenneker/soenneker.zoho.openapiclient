@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("$append_values") is { } nullNodeAppendValues && nullNodeAppendValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppendValues = null;
-            if (parseNode.GetChildNode("Layout") is { } nullNodeLayout && nullNodeLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layout = null;
+            if (parseNode.GetChildNode("$append_values") is null) { _explicitNullValueAppendValues = default!; _explicitNullProperties?.Remove("$append_values"); }
+            else if (parseNode.GetChildNode("$append_values") is { } nullNodeAppendValues && nullNodeAppendValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppendValues = null;
+            if (parseNode.GetChildNode("Layout") is null) { _explicitNullValueLayout = default!; _explicitNullProperties?.Remove("Layout"); }
+            else if (parseNode.GetChildNode("Layout") is { } nullNodeLayout && nullNodeLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layout = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the $append values value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppendValues { get => _explicitNullValueAppendValues; set { _explicitNullValueAppendValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$append_values"); else _explicitNullProperties?.Remove("$append_values"); } }
+        public string? AppendValues { get => _explicitNullValueAppendValues; set { _explicitNullValueAppendValues = value; AdditionalData?.Remove("$append_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$append_values"); else _explicitNullProperties?.Remove("$append_values"); } }
         private string? _explicitNullValueAppendValues = default!;
 #nullable restore
 #else
-        public string AppendValues { get => _explicitNullValueAppendValues; set { _explicitNullValueAppendValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$append_values"); else _explicitNullProperties?.Remove("$append_values"); } }
+        public string AppendValues { get => _explicitNullValueAppendValues; set { _explicitNullValueAppendValues = value; AdditionalData?.Remove("$append_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$append_values"); else _explicitNullProperties?.Remove("$append_values"); } }
         private string _explicitNullValueAppendValues = default!;
 #endif
         /// <summary>Represents the layout value. Use the [Get Layouts Metadata API](layouts.yaml#$.paths./settings/layouts.get) to retrieve the Layout ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItemLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItemLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("Layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItemLayout? _explicitNullValueLayout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItemLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItemLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("Layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Layout"); else _explicitNullProperties?.Remove("Layout"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItemLayout _explicitNullValueLayout = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_update_action") is { } nullNodeFieldUpdateAction && nullNodeFieldUpdateAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldUpdateAction = null;
+            if (parseNode.GetChildNode("field_update_action") is null) { _explicitNullValueFieldUpdateAction = default!; _explicitNullProperties?.Remove("field_update_action"); }
+            else if (parseNode.GetChildNode("field_update_action") is { } nullNodeFieldUpdateAction && nullNodeFieldUpdateAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldUpdateAction = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents an array of field update actions executed by the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsWorkflowFieldUpdateActionItem>? FieldUpdateAction { get => _explicitNullValueFieldUpdateAction; set { _explicitNullValueFieldUpdateAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_update_action"); else _explicitNullProperties?.Remove("field_update_action"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsWorkflowFieldUpdateActionItem>? FieldUpdateAction { get => _explicitNullValueFieldUpdateAction; set { _explicitNullValueFieldUpdateAction = value; AdditionalData?.Remove("field_update_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_update_action"); else _explicitNullProperties?.Remove("field_update_action"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsWorkflowFieldUpdateActionItem>? _explicitNullValueFieldUpdateAction = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsWorkflowFieldUpdateActionItem> FieldUpdateAction { get => _explicitNullValueFieldUpdateAction; set { _explicitNullValueFieldUpdateAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_update_action"); else _explicitNullProperties?.Remove("field_update_action"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsWorkflowFieldUpdateActionItem> FieldUpdateAction { get => _explicitNullValueFieldUpdateAction; set { _explicitNullValueFieldUpdateAction = value; AdditionalData?.Remove("field_update_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_update_action"); else _explicitNullProperties?.Remove("field_update_action"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsWorkflowFieldUpdateActionItem> _explicitNullValueFieldUpdateAction = default!;
 #endif
         /// <summary>

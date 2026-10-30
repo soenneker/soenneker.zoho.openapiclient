@@ -18,25 +18,44 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attachments") is { } nullNodeAttachments && nullNodeAttachments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attachments = null;
-            if (parseNode.GetChildNode("bcc") is { } nullNodeBcc && nullNodeBcc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bcc = null;
-            if (parseNode.GetChildNode("cc") is { } nullNodeCc && nullNodeCc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cc = null;
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
-            if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("inventory_details") is { } nullNodeInventoryDetails && nullNodeInventoryDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InventoryDetails = null;
-            if (parseNode.GetChildNode("linked_record") is { } nullNodeLinkedRecord && nullNodeLinkedRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedRecord = null;
-            if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
-            if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
-            if (parseNode.GetChildNode("reply_to") is { } nullNodeReplyTo && nullNodeReplyTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplyTo = null;
-            if (parseNode.GetChildNode("rich_text") is { } nullNodeRichText && nullNodeRichText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RichText = null;
-            if (parseNode.GetChildNode("schedule_details") is { } nullNodeScheduleDetails && nullNodeScheduleDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleDetails = null;
-            if (parseNode.GetChildNode("$sharing_permission") is { } nullNodeSharingPermission && nullNodeSharingPermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingPermission = null;
-            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
-            if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
-            if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
-            if (parseNode.GetChildNode("to") is { } nullNodeTo && nullNodeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) To = null;
+            if (parseNode.GetChildNode("attachments") is null) { _explicitNullValueAttachments = default!; _explicitNullProperties?.Remove("attachments"); }
+            else if (parseNode.GetChildNode("attachments") is { } nullNodeAttachments && nullNodeAttachments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attachments = null;
+            if (parseNode.GetChildNode("bcc") is null) { _explicitNullValueBcc = default!; _explicitNullProperties?.Remove("bcc"); }
+            else if (parseNode.GetChildNode("bcc") is { } nullNodeBcc && nullNodeBcc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bcc = null;
+            if (parseNode.GetChildNode("cc") is null) { _explicitNullValueCc = default!; _explicitNullProperties?.Remove("cc"); }
+            else if (parseNode.GetChildNode("cc") is { } nullNodeCc && nullNodeCc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cc = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("created_time") is null) { _explicitNullValueCreatedTime = default!; _explicitNullProperties?.Remove("created_time"); }
+            else if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("from") is null) { _explicitNullValueFrom = default!; _explicitNullProperties?.Remove("from"); }
+            else if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("inventory_details") is null) { _explicitNullValueInventoryDetails = default!; _explicitNullProperties?.Remove("inventory_details"); }
+            else if (parseNode.GetChildNode("inventory_details") is { } nullNodeInventoryDetails && nullNodeInventoryDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InventoryDetails = null;
+            if (parseNode.GetChildNode("linked_record") is null) { _explicitNullValueLinkedRecord = default!; _explicitNullProperties?.Remove("linked_record"); }
+            else if (parseNode.GetChildNode("linked_record") is { } nullNodeLinkedRecord && nullNodeLinkedRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedRecord = null;
+            if (parseNode.GetChildNode("modified_time") is null) { _explicitNullValueModifiedTime = default!; _explicitNullProperties?.Remove("modified_time"); }
+            else if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
+            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("reply_to") is null) { _explicitNullValueReplyTo = default!; _explicitNullProperties?.Remove("reply_to"); }
+            else if (parseNode.GetChildNode("reply_to") is { } nullNodeReplyTo && nullNodeReplyTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplyTo = null;
+            if (parseNode.GetChildNode("rich_text") is null) { _explicitNullValueRichText = default!; _explicitNullProperties?.Remove("rich_text"); }
+            else if (parseNode.GetChildNode("rich_text") is { } nullNodeRichText && nullNodeRichText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RichText = null;
+            if (parseNode.GetChildNode("schedule_details") is null) { _explicitNullValueScheduleDetails = default!; _explicitNullProperties?.Remove("schedule_details"); }
+            else if (parseNode.GetChildNode("schedule_details") is { } nullNodeScheduleDetails && nullNodeScheduleDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleDetails = null;
+            if (parseNode.GetChildNode("$sharing_permission") is null) { _explicitNullValueSharingPermission = default!; _explicitNullProperties?.Remove("$sharing_permission"); }
+            else if (parseNode.GetChildNode("$sharing_permission") is { } nullNodeSharingPermission && nullNodeSharingPermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingPermission = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("subject") is null) { _explicitNullValueSubject = default!; _explicitNullProperties?.Remove("subject"); }
+            else if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+            if (parseNode.GetChildNode("summary") is null) { _explicitNullValueSummary = default!; _explicitNullProperties?.Remove("summary"); }
+            else if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
+            if (parseNode.GetChildNode("to") is null) { _explicitNullValueTo = default!; _explicitNullProperties?.Remove("to"); }
+            else if (parseNode.GetChildNode("to") is { } nullNodeTo && nullNodeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) To = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -44,170 +63,170 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Attachments included with the draft; null if none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemAttachmentsItem>? Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemAttachmentsItem>? Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; AdditionalData?.Remove("attachments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemAttachmentsItem>? _explicitNullValueAttachments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemAttachmentsItem> Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemAttachmentsItem> Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; AdditionalData?.Remove("attachments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachments"); else _explicitNullProperties?.Remove("attachments"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemAttachmentsItem> _explicitNullValueAttachments = default!;
 #endif
         /// <summary>BCC recipients; null if none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemBccItem>? Bcc { get => _explicitNullValueBcc; set { _explicitNullValueBcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bcc"); else _explicitNullProperties?.Remove("bcc"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemBccItem>? Bcc { get => _explicitNullValueBcc; set { _explicitNullValueBcc = value; AdditionalData?.Remove("bcc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bcc"); else _explicitNullProperties?.Remove("bcc"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemBccItem>? _explicitNullValueBcc = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemBccItem> Bcc { get => _explicitNullValueBcc; set { _explicitNullValueBcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bcc"); else _explicitNullProperties?.Remove("bcc"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemBccItem> Bcc { get => _explicitNullValueBcc; set { _explicitNullValueBcc = value; AdditionalData?.Remove("bcc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bcc"); else _explicitNullProperties?.Remove("bcc"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemBccItem> _explicitNullValueBcc = default!;
 #endif
         /// <summary>CC recipients; null if none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemCcItem>? Cc { get => _explicitNullValueCc; set { _explicitNullValueCc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc"); else _explicitNullProperties?.Remove("cc"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemCcItem>? Cc { get => _explicitNullValueCc; set { _explicitNullValueCc = value; AdditionalData?.Remove("cc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc"); else _explicitNullProperties?.Remove("cc"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemCcItem>? _explicitNullValueCc = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemCcItem> Cc { get => _explicitNullValueCc; set { _explicitNullValueCc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc"); else _explicitNullProperties?.Remove("cc"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemCcItem> Cc { get => _explicitNullValueCc; set { _explicitNullValueCc = value; AdditionalData?.Remove("cc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc"); else _explicitNullProperties?.Remove("cc"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemCcItem> _explicitNullValueCc = default!;
 #endif
         /// <summary>Email HTML body content; null if not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string _explicitNullValueContent = default!;
 #endif
         /// <summary>Timestamp when the draft was created (ISO 8601 format).</summary>
-        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; AdditionalData?.Remove("created_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
         private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>Sender email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        public string? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; AdditionalData?.Remove("from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
         private string? _explicitNullValueFrom = default!;
 #nullable restore
 #else
-        public string From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        public string From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; AdditionalData?.Remove("from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
         private string _explicitNullValueFrom = default!;
 #endif
         /// <summary>Unique encrypted draft identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Inventory email details; null if not an inventory draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemInventoryDetails? InventoryDetails { get => _explicitNullValueInventoryDetails; set { _explicitNullValueInventoryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_details"); else _explicitNullProperties?.Remove("inventory_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemInventoryDetails? InventoryDetails { get => _explicitNullValueInventoryDetails; set { _explicitNullValueInventoryDetails = value; AdditionalData?.Remove("inventory_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_details"); else _explicitNullProperties?.Remove("inventory_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemInventoryDetails? _explicitNullValueInventoryDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemInventoryDetails InventoryDetails { get => _explicitNullValueInventoryDetails; set { _explicitNullValueInventoryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_details"); else _explicitNullProperties?.Remove("inventory_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemInventoryDetails InventoryDetails { get => _explicitNullValueInventoryDetails; set { _explicitNullValueInventoryDetails = value; AdditionalData?.Remove("inventory_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_details"); else _explicitNullProperties?.Remove("inventory_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemInventoryDetails _explicitNullValueInventoryDetails = default!;
 #endif
         /// <summary>CRM record linked to this draft; null if not linked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemLinkedRecord? LinkedRecord { get => _explicitNullValueLinkedRecord; set { _explicitNullValueLinkedRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_record"); else _explicitNullProperties?.Remove("linked_record"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemLinkedRecord? LinkedRecord { get => _explicitNullValueLinkedRecord; set { _explicitNullValueLinkedRecord = value; AdditionalData?.Remove("linked_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_record"); else _explicitNullProperties?.Remove("linked_record"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemLinkedRecord? _explicitNullValueLinkedRecord = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemLinkedRecord LinkedRecord { get => _explicitNullValueLinkedRecord; set { _explicitNullValueLinkedRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_record"); else _explicitNullProperties?.Remove("linked_record"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemLinkedRecord LinkedRecord { get => _explicitNullValueLinkedRecord; set { _explicitNullValueLinkedRecord = value; AdditionalData?.Remove("linked_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_record"); else _explicitNullProperties?.Remove("linked_record"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemLinkedRecord _explicitNullValueLinkedRecord = default!;
 #endif
         /// <summary>Timestamp when the draft was last modified (ISO 8601 format).</summary>
-        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
+        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; AdditionalData?.Remove("modified_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
         private DateTimeOffset? _explicitNullValueModifiedTime = default!;
         /// <summary>Owner who created the draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>Reply-to email address; null if not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReplyTo { get => _explicitNullValueReplyTo; set { _explicitNullValueReplyTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to"); else _explicitNullProperties?.Remove("reply_to"); } }
+        public string? ReplyTo { get => _explicitNullValueReplyTo; set { _explicitNullValueReplyTo = value; AdditionalData?.Remove("reply_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to"); else _explicitNullProperties?.Remove("reply_to"); } }
         private string? _explicitNullValueReplyTo = default!;
 #nullable restore
 #else
-        public string ReplyTo { get => _explicitNullValueReplyTo; set { _explicitNullValueReplyTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to"); else _explicitNullProperties?.Remove("reply_to"); } }
+        public string ReplyTo { get => _explicitNullValueReplyTo; set { _explicitNullValueReplyTo = value; AdditionalData?.Remove("reply_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_to"); else _explicitNullProperties?.Remove("reply_to"); } }
         private string _explicitNullValueReplyTo = default!;
 #endif
         /// <summary>true when HTML editor was used; false for plain text.</summary>
-        public bool? RichText { get => _explicitNullValueRichText; set { _explicitNullValueRichText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rich_text"); else _explicitNullProperties?.Remove("rich_text"); } }
+        public bool? RichText { get => _explicitNullValueRichText; set { _explicitNullValueRichText = value; AdditionalData?.Remove("rich_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rich_text"); else _explicitNullProperties?.Remove("rich_text"); } }
         private bool? _explicitNullValueRichText = default!;
         /// <summary>Scheduling information; null if not scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemScheduleDetails? ScheduleDetails { get => _explicitNullValueScheduleDetails; set { _explicitNullValueScheduleDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_details"); else _explicitNullProperties?.Remove("schedule_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemScheduleDetails? ScheduleDetails { get => _explicitNullValueScheduleDetails; set { _explicitNullValueScheduleDetails = value; AdditionalData?.Remove("schedule_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_details"); else _explicitNullProperties?.Remove("schedule_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemScheduleDetails? _explicitNullValueScheduleDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemScheduleDetails ScheduleDetails { get => _explicitNullValueScheduleDetails; set { _explicitNullValueScheduleDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_details"); else _explicitNullProperties?.Remove("schedule_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemScheduleDetails ScheduleDetails { get => _explicitNullValueScheduleDetails; set { _explicitNullValueScheduleDetails = value; AdditionalData?.Remove("schedule_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_details"); else _explicitNullProperties?.Remove("schedule_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemScheduleDetails _explicitNullValueScheduleDetails = default!;
 #endif
         /// <summary>Sharing permission level for the requesting user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SharingPermission { get => _explicitNullValueSharingPermission; set { _explicitNullValueSharingPermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$sharing_permission"); else _explicitNullProperties?.Remove("$sharing_permission"); } }
+        public string? SharingPermission { get => _explicitNullValueSharingPermission; set { _explicitNullValueSharingPermission = value; AdditionalData?.Remove("$sharing_permission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$sharing_permission"); else _explicitNullProperties?.Remove("$sharing_permission"); } }
         private string? _explicitNullValueSharingPermission = default!;
 #nullable restore
 #else
-        public string SharingPermission { get => _explicitNullValueSharingPermission; set { _explicitNullValueSharingPermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$sharing_permission"); else _explicitNullProperties?.Remove("$sharing_permission"); } }
+        public string SharingPermission { get => _explicitNullValueSharingPermission; set { _explicitNullValueSharingPermission = value; AdditionalData?.Remove("$sharing_permission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$sharing_permission"); else _explicitNullProperties?.Remove("$sharing_permission"); } }
         private string _explicitNullValueSharingPermission = default!;
 #endif
         /// <summary>Source identifier string stored at draft creation time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private string _explicitNullValueSource = default!;
 #endif
         /// <summary>Email subject; null if not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>Plain text preview of the draft body; null if empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        public string? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
         private string? _explicitNullValueSummary = default!;
 #nullable restore
 #else
-        public string Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        public string Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
         private string _explicitNullValueSummary = default!;
 #endif
         /// <summary>Primary recipients; null if none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemToItem>? To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemToItem>? To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; AdditionalData?.Remove("to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemToItem>? _explicitNullValueTo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemToItem> To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemToItem> To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; AdditionalData?.Remove("to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDraft200ResponseEmailDraftsItemToItem> _explicitNullValueTo = default!;
 #endif
         /// <summary>

@@ -18,21 +18,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed_count") is { } nullNodeAllowedCount && nullNodeAllowedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedCount = null;
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
-            if (parseNode.GetChildNode("record_limit") is { } nullNodeRecordLimit && nullNodeRecordLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordLimit = null;
+            if (parseNode.GetChildNode("allowed_count") is null) { _explicitNullValueAllowedCount = default!; _explicitNullProperties?.Remove("allowed_count"); }
+            else if (parseNode.GetChildNode("allowed_count") is { } nullNodeAllowedCount && nullNodeAllowedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedCount = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("record_limit") is null) { _explicitNullValueRecordLimit = default!; _explicitNullProperties?.Remove("record_limit"); }
+            else if (parseNode.GetChildNode("record_limit") is { } nullNodeRecordLimit && nullNodeRecordLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordLimit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the maximum number of tags allowed for the module in your plan.</summary>
-        public int? AllowedCount { get => _explicitNullValueAllowedCount; set { _explicitNullValueAllowedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_count"); else _explicitNullProperties?.Remove("allowed_count"); } }
+        public int? AllowedCount { get => _explicitNullValueAllowedCount; set { _explicitNullValueAllowedCount = value; AdditionalData?.Remove("allowed_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_count"); else _explicitNullProperties?.Remove("allowed_count"); } }
         private int? _explicitNullValueAllowedCount = default!;
         /// <summary>Represents the total number of tags returned in the response.</summary>
-        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>Represents the maximum number of records a tag can be applied to.</summary>
-        public int? RecordLimit { get => _explicitNullValueRecordLimit; set { _explicitNullValueRecordLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_limit"); else _explicitNullProperties?.Remove("record_limit"); } }
+        public int? RecordLimit { get => _explicitNullValueRecordLimit; set { _explicitNullValueRecordLimit = value; AdditionalData?.Remove("record_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_limit"); else _explicitNullProperties?.Remove("record_limit"); } }
         private int? _explicitNullValueRecordLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested"/> and sets the default values.

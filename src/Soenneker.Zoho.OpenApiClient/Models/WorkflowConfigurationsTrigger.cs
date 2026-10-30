@@ -18,23 +18,30 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("component_id") is { } nullNodeComponentId && nullNodeComponentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComponentId = null;
-            if (parseNode.GetChildNode("deprecated") is { } nullNodeDeprecated && nullNodeDeprecated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deprecated = null;
-            if (parseNode.GetChildNode("generated_type") is { } nullNodeGeneratedType && nullNodeGeneratedType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedType = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("scheduled_actions_supported") is { } nullNodeScheduledActionsSupported && nullNodeScheduledActionsSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledActionsSupported = null;
+            if (parseNode.GetChildNode("actions") is null) { _explicitNullValueActions = default!; _explicitNullProperties?.Remove("actions"); }
+            else if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("component_id") is null) { _explicitNullValueComponentId = default!; _explicitNullProperties?.Remove("component_id"); }
+            else if (parseNode.GetChildNode("component_id") is { } nullNodeComponentId && nullNodeComponentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComponentId = null;
+            if (parseNode.GetChildNode("deprecated") is null) { _explicitNullValueDeprecated = default!; _explicitNullProperties?.Remove("deprecated"); }
+            else if (parseNode.GetChildNode("deprecated") is { } nullNodeDeprecated && nullNodeDeprecated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deprecated = null;
+            if (parseNode.GetChildNode("generated_type") is null) { _explicitNullValueGeneratedType = default!; _explicitNullProperties?.Remove("generated_type"); }
+            else if (parseNode.GetChildNode("generated_type") is { } nullNodeGeneratedType && nullNodeGeneratedType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedType = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("scheduled_actions_supported") is null) { _explicitNullValueScheduledActionsSupported = default!; _explicitNullProperties?.Remove("scheduled_actions_supported"); }
+            else if (parseNode.GetChildNode("scheduled_actions_supported") is { } nullNodeScheduledActionsSupported && nullNodeScheduledActionsSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledActionsSupported = null;
         }
 
         /// <summary>Represents the list of action type API names supported by this trigger. Only these action types can be used in workflow rules with this trigger type. Cross-reference with the top-level actions array in the response for full action metadata, including per-type limits and scheduling support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public List<string>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private List<string>? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public List<string> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public List<string> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private List<string> _explicitNullValueActions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,48 +49,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the API identifier of the trigger type. Use this value in the execute_when.type field when creating a workflow rule (for example, create, edit, create_or_edit, delete, field_update, section_update, date_or_datetime, score_increase, score_decrease, score_update).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>Represents the component identifier for marketplace or custom triggers. Returns null for standard built-in trigger types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComponentId { get => _explicitNullValueComponentId; set { _explicitNullValueComponentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_id"); else _explicitNullProperties?.Remove("component_id"); } }
+        public string? ComponentId { get => _explicitNullValueComponentId; set { _explicitNullValueComponentId = value; AdditionalData?.Remove("component_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_id"); else _explicitNullProperties?.Remove("component_id"); } }
         private string? _explicitNullValueComponentId = default!;
 #nullable restore
 #else
-        public string ComponentId { get => _explicitNullValueComponentId; set { _explicitNullValueComponentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_id"); else _explicitNullProperties?.Remove("component_id"); } }
+        public string ComponentId { get => _explicitNullValueComponentId; set { _explicitNullValueComponentId = value; AdditionalData?.Remove("component_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_id"); else _explicitNullProperties?.Remove("component_id"); } }
         private string _explicitNullValueComponentId = default!;
 #endif
         /// <summary>Indicates whether this trigger type is deprecated.Possible values:true - The trigger type is deprecated and should not be used for new workflow rules, though it may still appear on existing rules.false - The trigger type is active and available for use.</summary>
-        public bool? Deprecated { get => _explicitNullValueDeprecated; set { _explicitNullValueDeprecated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecated"); else _explicitNullProperties?.Remove("deprecated"); } }
+        public bool? Deprecated { get => _explicitNullValueDeprecated; set { _explicitNullValueDeprecated = value; AdditionalData?.Remove("deprecated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecated"); else _explicitNullProperties?.Remove("deprecated"); } }
         private bool? _explicitNullValueDeprecated = default!;
         /// <summary>Represents the generated type identifier for marketplace or custom triggers. Returns null for standard built-in trigger types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GeneratedType { get => _explicitNullValueGeneratedType; set { _explicitNullValueGeneratedType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_type"); else _explicitNullProperties?.Remove("generated_type"); } }
+        public string? GeneratedType { get => _explicitNullValueGeneratedType; set { _explicitNullValueGeneratedType = value; AdditionalData?.Remove("generated_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_type"); else _explicitNullProperties?.Remove("generated_type"); } }
         private string? _explicitNullValueGeneratedType = default!;
 #nullable restore
 #else
-        public string GeneratedType { get => _explicitNullValueGeneratedType; set { _explicitNullValueGeneratedType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_type"); else _explicitNullProperties?.Remove("generated_type"); } }
+        public string GeneratedType { get => _explicitNullValueGeneratedType; set { _explicitNullValueGeneratedType = value; AdditionalData?.Remove("generated_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_type"); else _explicitNullProperties?.Remove("generated_type"); } }
         private string _explicitNullValueGeneratedType = default!;
 #endif
         /// <summary>Represents the display name of the trigger type as shown in the CRM UI (for example, Create, Edit, FieldUpdate, DateBased).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Indicates whether this trigger type supports scheduled (time-delayed) actions.Possible values:true - Both instant_actions and scheduled_actions are available for workflow rules with this trigger.false - Only instant_actions can be used in workflow rules with this trigger.</summary>
-        public bool? ScheduledActionsSupported { get => _explicitNullValueScheduledActionsSupported; set { _explicitNullValueScheduledActionsSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_actions_supported"); else _explicitNullProperties?.Remove("scheduled_actions_supported"); } }
+        public bool? ScheduledActionsSupported { get => _explicitNullValueScheduledActionsSupported; set { _explicitNullValueScheduledActionsSupported = value; AdditionalData?.Remove("scheduled_actions_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_actions_supported"); else _explicitNullProperties?.Remove("scheduled_actions_supported"); } }
         private bool? _explicitNullValueScheduledActionsSupported = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConfigurationsTrigger"/> and sets the default values.

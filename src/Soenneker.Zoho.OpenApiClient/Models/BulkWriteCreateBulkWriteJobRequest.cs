@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("callback") is { } nullNodeCallback && nullNodeCallback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Callback = null;
-            if (parseNode.GetChildNode("character_encoding") is { } nullNodeCharacterEncoding && nullNodeCharacterEncoding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterEncoding = null;
-            if (parseNode.GetChildNode("operation") is { } nullNodeOperation && nullNodeOperation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operation = null;
-            if (parseNode.GetChildNode("resource") is { } nullNodeResource && nullNodeResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resource = null;
+            if (parseNode.GetChildNode("callback") is null) { _explicitNullValueCallback = default!; _explicitNullProperties?.Remove("callback"); }
+            else if (parseNode.GetChildNode("callback") is { } nullNodeCallback && nullNodeCallback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Callback = null;
+            if (parseNode.GetChildNode("character_encoding") is null) { _explicitNullValueCharacterEncoding = default!; _explicitNullProperties?.Remove("character_encoding"); }
+            else if (parseNode.GetChildNode("character_encoding") is { } nullNodeCharacterEncoding && nullNodeCharacterEncoding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterEncoding = null;
+            if (parseNode.GetChildNode("operation") is null) { _explicitNullValueOperation = default!; _explicitNullProperties?.Remove("operation"); }
+            else if (parseNode.GetChildNode("operation") is { } nullNodeOperation && nullNodeOperation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operation = null;
+            if (parseNode.GetChildNode("resource") is null) { _explicitNullValueResource = default!; _explicitNullProperties?.Remove("resource"); }
+            else if (parseNode.GetChildNode("resource") is { } nullNodeResource && nullNodeResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resource = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,34 +33,34 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the callback configuration that Zoho CRM uses to notify your endpoint when the bulk write job completes or fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestCallback? Callback { get => _explicitNullValueCallback; set { _explicitNullValueCallback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callback"); else _explicitNullProperties?.Remove("callback"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestCallback? Callback { get => _explicitNullValueCallback; set { _explicitNullValueCallback = value; AdditionalData?.Remove("callback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callback"); else _explicitNullProperties?.Remove("callback"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestCallback? _explicitNullValueCallback = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestCallback Callback { get => _explicitNullValueCallback; set { _explicitNullValueCallback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callback"); else _explicitNullProperties?.Remove("callback"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestCallback Callback { get => _explicitNullValueCallback; set { _explicitNullValueCallback = value; AdditionalData?.Remove("callback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callback"); else _explicitNullProperties?.Remove("callback"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestCallback _explicitNullValueCallback = default!;
 #endif
         /// <summary>Specify the character encoding of the uploaded file. Zoho CRM auto-detects the encoding when this value is omitted; supply a value to override auto-detection and force the file to be read with the specified charset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CharacterEncoding { get => _explicitNullValueCharacterEncoding; set { _explicitNullValueCharacterEncoding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_encoding"); else _explicitNullProperties?.Remove("character_encoding"); } }
+        public string? CharacterEncoding { get => _explicitNullValueCharacterEncoding; set { _explicitNullValueCharacterEncoding = value; AdditionalData?.Remove("character_encoding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_encoding"); else _explicitNullProperties?.Remove("character_encoding"); } }
         private string? _explicitNullValueCharacterEncoding = default!;
 #nullable restore
 #else
-        public string CharacterEncoding { get => _explicitNullValueCharacterEncoding; set { _explicitNullValueCharacterEncoding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_encoding"); else _explicitNullProperties?.Remove("character_encoding"); } }
+        public string CharacterEncoding { get => _explicitNullValueCharacterEncoding; set { _explicitNullValueCharacterEncoding = value; AdditionalData?.Remove("character_encoding"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_encoding"); else _explicitNullProperties?.Remove("character_encoding"); } }
         private string _explicitNullValueCharacterEncoding = default!;
 #endif
         /// <summary>Specify the type of bulk write operation to perform on the file.Possible values:insert - Creates the records from the file as new records in the target module.update - Updates existing records in the target module without creating new ones.upsert - Updates existing records and creates new records that do not exist already.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestOperation? Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestOperation? Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; AdditionalData?.Remove("operation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestOperation? _explicitNullValueOperation = default!;
         /// <summary>Specify the list of resource configurations to process in the bulk write job. Each entry describes the target module, the uploaded file to read, and the field mappings to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItem>? Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItem>? Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; AdditionalData?.Remove("resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItem>? _explicitNullValueResource = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItem> Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItem> Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; AdditionalData?.Remove("resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItem> _explicitNullValueResource = default!;
 #endif
         /// <summary>
@@ -86,7 +90,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "callback", n => { Callback = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestCallback>(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestCallback.CreateFromDiscriminatorValue); } },
                 { "character_encoding", n => { CharacterEncoding = n.GetStringValue(); } },
-                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestOperation>(); } },
+                { "operation", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestOperation>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOperation = default; _explicitNullProperties?.Remove("operation"); AdditionalData["operation"] = unknown; } else { Operation = parsed; AdditionalData.Remove("operation"); } } },
                 { "resource", n => { Resource = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItem>(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

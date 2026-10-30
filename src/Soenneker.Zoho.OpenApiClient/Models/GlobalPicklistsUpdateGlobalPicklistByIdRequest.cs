@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("global_picklists") is { } nullNodeGlobalPicklists && nullNodeGlobalPicklists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalPicklists = null;
+            if (parseNode.GetChildNode("global_picklists") is null) { _explicitNullValueGlobalPicklists = default!; _explicitNullProperties?.Remove("global_picklists"); }
+            else if (parseNode.GetChildNode("global_picklists") is { } nullNodeGlobalPicklists && nullNodeGlobalPicklists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalPicklists = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array containing the global picklist to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistByIdRequestGlobalPicklistsItem>? GlobalPicklists { get => _explicitNullValueGlobalPicklists; set { _explicitNullValueGlobalPicklists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("global_picklists"); else _explicitNullProperties?.Remove("global_picklists"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistByIdRequestGlobalPicklistsItem>? GlobalPicklists { get => _explicitNullValueGlobalPicklists; set { _explicitNullValueGlobalPicklists = value; AdditionalData?.Remove("global_picklists"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("global_picklists"); else _explicitNullProperties?.Remove("global_picklists"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistByIdRequestGlobalPicklistsItem>? _explicitNullValueGlobalPicklists = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistByIdRequestGlobalPicklistsItem> GlobalPicklists { get => _explicitNullValueGlobalPicklists; set { _explicitNullValueGlobalPicklists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("global_picklists"); else _explicitNullProperties?.Remove("global_picklists"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistByIdRequestGlobalPicklistsItem> GlobalPicklists { get => _explicitNullValueGlobalPicklists; set { _explicitNullValueGlobalPicklists = value; AdditionalData?.Remove("global_picklists"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("global_picklists"); else _explicitNullProperties?.Remove("global_picklists"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsUpdateGlobalPicklistByIdRequestGlobalPicklistsItem> _explicitNullValueGlobalPicklists = default!;
 #endif
         /// <summary>

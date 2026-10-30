@@ -18,12 +18,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
-            if (parseNode.GetChildNode("locked_count") is { } nullNodeLockedCount && nullNodeLockedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockedCount = null;
-            if (parseNode.GetChildNode("over_write") is { } nullNodeOverWrite && nullNodeOverWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverWrite = null;
-            if (parseNode.GetChildNode("success_count") is { } nullNodeSuccessCount && nullNodeSuccessCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessCount = null;
-            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("ids") is null) { _explicitNullValueIds = default!; _explicitNullProperties?.Remove("ids"); }
+            else if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
+            if (parseNode.GetChildNode("locked_count") is null) { _explicitNullValueLockedCount = default!; _explicitNullProperties?.Remove("locked_count"); }
+            else if (parseNode.GetChildNode("locked_count") is { } nullNodeLockedCount && nullNodeLockedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockedCount = null;
+            if (parseNode.GetChildNode("over_write") is null) { _explicitNullValueOverWrite = default!; _explicitNullProperties?.Remove("over_write"); }
+            else if (parseNode.GetChildNode("over_write") is { } nullNodeOverWrite && nullNodeOverWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverWrite = null;
+            if (parseNode.GetChildNode("success_count") is null) { _explicitNullValueSuccessCount = default!; _explicitNullProperties?.Remove("success_count"); }
+            else if (parseNode.GetChildNode("success_count") is { } nullNodeSuccessCount && nullNodeSuccessCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessCount = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,54 +37,54 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of operation results for each record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsDataNested> _explicitNullValueData = default!;
 #endif
         /// <summary>Record IDs that were processed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        public string? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; AdditionalData?.Remove("ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
         private string? _explicitNullValueIds = default!;
 #nullable restore
 #else
-        public string Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        public string Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; AdditionalData?.Remove("ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
         private string _explicitNullValueIds = default!;
 #endif
         /// <summary>Number of records that were locked and could not be updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LockedCount { get => _explicitNullValueLockedCount; set { _explicitNullValueLockedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locked_count"); else _explicitNullProperties?.Remove("locked_count"); } }
+        public string? LockedCount { get => _explicitNullValueLockedCount; set { _explicitNullValueLockedCount = value; AdditionalData?.Remove("locked_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locked_count"); else _explicitNullProperties?.Remove("locked_count"); } }
         private string? _explicitNullValueLockedCount = default!;
 #nullable restore
 #else
-        public string LockedCount { get => _explicitNullValueLockedCount; set { _explicitNullValueLockedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locked_count"); else _explicitNullProperties?.Remove("locked_count"); } }
+        public string LockedCount { get => _explicitNullValueLockedCount; set { _explicitNullValueLockedCount = value; AdditionalData?.Remove("locked_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locked_count"); else _explicitNullProperties?.Remove("locked_count"); } }
         private string _explicitNullValueLockedCount = default!;
 #endif
         /// <summary>Indicates whether tags were replaced or appended</summary>
-        public bool? OverWrite { get => _explicitNullValueOverWrite; set { _explicitNullValueOverWrite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("over_write"); else _explicitNullProperties?.Remove("over_write"); } }
+        public bool? OverWrite { get => _explicitNullValueOverWrite; set { _explicitNullValueOverWrite = value; AdditionalData?.Remove("over_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("over_write"); else _explicitNullProperties?.Remove("over_write"); } }
         private bool? _explicitNullValueOverWrite = default!;
         /// <summary>Number of records that were successfully updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SuccessCount { get => _explicitNullValueSuccessCount; set { _explicitNullValueSuccessCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_count"); else _explicitNullProperties?.Remove("success_count"); } }
+        public string? SuccessCount { get => _explicitNullValueSuccessCount; set { _explicitNullValueSuccessCount = value; AdditionalData?.Remove("success_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_count"); else _explicitNullProperties?.Remove("success_count"); } }
         private string? _explicitNullValueSuccessCount = default!;
 #nullable restore
 #else
-        public string SuccessCount { get => _explicitNullValueSuccessCount; set { _explicitNullValueSuccessCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_count"); else _explicitNullProperties?.Remove("success_count"); } }
+        public string SuccessCount { get => _explicitNullValueSuccessCount; set { _explicitNullValueSuccessCount = value; AdditionalData?.Remove("success_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_count"); else _explicitNullProperties?.Remove("success_count"); } }
         private string _explicitNullValueSuccessCount = default!;
 #endif
         /// <summary>Root key for tags</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public string? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private string? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public string Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public string Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private string _explicitNullValueTags = default!;
 #endif
         /// <summary>

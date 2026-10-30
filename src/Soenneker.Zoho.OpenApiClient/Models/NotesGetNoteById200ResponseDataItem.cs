@@ -18,11 +18,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("$attachments") is { } nullNodeAttachments && nullNodeAttachments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attachments = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("Note_Content") is { } nullNodeNoteContent && nullNodeNoteContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoteContent = null;
-            if (parseNode.GetChildNode("Note_Title") is { } nullNodeNoteTitle && nullNodeNoteTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoteTitle = null;
-            if (parseNode.GetChildNode("Parent_Id") is { } nullNodeParentId && nullNodeParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentId = null;
+            if (parseNode.GetChildNode("$attachments") is null) { _explicitNullValueAttachments = default!; _explicitNullProperties?.Remove("$attachments"); }
+            else if (parseNode.GetChildNode("$attachments") is { } nullNodeAttachments && nullNodeAttachments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attachments = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("Note_Content") is null) { _explicitNullValueNoteContent = default!; _explicitNullProperties?.Remove("Note_Content"); }
+            else if (parseNode.GetChildNode("Note_Content") is { } nullNodeNoteContent && nullNodeNoteContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoteContent = null;
+            if (parseNode.GetChildNode("Note_Title") is null) { _explicitNullValueNoteTitle = default!; _explicitNullProperties?.Remove("Note_Title"); }
+            else if (parseNode.GetChildNode("Note_Title") is { } nullNodeNoteTitle && nullNodeNoteTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoteTitle = null;
+            if (parseNode.GetChildNode("Parent_Id") is null) { _explicitNullValueParentId = default!; _explicitNullProperties?.Remove("Parent_Id"); }
+            else if (parseNode.GetChildNode("Parent_Id") is { } nullNodeParentId && nullNodeParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Attachments associated with the note</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemAttachmentsItem>? Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$attachments"); else _explicitNullProperties?.Remove("$attachments"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemAttachmentsItem>? Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; AdditionalData?.Remove("$attachments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$attachments"); else _explicitNullProperties?.Remove("$attachments"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemAttachmentsItem>? _explicitNullValueAttachments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemAttachmentsItem> Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$attachments"); else _explicitNullProperties?.Remove("$attachments"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemAttachmentsItem> Attachments { get => _explicitNullValueAttachments; set { _explicitNullValueAttachments = value; AdditionalData?.Remove("$attachments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$attachments"); else _explicitNullProperties?.Remove("$attachments"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemAttachmentsItem> _explicitNullValueAttachments = default!;
 #endif
         /// <summary>Unique identifier of the note</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The content/body of the note</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NoteContent { get => _explicitNullValueNoteContent; set { _explicitNullValueNoteContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Note_Content"); else _explicitNullProperties?.Remove("Note_Content"); } }
+        public string? NoteContent { get => _explicitNullValueNoteContent; set { _explicitNullValueNoteContent = value; AdditionalData?.Remove("Note_Content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Note_Content"); else _explicitNullProperties?.Remove("Note_Content"); } }
         private string? _explicitNullValueNoteContent = default!;
 #nullable restore
 #else
-        public string NoteContent { get => _explicitNullValueNoteContent; set { _explicitNullValueNoteContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Note_Content"); else _explicitNullProperties?.Remove("Note_Content"); } }
+        public string NoteContent { get => _explicitNullValueNoteContent; set { _explicitNullValueNoteContent = value; AdditionalData?.Remove("Note_Content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Note_Content"); else _explicitNullProperties?.Remove("Note_Content"); } }
         private string _explicitNullValueNoteContent = default!;
 #endif
         /// <summary>The title of the note</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NoteTitle { get => _explicitNullValueNoteTitle; set { _explicitNullValueNoteTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Note_Title"); else _explicitNullProperties?.Remove("Note_Title"); } }
+        public string? NoteTitle { get => _explicitNullValueNoteTitle; set { _explicitNullValueNoteTitle = value; AdditionalData?.Remove("Note_Title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Note_Title"); else _explicitNullProperties?.Remove("Note_Title"); } }
         private string? _explicitNullValueNoteTitle = default!;
 #nullable restore
 #else
-        public string NoteTitle { get => _explicitNullValueNoteTitle; set { _explicitNullValueNoteTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Note_Title"); else _explicitNullProperties?.Remove("Note_Title"); } }
+        public string NoteTitle { get => _explicitNullValueNoteTitle; set { _explicitNullValueNoteTitle = value; AdditionalData?.Remove("Note_Title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Note_Title"); else _explicitNullProperties?.Remove("Note_Title"); } }
         private string _explicitNullValueNoteTitle = default!;
 #endif
         /// <summary>Parent record information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemParentId? ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Parent_Id"); else _explicitNullProperties?.Remove("Parent_Id"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemParentId? ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; AdditionalData?.Remove("Parent_Id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Parent_Id"); else _explicitNullProperties?.Remove("Parent_Id"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemParentId? _explicitNullValueParentId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemParentId ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Parent_Id"); else _explicitNullProperties?.Remove("Parent_Id"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemParentId ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; AdditionalData?.Remove("Parent_Id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Parent_Id"); else _explicitNullProperties?.Remove("Parent_Id"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.NotesGetNoteById200ResponseDataItemParentId _explicitNullValueParentId = default!;
 #endif
         /// <summary>

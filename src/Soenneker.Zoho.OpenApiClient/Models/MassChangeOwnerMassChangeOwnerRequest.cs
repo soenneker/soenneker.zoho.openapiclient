@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
-            if (parseNode.GetChildNode("cvid") is { } nullNodeCvid && nullNodeCvid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvid = null;
-            if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
-            if (parseNode.GetChildNode("territory") is { } nullNodeTerritory && nullNodeTerritory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Territory = null;
+            if (parseNode.GetChildNode("criteria") is null) { _explicitNullValueCriteria = default!; _explicitNullProperties?.Remove("criteria"); }
+            else if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
+            if (parseNode.GetChildNode("cvid") is null) { _explicitNullValueCvid = default!; _explicitNullProperties?.Remove("cvid"); }
+            else if (parseNode.GetChildNode("cvid") is { } nullNodeCvid && nullNodeCvid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvid = null;
+            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
+            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("territory") is null) { _explicitNullValueTerritory = default!; _explicitNullProperties?.Remove("territory"); }
+            else if (parseNode.GetChildNode("territory") is { } nullNodeTerritory && nullNodeTerritory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Territory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the criteria to filter which records are included in the ownership change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestCriteria? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestCriteria? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestCriteria? _explicitNullValueCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestCriteria Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestCriteria Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestCriteria _explicitNullValueCriteria = default!;
 #endif
         /// <summary>Specify the unique ID of the Custom View whose records are to be reassigned. Refer to the [Get Custom Views](custom_views.yaml#$.paths./settings/custom_views.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
+        public string? Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; AdditionalData?.Remove("cvid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
         private string? _explicitNullValueCvid = default!;
 #nullable restore
 #else
-        public string Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
+        public string Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; AdditionalData?.Remove("cvid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
         private string _explicitNullValueCvid = default!;
 #endif
         /// <summary>Specify the details of the user to assign as the new owner of the selected records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>Specify the territory to use as the source of records for the ownership change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestTerritory? Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestTerritory? Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; AdditionalData?.Remove("territory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestTerritory? _explicitNullValueTerritory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestTerritory Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestTerritory Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; AdditionalData?.Remove("territory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassChangeOwnerMassChangeOwnerRequestTerritory _explicitNullValueTerritory = default!;
 #endif
         /// <summary>

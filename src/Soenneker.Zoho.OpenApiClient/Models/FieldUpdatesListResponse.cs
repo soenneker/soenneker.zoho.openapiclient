@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_updates") is { } nullNodeFieldUpdates && nullNodeFieldUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldUpdates = null;
-            if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
+            if (parseNode.GetChildNode("field_updates") is null) { _explicitNullValueFieldUpdates = default!; _explicitNullProperties?.Remove("field_updates"); }
+            else if (parseNode.GetChildNode("field_updates") is { } nullNodeFieldUpdates && nullNodeFieldUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldUpdates = null;
+            if (parseNode.GetChildNode("info") is null) { _explicitNullValueInfo = default!; _explicitNullProperties?.Remove("info"); }
+            else if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of field update actions configured in the org.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList>? FieldUpdates { get => _explicitNullValueFieldUpdates; set { _explicitNullValueFieldUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_updates"); else _explicitNullProperties?.Remove("field_updates"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList>? FieldUpdates { get => _explicitNullValueFieldUpdates; set { _explicitNullValueFieldUpdates = value; AdditionalData?.Remove("field_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_updates"); else _explicitNullProperties?.Remove("field_updates"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList>? _explicitNullValueFieldUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList> FieldUpdates { get => _explicitNullValueFieldUpdates; set { _explicitNullValueFieldUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_updates"); else _explicitNullProperties?.Remove("field_updates"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList> FieldUpdates { get => _explicitNullValueFieldUpdates; set { _explicitNullValueFieldUpdates = value; AdditionalData?.Remove("field_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_updates"); else _explicitNullProperties?.Remove("field_updates"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList> _explicitNullValueFieldUpdates = default!;
 #endif
         /// <summary>Pagination metadata for list responses. Use more_records to determine if additional pages are available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo _explicitNullValueInfo = default!;
 #endif
         /// <summary>

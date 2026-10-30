@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
-            if (parseNode.GetChildNode("supported_values") is { } nullNodeSupportedValues && nullNodeSupportedValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedValues = null;
+            if (parseNode.GetChildNode("json_path") is null) { _explicitNullValueJsonPath = default!; _explicitNullProperties?.Remove("json_path"); }
+            else if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
+            if (parseNode.GetChildNode("supported_values") is null) { _explicitNullValueSupportedValues = default!; _explicitNullProperties?.Remove("supported_values"); }
+            else if (parseNode.GetChildNode("supported_values") is { } nullNodeSupportedValues && nullNodeSupportedValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedValues = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the JSON path of the field that caused the validation failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
         private string? _explicitNullValueJsonPath = default!;
 #nullable restore
 #else
-        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
         private string _explicitNullValueJsonPath = default!;
 #endif
         /// <summary>Represents the list of supported values for the quarter field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? SupportedValues { get => _explicitNullValueSupportedValues; set { _explicitNullValueSupportedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_values"); else _explicitNullProperties?.Remove("supported_values"); } }
+        public List<int?>? SupportedValues { get => _explicitNullValueSupportedValues; set { _explicitNullValueSupportedValues = value; AdditionalData?.Remove("supported_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_values"); else _explicitNullProperties?.Remove("supported_values"); } }
         private List<int?>? _explicitNullValueSupportedValues = default!;
 #nullable restore
 #else
-        public List<int?> SupportedValues { get => _explicitNullValueSupportedValues; set { _explicitNullValueSupportedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_values"); else _explicitNullProperties?.Remove("supported_values"); } }
+        public List<int?> SupportedValues { get => _explicitNullValueSupportedValues; set { _explicitNullValueSupportedValues = value; AdditionalData?.Remove("supported_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_values"); else _explicitNullProperties?.Remove("supported_values"); } }
         private List<int?> _explicitNullValueSupportedValues = default!;
 #endif
         /// <summary>

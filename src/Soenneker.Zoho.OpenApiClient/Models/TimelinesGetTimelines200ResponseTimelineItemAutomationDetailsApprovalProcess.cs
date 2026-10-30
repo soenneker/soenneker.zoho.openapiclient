@@ -18,14 +18,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("approver_details") is { } nullNodeApproverDetails && nullNodeApproverDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApproverDetails = null;
-            if (parseNode.GetChildNode("comments") is { } nullNodeComments && nullNodeComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comments = null;
-            if (parseNode.GetChildNode("current_stage") is { } nullNodeCurrentStage && nullNodeCurrentStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentStage = null;
-            if (parseNode.GetChildNode("delegate_details") is { } nullNodeDelegateDetails && nullNodeDelegateDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DelegateDetails = null;
-            if (parseNode.GetChildNode("next_approver") is { } nullNodeNextApprover && nullNodeNextApprover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextApprover = null;
-            if (parseNode.GetChildNode("rejected_details") is { } nullNodeRejectedDetails && nullNodeRejectedDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectedDetails = null;
-            if (parseNode.GetChildNode("takeover_reason") is { } nullNodeTakeoverReason && nullNodeTakeoverReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TakeoverReason = null;
-            if (parseNode.GetChildNode("takeover_stage") is { } nullNodeTakeoverStage && nullNodeTakeoverStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TakeoverStage = null;
+            if (parseNode.GetChildNode("approver_details") is null) { _explicitNullValueApproverDetails = default!; _explicitNullProperties?.Remove("approver_details"); }
+            else if (parseNode.GetChildNode("approver_details") is { } nullNodeApproverDetails && nullNodeApproverDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApproverDetails = null;
+            if (parseNode.GetChildNode("comments") is null) { _explicitNullValueComments = default!; _explicitNullProperties?.Remove("comments"); }
+            else if (parseNode.GetChildNode("comments") is { } nullNodeComments && nullNodeComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comments = null;
+            if (parseNode.GetChildNode("current_stage") is null) { _explicitNullValueCurrentStage = default!; _explicitNullProperties?.Remove("current_stage"); }
+            else if (parseNode.GetChildNode("current_stage") is { } nullNodeCurrentStage && nullNodeCurrentStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentStage = null;
+            if (parseNode.GetChildNode("delegate_details") is null) { _explicitNullValueDelegateDetails = default!; _explicitNullProperties?.Remove("delegate_details"); }
+            else if (parseNode.GetChildNode("delegate_details") is { } nullNodeDelegateDetails && nullNodeDelegateDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DelegateDetails = null;
+            if (parseNode.GetChildNode("next_approver") is null) { _explicitNullValueNextApprover = default!; _explicitNullProperties?.Remove("next_approver"); }
+            else if (parseNode.GetChildNode("next_approver") is { } nullNodeNextApprover && nullNodeNextApprover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextApprover = null;
+            if (parseNode.GetChildNode("rejected_details") is null) { _explicitNullValueRejectedDetails = default!; _explicitNullProperties?.Remove("rejected_details"); }
+            else if (parseNode.GetChildNode("rejected_details") is { } nullNodeRejectedDetails && nullNodeRejectedDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectedDetails = null;
+            if (parseNode.GetChildNode("takeover_reason") is null) { _explicitNullValueTakeoverReason = default!; _explicitNullProperties?.Remove("takeover_reason"); }
+            else if (parseNode.GetChildNode("takeover_reason") is { } nullNodeTakeoverReason && nullNodeTakeoverReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TakeoverReason = null;
+            if (parseNode.GetChildNode("takeover_stage") is null) { _explicitNullValueTakeoverStage = default!; _explicitNullProperties?.Remove("takeover_stage"); }
+            else if (parseNode.GetChildNode("takeover_stage") is { } nullNodeTakeoverStage && nullNodeTakeoverStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TakeoverStage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,74 +41,74 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the details of the approver who acted on the Approval Process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessApproverDetails? ApproverDetails { get => _explicitNullValueApproverDetails; set { _explicitNullValueApproverDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_details"); else _explicitNullProperties?.Remove("approver_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessApproverDetails? ApproverDetails { get => _explicitNullValueApproverDetails; set { _explicitNullValueApproverDetails = value; AdditionalData?.Remove("approver_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_details"); else _explicitNullProperties?.Remove("approver_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessApproverDetails? _explicitNullValueApproverDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessApproverDetails ApproverDetails { get => _explicitNullValueApproverDetails; set { _explicitNullValueApproverDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_details"); else _explicitNullProperties?.Remove("approver_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessApproverDetails ApproverDetails { get => _explicitNullValueApproverDetails; set { _explicitNullValueApproverDetails = value; AdditionalData?.Remove("approver_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approver_details"); else _explicitNullProperties?.Remove("approver_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessApproverDetails _explicitNullValueApproverDetails = default!;
 #endif
         /// <summary>Represents the comments added during the Approval Process action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
+        public string? Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; AdditionalData?.Remove("comments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
         private string? _explicitNullValueComments = default!;
 #nullable restore
 #else
-        public string Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
+        public string Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; AdditionalData?.Remove("comments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
         private string _explicitNullValueComments = default!;
 #endif
         /// <summary>Represents the current stage number of the Approval Process at the time of the timeline event.</summary>
-        public int? CurrentStage { get => _explicitNullValueCurrentStage; set { _explicitNullValueCurrentStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_stage"); else _explicitNullProperties?.Remove("current_stage"); } }
+        public int? CurrentStage { get => _explicitNullValueCurrentStage; set { _explicitNullValueCurrentStage = value; AdditionalData?.Remove("current_stage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_stage"); else _explicitNullProperties?.Remove("current_stage"); } }
         private int? _explicitNullValueCurrentStage = default!;
         /// <summary>Represents the delegation details when the approval task was delegated from one user to another.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessDelegateDetails? DelegateDetails { get => _explicitNullValueDelegateDetails; set { _explicitNullValueDelegateDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delegate_details"); else _explicitNullProperties?.Remove("delegate_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessDelegateDetails? DelegateDetails { get => _explicitNullValueDelegateDetails; set { _explicitNullValueDelegateDetails = value; AdditionalData?.Remove("delegate_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delegate_details"); else _explicitNullProperties?.Remove("delegate_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessDelegateDetails? _explicitNullValueDelegateDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessDelegateDetails DelegateDetails { get => _explicitNullValueDelegateDetails; set { _explicitNullValueDelegateDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delegate_details"); else _explicitNullProperties?.Remove("delegate_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessDelegateDetails DelegateDetails { get => _explicitNullValueDelegateDetails; set { _explicitNullValueDelegateDetails = value; AdditionalData?.Remove("delegate_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delegate_details"); else _explicitNullProperties?.Remove("delegate_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessDelegateDetails _explicitNullValueDelegateDetails = default!;
 #endif
         /// <summary>Represents an array of the next approvers in the Approval Process sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessNextApproverItem>? NextApprover { get => _explicitNullValueNextApprover; set { _explicitNullValueNextApprover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_approver"); else _explicitNullProperties?.Remove("next_approver"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessNextApproverItem>? NextApprover { get => _explicitNullValueNextApprover; set { _explicitNullValueNextApprover = value; AdditionalData?.Remove("next_approver"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_approver"); else _explicitNullProperties?.Remove("next_approver"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessNextApproverItem>? _explicitNullValueNextApprover = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessNextApproverItem> NextApprover { get => _explicitNullValueNextApprover; set { _explicitNullValueNextApprover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_approver"); else _explicitNullProperties?.Remove("next_approver"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessNextApproverItem> NextApprover { get => _explicitNullValueNextApprover; set { _explicitNullValueNextApprover = value; AdditionalData?.Remove("next_approver"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_approver"); else _explicitNullProperties?.Remove("next_approver"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessNextApproverItem> _explicitNullValueNextApprover = default!;
 #endif
         /// <summary>Represents the details of the rejection event in the Approval Process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessRejectedDetails? RejectedDetails { get => _explicitNullValueRejectedDetails; set { _explicitNullValueRejectedDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejected_details"); else _explicitNullProperties?.Remove("rejected_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessRejectedDetails? RejectedDetails { get => _explicitNullValueRejectedDetails; set { _explicitNullValueRejectedDetails = value; AdditionalData?.Remove("rejected_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejected_details"); else _explicitNullProperties?.Remove("rejected_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessRejectedDetails? _explicitNullValueRejectedDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessRejectedDetails RejectedDetails { get => _explicitNullValueRejectedDetails; set { _explicitNullValueRejectedDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejected_details"); else _explicitNullProperties?.Remove("rejected_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessRejectedDetails RejectedDetails { get => _explicitNullValueRejectedDetails; set { _explicitNullValueRejectedDetails = value; AdditionalData?.Remove("rejected_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejected_details"); else _explicitNullProperties?.Remove("rejected_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsApprovalProcessRejectedDetails _explicitNullValueRejectedDetails = default!;
 #endif
         /// <summary>Represents the reason provided for the approval task takeover.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TakeoverReason { get => _explicitNullValueTakeoverReason; set { _explicitNullValueTakeoverReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("takeover_reason"); else _explicitNullProperties?.Remove("takeover_reason"); } }
+        public string? TakeoverReason { get => _explicitNullValueTakeoverReason; set { _explicitNullValueTakeoverReason = value; AdditionalData?.Remove("takeover_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("takeover_reason"); else _explicitNullProperties?.Remove("takeover_reason"); } }
         private string? _explicitNullValueTakeoverReason = default!;
 #nullable restore
 #else
-        public string TakeoverReason { get => _explicitNullValueTakeoverReason; set { _explicitNullValueTakeoverReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("takeover_reason"); else _explicitNullProperties?.Remove("takeover_reason"); } }
+        public string TakeoverReason { get => _explicitNullValueTakeoverReason; set { _explicitNullValueTakeoverReason = value; AdditionalData?.Remove("takeover_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("takeover_reason"); else _explicitNullProperties?.Remove("takeover_reason"); } }
         private string _explicitNullValueTakeoverReason = default!;
 #endif
         /// <summary>Represents the approval stage at which the takeover occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TakeoverStage { get => _explicitNullValueTakeoverStage; set { _explicitNullValueTakeoverStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("takeover_stage"); else _explicitNullProperties?.Remove("takeover_stage"); } }
+        public string? TakeoverStage { get => _explicitNullValueTakeoverStage; set { _explicitNullValueTakeoverStage = value; AdditionalData?.Remove("takeover_stage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("takeover_stage"); else _explicitNullProperties?.Remove("takeover_stage"); } }
         private string? _explicitNullValueTakeoverStage = default!;
 #nullable restore
 #else
-        public string TakeoverStage { get => _explicitNullValueTakeoverStage; set { _explicitNullValueTakeoverStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("takeover_stage"); else _explicitNullProperties?.Remove("takeover_stage"); } }
+        public string TakeoverStage { get => _explicitNullValueTakeoverStage; set { _explicitNullValueTakeoverStage = value; AdditionalData?.Remove("takeover_stage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("takeover_stage"); else _explicitNullProperties?.Remove("takeover_stage"); } }
         private string _explicitNullValueTakeoverStage = default!;
 #endif
         /// <summary>

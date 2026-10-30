@@ -18,76 +18,84 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("column_count") is { } nullNodeColumnCount && nullNodeColumnCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColumnCount = null;
-            if (parseNode.GetChildNode("_delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
-            if (parseNode.GetChildNode("display_label") is { } nullNodeDisplayLabel && nullNodeDisplayLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayLabel = null;
-            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
-            if (parseNode.GetChildNode("tab_traversal") is { } nullNodeTabTraversal && nullNodeTabTraversal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TabTraversal = null;
+            if (parseNode.GetChildNode("column_count") is null) { _explicitNullValueColumnCount = default!; _explicitNullProperties?.Remove("column_count"); }
+            else if (parseNode.GetChildNode("column_count") is { } nullNodeColumnCount && nullNodeColumnCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColumnCount = null;
+            if (parseNode.GetChildNode("_delete") is null) { _explicitNullValueDelete = default!; _explicitNullProperties?.Remove("_delete"); }
+            else if (parseNode.GetChildNode("_delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
+            if (parseNode.GetChildNode("display_label") is null) { _explicitNullValueDisplayLabel = default!; _explicitNullProperties?.Remove("display_label"); }
+            else if (parseNode.GetChildNode("display_label") is { } nullNodeDisplayLabel && nullNodeDisplayLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayLabel = null;
+            if (parseNode.GetChildNode("fields") is null) { _explicitNullValueFields = default!; _explicitNullProperties?.Remove("fields"); }
+            else if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("sequence_number") is null) { _explicitNullValueSequenceNumber = default!; _explicitNullProperties?.Remove("sequence_number"); }
+            else if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
+            if (parseNode.GetChildNode("tab_traversal") is null) { _explicitNullValueTabTraversal = default!; _explicitNullProperties?.Remove("tab_traversal"); }
+            else if (parseNode.GetChildNode("tab_traversal") is { } nullNodeTabTraversal && nullNodeTabTraversal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TabTraversal = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the number of columns in which fields are arranged within this section when the layout is rendered on record forms.</summary>
-        public int? ColumnCount { get => _explicitNullValueColumnCount; set { _explicitNullValueColumnCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_count"); else _explicitNullProperties?.Remove("column_count"); } }
+        public int? ColumnCount { get => _explicitNullValueColumnCount; set { _explicitNullValueColumnCount = value; AdditionalData?.Remove("column_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column_count"); else _explicitNullProperties?.Remove("column_count"); } }
         private int? _explicitNullValueColumnCount = default!;
         /// <summary>Delete configuration for removing the section. When provided, the section identified by id will be deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_delete"); else _explicitNullProperties?.Remove("_delete"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_delete"); else _explicitNullProperties?.Remove("_delete"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete? _explicitNullValueDelete = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_delete"); else _explicitNullProperties?.Remove("_delete"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_delete"); else _explicitNullProperties?.Remove("_delete"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectDelete _explicitNullValueDelete = default!;
 #endif
         /// <summary>Represents the heading label of the section as displayed in the CRM interface. Required when creating a new section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
+        public string? DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; AdditionalData?.Remove("display_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
         private string? _explicitNullValueDisplayLabel = default!;
 #nullable restore
 #else
-        public string DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
+        public string DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; AdditionalData?.Remove("display_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
         private string _explicitNullValueDisplayLabel = default!;
 #endif
         /// <summary>Contains the array of field operations to perform within this section, including adding, updating, creating, or removing field entries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject>? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateObject> _explicitNullValueFields = default!;
 #endif
         /// <summary>Represents a unique numeric identifier for a CRM entity, expressed as a 64-bit integer serialized as a string to preserve precision in JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the internal API name of the section. Required when creating a new section through a layout update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Indicates the one-based ordinal position of the section within the layout, controlling the order in which sections are rendered.</summary>
-        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; AdditionalData?.Remove("sequence_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
         private int? _explicitNullValueSequenceNumber = default!;
         /// <summary>Specifies the tab key navigation direction within the section. Defines how focus moves between fields when users press Tab. Possible values: `left_to_right` — focus moves horizontally across columns first. `top_to_bottom` — focus moves vertically down each column first.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectTabTraversal? TabTraversal { get => _explicitNullValueTabTraversal; set { _explicitNullValueTabTraversal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tab_traversal"); else _explicitNullProperties?.Remove("tab_traversal"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectTabTraversal? TabTraversal { get => _explicitNullValueTabTraversal; set { _explicitNullValueTabTraversal = value; AdditionalData?.Remove("tab_traversal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tab_traversal"); else _explicitNullProperties?.Remove("tab_traversal"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectTabTraversal? _explicitNullValueTabTraversal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObject"/> and sets the default values.
@@ -121,7 +129,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "sequence_number", n => { SequenceNumber = n.GetIntValue(); } },
-                { "tab_traversal", n => { TabTraversal = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectTabTraversal>(); } },
+                { "tab_traversal", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SectionUpdateObjectTabTraversal>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTabTraversal = default; _explicitNullProperties?.Remove("tab_traversal"); AdditionalData["tab_traversal"] = unknown; } else { TabTraversal = parsed; AdditionalData.Remove("tab_traversal"); } } },
             };
         }
         /// <summary>

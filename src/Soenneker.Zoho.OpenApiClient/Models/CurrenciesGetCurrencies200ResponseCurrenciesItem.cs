@@ -18,21 +18,36 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
-            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
-            if (parseNode.GetChildNode("exchange_rate") is { } nullNodeExchangeRate && nullNodeExchangeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExchangeRate = null;
-            if (parseNode.GetChildNode("exchange_rate_auto_update") is { } nullNodeExchangeRateAutoUpdate && nullNodeExchangeRateAutoUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExchangeRateAutoUpdate = null;
-            if (parseNode.GetChildNode("exchange_rate_updated_time") is { } nullNodeExchangeRateUpdatedTime && nullNodeExchangeRateUpdatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExchangeRateUpdatedTime = null;
-            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
-            if (parseNode.GetChildNode("is_base") is { } nullNodeIsBase && nullNodeIsBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBase = null;
-            if (parseNode.GetChildNode("iso_code") is { } nullNodeIsoCode && nullNodeIsoCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCode = null;
-            if (parseNode.GetChildNode("modified_by") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
-            if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("prefix_symbol") is { } nullNodePrefixSymbol && nullNodePrefixSymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrefixSymbol = null;
-            if (parseNode.GetChildNode("symbol") is { } nullNodeSymbol && nullNodeSymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Symbol = null;
+            if (parseNode.GetChildNode("created_by") is null) { _explicitNullValueCreatedBy = default!; _explicitNullProperties?.Remove("created_by"); }
+            else if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("created_time") is null) { _explicitNullValueCreatedTime = default!; _explicitNullProperties?.Remove("created_time"); }
+            else if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("exchange_rate") is null) { _explicitNullValueExchangeRate = default!; _explicitNullProperties?.Remove("exchange_rate"); }
+            else if (parseNode.GetChildNode("exchange_rate") is { } nullNodeExchangeRate && nullNodeExchangeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExchangeRate = null;
+            if (parseNode.GetChildNode("exchange_rate_auto_update") is null) { _explicitNullValueExchangeRateAutoUpdate = default!; _explicitNullProperties?.Remove("exchange_rate_auto_update"); }
+            else if (parseNode.GetChildNode("exchange_rate_auto_update") is { } nullNodeExchangeRateAutoUpdate && nullNodeExchangeRateAutoUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExchangeRateAutoUpdate = null;
+            if (parseNode.GetChildNode("exchange_rate_updated_time") is null) { _explicitNullValueExchangeRateUpdatedTime = default!; _explicitNullProperties?.Remove("exchange_rate_updated_time"); }
+            else if (parseNode.GetChildNode("exchange_rate_updated_time") is { } nullNodeExchangeRateUpdatedTime && nullNodeExchangeRateUpdatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExchangeRateUpdatedTime = null;
+            if (parseNode.GetChildNode("format") is null) { _explicitNullValueFormat = default!; _explicitNullProperties?.Remove("format"); }
+            else if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_active") is null) { _explicitNullValueIsActive = default!; _explicitNullProperties?.Remove("is_active"); }
+            else if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("is_base") is null) { _explicitNullValueIsBase = default!; _explicitNullProperties?.Remove("is_base"); }
+            else if (parseNode.GetChildNode("is_base") is { } nullNodeIsBase && nullNodeIsBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBase = null;
+            if (parseNode.GetChildNode("iso_code") is null) { _explicitNullValueIsoCode = default!; _explicitNullProperties?.Remove("iso_code"); }
+            else if (parseNode.GetChildNode("iso_code") is { } nullNodeIsoCode && nullNodeIsoCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsoCode = null;
+            if (parseNode.GetChildNode("modified_by") is null) { _explicitNullValueModifiedBy = default!; _explicitNullProperties?.Remove("modified_by"); }
+            else if (parseNode.GetChildNode("modified_by") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("modified_time") is null) { _explicitNullValueModifiedTime = default!; _explicitNullProperties?.Remove("modified_time"); }
+            else if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("prefix_symbol") is null) { _explicitNullValuePrefixSymbol = default!; _explicitNullProperties?.Remove("prefix_symbol"); }
+            else if (parseNode.GetChildNode("prefix_symbol") is { } nullNodePrefixSymbol && nullNodePrefixSymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrefixSymbol = null;
+            if (parseNode.GetChildNode("symbol") is null) { _explicitNullValueSymbol = default!; _explicitNullProperties?.Remove("symbol"); }
+            else if (parseNode.GetChildNode("symbol") is { } nullNodeSymbol && nullNodeSymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Symbol = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,102 +55,102 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Indicates the user who created the currency record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Timestamp when the currency was first created.</summary>
-        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; AdditionalData?.Remove("created_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
         private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>Exchange rate relative to the base currency (supports up to 9 digits and 9 decimal places).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExchangeRate { get => _explicitNullValueExchangeRate; set { _explicitNullValueExchangeRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange_rate"); else _explicitNullProperties?.Remove("exchange_rate"); } }
+        public string? ExchangeRate { get => _explicitNullValueExchangeRate; set { _explicitNullValueExchangeRate = value; AdditionalData?.Remove("exchange_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange_rate"); else _explicitNullProperties?.Remove("exchange_rate"); } }
         private string? _explicitNullValueExchangeRate = default!;
 #nullable restore
 #else
-        public string ExchangeRate { get => _explicitNullValueExchangeRate; set { _explicitNullValueExchangeRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange_rate"); else _explicitNullProperties?.Remove("exchange_rate"); } }
+        public string ExchangeRate { get => _explicitNullValueExchangeRate; set { _explicitNullValueExchangeRate = value; AdditionalData?.Remove("exchange_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange_rate"); else _explicitNullProperties?.Remove("exchange_rate"); } }
         private string _explicitNullValueExchangeRate = default!;
 #endif
         /// <summary>Indicates whether the currency has the automated exchange rate option enabled or not.</summary>
-        public bool? ExchangeRateAutoUpdate { get => _explicitNullValueExchangeRateAutoUpdate; set { _explicitNullValueExchangeRateAutoUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange_rate_auto_update"); else _explicitNullProperties?.Remove("exchange_rate_auto_update"); } }
+        public bool? ExchangeRateAutoUpdate { get => _explicitNullValueExchangeRateAutoUpdate; set { _explicitNullValueExchangeRateAutoUpdate = value; AdditionalData?.Remove("exchange_rate_auto_update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange_rate_auto_update"); else _explicitNullProperties?.Remove("exchange_rate_auto_update"); } }
         private bool? _explicitNullValueExchangeRateAutoUpdate = default!;
         /// <summary>Timestamp when the exchange rate was last modified.</summary>
-        public DateTimeOffset? ExchangeRateUpdatedTime { get => _explicitNullValueExchangeRateUpdatedTime; set { _explicitNullValueExchangeRateUpdatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange_rate_updated_time"); else _explicitNullProperties?.Remove("exchange_rate_updated_time"); } }
+        public DateTimeOffset? ExchangeRateUpdatedTime { get => _explicitNullValueExchangeRateUpdatedTime; set { _explicitNullValueExchangeRateUpdatedTime = value; AdditionalData?.Remove("exchange_rate_updated_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchange_rate_updated_time"); else _explicitNullProperties?.Remove("exchange_rate_updated_time"); } }
         private DateTimeOffset? _explicitNullValueExchangeRateUpdatedTime = default!;
         /// <summary>Currency formatting rules including numeral style, decimals and separators.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormat? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormat? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormat? _explicitNullValueFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormat Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormat Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemFormat _explicitNullValueFormat = default!;
 #endif
         /// <summary>Unique identifier of the currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the status of the currency.**Possible Values:****true** - The currency is active. This is the default value.**false** - The currency is inactive.</summary>
-        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
+        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("is_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
         private bool? _explicitNullValueIsActive = default!;
         /// <summary>Indicates whether this currency is the organization&apos;s base currency.</summary>
-        public bool? IsBase { get => _explicitNullValueIsBase; set { _explicitNullValueIsBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_base"); else _explicitNullProperties?.Remove("is_base"); } }
+        public bool? IsBase { get => _explicitNullValueIsBase; set { _explicitNullValueIsBase = value; AdditionalData?.Remove("is_base"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_base"); else _explicitNullProperties?.Remove("is_base"); } }
         private bool? _explicitNullValueIsBase = default!;
         /// <summary>Represents the ISO code of the currency. You can get the currency code from the CRM UI at **Setup &gt; General &gt; Company Settings &gt; Currencies.**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsoCode { get => _explicitNullValueIsoCode; set { _explicitNullValueIsoCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_code"); else _explicitNullProperties?.Remove("iso_code"); } }
+        public string? IsoCode { get => _explicitNullValueIsoCode; set { _explicitNullValueIsoCode = value; AdditionalData?.Remove("iso_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_code"); else _explicitNullProperties?.Remove("iso_code"); } }
         private string? _explicitNullValueIsoCode = default!;
 #nullable restore
 #else
-        public string IsoCode { get => _explicitNullValueIsoCode; set { _explicitNullValueIsoCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_code"); else _explicitNullProperties?.Remove("iso_code"); } }
+        public string IsoCode { get => _explicitNullValueIsoCode; set { _explicitNullValueIsoCode = value; AdditionalData?.Remove("iso_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iso_code"); else _explicitNullProperties?.Remove("iso_code"); } }
         private string _explicitNullValueIsoCode = default!;
 #endif
         /// <summary>Indicates the user who last updated the currency record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; AdditionalData?.Remove("modified_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemModifiedBy? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; AdditionalData?.Remove("modified_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesGetCurrencies200ResponseCurrenciesItemModifiedBy _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>Timestamp when the currency was last modified.</summary>
-        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
+        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; AdditionalData?.Remove("modified_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
         private DateTimeOffset? _explicitNullValueModifiedTime = default!;
         /// <summary>Name of the currency. Example: Indian Rupee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Represents the position of the currency symbol.**Possible Values:****true** - Display the currency symbol before the currency value. This is the default value.**false** - Display the currency symbol after the currency value.</summary>
-        public bool? PrefixSymbol { get => _explicitNullValuePrefixSymbol; set { _explicitNullValuePrefixSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_symbol"); else _explicitNullProperties?.Remove("prefix_symbol"); } }
+        public bool? PrefixSymbol { get => _explicitNullValuePrefixSymbol; set { _explicitNullValuePrefixSymbol = value; AdditionalData?.Remove("prefix_symbol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix_symbol"); else _explicitNullProperties?.Remove("prefix_symbol"); } }
         private bool? _explicitNullValuePrefixSymbol = default!;
         /// <summary>Symbol used to represent the currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Symbol { get => _explicitNullValueSymbol; set { _explicitNullValueSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbol"); else _explicitNullProperties?.Remove("symbol"); } }
+        public string? Symbol { get => _explicitNullValueSymbol; set { _explicitNullValueSymbol = value; AdditionalData?.Remove("symbol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbol"); else _explicitNullProperties?.Remove("symbol"); } }
         private string? _explicitNullValueSymbol = default!;
 #nullable restore
 #else
-        public string Symbol { get => _explicitNullValueSymbol; set { _explicitNullValueSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbol"); else _explicitNullProperties?.Remove("symbol"); } }
+        public string Symbol { get => _explicitNullValueSymbol; set { _explicitNullValueSymbol = value; AdditionalData?.Remove("symbol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbol"); else _explicitNullProperties?.Remove("symbol"); } }
         private string _explicitNullValueSymbol = default!;
 #endif
         /// <summary>

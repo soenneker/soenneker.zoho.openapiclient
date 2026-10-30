@@ -18,11 +18,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("expected_data_type") is { } nullNodeExpectedDataType && nullNodeExpectedDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDataType = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("maximum_length") is { } nullNodeMaximumLength && nullNodeMaximumLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumLength = null;
-            if (parseNode.GetChildNode("param_name") is { } nullNodeParamName && nullNodeParamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamName = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("expected_data_type") is null) { _explicitNullValueExpectedDataType = default!; _explicitNullProperties?.Remove("expected_data_type"); }
+            else if (parseNode.GetChildNode("expected_data_type") is { } nullNodeExpectedDataType && nullNodeExpectedDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDataType = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("maximum_length") is null) { _explicitNullValueMaximumLength = default!; _explicitNullProperties?.Remove("maximum_length"); }
+            else if (parseNode.GetChildNode("maximum_length") is { } nullNodeMaximumLength && nullNodeMaximumLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumLength = null;
+            if (parseNode.GetChildNode("param_name") is null) { _explicitNullValueParamName = default!; _explicitNullProperties?.Remove("param_name"); }
+            else if (parseNode.GetChildNode("param_name") is { } nullNodeParamName && nullNodeParamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,38 +35,38 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the API name of the field or parameter that caused the validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>Represents the **expected_data_type** value from the error detail object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedDataType { get => _explicitNullValueExpectedDataType; set { _explicitNullValueExpectedDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_data_type"); else _explicitNullProperties?.Remove("expected_data_type"); } }
+        public string? ExpectedDataType { get => _explicitNullValueExpectedDataType; set { _explicitNullValueExpectedDataType = value; AdditionalData?.Remove("expected_data_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_data_type"); else _explicitNullProperties?.Remove("expected_data_type"); } }
         private string? _explicitNullValueExpectedDataType = default!;
 #nullable restore
 #else
-        public string ExpectedDataType { get => _explicitNullValueExpectedDataType; set { _explicitNullValueExpectedDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_data_type"); else _explicitNullProperties?.Remove("expected_data_type"); } }
+        public string ExpectedDataType { get => _explicitNullValueExpectedDataType; set { _explicitNullValueExpectedDataType = value; AdditionalData?.Remove("expected_data_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_data_type"); else _explicitNullProperties?.Remove("expected_data_type"); } }
         private string _explicitNullValueExpectedDataType = default!;
 #endif
         /// <summary>Represents the **ID** value from the error detail object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the **maximum_length** value from the error detail object.</summary>
-        public int? MaximumLength { get => _explicitNullValueMaximumLength; set { _explicitNullValueMaximumLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_length"); else _explicitNullProperties?.Remove("maximum_length"); } }
+        public int? MaximumLength { get => _explicitNullValueMaximumLength; set { _explicitNullValueMaximumLength = value; AdditionalData?.Remove("maximum_length"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_length"); else _explicitNullProperties?.Remove("maximum_length"); } }
         private int? _explicitNullValueMaximumLength = default!;
         /// <summary>Represents the **param_name** value from the error detail object.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetailsParamName? ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetailsParamName? ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; AdditionalData?.Remove("param_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetailsParamName? _explicitNullValueParamName = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetails"/> and sets the default values.
@@ -92,7 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "expected_data_type", n => { ExpectedDataType = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "maximum_length", n => { MaximumLength = n.GetIntValue(); } },
-                { "param_name", n => { ParamName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetailsParamName>(); } },
+                { "param_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataNoApiNameAndPathSchemaDetailsParamName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueParamName = default; _explicitNullProperties?.Remove("param_name"); AdditionalData["param_name"] = unknown; } else { ParamName = parsed; AdditionalData.Remove("param_name"); } } },
             };
         }
         /// <summary>

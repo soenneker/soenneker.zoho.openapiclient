@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("radio_display_type") is { } nullNodeRadioDisplayType && nullNodeRadioDisplayType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RadioDisplayType = null;
-            if (parseNode.GetChildNode("split") is { } nullNodeSplit && nullNodeSplit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Split = null;
+            if (parseNode.GetChildNode("radio_display_type") is null) { _explicitNullValueRadioDisplayType = default!; _explicitNullProperties?.Remove("radio_display_type"); }
+            else if (parseNode.GetChildNode("radio_display_type") is { } nullNodeRadioDisplayType && nullNodeRadioDisplayType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RadioDisplayType = null;
+            if (parseNode.GetChildNode("split") is null) { _explicitNullValueSplit = default!; _explicitNullProperties?.Remove("split"); }
+            else if (parseNode.GetChildNode("split") is { } nullNodeSplit && nullNodeSplit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Split = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the display type applied to radio button fields, such as **all** or **vertical**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RadioDisplayType { get => _explicitNullValueRadioDisplayType; set { _explicitNullValueRadioDisplayType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radio_display_type"); else _explicitNullProperties?.Remove("radio_display_type"); } }
+        public string? RadioDisplayType { get => _explicitNullValueRadioDisplayType; set { _explicitNullValueRadioDisplayType = value; AdditionalData?.Remove("radio_display_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radio_display_type"); else _explicitNullProperties?.Remove("radio_display_type"); } }
         private string? _explicitNullValueRadioDisplayType = default!;
 #nullable restore
 #else
-        public string RadioDisplayType { get => _explicitNullValueRadioDisplayType; set { _explicitNullValueRadioDisplayType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radio_display_type"); else _explicitNullProperties?.Remove("radio_display_type"); } }
+        public string RadioDisplayType { get => _explicitNullValueRadioDisplayType; set { _explicitNullValueRadioDisplayType = value; AdditionalData?.Remove("radio_display_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("radio_display_type"); else _explicitNullProperties?.Remove("radio_display_type"); } }
         private string _explicitNullValueRadioDisplayType = default!;
 #endif
         /// <summary>Represents the split value applied to phone number fields, which divides the number into the specified number of segments.</summary>
-        public int? Split { get => _explicitNullValueSplit; set { _explicitNullValueSplit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("split"); else _explicitNullProperties?.Remove("split"); } }
+        public int? Split { get => _explicitNullValueSplit; set { _explicitNullValueSplit = value; AdditionalData?.Remove("split"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("split"); else _explicitNullProperties?.Remove("split"); } }
         private int? _explicitNullValueSplit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaDisplayFormatPropertiesOneOf1"/> and sets the default values.

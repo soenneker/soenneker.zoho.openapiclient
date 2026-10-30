@@ -50,9 +50,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("group") != null && parseNode.GetChildNode("group_operator") != null && (parseNode.GetChildNode("group_operator")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("AND".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "OR".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "and".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "or".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
-            if (result.ScoringRulesGroupedFilterCriterionRequest == null && result.ScoringRulesSimpleFilterCriterionRequest == null && matchesUnionBranch0) result.ScoringRulesGroupedFilterCriterionRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesGroupedFilterCriterionRequest(), parseNode);
-            if (result.ScoringRulesGroupedFilterCriterionRequest == null && result.ScoringRulesSimpleFilterCriterionRequest == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.ScoringRulesGroupedFilterCriterionRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesGroupedFilterCriterionRequest(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => true))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("group") && shapeMembers1.ContainsKey("group_operator") && (!shapeMembers1.ContainsKey("group") || (((shapeMembers1["group"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("group_operator") || (((shapeMembers1["group_operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["group_operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "AND".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["group_operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal5 && "OR".Equals(literal5.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["group_operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "and".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["group_operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "or".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.ScoringRulesGroupedFilterCriterionRequest == null && result.ScoringRulesSimpleFilterCriterionRequest == null;
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.ScoringRulesGroupedFilterCriterionRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesGroupedFilterCriterionRequest(), parseNode);
             if (result.ScoringRulesGroupedFilterCriterionRequest == null && result.ScoringRulesSimpleFilterCriterionRequest == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -62,6 +66,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(ScoringRulesGroupedFilterCriterionRequest != null)
             {
                 return ScoringRulesGroupedFilterCriterionRequest.GetFieldDeserializers();
@@ -80,7 +86,10 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (ScoringRulesGroupedFilterCriterionRequest == null && ScoringRulesSimpleFilterCriterionRequest == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (ScoringRulesGroupedFilterCriterionRequest != null && ScoringRulesSimpleFilterCriterionRequest == null) { if (ScoringRulesGroupedFilterCriterionRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ScoringRulesGroupedFilterCriterionRequest); return; }
+            int selectedUnionBranches = 0;
+            if (ScoringRulesGroupedFilterCriterionRequest != null) selectedUnionBranches++;
+            if (ScoringRulesSimpleFilterCriterionRequest != null) selectedUnionBranches++;
+            if (ScoringRulesGroupedFilterCriterionRequest != null && selectedUnionBranches == 1) { if (ScoringRulesGroupedFilterCriterionRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ScoringRulesGroupedFilterCriterionRequest); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ScoringRulesGroupedFilterCriterionRequest != null)

@@ -50,9 +50,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("api_name") != null && parseNode.GetChildNode("id") != null))();
-            if (result.FieldSchemaRecordCategoryTrackingFieldOneOf1 == null && result.FieldsTypeNull == null && matchesUnionBranch0) result.FieldSchemaRecordCategoryTrackingFieldOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryTrackingFieldOneOf1(), parseNode);
-            if (result.FieldSchemaRecordCategoryTrackingFieldOneOf1 == null && result.FieldsTypeNull == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.FieldSchemaRecordCategoryTrackingFieldOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryTrackingFieldOneOf1(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("api_name") && shapeMembers1.ContainsKey("id") && (!shapeMembers1.ContainsKey("api_name") || (((shapeMembers1["api_name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("id") || (((shapeMembers1["id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.FieldSchemaRecordCategoryTrackingFieldOneOf1 == null && result.FieldsTypeNull == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.FieldSchemaRecordCategoryTrackingFieldOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRecordCategoryTrackingFieldOneOf1(), parseNode);
             if (result.FieldSchemaRecordCategoryTrackingFieldOneOf1 == null && result.FieldsTypeNull == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -62,6 +64,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(FieldSchemaRecordCategoryTrackingFieldOneOf1 != null)
             {
                 return FieldSchemaRecordCategoryTrackingFieldOneOf1.GetFieldDeserializers();
@@ -80,7 +84,10 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (FieldSchemaRecordCategoryTrackingFieldOneOf1 == null && FieldsTypeNull == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (FieldSchemaRecordCategoryTrackingFieldOneOf1 != null && FieldsTypeNull == null) { if (FieldSchemaRecordCategoryTrackingFieldOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FieldSchemaRecordCategoryTrackingFieldOneOf1); return; }
+            int selectedUnionBranches = 0;
+            if (FieldSchemaRecordCategoryTrackingFieldOneOf1 != null) selectedUnionBranches++;
+            if (FieldsTypeNull != null) selectedUnionBranches++;
+            if (FieldSchemaRecordCategoryTrackingFieldOneOf1 != null && selectedUnionBranches == 1) { if (FieldSchemaRecordCategoryTrackingFieldOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FieldSchemaRecordCategoryTrackingFieldOneOf1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(FieldSchemaRecordCategoryTrackingFieldOneOf1 != null)

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("from_addresses") is { } nullNodeFromAddresses && nullNodeFromAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromAddresses = null;
+            if (parseNode.GetChildNode("from_addresses") is null) { _explicitNullValueFromAddresses = default!; _explicitNullProperties?.Remove("from_addresses"); }
+            else if (parseNode.GetChildNode("from_addresses") is { } nullNodeFromAddresses && nullNodeFromAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromAddresses = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of from-address entries configured for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FromAddressesGetFromAddresses200ResponseFromAddressesItem>? FromAddresses { get => _explicitNullValueFromAddresses; set { _explicitNullValueFromAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_addresses"); else _explicitNullProperties?.Remove("from_addresses"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FromAddressesGetFromAddresses200ResponseFromAddressesItem>? FromAddresses { get => _explicitNullValueFromAddresses; set { _explicitNullValueFromAddresses = value; AdditionalData?.Remove("from_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_addresses"); else _explicitNullProperties?.Remove("from_addresses"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FromAddressesGetFromAddresses200ResponseFromAddressesItem>? _explicitNullValueFromAddresses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FromAddressesGetFromAddresses200ResponseFromAddressesItem> FromAddresses { get => _explicitNullValueFromAddresses; set { _explicitNullValueFromAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_addresses"); else _explicitNullProperties?.Remove("from_addresses"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FromAddressesGetFromAddresses200ResponseFromAddressesItem> FromAddresses { get => _explicitNullValueFromAddresses; set { _explicitNullValueFromAddresses = value; AdditionalData?.Remove("from_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_addresses"); else _explicitNullProperties?.Remove("from_addresses"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FromAddressesGetFromAddresses200ResponseFromAddressesItem> _explicitNullValueFromAddresses = default!;
 #endif
         /// <summary>

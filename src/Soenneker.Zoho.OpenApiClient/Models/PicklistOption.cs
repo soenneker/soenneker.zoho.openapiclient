@@ -18,19 +18,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actual_value") is { } nullNodeActualValue && nullNodeActualValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualValue = null;
-            if (parseNode.GetChildNode("display_value") is { } nullNodeDisplayValue && nullNodeDisplayValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayValue = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("actual_value") is null) { _explicitNullValueActualValue = default!; _explicitNullProperties?.Remove("actual_value"); }
+            else if (parseNode.GetChildNode("actual_value") is { } nullNodeActualValue && nullNodeActualValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualValue = null;
+            if (parseNode.GetChildNode("display_value") is null) { _explicitNullValueDisplayValue = default!; _explicitNullProperties?.Remove("display_value"); }
+            else if (parseNode.GetChildNode("display_value") is { } nullNodeDisplayValue && nullNodeDisplayValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayValue = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Represents the actual stored value of the picklist option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
+        public string? ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; AdditionalData?.Remove("actual_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
         private string? _explicitNullValueActualValue = default!;
 #nullable restore
 #else
-        public string ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
+        public string ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; AdditionalData?.Remove("actual_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
         private string _explicitNullValueActualValue = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,21 +41,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the display label of the picklist option as shown in the CRM interface. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
+        public string? DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; AdditionalData?.Remove("display_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
         private string? _explicitNullValueDisplayValue = default!;
 #nullable restore
 #else
-        public string DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
+        public string DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; AdditionalData?.Remove("display_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
         private string _explicitNullValueDisplayValue = default!;
 #endif
         /// <summary>Represents the unique identifier of the picklist option. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sign_mail_merge") is { } nullNodeSignMailMerge && nullNodeSignMailMerge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignMailMerge = null;
+            if (parseNode.GetChildNode("sign_mail_merge") is null) { _explicitNullValueSignMailMerge = default!; _explicitNullProperties?.Remove("sign_mail_merge"); }
+            else if (parseNode.GetChildNode("sign_mail_merge") is { } nullNodeSignMailMerge && nullNodeSignMailMerge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignMailMerge = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of sign mail merge response objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNested1>? SignMailMerge { get => _explicitNullValueSignMailMerge; set { _explicitNullValueSignMailMerge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_mail_merge"); else _explicitNullProperties?.Remove("sign_mail_merge"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNested1>? SignMailMerge { get => _explicitNullValueSignMailMerge; set { _explicitNullValueSignMailMerge = value; AdditionalData?.Remove("sign_mail_merge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_mail_merge"); else _explicitNullProperties?.Remove("sign_mail_merge"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNested1>? _explicitNullValueSignMailMerge = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNested1> SignMailMerge { get => _explicitNullValueSignMailMerge; set { _explicitNullValueSignMailMerge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_mail_merge"); else _explicitNullProperties?.Remove("sign_mail_merge"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNested1> SignMailMerge { get => _explicitNullValueSignMailMerge; set { _explicitNullValueSignMailMerge = value; AdditionalData?.Remove("sign_mail_merge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_mail_merge"); else _explicitNullProperties?.Remove("sign_mail_merge"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNested1> _explicitNullValueSignMailMerge = default!;
 #endif
         /// <summary>

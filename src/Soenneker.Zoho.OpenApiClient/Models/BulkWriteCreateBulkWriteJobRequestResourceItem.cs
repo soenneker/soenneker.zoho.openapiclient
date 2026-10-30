@@ -18,13 +18,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_mappings") is { } nullNodeFieldMappings && nullNodeFieldMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldMappings = null;
-            if (parseNode.GetChildNode("file_id") is { } nullNodeFileId && nullNodeFileId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileId = null;
-            if (parseNode.GetChildNode("file_names") is { } nullNodeFileNames && nullNodeFileNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileNames = null;
-            if (parseNode.GetChildNode("find_by") is { } nullNodeFindBy && nullNodeFindBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FindBy = null;
-            if (parseNode.GetChildNode("ignore_empty") is { } nullNodeIgnoreEmpty && nullNodeIgnoreEmpty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreEmpty = null;
-            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("field_mappings") is null) { _explicitNullValueFieldMappings = default!; _explicitNullProperties?.Remove("field_mappings"); }
+            else if (parseNode.GetChildNode("field_mappings") is { } nullNodeFieldMappings && nullNodeFieldMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldMappings = null;
+            if (parseNode.GetChildNode("file_id") is null) { _explicitNullValueFileId = default!; _explicitNullProperties?.Remove("file_id"); }
+            else if (parseNode.GetChildNode("file_id") is { } nullNodeFileId && nullNodeFileId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileId = null;
+            if (parseNode.GetChildNode("file_names") is null) { _explicitNullValueFileNames = default!; _explicitNullProperties?.Remove("file_names"); }
+            else if (parseNode.GetChildNode("file_names") is { } nullNodeFileNames && nullNodeFileNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileNames = null;
+            if (parseNode.GetChildNode("find_by") is null) { _explicitNullValueFindBy = default!; _explicitNullProperties?.Remove("find_by"); }
+            else if (parseNode.GetChildNode("find_by") is { } nullNodeFindBy && nullNodeFindBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FindBy = null;
+            if (parseNode.GetChildNode("ignore_empty") is null) { _explicitNullValueIgnoreEmpty = default!; _explicitNullProperties?.Remove("ignore_empty"); }
+            else if (parseNode.GetChildNode("ignore_empty") is { } nullNodeIgnoreEmpty && nullNodeIgnoreEmpty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreEmpty = null;
+            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
+            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,51 +39,51 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the mapping between columns in the uploaded file and fields on the target module. When omitted, Zoho CRM auto-maps columns to fields whose API names match the CSV header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemFieldMappingsItem>? _explicitNullValueFieldMappings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemFieldMappingsItem> _explicitNullValueFieldMappings = default!;
 #endif
         /// <summary>Specify the identifier of the previously uploaded file that the bulk write job must read. Obtain this value from the response of the bulk upload file API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileId { get => _explicitNullValueFileId; set { _explicitNullValueFileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_id"); else _explicitNullProperties?.Remove("file_id"); } }
+        public string? FileId { get => _explicitNullValueFileId; set { _explicitNullValueFileId = value; AdditionalData?.Remove("file_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_id"); else _explicitNullProperties?.Remove("file_id"); } }
         private string? _explicitNullValueFileId = default!;
 #nullable restore
 #else
-        public string FileId { get => _explicitNullValueFileId; set { _explicitNullValueFileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_id"); else _explicitNullProperties?.Remove("file_id"); } }
+        public string FileId { get => _explicitNullValueFileId; set { _explicitNullValueFileId = value; AdditionalData?.Remove("file_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_id"); else _explicitNullProperties?.Remove("file_id"); } }
         private string _explicitNullValueFileId = default!;
 #endif
         /// <summary>Specify the names of the files inside the uploaded archive that the bulk write job must process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FileNames { get => _explicitNullValueFileNames; set { _explicitNullValueFileNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_names"); else _explicitNullProperties?.Remove("file_names"); } }
+        public List<string>? FileNames { get => _explicitNullValueFileNames; set { _explicitNullValueFileNames = value; AdditionalData?.Remove("file_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_names"); else _explicitNullProperties?.Remove("file_names"); } }
         private List<string>? _explicitNullValueFileNames = default!;
 #nullable restore
 #else
-        public List<string> FileNames { get => _explicitNullValueFileNames; set { _explicitNullValueFileNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_names"); else _explicitNullProperties?.Remove("file_names"); } }
+        public List<string> FileNames { get => _explicitNullValueFileNames; set { _explicitNullValueFileNames = value; AdditionalData?.Remove("file_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_names"); else _explicitNullProperties?.Remove("file_names"); } }
         private List<string> _explicitNullValueFileNames = default!;
 #endif
         /// <summary>Specify the field that the bulk write job uses to locate existing records when performing an update or upsert operation.Possible values:id - Matches records by their unique record ID in the target module.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.IdFindBy? FindBy { get => _explicitNullValueFindBy; set { _explicitNullValueFindBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("find_by"); else _explicitNullProperties?.Remove("find_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.IdFindBy? FindBy { get => _explicitNullValueFindBy; set { _explicitNullValueFindBy = value; AdditionalData?.Remove("find_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("find_by"); else _explicitNullProperties?.Remove("find_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.IdFindBy? _explicitNullValueFindBy = default!;
         /// <summary>Specify whether to skip empty cells in the uploaded file when updating records.Possible values:true - Ignores empty values in a column and updates only the fields that carry a non-empty value.false - Updates the target field with the empty value supplied in the file.</summary>
-        public bool? IgnoreEmpty { get => _explicitNullValueIgnoreEmpty; set { _explicitNullValueIgnoreEmpty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignore_empty"); else _explicitNullProperties?.Remove("ignore_empty"); } }
+        public bool? IgnoreEmpty { get => _explicitNullValueIgnoreEmpty; set { _explicitNullValueIgnoreEmpty = value; AdditionalData?.Remove("ignore_empty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignore_empty"); else _explicitNullProperties?.Remove("ignore_empty"); } }
         private bool? _explicitNullValueIgnoreEmpty = default!;
         /// <summary>Specify the target CRM module into which the records from the uploaded file are written.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Specify the type of the resource being imported.Possible values:data - Indicates that the resource contains record data to be written into the target module.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DataType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItem"/> and sets the default values.
@@ -106,10 +113,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemFieldMappingsItem>(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemFieldMappingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "file_id", n => { FileId = n.GetStringValue(); } },
                 { "file_names", n => { FileNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "find_by", n => { FindBy = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.IdFindBy>(); } },
+                { "find_by", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.IdFindBy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFindBy = default; _explicitNullProperties?.Remove("find_by"); AdditionalData["find_by"] = unknown; } else { FindBy = parsed; AdditionalData.Remove("find_by"); } } },
                 { "ignore_empty", n => { IgnoreEmpty = n.GetBoolValue(); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemModule>(global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteCreateBulkWriteJobRequestResourceItemModule.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

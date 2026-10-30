@@ -18,34 +18,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("delete_previous_forecasts") is { } nullNodeDeletePreviousForecasts && nullNodeDeletePreviousForecasts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletePreviousForecasts = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("transfer_to_id") is { } nullNodeTransferToId && nullNodeTransferToId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferToId = null;
+            if (parseNode.GetChildNode("delete_previous_forecasts") is null) { _explicitNullValueDeletePreviousForecasts = default!; _explicitNullProperties?.Remove("delete_previous_forecasts"); }
+            else if (parseNode.GetChildNode("delete_previous_forecasts") is { } nullNodeDeletePreviousForecasts && nullNodeDeletePreviousForecasts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletePreviousForecasts = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("transfer_to_id") is null) { _explicitNullValueTransferToId = default!; _explicitNullProperties?.Remove("transfer_to_id"); }
+            else if (parseNode.GetChildNode("transfer_to_id") is { } nullNodeTransferToId && nullNodeTransferToId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferToId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to delete previous forecasts associated with the territory.Possible values:**true** - Deletes the previous forecasts for the territory.**false** - Retains the previous forecasts for the territory.</summary>
-        public bool? DeletePreviousForecasts { get => _explicitNullValueDeletePreviousForecasts; set { _explicitNullValueDeletePreviousForecasts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_previous_forecasts"); else _explicitNullProperties?.Remove("delete_previous_forecasts"); } }
+        public bool? DeletePreviousForecasts { get => _explicitNullValueDeletePreviousForecasts; set { _explicitNullValueDeletePreviousForecasts = value; AdditionalData?.Remove("delete_previous_forecasts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_previous_forecasts"); else _explicitNullProperties?.Remove("delete_previous_forecasts"); } }
         private bool? _explicitNullValueDeletePreviousForecasts = default!;
         /// <summary>Specify the unique ID of the territory to delete. If omitted, the operation uses the territory ID from the URL path parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Specify the unique ID of the parent territory to which child territories are transferred before deleting the specified territory. The target territory must be higher in the hierarchy than the territory to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferToId { get => _explicitNullValueTransferToId; set { _explicitNullValueTransferToId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_id"); else _explicitNullProperties?.Remove("transfer_to_id"); } }
+        public string? TransferToId { get => _explicitNullValueTransferToId; set { _explicitNullValueTransferToId = value; AdditionalData?.Remove("transfer_to_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_id"); else _explicitNullProperties?.Remove("transfer_to_id"); } }
         private string? _explicitNullValueTransferToId = default!;
 #nullable restore
 #else
-        public string TransferToId { get => _explicitNullValueTransferToId; set { _explicitNullValueTransferToId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_id"); else _explicitNullProperties?.Remove("transfer_to_id"); } }
+        public string TransferToId { get => _explicitNullValueTransferToId; set { _explicitNullValueTransferToId = value; AdditionalData?.Remove("transfer_to_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_id"); else _explicitNullProperties?.Remove("transfer_to_id"); } }
         private string _explicitNullValueTransferToId = default!;
 #endif
         /// <summary>

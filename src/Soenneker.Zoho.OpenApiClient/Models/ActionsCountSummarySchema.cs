@@ -18,17 +18,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actions_count") is { } nullNodeActionsCount && nullNodeActionsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionsCount = null;
+            if (parseNode.GetChildNode("actions_count") is null) { _explicitNullValueActionsCount = default!; _explicitNullProperties?.Remove("actions_count"); }
+            else if (parseNode.GetChildNode("actions_count") is { } nullNodeActionsCount && nullNodeActionsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionsCount = null;
         }
 
         /// <summary>Represents the list of action count entries, each categorized by action type, for the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem>? ActionsCount { get => _explicitNullValueActionsCount; set { _explicitNullValueActionsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_count"); else _explicitNullProperties?.Remove("actions_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem>? ActionsCount { get => _explicitNullValueActionsCount; set { _explicitNullValueActionsCount = value; AdditionalData?.Remove("actions_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_count"); else _explicitNullProperties?.Remove("actions_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem>? _explicitNullValueActionsCount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem> ActionsCount { get => _explicitNullValueActionsCount; set { _explicitNullValueActionsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_count"); else _explicitNullProperties?.Remove("actions_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem> ActionsCount { get => _explicitNullValueActionsCount; set { _explicitNullValueActionsCount = value; AdditionalData?.Remove("actions_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions_count"); else _explicitNullProperties?.Remove("actions_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ActionsCountSummarySchemaActionsCountItem> _explicitNullValueActionsCount = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

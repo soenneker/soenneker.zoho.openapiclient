@@ -7,6 +7,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PortalUsersInviteUsersRequestPortalInviteItemDataItemLanguage
     {
+        [EnumMember(Value = "")]
+        EmptyString,
+
         [EnumMember(Value = "it_IT")]
         #pragma warning disable CS1591
         ItIt,

@@ -18,17 +18,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("case_sensitive") is { } nullNodeCaseSensitive && nullNodeCaseSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaseSensitive = null;
-            if (parseNode.GetChildNode("_disable") is { } nullNodeDisable && nullNodeDisable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disable = null;
+            if (parseNode.GetChildNode("case_sensitive") is null) { _explicitNullValueCaseSensitive = default!; _explicitNullProperties?.Remove("case_sensitive"); }
+            else if (parseNode.GetChildNode("case_sensitive") is { } nullNodeCaseSensitive && nullNodeCaseSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaseSensitive = null;
+            if (parseNode.GetChildNode("_disable") is null) { _explicitNullValueDisable = default!; _explicitNullProperties?.Remove("_disable"); }
+            else if (parseNode.GetChildNode("_disable") is { } nullNodeDisable && nullNodeDisable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disable = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether uniqueness is case sensitive.</summary>
-        public bool? CaseSensitive { get => _explicitNullValueCaseSensitive; set { _explicitNullValueCaseSensitive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("case_sensitive"); else _explicitNullProperties?.Remove("case_sensitive"); } }
+        public bool? CaseSensitive { get => _explicitNullValueCaseSensitive; set { _explicitNullValueCaseSensitive = value; AdditionalData?.Remove("case_sensitive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("case_sensitive"); else _explicitNullProperties?.Remove("case_sensitive"); } }
         private bool? _explicitNullValueCaseSensitive = default!;
         /// <summary>marking the field is not a unique key.</summary>
-        public bool? Disable { get => _explicitNullValueDisable; set { _explicitNullValueDisable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_disable"); else _explicitNullProperties?.Remove("_disable"); } }
+        public bool? Disable { get => _explicitNullValueDisable; set { _explicitNullValueDisable = value; AdditionalData?.Remove("_disable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_disable"); else _explicitNullProperties?.Remove("_disable"); } }
         private bool? _explicitNullValueDisable = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemUniqueOneOf1"/> and sets the default values.

@@ -19,123 +19,136 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
-            if (parseNode.GetChildNode("Campaign_Source") is { } nullNodeCampaignSource && nullNodeCampaignSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignSource = null;
-            if (parseNode.GetChildNode("Closing_Date") is { } nullNodeClosingDate && nullNodeClosingDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClosingDate = null;
-            if (parseNode.GetChildNode("Contact_Role") is { } nullNodeContactRole && nullNodeContactRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactRole = null;
-            if (parseNode.GetChildNode("Deal_Name") is { } nullNodeDealName && nullNodeDealName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DealName = null;
-            if (parseNode.GetChildNode("Description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("Lead_Source") is { } nullNodeLeadSource && nullNodeLeadSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadSource = null;
-            if (parseNode.GetChildNode("$move_attachments") is { } nullNodeMoveAttachments && nullNodeMoveAttachments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MoveAttachments = null;
-            if (parseNode.GetChildNode("Next_Step") is { } nullNodeNextStep && nullNodeNextStep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextStep = null;
-            if (parseNode.GetChildNode("Pipeline") is { } nullNodePipeline && nullNodePipeline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pipeline = null;
-            if (parseNode.GetChildNode("Probability") is { } nullNodeProbability && nullNodeProbability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Probability = null;
-            if (parseNode.GetChildNode("Stage") is { } nullNodeStage && nullNodeStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stage = null;
-            if (parseNode.GetChildNode("Type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("Amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("Amount"); }
+            else if (parseNode.GetChildNode("Amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("Campaign_Source") is null) { _explicitNullValueCampaignSource = default!; _explicitNullProperties?.Remove("Campaign_Source"); }
+            else if (parseNode.GetChildNode("Campaign_Source") is { } nullNodeCampaignSource && nullNodeCampaignSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignSource = null;
+            if (parseNode.GetChildNode("Closing_Date") is null) { _explicitNullValueClosingDate = default!; _explicitNullProperties?.Remove("Closing_Date"); }
+            else if (parseNode.GetChildNode("Closing_Date") is { } nullNodeClosingDate && nullNodeClosingDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClosingDate = null;
+            if (parseNode.GetChildNode("Contact_Role") is null) { _explicitNullValueContactRole = default!; _explicitNullProperties?.Remove("Contact_Role"); }
+            else if (parseNode.GetChildNode("Contact_Role") is { } nullNodeContactRole && nullNodeContactRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactRole = null;
+            if (parseNode.GetChildNode("Deal_Name") is null) { _explicitNullValueDealName = default!; _explicitNullProperties?.Remove("Deal_Name"); }
+            else if (parseNode.GetChildNode("Deal_Name") is { } nullNodeDealName && nullNodeDealName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DealName = null;
+            if (parseNode.GetChildNode("Description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("Description"); }
+            else if (parseNode.GetChildNode("Description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("Lead_Source") is null) { _explicitNullValueLeadSource = default!; _explicitNullProperties?.Remove("Lead_Source"); }
+            else if (parseNode.GetChildNode("Lead_Source") is { } nullNodeLeadSource && nullNodeLeadSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadSource = null;
+            if (parseNode.GetChildNode("$move_attachments") is null) { _explicitNullValueMoveAttachments = default!; _explicitNullProperties?.Remove("$move_attachments"); }
+            else if (parseNode.GetChildNode("$move_attachments") is { } nullNodeMoveAttachments && nullNodeMoveAttachments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MoveAttachments = null;
+            if (parseNode.GetChildNode("Next_Step") is null) { _explicitNullValueNextStep = default!; _explicitNullProperties?.Remove("Next_Step"); }
+            else if (parseNode.GetChildNode("Next_Step") is { } nullNodeNextStep && nullNodeNextStep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextStep = null;
+            if (parseNode.GetChildNode("Pipeline") is null) { _explicitNullValuePipeline = default!; _explicitNullProperties?.Remove("Pipeline"); }
+            else if (parseNode.GetChildNode("Pipeline") is { } nullNodePipeline && nullNodePipeline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pipeline = null;
+            if (parseNode.GetChildNode("Probability") is null) { _explicitNullValueProbability = default!; _explicitNullProperties?.Remove("Probability"); }
+            else if (parseNode.GetChildNode("Probability") is { } nullNodeProbability && nullNodeProbability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Probability = null;
+            if (parseNode.GetChildNode("Stage") is null) { _explicitNullValueStage = default!; _explicitNullProperties?.Remove("Stage"); }
+            else if (parseNode.GetChildNode("Stage") is { } nullNodeStage && nullNodeStage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stage = null;
+            if (parseNode.GetChildNode("Type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("Type"); }
+            else if (parseNode.GetChildNode("Type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Expected revenue amount for the Deal</summary>
-        public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Amount"); else _explicitNullProperties?.Remove("Amount"); } }
+        public double? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("Amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Amount"); else _explicitNullProperties?.Remove("Amount"); } }
         private double? _explicitNullValueAmount = default!;
         /// <summary>Campaign source associated with this Deal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CampaignSource { get => _explicitNullValueCampaignSource; set { _explicitNullValueCampaignSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Campaign_Source"); else _explicitNullProperties?.Remove("Campaign_Source"); } }
+        public string? CampaignSource { get => _explicitNullValueCampaignSource; set { _explicitNullValueCampaignSource = value; AdditionalData?.Remove("Campaign_Source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Campaign_Source"); else _explicitNullProperties?.Remove("Campaign_Source"); } }
         private string? _explicitNullValueCampaignSource = default!;
 #nullable restore
 #else
-        public string CampaignSource { get => _explicitNullValueCampaignSource; set { _explicitNullValueCampaignSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Campaign_Source"); else _explicitNullProperties?.Remove("Campaign_Source"); } }
+        public string CampaignSource { get => _explicitNullValueCampaignSource; set { _explicitNullValueCampaignSource = value; AdditionalData?.Remove("Campaign_Source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Campaign_Source"); else _explicitNullProperties?.Remove("Campaign_Source"); } }
         private string _explicitNullValueCampaignSource = default!;
 #endif
         /// <summary>Expected closing date for the Deal (ISO 8601 date format: YYYY-MM-DD)</summary>
-        public Date? ClosingDate { get => _explicitNullValueClosingDate; set { _explicitNullValueClosingDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Closing_Date"); else _explicitNullProperties?.Remove("Closing_Date"); } }
+        public Date? ClosingDate { get => _explicitNullValueClosingDate; set { _explicitNullValueClosingDate = value; AdditionalData?.Remove("Closing_Date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Closing_Date"); else _explicitNullProperties?.Remove("Closing_Date"); } }
         private Date? _explicitNullValueClosingDate = default!;
         /// <summary>Represents the **role** of the Contact in this Deal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactRole { get => _explicitNullValueContactRole; set { _explicitNullValueContactRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contact_Role"); else _explicitNullProperties?.Remove("Contact_Role"); } }
+        public string? ContactRole { get => _explicitNullValueContactRole; set { _explicitNullValueContactRole = value; AdditionalData?.Remove("Contact_Role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contact_Role"); else _explicitNullProperties?.Remove("Contact_Role"); } }
         private string? _explicitNullValueContactRole = default!;
 #nullable restore
 #else
-        public string ContactRole { get => _explicitNullValueContactRole; set { _explicitNullValueContactRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contact_Role"); else _explicitNullProperties?.Remove("Contact_Role"); } }
+        public string ContactRole { get => _explicitNullValueContactRole; set { _explicitNullValueContactRole = value; AdditionalData?.Remove("Contact_Role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contact_Role"); else _explicitNullProperties?.Remove("Contact_Role"); } }
         private string _explicitNullValueContactRole = default!;
 #endif
         /// <summary>Specify the name of the Deal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DealName { get => _explicitNullValueDealName; set { _explicitNullValueDealName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deal_Name"); else _explicitNullProperties?.Remove("Deal_Name"); } }
+        public string? DealName { get => _explicitNullValueDealName; set { _explicitNullValueDealName = value; AdditionalData?.Remove("Deal_Name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deal_Name"); else _explicitNullProperties?.Remove("Deal_Name"); } }
         private string? _explicitNullValueDealName = default!;
 #nullable restore
 #else
-        public string DealName { get => _explicitNullValueDealName; set { _explicitNullValueDealName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deal_Name"); else _explicitNullProperties?.Remove("Deal_Name"); } }
+        public string DealName { get => _explicitNullValueDealName; set { _explicitNullValueDealName = value; AdditionalData?.Remove("Deal_Name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deal_Name"); else _explicitNullProperties?.Remove("Deal_Name"); } }
         private string _explicitNullValueDealName = default!;
 #endif
         /// <summary>Detailed description of the Deal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Description"); else _explicitNullProperties?.Remove("Description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("Description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Description"); else _explicitNullProperties?.Remove("Description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Description"); else _explicitNullProperties?.Remove("Description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("Description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Description"); else _explicitNullProperties?.Remove("Description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Source from which the Lead originated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LeadSource { get => _explicitNullValueLeadSource; set { _explicitNullValueLeadSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Lead_Source"); else _explicitNullProperties?.Remove("Lead_Source"); } }
+        public string? LeadSource { get => _explicitNullValueLeadSource; set { _explicitNullValueLeadSource = value; AdditionalData?.Remove("Lead_Source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Lead_Source"); else _explicitNullProperties?.Remove("Lead_Source"); } }
         private string? _explicitNullValueLeadSource = default!;
 #nullable restore
 #else
-        public string LeadSource { get => _explicitNullValueLeadSource; set { _explicitNullValueLeadSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Lead_Source"); else _explicitNullProperties?.Remove("Lead_Source"); } }
+        public string LeadSource { get => _explicitNullValueLeadSource; set { _explicitNullValueLeadSource = value; AdditionalData?.Remove("Lead_Source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Lead_Source"); else _explicitNullProperties?.Remove("Lead_Source"); } }
         private string _explicitNullValueLeadSource = default!;
 #endif
         /// <summary>If true, moves attachments from the Lead to the Deal</summary>
-        public bool? MoveAttachments { get => _explicitNullValueMoveAttachments; set { _explicitNullValueMoveAttachments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$move_attachments"); else _explicitNullProperties?.Remove("$move_attachments"); } }
+        public bool? MoveAttachments { get => _explicitNullValueMoveAttachments; set { _explicitNullValueMoveAttachments = value; AdditionalData?.Remove("$move_attachments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$move_attachments"); else _explicitNullProperties?.Remove("$move_attachments"); } }
         private bool? _explicitNullValueMoveAttachments = default!;
         /// <summary>Next action or milestone for the Deal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextStep { get => _explicitNullValueNextStep; set { _explicitNullValueNextStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Next_Step"); else _explicitNullProperties?.Remove("Next_Step"); } }
+        public string? NextStep { get => _explicitNullValueNextStep; set { _explicitNullValueNextStep = value; AdditionalData?.Remove("Next_Step"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Next_Step"); else _explicitNullProperties?.Remove("Next_Step"); } }
         private string? _explicitNullValueNextStep = default!;
 #nullable restore
 #else
-        public string NextStep { get => _explicitNullValueNextStep; set { _explicitNullValueNextStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Next_Step"); else _explicitNullProperties?.Remove("Next_Step"); } }
+        public string NextStep { get => _explicitNullValueNextStep; set { _explicitNullValueNextStep = value; AdditionalData?.Remove("Next_Step"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Next_Step"); else _explicitNullProperties?.Remove("Next_Step"); } }
         private string _explicitNullValueNextStep = default!;
 #endif
         /// <summary>Indicates the **sales pipeline** for the Deal. Must match an existing pipeline in the CRM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pipeline { get => _explicitNullValuePipeline; set { _explicitNullValuePipeline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Pipeline"); else _explicitNullProperties?.Remove("Pipeline"); } }
+        public string? Pipeline { get => _explicitNullValuePipeline; set { _explicitNullValuePipeline = value; AdditionalData?.Remove("Pipeline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Pipeline"); else _explicitNullProperties?.Remove("Pipeline"); } }
         private string? _explicitNullValuePipeline = default!;
 #nullable restore
 #else
-        public string Pipeline { get => _explicitNullValuePipeline; set { _explicitNullValuePipeline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Pipeline"); else _explicitNullProperties?.Remove("Pipeline"); } }
+        public string Pipeline { get => _explicitNullValuePipeline; set { _explicitNullValuePipeline = value; AdditionalData?.Remove("Pipeline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Pipeline"); else _explicitNullProperties?.Remove("Pipeline"); } }
         private string _explicitNullValuePipeline = default!;
 #endif
         /// <summary>Win probability percentage (0-100)</summary>
-        public int? Probability { get => _explicitNullValueProbability; set { _explicitNullValueProbability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Probability"); else _explicitNullProperties?.Remove("Probability"); } }
+        public int? Probability { get => _explicitNullValueProbability; set { _explicitNullValueProbability = value; AdditionalData?.Remove("Probability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Probability"); else _explicitNullProperties?.Remove("Probability"); } }
         private int? _explicitNullValueProbability = default!;
         /// <summary>Current stage of the Deal within the specified Pipeline. Must be valid for the chosen Pipeline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Stage { get => _explicitNullValueStage; set { _explicitNullValueStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Stage"); else _explicitNullProperties?.Remove("Stage"); } }
+        public string? Stage { get => _explicitNullValueStage; set { _explicitNullValueStage = value; AdditionalData?.Remove("Stage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Stage"); else _explicitNullProperties?.Remove("Stage"); } }
         private string? _explicitNullValueStage = default!;
 #nullable restore
 #else
-        public string Stage { get => _explicitNullValueStage; set { _explicitNullValueStage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Stage"); else _explicitNullProperties?.Remove("Stage"); } }
+        public string Stage { get => _explicitNullValueStage; set { _explicitNullValueStage = value; AdditionalData?.Remove("Stage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Stage"); else _explicitNullProperties?.Remove("Stage"); } }
         private string _explicitNullValueStage = default!;
 #endif
         /// <summary>Type of Deal (e.g., New Business, Existing Business)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Type"); else _explicitNullProperties?.Remove("Type"); } }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("Type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Type"); else _explicitNullProperties?.Remove("Type"); } }
         private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Type"); else _explicitNullProperties?.Remove("Type"); } }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("Type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Type"); else _explicitNullProperties?.Remove("Type"); } }
         private string _explicitNullValueType = default!;
 #endif
         /// <summary>

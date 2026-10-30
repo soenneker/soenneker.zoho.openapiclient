@@ -7,6 +7,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LayoutsFieldSchemaCreatedSource
     {
+        [EnumMember(Value = "")]
+        EmptyString,
+
         [EnumMember(Value = "default")]
         #pragma warning disable CS1591
         DefaultValue,

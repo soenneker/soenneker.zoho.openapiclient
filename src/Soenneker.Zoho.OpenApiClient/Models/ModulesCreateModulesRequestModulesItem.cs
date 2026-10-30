@@ -18,67 +18,73 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access_type") is { } nullNodeAccessType && nullNodeAccessType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessType = null;
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("display_field") is { } nullNodeDisplayField && nullNodeDisplayField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayField = null;
-            if (parseNode.GetChildNode("plural_label") is { } nullNodePluralLabel && nullNodePluralLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralLabel = null;
-            if (parseNode.GetChildNode("profiles") is { } nullNodeProfiles && nullNodeProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profiles = null;
-            if (parseNode.GetChildNode("singular_label") is { } nullNodeSingularLabel && nullNodeSingularLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingularLabel = null;
+            if (parseNode.GetChildNode("access_type") is null) { _explicitNullValueAccessType = default!; _explicitNullProperties?.Remove("access_type"); }
+            else if (parseNode.GetChildNode("access_type") is { } nullNodeAccessType && nullNodeAccessType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessType = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("display_field") is null) { _explicitNullValueDisplayField = default!; _explicitNullProperties?.Remove("display_field"); }
+            else if (parseNode.GetChildNode("display_field") is { } nullNodeDisplayField && nullNodeDisplayField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayField = null;
+            if (parseNode.GetChildNode("plural_label") is null) { _explicitNullValuePluralLabel = default!; _explicitNullProperties?.Remove("plural_label"); }
+            else if (parseNode.GetChildNode("plural_label") is { } nullNodePluralLabel && nullNodePluralLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralLabel = null;
+            if (parseNode.GetChildNode("profiles") is null) { _explicitNullValueProfiles = default!; _explicitNullProperties?.Remove("profiles"); }
+            else if (parseNode.GetChildNode("profiles") is { } nullNodeProfiles && nullNodeProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profiles = null;
+            if (parseNode.GetChildNode("singular_label") is null) { _explicitNullValueSingularLabel = default!; _explicitNullProperties?.Remove("singular_label"); }
+            else if (parseNode.GetChildNode("singular_label") is { } nullNodeSingularLabel && nullNodeSingularLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingularLabel = null;
         }
 
         /// <summary>Specify the access type for the module.Defaults to org_based when omitted. Use team_based to create a team module.Possible values:**org_based** - The module is accessible based on organizational profile settings.**team_based** - The module is restricted to team-based access.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemAccessType? AccessType { get => _explicitNullValueAccessType; set { _explicitNullValueAccessType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_type"); else _explicitNullProperties?.Remove("access_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemAccessType? AccessType { get => _explicitNullValueAccessType; set { _explicitNullValueAccessType = value; AdditionalData?.Remove("access_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_type"); else _explicitNullProperties?.Remove("access_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemAccessType? _explicitNullValueAccessType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the unique API name for the module. The name must begin with an English alphabet character, must not end with an underscore, and must not contain two consecutive underscores. If omitted, the system generates the API name from the **plural_label** value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>Specify the details of the display field for the module. This is optional, but if provided, either field_label or data_type is mandatory. Supported data types are **autonumber** and **text**. If this is not specified, the system generates a text display field.  If data_type is &apos;autonumber&apos;, then auto_number configuration with start_number is mandatory. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField? DisplayField { get => _explicitNullValueDisplayField; set { _explicitNullValueDisplayField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_field"); else _explicitNullProperties?.Remove("display_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField? DisplayField { get => _explicitNullValueDisplayField; set { _explicitNullValueDisplayField = value; AdditionalData?.Remove("display_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_field"); else _explicitNullProperties?.Remove("display_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField? _explicitNullValueDisplayField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField DisplayField { get => _explicitNullValueDisplayField; set { _explicitNullValueDisplayField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_field"); else _explicitNullProperties?.Remove("display_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField DisplayField { get => _explicitNullValueDisplayField; set { _explicitNullValueDisplayField = value; AdditionalData?.Remove("display_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_field"); else _explicitNullProperties?.Remove("display_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField _explicitNullValueDisplayField = default!;
 #endif
         /// <summary>Specify the unique plural name of the module. Only letters, numbers, and spaces are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
+        public string? PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; AdditionalData?.Remove("plural_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
         private string? _explicitNullValuePluralLabel = default!;
 #nullable restore
 #else
-        public string PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
+        public string PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; AdditionalData?.Remove("plural_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
         private string _explicitNullValuePluralLabel = default!;
 #endif
         /// <summary>Specify the array of profile IDs that determine which user profiles can access this module. Required for org_based modules. Do not pass this key for team_based modules. Duplicate profile IDs are not allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemProfilesItem>? Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemProfilesItem>? Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; AdditionalData?.Remove("profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemProfilesItem>? _explicitNullValueProfiles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemProfilesItem> Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemProfilesItem> Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; AdditionalData?.Remove("profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemProfilesItem> _explicitNullValueProfiles = default!;
 #endif
         /// <summary>Specify the unique singular name of the module. Only letters, numbers, and spaces are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SingularLabel { get => _explicitNullValueSingularLabel; set { _explicitNullValueSingularLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_label"); else _explicitNullProperties?.Remove("singular_label"); } }
+        public string? SingularLabel { get => _explicitNullValueSingularLabel; set { _explicitNullValueSingularLabel = value; AdditionalData?.Remove("singular_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_label"); else _explicitNullProperties?.Remove("singular_label"); } }
         private string? _explicitNullValueSingularLabel = default!;
 #nullable restore
 #else
-        public string SingularLabel { get => _explicitNullValueSingularLabel; set { _explicitNullValueSingularLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_label"); else _explicitNullProperties?.Remove("singular_label"); } }
+        public string SingularLabel { get => _explicitNullValueSingularLabel; set { _explicitNullValueSingularLabel = value; AdditionalData?.Remove("singular_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_label"); else _explicitNullProperties?.Remove("singular_label"); } }
         private string _explicitNullValueSingularLabel = default!;
 #endif
         /// <summary>
@@ -106,7 +112,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_type", n => { AccessType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemAccessType>(); } },
+                { "access_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemAccessType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccessType = default; _explicitNullProperties?.Remove("access_type"); AdditionalData["access_type"] = unknown; } else { AccessType = parsed; AdditionalData.Remove("access_type"); } } },
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
                 { "display_field", n => { DisplayField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesCreateModulesRequestModulesItemDisplayField.CreateFromDiscriminatorValue); } },
                 { "plural_label", n => { PluralLabel = n.GetStringValue(); } },

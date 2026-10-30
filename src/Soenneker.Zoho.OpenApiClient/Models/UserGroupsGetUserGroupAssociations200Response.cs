@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("associations") is { } nullNodeAssociations && nullNodeAssociations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Associations = null;
+            if (parseNode.GetChildNode("associations") is null) { _explicitNullValueAssociations = default!; _explicitNullProperties?.Remove("associations"); }
+            else if (parseNode.GetChildNode("associations") is { } nullNodeAssociations && nullNodeAssociations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Associations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the array of CRM resources associated with the specified user group. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociations200ResponseAssociationsItem>? Associations { get => _explicitNullValueAssociations; set { _explicitNullValueAssociations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associations"); else _explicitNullProperties?.Remove("associations"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociations200ResponseAssociationsItem>? Associations { get => _explicitNullValueAssociations; set { _explicitNullValueAssociations = value; AdditionalData?.Remove("associations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associations"); else _explicitNullProperties?.Remove("associations"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociations200ResponseAssociationsItem>? _explicitNullValueAssociations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociations200ResponseAssociationsItem> Associations { get => _explicitNullValueAssociations; set { _explicitNullValueAssociations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associations"); else _explicitNullProperties?.Remove("associations"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociations200ResponseAssociationsItem> Associations { get => _explicitNullValueAssociations; set { _explicitNullValueAssociations = value; AdditionalData?.Remove("associations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associations"); else _explicitNullProperties?.Remove("associations"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociations200ResponseAssociationsItem> _explicitNullValueAssociations = default!;
 #endif
         /// <summary>

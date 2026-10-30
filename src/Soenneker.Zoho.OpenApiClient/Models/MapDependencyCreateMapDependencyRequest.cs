@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("map_dependency") is { } nullNodeMapDependency && nullNodeMapDependency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MapDependency = null;
+            if (parseNode.GetChildNode("map_dependency") is null) { _explicitNullValueMapDependency = default!; _explicitNullProperties?.Remove("map_dependency"); }
+            else if (parseNode.GetChildNode("map_dependency") is { } nullNodeMapDependency && nullNodeMapDependency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MapDependency = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the field dependency configuration to create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItem>? MapDependency { get => _explicitNullValueMapDependency; set { _explicitNullValueMapDependency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_dependency"); else _explicitNullProperties?.Remove("map_dependency"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItem>? MapDependency { get => _explicitNullValueMapDependency; set { _explicitNullValueMapDependency = value; AdditionalData?.Remove("map_dependency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_dependency"); else _explicitNullProperties?.Remove("map_dependency"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItem>? _explicitNullValueMapDependency = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItem> MapDependency { get => _explicitNullValueMapDependency; set { _explicitNullValueMapDependency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_dependency"); else _explicitNullProperties?.Remove("map_dependency"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItem> MapDependency { get => _explicitNullValueMapDependency; set { _explicitNullValueMapDependency = value; AdditionalData?.Remove("map_dependency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_dependency"); else _explicitNullProperties?.Remove("map_dependency"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyCreateMapDependencyRequestMapDependencyItem> _explicitNullValueMapDependency = default!;
 #endif
         /// <summary>

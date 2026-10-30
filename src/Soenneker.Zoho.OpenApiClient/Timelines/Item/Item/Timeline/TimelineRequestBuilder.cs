@@ -65,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Timelines.Item.Item.Timeline.TimelineRequestBuilder.TimelineRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/timelines/{module}/{recordId}/__timeline", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

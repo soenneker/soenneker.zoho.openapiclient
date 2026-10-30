@@ -18,32 +18,36 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("complete_mask") is { } nullNodeCompleteMask && nullNodeCompleteMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompleteMask = null;
-            if (parseNode.GetChildNode("profiles") is { } nullNodeProfiles && nullNodeProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profiles = null;
-            if (parseNode.GetChildNode("show_first") is { } nullNodeShowFirst && nullNodeShowFirst.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowFirst = null;
-            if (parseNode.GetChildNode("show_last") is { } nullNodeShowLast && nullNodeShowLast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowLast = null;
+            if (parseNode.GetChildNode("complete_mask") is null) { _explicitNullValueCompleteMask = default!; _explicitNullProperties?.Remove("complete_mask"); }
+            else if (parseNode.GetChildNode("complete_mask") is { } nullNodeCompleteMask && nullNodeCompleteMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompleteMask = null;
+            if (parseNode.GetChildNode("profiles") is null) { _explicitNullValueProfiles = default!; _explicitNullProperties?.Remove("profiles"); }
+            else if (parseNode.GetChildNode("profiles") is { } nullNodeProfiles && nullNodeProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profiles = null;
+            if (parseNode.GetChildNode("show_first") is null) { _explicitNullValueShowFirst = default!; _explicitNullProperties?.Remove("show_first"); }
+            else if (parseNode.GetChildNode("show_first") is { } nullNodeShowFirst && nullNodeShowFirst.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowFirst = null;
+            if (parseNode.GetChildNode("show_last") is null) { _explicitNullValueShowLast = default!; _explicitNullProperties?.Remove("show_last"); }
+            else if (parseNode.GetChildNode("show_last") is { } nullNodeShowLast && nullNodeShowLast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowLast = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the entire field value is hidden from unauthorized users rather than partially revealed. Possible values: `true` — the value is completely obscured; `false` — partial character reveal rules defined by show_first and show_last apply.</summary>
-        public bool? CompleteMask { get => _explicitNullValueCompleteMask; set { _explicitNullValueCompleteMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complete_mask"); else _explicitNullProperties?.Remove("complete_mask"); } }
+        public bool? CompleteMask { get => _explicitNullValueCompleteMask; set { _explicitNullValueCompleteMask = value; AdditionalData?.Remove("complete_mask"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complete_mask"); else _explicitNullProperties?.Remove("complete_mask"); } }
         private bool? _explicitNullValueCompleteMask = default!;
         /// <summary>Contains the list of CRM profiles whose members are permitted to view the unmasked field value, exempting those users from the masking rules applied to all other profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MaskDetailsProfile>? Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MaskDetailsProfile>? Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; AdditionalData?.Remove("profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MaskDetailsProfile>? _explicitNullValueProfiles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MaskDetailsProfile> Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MaskDetailsProfile> Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; AdditionalData?.Remove("profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MaskDetailsProfile> _explicitNullValueProfiles = default!;
 #endif
         /// <summary>Indicates the number of characters revealed at the start of the field value when partial masking is applied, allowing a prefix of the data to remain visible while the remainder is hidden.</summary>
-        public int? ShowFirst { get => _explicitNullValueShowFirst; set { _explicitNullValueShowFirst = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_first"); else _explicitNullProperties?.Remove("show_first"); } }
+        public int? ShowFirst { get => _explicitNullValueShowFirst; set { _explicitNullValueShowFirst = value; AdditionalData?.Remove("show_first"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_first"); else _explicitNullProperties?.Remove("show_first"); } }
         private int? _explicitNullValueShowFirst = default!;
         /// <summary>Indicates the number of characters revealed at the end of the field value when partial masking is applied, allowing a suffix of the data to remain visible while the preceding portion is hidden.</summary>
-        public int? ShowLast { get => _explicitNullValueShowLast; set { _explicitNullValueShowLast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_last"); else _explicitNullProperties?.Remove("show_last"); } }
+        public int? ShowLast { get => _explicitNullValueShowLast; set { _explicitNullValueShowLast = value; AdditionalData?.Remove("show_last"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_last"); else _explicitNullProperties?.Remove("show_last"); } }
         private int? _explicitNullValueShowLast = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMaskDetailsPartialMask"/> and sets the default values.

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sources_count") is { } nullNodeSourcesCount && nullNodeSourcesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourcesCount = null;
+            if (parseNode.GetChildNode("sources_count") is null) { _explicitNullValueSourcesCount = default!; _explicitNullProperties?.Remove("sources_count"); }
+            else if (parseNode.GetChildNode("sources_count") is { } nullNodeSourcesCount && nullNodeSourcesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourcesCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the array containing the member source counts for the specified user group. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItem>? SourcesCount { get => _explicitNullValueSourcesCount; set { _explicitNullValueSourcesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources_count"); else _explicitNullProperties?.Remove("sources_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItem>? SourcesCount { get => _explicitNullValueSourcesCount; set { _explicitNullValueSourcesCount = value; AdditionalData?.Remove("sources_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources_count"); else _explicitNullProperties?.Remove("sources_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItem>? _explicitNullValueSourcesCount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItem> SourcesCount { get => _explicitNullValueSourcesCount; set { _explicitNullValueSourcesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources_count"); else _explicitNullProperties?.Remove("sources_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItem> SourcesCount { get => _explicitNullValueSourcesCount; set { _explicitNullValueSourcesCount = value; AdditionalData?.Remove("sources_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources_count"); else _explicitNullProperties?.Remove("sources_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSourcesCount200ResponseSourcesCountItem> _explicitNullValueSourcesCount = default!;
 #endif
         /// <summary>

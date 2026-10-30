@@ -178,7 +178,7 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Global_picklistsRequestBuilder.Global_picklistsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/global_picklists/settings/global_picklists?ids={ids}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/global_picklists/settings/global_picklists?ids={ids}", RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/global_picklists/settings/global_picklists", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -197,7 +197,7 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklists.Global_picklistsRequestBuilder.Global_picklistsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/global_picklists/settings/global_picklists", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -218,7 +218,7 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/global_picklists/settings/global_picklists", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -240,7 +240,7 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/global_picklists/settings/global_picklists", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

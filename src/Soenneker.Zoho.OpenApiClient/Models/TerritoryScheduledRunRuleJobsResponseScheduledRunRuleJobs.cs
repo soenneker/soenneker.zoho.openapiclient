@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("job_id") is { } nullNodeJobId && nullNodeJobId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobId = null;
-            if (parseNode.GetChildNode("scheduled_by") is { } nullNodeScheduledBy && nullNodeScheduledBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledBy = null;
-            if (parseNode.GetChildNode("scheduled_time") is { } nullNodeScheduledTime && nullNodeScheduledTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledTime = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("job_id") is null) { _explicitNullValueJobId = default!; _explicitNullProperties?.Remove("job_id"); }
+            else if (parseNode.GetChildNode("job_id") is { } nullNodeJobId && nullNodeJobId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobId = null;
+            if (parseNode.GetChildNode("scheduled_by") is null) { _explicitNullValueScheduledBy = default!; _explicitNullProperties?.Remove("scheduled_by"); }
+            else if (parseNode.GetChildNode("scheduled_by") is { } nullNodeScheduledBy && nullNodeScheduledBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledBy = null;
+            if (parseNode.GetChildNode("scheduled_time") is null) { _explicitNullValueScheduledTime = default!; _explicitNullProperties?.Remove("scheduled_time"); }
+            else if (parseNode.GetChildNode("scheduled_time") is { } nullNodeScheduledTime && nullNodeScheduledTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledTime = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,28 +33,28 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the unique identifier of the scheduled run rule job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        public string? JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; AdditionalData?.Remove("job_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
         private string? _explicitNullValueJobId = default!;
 #nullable restore
 #else
-        public string JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
+        public string JobId { get => _explicitNullValueJobId; set { _explicitNullValueJobId = value; AdditionalData?.Remove("job_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_id"); else _explicitNullProperties?.Remove("job_id"); } }
         private string _explicitNullValueJobId = default!;
 #endif
         /// <summary>Represents the user who scheduled the run rule job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsScheduledBy? ScheduledBy { get => _explicitNullValueScheduledBy; set { _explicitNullValueScheduledBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_by"); else _explicitNullProperties?.Remove("scheduled_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsScheduledBy? ScheduledBy { get => _explicitNullValueScheduledBy; set { _explicitNullValueScheduledBy = value; AdditionalData?.Remove("scheduled_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_by"); else _explicitNullProperties?.Remove("scheduled_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsScheduledBy? _explicitNullValueScheduledBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsScheduledBy ScheduledBy { get => _explicitNullValueScheduledBy; set { _explicitNullValueScheduledBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_by"); else _explicitNullProperties?.Remove("scheduled_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsScheduledBy ScheduledBy { get => _explicitNullValueScheduledBy; set { _explicitNullValueScheduledBy = value; AdditionalData?.Remove("scheduled_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_by"); else _explicitNullProperties?.Remove("scheduled_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsScheduledBy _explicitNullValueScheduledBy = default!;
 #endif
         /// <summary>Represents the date and time when the run rule job was scheduled, in ISO 8601 format.</summary>
-        public DateTimeOffset? ScheduledTime { get => _explicitNullValueScheduledTime; set { _explicitNullValueScheduledTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_time"); else _explicitNullProperties?.Remove("scheduled_time"); } }
+        public DateTimeOffset? ScheduledTime { get => _explicitNullValueScheduledTime; set { _explicitNullValueScheduledTime = value; AdditionalData?.Remove("scheduled_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_time"); else _explicitNullProperties?.Remove("scheduled_time"); } }
         private DateTimeOffset? _explicitNullValueScheduledTime = default!;
         /// <summary>Represents the current status of the scheduled run rule job. Possible values: **COMPLETED**, **IN_PROGRESS**, **FAILED**, **SCHEDULED**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobs"/> and sets the default values.
@@ -80,7 +84,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "job_id", n => { JobId = n.GetStringValue(); } },
                 { "scheduled_by", n => { ScheduledBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsScheduledBy>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsScheduledBy.CreateFromDiscriminatorValue); } },
                 { "scheduled_time", n => { ScheduledTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobsStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

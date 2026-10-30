@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Contact_Role") is { } nullNodeContactRole && nullNodeContactRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactRole = null;
-            if (parseNode.GetChildNode("Department") is { } nullNodeDepartment && nullNodeDepartment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Department = null;
-            if (parseNode.GetChildNode("Owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("Contact_Role") is null) { _explicitNullValueContactRole = default!; _explicitNullProperties?.Remove("Contact_Role"); }
+            else if (parseNode.GetChildNode("Contact_Role") is { } nullNodeContactRole && nullNodeContactRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactRole = null;
+            if (parseNode.GetChildNode("Department") is null) { _explicitNullValueDepartment = default!; _explicitNullProperties?.Remove("Department"); }
+            else if (parseNode.GetChildNode("Department") is { } nullNodeDepartment && nullNodeDepartment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Department = null;
+            if (parseNode.GetChildNode("Owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("Owner"); }
+            else if (parseNode.GetChildNode("Owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contact role information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemContactRole? ContactRole { get => _explicitNullValueContactRole; set { _explicitNullValueContactRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contact_Role"); else _explicitNullProperties?.Remove("Contact_Role"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemContactRole? ContactRole { get => _explicitNullValueContactRole; set { _explicitNullValueContactRole = value; AdditionalData?.Remove("Contact_Role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contact_Role"); else _explicitNullProperties?.Remove("Contact_Role"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemContactRole? _explicitNullValueContactRole = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemContactRole ContactRole { get => _explicitNullValueContactRole; set { _explicitNullValueContactRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contact_Role"); else _explicitNullProperties?.Remove("Contact_Role"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemContactRole ContactRole { get => _explicitNullValueContactRole; set { _explicitNullValueContactRole = value; AdditionalData?.Remove("Contact_Role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contact_Role"); else _explicitNullProperties?.Remove("Contact_Role"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemContactRole _explicitNullValueContactRole = default!;
 #endif
         /// <summary>Department of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Department { get => _explicitNullValueDepartment; set { _explicitNullValueDepartment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Department"); else _explicitNullProperties?.Remove("Department"); } }
+        public string? Department { get => _explicitNullValueDepartment; set { _explicitNullValueDepartment = value; AdditionalData?.Remove("Department"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Department"); else _explicitNullProperties?.Remove("Department"); } }
         private string? _explicitNullValueDepartment = default!;
 #nullable restore
 #else
-        public string Department { get => _explicitNullValueDepartment; set { _explicitNullValueDepartment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Department"); else _explicitNullProperties?.Remove("Department"); } }
+        public string Department { get => _explicitNullValueDepartment; set { _explicitNullValueDepartment = value; AdditionalData?.Remove("Department"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Department"); else _explicitNullProperties?.Remove("Department"); } }
         private string _explicitNullValueDepartment = default!;
 #endif
         /// <summary>Owner information for the contact role</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("Owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("Owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Owner"); else _explicitNullProperties?.Remove("Owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DealContactRolesGetAssociatedContactRoles200ResponseDataItemOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>

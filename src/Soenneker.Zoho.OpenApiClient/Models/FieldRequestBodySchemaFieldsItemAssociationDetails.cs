@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lookup_field") is { } nullNodeLookupField && nullNodeLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupField = null;
-            if (parseNode.GetChildNode("related_field") is { } nullNodeRelatedField && nullNodeRelatedField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedField = null;
+            if (parseNode.GetChildNode("lookup_field") is null) { _explicitNullValueLookupField = default!; _explicitNullProperties?.Remove("lookup_field"); }
+            else if (parseNode.GetChildNode("lookup_field") is { } nullNodeLookupField && nullNodeLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupField = null;
+            if (parseNode.GetChildNode("related_field") is null) { _explicitNullValueRelatedField = default!; _explicitNullProperties?.Remove("related_field"); }
+            else if (parseNode.GetChildNode("related_field") is { } nullNodeRelatedField && nullNodeRelatedField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedField = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the details of the lookup field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsLookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsLookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; AdditionalData?.Remove("lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsLookupField? _explicitNullValueLookupField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsLookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsLookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; AdditionalData?.Remove("lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsLookupField _explicitNullValueLookupField = default!;
 #endif
         /// <summary>Specify the details of the related field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsRelatedField? RelatedField { get => _explicitNullValueRelatedField; set { _explicitNullValueRelatedField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_field"); else _explicitNullProperties?.Remove("related_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsRelatedField? RelatedField { get => _explicitNullValueRelatedField; set { _explicitNullValueRelatedField = value; AdditionalData?.Remove("related_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_field"); else _explicitNullProperties?.Remove("related_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsRelatedField? _explicitNullValueRelatedField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsRelatedField RelatedField { get => _explicitNullValueRelatedField; set { _explicitNullValueRelatedField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_field"); else _explicitNullProperties?.Remove("related_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsRelatedField RelatedField { get => _explicitNullValueRelatedField; set { _explicitNullValueRelatedField = value; AdditionalData?.Remove("related_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_field"); else _explicitNullProperties?.Remove("related_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemAssociationDetailsRelatedField _explicitNullValueRelatedField = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("recycle_bin") is { } nullNodeRecycleBin && nullNodeRecycleBin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecycleBin = null;
+            if (parseNode.GetChildNode("recycle_bin") is null) { _explicitNullValueRecycleBin = default!; _explicitNullProperties?.Remove("recycle_bin"); }
+            else if (parseNode.GetChildNode("recycle_bin") is { } nullNodeRecycleBin && nullNodeRecycleBin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecycleBin = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of per-item results, where each entry is either a **SuccessResponse** for a successful item or an **ErrorResponse** for a failed item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinMultiStatusResponseRecycleBinItem>? RecycleBin { get => _explicitNullValueRecycleBin; set { _explicitNullValueRecycleBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recycle_bin"); else _explicitNullProperties?.Remove("recycle_bin"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinMultiStatusResponseRecycleBinItem>? RecycleBin { get => _explicitNullValueRecycleBin; set { _explicitNullValueRecycleBin = value; AdditionalData?.Remove("recycle_bin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recycle_bin"); else _explicitNullProperties?.Remove("recycle_bin"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinMultiStatusResponseRecycleBinItem>? _explicitNullValueRecycleBin = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinMultiStatusResponseRecycleBinItem> RecycleBin { get => _explicitNullValueRecycleBin; set { _explicitNullValueRecycleBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recycle_bin"); else _explicitNullProperties?.Remove("recycle_bin"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinMultiStatusResponseRecycleBinItem> RecycleBin { get => _explicitNullValueRecycleBin; set { _explicitNullValueRecycleBin = value; AdditionalData?.Remove("recycle_bin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recycle_bin"); else _explicitNullProperties?.Remove("recycle_bin"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinMultiStatusResponseRecycleBinItem> _explicitNullValueRecycleBin = default!;
 #endif
         /// <summary>

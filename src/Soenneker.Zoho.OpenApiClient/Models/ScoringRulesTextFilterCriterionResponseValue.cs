@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="string"/>, List&lt;global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValueOneOf1Item&gt;
+    /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScoringRulesTextFilterCriterionResponseValue : IComposedTypeWrapper, IParsable
@@ -18,21 +18,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValueOneOf1Item&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValueOneOf1Item>? ScoringRulesTextFilterCriterionResponseValueOneOf1Item { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValueOneOf1Item> ScoringRulesTextFilterCriterionResponseValueOneOf1Item { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? String { get; set; }
+        public string? ScoringRulesTextFilterCriterionResponseValueString { get; set; }
 #nullable restore
 #else
-        public string String { get; set; }
+        public string ScoringRulesTextFilterCriterionResponseValueString { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? String { get; set; }
+#nullable restore
+#else
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,17 +44,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValue();
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string scoringRulesTextFilterCriterionResponseValueStringValue)
+            {
+                result.ScoringRulesTextFilterCriterionResponseValueString = scoringRulesTextFilterCriterionResponseValueStringValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString) && parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValueOneOf1Item>(global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValueOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValueOneOf1Item> scoringRulesTextFilterCriterionResponseValueOneOf1ItemValue)
-            {
-                result.ScoringRulesTextFilterCriterionResponseValueOneOf1Item = scoringRulesTextFilterCriterionResponseValueOneOf1ItemValue;
-            }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            if (result.ScoringRulesTextFilterCriterionResponseValueOneOf1Item == null && result.String == null) result.UnrecognizedValue = unionPayload;
+            if (result.ScoringRulesTextFilterCriterionResponseValueString == null && result.String == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -63,6 +63,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,16 +74,16 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (ScoringRulesTextFilterCriterionResponseValueOneOf1Item == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ScoringRulesTextFilterCriterionResponseValueString == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(String != null)
+            if(ScoringRulesTextFilterCriterionResponseValueString != null)
             {
-                writer.WriteStringValue(null, String);
+                writer.WriteStringValue(null, ScoringRulesTextFilterCriterionResponseValueString);
             }
-            else if(ScoringRulesTextFilterCriterionResponseValueOneOf1Item != null)
+            else if(String != null)
             {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRulesTextFilterCriterionResponseValueOneOf1Item>(null, ScoringRulesTextFilterCriterionResponseValueOneOf1Item);
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

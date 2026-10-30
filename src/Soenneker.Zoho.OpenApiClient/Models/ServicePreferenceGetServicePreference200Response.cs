@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("service_preferences") is { } nullNodeServicePreferences && nullNodeServicePreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServicePreferences = null;
+            if (parseNode.GetChildNode("service_preferences") is null) { _explicitNullValueServicePreferences = default!; _explicitNullProperties?.Remove("service_preferences"); }
+            else if (parseNode.GetChildNode("service_preferences") is { } nullNodeServicePreferences && nullNodeServicePreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServicePreferences = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the service preference settings configured for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200ResponseServicePreferences? ServicePreferences { get => _explicitNullValueServicePreferences; set { _explicitNullValueServicePreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_preferences"); else _explicitNullProperties?.Remove("service_preferences"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200ResponseServicePreferences? ServicePreferences { get => _explicitNullValueServicePreferences; set { _explicitNullValueServicePreferences = value; AdditionalData?.Remove("service_preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_preferences"); else _explicitNullProperties?.Remove("service_preferences"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200ResponseServicePreferences? _explicitNullValueServicePreferences = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200ResponseServicePreferences ServicePreferences { get => _explicitNullValueServicePreferences; set { _explicitNullValueServicePreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_preferences"); else _explicitNullProperties?.Remove("service_preferences"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200ResponseServicePreferences ServicePreferences { get => _explicitNullValueServicePreferences; set { _explicitNullValueServicePreferences = value; AdditionalData?.Remove("service_preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_preferences"); else _explicitNullProperties?.Remove("service_preferences"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200ResponseServicePreferences _explicitNullValueServicePreferences = default!;
 #endif
         /// <summary>

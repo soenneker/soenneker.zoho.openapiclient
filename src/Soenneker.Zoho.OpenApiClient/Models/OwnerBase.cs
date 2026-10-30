@@ -18,21 +18,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the email address of the user who owns the service record.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGAtZohocorpComEmail? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGAtZohocorpComEmail? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGAtZohocorpComEmail? _explicitNullValueEmail = default!;
         /// <summary>Specify the unique ID of the user who owns the service record. Refer to the [Get users](users.yaml#$.paths./users.get) resource for valid values.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseId? _explicitNullValueId = default!;
         /// <summary>Specify the display name of the user who owns the service record.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseName? _explicitNullValueName = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.OwnerBase"/> and sets the default values.
@@ -59,9 +62,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGAtZohocorpComEmail>(); } },
-                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseId>(); } },
-                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseName>(); } },
+                { "email", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MadeshwaranGAtZohocorpComEmail>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmail = default; _explicitNullProperties?.Remove("email"); AdditionalData["email"] = unknown; } else { Email = parsed; AdditionalData.Remove("email"); } } },
+                { "id", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseId>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueId = default; _explicitNullProperties?.Remove("id"); AdditionalData["id"] = unknown; } else { Id = parsed; AdditionalData.Remove("id"); } } },
+                { "name", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.OwnerBaseName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueName = default; _explicitNullProperties?.Remove("name"); AdditionalData["name"] = unknown; } else { Name = parsed; AdditionalData.Remove("name"); } } },
             };
         }
         /// <summary>

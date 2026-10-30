@@ -18,17 +18,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
-            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+            if (parseNode.GetChildNode("period") is null) { _explicitNullValuePeriod = default!; _explicitNullProperties?.Remove("period"); }
+            else if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("unit") is null) { _explicitNullValueUnit = default!; _explicitNullProperties?.Remove("unit"); }
+            else if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the type of time interval. Required. Must be one of the allowed period values (invalid_schedule_actions_period if invalid). business_hours and business_days are only available when org business hours are configured. The API returns available periods from getWorkflowConfigurations.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfterPeriod? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfterPeriod? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; AdditionalData?.Remove("period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfterPeriod? _explicitNullValuePeriod = default!;
         /// <summary>Represents the numeric delay value. Required. Allowed ranges per period (unit_not_allowed_for_period if out of range): minutes: 5-180 (2-180 if 1-min repetition feature is enabled), hours: 0-99, days: 0-2000, weeks: 0-100, months: 0-24, years: 0-10, business_hours: 0-99, business_days: 0-2000. All values must be non-negative (no pre-event offsets for scheduled actions).</summary>
-        public int? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public int? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private int? _explicitNullValueUnit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfter"/> and sets the default values.
@@ -55,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "period", n => { Period = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfterPeriod>(); } },
+                { "period", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsNestedSchemaItemExecuteAfterPeriod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePeriod = default; _explicitNullProperties?.Remove("period"); AdditionalData["period"] = unknown; } else { Period = parsed; AdditionalData.Remove("period"); } } },
                 { "unit", n => { Unit = n.GetIntValue(); } },
             };
         }

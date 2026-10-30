@@ -18,36 +18,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Converted_Count") is { } nullNodeConvertedCount && nullNodeConvertedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvertedCount = null;
-            if (parseNode.GetChildNode("Failed_Count") is { } nullNodeFailedCount && nullNodeFailedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedCount = null;
-            if (parseNode.GetChildNode("Not_Converted_Count") is { } nullNodeNotConvertedCount && nullNodeNotConvertedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotConvertedCount = null;
-            if (parseNode.GetChildNode("Status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("Total_Count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+            if (parseNode.GetChildNode("Converted_Count") is null) { _explicitNullValueConvertedCount = default!; _explicitNullProperties?.Remove("Converted_Count"); }
+            else if (parseNode.GetChildNode("Converted_Count") is { } nullNodeConvertedCount && nullNodeConvertedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvertedCount = null;
+            if (parseNode.GetChildNode("Failed_Count") is null) { _explicitNullValueFailedCount = default!; _explicitNullProperties?.Remove("Failed_Count"); }
+            else if (parseNode.GetChildNode("Failed_Count") is { } nullNodeFailedCount && nullNodeFailedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedCount = null;
+            if (parseNode.GetChildNode("Not_Converted_Count") is null) { _explicitNullValueNotConvertedCount = default!; _explicitNullProperties?.Remove("Not_Converted_Count"); }
+            else if (parseNode.GetChildNode("Not_Converted_Count") is { } nullNodeNotConvertedCount && nullNodeNotConvertedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotConvertedCount = null;
+            if (parseNode.GetChildNode("Status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("Status"); }
+            else if (parseNode.GetChildNode("Status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("Total_Count") is null) { _explicitNullValueTotalCount = default!; _explicitNullProperties?.Remove("Total_Count"); }
+            else if (parseNode.GetChildNode("Total_Count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of leads that were successfully converted in the job. </summary>
-        public int? ConvertedCount { get => _explicitNullValueConvertedCount; set { _explicitNullValueConvertedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Converted_Count"); else _explicitNullProperties?.Remove("Converted_Count"); } }
+        public int? ConvertedCount { get => _explicitNullValueConvertedCount; set { _explicitNullValueConvertedCount = value; AdditionalData?.Remove("Converted_Count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Converted_Count"); else _explicitNullProperties?.Remove("Converted_Count"); } }
         private int? _explicitNullValueConvertedCount = default!;
         /// <summary>Represents the number of leads for which conversion failed. </summary>
-        public int? FailedCount { get => _explicitNullValueFailedCount; set { _explicitNullValueFailedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Failed_Count"); else _explicitNullProperties?.Remove("Failed_Count"); } }
+        public int? FailedCount { get => _explicitNullValueFailedCount; set { _explicitNullValueFailedCount = value; AdditionalData?.Remove("Failed_Count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Failed_Count"); else _explicitNullProperties?.Remove("Failed_Count"); } }
         private int? _explicitNullValueFailedCount = default!;
         /// <summary>Represents the number of leads that have not yet been converted. </summary>
-        public int? NotConvertedCount { get => _explicitNullValueNotConvertedCount; set { _explicitNullValueNotConvertedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Not_Converted_Count"); else _explicitNullProperties?.Remove("Not_Converted_Count"); } }
+        public int? NotConvertedCount { get => _explicitNullValueNotConvertedCount; set { _explicitNullValueNotConvertedCount = value; AdditionalData?.Remove("Not_Converted_Count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Not_Converted_Count"); else _explicitNullProperties?.Remove("Not_Converted_Count"); } }
         private int? _explicitNullValueNotConvertedCount = default!;
         /// <summary>Indicates the current processing status of the mass convert job.Possible values:**completed** - The job finished processing all scheduled leads.**scheduled** - The job is queued for execution.**in progress** - The job is currently running.**failed** - The job did not complete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Status"); else _explicitNullProperties?.Remove("Status"); } }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("Status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Status"); else _explicitNullProperties?.Remove("Status"); } }
         private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Status"); else _explicitNullProperties?.Remove("Status"); } }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("Status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Status"); else _explicitNullProperties?.Remove("Status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>Represents the total number of leads scheduled for conversion in the job. </summary>
-        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Total_Count"); else _explicitNullProperties?.Remove("Total_Count"); } }
+        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("Total_Count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Total_Count"); else _explicitNullProperties?.Remove("Total_Count"); } }
         private int? _explicitNullValueTotalCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassConvertGetMassConvertJobStatus200ResponseDataItem"/> and sets the default values.

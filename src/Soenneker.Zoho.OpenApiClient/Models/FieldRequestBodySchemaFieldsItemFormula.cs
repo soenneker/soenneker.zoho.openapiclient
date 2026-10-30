@@ -18,47 +18,53 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dynamic") is { } nullNodeDynamic && nullNodeDynamic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dynamic = null;
-            if (parseNode.GetChildNode("expression") is { } nullNodeExpression && nullNodeExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expression = null;
-            if (parseNode.GetChildNode("return_type") is { } nullNodeReturnType && nullNodeReturnType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnType = null;
-            if (parseNode.GetChildNode("stop_compute_conditionally") is { } nullNodeStopComputeConditionally && nullNodeStopComputeConditionally.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopComputeConditionally = null;
-            if (parseNode.GetChildNode("stop_compute_expression") is { } nullNodeStopComputeExpression && nullNodeStopComputeExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopComputeExpression = null;
-            if (parseNode.GetChildNode("sub_return_type") is { } nullNodeSubReturnType && nullNodeSubReturnType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubReturnType = null;
+            if (parseNode.GetChildNode("dynamic") is null) { _explicitNullValueDynamic = default!; _explicitNullProperties?.Remove("dynamic"); }
+            else if (parseNode.GetChildNode("dynamic") is { } nullNodeDynamic && nullNodeDynamic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dynamic = null;
+            if (parseNode.GetChildNode("expression") is null) { _explicitNullValueExpression = default!; _explicitNullProperties?.Remove("expression"); }
+            else if (parseNode.GetChildNode("expression") is { } nullNodeExpression && nullNodeExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expression = null;
+            if (parseNode.GetChildNode("return_type") is null) { _explicitNullValueReturnType = default!; _explicitNullProperties?.Remove("return_type"); }
+            else if (parseNode.GetChildNode("return_type") is { } nullNodeReturnType && nullNodeReturnType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnType = null;
+            if (parseNode.GetChildNode("stop_compute_conditionally") is null) { _explicitNullValueStopComputeConditionally = default!; _explicitNullProperties?.Remove("stop_compute_conditionally"); }
+            else if (parseNode.GetChildNode("stop_compute_conditionally") is { } nullNodeStopComputeConditionally && nullNodeStopComputeConditionally.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopComputeConditionally = null;
+            if (parseNode.GetChildNode("stop_compute_expression") is null) { _explicitNullValueStopComputeExpression = default!; _explicitNullProperties?.Remove("stop_compute_expression"); }
+            else if (parseNode.GetChildNode("stop_compute_expression") is { } nullNodeStopComputeExpression && nullNodeStopComputeExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopComputeExpression = null;
+            if (parseNode.GetChildNode("sub_return_type") is null) { _explicitNullValueSubReturnType = default!; _explicitNullProperties?.Remove("sub_return_type"); }
+            else if (parseNode.GetChildNode("sub_return_type") is { } nullNodeSubReturnType && nullNodeSubReturnType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubReturnType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether the formula is Auto Refresh.</summary>
-        public bool? Dynamic { get => _explicitNullValueDynamic; set { _explicitNullValueDynamic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic"); else _explicitNullProperties?.Remove("dynamic"); } }
+        public bool? Dynamic { get => _explicitNullValueDynamic; set { _explicitNullValueDynamic = value; AdditionalData?.Remove("dynamic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic"); else _explicitNullProperties?.Remove("dynamic"); } }
         private bool? _explicitNullValueDynamic = default!;
         /// <summary>Specify the formula expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
+        public string? Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; AdditionalData?.Remove("expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
         private string? _explicitNullValueExpression = default!;
 #nullable restore
 #else
-        public string Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
+        public string Expression { get => _explicitNullValueExpression; set { _explicitNullValueExpression = value; AdditionalData?.Remove("expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expression"); else _explicitNullProperties?.Remove("expression"); } }
         private string _explicitNullValueExpression = default!;
 #endif
         /// <summary>Specify the return type of the formula.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormulaReturnType? ReturnType { get => _explicitNullValueReturnType; set { _explicitNullValueReturnType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_type"); else _explicitNullProperties?.Remove("return_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormulaReturnType? ReturnType { get => _explicitNullValueReturnType; set { _explicitNullValueReturnType = value; AdditionalData?.Remove("return_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_type"); else _explicitNullProperties?.Remove("return_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormulaReturnType? _explicitNullValueReturnType = default!;
         /// <summary>Specify whether to stop computation conditionally.</summary>
-        public bool? StopComputeConditionally { get => _explicitNullValueStopComputeConditionally; set { _explicitNullValueStopComputeConditionally = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_compute_conditionally"); else _explicitNullProperties?.Remove("stop_compute_conditionally"); } }
+        public bool? StopComputeConditionally { get => _explicitNullValueStopComputeConditionally; set { _explicitNullValueStopComputeConditionally = value; AdditionalData?.Remove("stop_compute_conditionally"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_compute_conditionally"); else _explicitNullProperties?.Remove("stop_compute_conditionally"); } }
         private bool? _explicitNullValueStopComputeConditionally = default!;
         /// <summary>Specify the expression that determines when to stop computation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StopComputeExpression { get => _explicitNullValueStopComputeExpression; set { _explicitNullValueStopComputeExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_compute_expression"); else _explicitNullProperties?.Remove("stop_compute_expression"); } }
+        public string? StopComputeExpression { get => _explicitNullValueStopComputeExpression; set { _explicitNullValueStopComputeExpression = value; AdditionalData?.Remove("stop_compute_expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_compute_expression"); else _explicitNullProperties?.Remove("stop_compute_expression"); } }
         private string? _explicitNullValueStopComputeExpression = default!;
 #nullable restore
 #else
-        public string StopComputeExpression { get => _explicitNullValueStopComputeExpression; set { _explicitNullValueStopComputeExpression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_compute_expression"); else _explicitNullProperties?.Remove("stop_compute_expression"); } }
+        public string StopComputeExpression { get => _explicitNullValueStopComputeExpression; set { _explicitNullValueStopComputeExpression = value; AdditionalData?.Remove("stop_compute_expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop_compute_expression"); else _explicitNullProperties?.Remove("stop_compute_expression"); } }
         private string _explicitNullValueStopComputeExpression = default!;
 #endif
         /// <summary>Specify the string subtype of the formula return value when the return type is text.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormulaSubReturnType? SubReturnType { get => _explicitNullValueSubReturnType; set { _explicitNullValueSubReturnType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_return_type"); else _explicitNullProperties?.Remove("sub_return_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormulaSubReturnType? SubReturnType { get => _explicitNullValueSubReturnType; set { _explicitNullValueSubReturnType = value; AdditionalData?.Remove("sub_return_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_return_type"); else _explicitNullProperties?.Remove("sub_return_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormulaSubReturnType? _explicitNullValueSubReturnType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormula"/> and sets the default values.
@@ -87,10 +93,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "dynamic", n => { Dynamic = n.GetBoolValue(); } },
                 { "expression", n => { Expression = n.GetStringValue(); } },
-                { "return_type", n => { ReturnType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormulaReturnType>(); } },
+                { "return_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormulaReturnType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReturnType = default; _explicitNullProperties?.Remove("return_type"); AdditionalData["return_type"] = unknown; } else { ReturnType = parsed; AdditionalData.Remove("return_type"); } } },
                 { "stop_compute_conditionally", n => { StopComputeConditionally = n.GetBoolValue(); } },
                 { "stop_compute_expression", n => { StopComputeExpression = n.GetStringValue(); } },
-                { "sub_return_type", n => { SubReturnType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormulaSubReturnType>(); } },
+                { "sub_return_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemFormulaSubReturnType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubReturnType = default; _explicitNullProperties?.Remove("sub_return_type"); AdditionalData["sub_return_type"] = unknown; } else { SubReturnType = parsed; AdditionalData.Remove("sub_return_type"); } } },
             };
         }
         /// <summary>

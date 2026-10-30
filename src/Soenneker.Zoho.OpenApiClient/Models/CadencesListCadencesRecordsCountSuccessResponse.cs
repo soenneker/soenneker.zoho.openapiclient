@@ -47,8 +47,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("cadences_records_count") != null))();
-            if (result.CadencesListCadencesRecordsCount200Response == null && result.GetrecordscountResponse207 == null && matchesUnionBranch0) result.CadencesListCadencesRecordsCount200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCount200Response(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("cadences_records_count") && (!shapeMembers1.ContainsKey("cadences_records_count") || (((shapeMembers1["cadences_records_count"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("cadences_records_count") || (((shapeMembers1["cadences_records_count"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.CadencesListCadencesRecordsCount200Response == null && result.GetrecordscountResponse207 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CadencesListCadencesRecordsCount200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCount200Response(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.GetrecordscountResponse207 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.GetrecordscountResponse207(), parseNode);
             if (result.CadencesListCadencesRecordsCount200Response == null && result.GetrecordscountResponse207 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -58,6 +64,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(CadencesListCadencesRecordsCount200Response != null || GetrecordscountResponse207 != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CadencesListCadencesRecordsCount200Response, GetrecordscountResponse207);
@@ -72,8 +80,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (CadencesListCadencesRecordsCount200Response == null && GetrecordscountResponse207 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (CadencesListCadencesRecordsCount200Response != null && GetrecordscountResponse207 == null) { if (CadencesListCadencesRecordsCount200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CadencesListCadencesRecordsCount200Response); return; }
-            if (GetrecordscountResponse207 != null && CadencesListCadencesRecordsCount200Response == null) { if (GetrecordscountResponse207 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetrecordscountResponse207); return; }
+            int selectedUnionBranches = 0;
+            if (CadencesListCadencesRecordsCount200Response != null) selectedUnionBranches++;
+            if (GetrecordscountResponse207 != null) selectedUnionBranches++;
+            if (CadencesListCadencesRecordsCount200Response != null && selectedUnionBranches == 1) { if (CadencesListCadencesRecordsCount200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CadencesListCadencesRecordsCount200Response); return; }
+            if (GetrecordscountResponse207 != null && selectedUnionBranches == 1) { if (GetrecordscountResponse207 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetrecordscountResponse207); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CadencesListCadencesRecordsCount200Response>(null, CadencesListCadencesRecordsCount200Response, GetrecordscountResponse207);

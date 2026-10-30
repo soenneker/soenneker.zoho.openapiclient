@@ -18,23 +18,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
-            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("ids") is null) { _explicitNullValueIds = default!; _explicitNullProperties?.Remove("ids"); }
+            else if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>JSON array string of record IDs to remove tags from. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve record IDs.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002496003QuoteRightBracketIds? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002496003QuoteRightBracketIds? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; AdditionalData?.Remove("ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002496003QuoteRightBracketIds? _explicitNullValueIds = default!;
         /// <summary>Array of tags to remove from the records (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested> _explicitNullValueTags = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ids", n => { Ids = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002496003QuoteRightBracketIds>(); } },
+                { "ids", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002496003QuoteRightBracketIds>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIds = default; _explicitNullProperties?.Remove("ids"); AdditionalData["ids"] = unknown; } else { Ids = parsed; AdditionalData.Remove("ids"); } } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

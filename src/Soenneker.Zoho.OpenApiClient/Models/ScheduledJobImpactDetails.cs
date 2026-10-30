@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dashboard_criteria") is { } nullNodeDashboardCriteria && nullNodeDashboardCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DashboardCriteria = null;
-            if (parseNode.GetChildNode("field_dependency") is { } nullNodeFieldDependency && nullNodeFieldDependency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldDependency = null;
-            if (parseNode.GetChildNode("records") is { } nullNodeRecords && nullNodeRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Records = null;
-            if (parseNode.GetChildNode("workflow_rules") is { } nullNodeWorkflowRules && nullNodeWorkflowRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRules = null;
+            if (parseNode.GetChildNode("dashboard_criteria") is null) { _explicitNullValueDashboardCriteria = default!; _explicitNullProperties?.Remove("dashboard_criteria"); }
+            else if (parseNode.GetChildNode("dashboard_criteria") is { } nullNodeDashboardCriteria && nullNodeDashboardCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DashboardCriteria = null;
+            if (parseNode.GetChildNode("field_dependency") is null) { _explicitNullValueFieldDependency = default!; _explicitNullProperties?.Remove("field_dependency"); }
+            else if (parseNode.GetChildNode("field_dependency") is { } nullNodeFieldDependency && nullNodeFieldDependency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldDependency = null;
+            if (parseNode.GetChildNode("records") is null) { _explicitNullValueRecords = default!; _explicitNullProperties?.Remove("records"); }
+            else if (parseNode.GetChildNode("records") is { } nullNodeRecords && nullNodeRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Records = null;
+            if (parseNode.GetChildNode("workflow_rules") is null) { _explicitNullValueWorkflowRules = default!; _explicitNullProperties?.Remove("workflow_rules"); }
+            else if (parseNode.GetChildNode("workflow_rules") is { } nullNodeWorkflowRules && nullNodeWorkflowRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the summary of dashboard criteria impact for the job, including counts of total evaluated, processed, and failed criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DashboardCriteriaProcessingSummary? DashboardCriteria { get => _explicitNullValueDashboardCriteria; set { _explicitNullValueDashboardCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_criteria"); else _explicitNullProperties?.Remove("dashboard_criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DashboardCriteriaProcessingSummary? DashboardCriteria { get => _explicitNullValueDashboardCriteria; set { _explicitNullValueDashboardCriteria = value; AdditionalData?.Remove("dashboard_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_criteria"); else _explicitNullProperties?.Remove("dashboard_criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DashboardCriteriaProcessingSummary? _explicitNullValueDashboardCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DashboardCriteriaProcessingSummary DashboardCriteria { get => _explicitNullValueDashboardCriteria; set { _explicitNullValueDashboardCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_criteria"); else _explicitNullProperties?.Remove("dashboard_criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DashboardCriteriaProcessingSummary DashboardCriteria { get => _explicitNullValueDashboardCriteria; set { _explicitNullValueDashboardCriteria = value; AdditionalData?.Remove("dashboard_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_criteria"); else _explicitNullProperties?.Remove("dashboard_criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DashboardCriteriaProcessingSummary _explicitNullValueDashboardCriteria = default!;
 #endif
         /// <summary>Represents the summary of field dependency impact for the job, including counts of total evaluated, processed, and failed dependencies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldDependencyProcessingSummary? FieldDependency { get => _explicitNullValueFieldDependency; set { _explicitNullValueFieldDependency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_dependency"); else _explicitNullProperties?.Remove("field_dependency"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldDependencyProcessingSummary? FieldDependency { get => _explicitNullValueFieldDependency; set { _explicitNullValueFieldDependency = value; AdditionalData?.Remove("field_dependency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_dependency"); else _explicitNullProperties?.Remove("field_dependency"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldDependencyProcessingSummary? _explicitNullValueFieldDependency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldDependencyProcessingSummary FieldDependency { get => _explicitNullValueFieldDependency; set { _explicitNullValueFieldDependency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_dependency"); else _explicitNullProperties?.Remove("field_dependency"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldDependencyProcessingSummary FieldDependency { get => _explicitNullValueFieldDependency; set { _explicitNullValueFieldDependency = value; AdditionalData?.Remove("field_dependency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_dependency"); else _explicitNullProperties?.Remove("field_dependency"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldDependencyProcessingSummary _explicitNullValueFieldDependency = default!;
 #endif
         /// <summary>Represents the summary of record-level impact for the job, including total records evaluated, successfully processed, and failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordProcessingSummary? Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordProcessingSummary? Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; AdditionalData?.Remove("records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordProcessingSummary? _explicitNullValueRecords = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecordProcessingSummary Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecordProcessingSummary Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; AdditionalData?.Remove("records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecordProcessingSummary _explicitNullValueRecords = default!;
 #endif
         /// <summary>Represents the summary of workflow rule impact for the job, including counts of total evaluated, processed, and failed rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleProcessingSummary? WorkflowRules { get => _explicitNullValueWorkflowRules; set { _explicitNullValueWorkflowRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rules"); else _explicitNullProperties?.Remove("workflow_rules"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleProcessingSummary? WorkflowRules { get => _explicitNullValueWorkflowRules; set { _explicitNullValueWorkflowRules = value; AdditionalData?.Remove("workflow_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rules"); else _explicitNullProperties?.Remove("workflow_rules"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleProcessingSummary? _explicitNullValueWorkflowRules = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleProcessingSummary WorkflowRules { get => _explicitNullValueWorkflowRules; set { _explicitNullValueWorkflowRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rules"); else _explicitNullProperties?.Remove("workflow_rules"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleProcessingSummary WorkflowRules { get => _explicitNullValueWorkflowRules; set { _explicitNullValueWorkflowRules = value; AdditionalData?.Remove("workflow_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rules"); else _explicitNullProperties?.Remove("workflow_rules"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRuleProcessingSummary _explicitNullValueWorkflowRules = default!;
 #endif
         /// <summary>

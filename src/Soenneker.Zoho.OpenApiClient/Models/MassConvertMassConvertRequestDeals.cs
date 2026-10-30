@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Deal_Name") is { } nullNodeDealName && nullNodeDealName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DealName = null;
+            if (parseNode.GetChildNode("Deal_Name") is null) { _explicitNullValueDealName = default!; _explicitNullProperties?.Remove("Deal_Name"); }
+            else if (parseNode.GetChildNode("Deal_Name") is { } nullNodeDealName && nullNodeDealName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DealName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the name of the deal to create for the converted lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DealName { get => _explicitNullValueDealName; set { _explicitNullValueDealName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deal_Name"); else _explicitNullProperties?.Remove("Deal_Name"); } }
+        public string? DealName { get => _explicitNullValueDealName; set { _explicitNullValueDealName = value; AdditionalData?.Remove("Deal_Name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deal_Name"); else _explicitNullProperties?.Remove("Deal_Name"); } }
         private string? _explicitNullValueDealName = default!;
 #nullable restore
 #else
-        public string DealName { get => _explicitNullValueDealName; set { _explicitNullValueDealName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deal_Name"); else _explicitNullProperties?.Remove("Deal_Name"); } }
+        public string DealName { get => _explicitNullValueDealName; set { _explicitNullValueDealName = value; AdditionalData?.Remove("Deal_Name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deal_Name"); else _explicitNullProperties?.Remove("Deal_Name"); } }
         private string _explicitNullValueDealName = default!;
 #endif
         /// <summary>

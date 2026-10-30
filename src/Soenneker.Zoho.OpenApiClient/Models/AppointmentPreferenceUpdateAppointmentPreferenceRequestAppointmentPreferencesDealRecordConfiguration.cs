@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_mappings") is { } nullNodeFieldMappings && nullNodeFieldMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldMappings = null;
-            if (parseNode.GetChildNode("layout") is { } nullNodeLayout && nullNodeLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layout = null;
+            if (parseNode.GetChildNode("field_mappings") is null) { _explicitNullValueFieldMappings = default!; _explicitNullProperties?.Remove("field_mappings"); }
+            else if (parseNode.GetChildNode("field_mappings") is { } nullNodeFieldMappings && nullNodeFieldMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldMappings = null;
+            if (parseNode.GetChildNode("layout") is null) { _explicitNullValueLayout = default!; _explicitNullProperties?.Remove("layout"); }
+            else if (parseNode.GetChildNode("layout") is { } nullNodeLayout && nullNodeLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layout = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the field mappings that define how appointment and service data populates the Deals module fields when a deal is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItem>? _explicitNullValueFieldMappings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationFieldMappingsItem> _explicitNullValueFieldMappings = default!;
 #endif
         /// <summary>Specify the Deals module layout to use when creating deal records from completed appointments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationLayout? _explicitNullValueLayout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesDealRecordConfigurationLayout _explicitNullValueLayout = default!;
 #endif
         /// <summary>

@@ -18,33 +18,39 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bounced") is { } nullNodeBounced && nullNodeBounced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bounced = null;
-            if (parseNode.GetChildNode("clicked") is { } nullNodeClicked && nullNodeClicked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicked = null;
-            if (parseNode.GetChildNode("delivered") is { } nullNodeDelivered && nullNodeDelivered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delivered = null;
-            if (parseNode.GetChildNode("opened") is { } nullNodeOpened && nullNodeOpened.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Opened = null;
-            if (parseNode.GetChildNode("sent") is { } nullNodeSent && nullNodeSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sent = null;
-            if (parseNode.GetChildNode("tracked") is { } nullNodeTracked && nullNodeTracked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tracked = null;
+            if (parseNode.GetChildNode("bounced") is null) { _explicitNullValueBounced = default!; _explicitNullProperties?.Remove("bounced"); }
+            else if (parseNode.GetChildNode("bounced") is { } nullNodeBounced && nullNodeBounced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bounced = null;
+            if (parseNode.GetChildNode("clicked") is null) { _explicitNullValueClicked = default!; _explicitNullProperties?.Remove("clicked"); }
+            else if (parseNode.GetChildNode("clicked") is { } nullNodeClicked && nullNodeClicked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clicked = null;
+            if (parseNode.GetChildNode("delivered") is null) { _explicitNullValueDelivered = default!; _explicitNullProperties?.Remove("delivered"); }
+            else if (parseNode.GetChildNode("delivered") is { } nullNodeDelivered && nullNodeDelivered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delivered = null;
+            if (parseNode.GetChildNode("opened") is null) { _explicitNullValueOpened = default!; _explicitNullProperties?.Remove("opened"); }
+            else if (parseNode.GetChildNode("opened") is { } nullNodeOpened && nullNodeOpened.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Opened = null;
+            if (parseNode.GetChildNode("sent") is null) { _explicitNullValueSent = default!; _explicitNullProperties?.Remove("sent"); }
+            else if (parseNode.GetChildNode("sent") is { } nullNodeSent && nullNodeSent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sent = null;
+            if (parseNode.GetChildNode("tracked") is null) { _explicitNullValueTracked = default!; _explicitNullProperties?.Remove("tracked"); }
+            else if (parseNode.GetChildNode("tracked") is { } nullNodeTracked && nullNodeTracked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tracked = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of emails that bounced when sent using this template. </summary>
-        public int? Bounced { get => _explicitNullValueBounced; set { _explicitNullValueBounced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounced"); else _explicitNullProperties?.Remove("bounced"); } }
+        public int? Bounced { get => _explicitNullValueBounced; set { _explicitNullValueBounced = value; AdditionalData?.Remove("bounced"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounced"); else _explicitNullProperties?.Remove("bounced"); } }
         private int? _explicitNullValueBounced = default!;
         /// <summary>Represents the number of link clicks recorded in emails sent using this template. </summary>
-        public int? Clicked { get => _explicitNullValueClicked; set { _explicitNullValueClicked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicked"); else _explicitNullProperties?.Remove("clicked"); } }
+        public int? Clicked { get => _explicitNullValueClicked; set { _explicitNullValueClicked = value; AdditionalData?.Remove("clicked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicked"); else _explicitNullProperties?.Remove("clicked"); } }
         private int? _explicitNullValueClicked = default!;
         /// <summary>Represents the number of emails delivered successfully when sent using this template. </summary>
-        public int? Delivered { get => _explicitNullValueDelivered; set { _explicitNullValueDelivered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered"); else _explicitNullProperties?.Remove("delivered"); } }
+        public int? Delivered { get => _explicitNullValueDelivered; set { _explicitNullValueDelivered = value; AdditionalData?.Remove("delivered"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered"); else _explicitNullProperties?.Remove("delivered"); } }
         private int? _explicitNullValueDelivered = default!;
         /// <summary>Represents the number of emails opened by recipients when sent using this template. </summary>
-        public int? Opened { get => _explicitNullValueOpened; set { _explicitNullValueOpened = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened"); else _explicitNullProperties?.Remove("opened"); } }
+        public int? Opened { get => _explicitNullValueOpened; set { _explicitNullValueOpened = value; AdditionalData?.Remove("opened"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("opened"); else _explicitNullProperties?.Remove("opened"); } }
         private int? _explicitNullValueOpened = default!;
         /// <summary>Represents the total number of emails sent using this template. </summary>
-        public int? Sent { get => _explicitNullValueSent; set { _explicitNullValueSent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent"); else _explicitNullProperties?.Remove("sent"); } }
+        public int? Sent { get => _explicitNullValueSent; set { _explicitNullValueSent = value; AdditionalData?.Remove("sent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent"); else _explicitNullProperties?.Remove("sent"); } }
         private int? _explicitNullValueSent = default!;
         /// <summary>Represents the number of emails sent using this template for which tracking is enabled. </summary>
-        public int? Tracked { get => _explicitNullValueTracked; set { _explicitNullValueTracked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracked"); else _explicitNullProperties?.Remove("tracked"); } }
+        public int? Tracked { get => _explicitNullValueTracked; set { _explicitNullValueTracked = value; AdditionalData?.Remove("tracked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracked"); else _explicitNullProperties?.Remove("tracked"); } }
         private int? _explicitNullValueTracked = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListItemLastVersionStatistics"/> and sets the default values.

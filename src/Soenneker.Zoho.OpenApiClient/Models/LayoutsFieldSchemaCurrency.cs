@@ -50,7 +50,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            if (result.LayoutsFieldSchemaCurrencyOneOf1 == null && result.LayoutsTypeNull == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.LayoutsFieldSchemaCurrencyOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCurrencyOneOf1(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("rounding_option") || (((shapeMembers1["rounding_option"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["rounding_option"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "round_up".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["rounding_option"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "round_down".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["rounding_option"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "round_off".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["rounding_option"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal5 && "normal".Equals(literal5.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("precision") || (((shapeMembers1["precision"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.LayoutsFieldSchemaCurrencyOneOf1 == null && result.LayoutsTypeNull == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.LayoutsFieldSchemaCurrencyOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaCurrencyOneOf1(), parseNode);
             if (result.LayoutsFieldSchemaCurrencyOneOf1 == null && result.LayoutsTypeNull == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -60,6 +64,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(LayoutsFieldSchemaCurrencyOneOf1 != null)
             {
                 return LayoutsFieldSchemaCurrencyOneOf1.GetFieldDeserializers();
@@ -78,7 +84,10 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (LayoutsFieldSchemaCurrencyOneOf1 == null && LayoutsTypeNull == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (LayoutsFieldSchemaCurrencyOneOf1 != null && LayoutsTypeNull == null) { if (LayoutsFieldSchemaCurrencyOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LayoutsFieldSchemaCurrencyOneOf1); return; }
+            int selectedUnionBranches = 0;
+            if (LayoutsFieldSchemaCurrencyOneOf1 != null) selectedUnionBranches++;
+            if (LayoutsTypeNull != null) selectedUnionBranches++;
+            if (LayoutsFieldSchemaCurrencyOneOf1 != null && selectedUnionBranches == 1) { if (LayoutsFieldSchemaCurrencyOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LayoutsFieldSchemaCurrencyOneOf1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(LayoutsFieldSchemaCurrencyOneOf1 != null)

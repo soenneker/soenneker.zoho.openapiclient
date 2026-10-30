@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Locked_Reason__s") is { } nullNodeLockedReasonS && nullNodeLockedReasonS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockedReasonS = null;
+            if (parseNode.GetChildNode("Locked_Reason__s") is null) { _explicitNullValueLockedReasonS = default!; _explicitNullProperties?.Remove("Locked_Reason__s"); }
+            else if (parseNode.GetChildNode("Locked_Reason__s") is { } nullNodeLockedReasonS && nullNodeLockedReasonS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LockedReasonS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the reason for locking the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LockedReasonS { get => _explicitNullValueLockedReasonS; set { _explicitNullValueLockedReasonS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_Reason__s"); else _explicitNullProperties?.Remove("Locked_Reason__s"); } }
+        public string? LockedReasonS { get => _explicitNullValueLockedReasonS; set { _explicitNullValueLockedReasonS = value; AdditionalData?.Remove("Locked_Reason__s"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_Reason__s"); else _explicitNullProperties?.Remove("Locked_Reason__s"); } }
         private string? _explicitNullValueLockedReasonS = default!;
 #nullable restore
 #else
-        public string LockedReasonS { get => _explicitNullValueLockedReasonS; set { _explicitNullValueLockedReasonS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_Reason__s"); else _explicitNullProperties?.Remove("Locked_Reason__s"); } }
+        public string LockedReasonS { get => _explicitNullValueLockedReasonS; set { _explicitNullValueLockedReasonS = value; AdditionalData?.Remove("Locked_Reason__s"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Locked_Reason__s"); else _explicitNullProperties?.Remove("Locked_Reason__s"); } }
         private string _explicitNullValueLockedReasonS = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cvid") is { } nullNodeCvid && nullNodeCvid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvid = null;
-            if (parseNode.GetChildNode("territory") is { } nullNodeTerritory && nullNodeTerritory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Territory = null;
+            if (parseNode.GetChildNode("cvid") is null) { _explicitNullValueCvid = default!; _explicitNullProperties?.Remove("cvid"); }
+            else if (parseNode.GetChildNode("cvid") is { } nullNodeCvid && nullNodeCvid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvid = null;
+            if (parseNode.GetChildNode("territory") is null) { _explicitNullValueTerritory = default!; _explicitNullProperties?.Remove("territory"); }
+            else if (parseNode.GetChildNode("territory") is { } nullNodeTerritory && nullNodeTerritory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Territory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the unique ID of the Custom View for which you want to delete records.  Refer to the [Get Custom Views](custom_views.yaml#$.paths./settings/custom_views.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
+        public string? Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; AdditionalData?.Remove("cvid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
         private string? _explicitNullValueCvid = default!;
 #nullable restore
 #else
-        public string Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
+        public string Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; AdditionalData?.Remove("cvid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
         private string _explicitNullValueCvid = default!;
 #endif
         /// <summary>Specify the territory filter to restrict the delete operation to records within a specific territory. Only valid when using **cvid**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteRequestOneOf2Territory? Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteRequestOneOf2Territory? Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; AdditionalData?.Remove("territory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteRequestOneOf2Territory? _explicitNullValueTerritory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteRequestOneOf2Territory Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteRequestOneOf2Territory Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; AdditionalData?.Remove("territory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDeleteRequestOneOf2Territory _explicitNullValueTerritory = default!;
 #endif
         /// <summary>

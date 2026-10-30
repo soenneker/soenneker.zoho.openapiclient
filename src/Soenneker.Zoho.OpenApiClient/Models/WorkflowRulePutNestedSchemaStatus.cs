@@ -18,17 +18,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
-            if (parseNode.GetChildNode("delete_schedule_action") is { } nullNodeDeleteScheduleAction && nullNodeDeleteScheduleAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteScheduleAction = null;
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("delete_schedule_action") is null) { _explicitNullValueDeleteScheduleAction = default!; _explicitNullProperties?.Remove("delete_schedule_action"); }
+            else if (parseNode.GetChildNode("delete_schedule_action") is { } nullNodeDeleteScheduleAction && nullNodeDeleteScheduleAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteScheduleAction = null;
         }
 
         /// <summary>Specify whether the workflow rule is active or inactive.Possible values:true - The rule is active and executes when triggered.false - The rule is inactive and does not execute.</summary>
-        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
         private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to delete all scheduled actions associated with the workflow rule when deactivating it.Possible values:true - Delete all scheduled actions when the rule is deactivated.false - Preserve scheduled actions when the rule is deactivated.</summary>
-        public bool? DeleteScheduleAction { get => _explicitNullValueDeleteScheduleAction; set { _explicitNullValueDeleteScheduleAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_schedule_action"); else _explicitNullProperties?.Remove("delete_schedule_action"); } }
+        public bool? DeleteScheduleAction { get => _explicitNullValueDeleteScheduleAction; set { _explicitNullValueDeleteScheduleAction = value; AdditionalData?.Remove("delete_schedule_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_schedule_action"); else _explicitNullProperties?.Remove("delete_schedule_action"); } }
         private bool? _explicitNullValueDeleteScheduleAction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulePutNestedSchemaStatus"/> and sets the default values.

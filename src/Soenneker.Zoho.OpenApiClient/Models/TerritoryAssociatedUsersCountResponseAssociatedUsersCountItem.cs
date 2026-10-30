@@ -18,23 +18,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
-            if (parseNode.GetChildNode("territory") is { } nullNodeTerritory && nullNodeTerritory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Territory = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("territory") is null) { _explicitNullValueTerritory = default!; _explicitNullProperties?.Remove("territory"); }
+            else if (parseNode.GetChildNode("territory") is { } nullNodeTerritory && nullNodeTerritory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Territory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the total number of users associated with the territory.</summary>
-        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>Represents the territory object associated with the user count.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponseAssociatedUsersCountItemTerritory? Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponseAssociatedUsersCountItemTerritory? Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; AdditionalData?.Remove("territory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponseAssociatedUsersCountItemTerritory? _explicitNullValueTerritory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponseAssociatedUsersCountItemTerritory Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponseAssociatedUsersCountItemTerritory Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; AdditionalData?.Remove("territory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryAssociatedUsersCountResponseAssociatedUsersCountItemTerritory _explicitNullValueTerritory = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("personality_id") is { } nullNodePersonalityId && nullNodePersonalityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalityId = null;
+            if (parseNode.GetChildNode("personality_id") is null) { _explicitNullValuePersonalityId = default!; _explicitNullProperties?.Remove("personality_id"); }
+            else if (parseNode.GetChildNode("personality_id") is { } nullNodePersonalityId && nullNodePersonalityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalityId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the unique identifier of the portal user record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonalityId { get => _explicitNullValuePersonalityId; set { _explicitNullValuePersonalityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personality_id"); else _explicitNullProperties?.Remove("personality_id"); } }
+        public string? PersonalityId { get => _explicitNullValuePersonalityId; set { _explicitNullValuePersonalityId = value; AdditionalData?.Remove("personality_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personality_id"); else _explicitNullProperties?.Remove("personality_id"); } }
         private string? _explicitNullValuePersonalityId = default!;
 #nullable restore
 #else
-        public string PersonalityId { get => _explicitNullValuePersonalityId; set { _explicitNullValuePersonalityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personality_id"); else _explicitNullProperties?.Remove("personality_id"); } }
+        public string PersonalityId { get => _explicitNullValuePersonalityId; set { _explicitNullValuePersonalityId = value; AdditionalData?.Remove("personality_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personality_id"); else _explicitNullProperties?.Remove("personality_id"); } }
         private string _explicitNullValuePersonalityId = default!;
 #endif
         /// <summary>

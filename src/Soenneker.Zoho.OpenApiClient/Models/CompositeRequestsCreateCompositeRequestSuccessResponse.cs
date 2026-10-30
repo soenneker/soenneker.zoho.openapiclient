@@ -47,10 +47,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("__composite_requests") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("__composite_requests") != null))();
-            if (result.CompositeRequestsCreateCompositeRequest200Response == null && result.CompositeRequestsCreateCompositeRequest207Response == null && matchesUnionBranch0 && !matchesUnionBranch1) result.CompositeRequestsCreateCompositeRequest200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200Response(), parseNode);
-            if (result.CompositeRequestsCreateCompositeRequest200Response == null && result.CompositeRequestsCreateCompositeRequest207Response == null && matchesUnionBranch1 && !matchesUnionBranch0) result.CompositeRequestsCreateCompositeRequest207Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest207Response(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("__composite_requests") && (!shapeMembers1.ContainsKey("__composite_requests") || (((shapeMembers1["__composite_requests"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("__composite_requests") && (!shapeMembers1.ContainsKey("__composite_requests") || (((shapeMembers1["__composite_requests"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.CompositeRequestsCreateCompositeRequest200Response == null && result.CompositeRequestsCreateCompositeRequest207Response == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CompositeRequestsCreateCompositeRequest200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200Response(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.CompositeRequestsCreateCompositeRequest207Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest207Response(), parseNode);
             if (result.CompositeRequestsCreateCompositeRequest200Response == null && result.CompositeRequestsCreateCompositeRequest207Response == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -60,6 +64,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(CompositeRequestsCreateCompositeRequest200Response != null || CompositeRequestsCreateCompositeRequest207Response != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CompositeRequestsCreateCompositeRequest200Response, CompositeRequestsCreateCompositeRequest207Response);
@@ -74,8 +80,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (CompositeRequestsCreateCompositeRequest200Response == null && CompositeRequestsCreateCompositeRequest207Response == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (CompositeRequestsCreateCompositeRequest200Response != null && CompositeRequestsCreateCompositeRequest207Response == null) { if (CompositeRequestsCreateCompositeRequest200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CompositeRequestsCreateCompositeRequest200Response); return; }
-            if (CompositeRequestsCreateCompositeRequest207Response != null && CompositeRequestsCreateCompositeRequest200Response == null) { if (CompositeRequestsCreateCompositeRequest207Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CompositeRequestsCreateCompositeRequest207Response); return; }
+            int selectedUnionBranches = 0;
+            if (CompositeRequestsCreateCompositeRequest200Response != null) selectedUnionBranches++;
+            if (CompositeRequestsCreateCompositeRequest207Response != null) selectedUnionBranches++;
+            if (CompositeRequestsCreateCompositeRequest200Response != null && selectedUnionBranches == 1) { if (CompositeRequestsCreateCompositeRequest200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CompositeRequestsCreateCompositeRequest200Response); return; }
+            if (CompositeRequestsCreateCompositeRequest207Response != null && selectedUnionBranches == 1) { if (CompositeRequestsCreateCompositeRequest207Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CompositeRequestsCreateCompositeRequest207Response); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200Response>(null, CompositeRequestsCreateCompositeRequest200Response, CompositeRequestsCreateCompositeRequest207Response);

@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("plural_label") is { } nullNodePluralLabel && nullNodePluralLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralLabel = null;
-            if (parseNode.GetChildNode("profiles") is { } nullNodeProfiles && nullNodeProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profiles = null;
-            if (parseNode.GetChildNode("singular_label") is { } nullNodeSingularLabel && nullNodeSingularLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingularLabel = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("plural_label") is null) { _explicitNullValuePluralLabel = default!; _explicitNullProperties?.Remove("plural_label"); }
+            else if (parseNode.GetChildNode("plural_label") is { } nullNodePluralLabel && nullNodePluralLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralLabel = null;
+            if (parseNode.GetChildNode("profiles") is null) { _explicitNullValueProfiles = default!; _explicitNullProperties?.Remove("profiles"); }
+            else if (parseNode.GetChildNode("profiles") is { } nullNodeProfiles && nullNodeProfiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Profiles = null;
+            if (parseNode.GetChildNode("singular_label") is null) { _explicitNullValueSingularLabel = default!; _explicitNullProperties?.Remove("singular_label"); }
+            else if (parseNode.GetChildNode("singular_label") is { } nullNodeSingularLabel && nullNodeSingularLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingularLabel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Unique identifier of the module to update. Must be a valid existing module ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Plural display label for the module shown in the UI while referring to multiple records (for example, `Contacts` or `Deals`). Must contain only alphanumeric characters and underscores, with no consecutive underscores, and cannot be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
+        public string? PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; AdditionalData?.Remove("plural_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
         private string? _explicitNullValuePluralLabel = default!;
 #nullable restore
 #else
-        public string PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
+        public string PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; AdditionalData?.Remove("plural_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
         private string _explicitNullValuePluralLabel = default!;
 #endif
         /// <summary>Optional list of user profiles to add or remove from this module using delta semantics. Profiles without `_delete` are added; profiles with `_delete: null` are removed. Omit this to leave profile assignments unchanged.Each profile ID represents a permission set determining which users can view, create, edit, or delete records in this module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesRequestModulesItemProfilesItem>? Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesRequestModulesItemProfilesItem>? Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; AdditionalData?.Remove("profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesRequestModulesItemProfilesItem>? _explicitNullValueProfiles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesRequestModulesItemProfilesItem> Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesRequestModulesItemProfilesItem> Profiles { get => _explicitNullValueProfiles; set { _explicitNullValueProfiles = value; AdditionalData?.Remove("profiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profiles"); else _explicitNullProperties?.Remove("profiles"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModulesRequestModulesItemProfilesItem> _explicitNullValueProfiles = default!;
 #endif
         /// <summary>Singular display label for the module shown in the UI while referring to a single record (for example, `Contact` or `Deal`). Must contain only alphanumeric characters and underscores, with no consecutive underscores, and cannot be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SingularLabel { get => _explicitNullValueSingularLabel; set { _explicitNullValueSingularLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_label"); else _explicitNullProperties?.Remove("singular_label"); } }
+        public string? SingularLabel { get => _explicitNullValueSingularLabel; set { _explicitNullValueSingularLabel = value; AdditionalData?.Remove("singular_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_label"); else _explicitNullProperties?.Remove("singular_label"); } }
         private string? _explicitNullValueSingularLabel = default!;
 #nullable restore
 #else
-        public string SingularLabel { get => _explicitNullValueSingularLabel; set { _explicitNullValueSingularLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_label"); else _explicitNullProperties?.Remove("singular_label"); } }
+        public string SingularLabel { get => _explicitNullValueSingularLabel; set { _explicitNullValueSingularLabel = value; AdditionalData?.Remove("singular_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singular_label"); else _explicitNullProperties?.Remove("singular_label"); } }
         private string _explicitNullValueSingularLabel = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("group") is { } nullNodeGroup && nullNodeGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Group = null;
-            if (parseNode.GetChildNode("group_operator") is { } nullNodeGroupOperator && nullNodeGroupOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupOperator = null;
+            if (parseNode.GetChildNode("group") is null) { _explicitNullValueGroup = default!; _explicitNullProperties?.Remove("group"); }
+            else if (parseNode.GetChildNode("group") is { } nullNodeGroup && nullNodeGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Group = null;
+            if (parseNode.GetChildNode("group_operator") is null) { _explicitNullValueGroupOperator = default!; _explicitNullProperties?.Remove("group_operator"); }
+            else if (parseNode.GetChildNode("group_operator") is { } nullNodeGroupOperator && nullNodeGroupOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupOperator = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,16 +29,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains an array of filter conditions grouped together and evaluated with the specified logical operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem>? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem>? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem>? _explicitNullValueGroup = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem> Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem> Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem> _explicitNullValueGroup = default!;
 #endif
         /// <summary>Represents the logical operator applied between the filter conditions in the group.Possible values:AND - All conditions in the group must be satisfied.OR - At least one condition in the group must be satisfied.and - Equivalent to AND; all conditions in the group must be satisfied.or - Equivalent to OR; at least one condition in the group must be satisfied.</summary>
 #nullable enable
-        public string? GroupOperator { get => _explicitNullValueGroupOperator; set { _explicitNullValueGroupOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_operator"); else _explicitNullProperties?.Remove("group_operator"); } }
+        public string? GroupOperator { get => _explicitNullValueGroupOperator; set { _explicitNullValueGroupOperator = value; AdditionalData?.Remove("group_operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_operator"); else _explicitNullProperties?.Remove("group_operator"); } }
         private string? _explicitNullValueGroupOperator = default!;
 #nullable restore
         /// <summary>

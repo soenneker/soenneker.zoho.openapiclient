@@ -18,13 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("total_shift_with_user") is { } nullNodeTotalShiftWithUser && nullNodeTotalShiftWithUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalShiftWithUser = null;
+            if (parseNode.GetChildNode("total_shift_with_user") is null) { _explicitNullValueTotalShiftWithUser = default!; _explicitNullProperties?.Remove("total_shift_with_user"); }
+            else if (parseNode.GetChildNode("total_shift_with_user") is { } nullNodeTotalShiftWithUser && nullNodeTotalShiftWithUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalShiftWithUser = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the total number of shift hours that have at least one user assigned.</summary>
-        public int? TotalShiftWithUser { get => _explicitNullValueTotalShiftWithUser; set { _explicitNullValueTotalShiftWithUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_shift_with_user"); else _explicitNullProperties?.Remove("total_shift_with_user"); } }
+        public int? TotalShiftWithUser { get => _explicitNullValueTotalShiftWithUser; set { _explicitNullValueTotalShiftWithUser = value; AdditionalData?.Remove("total_shift_with_user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_shift_with_user"); else _explicitNullProperties?.Remove("total_shift_with_user"); } }
         private int? _explicitNullValueTotalShiftWithUser = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftCount"/> and sets the default values.

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mass_delete") is { } nullNodeMassDelete && nullNodeMassDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MassDelete = null;
+            if (parseNode.GetChildNode("mass_delete") is null) { _explicitNullValueMassDelete = default!; _explicitNullProperties?.Remove("mass_delete"); }
+            else if (parseNode.GetChildNode("mass_delete") is { } nullNodeMassDelete && nullNodeMassDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MassDelete = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of mass delete tag jobs returned for the queried job ID, with one entry per job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem>? MassDelete { get => _explicitNullValueMassDelete; set { _explicitNullValueMassDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mass_delete"); else _explicitNullProperties?.Remove("mass_delete"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem>? MassDelete { get => _explicitNullValueMassDelete; set { _explicitNullValueMassDelete = value; AdditionalData?.Remove("mass_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mass_delete"); else _explicitNullProperties?.Remove("mass_delete"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem>? _explicitNullValueMassDelete = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem> MassDelete { get => _explicitNullValueMassDelete; set { _explicitNullValueMassDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mass_delete"); else _explicitNullProperties?.Remove("mass_delete"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem> MassDelete { get => _explicitNullValueMassDelete; set { _explicitNullValueMassDelete = value; AdditionalData?.Remove("mass_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mass_delete"); else _explicitNullProperties?.Remove("mass_delete"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200ResponseMassDeleteItem> _explicitNullValueMassDelete = default!;
 #endif
         /// <summary>

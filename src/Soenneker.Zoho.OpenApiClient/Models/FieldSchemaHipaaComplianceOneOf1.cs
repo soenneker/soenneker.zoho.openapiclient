@@ -18,17 +18,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("restricted") is { } nullNodeRestricted && nullNodeRestricted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restricted = null;
-            if (parseNode.GetChildNode("restricted_in_export") is { } nullNodeRestrictedInExport && nullNodeRestrictedInExport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestrictedInExport = null;
+            if (parseNode.GetChildNode("restricted") is null) { _explicitNullValueRestricted = default!; _explicitNullProperties?.Remove("restricted"); }
+            else if (parseNode.GetChildNode("restricted") is { } nullNodeRestricted && nullNodeRestricted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restricted = null;
+            if (parseNode.GetChildNode("restricted_in_export") is null) { _explicitNullValueRestrictedInExport = default!; _explicitNullProperties?.Remove("restricted_in_export"); }
+            else if (parseNode.GetChildNode("restricted_in_export") is { } nullNodeRestrictedInExport && nullNodeRestrictedInExport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestrictedInExport = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the field is restricted.</summary>
-        public bool? Restricted { get => _explicitNullValueRestricted; set { _explicitNullValueRestricted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restricted"); else _explicitNullProperties?.Remove("restricted"); } }
+        public bool? Restricted { get => _explicitNullValueRestricted; set { _explicitNullValueRestricted = value; AdditionalData?.Remove("restricted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restricted"); else _explicitNullProperties?.Remove("restricted"); } }
         private bool? _explicitNullValueRestricted = default!;
         /// <summary>Indicates if the field is restricted in export.</summary>
-        public bool? RestrictedInExport { get => _explicitNullValueRestrictedInExport; set { _explicitNullValueRestrictedInExport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restricted_in_export"); else _explicitNullProperties?.Remove("restricted_in_export"); } }
+        public bool? RestrictedInExport { get => _explicitNullValueRestrictedInExport; set { _explicitNullValueRestrictedInExport = value; AdditionalData?.Remove("restricted_in_export"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restricted_in_export"); else _explicitNullProperties?.Remove("restricted_in_export"); } }
         private bool? _explicitNullValueRestrictedInExport = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaHipaaComplianceOneOf1"/> and sets the default values.

@@ -18,23 +18,30 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actual_value") is { } nullNodeActualValue && nullNodeActualValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualValue = null;
-            if (parseNode.GetChildNode("colour_code") is { } nullNodeColourCode && nullNodeColourCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColourCode = null;
-            if (parseNode.GetChildNode("display_value") is { } nullNodeDisplayValue && nullNodeDisplayValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayValue = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("reference_value") is { } nullNodeReferenceValue && nullNodeReferenceValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceValue = null;
-            if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("actual_value") is null) { _explicitNullValueActualValue = default!; _explicitNullProperties?.Remove("actual_value"); }
+            else if (parseNode.GetChildNode("actual_value") is { } nullNodeActualValue && nullNodeActualValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualValue = null;
+            if (parseNode.GetChildNode("colour_code") is null) { _explicitNullValueColourCode = default!; _explicitNullProperties?.Remove("colour_code"); }
+            else if (parseNode.GetChildNode("colour_code") is { } nullNodeColourCode && nullNodeColourCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColourCode = null;
+            if (parseNode.GetChildNode("display_value") is null) { _explicitNullValueDisplayValue = default!; _explicitNullProperties?.Remove("display_value"); }
+            else if (parseNode.GetChildNode("display_value") is { } nullNodeDisplayValue && nullNodeDisplayValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayValue = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("reference_value") is null) { _explicitNullValueReferenceValue = default!; _explicitNullProperties?.Remove("reference_value"); }
+            else if (parseNode.GetChildNode("reference_value") is { } nullNodeReferenceValue && nullNodeReferenceValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceValue = null;
+            if (parseNode.GetChildNode("sequence_number") is null) { _explicitNullValueSequenceNumber = default!; _explicitNullProperties?.Remove("sequence_number"); }
+            else if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stored value for this picklist option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
+        public string? ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; AdditionalData?.Remove("actual_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
         private string? _explicitNullValueActualValue = default!;
 #nullable restore
 #else
-        public string ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
+        public string ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; AdditionalData?.Remove("actual_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
         private string _explicitNullValueActualValue = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,48 +49,48 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Color code assigned to this picklist value for visual representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ColourCode { get => _explicitNullValueColourCode; set { _explicitNullValueColourCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colour_code"); else _explicitNullProperties?.Remove("colour_code"); } }
+        public string? ColourCode { get => _explicitNullValueColourCode; set { _explicitNullValueColourCode = value; AdditionalData?.Remove("colour_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colour_code"); else _explicitNullProperties?.Remove("colour_code"); } }
         private string? _explicitNullValueColourCode = default!;
 #nullable restore
 #else
-        public string ColourCode { get => _explicitNullValueColourCode; set { _explicitNullValueColourCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colour_code"); else _explicitNullProperties?.Remove("colour_code"); } }
+        public string ColourCode { get => _explicitNullValueColourCode; set { _explicitNullValueColourCode = value; AdditionalData?.Remove("colour_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colour_code"); else _explicitNullProperties?.Remove("colour_code"); } }
         private string _explicitNullValueColourCode = default!;
 #endif
         /// <summary>Display value shown to the user in the picklist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
+        public string? DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; AdditionalData?.Remove("display_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
         private string? _explicitNullValueDisplayValue = default!;
 #nullable restore
 #else
-        public string DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
+        public string DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; AdditionalData?.Remove("display_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
         private string _explicitNullValueDisplayValue = default!;
 #endif
         /// <summary>Unique identifier of the picklist value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Internal reference value associated with this picklist option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceValue { get => _explicitNullValueReferenceValue; set { _explicitNullValueReferenceValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_value"); else _explicitNullProperties?.Remove("reference_value"); } }
+        public string? ReferenceValue { get => _explicitNullValueReferenceValue; set { _explicitNullValueReferenceValue = value; AdditionalData?.Remove("reference_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_value"); else _explicitNullProperties?.Remove("reference_value"); } }
         private string? _explicitNullValueReferenceValue = default!;
 #nullable restore
 #else
-        public string ReferenceValue { get => _explicitNullValueReferenceValue; set { _explicitNullValueReferenceValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_value"); else _explicitNullProperties?.Remove("reference_value"); } }
+        public string ReferenceValue { get => _explicitNullValueReferenceValue; set { _explicitNullValueReferenceValue = value; AdditionalData?.Remove("reference_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_value"); else _explicitNullProperties?.Remove("reference_value"); } }
         private string _explicitNullValueReferenceValue = default!;
 #endif
         /// <summary>Display sequence position of this picklist value.</summary>
-        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        public int? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; AdditionalData?.Remove("sequence_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
         private int? _explicitNullValueSequenceNumber = default!;
         /// <summary>Type classification of the picklist value.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.PickListValueType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PickListValueType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PickListValueType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PickListValue"/> and sets the default values.
@@ -116,7 +123,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "reference_value", n => { ReferenceValue = n.GetStringValue(); } },
                 { "sequence_number", n => { SequenceNumber = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PickListValueType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PickListValueType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

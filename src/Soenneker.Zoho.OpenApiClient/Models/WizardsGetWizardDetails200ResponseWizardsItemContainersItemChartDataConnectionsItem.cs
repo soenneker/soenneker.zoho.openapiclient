@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("source_screen") is { } nullNodeSourceScreen && nullNodeSourceScreen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceScreen = null;
-            if (parseNode.GetChildNode("target_screen") is { } nullNodeTargetScreen && nullNodeTargetScreen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetScreen = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("source_screen") is null) { _explicitNullValueSourceScreen = default!; _explicitNullProperties?.Remove("source_screen"); }
+            else if (parseNode.GetChildNode("source_screen") is { } nullNodeSourceScreen && nullNodeSourceScreen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceScreen = null;
+            if (parseNode.GetChildNode("target_screen") is null) { _explicitNullValueTargetScreen = default!; _explicitNullProperties?.Remove("target_screen"); }
+            else if (parseNode.GetChildNode("target_screen") is { } nullNodeTargetScreen && nullNodeTargetScreen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetScreen = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the unique identifier of the connection between the source screen and the target screen in the wizard flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the screen from which the connection originates in the wizard flow, identifying the starting point of the transition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemSourceScreen? SourceScreen { get => _explicitNullValueSourceScreen; set { _explicitNullValueSourceScreen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_screen"); else _explicitNullProperties?.Remove("source_screen"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemSourceScreen? SourceScreen { get => _explicitNullValueSourceScreen; set { _explicitNullValueSourceScreen = value; AdditionalData?.Remove("source_screen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_screen"); else _explicitNullProperties?.Remove("source_screen"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemSourceScreen? _explicitNullValueSourceScreen = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemSourceScreen SourceScreen { get => _explicitNullValueSourceScreen; set { _explicitNullValueSourceScreen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_screen"); else _explicitNullProperties?.Remove("source_screen"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemSourceScreen SourceScreen { get => _explicitNullValueSourceScreen; set { _explicitNullValueSourceScreen = value; AdditionalData?.Remove("source_screen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_screen"); else _explicitNullProperties?.Remove("source_screen"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemSourceScreen _explicitNullValueSourceScreen = default!;
 #endif
         /// <summary>Represents the screen to which the connection points in the wizard flow, identifying the destination of the transition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemTargetScreen? TargetScreen { get => _explicitNullValueTargetScreen; set { _explicitNullValueTargetScreen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_screen"); else _explicitNullProperties?.Remove("target_screen"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemTargetScreen? TargetScreen { get => _explicitNullValueTargetScreen; set { _explicitNullValueTargetScreen = value; AdditionalData?.Remove("target_screen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_screen"); else _explicitNullProperties?.Remove("target_screen"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemTargetScreen? _explicitNullValueTargetScreen = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemTargetScreen TargetScreen { get => _explicitNullValueTargetScreen; set { _explicitNullValueTargetScreen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_screen"); else _explicitNullProperties?.Remove("target_screen"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemTargetScreen TargetScreen { get => _explicitNullValueTargetScreen; set { _explicitNullValueTargetScreen = value; AdditionalData?.Remove("target_screen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_screen"); else _explicitNullProperties?.Remove("target_screen"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataConnectionsItemTargetScreen _explicitNullValueTargetScreen = default!;
 #endif
         /// <summary>

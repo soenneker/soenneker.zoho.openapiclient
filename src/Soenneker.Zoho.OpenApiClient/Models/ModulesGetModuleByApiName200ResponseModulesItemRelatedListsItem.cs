@@ -18,41 +18,66 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("connectedlookupApiName") is { } nullNodeConnectedlookupApiName && nullNodeConnectedlookupApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedlookupApiName = null;
-            if (parseNode.GetChildNode("connectedmodule") is { } nullNodeConnectedmodule && nullNodeConnectedmodule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connectedmodule = null;
-            if (parseNode.GetChildNode("customize_display_label") is { } nullNodeCustomizeDisplayLabel && nullNodeCustomizeDisplayLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomizeDisplayLabel = null;
-            if (parseNode.GetChildNode("customize_fields") is { } nullNodeCustomizeFields && nullNodeCustomizeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomizeFields = null;
-            if (parseNode.GetChildNode("customize_sort") is { } nullNodeCustomizeSort && nullNodeCustomizeSort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomizeSort = null;
-            if (parseNode.GetChildNode("display_label") is { } nullNodeDisplayLabel && nullNodeDisplayLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayLabel = null;
-            if (parseNode.GetChildNode("field_enabled") is { } nullNodeFieldEnabled && nullNodeFieldEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldEnabled = null;
-            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
-            if (parseNode.GetChildNode("href") is { } nullNodeHref && nullNodeHref.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Href = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("_layout_specific_properties") is { } nullNodeLayoutSpecificProperties && nullNodeLayoutSpecificProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LayoutSpecificProperties = null;
-            if (parseNode.GetChildNode("linkingmodule") is { } nullNodeLinkingmodule && nullNodeLinkingmodule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Linkingmodule = null;
-            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("parent_related_lists") is { } nullNodeParentRelatedLists && nullNodeParentRelatedLists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentRelatedLists = null;
-            if (parseNode.GetChildNode("personality_name") is { } nullNodePersonalityName && nullNodePersonalityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalityName = null;
-            if (parseNode.GetChildNode("record_operations") is { } nullNodeRecordOperations && nullNodeRecordOperations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordOperations = null;
-            if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
-            if (parseNode.GetChildNode("sort_by") is { } nullNodeSortBy && nullNodeSortBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortBy = null;
-            if (parseNode.GetChildNode("sort_order") is { } nullNodeSortOrder && nullNodeSortOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrder = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("connectedlookupApiName") is null) { _explicitNullValueConnectedlookupApiName = default!; _explicitNullProperties?.Remove("connectedlookupApiName"); }
+            else if (parseNode.GetChildNode("connectedlookupApiName") is { } nullNodeConnectedlookupApiName && nullNodeConnectedlookupApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedlookupApiName = null;
+            if (parseNode.GetChildNode("connectedmodule") is null) { _explicitNullValueConnectedmodule = default!; _explicitNullProperties?.Remove("connectedmodule"); }
+            else if (parseNode.GetChildNode("connectedmodule") is { } nullNodeConnectedmodule && nullNodeConnectedmodule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connectedmodule = null;
+            if (parseNode.GetChildNode("customize_display_label") is null) { _explicitNullValueCustomizeDisplayLabel = default!; _explicitNullProperties?.Remove("customize_display_label"); }
+            else if (parseNode.GetChildNode("customize_display_label") is { } nullNodeCustomizeDisplayLabel && nullNodeCustomizeDisplayLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomizeDisplayLabel = null;
+            if (parseNode.GetChildNode("customize_fields") is null) { _explicitNullValueCustomizeFields = default!; _explicitNullProperties?.Remove("customize_fields"); }
+            else if (parseNode.GetChildNode("customize_fields") is { } nullNodeCustomizeFields && nullNodeCustomizeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomizeFields = null;
+            if (parseNode.GetChildNode("customize_sort") is null) { _explicitNullValueCustomizeSort = default!; _explicitNullProperties?.Remove("customize_sort"); }
+            else if (parseNode.GetChildNode("customize_sort") is { } nullNodeCustomizeSort && nullNodeCustomizeSort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomizeSort = null;
+            if (parseNode.GetChildNode("display_label") is null) { _explicitNullValueDisplayLabel = default!; _explicitNullProperties?.Remove("display_label"); }
+            else if (parseNode.GetChildNode("display_label") is { } nullNodeDisplayLabel && nullNodeDisplayLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayLabel = null;
+            if (parseNode.GetChildNode("field_enabled") is null) { _explicitNullValueFieldEnabled = default!; _explicitNullProperties?.Remove("field_enabled"); }
+            else if (parseNode.GetChildNode("field_enabled") is { } nullNodeFieldEnabled && nullNodeFieldEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldEnabled = null;
+            if (parseNode.GetChildNode("fields") is null) { _explicitNullValueFields = default!; _explicitNullProperties?.Remove("fields"); }
+            else if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("href") is null) { _explicitNullValueHref = default!; _explicitNullProperties?.Remove("href"); }
+            else if (parseNode.GetChildNode("href") is { } nullNodeHref && nullNodeHref.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Href = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("_layout_specific_properties") is null) { _explicitNullValueLayoutSpecificProperties = default!; _explicitNullProperties?.Remove("_layout_specific_properties"); }
+            else if (parseNode.GetChildNode("_layout_specific_properties") is { } nullNodeLayoutSpecificProperties && nullNodeLayoutSpecificProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LayoutSpecificProperties = null;
+            if (parseNode.GetChildNode("linkingmodule") is null) { _explicitNullValueLinkingmodule = default!; _explicitNullProperties?.Remove("linkingmodule"); }
+            else if (parseNode.GetChildNode("linkingmodule") is { } nullNodeLinkingmodule && nullNodeLinkingmodule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Linkingmodule = null;
+            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
+            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("parent_related_lists") is null) { _explicitNullValueParentRelatedLists = default!; _explicitNullProperties?.Remove("parent_related_lists"); }
+            else if (parseNode.GetChildNode("parent_related_lists") is { } nullNodeParentRelatedLists && nullNodeParentRelatedLists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentRelatedLists = null;
+            if (parseNode.GetChildNode("personality_name") is null) { _explicitNullValuePersonalityName = default!; _explicitNullProperties?.Remove("personality_name"); }
+            else if (parseNode.GetChildNode("personality_name") is { } nullNodePersonalityName && nullNodePersonalityName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalityName = null;
+            if (parseNode.GetChildNode("record_operations") is null) { _explicitNullValueRecordOperations = default!; _explicitNullProperties?.Remove("record_operations"); }
+            else if (parseNode.GetChildNode("record_operations") is { } nullNodeRecordOperations && nullNodeRecordOperations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordOperations = null;
+            if (parseNode.GetChildNode("sequence_number") is null) { _explicitNullValueSequenceNumber = default!; _explicitNullProperties?.Remove("sequence_number"); }
+            else if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
+            if (parseNode.GetChildNode("sort_by") is null) { _explicitNullValueSortBy = default!; _explicitNullProperties?.Remove("sort_by"); }
+            else if (parseNode.GetChildNode("sort_by") is { } nullNodeSortBy && nullNodeSortBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortBy = null;
+            if (parseNode.GetChildNode("sort_order") is null) { _explicitNullValueSortOrder = default!; _explicitNullProperties?.Remove("sort_order"); }
+            else if (parseNode.GetChildNode("sort_order") is { } nullNodeSortOrder && nullNodeSortOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrder = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("visibility") is null) { _explicitNullValueVisibility = default!; _explicitNullProperties?.Remove("visibility"); }
+            else if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
         }
 
         /// <summary>Action URL or operation identifier associated with this related list, up to 64 characters; null when no action is defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public string? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private string? _explicitNullValueAction = default!;
 #nullable restore
 #else
-        public string Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public string Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private string _explicitNullValueAction = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -60,186 +85,186 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>API name used to reference this related list programmatically, up to 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>API name of the connected lookup field linking this related list to another module, up to 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectedlookupApiName { get => _explicitNullValueConnectedlookupApiName; set { _explicitNullValueConnectedlookupApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedlookupApiName"); else _explicitNullProperties?.Remove("connectedlookupApiName"); } }
+        public string? ConnectedlookupApiName { get => _explicitNullValueConnectedlookupApiName; set { _explicitNullValueConnectedlookupApiName = value; AdditionalData?.Remove("connectedlookupApiName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedlookupApiName"); else _explicitNullProperties?.Remove("connectedlookupApiName"); } }
         private string? _explicitNullValueConnectedlookupApiName = default!;
 #nullable restore
 #else
-        public string ConnectedlookupApiName { get => _explicitNullValueConnectedlookupApiName; set { _explicitNullValueConnectedlookupApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedlookupApiName"); else _explicitNullProperties?.Remove("connectedlookupApiName"); } }
+        public string ConnectedlookupApiName { get => _explicitNullValueConnectedlookupApiName; set { _explicitNullValueConnectedlookupApiName = value; AdditionalData?.Remove("connectedlookupApiName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedlookupApiName"); else _explicitNullProperties?.Remove("connectedlookupApiName"); } }
         private string _explicitNullValueConnectedlookupApiName = default!;
 #endif
         /// <summary>API name of the connected module for this related list; null when no module connection exists. Between 1 and 250 alphanumeric or underscore characters when present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Connectedmodule { get => _explicitNullValueConnectedmodule; set { _explicitNullValueConnectedmodule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedmodule"); else _explicitNullProperties?.Remove("connectedmodule"); } }
+        public string? Connectedmodule { get => _explicitNullValueConnectedmodule; set { _explicitNullValueConnectedmodule = value; AdditionalData?.Remove("connectedmodule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedmodule"); else _explicitNullProperties?.Remove("connectedmodule"); } }
         private string? _explicitNullValueConnectedmodule = default!;
 #nullable restore
 #else
-        public string Connectedmodule { get => _explicitNullValueConnectedmodule; set { _explicitNullValueConnectedmodule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedmodule"); else _explicitNullProperties?.Remove("connectedmodule"); } }
+        public string Connectedmodule { get => _explicitNullValueConnectedmodule; set { _explicitNullValueConnectedmodule = value; AdditionalData?.Remove("connectedmodule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectedmodule"); else _explicitNullProperties?.Remove("connectedmodule"); } }
         private string _explicitNullValueConnectedmodule = default!;
 #endif
         /// <summary>True when the display label for this related list can be customized.</summary>
-        public bool? CustomizeDisplayLabel { get => _explicitNullValueCustomizeDisplayLabel; set { _explicitNullValueCustomizeDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customize_display_label"); else _explicitNullProperties?.Remove("customize_display_label"); } }
+        public bool? CustomizeDisplayLabel { get => _explicitNullValueCustomizeDisplayLabel; set { _explicitNullValueCustomizeDisplayLabel = value; AdditionalData?.Remove("customize_display_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customize_display_label"); else _explicitNullProperties?.Remove("customize_display_label"); } }
         private bool? _explicitNullValueCustomizeDisplayLabel = default!;
         /// <summary>True when fields in this related list can be customized.</summary>
-        public bool? CustomizeFields { get => _explicitNullValueCustomizeFields; set { _explicitNullValueCustomizeFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customize_fields"); else _explicitNullProperties?.Remove("customize_fields"); } }
+        public bool? CustomizeFields { get => _explicitNullValueCustomizeFields; set { _explicitNullValueCustomizeFields = value; AdditionalData?.Remove("customize_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customize_fields"); else _explicitNullProperties?.Remove("customize_fields"); } }
         private bool? _explicitNullValueCustomizeFields = default!;
         /// <summary>True when sorting for this related list can be customized.</summary>
-        public bool? CustomizeSort { get => _explicitNullValueCustomizeSort; set { _explicitNullValueCustomizeSort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customize_sort"); else _explicitNullProperties?.Remove("customize_sort"); } }
+        public bool? CustomizeSort { get => _explicitNullValueCustomizeSort; set { _explicitNullValueCustomizeSort = value; AdditionalData?.Remove("customize_sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customize_sort"); else _explicitNullProperties?.Remove("customize_sort"); } }
         private bool? _explicitNullValueCustomizeSort = default!;
         /// <summary>UI display label for this related list. Maximum 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
+        public string? DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; AdditionalData?.Remove("display_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
         private string? _explicitNullValueDisplayLabel = default!;
 #nullable restore
 #else
-        public string DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
+        public string DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; AdditionalData?.Remove("display_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
         private string _explicitNullValueDisplayLabel = default!;
 #endif
         /// <summary>True when this related list field is enabled and active.</summary>
-        public bool? FieldEnabled { get => _explicitNullValueFieldEnabled; set { _explicitNullValueFieldEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_enabled"); else _explicitNullProperties?.Remove("field_enabled"); } }
+        public bool? FieldEnabled { get => _explicitNullValueFieldEnabled; set { _explicitNullValueFieldEnabled = value; AdditionalData?.Remove("field_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_enabled"); else _explicitNullProperties?.Remove("field_enabled"); } }
         private bool? _explicitNullValueFieldEnabled = default!;
         /// <summary>List of fields displayed in this related list. Maximum 1000 items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemFieldsItem>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemFieldsItem>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemFieldsItem>? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemFieldsItem> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemFieldsItem> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemFieldsItem> _explicitNullValueFields = default!;
 #endif
         /// <summary>Reference URL for the related list, or null if not applicable. Between 1 and 2048 characters when present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
+        public string? Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; AdditionalData?.Remove("href"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
         private string? _explicitNullValueHref = default!;
 #nullable restore
 #else
-        public string Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
+        public string Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; AdditionalData?.Remove("href"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
         private string _explicitNullValueHref = default!;
 #endif
         /// <summary>Unique numeric identifier of the related list, returned as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Per-layout configuration entries governing how this related list appears within each associated layout; contains up to 2,147,483,647 items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemLayoutSpecificPropertiesItem>? LayoutSpecificProperties { get => _explicitNullValueLayoutSpecificProperties; set { _explicitNullValueLayoutSpecificProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_layout_specific_properties"); else _explicitNullProperties?.Remove("_layout_specific_properties"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemLayoutSpecificPropertiesItem>? LayoutSpecificProperties { get => _explicitNullValueLayoutSpecificProperties; set { _explicitNullValueLayoutSpecificProperties = value; AdditionalData?.Remove("_layout_specific_properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_layout_specific_properties"); else _explicitNullProperties?.Remove("_layout_specific_properties"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemLayoutSpecificPropertiesItem>? _explicitNullValueLayoutSpecificProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemLayoutSpecificPropertiesItem> LayoutSpecificProperties { get => _explicitNullValueLayoutSpecificProperties; set { _explicitNullValueLayoutSpecificProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_layout_specific_properties"); else _explicitNullProperties?.Remove("_layout_specific_properties"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemLayoutSpecificPropertiesItem> LayoutSpecificProperties { get => _explicitNullValueLayoutSpecificProperties; set { _explicitNullValueLayoutSpecificProperties = value; AdditionalData?.Remove("_layout_specific_properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_layout_specific_properties"); else _explicitNullProperties?.Remove("_layout_specific_properties"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemLayoutSpecificPropertiesItem> _explicitNullValueLayoutSpecificProperties = default!;
 #endif
         /// <summary>API name of the linking module associated with this related list; null when no linking module is configured. Between 1 and 250 alphanumeric or underscore characters when present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Linkingmodule { get => _explicitNullValueLinkingmodule; set { _explicitNullValueLinkingmodule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkingmodule"); else _explicitNullProperties?.Remove("linkingmodule"); } }
+        public string? Linkingmodule { get => _explicitNullValueLinkingmodule; set { _explicitNullValueLinkingmodule = value; AdditionalData?.Remove("linkingmodule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkingmodule"); else _explicitNullProperties?.Remove("linkingmodule"); } }
         private string? _explicitNullValueLinkingmodule = default!;
 #nullable restore
 #else
-        public string Linkingmodule { get => _explicitNullValueLinkingmodule; set { _explicitNullValueLinkingmodule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkingmodule"); else _explicitNullProperties?.Remove("linkingmodule"); } }
+        public string Linkingmodule { get => _explicitNullValueLinkingmodule; set { _explicitNullValueLinkingmodule = value; AdditionalData?.Remove("linkingmodule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkingmodule"); else _explicitNullProperties?.Remove("linkingmodule"); } }
         private string _explicitNullValueLinkingmodule = default!;
 #endif
         /// <summary>Module details associated with this related list entry, including its name and metadata; null if no module is linked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemModule _explicitNullValueModule = default!;
 #endif
         /// <summary>System-level name identifying the related list module; maximum 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Array of parent related list references when this entry is nested within another related list; null for top-level related lists. Maximum 100 items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemParentRelatedListsItem>? ParentRelatedLists { get => _explicitNullValueParentRelatedLists; set { _explicitNullValueParentRelatedLists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_related_lists"); else _explicitNullProperties?.Remove("parent_related_lists"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemParentRelatedListsItem>? ParentRelatedLists { get => _explicitNullValueParentRelatedLists; set { _explicitNullValueParentRelatedLists = value; AdditionalData?.Remove("parent_related_lists"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_related_lists"); else _explicitNullProperties?.Remove("parent_related_lists"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemParentRelatedListsItem>? _explicitNullValueParentRelatedLists = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemParentRelatedListsItem> ParentRelatedLists { get => _explicitNullValueParentRelatedLists; set { _explicitNullValueParentRelatedLists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_related_lists"); else _explicitNullProperties?.Remove("parent_related_lists"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemParentRelatedListsItem> ParentRelatedLists { get => _explicitNullValueParentRelatedLists; set { _explicitNullValueParentRelatedLists = value; AdditionalData?.Remove("parent_related_lists"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_related_lists"); else _explicitNullProperties?.Remove("parent_related_lists"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemParentRelatedListsItem> _explicitNullValueParentRelatedLists = default!;
 #endif
         /// <summary>Personality name assigned to this related list configuration, distinguishing its behavioral variant; maximum 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonalityName { get => _explicitNullValuePersonalityName; set { _explicitNullValuePersonalityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personality_name"); else _explicitNullProperties?.Remove("personality_name"); } }
+        public string? PersonalityName { get => _explicitNullValuePersonalityName; set { _explicitNullValuePersonalityName = value; AdditionalData?.Remove("personality_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personality_name"); else _explicitNullProperties?.Remove("personality_name"); } }
         private string? _explicitNullValuePersonalityName = default!;
 #nullable restore
 #else
-        public string PersonalityName { get => _explicitNullValuePersonalityName; set { _explicitNullValuePersonalityName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personality_name"); else _explicitNullProperties?.Remove("personality_name"); } }
+        public string PersonalityName { get => _explicitNullValuePersonalityName; set { _explicitNullValuePersonalityName = value; AdditionalData?.Remove("personality_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personality_name"); else _explicitNullProperties?.Remove("personality_name"); } }
         private string _explicitNullValuePersonalityName = default!;
 #endif
         /// <summary>Set of allowed record-level operations within this related list, such as create, edit, and assign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations? RecordOperations { get => _explicitNullValueRecordOperations; set { _explicitNullValueRecordOperations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_operations"); else _explicitNullProperties?.Remove("record_operations"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations? RecordOperations { get => _explicitNullValueRecordOperations; set { _explicitNullValueRecordOperations = value; AdditionalData?.Remove("record_operations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_operations"); else _explicitNullProperties?.Remove("record_operations"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations? _explicitNullValueRecordOperations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations RecordOperations { get => _explicitNullValueRecordOperations; set { _explicitNullValueRecordOperations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_operations"); else _explicitNullProperties?.Remove("record_operations"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations RecordOperations { get => _explicitNullValueRecordOperations; set { _explicitNullValueRecordOperations = value; AdditionalData?.Remove("record_operations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_operations"); else _explicitNullProperties?.Remove("record_operations"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations _explicitNullValueRecordOperations = default!;
 #endif
         /// <summary>Display position of this related list; lower values appear first.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        public string? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; AdditionalData?.Remove("sequence_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
         private string? _explicitNullValueSequenceNumber = default!;
 #nullable restore
 #else
-        public string SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        public string SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; AdditionalData?.Remove("sequence_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
         private string _explicitNullValueSequenceNumber = default!;
 #endif
         /// <summary>Field by which records in this related list are sorted by default; contains the field&apos;s API name and unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy? SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy? SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; AdditionalData?.Remove("sort_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy? _explicitNullValueSortBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; AdditionalData?.Remove("sort_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy _explicitNullValueSortBy = default!;
 #endif
         /// <summary>Sort direction applied to records in this related list. Possible values: asc - ascending; desc - descending; null - no sort order configured.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder? _explicitNullValueSortOrder = default!;
         /// <summary>Visibility status of this related list; currently only &apos;visible&apos; is supported.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.VisibleStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.VisibleStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.VisibleStatus? _explicitNullValueStatus = default!;
         /// <summary>Classification of this related list. Possible values: default - standard related list; multiselectlookup - multi-select lookup; combined_view - combined view; custom_lookup - custom lookup; custom_related_list - custom related list; slyteui - Slyte UI; queries - query-based; custom_function - function-based; grouped - grouped list.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemType? _explicitNullValueType = default!;
         /// <summary>Numeric code controlling where this related list appears or is hidden in the UI</summary>
-        public int? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        public int? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
         private int? _explicitNullValueVisibility = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItem"/> and sets the default values.
@@ -287,9 +312,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "record_operations", n => { RecordOperations = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations.CreateFromDiscriminatorValue); } },
                 { "sequence_number", n => { SequenceNumber = n.GetStringValue(); } },
                 { "sort_by", n => { SortBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy.CreateFromDiscriminatorValue); } },
-                { "sort_order", n => { SortOrder = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VisibleStatus>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemType>(); } },
+                { "sort_order", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSortOrder = default; _explicitNullProperties?.Remove("sort_order"); AdditionalData["sort_order"] = unknown; } else { SortOrder = parsed; AdditionalData.Remove("sort_order"); } } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VisibleStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "visibility", n => { Visibility = n.GetIntValue(); } },
             };
         }

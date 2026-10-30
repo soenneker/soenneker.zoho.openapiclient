@@ -156,7 +156,7 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Custom_viewsRequestBuilder.Custom_viewsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/custom_views/settings/custom_views?ids={ids}&module={module}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/custom_views/settings/custom_views?ids={ids}&module={module}", RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/custom_views/settings/custom_views", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -175,7 +175,7 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Custom_viewsRequestBuilder.Custom_viewsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/custom_views/settings/custom_views?ids={ids}&module={module}{&favourite*,filters*,page*,per_page*,scope*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/custom_views/settings/custom_views?ids={ids}&module={module}{&favourite*,filters*,page*,per_page*,scope*}", RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/custom_views/settings/custom_views", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -196,7 +196,7 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/custom_views/settings/custom_views", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -218,7 +218,7 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/custom_views/settings/custom_views", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

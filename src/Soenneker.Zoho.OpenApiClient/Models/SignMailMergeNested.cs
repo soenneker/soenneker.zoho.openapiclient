@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("file_name") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
-            if (parseNode.GetChildNode("mail_merge_template") is { } nullNodeMailMergeTemplate && nullNodeMailMergeTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailMergeTemplate = null;
-            if (parseNode.GetChildNode("signers") is { } nullNodeSigners && nullNodeSigners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signers = null;
-            if (parseNode.GetChildNode("sign_in_order") is { } nullNodeSignInOrder && nullNodeSignInOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignInOrder = null;
+            if (parseNode.GetChildNode("file_name") is null) { _explicitNullValueFileName = default!; _explicitNullProperties?.Remove("file_name"); }
+            else if (parseNode.GetChildNode("file_name") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
+            if (parseNode.GetChildNode("mail_merge_template") is null) { _explicitNullValueMailMergeTemplate = default!; _explicitNullProperties?.Remove("mail_merge_template"); }
+            else if (parseNode.GetChildNode("mail_merge_template") is { } nullNodeMailMergeTemplate && nullNodeMailMergeTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailMergeTemplate = null;
+            if (parseNode.GetChildNode("signers") is null) { _explicitNullValueSigners = default!; _explicitNullProperties?.Remove("signers"); }
+            else if (parseNode.GetChildNode("signers") is { } nullNodeSigners && nullNodeSigners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signers = null;
+            if (parseNode.GetChildNode("sign_in_order") is null) { _explicitNullValueSignInOrder = default!; _explicitNullProperties?.Remove("sign_in_order"); }
+            else if (parseNode.GetChildNode("sign_in_order") is { } nullNodeSignInOrder && nullNodeSignInOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignInOrder = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,35 +33,35 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the name of the file to send for signing or approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
+        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; AdditionalData?.Remove("file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
         private string? _explicitNullValueFileName = default!;
 #nullable restore
 #else
-        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
+        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; AdditionalData?.Remove("file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
         private string _explicitNullValueFileName = default!;
 #endif
         /// <summary>To pass Template details (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate? MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate? MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; AdditionalData?.Remove("mail_merge_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate? _explicitNullValueMailMergeTemplate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; AdditionalData?.Remove("mail_merge_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNestedMailMergeTemplate _explicitNullValueMailMergeTemplate = default!;
 #endif
         /// <summary>The details of the users you want to sign the document.- recipient_name **string, mandatory** - the name of the user who has to sign or approve the document.- **action_type** string, mandatory - the type of action you want the user to perform. The possible values are sign to **sign** the document, and **approve** to approve the document.- **recipient** JSON object, mandatory    - **value** string, mandatory - the email ID of the user who has to sign or approve the document.&gt; **Note**&gt; The values for the fields **recipient_name** and **recipient.value** will be taken from the mail merge template. If you want to override the values in the template, you must specify the values of these fields in the input body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested>? Signers { get => _explicitNullValueSigners; set { _explicitNullValueSigners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signers"); else _explicitNullProperties?.Remove("signers"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested>? Signers { get => _explicitNullValueSigners; set { _explicitNullValueSigners = value; AdditionalData?.Remove("signers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signers"); else _explicitNullProperties?.Remove("signers"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested>? _explicitNullValueSigners = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested> Signers { get => _explicitNullValueSigners; set { _explicitNullValueSigners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signers"); else _explicitNullProperties?.Remove("signers"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested> Signers { get => _explicitNullValueSigners; set { _explicitNullValueSigners = value; AdditionalData?.Remove("signers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signers"); else _explicitNullProperties?.Remove("signers"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.SignersNested> _explicitNullValueSigners = default!;
 #endif
         /// <summary>Indicates whether recipients must act on the document in a specified sequence.Possible values:**true** - The document first goes for approval, then for signing in the defined order.**false** - Zoho Sign sends the document to all recipients simultaneously.</summary>
-        public bool? SignInOrder { get => _explicitNullValueSignInOrder; set { _explicitNullValueSignInOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_in_order"); else _explicitNullProperties?.Remove("sign_in_order"); } }
+        public bool? SignInOrder { get => _explicitNullValueSignInOrder; set { _explicitNullValueSignInOrder = value; AdditionalData?.Remove("sign_in_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_in_order"); else _explicitNullProperties?.Remove("sign_in_order"); } }
         private bool? _explicitNullValueSignInOrder = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SignMailMergeNested"/> and sets the default values.

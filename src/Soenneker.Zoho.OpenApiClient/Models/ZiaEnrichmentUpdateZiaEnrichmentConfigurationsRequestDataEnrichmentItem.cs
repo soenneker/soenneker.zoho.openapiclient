@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("input_data_field_mapping") is { } nullNodeInputDataFieldMapping && nullNodeInputDataFieldMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputDataFieldMapping = null;
-            if (parseNode.GetChildNode("output_data_field_mapping") is { } nullNodeOutputDataFieldMapping && nullNodeOutputDataFieldMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputDataFieldMapping = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("input_data_field_mapping") is null) { _explicitNullValueInputDataFieldMapping = default!; _explicitNullProperties?.Remove("input_data_field_mapping"); }
+            else if (parseNode.GetChildNode("input_data_field_mapping") is { } nullNodeInputDataFieldMapping && nullNodeInputDataFieldMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputDataFieldMapping = null;
+            if (parseNode.GetChildNode("output_data_field_mapping") is null) { _explicitNullValueOutputDataFieldMapping = default!; _explicitNullProperties?.Remove("output_data_field_mapping"); }
+            else if (parseNode.GetChildNode("output_data_field_mapping") is { } nullNodeOutputDataFieldMapping && nullNodeOutputDataFieldMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputDataFieldMapping = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of field mappings for write operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem>? InputDataFieldMapping { get => _explicitNullValueInputDataFieldMapping; set { _explicitNullValueInputDataFieldMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_data_field_mapping"); else _explicitNullProperties?.Remove("input_data_field_mapping"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem>? InputDataFieldMapping { get => _explicitNullValueInputDataFieldMapping; set { _explicitNullValueInputDataFieldMapping = value; AdditionalData?.Remove("input_data_field_mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_data_field_mapping"); else _explicitNullProperties?.Remove("input_data_field_mapping"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem>? _explicitNullValueInputDataFieldMapping = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem> InputDataFieldMapping { get => _explicitNullValueInputDataFieldMapping; set { _explicitNullValueInputDataFieldMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_data_field_mapping"); else _explicitNullProperties?.Remove("input_data_field_mapping"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem> InputDataFieldMapping { get => _explicitNullValueInputDataFieldMapping; set { _explicitNullValueInputDataFieldMapping = value; AdditionalData?.Remove("input_data_field_mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_data_field_mapping"); else _explicitNullProperties?.Remove("input_data_field_mapping"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem> _explicitNullValueInputDataFieldMapping = default!;
 #endif
         /// <summary>Array of field mappings for write operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem>? OutputDataFieldMapping { get => _explicitNullValueOutputDataFieldMapping; set { _explicitNullValueOutputDataFieldMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_data_field_mapping"); else _explicitNullProperties?.Remove("output_data_field_mapping"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem>? OutputDataFieldMapping { get => _explicitNullValueOutputDataFieldMapping; set { _explicitNullValueOutputDataFieldMapping = value; AdditionalData?.Remove("output_data_field_mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_data_field_mapping"); else _explicitNullProperties?.Remove("output_data_field_mapping"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem>? _explicitNullValueOutputDataFieldMapping = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem> OutputDataFieldMapping { get => _explicitNullValueOutputDataFieldMapping; set { _explicitNullValueOutputDataFieldMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_data_field_mapping"); else _explicitNullProperties?.Remove("output_data_field_mapping"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem> OutputDataFieldMapping { get => _explicitNullValueOutputDataFieldMapping; set { _explicitNullValueOutputDataFieldMapping = value; AdditionalData?.Remove("output_data_field_mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_data_field_mapping"); else _explicitNullProperties?.Remove("output_data_field_mapping"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldMappingForWriteItem> _explicitNullValueOutputDataFieldMapping = default!;
 #endif
         /// <summary>Whether the enrichment configuration should be active.</summary>
-        public bool? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public bool? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private bool? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentUpdateZiaEnrichmentConfigurationsRequestDataEnrichmentItem"/> and sets the default values.

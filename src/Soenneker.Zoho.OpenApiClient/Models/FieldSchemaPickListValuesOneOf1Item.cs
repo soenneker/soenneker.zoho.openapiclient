@@ -18,7 +18,43 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("display_value") is null) { _explicitNullValueDisplayValue = default!; _explicitNullProperties?.Remove("display_value"); }
+            else if (parseNode.GetChildNode("display_value") is { } nullNodeDisplayValue && nullNodeDisplayValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayValue = null;
+            if (parseNode.GetChildNode("sequence_number") is null) { _explicitNullValueSequenceNumber = default!; _explicitNullProperties?.Remove("sequence_number"); }
+            else if (parseNode.GetChildNode("sequence_number") is { } nullNodeSequenceNumber && nullNodeSequenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceNumber = null;
+            if (parseNode.GetChildNode("reference_value") is null) { _explicitNullValueReferenceValue = default!; _explicitNullProperties?.Remove("reference_value"); }
+            else if (parseNode.GetChildNode("reference_value") is { } nullNodeReferenceValue && nullNodeReferenceValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceValue = null;
+            if (parseNode.GetChildNode("colour_code") is null) { _explicitNullValueColourCode = default!; _explicitNullProperties?.Remove("colour_code"); }
+            else if (parseNode.GetChildNode("colour_code") is { } nullNodeColourCode && nullNodeColourCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColourCode = null;
+            if (parseNode.GetChildNode("actual_value") is null) { _explicitNullValueActualValue = default!; _explicitNullProperties?.Remove("actual_value"); }
+            else if (parseNode.GetChildNode("actual_value") is { } nullNodeActualValue && nullNodeActualValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualValue = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("record_category_value") is null) { _explicitNullValueRecordCategoryValue = default!; _explicitNullProperties?.Remove("record_category_value"); }
+            else if (parseNode.GetChildNode("record_category_value") is { } nullNodeRecordCategoryValue && nullNodeRecordCategoryValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordCategoryValue = null;
         }
+
+        // Restore fields omitted by the generator's model-depth limit.
+#nullable enable
+        public string? DisplayValue { get => _explicitNullValueDisplayValue; set { _explicitNullValueDisplayValue = value; AdditionalData?.Remove("display_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_value"); else _explicitNullProperties?.Remove("display_value"); } }
+        private string? _explicitNullValueDisplayValue = default!;
+        public double? SequenceNumber { get => _explicitNullValueSequenceNumber; set { _explicitNullValueSequenceNumber = value; AdditionalData?.Remove("sequence_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_number"); else _explicitNullProperties?.Remove("sequence_number"); } }
+        private double? _explicitNullValueSequenceNumber = default!;
+        public string? ReferenceValue { get => _explicitNullValueReferenceValue; set { _explicitNullValueReferenceValue = value; AdditionalData?.Remove("reference_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_value"); else _explicitNullProperties?.Remove("reference_value"); } }
+        private string? _explicitNullValueReferenceValue = default!;
+        public string? ColourCode { get => _explicitNullValueColourCode; set { _explicitNullValueColourCode = value; AdditionalData?.Remove("colour_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colour_code"); else _explicitNullProperties?.Remove("colour_code"); } }
+        private string? _explicitNullValueColourCode = default!;
+        public string? ActualValue { get => _explicitNullValueActualValue; set { _explicitNullValueActualValue = value; AdditionalData?.Remove("actual_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_value"); else _explicitNullProperties?.Remove("actual_value"); } }
+        private string? _explicitNullValueActualValue = default!;
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? RecordCategoryValue { get => _explicitNullValueRecordCategoryValue; set { _explicitNullValueRecordCategoryValue = value; AdditionalData?.Remove("record_category_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_category_value"); else _explicitNullProperties?.Remove("record_category_value"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueRecordCategoryValue = default!;
+#nullable restore
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -47,6 +83,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "display_value", n => { DisplayValue = n.GetStringValue(); } },
+                { "sequence_number", n => { SequenceNumber = n.GetDoubleValue(); } },
+                { "reference_value", n => { ReferenceValue = n.GetStringValue(); } },
+                { "colour_code", n => { ColourCode = n.GetStringValue(); } },
+                { "actual_value", n => { ActualValue = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "record_category_value", n => { RecordCategoryValue = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -56,6 +100,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("display_value", DisplayValue);
+            writer.WriteDoubleValue("sequence_number", SequenceNumber);
+            writer.WriteStringValue("reference_value", ReferenceValue);
+            writer.WriteStringValue("colour_code", ColourCode);
+            writer.WriteStringValue("actual_value", ActualValue);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("record_category_value", RecordCategoryValue);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("appointment_preferences") is { } nullNodeAppointmentPreferences && nullNodeAppointmentPreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppointmentPreferences = null;
+            if (parseNode.GetChildNode("appointment_preferences") is null) { _explicitNullValueAppointmentPreferences = default!; _explicitNullProperties?.Remove("appointment_preferences"); }
+            else if (parseNode.GetChildNode("appointment_preferences") is { } nullNodeAppointmentPreferences && nullNodeAppointmentPreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppointmentPreferences = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the appointment preferences to configure for the Zoho CRM organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences? AppointmentPreferences { get => _explicitNullValueAppointmentPreferences; set { _explicitNullValueAppointmentPreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appointment_preferences"); else _explicitNullProperties?.Remove("appointment_preferences"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences? AppointmentPreferences { get => _explicitNullValueAppointmentPreferences; set { _explicitNullValueAppointmentPreferences = value; AdditionalData?.Remove("appointment_preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appointment_preferences"); else _explicitNullProperties?.Remove("appointment_preferences"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences? _explicitNullValueAppointmentPreferences = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences AppointmentPreferences { get => _explicitNullValueAppointmentPreferences; set { _explicitNullValueAppointmentPreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appointment_preferences"); else _explicitNullProperties?.Remove("appointment_preferences"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences AppointmentPreferences { get => _explicitNullValueAppointmentPreferences; set { _explicitNullValueAppointmentPreferences = value; AdditionalData?.Remove("appointment_preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appointment_preferences"); else _explicitNullProperties?.Remove("appointment_preferences"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferences _explicitNullValueAppointmentPreferences = default!;
 #endif
         /// <summary>

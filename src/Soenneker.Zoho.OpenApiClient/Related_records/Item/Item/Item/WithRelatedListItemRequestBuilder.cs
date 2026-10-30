@@ -143,7 +143,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/related_records/{parentRecordModule}/{parentRecord}/{relatedList}?ids={ids}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/related_records/{parentRecordModule}/{parentRecord}/{relatedList}?ids={ids}", RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/related_records/{parentRecordModule}/{parentRecord}/{relatedList}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -162,7 +162,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.WithRelatedListItemRequestBuilder.WithRelatedListItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/related_records/{parentRecordModule}/{parentRecord}/{relatedList}?fields={fields}{&approval_state*,approved*,converted*,filters*,ids*,page*,page_token*,perPage*,sort_by*,sort_order*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/related_records/{parentRecordModule}/{parentRecord}/{relatedList}?fields={fields}{&approval_state*,approved*,converted*,filters*,ids*,page*,page_token*,perPage*,sort_by*,sort_order*}", RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/related_records/{parentRecordModule}/{parentRecord}/{relatedList}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -183,7 +183,7 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/related_records/{parentRecordModule}/{parentRecord}/{relatedList}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

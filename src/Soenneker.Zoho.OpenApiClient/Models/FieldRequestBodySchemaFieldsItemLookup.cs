@@ -18,11 +18,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("display_label") is { } nullNodeDisplayLabel && nullNodeDisplayLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayLabel = null;
-            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
-            if (parseNode.GetChildNode("query_details") is { } nullNodeQueryDetails && nullNodeQueryDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryDetails = null;
-            if (parseNode.GetChildNode("revalidate_filter_during_edit") is { } nullNodeRevalidateFilterDuringEdit && nullNodeRevalidateFilterDuringEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevalidateFilterDuringEdit = null;
-            if (parseNode.GetChildNode("sharing_properties") is { } nullNodeSharingProperties && nullNodeSharingProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingProperties = null;
+            if (parseNode.GetChildNode("display_label") is null) { _explicitNullValueDisplayLabel = default!; _explicitNullProperties?.Remove("display_label"); }
+            else if (parseNode.GetChildNode("display_label") is { } nullNodeDisplayLabel && nullNodeDisplayLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayLabel = null;
+            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
+            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("query_details") is null) { _explicitNullValueQueryDetails = default!; _explicitNullProperties?.Remove("query_details"); }
+            else if (parseNode.GetChildNode("query_details") is { } nullNodeQueryDetails && nullNodeQueryDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryDetails = null;
+            if (parseNode.GetChildNode("revalidate_filter_during_edit") is null) { _explicitNullValueRevalidateFilterDuringEdit = default!; _explicitNullProperties?.Remove("revalidate_filter_during_edit"); }
+            else if (parseNode.GetChildNode("revalidate_filter_during_edit") is { } nullNodeRevalidateFilterDuringEdit && nullNodeRevalidateFilterDuringEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevalidateFilterDuringEdit = null;
+            if (parseNode.GetChildNode("sharing_properties") is null) { _explicitNullValueSharingProperties = default!; _explicitNullProperties?.Remove("sharing_properties"); }
+            else if (parseNode.GetChildNode("sharing_properties") is { } nullNodeSharingProperties && nullNodeSharingProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingProperties = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the display label in related list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
+        public string? DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; AdditionalData?.Remove("display_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
         private string? _explicitNullValueDisplayLabel = default!;
 #nullable restore
 #else
-        public string DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
+        public string DisplayLabel { get => _explicitNullValueDisplayLabel; set { _explicitNullValueDisplayLabel = value; AdditionalData?.Remove("display_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_label"); else _explicitNullProperties?.Remove("display_label"); } }
         private string _explicitNullValueDisplayLabel = default!;
 #endif
         /// <summary>Specify the module to associate via lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Specify the filter criteria for lookup records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupQueryDetails? QueryDetails { get => _explicitNullValueQueryDetails; set { _explicitNullValueQueryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_details"); else _explicitNullProperties?.Remove("query_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupQueryDetails? QueryDetails { get => _explicitNullValueQueryDetails; set { _explicitNullValueQueryDetails = value; AdditionalData?.Remove("query_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_details"); else _explicitNullProperties?.Remove("query_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupQueryDetails? _explicitNullValueQueryDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupQueryDetails QueryDetails { get => _explicitNullValueQueryDetails; set { _explicitNullValueQueryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_details"); else _explicitNullProperties?.Remove("query_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupQueryDetails QueryDetails { get => _explicitNullValueQueryDetails; set { _explicitNullValueQueryDetails = value; AdditionalData?.Remove("query_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_details"); else _explicitNullProperties?.Remove("query_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupQueryDetails _explicitNullValueQueryDetails = default!;
 #endif
         /// <summary>Specify the revalidate filters during record edit.</summary>
-        public bool? RevalidateFilterDuringEdit { get => _explicitNullValueRevalidateFilterDuringEdit; set { _explicitNullValueRevalidateFilterDuringEdit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revalidate_filter_during_edit"); else _explicitNullProperties?.Remove("revalidate_filter_during_edit"); } }
+        public bool? RevalidateFilterDuringEdit { get => _explicitNullValueRevalidateFilterDuringEdit; set { _explicitNullValueRevalidateFilterDuringEdit = value; AdditionalData?.Remove("revalidate_filter_during_edit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revalidate_filter_during_edit"); else _explicitNullProperties?.Remove("revalidate_filter_during_edit"); } }
         private bool? _explicitNullValueRevalidateFilterDuringEdit = default!;
         /// <summary>Specify the sharing configuration (for userlookup).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingProperties? SharingProperties { get => _explicitNullValueSharingProperties; set { _explicitNullValueSharingProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing_properties"); else _explicitNullProperties?.Remove("sharing_properties"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingProperties? SharingProperties { get => _explicitNullValueSharingProperties; set { _explicitNullValueSharingProperties = value; AdditionalData?.Remove("sharing_properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing_properties"); else _explicitNullProperties?.Remove("sharing_properties"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingProperties? _explicitNullValueSharingProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingProperties SharingProperties { get => _explicitNullValueSharingProperties; set { _explicitNullValueSharingProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing_properties"); else _explicitNullProperties?.Remove("sharing_properties"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingProperties SharingProperties { get => _explicitNullValueSharingProperties; set { _explicitNullValueSharingProperties = value; AdditionalData?.Remove("sharing_properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing_properties"); else _explicitNullProperties?.Remove("sharing_properties"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemLookupSharingProperties _explicitNullValueSharingProperties = default!;
 #endif
         /// <summary>

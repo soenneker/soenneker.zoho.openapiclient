@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("connected_lookup_field") is { } nullNodeConnectedLookupField && nullNodeConnectedLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedLookupField = null;
-            if (parseNode.GetChildNode("lookup_field") is { } nullNodeLookupField && nullNodeLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupField = null;
-            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("connected_lookup_field") is null) { _explicitNullValueConnectedLookupField = default!; _explicitNullProperties?.Remove("connected_lookup_field"); }
+            else if (parseNode.GetChildNode("connected_lookup_field") is { } nullNodeConnectedLookupField && nullNodeConnectedLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedLookupField = null;
+            if (parseNode.GetChildNode("lookup_field") is null) { _explicitNullValueLookupField = default!; _explicitNullProperties?.Remove("lookup_field"); }
+            else if (parseNode.GetChildNode("lookup_field") is { } nullNodeLookupField && nullNodeLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupField = null;
+            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
+            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the lookup field on the linking module that points toward the connected (target) module, completing the many-to-many association in the multi-select lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsConnectedLookupField? ConnectedLookupField { get => _explicitNullValueConnectedLookupField; set { _explicitNullValueConnectedLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_lookup_field"); else _explicitNullProperties?.Remove("connected_lookup_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsConnectedLookupField? ConnectedLookupField { get => _explicitNullValueConnectedLookupField; set { _explicitNullValueConnectedLookupField = value; AdditionalData?.Remove("connected_lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_lookup_field"); else _explicitNullProperties?.Remove("connected_lookup_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsConnectedLookupField? _explicitNullValueConnectedLookupField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsConnectedLookupField ConnectedLookupField { get => _explicitNullValueConnectedLookupField; set { _explicitNullValueConnectedLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_lookup_field"); else _explicitNullProperties?.Remove("connected_lookup_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsConnectedLookupField ConnectedLookupField { get => _explicitNullValueConnectedLookupField; set { _explicitNullValueConnectedLookupField = value; AdditionalData?.Remove("connected_lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_lookup_field"); else _explicitNullProperties?.Remove("connected_lookup_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsConnectedLookupField _explicitNullValueConnectedLookupField = default!;
 #endif
         /// <summary>Represents the lookup field on the linking module that points back toward the source module, establishing the origin side of the multi-select lookup relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsLookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsLookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; AdditionalData?.Remove("lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsLookupField? _explicitNullValueLookupField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsLookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsLookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; AdditionalData?.Remove("lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsLookupField _explicitNullValueLookupField = default!;
 #endif
         /// <summary>Represents the intermediary linking module that bridges the source and target modules in a multi-select lookup, storing the join records that implement the many-to-many relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaMultiselectlookupOneOf1LinkingDetailsModule _explicitNullValueModule = default!;
 #endif
         /// <summary>

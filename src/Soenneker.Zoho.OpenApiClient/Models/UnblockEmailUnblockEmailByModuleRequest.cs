@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
-            if (parseNode.GetChildNode("unblock_fields") is { } nullNodeUnblockFields && nullNodeUnblockFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnblockFields = null;
+            if (parseNode.GetChildNode("ids") is null) { _explicitNullValueIds = default!; _explicitNullProperties?.Remove("ids"); }
+            else if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
+            if (parseNode.GetChildNode("unblock_fields") is null) { _explicitNullValueUnblockFields = default!; _explicitNullProperties?.Remove("unblock_fields"); }
+            else if (parseNode.GetChildNode("unblock_fields") is { } nullNodeUnblockFields && nullNodeUnblockFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnblockFields = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the record IDs for which you want to unblock the email fields. Use the [Get Records API](record.yaml#$.paths./{module}.get) to get valid values. You can specify up to 500 record IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        public List<string>? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; AdditionalData?.Remove("ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
         private List<string>? _explicitNullValueIds = default!;
 #nullable restore
 #else
-        public List<string> Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        public List<string> Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; AdditionalData?.Remove("ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
         private List<string> _explicitNullValueIds = default!;
 #endif
         /// <summary>To unblock emails, specify one or both of the system-definedfields : **Email** and **Secondary_Email**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailItem?>? UnblockFields { get => _explicitNullValueUnblockFields; set { _explicitNullValueUnblockFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unblock_fields"); else _explicitNullProperties?.Remove("unblock_fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailItem?>? UnblockFields { get => _explicitNullValueUnblockFields; set { _explicitNullValueUnblockFields = value; AdditionalData?.Remove("unblock_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unblock_fields"); else _explicitNullProperties?.Remove("unblock_fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailItem?>? _explicitNullValueUnblockFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailItem?> UnblockFields { get => _explicitNullValueUnblockFields; set { _explicitNullValueUnblockFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unblock_fields"); else _explicitNullProperties?.Remove("unblock_fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailItem?> UnblockFields { get => _explicitNullValueUnblockFields; set { _explicitNullValueUnblockFields = value; AdditionalData?.Remove("unblock_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unblock_fields"); else _explicitNullProperties?.Remove("unblock_fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailItem?> _explicitNullValueUnblockFields = default!;
 #endif
         /// <summary>

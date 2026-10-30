@@ -18,69 +18,77 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("add_to_existing_record") is { } nullNodeAddToExistingRecord && nullNodeAddToExistingRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddToExistingRecord = null;
-            if (parseNode.GetChildNode("assign_to") is { } nullNodeAssignTo && nullNodeAssignTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignTo = null;
-            if (parseNode.GetChildNode("carry_over_tags") is { } nullNodeCarryOverTags && nullNodeCarryOverTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CarryOverTags = null;
-            if (parseNode.GetChildNode("Deals") is { } nullNodeDeals && nullNodeDeals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deals = null;
-            if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
-            if (parseNode.GetChildNode("notify_lead_owner") is { } nullNodeNotifyLeadOwner && nullNodeNotifyLeadOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyLeadOwner = null;
-            if (parseNode.GetChildNode("notify_new_entity_owner") is { } nullNodeNotifyNewEntityOwner && nullNodeNotifyNewEntityOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyNewEntityOwner = null;
-            if (parseNode.GetChildNode("overwrite") is { } nullNodeOverwrite && nullNodeOverwrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overwrite = null;
+            if (parseNode.GetChildNode("add_to_existing_record") is null) { _explicitNullValueAddToExistingRecord = default!; _explicitNullProperties?.Remove("add_to_existing_record"); }
+            else if (parseNode.GetChildNode("add_to_existing_record") is { } nullNodeAddToExistingRecord && nullNodeAddToExistingRecord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddToExistingRecord = null;
+            if (parseNode.GetChildNode("assign_to") is null) { _explicitNullValueAssignTo = default!; _explicitNullProperties?.Remove("assign_to"); }
+            else if (parseNode.GetChildNode("assign_to") is { } nullNodeAssignTo && nullNodeAssignTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignTo = null;
+            if (parseNode.GetChildNode("carry_over_tags") is null) { _explicitNullValueCarryOverTags = default!; _explicitNullProperties?.Remove("carry_over_tags"); }
+            else if (parseNode.GetChildNode("carry_over_tags") is { } nullNodeCarryOverTags && nullNodeCarryOverTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CarryOverTags = null;
+            if (parseNode.GetChildNode("Deals") is null) { _explicitNullValueDeals = default!; _explicitNullProperties?.Remove("Deals"); }
+            else if (parseNode.GetChildNode("Deals") is { } nullNodeDeals && nullNodeDeals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deals = null;
+            if (parseNode.GetChildNode("default") is null) { _explicitNullValueDefault = default!; _explicitNullProperties?.Remove("default"); }
+            else if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
+            if (parseNode.GetChildNode("notify_lead_owner") is null) { _explicitNullValueNotifyLeadOwner = default!; _explicitNullProperties?.Remove("notify_lead_owner"); }
+            else if (parseNode.GetChildNode("notify_lead_owner") is { } nullNodeNotifyLeadOwner && nullNodeNotifyLeadOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyLeadOwner = null;
+            if (parseNode.GetChildNode("notify_new_entity_owner") is null) { _explicitNullValueNotifyNewEntityOwner = default!; _explicitNullProperties?.Remove("notify_new_entity_owner"); }
+            else if (parseNode.GetChildNode("notify_new_entity_owner") is { } nullNodeNotifyNewEntityOwner && nullNodeNotifyNewEntityOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyNewEntityOwner = null;
+            if (parseNode.GetChildNode("overwrite") is null) { _explicitNullValueOverwrite = default!; _explicitNullProperties?.Remove("overwrite"); }
+            else if (parseNode.GetChildNode("overwrite") is { } nullNodeOverwrite && nullNodeOverwrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overwrite = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When true, associates the Lead with an existing Account or Contact instead of creating duplicates.</summary>
-        public bool? AddToExistingRecord { get => _explicitNullValueAddToExistingRecord; set { _explicitNullValueAddToExistingRecord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_to_existing_record"); else _explicitNullProperties?.Remove("add_to_existing_record"); } }
+        public bool? AddToExistingRecord { get => _explicitNullValueAddToExistingRecord; set { _explicitNullValueAddToExistingRecord = value; AdditionalData?.Remove("add_to_existing_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_to_existing_record"); else _explicitNullProperties?.Remove("add_to_existing_record"); } }
         private bool? _explicitNullValueAddToExistingRecord = default!;
         /// <summary>Assigns a record owner for the new Contact and Account after lead conversion. It ensures that the converted lead is assigned to a specific user in Zoho CRM. Use the [Users API](users.yaml#$.paths./users/bulk.get) to retrieve valid User IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo? AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo? AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; AdditionalData?.Remove("assign_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo? _explicitNullValueAssignTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; AdditionalData?.Remove("assign_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestAssignTo _explicitNullValueAssignTo = default!;
 #endif
         /// <summary>Configuration for carrying over tags from the Lead to converted records</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags? CarryOverTags { get => _explicitNullValueCarryOverTags; set { _explicitNullValueCarryOverTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carry_over_tags"); else _explicitNullProperties?.Remove("carry_over_tags"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags? CarryOverTags { get => _explicitNullValueCarryOverTags; set { _explicitNullValueCarryOverTags = value; AdditionalData?.Remove("carry_over_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carry_over_tags"); else _explicitNullProperties?.Remove("carry_over_tags"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags? _explicitNullValueCarryOverTags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags CarryOverTags { get => _explicitNullValueCarryOverTags; set { _explicitNullValueCarryOverTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carry_over_tags"); else _explicitNullProperties?.Remove("carry_over_tags"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags CarryOverTags { get => _explicitNullValueCarryOverTags; set { _explicitNullValueCarryOverTags = value; AdditionalData?.Remove("carry_over_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carry_over_tags"); else _explicitNullProperties?.Remove("carry_over_tags"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequestCarryOverTags _explicitNullValueCarryOverTags = default!;
 #endif
         /// <summary>Deal record configuration for lead conversion</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DealConversion? Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealConversion? Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; AdditionalData?.Remove("Deals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DealConversion? _explicitNullValueDeals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DealConversion Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DealConversion Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; AdditionalData?.Remove("Deals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DealConversion _explicitNullValueDeals = default!;
 #endif
         /// <summary>The default property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        public UntypedNode? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
         private UntypedNode? _explicitNullValueDefault = default!;
 #nullable restore
 #else
-        public UntypedNode Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        public UntypedNode Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
         private UntypedNode _explicitNullValueDefault = default!;
 #endif
         /// <summary>If true, sends email notification to the Lead owner about the conversion. Default is false.</summary>
-        public bool? NotifyLeadOwner { get => _explicitNullValueNotifyLeadOwner; set { _explicitNullValueNotifyLeadOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_lead_owner"); else _explicitNullProperties?.Remove("notify_lead_owner"); } }
+        public bool? NotifyLeadOwner { get => _explicitNullValueNotifyLeadOwner; set { _explicitNullValueNotifyLeadOwner = value; AdditionalData?.Remove("notify_lead_owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_lead_owner"); else _explicitNullProperties?.Remove("notify_lead_owner"); } }
         private bool? _explicitNullValueNotifyLeadOwner = default!;
         /// <summary>If true, notifies the owner(s) of newly created Contact, Account, or Deal records. Default is false.</summary>
-        public bool? NotifyNewEntityOwner { get => _explicitNullValueNotifyNewEntityOwner; set { _explicitNullValueNotifyNewEntityOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_new_entity_owner"); else _explicitNullProperties?.Remove("notify_new_entity_owner"); } }
+        public bool? NotifyNewEntityOwner { get => _explicitNullValueNotifyNewEntityOwner; set { _explicitNullValueNotifyNewEntityOwner = value; AdditionalData?.Remove("notify_new_entity_owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_new_entity_owner"); else _explicitNullProperties?.Remove("notify_new_entity_owner"); } }
         private bool? _explicitNullValueNotifyNewEntityOwner = default!;
         /// <summary>Determines whether to overwrite the Account Name in a Contact when converting a Lead.For example, If a Contact is already linked to an Account but the Lead’s Company name is different, enabling this option will update the Contact’s Account to match the Lead’s Company.**Possible values:**false (default) : Keeps the existing Account Name in the Contact unchanged.true : Updates the Contact’s associated Account Name if it differs from the Company name in the Lead.</summary>
-        public bool? Overwrite { get => _explicitNullValueOverwrite; set { _explicitNullValueOverwrite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overwrite"); else _explicitNullProperties?.Remove("overwrite"); } }
+        public bool? Overwrite { get => _explicitNullValueOverwrite; set { _explicitNullValueOverwrite = value; AdditionalData?.Remove("overwrite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overwrite"); else _explicitNullProperties?.Remove("overwrite"); } }
         private bool? _explicitNullValueOverwrite = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConversionRequest"/> and sets the default values.

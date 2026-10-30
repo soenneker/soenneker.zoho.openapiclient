@@ -18,13 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>To define &quot;logged in user&quot; as fallback user for the given Assignment Rule, set ${CURRENTUSER} as value for this field.Possible values:**${CURRENTUSER}** - Represents ${currentuser}.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DollarLeftBraceCurrentuserRightBraceApiName? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DollarLeftBraceCurrentuserRightBraceApiName? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DollarLeftBraceCurrentuserRightBraceApiName? _explicitNullValueApiName = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserTypeDefaultAssigneeRequestObjectResourceOneOf2"/> and sets the default values.
@@ -51,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "api_name", n => { ApiName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DollarLeftBraceCurrentuserRightBraceApiName>(); } },
+                { "api_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DollarLeftBraceCurrentuserRightBraceApiName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApiName = default; _explicitNullProperties?.Remove("api_name"); AdditionalData["api_name"] = unknown; } else { ApiName = parsed; AdditionalData.Remove("api_name"); } } },
             };
         }
         /// <summary>

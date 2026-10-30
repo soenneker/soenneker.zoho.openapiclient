@@ -18,13 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("permission") is { } nullNodePermission && nullNodePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permission = null;
+            if (parseNode.GetChildNode("permission") is null) { _explicitNullValuePermission = default!; _explicitNullProperties?.Remove("permission"); }
+            else if (parseNode.GetChildNode("permission") is { } nullNodePermission && nullNodePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permission = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The permission level granted to the appointment owner for the associated record.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetailsPermission? Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetailsPermission? Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; AdditionalData?.Remove("permission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetailsPermission? _explicitNullValuePermission = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetails"/> and sets the default values.
@@ -51,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "permission", n => { Permission = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetailsPermission>(); } },
+                { "permission", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceUpdateAppointmentPreferenceRequestAppointmentPreferencesSharingDetailsPermission>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePermission = default; _explicitNullProperties?.Remove("permission"); AdditionalData["permission"] = unknown; } else { Permission = parsed; AdditionalData.Remove("permission"); } } },
             };
         }
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("__composite_requests") is { } nullNodeCompositeRequests && nullNodeCompositeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompositeRequests = null;
+            if (parseNode.GetChildNode("__composite_requests") is null) { _explicitNullValueCompositeRequests = default!; _explicitNullProperties?.Remove("__composite_requests"); }
+            else if (parseNode.GetChildNode("__composite_requests") is { } nullNodeCompositeRequests && nullNodeCompositeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompositeRequests = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains the response for each sub-request in the composite call. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItem>? CompositeRequests { get => _explicitNullValueCompositeRequests; set { _explicitNullValueCompositeRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__composite_requests"); else _explicitNullProperties?.Remove("__composite_requests"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItem>? CompositeRequests { get => _explicitNullValueCompositeRequests; set { _explicitNullValueCompositeRequests = value; AdditionalData?.Remove("__composite_requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__composite_requests"); else _explicitNullProperties?.Remove("__composite_requests"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItem>? _explicitNullValueCompositeRequests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItem> CompositeRequests { get => _explicitNullValueCompositeRequests; set { _explicitNullValueCompositeRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__composite_requests"); else _explicitNullProperties?.Remove("__composite_requests"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItem> CompositeRequests { get => _explicitNullValueCompositeRequests; set { _explicitNullValueCompositeRequests = value; AdditionalData?.Remove("__composite_requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__composite_requests"); else _explicitNullProperties?.Remove("__composite_requests"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CompositeRequestsCreateCompositeRequest200ResponseCompositeRequestsItem> _explicitNullValueCompositeRequests = default!;
 #endif
         /// <summary>

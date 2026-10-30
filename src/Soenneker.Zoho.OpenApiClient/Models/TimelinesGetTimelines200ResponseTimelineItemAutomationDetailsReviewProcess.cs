@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deactivated_process") is { } nullNodeDeactivatedProcess && nullNodeDeactivatedProcess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivatedProcess = null;
-            if (parseNode.GetChildNode("deluge") is { } nullNodeDeluge && nullNodeDeluge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deluge = null;
-            if (parseNode.GetChildNode("rejection") is { } nullNodeRejection && nullNodeRejection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rejection = null;
+            if (parseNode.GetChildNode("deactivated_process") is null) { _explicitNullValueDeactivatedProcess = default!; _explicitNullProperties?.Remove("deactivated_process"); }
+            else if (parseNode.GetChildNode("deactivated_process") is { } nullNodeDeactivatedProcess && nullNodeDeactivatedProcess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeactivatedProcess = null;
+            if (parseNode.GetChildNode("deluge") is null) { _explicitNullValueDeluge = default!; _explicitNullProperties?.Remove("deluge"); }
+            else if (parseNode.GetChildNode("deluge") is { } nullNodeDeluge && nullNodeDeluge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deluge = null;
+            if (parseNode.GetChildNode("rejection") is null) { _explicitNullValueRejection = default!; _explicitNullProperties?.Remove("rejection"); }
+            else if (parseNode.GetChildNode("rejection") is { } nullNodeRejection && nullNodeRejection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rejection = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the process that was deactivated as part of the review process event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeactivatedProcess? DeactivatedProcess { get => _explicitNullValueDeactivatedProcess; set { _explicitNullValueDeactivatedProcess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivated_process"); else _explicitNullProperties?.Remove("deactivated_process"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeactivatedProcess? DeactivatedProcess { get => _explicitNullValueDeactivatedProcess; set { _explicitNullValueDeactivatedProcess = value; AdditionalData?.Remove("deactivated_process"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivated_process"); else _explicitNullProperties?.Remove("deactivated_process"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeactivatedProcess? _explicitNullValueDeactivatedProcess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeactivatedProcess DeactivatedProcess { get => _explicitNullValueDeactivatedProcess; set { _explicitNullValueDeactivatedProcess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivated_process"); else _explicitNullProperties?.Remove("deactivated_process"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeactivatedProcess DeactivatedProcess { get => _explicitNullValueDeactivatedProcess; set { _explicitNullValueDeactivatedProcess = value; AdditionalData?.Remove("deactivated_process"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deactivated_process"); else _explicitNullProperties?.Remove("deactivated_process"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeactivatedProcess _explicitNullValueDeactivatedProcess = default!;
 #endif
         /// <summary>Represents the Deluge script associated with the review process event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeluge? Deluge { get => _explicitNullValueDeluge; set { _explicitNullValueDeluge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deluge"); else _explicitNullProperties?.Remove("deluge"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeluge? Deluge { get => _explicitNullValueDeluge; set { _explicitNullValueDeluge = value; AdditionalData?.Remove("deluge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deluge"); else _explicitNullProperties?.Remove("deluge"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeluge? _explicitNullValueDeluge = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeluge Deluge { get => _explicitNullValueDeluge; set { _explicitNullValueDeluge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deluge"); else _explicitNullProperties?.Remove("deluge"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeluge Deluge { get => _explicitNullValueDeluge; set { _explicitNullValueDeluge = value; AdditionalData?.Remove("deluge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deluge"); else _explicitNullProperties?.Remove("deluge"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessDeluge _explicitNullValueDeluge = default!;
 #endif
         /// <summary>Represents the rejection details when the review process was rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessRejection? Rejection { get => _explicitNullValueRejection; set { _explicitNullValueRejection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejection"); else _explicitNullProperties?.Remove("rejection"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessRejection? Rejection { get => _explicitNullValueRejection; set { _explicitNullValueRejection = value; AdditionalData?.Remove("rejection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejection"); else _explicitNullProperties?.Remove("rejection"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessRejection? _explicitNullValueRejection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessRejection Rejection { get => _explicitNullValueRejection; set { _explicitNullValueRejection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejection"); else _explicitNullProperties?.Remove("rejection"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessRejection Rejection { get => _explicitNullValueRejection; set { _explicitNullValueRejection = value; AdditionalData?.Remove("rejection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejection"); else _explicitNullProperties?.Remove("rejection"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TimelinesGetTimelines200ResponseTimelineItemAutomationDetailsReviewProcessRejection _explicitNullValueRejection = default!;
 #endif
         /// <summary>

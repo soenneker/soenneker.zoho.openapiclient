@@ -18,21 +18,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
-            if (parseNode.GetChildNode("Contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
-            if (parseNode.GetChildNode("Deals") is { } nullNodeDeals && nullNodeDeals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deals = null;
-            if (parseNode.GetChildNode("Invoices") is { } nullNodeInvoices && nullNodeInvoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invoices = null;
-            if (parseNode.GetChildNode("SalesOrders") is { } nullNodeSalesOrders && nullNodeSalesOrders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesOrders = null;
+            if (parseNode.GetChildNode("Accounts") is null) { _explicitNullValueAccounts = default!; _explicitNullProperties?.Remove("Accounts"); }
+            else if (parseNode.GetChildNode("Accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
+            if (parseNode.GetChildNode("Contacts") is null) { _explicitNullValueContacts = default!; _explicitNullProperties?.Remove("Contacts"); }
+            else if (parseNode.GetChildNode("Contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
+            if (parseNode.GetChildNode("Deals") is null) { _explicitNullValueDeals = default!; _explicitNullProperties?.Remove("Deals"); }
+            else if (parseNode.GetChildNode("Deals") is { } nullNodeDeals && nullNodeDeals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deals = null;
+            if (parseNode.GetChildNode("Invoices") is null) { _explicitNullValueInvoices = default!; _explicitNullProperties?.Remove("Invoices"); }
+            else if (parseNode.GetChildNode("Invoices") is { } nullNodeInvoices && nullNodeInvoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invoices = null;
+            if (parseNode.GetChildNode("SalesOrders") is null) { _explicitNullValueSalesOrders = default!; _explicitNullProperties?.Remove("SalesOrders"); }
+            else if (parseNode.GetChildNode("SalesOrders") is { } nullNodeSalesOrders && nullNodeSalesOrders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesOrders = null;
         }
 
         /// <summary>Configuration object for converting this module&apos;s records to Accounts, including the Account module&apos;s display label, id, and internal name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingAccounts? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accounts"); else _explicitNullProperties?.Remove("Accounts"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingAccounts? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; AdditionalData?.Remove("Accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accounts"); else _explicitNullProperties?.Remove("Accounts"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingAccounts? _explicitNullValueAccounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingAccounts Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accounts"); else _explicitNullProperties?.Remove("Accounts"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingAccounts Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; AdditionalData?.Remove("Accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accounts"); else _explicitNullProperties?.Remove("Accounts"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingAccounts _explicitNullValueAccounts = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,41 +45,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Configuration object for converting this module&apos;s records to Contacts, including the Contacts module&apos;s display label, id, and internal name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingContacts? Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contacts"); else _explicitNullProperties?.Remove("Contacts"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingContacts? Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; AdditionalData?.Remove("Contacts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contacts"); else _explicitNullProperties?.Remove("Contacts"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingContacts? _explicitNullValueContacts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingContacts Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contacts"); else _explicitNullProperties?.Remove("Contacts"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingContacts Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; AdditionalData?.Remove("Contacts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contacts"); else _explicitNullProperties?.Remove("Contacts"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingContacts _explicitNullValueContacts = default!;
 #endif
         /// <summary>Configuration object for converting this module&apos;s records to Deals, including the Deals module&apos;s display label, id, internal name, and an array of field-level mapping configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDeals? Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDeals? Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; AdditionalData?.Remove("Deals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDeals? _explicitNullValueDeals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDeals Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDeals Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; AdditionalData?.Remove("Deals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingDeals _explicitNullValueDeals = default!;
 #endif
         /// <summary>Conversion target configuration object for the Invoices module, containing display label and identifier details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingInvoices? Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Invoices"); else _explicitNullProperties?.Remove("Invoices"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingInvoices? Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; AdditionalData?.Remove("Invoices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Invoices"); else _explicitNullProperties?.Remove("Invoices"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingInvoices? _explicitNullValueInvoices = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingInvoices Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Invoices"); else _explicitNullProperties?.Remove("Invoices"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingInvoices Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; AdditionalData?.Remove("Invoices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Invoices"); else _explicitNullProperties?.Remove("Invoices"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingInvoices _explicitNullValueInvoices = default!;
 #endif
         /// <summary>Conversion target configuration object for the SalesOrders module, containing display label and identifier details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingSalesOrders? SalesOrders { get => _explicitNullValueSalesOrders; set { _explicitNullValueSalesOrders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SalesOrders"); else _explicitNullProperties?.Remove("SalesOrders"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingSalesOrders? SalesOrders { get => _explicitNullValueSalesOrders; set { _explicitNullValueSalesOrders = value; AdditionalData?.Remove("SalesOrders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SalesOrders"); else _explicitNullProperties?.Remove("SalesOrders"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingSalesOrders? _explicitNullValueSalesOrders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingSalesOrders SalesOrders { get => _explicitNullValueSalesOrders; set { _explicitNullValueSalesOrders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SalesOrders"); else _explicitNullProperties?.Remove("SalesOrders"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingSalesOrders SalesOrders { get => _explicitNullValueSalesOrders; set { _explicitNullValueSalesOrders = value; AdditionalData?.Remove("SalesOrders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SalesOrders"); else _explicitNullProperties?.Remove("SalesOrders"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemLayoutsItemConvertMappingSalesOrders _explicitNullValueSalesOrders = default!;
 #endif
         /// <summary>

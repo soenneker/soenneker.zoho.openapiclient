@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("generate_link") is { } nullNodeGenerateLink && nullNodeGenerateLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerateLink = null;
+            if (parseNode.GetChildNode("generate_link") is null) { _explicitNullValueGenerateLink = default!; _explicitNullProperties?.Remove("generate_link"); }
+            else if (parseNode.GetChildNode("generate_link") is { } nullNodeGenerateLink && nullNodeGenerateLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerateLink = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents a web tab link associated with a CRM module, including the tab identifier (id, int64), display name(name), and configured URL(web_link).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleWebTabLink? GenerateLink { get => _explicitNullValueGenerateLink; set { _explicitNullValueGenerateLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate_link"); else _explicitNullProperties?.Remove("generate_link"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleWebTabLink? GenerateLink { get => _explicitNullValueGenerateLink; set { _explicitNullValueGenerateLink = value; AdditionalData?.Remove("generate_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate_link"); else _explicitNullProperties?.Remove("generate_link"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModuleWebTabLink? _explicitNullValueGenerateLink = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleWebTabLink GenerateLink { get => _explicitNullValueGenerateLink; set { _explicitNullValueGenerateLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate_link"); else _explicitNullProperties?.Remove("generate_link"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModuleWebTabLink GenerateLink { get => _explicitNullValueGenerateLink; set { _explicitNullValueGenerateLink = value; AdditionalData?.Remove("generate_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate_link"); else _explicitNullProperties?.Remove("generate_link"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModuleWebTabLink _explicitNullValueGenerateLink = default!;
 #endif
         /// <summary>

@@ -18,23 +18,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("json_path") is null) { _explicitNullValueJsonPath = default!; _explicitNullProperties?.Remove("json_path"); }
+            else if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the API name of the request field that caused the per-record error. Possible values: **ids**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.IdsApiName? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.IdsApiName? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.IdsApiName? _explicitNullValueApiName = default!;
         /// <summary>Indicates the JSON path to the specific value in the request that triggered the per-record error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
         private string? _explicitNullValueJsonPath = default!;
 #nullable restore
 #else
-        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
         private string _explicitNullValueJsonPath = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "api_name", n => { ApiName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.IdsApiName>(); } },
+                { "api_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.IdsApiName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApiName = default; _explicitNullProperties?.Remove("api_name"); AdditionalData["api_name"] = unknown; } else { ApiName = parsed; AdditionalData.Remove("api_name"); } } },
                 { "json_path", n => { JsonPath = n.GetStringValue(); } },
             };
         }

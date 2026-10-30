@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("draft_cadence") is { } nullNodeDraftCadence && nullNodeDraftCadence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DraftCadence = null;
-            if (parseNode.GetChildNode("follow_ups") is { } nullNodeFollowUps && nullNodeFollowUps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowUps = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("draft_cadence") is null) { _explicitNullValueDraftCadence = default!; _explicitNullProperties?.Remove("draft_cadence"); }
+            else if (parseNode.GetChildNode("draft_cadence") is { } nullNodeDraftCadence && nullNodeDraftCadence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DraftCadence = null;
+            if (parseNode.GetChildNode("follow_ups") is null) { _explicitNullValueFollowUps = default!; _explicitNullProperties?.Remove("follow_ups"); }
+            else if (parseNode.GetChildNode("follow_ups") is { } nullNodeFollowUps && nullNodeFollowUps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowUps = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the draft version of the Cadence associated with the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedDraftCadence? DraftCadence { get => _explicitNullValueDraftCadence; set { _explicitNullValueDraftCadence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("draft_cadence"); else _explicitNullProperties?.Remove("draft_cadence"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedDraftCadence? DraftCadence { get => _explicitNullValueDraftCadence; set { _explicitNullValueDraftCadence = value; AdditionalData?.Remove("draft_cadence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("draft_cadence"); else _explicitNullProperties?.Remove("draft_cadence"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedDraftCadence? _explicitNullValueDraftCadence = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedDraftCadence DraftCadence { get => _explicitNullValueDraftCadence; set { _explicitNullValueDraftCadence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("draft_cadence"); else _explicitNullProperties?.Remove("draft_cadence"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedDraftCadence DraftCadence { get => _explicitNullValueDraftCadence; set { _explicitNullValueDraftCadence = value; AdditionalData?.Remove("draft_cadence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("draft_cadence"); else _explicitNullProperties?.Remove("draft_cadence"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedDraftCadence _explicitNullValueDraftCadence = default!;
 #endif
         /// <summary>Represents the list of follow-up actions involved in the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedFollowUpsItem>? FollowUps { get => _explicitNullValueFollowUps; set { _explicitNullValueFollowUps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follow_ups"); else _explicitNullProperties?.Remove("follow_ups"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedFollowUpsItem>? FollowUps { get => _explicitNullValueFollowUps; set { _explicitNullValueFollowUps = value; AdditionalData?.Remove("follow_ups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follow_ups"); else _explicitNullProperties?.Remove("follow_ups"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedFollowUpsItem>? _explicitNullValueFollowUps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedFollowUpsItem> FollowUps { get => _explicitNullValueFollowUps; set { _explicitNullValueFollowUps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follow_ups"); else _explicitNullProperties?.Remove("follow_ups"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedFollowUpsItem> FollowUps { get => _explicitNullValueFollowUps; set { _explicitNullValueFollowUps = value; AdditionalData?.Remove("follow_ups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follow_ups"); else _explicitNullProperties?.Remove("follow_ups"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesDetailsNestedFollowUpsItem> _explicitNullValueFollowUps = default!;
 #endif
         /// <summary>Represents the unique identifier of the resource associated with the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>

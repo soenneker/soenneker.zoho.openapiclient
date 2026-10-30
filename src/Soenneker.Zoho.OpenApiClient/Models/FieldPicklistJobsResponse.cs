@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
-            if (parseNode.GetChildNode("scheduled_jobs") is { } nullNodeScheduledJobs && nullNodeScheduledJobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledJobs = null;
+            if (parseNode.GetChildNode("info") is null) { _explicitNullValueInfo = default!; _explicitNullProperties?.Remove("info"); }
+            else if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
+            if (parseNode.GetChildNode("scheduled_jobs") is null) { _explicitNullValueScheduledJobs = default!; _explicitNullProperties?.Remove("scheduled_jobs"); }
+            else if (parseNode.GetChildNode("scheduled_jobs") is { } nullNodeScheduledJobs && nullNodeScheduledJobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledJobs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the pagination metadata for the scheduled jobs list, including per-page size, current page, item count, and whether more records are available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ListPageInfo _explicitNullValueInfo = default!;
 #endif
         /// <summary>Represents the list of scheduled picklist field action jobs retrieved for the specified field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistActionJob>? ScheduledJobs { get => _explicitNullValueScheduledJobs; set { _explicitNullValueScheduledJobs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_jobs"); else _explicitNullProperties?.Remove("scheduled_jobs"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistActionJob>? ScheduledJobs { get => _explicitNullValueScheduledJobs; set { _explicitNullValueScheduledJobs = value; AdditionalData?.Remove("scheduled_jobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_jobs"); else _explicitNullProperties?.Remove("scheduled_jobs"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistActionJob>? _explicitNullValueScheduledJobs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistActionJob> ScheduledJobs { get => _explicitNullValueScheduledJobs; set { _explicitNullValueScheduledJobs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_jobs"); else _explicitNullProperties?.Remove("scheduled_jobs"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistActionJob> ScheduledJobs { get => _explicitNullValueScheduledJobs; set { _explicitNullValueScheduledJobs = value; AdditionalData?.Remove("scheduled_jobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_jobs"); else _explicitNullProperties?.Remove("scheduled_jobs"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldPicklistActionJob> _explicitNullValueScheduledJobs = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("system_query_id") is { } nullNodeSystemQueryId && nullNodeSystemQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemQueryId = null;
+            if (parseNode.GetChildNode("system_query_id") is null) { _explicitNullValueSystemQueryId = default!; _explicitNullProperties?.Remove("system_query_id"); }
+            else if (parseNode.GetChildNode("system_query_id") is { } nullNodeSystemQueryId && nullNodeSystemQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemQueryId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the system-assigned identifier for an alternate platform-managed query variant that filters the lookup&apos;s record list in this configuration schema variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnlySystemQueryId? SystemQueryId { get => _explicitNullValueSystemQueryId; set { _explicitNullValueSystemQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_query_id"); else _explicitNullProperties?.Remove("system_query_id"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnlySystemQueryId? SystemQueryId { get => _explicitNullValueSystemQueryId; set { _explicitNullValueSystemQueryId = value; AdditionalData?.Remove("system_query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_query_id"); else _explicitNullProperties?.Remove("system_query_id"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnlySystemQueryId? _explicitNullValueSystemQueryId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnlySystemQueryId SystemQueryId { get => _explicitNullValueSystemQueryId; set { _explicitNullValueSystemQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_query_id"); else _explicitNullProperties?.Remove("system_query_id"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnlySystemQueryId SystemQueryId { get => _explicitNullValueSystemQueryId; set { _explicitNullValueSystemQueryId = value; AdditionalData?.Remove("system_query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_query_id"); else _explicitNullProperties?.Remove("system_query_id"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaLookupOneOf1QueryDetailsQueryDetailsSystemOnlySystemQueryId _explicitNullValueSystemQueryId = default!;
 #endif
         /// <summary>

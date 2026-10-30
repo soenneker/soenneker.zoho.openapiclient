@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("query_details") is { } nullNodeQueryDetails && nullNodeQueryDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryDetails = null;
+            if (parseNode.GetChildNode("query_details") is null) { _explicitNullValueQueryDetails = default!; _explicitNullProperties?.Remove("query_details"); }
+            else if (parseNode.GetChildNode("query_details") is { } nullNodeQueryDetails && nullNodeQueryDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryDetails = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the filter criteria for lookup records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemLookupQueryDetails? QueryDetails { get => _explicitNullValueQueryDetails; set { _explicitNullValueQueryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_details"); else _explicitNullProperties?.Remove("query_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemLookupQueryDetails? QueryDetails { get => _explicitNullValueQueryDetails; set { _explicitNullValueQueryDetails = value; AdditionalData?.Remove("query_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_details"); else _explicitNullProperties?.Remove("query_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemLookupQueryDetails? _explicitNullValueQueryDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemLookupQueryDetails QueryDetails { get => _explicitNullValueQueryDetails; set { _explicitNullValueQueryDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_details"); else _explicitNullProperties?.Remove("query_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemLookupQueryDetails QueryDetails { get => _explicitNullValueQueryDetails; set { _explicitNullValueQueryDetails = value; AdditionalData?.Remove("query_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_details"); else _explicitNullProperties?.Remove("query_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateRequestBodySchemaFieldsItemLookupQueryDetails _explicitNullValueQueryDetails = default!;
 #endif
         /// <summary>

@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Fields.Settings.Fields.Item.Actions.Sched
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fields.Settings.Fields.Item.Actions.Scheduled_jobs.Scheduled_jobsRequestBuilder.Scheduled_jobsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/fields/settings/fields/{fieldId}/actions/scheduled_jobs", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

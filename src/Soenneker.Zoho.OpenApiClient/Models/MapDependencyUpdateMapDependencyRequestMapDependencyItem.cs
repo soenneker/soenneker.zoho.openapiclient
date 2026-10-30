@@ -18,69 +18,77 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
-            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
-            if (parseNode.GetChildNode("child") is { } nullNodeChild && nullNodeChild.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Child = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("internal") is { } nullNodeInternal && nullNodeInternal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Internal = null;
-            if (parseNode.GetChildNode("parent") is { } nullNodeParent && nullNodeParent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parent = null;
-            if (parseNode.GetChildNode("pick_list_values") is { } nullNodePickListValues && nullNodePickListValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PickListValues = null;
-            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("child") is null) { _explicitNullValueChild = default!; _explicitNullProperties?.Remove("child"); }
+            else if (parseNode.GetChildNode("child") is { } nullNodeChild && nullNodeChild.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Child = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("internal") is null) { _explicitNullValueInternal = default!; _explicitNullProperties?.Remove("internal"); }
+            else if (parseNode.GetChildNode("internal") is { } nullNodeInternal && nullNodeInternal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Internal = null;
+            if (parseNode.GetChildNode("parent") is null) { _explicitNullValueParent = default!; _explicitNullProperties?.Remove("parent"); }
+            else if (parseNode.GetChildNode("parent") is { } nullNodeParent && nullNodeParent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parent = null;
+            if (parseNode.GetChildNode("pick_list_values") is null) { _explicitNullValuePickListValues = default!; _explicitNullProperties?.Remove("pick_list_values"); }
+            else if (parseNode.GetChildNode("pick_list_values") is { } nullNodePickListValues && nullNodePickListValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PickListValues = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
         }
 
         /// <summary>Specify whether the dependency should be active in the layout. Possible values: **true**, **false**.</summary>
-        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
         private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the category of the dependency. Possible values: **0**.</summary>
-        public int? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public int? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private int? _explicitNullValueCategory = default!;
         /// <summary>Child field details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemChild? Child { get => _explicitNullValueChild; set { _explicitNullValueChild = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("child"); else _explicitNullProperties?.Remove("child"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemChild? Child { get => _explicitNullValueChild; set { _explicitNullValueChild = value; AdditionalData?.Remove("child"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("child"); else _explicitNullProperties?.Remove("child"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemChild? _explicitNullValueChild = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemChild Child { get => _explicitNullValueChild; set { _explicitNullValueChild = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("child"); else _explicitNullProperties?.Remove("child"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemChild Child { get => _explicitNullValueChild; set { _explicitNullValueChild = value; AdditionalData?.Remove("child"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("child"); else _explicitNullProperties?.Remove("child"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemChild _explicitNullValueChild = default!;
 #endif
         /// <summary>Specify the unique identifier of the dependency to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Specify whether the dependency is system-defined or user-created. Possible values: **true**, **false**.</summary>
-        public bool? Internal { get => _explicitNullValueInternal; set { _explicitNullValueInternal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal"); else _explicitNullProperties?.Remove("internal"); } }
+        public bool? Internal { get => _explicitNullValueInternal; set { _explicitNullValueInternal = value; AdditionalData?.Remove("internal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal"); else _explicitNullProperties?.Remove("internal"); } }
         private bool? _explicitNullValueInternal = default!;
         /// <summary>Parent field details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemParent? Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemParent? Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; AdditionalData?.Remove("parent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemParent? _explicitNullValueParent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemParent Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemParent Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; AdditionalData?.Remove("parent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItemParent _explicitNullValueParent = default!;
 #endif
         /// <summary>Specify the updated picklist value mappings. Set **_delete** to **null** on a child option entry to remove that specific mapping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingUpdate>? PickListValues { get => _explicitNullValuePickListValues; set { _explicitNullValuePickListValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pick_list_values"); else _explicitNullProperties?.Remove("pick_list_values"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingUpdate>? PickListValues { get => _explicitNullValuePickListValues; set { _explicitNullValuePickListValues = value; AdditionalData?.Remove("pick_list_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pick_list_values"); else _explicitNullProperties?.Remove("pick_list_values"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingUpdate>? _explicitNullValuePickListValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingUpdate> PickListValues { get => _explicitNullValuePickListValues; set { _explicitNullValuePickListValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pick_list_values"); else _explicitNullProperties?.Remove("pick_list_values"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingUpdate> PickListValues { get => _explicitNullValuePickListValues; set { _explicitNullValuePickListValues = value; AdditionalData?.Remove("pick_list_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pick_list_values"); else _explicitNullProperties?.Remove("pick_list_values"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.PicklistMappingUpdate> _explicitNullValuePickListValues = default!;
 #endif
         /// <summary>Specify the source for the dependency. Possible values: **1**. It represents Zoho CRM.</summary>
-        public int? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public int? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private int? _explicitNullValueSource = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MapDependencyUpdateMapDependencyRequestMapDependencyItem"/> and sets the default values.

@@ -18,12 +18,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entity_details") is { } nullNodeEntityDetails && nullNodeEntityDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityDetails = null;
-            if (parseNode.GetChildNode("failure_reason") is { } nullNodeFailureReason && nullNodeFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureReason = null;
-            if (parseNode.GetChildNode("failure_time") is { } nullNodeFailureTime && nullNodeFailureTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureTime = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
-            if (parseNode.GetChildNode("workflow_rule") is { } nullNodeWorkflowRule && nullNodeWorkflowRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRule = null;
+            if (parseNode.GetChildNode("entity_details") is null) { _explicitNullValueEntityDetails = default!; _explicitNullProperties?.Remove("entity_details"); }
+            else if (parseNode.GetChildNode("entity_details") is { } nullNodeEntityDetails && nullNodeEntityDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityDetails = null;
+            if (parseNode.GetChildNode("failure_reason") is null) { _explicitNullValueFailureReason = default!; _explicitNullProperties?.Remove("failure_reason"); }
+            else if (parseNode.GetChildNode("failure_reason") is { } nullNodeFailureReason && nullNodeFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureReason = null;
+            if (parseNode.GetChildNode("failure_time") is null) { _explicitNullValueFailureTime = default!; _explicitNullProperties?.Remove("failure_time"); }
+            else if (parseNode.GetChildNode("failure_time") is { } nullNodeFailureTime && nullNodeFailureTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureTime = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("webhook") is null) { _explicitNullValueWebhook = default!; _explicitNullProperties?.Remove("webhook"); }
+            else if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+            if (parseNode.GetChildNode("workflow_rule") is null) { _explicitNullValueWorkflowRule = default!; _explicitNullProperties?.Remove("workflow_rule"); }
+            else if (parseNode.GetChildNode("workflow_rule") is { } nullNodeWorkflowRule && nullNodeWorkflowRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRule = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,61 +37,61 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Details of the CRM record that triggered the failed webhook execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails? EntityDetails { get => _explicitNullValueEntityDetails; set { _explicitNullValueEntityDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_details"); else _explicitNullProperties?.Remove("entity_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails? EntityDetails { get => _explicitNullValueEntityDetails; set { _explicitNullValueEntityDetails = value; AdditionalData?.Remove("entity_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_details"); else _explicitNullProperties?.Remove("entity_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails? _explicitNullValueEntityDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails EntityDetails { get => _explicitNullValueEntityDetails; set { _explicitNullValueEntityDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_details"); else _explicitNullProperties?.Remove("entity_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails EntityDetails { get => _explicitNullValueEntityDetails; set { _explicitNullValueEntityDetails = value; AdditionalData?.Remove("entity_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_details"); else _explicitNullProperties?.Remove("entity_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailEntityDetails _explicitNullValueEntityDetails = default!;
 #endif
         /// <summary>Represents the reason for the webhook execution failure, such as page_notfound.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        public string? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; AdditionalData?.Remove("failure_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
         private string? _explicitNullValueFailureReason = default!;
 #nullable restore
 #else
-        public string FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        public string FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; AdditionalData?.Remove("failure_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
         private string _explicitNullValueFailureReason = default!;
 #endif
         /// <summary>Represents the ISO 8601 timestamp of when the webhook execution failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FailureTime { get => _explicitNullValueFailureTime; set { _explicitNullValueFailureTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_time"); else _explicitNullProperties?.Remove("failure_time"); } }
+        public string? FailureTime { get => _explicitNullValueFailureTime; set { _explicitNullValueFailureTime = value; AdditionalData?.Remove("failure_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_time"); else _explicitNullProperties?.Remove("failure_time"); } }
         private string? _explicitNullValueFailureTime = default!;
 #nullable restore
 #else
-        public string FailureTime { get => _explicitNullValueFailureTime; set { _explicitNullValueFailureTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_time"); else _explicitNullProperties?.Remove("failure_time"); } }
+        public string FailureTime { get => _explicitNullValueFailureTime; set { _explicitNullValueFailureTime = value; AdditionalData?.Remove("failure_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_time"); else _explicitNullProperties?.Remove("failure_time"); } }
         private string _explicitNullValueFailureTime = default!;
 #endif
         /// <summary>Represents the unique identifier of the failure record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Reference to the webhook that failed (id and name).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; AdditionalData?.Remove("webhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; AdditionalData?.Remove("webhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWebhook _explicitNullValueWebhook = default!;
 #endif
         /// <summary>Reference to the workflow rule that triggered the webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule? WorkflowRule { get => _explicitNullValueWorkflowRule; set { _explicitNullValueWorkflowRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rule"); else _explicitNullProperties?.Remove("workflow_rule"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule? WorkflowRule { get => _explicitNullValueWorkflowRule; set { _explicitNullValueWorkflowRule = value; AdditionalData?.Remove("workflow_rule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rule"); else _explicitNullProperties?.Remove("workflow_rule"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule? _explicitNullValueWorkflowRule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule WorkflowRule { get => _explicitNullValueWorkflowRule; set { _explicitNullValueWorkflowRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rule"); else _explicitNullProperties?.Remove("workflow_rule"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule WorkflowRule { get => _explicitNullValueWorkflowRule; set { _explicitNullValueWorkflowRule = value; AdditionalData?.Remove("workflow_rule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rule"); else _explicitNullProperties?.Remove("workflow_rule"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookFailureDetailWorkflowRule _explicitNullValueWorkflowRule = default!;
 #endif
         /// <summary>

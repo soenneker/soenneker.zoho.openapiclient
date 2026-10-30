@@ -18,23 +18,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("precision") is { } nullNodePrecision && nullNodePrecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Precision = null;
-            if (parseNode.GetChildNode("rounding_option") is { } nullNodeRoundingOption && nullNodeRoundingOption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoundingOption = null;
+            if (parseNode.GetChildNode("precision") is null) { _explicitNullValuePrecision = default!; _explicitNullProperties?.Remove("precision"); }
+            else if (parseNode.GetChildNode("precision") is { } nullNodePrecision && nullNodePrecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Precision = null;
+            if (parseNode.GetChildNode("rounding_option") is null) { _explicitNullValueRoundingOption = default!; _explicitNullProperties?.Remove("rounding_option"); }
+            else if (parseNode.GetChildNode("rounding_option") is { } nullNodeRoundingOption && nullNodeRoundingOption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoundingOption = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the precision of the currency.</summary>
-        public int? Precision { get => _explicitNullValuePrecision; set { _explicitNullValuePrecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precision"); else _explicitNullProperties?.Remove("precision"); } }
+        public int? Precision { get => _explicitNullValuePrecision; set { _explicitNullValuePrecision = value; AdditionalData?.Remove("precision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precision"); else _explicitNullProperties?.Remove("precision"); } }
         private int? _explicitNullValuePrecision = default!;
         /// <summary>Represents the rounding option for the currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoundingOption { get => _explicitNullValueRoundingOption; set { _explicitNullValueRoundingOption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rounding_option"); else _explicitNullProperties?.Remove("rounding_option"); } }
+        public string? RoundingOption { get => _explicitNullValueRoundingOption; set { _explicitNullValueRoundingOption = value; AdditionalData?.Remove("rounding_option"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rounding_option"); else _explicitNullProperties?.Remove("rounding_option"); } }
         private string? _explicitNullValueRoundingOption = default!;
 #nullable restore
 #else
-        public string RoundingOption { get => _explicitNullValueRoundingOption; set { _explicitNullValueRoundingOption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rounding_option"); else _explicitNullProperties?.Remove("rounding_option"); } }
+        public string RoundingOption { get => _explicitNullValueRoundingOption; set { _explicitNullValueRoundingOption = value; AdditionalData?.Remove("rounding_option"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rounding_option"); else _explicitNullProperties?.Remove("rounding_option"); } }
         private string _explicitNullValueRoundingOption = default!;
 #endif
         /// <summary>

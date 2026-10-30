@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("layouts") is { } nullNodeLayouts && nullNodeLayouts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layouts = null;
+            if (parseNode.GetChildNode("layouts") is null) { _explicitNullValueLayouts = default!; _explicitNullProperties?.Remove("layouts"); }
+            else if (parseNode.GetChildNode("layouts") is { } nullNodeLayouts && nullNodeLayouts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layouts = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains one entry per layout included in the deletion request, each reporting the individual outcome — such as success or failure — for that specific layout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult>? Layouts { get => _explicitNullValueLayouts; set { _explicitNullValueLayouts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layouts"); else _explicitNullProperties?.Remove("layouts"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult>? Layouts { get => _explicitNullValueLayouts; set { _explicitNullValueLayouts = value; AdditionalData?.Remove("layouts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layouts"); else _explicitNullProperties?.Remove("layouts"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult>? _explicitNullValueLayouts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult> Layouts { get => _explicitNullValueLayouts; set { _explicitNullValueLayouts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layouts"); else _explicitNullProperties?.Remove("layouts"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult> Layouts { get => _explicitNullValueLayouts; set { _explicitNullValueLayouts = value; AdditionalData?.Remove("layouts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layouts"); else _explicitNullProperties?.Remove("layouts"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutResult> _explicitNullValueLayouts = default!;
 #endif
         /// <summary>

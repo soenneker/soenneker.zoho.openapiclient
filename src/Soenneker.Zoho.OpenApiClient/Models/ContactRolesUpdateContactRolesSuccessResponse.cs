@@ -47,10 +47,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("contact_roles") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("contact_roles") != null))();
-            if (result.ContactRolesUpdateContactRoles200Response == null && result.ContactRolesUpdateContactRoles207Response == null && matchesUnionBranch0 && !matchesUnionBranch1) result.ContactRolesUpdateContactRoles200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles200Response(), parseNode);
-            if (result.ContactRolesUpdateContactRoles200Response == null && result.ContactRolesUpdateContactRoles207Response == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ContactRolesUpdateContactRoles207Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles207Response(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("contact_roles") && (!shapeMembers1.ContainsKey("contact_roles") || (((shapeMembers1["contact_roles"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("contact_roles") && (!shapeMembers1.ContainsKey("contact_roles") || (((shapeMembers1["contact_roles"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)) && ((true) && (true)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.ContactRolesUpdateContactRoles200Response == null && result.ContactRolesUpdateContactRoles207Response == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.ContactRolesUpdateContactRoles200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles200Response(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.ContactRolesUpdateContactRoles207Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles207Response(), parseNode);
             if (result.ContactRolesUpdateContactRoles200Response == null && result.ContactRolesUpdateContactRoles207Response == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -60,6 +64,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(ContactRolesUpdateContactRoles200Response != null || ContactRolesUpdateContactRoles207Response != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ContactRolesUpdateContactRoles200Response, ContactRolesUpdateContactRoles207Response);
@@ -74,8 +80,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (ContactRolesUpdateContactRoles200Response == null && ContactRolesUpdateContactRoles207Response == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (ContactRolesUpdateContactRoles200Response != null && ContactRolesUpdateContactRoles207Response == null) { if (ContactRolesUpdateContactRoles200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ContactRolesUpdateContactRoles200Response); return; }
-            if (ContactRolesUpdateContactRoles207Response != null && ContactRolesUpdateContactRoles200Response == null) { if (ContactRolesUpdateContactRoles207Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ContactRolesUpdateContactRoles207Response); return; }
+            int selectedUnionBranches = 0;
+            if (ContactRolesUpdateContactRoles200Response != null) selectedUnionBranches++;
+            if (ContactRolesUpdateContactRoles207Response != null) selectedUnionBranches++;
+            if (ContactRolesUpdateContactRoles200Response != null && selectedUnionBranches == 1) { if (ContactRolesUpdateContactRoles200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ContactRolesUpdateContactRoles200Response); return; }
+            if (ContactRolesUpdateContactRoles207Response != null && selectedUnionBranches == 1) { if (ContactRolesUpdateContactRoles207Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ContactRolesUpdateContactRoles207Response); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesUpdateContactRoles200Response>(null, ContactRolesUpdateContactRoles200Response, ContactRolesUpdateContactRoles207Response);

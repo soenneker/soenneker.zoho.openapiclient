@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("__apis") is { } nullNodeApis && nullNodeApis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Apis = null;
+            if (parseNode.GetChildNode("__apis") is null) { _explicitNullValueApis = default!; _explicitNullProperties?.Remove("__apis"); }
+            else if (parseNode.GetChildNode("__apis") is { } nullNodeApis && nullNodeApis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Apis = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains the details of all the supported APIs in the API version given in the request URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItem>? Apis { get => _explicitNullValueApis; set { _explicitNullValueApis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__apis"); else _explicitNullProperties?.Remove("__apis"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItem>? Apis { get => _explicitNullValueApis; set { _explicitNullValueApis = value; AdditionalData?.Remove("__apis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__apis"); else _explicitNullProperties?.Remove("__apis"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItem>? _explicitNullValueApis = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItem> Apis { get => _explicitNullValueApis; set { _explicitNullValueApis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__apis"); else _explicitNullProperties?.Remove("__apis"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItem> Apis { get => _explicitNullValueApis; set { _explicitNullValueApis = value; AdditionalData?.Remove("__apis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__apis"); else _explicitNullProperties?.Remove("__apis"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ApisGetAvailableApis200ResponseApisItem> _explicitNullValueApis = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_view") is { } nullNodeCustomView && nullNodeCustomView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomView = null;
-            if (parseNode.GetChildNode("workflow_tagActionRecords") is { } nullNodeWorkflowTagActionRecords && nullNodeWorkflowTagActionRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowTagActionRecords = null;
+            if (parseNode.GetChildNode("custom_view") is null) { _explicitNullValueCustomView = default!; _explicitNullProperties?.Remove("custom_view"); }
+            else if (parseNode.GetChildNode("custom_view") is { } nullNodeCustomView && nullNodeCustomView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomView = null;
+            if (parseNode.GetChildNode("workflow_tagActionRecords") is null) { _explicitNullValueWorkflowTagActionRecords = default!; _explicitNullProperties?.Remove("workflow_tagActionRecords"); }
+            else if (parseNode.GetChildNode("workflow_tagActionRecords") is { } nullNodeWorkflowTagActionRecords && nullNodeWorkflowTagActionRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowTagActionRecords = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for custom_view configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested? CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested? CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; AdditionalData?.Remove("custom_view"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested? _explicitNullValueCustomView = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; AdditionalData?.Remove("custom_view"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewNested _explicitNullValueCustomView = default!;
 #endif
         /// <summary>Nested schema for workflow tag action records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested? WorkflowTagActionRecords { get => _explicitNullValueWorkflowTagActionRecords; set { _explicitNullValueWorkflowTagActionRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_tagActionRecords"); else _explicitNullProperties?.Remove("workflow_tagActionRecords"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested? WorkflowTagActionRecords { get => _explicitNullValueWorkflowTagActionRecords; set { _explicitNullValueWorkflowTagActionRecords = value; AdditionalData?.Remove("workflow_tagActionRecords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_tagActionRecords"); else _explicitNullProperties?.Remove("workflow_tagActionRecords"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested? _explicitNullValueWorkflowTagActionRecords = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested WorkflowTagActionRecords { get => _explicitNullValueWorkflowTagActionRecords; set { _explicitNullValueWorkflowTagActionRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_tagActionRecords"); else _explicitNullProperties?.Remove("workflow_tagActionRecords"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested WorkflowTagActionRecords { get => _explicitNullValueWorkflowTagActionRecords; set { _explicitNullValueWorkflowTagActionRecords = value; AdditionalData?.Remove("workflow_tagActionRecords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_tagActionRecords"); else _explicitNullProperties?.Remove("workflow_tagActionRecords"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetWorkflowTagactionrecordsNested _explicitNullValueWorkflowTagActionRecords = default!;
 #endif
         /// <summary>

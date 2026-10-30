@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("shift_count") is { } nullNodeShiftCount && nullNodeShiftCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftCount = null;
-            if (parseNode.GetChildNode("shift_hours") is { } nullNodeShiftHours && nullNodeShiftHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftHours = null;
+            if (parseNode.GetChildNode("shift_count") is null) { _explicitNullValueShiftCount = default!; _explicitNullProperties?.Remove("shift_count"); }
+            else if (parseNode.GetChildNode("shift_count") is { } nullNodeShiftCount && nullNodeShiftCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftCount = null;
+            if (parseNode.GetChildNode("shift_hours") is null) { _explicitNullValueShiftHours = default!; _explicitNullProperties?.Remove("shift_hours"); }
+            else if (parseNode.GetChildNode("shift_hours") is { } nullNodeShiftHours && nullNodeShiftHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftHours = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents aggregate counts that summarize the shift hour configurations returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftCount? ShiftCount { get => _explicitNullValueShiftCount; set { _explicitNullValueShiftCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_count"); else _explicitNullProperties?.Remove("shift_count"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftCount? ShiftCount { get => _explicitNullValueShiftCount; set { _explicitNullValueShiftCount = value; AdditionalData?.Remove("shift_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_count"); else _explicitNullProperties?.Remove("shift_count"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftCount? _explicitNullValueShiftCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftCount ShiftCount { get => _explicitNullValueShiftCount; set { _explicitNullValueShiftCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_count"); else _explicitNullProperties?.Remove("shift_count"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftCount ShiftCount { get => _explicitNullValueShiftCount; set { _explicitNullValueShiftCount = value; AdditionalData?.Remove("shift_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_count"); else _explicitNullProperties?.Remove("shift_count"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftCount _explicitNullValueShiftCount = default!;
 #endif
         /// <summary>Lists the shift hour configurations returned in the response. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem>? ShiftHours { get => _explicitNullValueShiftHours; set { _explicitNullValueShiftHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_hours"); else _explicitNullProperties?.Remove("shift_hours"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem>? ShiftHours { get => _explicitNullValueShiftHours; set { _explicitNullValueShiftHours = value; AdditionalData?.Remove("shift_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_hours"); else _explicitNullProperties?.Remove("shift_hours"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem>? _explicitNullValueShiftHours = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem> ShiftHours { get => _explicitNullValueShiftHours; set { _explicitNullValueShiftHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_hours"); else _explicitNullProperties?.Remove("shift_hours"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem> ShiftHours { get => _explicitNullValueShiftHours; set { _explicitNullValueShiftHours = value; AdditionalData?.Remove("shift_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_hours"); else _explicitNullProperties?.Remove("shift_hours"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursGetSingleShiftHour200ResponseShiftHoursItem> _explicitNullValueShiftHours = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_updates") is { } nullNodeFieldUpdates && nullNodeFieldUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldUpdates = null;
+            if (parseNode.GetChildNode("field_updates") is null) { _explicitNullValueFieldUpdates = default!; _explicitNullProperties?.Remove("field_updates"); }
+            else if (parseNode.GetChildNode("field_updates") is { } nullNodeFieldUpdates && nullNodeFieldUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldUpdates = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array containing the updated field update action. Contains exactly one item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult>? FieldUpdates { get => _explicitNullValueFieldUpdates; set { _explicitNullValueFieldUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_updates"); else _explicitNullProperties?.Remove("field_updates"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult>? FieldUpdates { get => _explicitNullValueFieldUpdates; set { _explicitNullValueFieldUpdates = value; AdditionalData?.Remove("field_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_updates"); else _explicitNullProperties?.Remove("field_updates"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult>? _explicitNullValueFieldUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult> FieldUpdates { get => _explicitNullValueFieldUpdates; set { _explicitNullValueFieldUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_updates"); else _explicitNullProperties?.Remove("field_updates"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult> FieldUpdates { get => _explicitNullValueFieldUpdates; set { _explicitNullValueFieldUpdates = value; AdditionalData?.Remove("field_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_updates"); else _explicitNullProperties?.Remove("field_updates"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateActionResult> _explicitNullValueFieldUpdates = default!;
 #endif
         /// <summary>

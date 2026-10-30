@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("variables_associations") is { } nullNodeVariablesAssociations && nullNodeVariablesAssociations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariablesAssociations = null;
+            if (parseNode.GetChildNode("variables_associations") is null) { _explicitNullValueVariablesAssociations = default!; _explicitNullProperties?.Remove("variables_associations"); }
+            else if (parseNode.GetChildNode("variables_associations") is { } nullNodeVariablesAssociations && nullNodeVariablesAssociations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariablesAssociations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of variable association groups, each containing the association type and related resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableAssociationGroup>? VariablesAssociations { get => _explicitNullValueVariablesAssociations; set { _explicitNullValueVariablesAssociations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variables_associations"); else _explicitNullProperties?.Remove("variables_associations"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableAssociationGroup>? VariablesAssociations { get => _explicitNullValueVariablesAssociations; set { _explicitNullValueVariablesAssociations = value; AdditionalData?.Remove("variables_associations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variables_associations"); else _explicitNullProperties?.Remove("variables_associations"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.VariableAssociationGroup>? _explicitNullValueVariablesAssociations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableAssociationGroup> VariablesAssociations { get => _explicitNullValueVariablesAssociations; set { _explicitNullValueVariablesAssociations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variables_associations"); else _explicitNullProperties?.Remove("variables_associations"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableAssociationGroup> VariablesAssociations { get => _explicitNullValueVariablesAssociations; set { _explicitNullValueVariablesAssociations = value; AdditionalData?.Remove("variables_associations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variables_associations"); else _explicitNullProperties?.Remove("variables_associations"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.VariableAssociationGroup> _explicitNullValueVariablesAssociations = default!;
 #endif
         /// <summary>

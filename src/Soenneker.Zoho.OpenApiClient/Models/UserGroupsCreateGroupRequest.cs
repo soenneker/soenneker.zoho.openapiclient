@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("user_groups") is { } nullNodeUserGroups && nullNodeUserGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserGroups = null;
+            if (parseNode.GetChildNode("user_groups") is null) { _explicitNullValueUserGroups = default!; _explicitNullProperties?.Remove("user_groups"); }
+            else if (parseNode.GetChildNode("user_groups") is { } nullNodeUserGroups && nullNodeUserGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserGroups = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify an array containing up to 10 user group objects to create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequestUserGroupsItem>? UserGroups { get => _explicitNullValueUserGroups; set { _explicitNullValueUserGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_groups"); else _explicitNullProperties?.Remove("user_groups"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequestUserGroupsItem>? UserGroups { get => _explicitNullValueUserGroups; set { _explicitNullValueUserGroups = value; AdditionalData?.Remove("user_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_groups"); else _explicitNullProperties?.Remove("user_groups"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequestUserGroupsItem>? _explicitNullValueUserGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequestUserGroupsItem> UserGroups { get => _explicitNullValueUserGroups; set { _explicitNullValueUserGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_groups"); else _explicitNullProperties?.Remove("user_groups"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequestUserGroupsItem> UserGroups { get => _explicitNullValueUserGroups; set { _explicitNullValueUserGroups = value; AdditionalData?.Remove("user_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_groups"); else _explicitNullProperties?.Remove("user_groups"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsCreateGroupRequestUserGroupsItem> _explicitNullValueUserGroups = default!;
 #endif
         /// <summary>

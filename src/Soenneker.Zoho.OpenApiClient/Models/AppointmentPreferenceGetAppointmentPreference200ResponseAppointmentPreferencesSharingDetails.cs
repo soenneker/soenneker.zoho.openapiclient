@@ -18,17 +18,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("permission") is { } nullNodePermission && nullNodePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permission = null;
-            if (parseNode.GetChildNode("sharing_computation_status") is { } nullNodeSharingComputationStatus && nullNodeSharingComputationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingComputationStatus = null;
+            if (parseNode.GetChildNode("permission") is null) { _explicitNullValuePermission = default!; _explicitNullProperties?.Remove("permission"); }
+            else if (parseNode.GetChildNode("permission") is { } nullNodePermission && nullNodePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permission = null;
+            if (parseNode.GetChildNode("sharing_computation_status") is null) { _explicitNullValueSharingComputationStatus = default!; _explicitNullProperties?.Remove("sharing_computation_status"); }
+            else if (parseNode.GetChildNode("sharing_computation_status") is { } nullNodeSharingComputationStatus && nullNodeSharingComputationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingComputationStatus = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The permission level granted to the appointment owner for the associated record.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetailsPermission? Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetailsPermission? Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; AdditionalData?.Remove("permission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetailsPermission? _explicitNullValuePermission = default!;
         /// <summary>Indicates whether the sharing computation is currently in progress or completed.</summary>
-        public bool? SharingComputationStatus { get => _explicitNullValueSharingComputationStatus; set { _explicitNullValueSharingComputationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing_computation_status"); else _explicitNullProperties?.Remove("sharing_computation_status"); } }
+        public bool? SharingComputationStatus { get => _explicitNullValueSharingComputationStatus; set { _explicitNullValueSharingComputationStatus = value; AdditionalData?.Remove("sharing_computation_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharing_computation_status"); else _explicitNullProperties?.Remove("sharing_computation_status"); } }
         private bool? _explicitNullValueSharingComputationStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetails"/> and sets the default values.
@@ -55,7 +57,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "permission", n => { Permission = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetailsPermission>(); } },
+                { "permission", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentPreferenceGetAppointmentPreference200ResponseAppointmentPreferencesSharingDetailsPermission>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePermission = default; _explicitNullProperties?.Remove("permission"); AdditionalData["permission"] = unknown; } else { Permission = parsed; AdditionalData.Remove("permission"); } } },
                 { "sharing_computation_status", n => { SharingComputationStatus = n.GetBoolValue(); } },
             };
         }

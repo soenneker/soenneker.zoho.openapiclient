@@ -18,134 +18,148 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("acs_url") is { } nullNodeAcsUrl && nullNodeAcsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsUrl = null;
-            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
-            if (parseNode.GetChildNode("admin_zuid") is { } nullNodeAdminZuid && nullNodeAdminZuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdminZuid = null;
-            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
-            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
-            if (parseNode.GetChildNode("default_relay_state_url") is { } nullNodeDefaultRelayStateUrl && nullNodeDefaultRelayStateUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRelayStateUrl = null;
-            if (parseNode.GetChildNode("issuer") is { } nullNodeIssuer && nullNodeIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issuer = null;
-            if (parseNode.GetChildNode("login_url") is { } nullNodeLoginUrl && nullNodeLoginUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoginUrl = null;
-            if (parseNode.GetChildNode("modified_by") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
-            if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("saml_configuration") is { } nullNodeSamlConfiguration && nullNodeSamlConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamlConfiguration = null;
-            if (parseNode.GetChildNode("single_logout_url") is { } nullNodeSingleLogoutUrl && nullNodeSingleLogoutUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingleLogoutUrl = null;
-            if (parseNode.GetChildNode("zaid") is { } nullNodeZaid && nullNodeZaid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zaid = null;
+            if (parseNode.GetChildNode("acs_url") is null) { _explicitNullValueAcsUrl = default!; _explicitNullProperties?.Remove("acs_url"); }
+            else if (parseNode.GetChildNode("acs_url") is { } nullNodeAcsUrl && nullNodeAcsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsUrl = null;
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("admin_zuid") is null) { _explicitNullValueAdminZuid = default!; _explicitNullProperties?.Remove("admin_zuid"); }
+            else if (parseNode.GetChildNode("admin_zuid") is { } nullNodeAdminZuid && nullNodeAdminZuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdminZuid = null;
+            if (parseNode.GetChildNode("created_by") is null) { _explicitNullValueCreatedBy = default!; _explicitNullProperties?.Remove("created_by"); }
+            else if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("created_time") is null) { _explicitNullValueCreatedTime = default!; _explicitNullProperties?.Remove("created_time"); }
+            else if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("default_relay_state_url") is null) { _explicitNullValueDefaultRelayStateUrl = default!; _explicitNullProperties?.Remove("default_relay_state_url"); }
+            else if (parseNode.GetChildNode("default_relay_state_url") is { } nullNodeDefaultRelayStateUrl && nullNodeDefaultRelayStateUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRelayStateUrl = null;
+            if (parseNode.GetChildNode("issuer") is null) { _explicitNullValueIssuer = default!; _explicitNullProperties?.Remove("issuer"); }
+            else if (parseNode.GetChildNode("issuer") is { } nullNodeIssuer && nullNodeIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issuer = null;
+            if (parseNode.GetChildNode("login_url") is null) { _explicitNullValueLoginUrl = default!; _explicitNullProperties?.Remove("login_url"); }
+            else if (parseNode.GetChildNode("login_url") is { } nullNodeLoginUrl && nullNodeLoginUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoginUrl = null;
+            if (parseNode.GetChildNode("modified_by") is null) { _explicitNullValueModifiedBy = default!; _explicitNullProperties?.Remove("modified_by"); }
+            else if (parseNode.GetChildNode("modified_by") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("modified_time") is null) { _explicitNullValueModifiedTime = default!; _explicitNullProperties?.Remove("modified_time"); }
+            else if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("saml_configuration") is null) { _explicitNullValueSamlConfiguration = default!; _explicitNullProperties?.Remove("saml_configuration"); }
+            else if (parseNode.GetChildNode("saml_configuration") is { } nullNodeSamlConfiguration && nullNodeSamlConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamlConfiguration = null;
+            if (parseNode.GetChildNode("single_logout_url") is null) { _explicitNullValueSingleLogoutUrl = default!; _explicitNullProperties?.Remove("single_logout_url"); }
+            else if (parseNode.GetChildNode("single_logout_url") is { } nullNodeSingleLogoutUrl && nullNodeSingleLogoutUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingleLogoutUrl = null;
+            if (parseNode.GetChildNode("zaid") is null) { _explicitNullValueZaid = default!; _explicitNullProperties?.Remove("zaid"); }
+            else if (parseNode.GetChildNode("zaid") is { } nullNodeZaid && nullNodeZaid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zaid = null;
         }
 
         /// <summary>Represents the Assertion Consumer Service (ACS) URL for the portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsUrl { get => _explicitNullValueAcsUrl; set { _explicitNullValueAcsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acs_url"); else _explicitNullProperties?.Remove("acs_url"); } }
+        public string? AcsUrl { get => _explicitNullValueAcsUrl; set { _explicitNullValueAcsUrl = value; AdditionalData?.Remove("acs_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acs_url"); else _explicitNullProperties?.Remove("acs_url"); } }
         private string? _explicitNullValueAcsUrl = default!;
 #nullable restore
 #else
-        public string AcsUrl { get => _explicitNullValueAcsUrl; set { _explicitNullValueAcsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acs_url"); else _explicitNullProperties?.Remove("acs_url"); } }
+        public string AcsUrl { get => _explicitNullValueAcsUrl; set { _explicitNullValueAcsUrl = value; AdditionalData?.Remove("acs_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acs_url"); else _explicitNullProperties?.Remove("acs_url"); } }
         private string _explicitNullValueAcsUrl = default!;
 #endif
         /// <summary>Indicates whether the portal is active.</summary>
-        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
         private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the Zoho account zone ID of the portal administrator.</summary>
-        public int? AdminZuid { get => _explicitNullValueAdminZuid; set { _explicitNullValueAdminZuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("admin_zuid"); else _explicitNullProperties?.Remove("admin_zuid"); } }
+        public int? AdminZuid { get => _explicitNullValueAdminZuid; set { _explicitNullValueAdminZuid = value; AdditionalData?.Remove("admin_zuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("admin_zuid"); else _explicitNullProperties?.Remove("admin_zuid"); } }
         private int? _explicitNullValueAdminZuid = default!;
         /// <summary>Represents the Zoho CRM user who created this portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Represents the timestamp when the portal was first added.</summary>
-        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; AdditionalData?.Remove("created_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
         private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>Represents the default relay state URL used after a successful SAML login.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultRelayStateUrl { get => _explicitNullValueDefaultRelayStateUrl; set { _explicitNullValueDefaultRelayStateUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_relay_state_url"); else _explicitNullProperties?.Remove("default_relay_state_url"); } }
+        public string? DefaultRelayStateUrl { get => _explicitNullValueDefaultRelayStateUrl; set { _explicitNullValueDefaultRelayStateUrl = value; AdditionalData?.Remove("default_relay_state_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_relay_state_url"); else _explicitNullProperties?.Remove("default_relay_state_url"); } }
         private string? _explicitNullValueDefaultRelayStateUrl = default!;
 #nullable restore
 #else
-        public string DefaultRelayStateUrl { get => _explicitNullValueDefaultRelayStateUrl; set { _explicitNullValueDefaultRelayStateUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_relay_state_url"); else _explicitNullProperties?.Remove("default_relay_state_url"); } }
+        public string DefaultRelayStateUrl { get => _explicitNullValueDefaultRelayStateUrl; set { _explicitNullValueDefaultRelayStateUrl = value; AdditionalData?.Remove("default_relay_state_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_relay_state_url"); else _explicitNullProperties?.Remove("default_relay_state_url"); } }
         private string _explicitNullValueDefaultRelayStateUrl = default!;
 #endif
         /// <summary>Represents the SAML issuer identifier (entity ID) for the portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
+        public string? Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; AdditionalData?.Remove("issuer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
         private string? _explicitNullValueIssuer = default!;
 #nullable restore
 #else
-        public string Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
+        public string Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; AdditionalData?.Remove("issuer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
         private string _explicitNullValueIssuer = default!;
 #endif
         /// <summary>Represents the login URL for the portal. Displayed on the portal login page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoginUrl { get => _explicitNullValueLoginUrl; set { _explicitNullValueLoginUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_url"); else _explicitNullProperties?.Remove("login_url"); } }
+        public string? LoginUrl { get => _explicitNullValueLoginUrl; set { _explicitNullValueLoginUrl = value; AdditionalData?.Remove("login_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_url"); else _explicitNullProperties?.Remove("login_url"); } }
         private string? _explicitNullValueLoginUrl = default!;
 #nullable restore
 #else
-        public string LoginUrl { get => _explicitNullValueLoginUrl; set { _explicitNullValueLoginUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_url"); else _explicitNullProperties?.Remove("login_url"); } }
+        public string LoginUrl { get => _explicitNullValueLoginUrl; set { _explicitNullValueLoginUrl = value; AdditionalData?.Remove("login_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login_url"); else _explicitNullProperties?.Remove("login_url"); } }
         private string _explicitNullValueLoginUrl = default!;
 #endif
         /// <summary>Represents the Zoho CRM user who last modified this portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; AdditionalData?.Remove("modified_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemModifiedBy? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; AdditionalData?.Remove("modified_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemModifiedBy _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>Represents the timestamp when the portal configuration was last modified.</summary>
-        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
+        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; AdditionalData?.Remove("modified_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
         private DateTimeOffset? _explicitNullValueModifiedTime = default!;
         /// <summary>Represents the unique name of the portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Represents the SAML authentication configuration for the portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration? SamlConfiguration { get => _explicitNullValueSamlConfiguration; set { _explicitNullValueSamlConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_configuration"); else _explicitNullProperties?.Remove("saml_configuration"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration? SamlConfiguration { get => _explicitNullValueSamlConfiguration; set { _explicitNullValueSamlConfiguration = value; AdditionalData?.Remove("saml_configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_configuration"); else _explicitNullProperties?.Remove("saml_configuration"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration? _explicitNullValueSamlConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration SamlConfiguration { get => _explicitNullValueSamlConfiguration; set { _explicitNullValueSamlConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_configuration"); else _explicitNullProperties?.Remove("saml_configuration"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration SamlConfiguration { get => _explicitNullValueSamlConfiguration; set { _explicitNullValueSamlConfiguration = value; AdditionalData?.Remove("saml_configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml_configuration"); else _explicitNullProperties?.Remove("saml_configuration"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PortalsGetPortal200ResponsePortalsItemSamlConfiguration _explicitNullValueSamlConfiguration = default!;
 #endif
         /// <summary>Represents the single logout URL (SLO) used to terminate SAML sessions across all service providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SingleLogoutUrl { get => _explicitNullValueSingleLogoutUrl; set { _explicitNullValueSingleLogoutUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("single_logout_url"); else _explicitNullProperties?.Remove("single_logout_url"); } }
+        public string? SingleLogoutUrl { get => _explicitNullValueSingleLogoutUrl; set { _explicitNullValueSingleLogoutUrl = value; AdditionalData?.Remove("single_logout_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("single_logout_url"); else _explicitNullProperties?.Remove("single_logout_url"); } }
         private string? _explicitNullValueSingleLogoutUrl = default!;
 #nullable restore
 #else
-        public string SingleLogoutUrl { get => _explicitNullValueSingleLogoutUrl; set { _explicitNullValueSingleLogoutUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("single_logout_url"); else _explicitNullProperties?.Remove("single_logout_url"); } }
+        public string SingleLogoutUrl { get => _explicitNullValueSingleLogoutUrl; set { _explicitNullValueSingleLogoutUrl = value; AdditionalData?.Remove("single_logout_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("single_logout_url"); else _explicitNullProperties?.Remove("single_logout_url"); } }
         private string _explicitNullValueSingleLogoutUrl = default!;
 #endif
         /// <summary>Represents the Zoho account ID (`zaid`) associated with the portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Zaid { get => _explicitNullValueZaid; set { _explicitNullValueZaid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zaid"); else _explicitNullProperties?.Remove("zaid"); } }
+        public string? Zaid { get => _explicitNullValueZaid; set { _explicitNullValueZaid = value; AdditionalData?.Remove("zaid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zaid"); else _explicitNullProperties?.Remove("zaid"); } }
         private string? _explicitNullValueZaid = default!;
 #nullable restore
 #else
-        public string Zaid { get => _explicitNullValueZaid; set { _explicitNullValueZaid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zaid"); else _explicitNullProperties?.Remove("zaid"); } }
+        public string Zaid { get => _explicitNullValueZaid; set { _explicitNullValueZaid = value; AdditionalData?.Remove("zaid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zaid"); else _explicitNullProperties?.Remove("zaid"); } }
         private string _explicitNullValueZaid = default!;
 #endif
         /// <summary>

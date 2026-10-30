@@ -84,7 +84,7 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Bulk.Search
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Module_search.Item.Bulk.Search.SearchRequestBuilder.SearchRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/module_search/{module}/bulk/search", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

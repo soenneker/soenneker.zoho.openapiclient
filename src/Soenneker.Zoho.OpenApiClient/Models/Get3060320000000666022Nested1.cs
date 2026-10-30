@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("AddTags") is { } nullNodeAddTags && nullNodeAddTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddTags = null;
-            if (parseNode.GetChildNode("RemoveTags") is { } nullNodeRemoveTags && nullNodeRemoveTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveTags = null;
+            if (parseNode.GetChildNode("AddTags") is null) { _explicitNullValueAddTags = default!; _explicitNullProperties?.Remove("AddTags"); }
+            else if (parseNode.GetChildNode("AddTags") is { } nullNodeAddTags && nullNodeAddTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddTags = null;
+            if (parseNode.GetChildNode("RemoveTags") is null) { _explicitNullValueRemoveTags = default!; _explicitNullProperties?.Remove("RemoveTags"); }
+            else if (parseNode.GetChildNode("RemoveTags") is { } nullNodeRemoveTags && nullNodeRemoveTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveTags = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>AddTags configurations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetAddtagsNested1>? AddTags { get => _explicitNullValueAddTags; set { _explicitNullValueAddTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AddTags"); else _explicitNullProperties?.Remove("AddTags"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetAddtagsNested1>? AddTags { get => _explicitNullValueAddTags; set { _explicitNullValueAddTags = value; AdditionalData?.Remove("AddTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AddTags"); else _explicitNullProperties?.Remove("AddTags"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GetAddtagsNested1>? _explicitNullValueAddTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetAddtagsNested1> AddTags { get => _explicitNullValueAddTags; set { _explicitNullValueAddTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AddTags"); else _explicitNullProperties?.Remove("AddTags"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetAddtagsNested1> AddTags { get => _explicitNullValueAddTags; set { _explicitNullValueAddTags = value; AdditionalData?.Remove("AddTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AddTags"); else _explicitNullProperties?.Remove("AddTags"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GetAddtagsNested1> _explicitNullValueAddTags = default!;
 #endif
         /// <summary>RemoveTags configurations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetRemovetagsNested1>? RemoveTags { get => _explicitNullValueRemoveTags; set { _explicitNullValueRemoveTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RemoveTags"); else _explicitNullProperties?.Remove("RemoveTags"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetRemovetagsNested1>? RemoveTags { get => _explicitNullValueRemoveTags; set { _explicitNullValueRemoveTags = value; AdditionalData?.Remove("RemoveTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RemoveTags"); else _explicitNullProperties?.Remove("RemoveTags"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GetRemovetagsNested1>? _explicitNullValueRemoveTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetRemovetagsNested1> RemoveTags { get => _explicitNullValueRemoveTags; set { _explicitNullValueRemoveTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RemoveTags"); else _explicitNullProperties?.Remove("RemoveTags"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GetRemovetagsNested1> RemoveTags { get => _explicitNullValueRemoveTags; set { _explicitNullValueRemoveTags = value; AdditionalData?.Remove("RemoveTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RemoveTags"); else _explicitNullProperties?.Remove("RemoveTags"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GetRemovetagsNested1> _explicitNullValueRemoveTags = default!;
 #endif
         /// <summary>

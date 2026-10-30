@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
-            if (parseNode.GetChildNode("resource_path_index") is { } nullNodeResourcePathIndex && nullNodeResourcePathIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourcePathIndex = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("json_path") is null) { _explicitNullValueJsonPath = default!; _explicitNullProperties?.Remove("json_path"); }
+            else if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
+            if (parseNode.GetChildNode("resource_path_index") is null) { _explicitNullValueResourcePathIndex = default!; _explicitNullProperties?.Remove("resource_path_index"); }
+            else if (parseNode.GetChildNode("resource_path_index") is { } nullNodeResourcePathIndex && nullNodeResourcePathIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourcePathIndex = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the API field name of the dependent field that caused the URL validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>Represents the JSON path to the dependent field that caused the URL validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
         private string? _explicitNullValueJsonPath = default!;
 #nullable restore
 #else
-        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
         private string _explicitNullValueJsonPath = default!;
 #endif
         /// <summary>Represents the index in the resource path where the dependent field is located.</summary>
-        public int? ResourcePathIndex { get => _explicitNullValueResourcePathIndex; set { _explicitNullValueResourcePathIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_path_index"); else _explicitNullProperties?.Remove("resource_path_index"); } }
+        public int? ResourcePathIndex { get => _explicitNullValueResourcePathIndex; set { _explicitNullValueResourcePathIndex = value; AdditionalData?.Remove("resource_path_index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_path_index"); else _explicitNullProperties?.Remove("resource_path_index"); } }
         private int? _explicitNullValueResourcePathIndex = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserInvalidErrorSchemaInUrlDetailsDependee"/> and sets the default values.

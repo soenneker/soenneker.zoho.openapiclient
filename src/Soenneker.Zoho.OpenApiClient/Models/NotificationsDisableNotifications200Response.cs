@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("watch") is { } nullNodeWatch && nullNodeWatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Watch = null;
+            if (parseNode.GetChildNode("watch") is null) { _explicitNullValueWatch = default!; _explicitNullProperties?.Remove("watch"); }
+            else if (parseNode.GetChildNode("watch") is { } nullNodeWatch && nullNodeWatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Watch = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of results for each disabled notification channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200ResponseWatchItem>? Watch { get => _explicitNullValueWatch; set { _explicitNullValueWatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch"); else _explicitNullProperties?.Remove("watch"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200ResponseWatchItem>? Watch { get => _explicitNullValueWatch; set { _explicitNullValueWatch = value; AdditionalData?.Remove("watch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch"); else _explicitNullProperties?.Remove("watch"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200ResponseWatchItem>? _explicitNullValueWatch = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200ResponseWatchItem> Watch { get => _explicitNullValueWatch; set { _explicitNullValueWatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch"); else _explicitNullProperties?.Remove("watch"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200ResponseWatchItem> Watch { get => _explicitNullValueWatch; set { _explicitNullValueWatch = value; AdditionalData?.Remove("watch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch"); else _explicitNullProperties?.Remove("watch"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotifications200ResponseWatchItem> _explicitNullValueWatch = default!;
 #endif
         /// <summary>

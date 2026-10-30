@@ -18,23 +18,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("repeat") is { } nullNodeRepeat && nullNodeRepeat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repeat = null;
-            if (parseNode.GetChildNode("trigger_module") is { } nullNodeTriggerModule && nullNodeTriggerModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerModule = null;
+            if (parseNode.GetChildNode("repeat") is null) { _explicitNullValueRepeat = default!; _explicitNullProperties?.Remove("repeat"); }
+            else if (parseNode.GetChildNode("repeat") is { } nullNodeRepeat && nullNodeRepeat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repeat = null;
+            if (parseNode.GetChildNode("trigger_module") is null) { _explicitNullValueTriggerModule = default!; _explicitNullProperties?.Remove("trigger_module"); }
+            else if (parseNode.GetChildNode("trigger_module") is { } nullNodeTriggerModule && nullNodeTriggerModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerModule = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the rule fires every time the trigger condition is met. When false, the rule fires only on the first occurrence.</summary>
-        public bool? Repeat { get => _explicitNullValueRepeat; set { _explicitNullValueRepeat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeat"); else _explicitNullProperties?.Remove("repeat"); } }
+        public bool? Repeat { get => _explicitNullValueRepeat; set { _explicitNullValueRepeat = value; AdditionalData?.Remove("repeat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeat"); else _explicitNullProperties?.Remove("repeat"); } }
         private bool? _explicitNullValueRepeat = default!;
         /// <summary>The module that actually triggers the rule. Defaults to the rule&apos;s top-level module if omitted. Must be explicitly set when the trigger targets a different module, such as a rule on Leads triggered by a note creation event, which requires the trigger module to reference the Notes module. To discover module API names and identifiers, retrieve the available modules from the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule? TriggerModule { get => _explicitNullValueTriggerModule; set { _explicitNullValueTriggerModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_module"); else _explicitNullProperties?.Remove("trigger_module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule? TriggerModule { get => _explicitNullValueTriggerModule; set { _explicitNullValueTriggerModule = value; AdditionalData?.Remove("trigger_module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_module"); else _explicitNullProperties?.Remove("trigger_module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule? _explicitNullValueTriggerModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule TriggerModule { get => _explicitNullValueTriggerModule; set { _explicitNullValueTriggerModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_module"); else _explicitNullProperties?.Remove("trigger_module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule TriggerModule { get => _explicitNullValueTriggerModule; set { _explicitNullValueTriggerModule = value; AdditionalData?.Remove("trigger_module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_module"); else _explicitNullProperties?.Remove("trigger_module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteWhenT1SimpleDetailsTriggerModule _explicitNullValueTriggerModule = default!;
 #endif
         /// <summary>

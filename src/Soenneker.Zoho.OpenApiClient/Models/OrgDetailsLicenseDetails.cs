@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("trial_expiry") is { } nullNodeTrialExpiry && nullNodeTrialExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrialExpiry = null;
+            if (parseNode.GetChildNode("trial_expiry") is null) { _explicitNullValueTrialExpiry = default!; _explicitNullProperties?.Remove("trial_expiry"); }
+            else if (parseNode.GetChildNode("trial_expiry") is { } nullNodeTrialExpiry && nullNodeTrialExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrialExpiry = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,7 +33,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the number of portal user licenses purchased for the organization.</summary>
         public int? PortalUsersLicensePurchased { get; private set; }
         /// <summary>Represents the expiry date of the trial subscription for the organization.</summary>
-        public DateTimeOffset? TrialExpiry { get => _explicitNullValueTrialExpiry; set { _explicitNullValueTrialExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial_expiry"); else _explicitNullProperties?.Remove("trial_expiry"); } }
+        public DateTimeOffset? TrialExpiry { get => _explicitNullValueTrialExpiry; set { _explicitNullValueTrialExpiry = value; AdditionalData?.Remove("trial_expiry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial_expiry"); else _explicitNullProperties?.Remove("trial_expiry"); } }
         private DateTimeOffset? _explicitNullValueTrialExpiry = default!;
         /// <summary>Represents the type of trial subscription for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

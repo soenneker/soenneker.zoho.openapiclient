@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_views") is { } nullNodeCustomViews && nullNodeCustomViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomViews = null;
+            if (parseNode.GetChildNode("custom_views") is null) { _explicitNullValueCustomViews = default!; _explicitNullProperties?.Remove("custom_views"); }
+            else if (parseNode.GetChildNode("custom_views") is { } nullNodeCustomViews && nullNodeCustomViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomViews = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of Custom View sort update results, including both successful and failed items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSort207ResponseCustomViewsItem>? CustomViews { get => _explicitNullValueCustomViews; set { _explicitNullValueCustomViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_views"); else _explicitNullProperties?.Remove("custom_views"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSort207ResponseCustomViewsItem>? CustomViews { get => _explicitNullValueCustomViews; set { _explicitNullValueCustomViews = value; AdditionalData?.Remove("custom_views"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_views"); else _explicitNullProperties?.Remove("custom_views"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSort207ResponseCustomViewsItem>? _explicitNullValueCustomViews = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSort207ResponseCustomViewsItem> CustomViews { get => _explicitNullValueCustomViews; set { _explicitNullValueCustomViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_views"); else _explicitNullProperties?.Remove("custom_views"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSort207ResponseCustomViewsItem> CustomViews { get => _explicitNullValueCustomViews; set { _explicitNullValueCustomViews = value; AdditionalData?.Remove("custom_views"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_views"); else _explicitNullProperties?.Remove("custom_views"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSort207ResponseCustomViewsItem> _explicitNullValueCustomViews = default!;
 #endif
         /// <summary>

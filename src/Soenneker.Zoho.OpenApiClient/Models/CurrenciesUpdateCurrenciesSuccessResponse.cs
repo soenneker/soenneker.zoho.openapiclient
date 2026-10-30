@@ -47,10 +47,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("currencies") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("currencies") != null))();
-            if (result.CurrenciesUpdateCurrencies200Response == null && result.CurrenciesUpdateCurrencies207Response == null && matchesUnionBranch0 && !matchesUnionBranch1) result.CurrenciesUpdateCurrencies200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateCurrencies200Response(), parseNode);
-            if (result.CurrenciesUpdateCurrencies200Response == null && result.CurrenciesUpdateCurrencies207Response == null && matchesUnionBranch1 && !matchesUnionBranch0) result.CurrenciesUpdateCurrencies207Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateCurrencies207Response(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("currencies") && (!shapeMembers1.ContainsKey("currencies") || (((shapeMembers1["currencies"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("currencies") && (!shapeMembers1.ContainsKey("currencies") || (((shapeMembers1["currencies"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)) && ((true) && (true)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.CurrenciesUpdateCurrencies200Response == null && result.CurrenciesUpdateCurrencies207Response == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CurrenciesUpdateCurrencies200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateCurrencies200Response(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.CurrenciesUpdateCurrencies207Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateCurrencies207Response(), parseNode);
             if (result.CurrenciesUpdateCurrencies200Response == null && result.CurrenciesUpdateCurrencies207Response == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -60,6 +64,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(CurrenciesUpdateCurrencies200Response != null || CurrenciesUpdateCurrencies207Response != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CurrenciesUpdateCurrencies200Response, CurrenciesUpdateCurrencies207Response);
@@ -74,8 +80,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (CurrenciesUpdateCurrencies200Response == null && CurrenciesUpdateCurrencies207Response == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (CurrenciesUpdateCurrencies200Response != null && CurrenciesUpdateCurrencies207Response == null) { if (CurrenciesUpdateCurrencies200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CurrenciesUpdateCurrencies200Response); return; }
-            if (CurrenciesUpdateCurrencies207Response != null && CurrenciesUpdateCurrencies200Response == null) { if (CurrenciesUpdateCurrencies207Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CurrenciesUpdateCurrencies207Response); return; }
+            int selectedUnionBranches = 0;
+            if (CurrenciesUpdateCurrencies200Response != null) selectedUnionBranches++;
+            if (CurrenciesUpdateCurrencies207Response != null) selectedUnionBranches++;
+            if (CurrenciesUpdateCurrencies200Response != null && selectedUnionBranches == 1) { if (CurrenciesUpdateCurrencies200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CurrenciesUpdateCurrencies200Response); return; }
+            if (CurrenciesUpdateCurrencies207Response != null && selectedUnionBranches == 1) { if (CurrenciesUpdateCurrencies207Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CurrenciesUpdateCurrencies207Response); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesUpdateCurrencies200Response>(null, CurrenciesUpdateCurrencies200Response, CurrenciesUpdateCurrencies207Response);

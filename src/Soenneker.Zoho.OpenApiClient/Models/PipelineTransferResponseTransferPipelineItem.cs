@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pipeline") is { } nullNodePipeline && nullNodePipeline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pipeline = null;
-            if (parseNode.GetChildNode("stages") is { } nullNodeStages && nullNodeStages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stages = null;
+            if (parseNode.GetChildNode("pipeline") is null) { _explicitNullValuePipeline = default!; _explicitNullProperties?.Remove("pipeline"); }
+            else if (parseNode.GetChildNode("pipeline") is { } nullNodePipeline && nullNodePipeline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pipeline = null;
+            if (parseNode.GetChildNode("stages") is null) { _explicitNullValueStages = default!; _explicitNullProperties?.Remove("stages"); }
+            else if (parseNode.GetChildNode("stages") is { } nullNodeStages && nullNodeStages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stages = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Pipeline-level transfer mapping from source to target pipeline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemPipeline? Pipeline { get => _explicitNullValuePipeline; set { _explicitNullValuePipeline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pipeline"); else _explicitNullProperties?.Remove("pipeline"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemPipeline? Pipeline { get => _explicitNullValuePipeline; set { _explicitNullValuePipeline = value; AdditionalData?.Remove("pipeline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pipeline"); else _explicitNullProperties?.Remove("pipeline"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemPipeline? _explicitNullValuePipeline = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemPipeline Pipeline { get => _explicitNullValuePipeline; set { _explicitNullValuePipeline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pipeline"); else _explicitNullProperties?.Remove("pipeline"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemPipeline Pipeline { get => _explicitNullValuePipeline; set { _explicitNullValuePipeline = value; AdditionalData?.Remove("pipeline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pipeline"); else _explicitNullProperties?.Remove("pipeline"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemPipeline _explicitNullValuePipeline = default!;
 #endif
         /// <summary>Array of stage mappings showing which stages transferred to which target stages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemStagesItem>? Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemStagesItem>? Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; AdditionalData?.Remove("stages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemStagesItem>? _explicitNullValueStages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemStagesItem> Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemStagesItem> Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; AdditionalData?.Remove("stages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.PipelineTransferResponseTransferPipelineItemStagesItem> _explicitNullValueStages = default!;
 #endif
         /// <summary>

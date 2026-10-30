@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("$member_info") is { } nullNodeMemberInfo && nullNodeMemberInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberInfo = null;
-            if (parseNode.GetChildNode("Moved_To__s") is { } nullNodeMovedToS && nullNodeMovedToS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MovedToS = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("$member_info") is null) { _explicitNullValueMemberInfo = default!; _explicitNullProperties?.Remove("$member_info"); }
+            else if (parseNode.GetChildNode("$member_info") is { } nullNodeMemberInfo && nullNodeMemberInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberInfo = null;
+            if (parseNode.GetChildNode("Moved_To__s") is null) { _explicitNullValueMovedToS = default!; _explicitNullProperties?.Remove("Moved_To__s"); }
+            else if (parseNode.GetChildNode("Moved_To__s") is { } nullNodeMovedToS && nullNodeMovedToS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MovedToS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Unique identifier of the deleted record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Metadata about the related record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo? MemberInfo { get => _explicitNullValueMemberInfo; set { _explicitNullValueMemberInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$member_info"); else _explicitNullProperties?.Remove("$member_info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo? MemberInfo { get => _explicitNullValueMemberInfo; set { _explicitNullValueMemberInfo = value; AdditionalData?.Remove("$member_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$member_info"); else _explicitNullProperties?.Remove("$member_info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo? _explicitNullValueMemberInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo MemberInfo { get => _explicitNullValueMemberInfo; set { _explicitNullValueMemberInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$member_info"); else _explicitNullProperties?.Remove("$member_info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo MemberInfo { get => _explicitNullValueMemberInfo; set { _explicitNullValueMemberInfo = value; AdditionalData?.Remove("$member_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("$member_info"); else _explicitNullProperties?.Remove("$member_info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetDeletedRelatedRecord200ResponseDataItemMemberInfo _explicitNullValueMemberInfo = default!;
 #endif
         /// <summary>Stage value to which the record was moved (stage history / picklist movement).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MovedToS { get => _explicitNullValueMovedToS; set { _explicitNullValueMovedToS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Moved_To__s"); else _explicitNullProperties?.Remove("Moved_To__s"); } }
+        public string? MovedToS { get => _explicitNullValueMovedToS; set { _explicitNullValueMovedToS = value; AdditionalData?.Remove("Moved_To__s"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Moved_To__s"); else _explicitNullProperties?.Remove("Moved_To__s"); } }
         private string? _explicitNullValueMovedToS = default!;
 #nullable restore
 #else
-        public string MovedToS { get => _explicitNullValueMovedToS; set { _explicitNullValueMovedToS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Moved_To__s"); else _explicitNullProperties?.Remove("Moved_To__s"); } }
+        public string MovedToS { get => _explicitNullValueMovedToS; set { _explicitNullValueMovedToS = value; AdditionalData?.Remove("Moved_To__s"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Moved_To__s"); else _explicitNullProperties?.Remove("Moved_To__s"); } }
         private string _explicitNullValueMovedToS = default!;
 #endif
         /// <summary>

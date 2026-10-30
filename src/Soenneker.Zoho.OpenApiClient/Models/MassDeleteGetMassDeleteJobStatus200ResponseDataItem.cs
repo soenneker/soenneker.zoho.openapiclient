@@ -18,25 +18,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Deleted_Count") is { } nullNodeDeletedCount && nullNodeDeletedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedCount = null;
-            if (parseNode.GetChildNode("Failed_Count") is { } nullNodeFailedCount && nullNodeFailedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedCount = null;
-            if (parseNode.GetChildNode("Status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("Total_Count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+            if (parseNode.GetChildNode("Deleted_Count") is null) { _explicitNullValueDeletedCount = default!; _explicitNullProperties?.Remove("Deleted_Count"); }
+            else if (parseNode.GetChildNode("Deleted_Count") is { } nullNodeDeletedCount && nullNodeDeletedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedCount = null;
+            if (parseNode.GetChildNode("Failed_Count") is null) { _explicitNullValueFailedCount = default!; _explicitNullProperties?.Remove("Failed_Count"); }
+            else if (parseNode.GetChildNode("Failed_Count") is { } nullNodeFailedCount && nullNodeFailedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedCount = null;
+            if (parseNode.GetChildNode("Status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("Status"); }
+            else if (parseNode.GetChildNode("Status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("Total_Count") is null) { _explicitNullValueTotalCount = default!; _explicitNullProperties?.Remove("Total_Count"); }
+            else if (parseNode.GetChildNode("Total_Count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the number of records successfully deleted by the mass delete job. </summary>
-        public int? DeletedCount { get => _explicitNullValueDeletedCount; set { _explicitNullValueDeletedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deleted_Count"); else _explicitNullProperties?.Remove("Deleted_Count"); } }
+        public int? DeletedCount { get => _explicitNullValueDeletedCount; set { _explicitNullValueDeletedCount = value; AdditionalData?.Remove("Deleted_Count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deleted_Count"); else _explicitNullProperties?.Remove("Deleted_Count"); } }
         private int? _explicitNullValueDeletedCount = default!;
         /// <summary>Represents the number of records that could not be deleted by the mass delete job. </summary>
-        public int? FailedCount { get => _explicitNullValueFailedCount; set { _explicitNullValueFailedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Failed_Count"); else _explicitNullProperties?.Remove("Failed_Count"); } }
+        public int? FailedCount { get => _explicitNullValueFailedCount; set { _explicitNullValueFailedCount = value; AdditionalData?.Remove("Failed_Count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Failed_Count"); else _explicitNullProperties?.Remove("Failed_Count"); } }
         private int? _explicitNullValueFailedCount = default!;
         /// <summary>Represents the current status of the mass deletejob. Possible values:**COMPLETED** - The job has finished processing allrecords.**SCHEDULED** - The job is scheduled and waiting tostart.**QUEUED** - The job is in the queue awaitingprocessing.**RUNNING** - The job is currently in progress.**SUSPENDED** - The job has been paused.**FAILED** - The job ended with an error and did notcomplete.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus200ResponseDataItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Status"); else _explicitNullProperties?.Remove("Status"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus200ResponseDataItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("Status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Status"); else _explicitNullProperties?.Remove("Status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus200ResponseDataItemStatus? _explicitNullValueStatus = default!;
         /// <summary>Represents the total number of records targeted for deletion by the mass delete job. </summary>
-        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Total_Count"); else _explicitNullProperties?.Remove("Total_Count"); } }
+        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("Total_Count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Total_Count"); else _explicitNullProperties?.Remove("Total_Count"); } }
         private int? _explicitNullValueTotalCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus200ResponseDataItem"/> and sets the default values.
@@ -65,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "Deleted_Count", n => { DeletedCount = n.GetIntValue(); } },
                 { "Failed_Count", n => { FailedCount = n.GetIntValue(); } },
-                { "Status", n => { Status = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus200ResponseDataItemStatus>(); } },
+                { "Status", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteGetMassDeleteJobStatus200ResponseDataItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("Status"); AdditionalData["Status"] = unknown; } else { Status = parsed; AdditionalData.Remove("Status"); } } },
                 { "Total_Count", n => { TotalCount = n.GetIntValue(); } },
             };
         }

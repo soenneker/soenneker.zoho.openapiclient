@@ -18,25 +18,29 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("create") is { } nullNodeCreate && nullNodeCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Create = null;
-            if (parseNode.GetChildNode("edit") is { } nullNodeEdit && nullNodeEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edit = null;
-            if (parseNode.GetChildNode("quick_create") is { } nullNodeQuickCreate && nullNodeQuickCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuickCreate = null;
-            if (parseNode.GetChildNode("view") is { } nullNodeView && nullNodeView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) View = null;
+            if (parseNode.GetChildNode("create") is null) { _explicitNullValueCreate = default!; _explicitNullProperties?.Remove("create"); }
+            else if (parseNode.GetChildNode("create") is { } nullNodeCreate && nullNodeCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Create = null;
+            if (parseNode.GetChildNode("edit") is null) { _explicitNullValueEdit = default!; _explicitNullProperties?.Remove("edit"); }
+            else if (parseNode.GetChildNode("edit") is { } nullNodeEdit && nullNodeEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edit = null;
+            if (parseNode.GetChildNode("quick_create") is null) { _explicitNullValueQuickCreate = default!; _explicitNullProperties?.Remove("quick_create"); }
+            else if (parseNode.GetChildNode("quick_create") is { } nullNodeQuickCreate && nullNodeQuickCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuickCreate = null;
+            if (parseNode.GetChildNode("view") is null) { _explicitNullValueView = default!; _explicitNullProperties?.Remove("view"); }
+            else if (parseNode.GetChildNode("view") is { } nullNodeView && nullNodeView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) View = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether this field is presented in the record creation form. Possible values: `true` — the field is shown when creating a new record; `false` — the field does not appear in the create form.</summary>
-        public bool? Create { get => _explicitNullValueCreate; set { _explicitNullValueCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create"); else _explicitNullProperties?.Remove("create"); } }
+        public bool? Create { get => _explicitNullValueCreate; set { _explicitNullValueCreate = value; AdditionalData?.Remove("create"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create"); else _explicitNullProperties?.Remove("create"); } }
         private bool? _explicitNullValueCreate = default!;
         /// <summary>Indicates whether this field is presented and editable in the record edit form. Possible values: `true` — the field is shown in edit mode; `false` — the field is hidden or read-only during editing.</summary>
-        public bool? Edit { get => _explicitNullValueEdit; set { _explicitNullValueEdit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit"); else _explicitNullProperties?.Remove("edit"); } }
+        public bool? Edit { get => _explicitNullValueEdit; set { _explicitNullValueEdit = value; AdditionalData?.Remove("edit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit"); else _explicitNullProperties?.Remove("edit"); } }
         private bool? _explicitNullValueEdit = default!;
         /// <summary>Indicates whether this field is included in the abbreviated quick-create form. Possible values: `true` — the field appears in the quick-create panel; `false` — the field is excluded from quick-create.</summary>
-        public bool? QuickCreate { get => _explicitNullValueQuickCreate; set { _explicitNullValueQuickCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quick_create"); else _explicitNullProperties?.Remove("quick_create"); } }
+        public bool? QuickCreate { get => _explicitNullValueQuickCreate; set { _explicitNullValueQuickCreate = value; AdditionalData?.Remove("quick_create"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quick_create"); else _explicitNullProperties?.Remove("quick_create"); } }
         private bool? _explicitNullValueQuickCreate = default!;
         /// <summary>Indicates whether this field is visible when a record is viewed in detail mode. Possible values: `true` — the field is displayed on the record detail page; `false` — the field is hidden from the detail view.</summary>
-        public bool? View { get => _explicitNullValueView; set { _explicitNullValueView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view"); else _explicitNullProperties?.Remove("view"); } }
+        public bool? View { get => _explicitNullValueView; set { _explicitNullValueView = value; AdditionalData?.Remove("view"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view"); else _explicitNullProperties?.Remove("view"); } }
         private bool? _explicitNullValueView = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaViewType"/> and sets the default values.

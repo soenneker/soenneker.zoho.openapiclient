@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("file_name") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
-            if (parseNode.GetChildNode("mail_merge_template") is { } nullNodeMailMergeTemplate && nullNodeMailMergeTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailMergeTemplate = null;
-            if (parseNode.GetChildNode("output_format") is { } nullNodeOutputFormat && nullNodeOutputFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFormat = null;
+            if (parseNode.GetChildNode("file_name") is null) { _explicitNullValueFileName = default!; _explicitNullProperties?.Remove("file_name"); }
+            else if (parseNode.GetChildNode("file_name") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
+            if (parseNode.GetChildNode("mail_merge_template") is null) { _explicitNullValueMailMergeTemplate = default!; _explicitNullProperties?.Remove("mail_merge_template"); }
+            else if (parseNode.GetChildNode("mail_merge_template") is { } nullNodeMailMergeTemplate && nullNodeMailMergeTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MailMergeTemplate = null;
+            if (parseNode.GetChildNode("output_format") is null) { _explicitNullValueOutputFormat = default!; _explicitNullProperties?.Remove("output_format"); }
+            else if (parseNode.GetChildNode("output_format") is { } nullNodeOutputFormat && nullNodeOutputFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFormat = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the file name for the downloaded mail merge document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
+        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; AdditionalData?.Remove("file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
         private string? _explicitNullValueFileName = default!;
 #nullable restore
 #else
-        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
+        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; AdditionalData?.Remove("file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
         private string _explicitNullValueFileName = default!;
 #endif
         /// <summary>To pass template name (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedMailMergeTemplate? MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedMailMergeTemplate? MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; AdditionalData?.Remove("mail_merge_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedMailMergeTemplate? _explicitNullValueMailMergeTemplate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedMailMergeTemplate MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedMailMergeTemplate MailMergeTemplate { get => _explicitNullValueMailMergeTemplate; set { _explicitNullValueMailMergeTemplate = value; AdditionalData?.Remove("mail_merge_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mail_merge_template"); else _explicitNullProperties?.Remove("mail_merge_template"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedMailMergeTemplate _explicitNullValueMailMergeTemplate = default!;
 #endif
         /// <summary>Represents the output format for the downloaded document.Possible values:**pdf** - Downloads the document in PDF format.**html** - Downloads the document in HTML format.**docx** - Downloads the document in DOCX format.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedOutputFormat? OutputFormat { get => _explicitNullValueOutputFormat; set { _explicitNullValueOutputFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_format"); else _explicitNullProperties?.Remove("output_format"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedOutputFormat? OutputFormat { get => _explicitNullValueOutputFormat; set { _explicitNullValueOutputFormat = value; AdditionalData?.Remove("output_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_format"); else _explicitNullProperties?.Remove("output_format"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedOutputFormat? _explicitNullValueOutputFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNested"/> and sets the default values.
@@ -75,7 +78,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "file_name", n => { FileName = n.GetStringValue(); } },
                 { "mail_merge_template", n => { MailMergeTemplate = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedMailMergeTemplate>(global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedMailMergeTemplate.CreateFromDiscriminatorValue); } },
-                { "output_format", n => { OutputFormat = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedOutputFormat>(); } },
+                { "output_format", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DownloadMailMergeNestedOutputFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutputFormat = default; _explicitNullProperties?.Remove("output_format"); AdditionalData["output_format"] = unknown; } else { OutputFormat = parsed; AdditionalData.Remove("output_format"); } } },
             };
         }
         /// <summary>

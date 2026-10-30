@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inventory_template") is { } nullNodeInventoryTemplate && nullNodeInventoryTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InventoryTemplate = null;
-            if (parseNode.GetChildNode("paper_type") is { } nullNodePaperType && nullNodePaperType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaperType = null;
-            if (parseNode.GetChildNode("view_type") is { } nullNodeViewType && nullNodeViewType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewType = null;
+            if (parseNode.GetChildNode("inventory_template") is null) { _explicitNullValueInventoryTemplate = default!; _explicitNullProperties?.Remove("inventory_template"); }
+            else if (parseNode.GetChildNode("inventory_template") is { } nullNodeInventoryTemplate && nullNodeInventoryTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InventoryTemplate = null;
+            if (parseNode.GetChildNode("paper_type") is null) { _explicitNullValuePaperType = default!; _explicitNullProperties?.Remove("paper_type"); }
+            else if (parseNode.GetChildNode("paper_type") is { } nullNodePaperType && nullNodePaperType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaperType = null;
+            if (parseNode.GetChildNode("view_type") is null) { _explicitNullValueViewType = default!; _explicitNullProperties?.Remove("view_type"); }
+            else if (parseNode.GetChildNode("view_type") is { } nullNodeViewType && nullNodeViewType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the inventory template to attach to the email. Refer to the [Get Inventory Templates](inventory_templates.yaml#$.paths./settings/inventory_templates.get) resource for valid values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsInventoryTemplate? InventoryTemplate { get => _explicitNullValueInventoryTemplate; set { _explicitNullValueInventoryTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_template"); else _explicitNullProperties?.Remove("inventory_template"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsInventoryTemplate? InventoryTemplate { get => _explicitNullValueInventoryTemplate; set { _explicitNullValueInventoryTemplate = value; AdditionalData?.Remove("inventory_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_template"); else _explicitNullProperties?.Remove("inventory_template"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsInventoryTemplate? _explicitNullValueInventoryTemplate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsInventoryTemplate InventoryTemplate { get => _explicitNullValueInventoryTemplate; set { _explicitNullValueInventoryTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_template"); else _explicitNullProperties?.Remove("inventory_template"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsInventoryTemplate InventoryTemplate { get => _explicitNullValueInventoryTemplate; set { _explicitNullValueInventoryTemplate = value; AdditionalData?.Remove("inventory_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory_template"); else _explicitNullProperties?.Remove("inventory_template"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsInventoryTemplate _explicitNullValueInventoryTemplate = default!;
 #endif
         /// <summary>Represents the paper size for the inventory template attachment. Possible values: **default** - Uses the default paper size. **A4** - A4 paper size. **us_letter** - US Letter paper size.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsPaperType? PaperType { get => _explicitNullValuePaperType; set { _explicitNullValuePaperType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paper_type"); else _explicitNullProperties?.Remove("paper_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsPaperType? PaperType { get => _explicitNullValuePaperType; set { _explicitNullValuePaperType = value; AdditionalData?.Remove("paper_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paper_type"); else _explicitNullProperties?.Remove("paper_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsPaperType? _explicitNullValuePaperType = default!;
         /// <summary>Represents the page orientation for the inventory template attachment. Possible values: **portrait** - Portrait orientation. **landscape** - Landscape orientation.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsViewType? ViewType { get => _explicitNullValueViewType; set { _explicitNullValueViewType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_type"); else _explicitNullProperties?.Remove("view_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsViewType? ViewType { get => _explicitNullValueViewType; set { _explicitNullValueViewType = value; AdditionalData?.Remove("view_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_type"); else _explicitNullProperties?.Remove("view_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsViewType? _explicitNullValueViewType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetails"/> and sets the default values.
@@ -67,8 +70,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "inventory_template", n => { InventoryTemplate = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsInventoryTemplate>(global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsInventoryTemplate.CreateFromDiscriminatorValue); } },
-                { "paper_type", n => { PaperType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsPaperType>(); } },
-                { "view_type", n => { ViewType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsViewType>(); } },
+                { "paper_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsPaperType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePaperType = default; _explicitNullProperties?.Remove("paper_type"); AdditionalData["paper_type"] = unknown; } else { PaperType = parsed; AdditionalData.Remove("paper_type"); } } },
+                { "view_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.SendMailRequestDataItemInventoryDetailsViewType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueViewType = default; _explicitNullProperties?.Remove("view_type"); AdditionalData["view_type"] = unknown; } else { ViewType = parsed; AdditionalData.Remove("view_type"); } } },
             };
         }
         /// <summary>

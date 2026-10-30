@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("variable_groups") is { } nullNodeVariableGroups && nullNodeVariableGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariableGroups = null;
+            if (parseNode.GetChildNode("variable_groups") is null) { _explicitNullValueVariableGroups = default!; _explicitNullProperties?.Remove("variable_groups"); }
+            else if (parseNode.GetChildNode("variable_groups") is { } nullNodeVariableGroups && nullNodeVariableGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariableGroups = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents an array containing a single variable group item submitted for API name generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupApiNameGenerationItemAlt>? VariableGroups { get => _explicitNullValueVariableGroups; set { _explicitNullValueVariableGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variable_groups"); else _explicitNullProperties?.Remove("variable_groups"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupApiNameGenerationItemAlt>? VariableGroups { get => _explicitNullValueVariableGroups; set { _explicitNullValueVariableGroups = value; AdditionalData?.Remove("variable_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variable_groups"); else _explicitNullProperties?.Remove("variable_groups"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupApiNameGenerationItemAlt>? _explicitNullValueVariableGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupApiNameGenerationItemAlt> VariableGroups { get => _explicitNullValueVariableGroups; set { _explicitNullValueVariableGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variable_groups"); else _explicitNullProperties?.Remove("variable_groups"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupApiNameGenerationItemAlt> VariableGroups { get => _explicitNullValueVariableGroups; set { _explicitNullValueVariableGroups = value; AdditionalData?.Remove("variable_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variable_groups"); else _explicitNullProperties?.Remove("variable_groups"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.VariableGroupApiNameGenerationItemAlt> _explicitNullValueVariableGroups = default!;
 #endif
         /// <summary>

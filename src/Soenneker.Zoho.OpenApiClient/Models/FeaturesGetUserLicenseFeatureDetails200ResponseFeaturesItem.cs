@@ -18,12 +18,18 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("components") is { } nullNodeComponents && nullNodeComponents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Components = null;
-            if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
-            if (parseNode.GetChildNode("feature_label") is { } nullNodeFeatureLabel && nullNodeFeatureLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureLabel = null;
-            if (parseNode.GetChildNode("module_supported") is { } nullNodeModuleSupported && nullNodeModuleSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleSupported = null;
-            if (parseNode.GetChildNode("parent_feature") is { } nullNodeParentFeature && nullNodeParentFeature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentFeature = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("components") is null) { _explicitNullValueComponents = default!; _explicitNullProperties?.Remove("components"); }
+            else if (parseNode.GetChildNode("components") is { } nullNodeComponents && nullNodeComponents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Components = null;
+            if (parseNode.GetChildNode("details") is null) { _explicitNullValueDetails = default!; _explicitNullProperties?.Remove("details"); }
+            else if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
+            if (parseNode.GetChildNode("feature_label") is null) { _explicitNullValueFeatureLabel = default!; _explicitNullProperties?.Remove("feature_label"); }
+            else if (parseNode.GetChildNode("feature_label") is { } nullNodeFeatureLabel && nullNodeFeatureLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureLabel = null;
+            if (parseNode.GetChildNode("module_supported") is null) { _explicitNullValueModuleSupported = default!; _explicitNullProperties?.Remove("module_supported"); }
+            else if (parseNode.GetChildNode("module_supported") is { } nullNodeModuleSupported && nullNodeModuleSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleSupported = null;
+            if (parseNode.GetChildNode("parent_feature") is null) { _explicitNullValueParentFeature = default!; _explicitNullProperties?.Remove("parent_feature"); }
+            else if (parseNode.GetChildNode("parent_feature") is { } nullNodeParentFeature && nullNodeParentFeature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentFeature = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,54 +37,54 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>API name of the feature</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>Components of the feature</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Components { get => _explicitNullValueComponents; set { _explicitNullValueComponents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("components"); else _explicitNullProperties?.Remove("components"); } }
+        public UntypedNode? Components { get => _explicitNullValueComponents; set { _explicitNullValueComponents = value; AdditionalData?.Remove("components"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("components"); else _explicitNullProperties?.Remove("components"); } }
         private UntypedNode? _explicitNullValueComponents = default!;
 #nullable restore
 #else
-        public UntypedNode Components { get => _explicitNullValueComponents; set { _explicitNullValueComponents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("components"); else _explicitNullProperties?.Remove("components"); } }
+        public UntypedNode Components { get => _explicitNullValueComponents; set { _explicitNullValueComponents = value; AdditionalData?.Remove("components"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("components"); else _explicitNullProperties?.Remove("components"); } }
         private UntypedNode _explicitNullValueComponents = default!;
 #endif
         /// <summary>This object will have limits and usage details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails? _explicitNullValueDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemDetails _explicitNullValueDetails = default!;
 #endif
         /// <summary>Label of the feature</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FeatureLabel { get => _explicitNullValueFeatureLabel; set { _explicitNullValueFeatureLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_label"); else _explicitNullProperties?.Remove("feature_label"); } }
+        public string? FeatureLabel { get => _explicitNullValueFeatureLabel; set { _explicitNullValueFeatureLabel = value; AdditionalData?.Remove("feature_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_label"); else _explicitNullProperties?.Remove("feature_label"); } }
         private string? _explicitNullValueFeatureLabel = default!;
 #nullable restore
 #else
-        public string FeatureLabel { get => _explicitNullValueFeatureLabel; set { _explicitNullValueFeatureLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_label"); else _explicitNullProperties?.Remove("feature_label"); } }
+        public string FeatureLabel { get => _explicitNullValueFeatureLabel; set { _explicitNullValueFeatureLabel = value; AdditionalData?.Remove("feature_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_label"); else _explicitNullProperties?.Remove("feature_label"); } }
         private string _explicitNullValueFeatureLabel = default!;
 #endif
         /// <summary>Module wise feature supported or not</summary>
-        public bool? ModuleSupported { get => _explicitNullValueModuleSupported; set { _explicitNullValueModuleSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_supported"); else _explicitNullProperties?.Remove("module_supported"); } }
+        public bool? ModuleSupported { get => _explicitNullValueModuleSupported; set { _explicitNullValueModuleSupported = value; AdditionalData?.Remove("module_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_supported"); else _explicitNullProperties?.Remove("module_supported"); } }
         private bool? _explicitNullValueModuleSupported = default!;
         /// <summary>Parent feature details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemParentFeature? ParentFeature { get => _explicitNullValueParentFeature; set { _explicitNullValueParentFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_feature"); else _explicitNullProperties?.Remove("parent_feature"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemParentFeature? ParentFeature { get => _explicitNullValueParentFeature; set { _explicitNullValueParentFeature = value; AdditionalData?.Remove("parent_feature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_feature"); else _explicitNullProperties?.Remove("parent_feature"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemParentFeature? _explicitNullValueParentFeature = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemParentFeature ParentFeature { get => _explicitNullValueParentFeature; set { _explicitNullValueParentFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_feature"); else _explicitNullProperties?.Remove("parent_feature"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemParentFeature ParentFeature { get => _explicitNullValueParentFeature; set { _explicitNullValueParentFeature = value; AdditionalData?.Remove("parent_feature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_feature"); else _explicitNullProperties?.Remove("parent_feature"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetUserLicenseFeatureDetails200ResponseFeaturesItemParentFeature _explicitNullValueParentFeature = default!;
 #endif
         /// <summary>

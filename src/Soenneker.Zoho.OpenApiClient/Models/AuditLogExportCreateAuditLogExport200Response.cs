@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audit_log_export") is { } nullNodeAuditLogExport && nullNodeAuditLogExport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditLogExport = null;
+            if (parseNode.GetChildNode("audit_log_export") is null) { _explicitNullValueAuditLogExport = default!; _explicitNullProperties?.Remove("audit_log_export"); }
+            else if (parseNode.GetChildNode("audit_log_export") is { } nullNodeAuditLogExport && nullNodeAuditLogExport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditLogExport = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of audit log export job responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportCreateAuditLogExport200ResponseAuditLogExportItem>? AuditLogExport { get => _explicitNullValueAuditLogExport; set { _explicitNullValueAuditLogExport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_log_export"); else _explicitNullProperties?.Remove("audit_log_export"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportCreateAuditLogExport200ResponseAuditLogExportItem>? AuditLogExport { get => _explicitNullValueAuditLogExport; set { _explicitNullValueAuditLogExport = value; AdditionalData?.Remove("audit_log_export"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_log_export"); else _explicitNullProperties?.Remove("audit_log_export"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportCreateAuditLogExport200ResponseAuditLogExportItem>? _explicitNullValueAuditLogExport = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportCreateAuditLogExport200ResponseAuditLogExportItem> AuditLogExport { get => _explicitNullValueAuditLogExport; set { _explicitNullValueAuditLogExport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_log_export"); else _explicitNullProperties?.Remove("audit_log_export"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportCreateAuditLogExport200ResponseAuditLogExportItem> AuditLogExport { get => _explicitNullValueAuditLogExport; set { _explicitNullValueAuditLogExport = value; AdditionalData?.Remove("audit_log_export"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audit_log_export"); else _explicitNullProperties?.Remove("audit_log_export"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportCreateAuditLogExport200ResponseAuditLogExportItem> _explicitNullValueAuditLogExport = default!;
 #endif
         /// <summary>

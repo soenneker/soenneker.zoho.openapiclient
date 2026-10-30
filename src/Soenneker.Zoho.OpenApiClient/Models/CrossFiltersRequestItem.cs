@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
-            if (parseNode.GetChildNode("include_objects") is { } nullNodeIncludeObjects && nullNodeIncludeObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeObjects = null;
-            if (parseNode.GetChildNode("relation") is { } nullNodeRelation && nullNodeRelation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Relation = null;
+            if (parseNode.GetChildNode("criteria") is null) { _explicitNullValueCriteria = default!; _explicitNullProperties?.Remove("criteria"); }
+            else if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
+            if (parseNode.GetChildNode("include_objects") is null) { _explicitNullValueIncludeObjects = default!; _explicitNullProperties?.Remove("include_objects"); }
+            else if (parseNode.GetChildNode("include_objects") is { } nullNodeIncludeObjects && nullNodeIncludeObjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeObjects = null;
+            if (parseNode.GetChildNode("relation") is null) { _explicitNullValueRelation = default!; _explicitNullProperties?.Remove("relation"); }
+            else if (parseNode.GetChildNode("relation") is { } nullNodeRelation && nullNodeRelation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Relation = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the top-level filter criterion for data selection, supporting both simple field-based filters and complex grouped filters with logical operators.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest? _explicitNullValueCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsFilterCriterionRequest _explicitNullValueCriteria = default!;
 #endif
         /// <summary>Indicates whether records with matching related records are included in the results.</summary>
-        public bool? IncludeObjects { get => _explicitNullValueIncludeObjects; set { _explicitNullValueIncludeObjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_objects"); else _explicitNullProperties?.Remove("include_objects"); } }
+        public bool? IncludeObjects { get => _explicitNullValueIncludeObjects; set { _explicitNullValueIncludeObjects = value; AdditionalData?.Remove("include_objects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_objects"); else _explicitNullProperties?.Remove("include_objects"); } }
         private bool? _explicitNullValueIncludeObjects = default!;
         /// <summary>Represents the reference to a child relationship module. The api_name property is required to identify the child relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ChildRelationshipReference? Relation { get => _explicitNullValueRelation; set { _explicitNullValueRelation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relation"); else _explicitNullProperties?.Remove("relation"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ChildRelationshipReference? Relation { get => _explicitNullValueRelation; set { _explicitNullValueRelation = value; AdditionalData?.Remove("relation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relation"); else _explicitNullProperties?.Remove("relation"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ChildRelationshipReference? _explicitNullValueRelation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ChildRelationshipReference Relation { get => _explicitNullValueRelation; set { _explicitNullValueRelation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relation"); else _explicitNullProperties?.Remove("relation"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ChildRelationshipReference Relation { get => _explicitNullValueRelation; set { _explicitNullValueRelation = value; AdditionalData?.Remove("relation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relation"); else _explicitNullProperties?.Remove("relation"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ChildRelationshipReference _explicitNullValueRelation = default!;
 #endif
         /// <summary>

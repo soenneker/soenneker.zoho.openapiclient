@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
-            if (parseNode.GetChildNode("share_type") is { } nullNodeShareType && nullNodeShareType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareType = null;
+            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
+            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("share_type") is null) { _explicitNullValueShareType = default!; _explicitNullProperties?.Remove("share_type"); }
+            else if (parseNode.GetChildNode("share_type") is { } nullNodeShareType && nullNodeShareType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains the API name and ID of the module for which you want to change user access. Mandatory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Represents the access level you want to set for the module. **Possible values:** **private** - Only the record owner and their superior can view the records in the module. **public_read_only** - Users can view others&apos; records but cannot modify or delete them. **public_read_write** - Users can view and modify others&apos; records but cannot delete them. **public** - Users can view, modify, and delete others&apos; records.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemShareType? ShareType { get => _explicitNullValueShareType; set { _explicitNullValueShareType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_type"); else _explicitNullProperties?.Remove("share_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemShareType? ShareType { get => _explicitNullValueShareType; set { _explicitNullValueShareType = value; AdditionalData?.Remove("share_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_type"); else _explicitNullProperties?.Remove("share_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemShareType? _explicitNullValueShareType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItem"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemModule>(global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemModule.CreateFromDiscriminatorValue); } },
-                { "share_type", n => { ShareType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemShareType>(); } },
+                { "share_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DataSharingUpdateDataSharingRequestDataSharingItemShareType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueShareType = default; _explicitNullProperties?.Remove("share_type"); AdditionalData["share_type"] = unknown; } else { ShareType = parsed; AdditionalData.Remove("share_type"); } } },
             };
         }
         /// <summary>

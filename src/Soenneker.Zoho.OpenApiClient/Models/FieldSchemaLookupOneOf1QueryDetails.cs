@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("query_id") is { } nullNodeQueryId && nullNodeQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryId = null;
-            if (parseNode.GetChildNode("system_query_id") is { } nullNodeSystemQueryId && nullNodeSystemQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemQueryId = null;
+            if (parseNode.GetChildNode("query_id") is null) { _explicitNullValueQueryId = default!; _explicitNullProperties?.Remove("query_id"); }
+            else if (parseNode.GetChildNode("query_id") is { } nullNodeQueryId && nullNodeQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryId = null;
+            if (parseNode.GetChildNode("system_query_id") is null) { _explicitNullValueSystemQueryId = default!; _explicitNullProperties?.Remove("system_query_id"); }
+            else if (parseNode.GetChildNode("system_query_id") is { } nullNodeSystemQueryId && nullNodeSystemQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemQueryId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the query ID for the lookup field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
+        public string? QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; AdditionalData?.Remove("query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
         private string? _explicitNullValueQueryId = default!;
 #nullable restore
 #else
-        public string QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
+        public string QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; AdditionalData?.Remove("query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
         private string _explicitNullValueQueryId = default!;
 #endif
         /// <summary>The system_query_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId? SystemQueryId { get => _explicitNullValueSystemQueryId; set { _explicitNullValueSystemQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_query_id"); else _explicitNullProperties?.Remove("system_query_id"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId? SystemQueryId { get => _explicitNullValueSystemQueryId; set { _explicitNullValueSystemQueryId = value; AdditionalData?.Remove("system_query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_query_id"); else _explicitNullProperties?.Remove("system_query_id"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId? _explicitNullValueSystemQueryId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId SystemQueryId { get => _explicitNullValueSystemQueryId; set { _explicitNullValueSystemQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_query_id"); else _explicitNullProperties?.Remove("system_query_id"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId SystemQueryId { get => _explicitNullValueSystemQueryId; set { _explicitNullValueSystemQueryId = value; AdditionalData?.Remove("system_query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_query_id"); else _explicitNullProperties?.Remove("system_query_id"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaLookupOneOf1QueryDetailsSystemQueryId _explicitNullValueSystemQueryId = default!;
 #endif
         /// <summary>

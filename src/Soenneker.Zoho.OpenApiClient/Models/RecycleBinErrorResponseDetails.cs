@@ -18,15 +18,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ambiguity_due_to") is { } nullNodeAmbiguityDueTo && nullNodeAmbiguityDueTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmbiguityDueTo = null;
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("expected_data_type") is { } nullNodeExpectedDataType && nullNodeExpectedDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDataType = null;
-            if (parseNode.GetChildNode("expected_fields") is { } nullNodeExpectedFields && nullNodeExpectedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedFields = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
-            if (parseNode.GetChildNode("param_name") is { } nullNodeParamName && nullNodeParamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamName = null;
-            if (parseNode.GetChildNode("param_names") is { } nullNodeParamNames && nullNodeParamNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamNames = null;
-            if (parseNode.GetChildNode("resource_path_index") is { } nullNodeResourcePathIndex && nullNodeResourcePathIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourcePathIndex = null;
+            if (parseNode.GetChildNode("ambiguity_due_to") is null) { _explicitNullValueAmbiguityDueTo = default!; _explicitNullProperties?.Remove("ambiguity_due_to"); }
+            else if (parseNode.GetChildNode("ambiguity_due_to") is { } nullNodeAmbiguityDueTo && nullNodeAmbiguityDueTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmbiguityDueTo = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("expected_data_type") is null) { _explicitNullValueExpectedDataType = default!; _explicitNullProperties?.Remove("expected_data_type"); }
+            else if (parseNode.GetChildNode("expected_data_type") is { } nullNodeExpectedDataType && nullNodeExpectedDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedDataType = null;
+            if (parseNode.GetChildNode("expected_fields") is null) { _explicitNullValueExpectedFields = default!; _explicitNullProperties?.Remove("expected_fields"); }
+            else if (parseNode.GetChildNode("expected_fields") is { } nullNodeExpectedFields && nullNodeExpectedFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedFields = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("json_path") is null) { _explicitNullValueJsonPath = default!; _explicitNullProperties?.Remove("json_path"); }
+            else if (parseNode.GetChildNode("json_path") is { } nullNodeJsonPath && nullNodeJsonPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonPath = null;
+            if (parseNode.GetChildNode("param_name") is null) { _explicitNullValueParamName = default!; _explicitNullProperties?.Remove("param_name"); }
+            else if (parseNode.GetChildNode("param_name") is { } nullNodeParamName && nullNodeParamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamName = null;
+            if (parseNode.GetChildNode("param_names") is null) { _explicitNullValueParamNames = default!; _explicitNullProperties?.Remove("param_names"); }
+            else if (parseNode.GetChildNode("param_names") is { } nullNodeParamNames && nullNodeParamNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamNames = null;
+            if (parseNode.GetChildNode("resource_path_index") is null) { _explicitNullValueResourcePathIndex = default!; _explicitNullProperties?.Remove("resource_path_index"); }
+            else if (parseNode.GetChildNode("resource_path_index") is { } nullNodeResourcePathIndex && nullNodeResourcePathIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourcePathIndex = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,71 +43,71 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of factors that caused ambiguity when the error is **AMBIGUITY_DURING_PROCESSING**, typically because two or more mutually exclusive restoration modes were supplied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsAmbiguityDueToItem>? AmbiguityDueTo { get => _explicitNullValueAmbiguityDueTo; set { _explicitNullValueAmbiguityDueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ambiguity_due_to"); else _explicitNullProperties?.Remove("ambiguity_due_to"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsAmbiguityDueToItem>? AmbiguityDueTo { get => _explicitNullValueAmbiguityDueTo; set { _explicitNullValueAmbiguityDueTo = value; AdditionalData?.Remove("ambiguity_due_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ambiguity_due_to"); else _explicitNullProperties?.Remove("ambiguity_due_to"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsAmbiguityDueToItem>? _explicitNullValueAmbiguityDueTo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsAmbiguityDueToItem> AmbiguityDueTo { get => _explicitNullValueAmbiguityDueTo; set { _explicitNullValueAmbiguityDueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ambiguity_due_to"); else _explicitNullProperties?.Remove("ambiguity_due_to"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsAmbiguityDueToItem> AmbiguityDueTo { get => _explicitNullValueAmbiguityDueTo; set { _explicitNullValueAmbiguityDueTo = value; AdditionalData?.Remove("ambiguity_due_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ambiguity_due_to"); else _explicitNullProperties?.Remove("ambiguity_due_to"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsAmbiguityDueToItem> _explicitNullValueAmbiguityDueTo = default!;
 #endif
         /// <summary>Represents the API name of the field that caused the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>Represents the data type expected for the offending field when the error is due to an invalid data type. Possible values: **jsonarray**, **jsonobject**, **string**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedDataType? ExpectedDataType { get => _explicitNullValueExpectedDataType; set { _explicitNullValueExpectedDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_data_type"); else _explicitNullProperties?.Remove("expected_data_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedDataType? ExpectedDataType { get => _explicitNullValueExpectedDataType; set { _explicitNullValueExpectedDataType = value; AdditionalData?.Remove("expected_data_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_data_type"); else _explicitNullProperties?.Remove("expected_data_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedDataType? _explicitNullValueExpectedDataType = default!;
         /// <summary>List of fields that are expected in the request body when the error is **EXPECTED_FIELD_MISSING**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedFieldsItem>? ExpectedFields { get => _explicitNullValueExpectedFields; set { _explicitNullValueExpectedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_fields"); else _explicitNullProperties?.Remove("expected_fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedFieldsItem>? ExpectedFields { get => _explicitNullValueExpectedFields; set { _explicitNullValueExpectedFields = value; AdditionalData?.Remove("expected_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_fields"); else _explicitNullProperties?.Remove("expected_fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedFieldsItem>? _explicitNullValueExpectedFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedFieldsItem> ExpectedFields { get => _explicitNullValueExpectedFields; set { _explicitNullValueExpectedFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_fields"); else _explicitNullProperties?.Remove("expected_fields"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedFieldsItem> ExpectedFields { get => _explicitNullValueExpectedFields; set { _explicitNullValueExpectedFields = value; AdditionalData?.Remove("expected_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_fields"); else _explicitNullProperties?.Remove("expected_fields"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedFieldsItem> _explicitNullValueExpectedFields = default!;
 #endif
         /// <summary>Represents the record identifier associated with the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the JSON path to the request body field that caused the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        public string? JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
         private string? _explicitNullValueJsonPath = default!;
 #nullable restore
 #else
-        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
+        public string JsonPath { get => _explicitNullValueJsonPath; set { _explicitNullValueJsonPath = value; AdditionalData?.Remove("json_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_path"); else _explicitNullProperties?.Remove("json_path"); } }
         private string _explicitNullValueJsonPath = default!;
 #endif
         /// <summary>Represents the name of the request parameter that caused the error. Possible values: **filters**, **ids**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamName? ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamName? ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; AdditionalData?.Remove("param_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamName? _explicitNullValueParamName = default!;
         /// <summary>List of request parameter names that are expected but missing when the error is **EXPECTED_PARAM_MISSING**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamNamesItem?>? ParamNames { get => _explicitNullValueParamNames; set { _explicitNullValueParamNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_names"); else _explicitNullProperties?.Remove("param_names"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamNamesItem?>? ParamNames { get => _explicitNullValueParamNames; set { _explicitNullValueParamNames = value; AdditionalData?.Remove("param_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_names"); else _explicitNullProperties?.Remove("param_names"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamNamesItem?>? _explicitNullValueParamNames = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamNamesItem?> ParamNames { get => _explicitNullValueParamNames; set { _explicitNullValueParamNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_names"); else _explicitNullProperties?.Remove("param_names"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamNamesItem?> ParamNames { get => _explicitNullValueParamNames; set { _explicitNullValueParamNames = value; AdditionalData?.Remove("param_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_names"); else _explicitNullProperties?.Remove("param_names"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamNamesItem?> _explicitNullValueParamNames = default!;
 #endif
         /// <summary>Represents the zero-based index of the resource path segment that caused the error.</summary>
-        public int? ResourcePathIndex { get => _explicitNullValueResourcePathIndex; set { _explicitNullValueResourcePathIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_path_index"); else _explicitNullProperties?.Remove("resource_path_index"); } }
+        public int? ResourcePathIndex { get => _explicitNullValueResourcePathIndex; set { _explicitNullValueResourcePathIndex = value; AdditionalData?.Remove("resource_path_index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_path_index"); else _explicitNullProperties?.Remove("resource_path_index"); } }
         private int? _explicitNullValueResourcePathIndex = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetails"/> and sets the default values.
@@ -127,11 +136,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "ambiguity_due_to", n => { AmbiguityDueTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsAmbiguityDueToItem>(global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsAmbiguityDueToItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "api_name", n => { ApiName = n.GetStringValue(); } },
-                { "expected_data_type", n => { ExpectedDataType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedDataType>(); } },
+                { "expected_data_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedDataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExpectedDataType = default; _explicitNullProperties?.Remove("expected_data_type"); AdditionalData["expected_data_type"] = unknown; } else { ExpectedDataType = parsed; AdditionalData.Remove("expected_data_type"); } } },
                 { "expected_fields", n => { ExpectedFields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedFieldsItem>(global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsExpectedFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "json_path", n => { JsonPath = n.GetStringValue(); } },
-                { "param_name", n => { ParamName = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamName>(); } },
+                { "param_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueParamName = default; _explicitNullProperties?.Remove("param_name"); AdditionalData["param_name"] = unknown; } else { ParamName = parsed; AdditionalData.Remove("param_name"); } } },
                 { "param_names", n => { ParamNames = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinErrorResponseDetailsParamNamesItem>()?.AsList(); } },
                 { "resource_path_index", n => { ResourcePathIndex = n.GetIntValue(); } },
             };

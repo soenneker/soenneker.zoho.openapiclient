@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rules_count") is { } nullNodeRulesCount && nullNodeRulesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesCount = null;
+            if (parseNode.GetChildNode("rules_count") is null) { _explicitNullValueRulesCount = default!; _explicitNullProperties?.Remove("rules_count"); }
+            else if (parseNode.GetChildNode("rules_count") is { } nullNodeRulesCount && nullNodeRulesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the workflow rule count and limit details for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount? RulesCount { get => _explicitNullValueRulesCount; set { _explicitNullValueRulesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_count"); else _explicitNullProperties?.Remove("rules_count"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount? RulesCount { get => _explicitNullValueRulesCount; set { _explicitNullValueRulesCount = value; AdditionalData?.Remove("rules_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_count"); else _explicitNullProperties?.Remove("rules_count"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount? _explicitNullValueRulesCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount RulesCount { get => _explicitNullValueRulesCount; set { _explicitNullValueRulesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_count"); else _explicitNullProperties?.Remove("rules_count"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount RulesCount { get => _explicitNullValueRulesCount; set { _explicitNullValueRulesCount = value; AdditionalData?.Remove("rules_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_count"); else _explicitNullProperties?.Remove("rules_count"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesCountResponseSchemaRulesCount _explicitNullValueRulesCount = default!;
 #endif
         /// <summary>

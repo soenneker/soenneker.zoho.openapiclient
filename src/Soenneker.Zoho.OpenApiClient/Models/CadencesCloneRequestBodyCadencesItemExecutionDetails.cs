@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("execute_every") is { } nullNodeExecuteEvery && nullNodeExecuteEvery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecuteEvery = null;
+            if (parseNode.GetChildNode("execute_every") is null) { _explicitNullValueExecuteEvery = default!; _explicitNullProperties?.Remove("execute_every"); }
+            else if (parseNode.GetChildNode("execute_every") is { } nullNodeExecuteEvery && nullNodeExecuteEvery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecuteEvery = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the recurring execution interval for a Cadence, specifying the frequency period and numeric value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEvery? ExecuteEvery { get => _explicitNullValueExecuteEvery; set { _explicitNullValueExecuteEvery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_every"); else _explicitNullProperties?.Remove("execute_every"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEvery? ExecuteEvery { get => _explicitNullValueExecuteEvery; set { _explicitNullValueExecuteEvery = value; AdditionalData?.Remove("execute_every"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_every"); else _explicitNullProperties?.Remove("execute_every"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEvery? _explicitNullValueExecuteEvery = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEvery ExecuteEvery { get => _explicitNullValueExecuteEvery; set { _explicitNullValueExecuteEvery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_every"); else _explicitNullProperties?.Remove("execute_every"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEvery ExecuteEvery { get => _explicitNullValueExecuteEvery; set { _explicitNullValueExecuteEvery = value; AdditionalData?.Remove("execute_every"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_every"); else _explicitNullProperties?.Remove("execute_every"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ExecuteEvery _explicitNullValueExecuteEvery = default!;
 #endif
         /// <summary>

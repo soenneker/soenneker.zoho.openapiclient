@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cvid") is { } nullNodeCvid && nullNodeCvid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvid = null;
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
-            if (parseNode.GetChildNode("territory") is { } nullNodeTerritory && nullNodeTerritory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Territory = null;
+            if (parseNode.GetChildNode("cvid") is null) { _explicitNullValueCvid = default!; _explicitNullProperties?.Remove("cvid"); }
+            else if (parseNode.GetChildNode("cvid") is { } nullNodeCvid && nullNodeCvid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvid = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("ids") is null) { _explicitNullValueIds = default!; _explicitNullProperties?.Remove("ids"); }
+            else if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
+            if (parseNode.GetChildNode("territory") is null) { _explicitNullValueTerritory = default!; _explicitNullProperties?.Remove("territory"); }
+            else if (parseNode.GetChildNode("territory") is { } nullNodeTerritory && nullNodeTerritory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Territory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the Custom View ID whose matching records must be mass updated. Use `cvid` to schedule an asynchronous background job that processes the records in the Custom View. Use the [Get Custom View API](custom_views.yaml#$.paths./settings/custom_views.get) to get the ID of the requires custom view. The response returns a `job_id` that can be passed to [Get Mass Update Status API](mass_update.yaml#$.paths./{module}/actions/mass_update.get) to track the progress of the scheduled job.&gt; **Note**:&gt; The cvid key is supported for mass update via API in the following editions:&gt; - Enterprise&gt; - Ultimate&gt; - CRM Plus&gt; - Zoho One Enterprise</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
+        public string? Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; AdditionalData?.Remove("cvid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
         private string? _explicitNullValueCvid = default!;
 #nullable restore
 #else
-        public string Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
+        public string Cvid { get => _explicitNullValueCvid; set { _explicitNullValueCvid = value; AdditionalData?.Remove("cvid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvid"); else _explicitNullProperties?.Remove("cvid"); } }
         private string _explicitNullValueCvid = default!;
 #endif
         /// <summary>Specify the array of objects, where each object maps a field&apos;s API name to the new value to be applied across the targeted records. The key must be provided along with either `ids` or `cvid`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>Specify the record IDs to be mass updated synchronously. Use`ids` for non-scheduler updates that target a small batch ofrecords and require immediate processing. Use the [GetRecords API](record.yaml#$.paths./{module}.get) to get thevalid IDs of the required records.&gt; **Note**:&gt; - You can use either **ids** key or the **cvid** key, youcannot use them both in a request.&gt; - Scheduler type(using record IDs):&gt;    - You can mass update a maximum of 50,000 records in asingle API call.&gt;    - Automation rules are triggered automatically when therecord count is less than 1000. When the record count isgreater than 1000, automation rules do not get triggered.&gt;    - If some of the records have invalid data, only thoserecords will not be processed in the API call.&gt; - Non-scheduler type(using CVID and territory ID):&gt;    - You can mass update a maximum of 500 records in asingle API call.&gt;    - Automation rules such as approvals, blueprints, andworkflows are triggered automatically.&gt;    - When you want to mass update records in a territory,you must specify the custom view ID.&gt; - You cannot mass update Email, lookup fields, layoutfields, multi-line fields, and line items.&gt; - You can mass update up to three fields in the Dealsmodule and only one field in all other modules in a singleAPI call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        public List<string>? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; AdditionalData?.Remove("ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
         private List<string>? _explicitNullValueIds = default!;
 #nullable restore
 #else
-        public List<string> Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        public List<string> Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; AdditionalData?.Remove("ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
         private List<string> _explicitNullValueIds = default!;
 #endif
         /// <summary>Specify the territory whose records must be mass updated. This key is valid only when you provide a Custom View ID in `cvid`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestTerritory? Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestTerritory? Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; AdditionalData?.Remove("territory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestTerritory? _explicitNullValueTerritory = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestTerritory Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestTerritory Territory { get => _explicitNullValueTerritory; set { _explicitNullValueTerritory = value; AdditionalData?.Remove("territory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("territory"); else _explicitNullProperties?.Remove("territory"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.MassUpdateMassUpdateRecordsRequestTerritory _explicitNullValueTerritory = default!;
 #endif
         /// <summary>

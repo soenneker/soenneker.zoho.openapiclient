@@ -99,7 +99,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Ma
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Mass_delete.Mass_deleteRequestBuilder.Mass_deleteRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/mass_delete_tags/settings/tags/actions/mass_delete?job_id={job_id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/mass_delete_tags/settings/tags/actions/mass_delete?job_id={job_id}", RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/mass_delete_tags/settings/tags/actions/mass_delete", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -120,7 +120,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Ma
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/mass_delete_tags/settings/tags/actions/mass_delete", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

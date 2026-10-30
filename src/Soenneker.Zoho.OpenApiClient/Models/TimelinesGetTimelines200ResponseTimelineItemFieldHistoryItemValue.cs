@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new") is { } nullNodeNew && nullNodeNew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) New = null;
-            if (parseNode.GetChildNode("old") is { } nullNodeOld && nullNodeOld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Old = null;
+            if (parseNode.GetChildNode("new") is null) { _explicitNullValueNew = default!; _explicitNullProperties?.Remove("new"); }
+            else if (parseNode.GetChildNode("new") is { } nullNodeNew && nullNodeNew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) New = null;
+            if (parseNode.GetChildNode("old") is null) { _explicitNullValueOld = default!; _explicitNullProperties?.Remove("old"); }
+            else if (parseNode.GetChildNode("old") is { } nullNodeOld && nullNodeOld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Old = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the new value of the field after the change. This field is nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? New { get => _explicitNullValueNew; set { _explicitNullValueNew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new"); else _explicitNullProperties?.Remove("new"); } }
+        public string? New { get => _explicitNullValueNew; set { _explicitNullValueNew = value; AdditionalData?.Remove("new"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new"); else _explicitNullProperties?.Remove("new"); } }
         private string? _explicitNullValueNew = default!;
 #nullable restore
 #else
-        public string New { get => _explicitNullValueNew; set { _explicitNullValueNew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new"); else _explicitNullProperties?.Remove("new"); } }
+        public string New { get => _explicitNullValueNew; set { _explicitNullValueNew = value; AdditionalData?.Remove("new"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new"); else _explicitNullProperties?.Remove("new"); } }
         private string _explicitNullValueNew = default!;
 #endif
         /// <summary>Represents the previous value of the field before the change. This field is nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Old { get => _explicitNullValueOld; set { _explicitNullValueOld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old"); else _explicitNullProperties?.Remove("old"); } }
+        public string? Old { get => _explicitNullValueOld; set { _explicitNullValueOld = value; AdditionalData?.Remove("old"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old"); else _explicitNullProperties?.Remove("old"); } }
         private string? _explicitNullValueOld = default!;
 #nullable restore
 #else
-        public string Old { get => _explicitNullValueOld; set { _explicitNullValueOld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old"); else _explicitNullProperties?.Remove("old"); } }
+        public string Old { get => _explicitNullValueOld; set { _explicitNullValueOld = value; AdditionalData?.Remove("old"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old"); else _explicitNullProperties?.Remove("old"); } }
         private string _explicitNullValueOld = default!;
 #endif
         /// <summary>

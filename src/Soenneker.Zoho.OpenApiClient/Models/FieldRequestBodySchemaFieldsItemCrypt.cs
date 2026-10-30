@@ -48,9 +48,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("mode") != null && (parseNode.GetChildNode("mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("encryption".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "decryption".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
-            if (result.Boolean == null && result.FieldRequestBodySchemaFieldsItemCryptOneOf1 == null && matchesUnionBranch0) result.FieldRequestBodySchemaFieldsItemCryptOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemCryptOneOf1(), parseNode);
-            if (result.Boolean == null && result.FieldRequestBodySchemaFieldsItemCryptOneOf1 == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.FieldRequestBodySchemaFieldsItemCryptOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemCryptOneOf1(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("mode") && (!shapeMembers1.ContainsKey("mode") || (((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "encryption".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["mode"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "decryption".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.Boolean == null && result.FieldRequestBodySchemaFieldsItemCryptOneOf1 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.FieldRequestBodySchemaFieldsItemCryptOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemCryptOneOf1(), parseNode);
             if (result.Boolean == null && result.FieldRequestBodySchemaFieldsItemCryptOneOf1 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -60,6 +62,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(FieldRequestBodySchemaFieldsItemCryptOneOf1 != null)
             {
                 return FieldRequestBodySchemaFieldsItemCryptOneOf1.GetFieldDeserializers();
@@ -74,7 +78,10 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (Boolean == null && FieldRequestBodySchemaFieldsItemCryptOneOf1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (FieldRequestBodySchemaFieldsItemCryptOneOf1 != null && Boolean == null) { if (FieldRequestBodySchemaFieldsItemCryptOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FieldRequestBodySchemaFieldsItemCryptOneOf1); return; }
+            int selectedUnionBranches = 0;
+            if (Boolean != null) selectedUnionBranches++;
+            if (FieldRequestBodySchemaFieldsItemCryptOneOf1 != null) selectedUnionBranches++;
+            if (FieldRequestBodySchemaFieldsItemCryptOneOf1 != null && selectedUnionBranches == 1) { if (FieldRequestBodySchemaFieldsItemCryptOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FieldRequestBodySchemaFieldsItemCryptOneOf1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(FieldRequestBodySchemaFieldsItemCryptOneOf1 != null)

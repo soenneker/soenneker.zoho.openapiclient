@@ -98274,7 +98274,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RecycleBinRestoreRecycleBinRecordsSuccessResponse"
+                  "$ref": "#/components/schemas/RecycleBinDeleteRecycleBinRecordsSuccessResponse"
                 },
                 "examples": {
                   "ImmediateSuccess": {
@@ -98304,7 +98304,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RecycleBinRestoreRecycleBinRecordsSuccessResponse"
+                  "$ref": "#/components/schemas/RecycleBinDeleteRecycleBinRecordsSuccessResponse"
                 },
                 "examples": {
                   "ScheduledByIds": {
@@ -98368,7 +98368,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RecycleBinRestoreRecycleBinRecordsSuccessResponse"
+                  "$ref": "#/components/schemas/RecycleBinDeleteRecycleBinRecordsSuccessResponse"
                 },
                 "examples": {
                   "MultiStatusResponse": {
@@ -166649,7 +166649,7 @@
             "x-zs-$id": "IdSchema"
           },
           "criteria": {
-            "$ref": "#/components/schemas/RuleEntryUpdateRequestObjectCriteria"
+            "$ref": "#/components/schemas/RuleEntryCreateRequestObjectCriteria"
           },
           "assign_to": {
             "$ref": "#/components/schemas/RuleEntryUpdateRequestObjectAssignTo"
@@ -168465,7 +168465,7 @@
             "$ref": "#/components/schemas/TextFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/TextFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsTextFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/TextFilterCriterionRequestType"
@@ -168492,7 +168492,7 @@
             "$ref": "#/components/schemas/OrderingFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/OrderingFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsOrderingFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/OrderingFilterCriterionRequestType"
@@ -168557,7 +168557,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SetFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/CustomViewsSetFilterCriterionRequestValueItem"
             },
             "description": "Contains an array of primitive filter values used in the set comparison.",
             "x-zs-$id": "SetFilterCriterionRequestValueArray"
@@ -175735,7 +175735,7 @@
             "minItems": 2,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CustomViewsBetweenFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/BetweenFilterCriterionRequestValueItem"
             },
             "description": "Contains the two boundary values \u2014 [lower_bound, upper_bound] \u2014 against which the field is evaluated for the between or not_between comparator.",
             "x-zs-$id": "BetweenFilterCriterionRequestValueArray"
@@ -175992,7 +175992,7 @@
             "$ref": "#/components/schemas/TextFilterCriterionResponseComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/TextFilterCriterionResponseValue"
+            "$ref": "#/components/schemas/ScoringRulesTextFilterCriterionResponseValue"
           },
           "type": {
             "$ref": "#/components/schemas/TextFilterCriterionResponseType"
@@ -176096,7 +176096,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SetFilterCriterionResponseValueItem"
+              "$ref": "#/components/schemas/ScoringRulesSetFilterCriterionResponseValueItem"
             },
             "description": "Contains an array of primitive filter values returned for the set comparison.",
             "x-zs-$id": "SetFilterCriterionResponseValueArray"
@@ -196518,7 +196518,7 @@
             "$ref": "#/components/schemas/RecordTextFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/RecordTextFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsTextFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/RecordTextFilterCriterionRequestType"
@@ -196545,7 +196545,7 @@
             "$ref": "#/components/schemas/RecordOrderingFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/RecordOrderingFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsOrderingFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/RecordOrderingFilterCriterionRequestType"
@@ -196576,7 +196576,7 @@
             "minItems": 2,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RecordBetweenFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/BetweenFilterCriterionRequestValueItem"
             },
             "description": "Contains the two boundary values \u2014 [lower_bound, upper_bound] \u2014 against which the field is evaluated for the between or not_between comparator.",
             "x-zs-$id": "BetweenFilterCriterionRequestValueArray"
@@ -196610,7 +196610,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RecordSetFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/CustomViewsSetFilterCriterionRequestValueItem"
             },
             "description": "Contains an array of primitive filter values used in the set comparison.",
             "x-zs-$id": "SetFilterCriterionRequestValueArray"
@@ -197157,7 +197157,7 @@
             "$ref": "#/components/schemas/RecordCountTextFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/RecordCountTextFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsTextFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/RecordCountTextFilterCriterionRequestType"
@@ -197184,7 +197184,7 @@
             "$ref": "#/components/schemas/RecordCountOrderingFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/RecordCountOrderingFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsOrderingFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/RecordCountOrderingFilterCriterionRequestType"
@@ -197215,7 +197215,7 @@
             "minItems": 2,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RecordCountBetweenFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/BetweenFilterCriterionRequestValueItem"
             },
             "description": "Contains the two boundary values \u2014 [lower_bound, upper_bound] \u2014 against which the field is evaluated for the between or not_between comparator.",
             "x-zs-$id": "BetweenFilterCriterionRequestValueArray"
@@ -197249,7 +197249,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RecordCountSetFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/CustomViewsSetFilterCriterionRequestValueItem"
             },
             "description": "Contains an array of primitive filter values used in the set comparison.",
             "x-zs-$id": "SetFilterCriterionRequestValueArray"
@@ -199695,7 +199695,7 @@
             "$ref": "#/components/schemas/RelatedRecordsTextFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/RelatedRecordsTextFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsTextFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/RelatedRecordsTextFilterCriterionRequestType"
@@ -199722,7 +199722,7 @@
             "$ref": "#/components/schemas/RelatedRecordsOrderingFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/RelatedRecordsOrderingFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsOrderingFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/RelatedRecordsOrderingFilterCriterionRequestType"
@@ -199753,7 +199753,7 @@
             "minItems": 2,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RelatedRecordsBetweenFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/BetweenFilterCriterionRequestValueItem"
             },
             "description": "Contains the two boundary values \u2014 [lower_bound, upper_bound] \u2014 against which the field is evaluated for the between or not_between comparator.",
             "x-zs-$id": "BetweenFilterCriterionRequestValueArray"
@@ -199787,7 +199787,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RelatedRecordsSetFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/CustomViewsSetFilterCriterionRequestValueItem"
             },
             "description": "Contains an array of primitive filter values used in the set comparison.",
             "x-zs-$id": "SetFilterCriterionRequestValueArray"
@@ -201506,7 +201506,7 @@
             "$ref": "#/components/schemas/ScoringRulesOrderingFilterCriterionResponseComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/ScoringRulesOrderingFilterCriterionResponseValue"
+            "$ref": "#/components/schemas/OrderingFilterCriterionResponseValue"
           },
           "type": {
             "$ref": "#/components/schemas/ScoringRulesOrderingFilterCriterionResponseType"
@@ -201541,7 +201541,7 @@
             "minItems": 2,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ScoringRulesBetweenFilterCriterionResponseValueItem"
+              "$ref": "#/components/schemas/BetweenFilterCriterionResponseValueItem"
             },
             "description": "Contains the two boundary values \u2014 [lower_bound, upper_bound] \u2014 against which the field was evaluated for the between or not_between comparator.",
             "x-zs-$id": "BetweenFilterCriterionResponseValueArray"
@@ -201806,7 +201806,7 @@
             "$ref": "#/components/schemas/ScoringRulesTextFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/ScoringRulesTextFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsTextFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/ScoringRulesTextFilterCriterionRequestType"
@@ -201833,7 +201833,7 @@
             "$ref": "#/components/schemas/ScoringRulesOrderingFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/ScoringRulesOrderingFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsOrderingFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/ScoringRulesOrderingFilterCriterionRequestType"
@@ -201864,7 +201864,7 @@
             "minItems": 2,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ScoringRulesBetweenFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/BetweenFilterCriterionRequestValueItem"
             },
             "description": "Contains the two boundary values \u2014 [lower_bound, upper_bound] \u2014 against which the field is evaluated for the between or not_between comparator.",
             "x-zs-$id": "BetweenFilterCriterionRequestValueArray"
@@ -201898,7 +201898,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ScoringRulesSetFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/CustomViewsSetFilterCriterionRequestValueItem"
             },
             "description": "Contains an array of primitive filter values used in the set comparison.",
             "x-zs-$id": "SetFilterCriterionRequestValueArray"
@@ -209923,7 +209923,7 @@
             "$ref": "#/components/schemas/TerritoriesTextFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/TerritoriesTextFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsTextFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/TerritoriesTextFilterCriterionRequestType"
@@ -209950,7 +209950,7 @@
             "$ref": "#/components/schemas/TerritoriesOrderingFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/TerritoriesOrderingFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsOrderingFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/TerritoriesOrderingFilterCriterionRequestType"
@@ -209981,7 +209981,7 @@
             "minItems": 2,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TerritoriesBetweenFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/BetweenFilterCriterionRequestValueItem"
             },
             "description": "Contains the two boundary values \u2014 [lower_bound, upper_bound] \u2014 against which the field is evaluated for the between or not_between comparator.",
             "x-zs-$id": "BetweenFilterCriterionRequestValueArray"
@@ -210015,7 +210015,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TerritoriesSetFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/CustomViewsSetFilterCriterionRequestValueItem"
             },
             "description": "Contains an array of primitive filter values used in the set comparison.",
             "x-zs-$id": "SetFilterCriterionRequestValueArray"
@@ -210238,7 +210238,7 @@
             "$ref": "#/components/schemas/TerritoriesTextFilterCriterionResponseComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/TerritoriesTextFilterCriterionResponseValue"
+            "$ref": "#/components/schemas/ScoringRulesTextFilterCriterionResponseValue"
           },
           "type": {
             "$ref": "#/components/schemas/TerritoriesTextFilterCriterionResponseType"
@@ -210269,7 +210269,7 @@
             "$ref": "#/components/schemas/TerritoriesOrderingFilterCriterionResponseComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/TerritoriesOrderingFilterCriterionResponseValue"
+            "$ref": "#/components/schemas/OrderingFilterCriterionResponseValue"
           },
           "type": {
             "$ref": "#/components/schemas/TerritoriesOrderingFilterCriterionResponseType"
@@ -210304,7 +210304,7 @@
             "minItems": 2,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TerritoriesBetweenFilterCriterionResponseValueItem"
+              "$ref": "#/components/schemas/BetweenFilterCriterionResponseValueItem"
             },
             "description": "Contains the two boundary values \u2014 [lower_bound, upper_bound] \u2014 against which the field was evaluated for the between or not_between comparator.",
             "x-zs-$id": "BetweenFilterCriterionResponseValueArray"
@@ -210342,7 +210342,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TerritoriesSetFilterCriterionResponseValueItem"
+              "$ref": "#/components/schemas/ScoringRulesSetFilterCriterionResponseValueItem"
             },
             "description": "Contains an array of primitive filter values returned for the set comparison.",
             "x-zs-$id": "SetFilterCriterionResponseValueArray"
@@ -222049,7 +222049,7 @@
             "$ref": "#/components/schemas/WorkflowRulesTextFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/WorkflowRulesTextFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsTextFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/WorkflowRulesTextFilterCriterionRequestType"
@@ -222076,7 +222076,7 @@
             "$ref": "#/components/schemas/WorkflowRulesOrderingFilterCriterionRequestComparator"
           },
           "value": {
-            "$ref": "#/components/schemas/WorkflowRulesOrderingFilterCriterionRequestValue"
+            "$ref": "#/components/schemas/CustomViewsOrderingFilterCriterionRequestValue"
           },
           "type": {
             "$ref": "#/components/schemas/WorkflowRulesOrderingFilterCriterionRequestType"
@@ -222107,7 +222107,7 @@
             "minItems": 2,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/WorkflowRulesBetweenFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/BetweenFilterCriterionRequestValueItem"
             },
             "description": "Contains the two boundary values \u2014 [lower_bound, upper_bound] \u2014 against which the field is evaluated for the between or not_between comparator.",
             "x-zs-$id": "BetweenFilterCriterionRequestValueArray"
@@ -222141,7 +222141,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/WorkflowRulesSetFilterCriterionRequestValueItem"
+              "$ref": "#/components/schemas/CustomViewsSetFilterCriterionRequestValueItem"
             },
             "description": "Contains an array of primitive filter values used in the set comparison.",
             "x-zs-$id": "SetFilterCriterionRequestValueArray"
@@ -226857,7 +226857,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TextFilterCriterionRequestValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionRequestValueArray"
@@ -228557,7 +228561,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CustomViewsTextFilterCriterionRequestValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionRequestValueArray"
@@ -228913,7 +228921,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TextFilterCriterionResponseValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionResponseValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values returned for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionResponseValueArray"
@@ -232502,7 +232514,7 @@
             "$ref": "#/components/schemas/PutfiscalyearRequestFiscalYearOneOf4"
           },
           {
-            "$ref": "#/components/schemas/PutfiscalyearRequestFiscalYearOneOf5"
+            "$ref": "#/components/schemas/CustomFiscalYearPartialUpdate"
           }
         ]
       },
@@ -235422,7 +235434,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RecordTextFilterCriterionRequestValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionRequestValueArray"
@@ -235811,7 +235827,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RecordCountTextFilterCriterionRequestValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionRequestValueArray"
@@ -236317,7 +236337,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RelatedRecordsTextFilterCriterionRequestValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionRequestValueArray"
@@ -236850,7 +236874,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ScoringRulesTextFilterCriterionResponseValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionResponseValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values returned for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionResponseValueArray"
@@ -237204,7 +237232,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ScoringRulesTextFilterCriterionRequestValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionRequestValueArray"
@@ -238225,7 +238257,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TerritoriesTextFilterCriterionRequestValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionRequestValueArray"
@@ -238581,7 +238617,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TerritoriesTextFilterCriterionResponseValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionResponseValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values returned for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionResponseValueArray"
@@ -241497,7 +241537,11 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/WorkflowRulesTextFilterCriterionRequestValueOneOf1Item"
+              "maxLength": 255,
+              "type": "string",
+              "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
+              "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+              "x-client-inline-scalar": true
             },
             "description": "Contains an array of primitive string values for the text filter comparator.",
             "x-zs-$id": "TextFilterCriterionRequestValueArray"
@@ -243082,7 +243126,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "CoqlFieldSchemaAssociatedModuleOneOf1": {
         "required": [
@@ -243734,7 +243779,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "EqualFilterCriterionResponseValueAnyOf1Item": {
         "oneOf": [
@@ -243794,7 +243840,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionResponseValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionResponseValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "ErrorItemMandatoryNotFoundForGetAllOf2Details": {
         "oneOf": [
@@ -245766,7 +245813,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "RecordCountEqualFilterCriterionRequestValueAnyOf1Item": {
         "oneOf": [
@@ -245826,7 +245874,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "RelatedRecordsEqualFilterCriterionRequestValueAnyOf1Item": {
         "oneOf": [
@@ -245886,7 +245935,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "ScoringRulesEqualFilterCriterionResponseValueAnyOf1Item": {
         "oneOf": [
@@ -245946,7 +245996,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionResponseValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionResponseValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "ScoringRulesEqualFilterCriterionRequestValueAnyOf1Item": {
         "oneOf": [
@@ -246006,7 +246057,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "TerritoryCriteriaErrorTerritoriesItemOneOf9": {
         "required": [
@@ -246297,7 +246349,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "TerritoriesEqualFilterCriterionResponseValueAnyOf1Item": {
         "oneOf": [
@@ -246357,7 +246410,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionResponseValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionResponseValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "TerritoryUsersLimitExceededErrorSchemaDetailsOneOf1": {
         "required": [
@@ -246491,7 +246545,8 @@
         "maxLength": 255,
         "type": "string",
         "description": "Represents a string filter criterion value applicable to fields with a data_type of text, textarea, email, phone, website, autonumber, picklist, multiselectpicklist, date, or datetime, as well as any data_type not explicitly covered by SimpleFilterCriterionValueNumber, SimpleFilterCriterionValueBoolean, SimpleFilterCriterionValueObjectRequest, SimpleFilterCriterionValueObjectResponse, or the multiselect lookup value schemas.",
-        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems"
+        "x-zs-$id": "TextFilterCriterionRequestValueArrayItems",
+        "x-client-inline-scalar": true
       },
       "ArrayOfDuplicateSchemaItemDetailsOneOf1": {
         "required": [
@@ -270751,7 +270806,7 @@
             "maxItems": 50,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ScheduledActionsNestedSchemaItemActionsItem"
+              "$ref": "#/components/schemas/InstantActionsNestedSchemaActionsItem"
             },
             "description": "Represents the array of action objects for this scheduled group. Uses the same associate and non-associate action structure as instant actions, but only action types that support scheduled execution are allowed. Per-type limits apply independently to instant and scheduled actions.\n"
           },
@@ -290834,7 +290889,7 @@
             "minItems": 2,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/FieldsUpdateField207ResponseFieldsItem"
+              "$ref": "#/components/schemas/FieldsCreateFields207ResponseFieldsItem"
             },
             "description": "Represents the list of per-field results for the bulk update operation, where each item indicates either a successful update or a validation error."
           }
@@ -320486,7 +320541,7 @@
             "$ref": "#/components/schemas/CreateAndUpdateSuccessResponse"
           },
           {
-            "$ref": "#/components/schemas/MergedSchema1"
+            "$ref": "#/components/schemas/CreateAndUpdateBadResponseWithShareArrayShareItem"
           }
         ],
         "additionalProperties": {},
@@ -320520,7 +320575,7 @@
             "$ref": "#/components/schemas/CreateAndUpdateSuccessResponse"
           },
           {
-            "$ref": "#/components/schemas/MergedSchema1"
+            "$ref": "#/components/schemas/CreateAndUpdateBadResponseWithShareArrayShareItem"
           }
         ],
         "additionalProperties": {},
@@ -321124,7 +321179,7 @@
             "maxItems": 25,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TagsUpdateTags400ResponseOneOf3TagsItem"
+              "$ref": "#/components/schemas/TagsUpdateTagById400ResponseOneOf4TagsItem"
             },
             "description": "Represents an array of error objects for the invalid tag update request."
           }
@@ -321273,7 +321328,7 @@
             "maxItems": 25,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TagsActionsPostRemoveTags400ResponseOneOf6TagsItem"
+              "$ref": "#/components/schemas/TagsActionsPostAddTags400ResponseOneOf7TagsItem"
             },
             "description": "Array of error objects for tag field validation failures"
           }
@@ -321294,7 +321349,7 @@
             "maxItems": 25,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TagsActionsPostAddTagsWithId400ResponseOneOf9TagsItem"
+              "$ref": "#/components/schemas/TagsActionsPostAddTags400ResponseOneOf7TagsItem"
             },
             "description": "Array of error objects for tag field validation failures"
           }
@@ -321343,7 +321398,7 @@
             "maxItems": 25,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TagsActionsPostRemoveTagsWithId400ResponseOneOf7TagsItem"
+              "$ref": "#/components/schemas/TagsActionsPostAddTags400ResponseOneOf7TagsItem"
             },
             "description": "Array of error objects for tag field validation failures"
           }
@@ -324405,7 +324460,7 @@
             "maxItems": 25,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/WorkflowRulesUpdateWorkflowRuleById400ResponseOneOf2WorkflowRulesItem"
+              "$ref": "#/components/schemas/WorkflowRulesUpdateWorkflowRule400ResponseOneOf1WorkflowRulesItem"
             },
             "description": "Represents the array of workflow rule error objects returned when the request body fails validation.\n"
           }
@@ -329636,7 +329691,7 @@
         "type": "object",
         "properties": {
           "module": {
-            "$ref": "#/components/schemas/TerritoriesRunTerritoryRulesRequestRunRulesOneOf2Module"
+            "$ref": "#/components/schemas/TerritoriesRunTerritoryRulesRequestRunRulesOneOf1Module"
           },
           "based_on": {
             "$ref": "#/components/schemas/CustomViewBasedOn"
@@ -329660,7 +329715,7 @@
         "type": "object",
         "properties": {
           "module": {
-            "$ref": "#/components/schemas/TerritoriesRunTerritoryRulesRequestRunRulesOneOf3Module"
+            "$ref": "#/components/schemas/TerritoriesRunTerritoryRulesRequestRunRulesOneOf1Module"
           },
           "based_on": {
             "$ref": "#/components/schemas/TerritoryBasedOn"
@@ -390071,12 +390126,12 @@
         }
       },
       "AllErrorResponseStatus": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the API response.",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "AllErrorResponseStatus",
           "modelAsString": false,
@@ -390232,12 +390287,12 @@
         }
       },
       "StaticValueType": {
-        "const": null,
         "enum": [
           "static"
         ],
         "type": "string",
         "description": "Identifies the mapping strategy for this field assignment. The value must be \u0060static\u0060, which instructs the automation engine to assign a fixed, literal value to the target field at execution time rather than resolving it dynamically.",
+        "x-client-original-const": "static",
         "x-ms-enum": {
           "name": "StaticValueType",
           "modelAsString": false,
@@ -390250,12 +390305,12 @@
         }
       },
       "MergeFieldType": {
-        "const": null,
         "enum": [
           "merge_field"
         ],
         "type": "string",
         "description": "Identifies the mapping strategy for this field assignment. The value must be \u0060merge_field\u0060, which instructs the automation engine to resolve the field value dynamically from a merge field token at execution time rather than from a static literal.",
+        "x-client-original-const": "merge_field",
         "x-ms-enum": {
           "name": "MergeFieldType",
           "modelAsString": false,
@@ -390349,12 +390404,12 @@
         }
       },
       "ExecutionTimeType": {
-        "const": null,
         "enum": [
           "execution_time"
         ],
         "type": "string",
         "description": "Identifies the mapping variant as an execution-time offset. The value is always \u0022execution_time\u0022 for this schema and acts as the polymorphic discriminator across the AutomationFieldMappings union.",
+        "x-client-original-const": "execution_time",
         "x-ms-enum": {
           "name": "ExecutionTimeType",
           "modelAsString": false,
@@ -390367,12 +390422,12 @@
         }
       },
       "CompositeType": {
-        "const": null,
         "enum": [
           "composite"
         ],
         "type": "string",
         "description": "Serves as the polymorphic discriminator that identifies this field mapping as a composite mapping; the value must be set to \u0022composite\u0022 to select this schema variant.",
+        "x-client-original-const": "composite",
         "x-ms-enum": {
           "name": "CompositeType",
           "modelAsString": false,
@@ -392113,12 +392168,12 @@
         }
       },
       "DealContactRolesInvalidDataErrorCode": {
-        "const": null,
         "enum": [
           "INVALID_DATA"
         ],
         "type": "string",
         "description": "Error code indicating invalid deal ID",
+        "x-client-original-const": "INVALID_DATA",
         "x-ms-enum": {
           "name": "DealContactRolesInvalidDataErrorCode",
           "modelAsString": false,
@@ -392131,12 +392186,12 @@
         }
       },
       "DealContactRolesInvalidDataErrorMessage": {
-        "const": null,
         "enum": [
           "the related id given seems to be invalid"
         ],
         "type": "string",
         "description": "Error message indicating the deal ID is invalid",
+        "x-client-original-const": "the related id given seems to be invalid",
         "x-ms-enum": {
           "name": "DealContactRolesInvalidDataErrorMessage",
           "modelAsString": false,
@@ -392149,12 +392204,12 @@
         }
       },
       "DealContactRolesInvalidDataErrorStatus": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Response status",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "DealContactRolesInvalidDataErrorStatus",
           "modelAsString": false,
@@ -392167,12 +392222,12 @@
         }
       },
       "DealContactRolesInvalidModuleErrorCode": {
-        "const": null,
         "enum": [
           "INVALID_MODULE"
         ],
         "type": "string",
         "description": "Error code indicating invalid module name",
+        "x-client-original-const": "INVALID_MODULE",
         "x-ms-enum": {
           "name": "DealContactRolesInvalidModuleErrorCode",
           "modelAsString": false,
@@ -392185,12 +392240,12 @@
         }
       },
       "DealContactRolesInvalidModuleErrorMessage": {
-        "const": null,
         "enum": [
           "the module name given seems to be invalid"
         ],
         "type": "string",
         "description": "Error message indicating the module name is invalid",
+        "x-client-original-const": "the module name given seems to be invalid",
         "x-ms-enum": {
           "name": "DealContactRolesInvalidModuleErrorMessage",
           "modelAsString": false,
@@ -392203,12 +392258,12 @@
         }
       },
       "DealContactRolesInvalidModuleErrorStatus": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Response status",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "DealContactRolesInvalidModuleErrorStatus",
           "modelAsString": false,
@@ -392221,12 +392276,12 @@
         }
       },
       "InvalidRelationNameErrorCode": {
-        "const": null,
         "enum": [
           "INVALID_DATA"
         ],
         "type": "string",
         "description": "Error code indicating invalid relation name",
+        "x-client-original-const": "INVALID_DATA",
         "x-ms-enum": {
           "name": "InvalidRelationNameErrorCode",
           "modelAsString": false,
@@ -392239,12 +392294,12 @@
         }
       },
       "TheRelationNameGivenSeemsToBeInvalidMessage": {
-        "const": null,
         "enum": [
           "the relation name given seems to be invalid"
         ],
         "type": "string",
         "description": "Error message indicating the relation name is invalid",
+        "x-client-original-const": "the relation name given seems to be invalid",
         "x-ms-enum": {
           "name": "TheRelationNameGivenSeemsToBeInvalidMessage",
           "modelAsString": false,
@@ -392257,12 +392312,12 @@
         }
       },
       "InvalidRelationNameErrorStatus": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Response status",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "InvalidRelationNameErrorStatus",
           "modelAsString": false,
@@ -392275,12 +392330,12 @@
         }
       },
       "RequiredParamMissingErrorCode": {
-        "const": null,
         "enum": [
           "REQUIRED_PARAM_MISSING"
         ],
         "type": "string",
         "description": "Error code indicating a required parameter is missing",
+        "x-client-original-const": "REQUIRED_PARAM_MISSING",
         "x-ms-enum": {
           "name": "RequiredParamMissingErrorCode",
           "modelAsString": false,
@@ -392293,12 +392348,12 @@
         }
       },
       "OneOfTheExpectedParameterIsMissingMessage": {
-        "const": null,
         "enum": [
           "One of the expected parameter is missing"
         ],
         "type": "string",
         "description": "Error message indicating a parameter is missing",
+        "x-client-original-const": "One of the expected parameter is missing",
         "x-ms-enum": {
           "name": "OneOfTheExpectedParameterIsMissingMessage",
           "modelAsString": false,
@@ -392311,12 +392366,12 @@
         }
       },
       "RequiredParamMissingErrorStatus": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Response status",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "RequiredParamMissingErrorStatus",
           "modelAsString": false,
@@ -392329,12 +392384,12 @@
         }
       },
       "NoPermissionDealsErrorCode": {
-        "const": null,
         "enum": [
           "NO_PERMISSION"
         ],
         "type": "string",
         "description": "Error code indicating lack of permission",
+        "x-client-original-const": "NO_PERMISSION",
         "x-ms-enum": {
           "name": "NoPermissionDealsErrorCode",
           "modelAsString": false,
@@ -392347,12 +392402,12 @@
         }
       },
       "NoPermissionDealsErrorMessage": {
-        "const": null,
         "enum": [
           "permission denied"
         ],
         "type": "string",
         "description": "Error message indicating permission denial",
+        "x-client-original-const": "permission denied",
         "x-ms-enum": {
           "name": "NoPermissionDealsErrorMessage",
           "modelAsString": false,
@@ -392365,12 +392420,12 @@
         }
       },
       "NoPermissionDealsErrorStatus": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Response status",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "NoPermissionDealsErrorStatus",
           "modelAsString": false,
@@ -392383,12 +392438,12 @@
         }
       },
       "NoPermissionContactsErrorCode": {
-        "const": null,
         "enum": [
           "NO_PERMISSION"
         ],
         "type": "string",
         "description": "Error code indicating lack of permission",
+        "x-client-original-const": "NO_PERMISSION",
         "x-ms-enum": {
           "name": "NoPermissionContactsErrorCode",
           "modelAsString": false,
@@ -392401,12 +392456,12 @@
         }
       },
       "NoPermissionContactsErrorMessage": {
-        "const": null,
         "enum": [
           "permission denied"
         ],
         "type": "string",
         "description": "Error message indicating permission denial",
+        "x-client-original-const": "permission denied",
         "x-ms-enum": {
           "name": "NoPermissionContactsErrorMessage",
           "modelAsString": false,
@@ -392419,12 +392474,12 @@
         }
       },
       "NoPermissionContactsErrorStatus": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Response status",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "NoPermissionContactsErrorStatus",
           "modelAsString": false,
@@ -393101,13 +393156,13 @@
         }
       },
       "InternalErrorCode": {
-        "const": null,
         "maxLength": 50,
         "enum": [
           "INTERNAL_ERROR"
         ],
         "type": "string",
         "description": "Represents the error code indicating the type of server-side failure.",
+        "x-client-original-const": "INTERNAL_ERROR",
         "x-ms-enum": {
           "name": "InternalErrorCode",
           "modelAsString": false,
@@ -393120,13 +393175,13 @@
         }
       },
       "InternalServerErrorStatus": {
-        "const": null,
         "maxLength": 50,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the response.",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "InternalServerErrorStatus",
           "modelAsString": false,
@@ -394287,6 +394342,10 @@
           "name": "LayoutsFieldSchemaCreatedSource",
           "modelAsString": false,
           "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            },
             {
               "value": "default",
               "name": "DefaultValue"
@@ -410603,12 +410662,12 @@
         }
       },
       "EmailNotificationAssociateActionSchemaType": {
-        "const": null,
         "enum": [
           "email_notifications"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a EmailNotificationAssociate action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "email_notifications",
         "x-ms-enum": {
           "name": "EmailNotificationAssociateActionSchemaType",
           "modelAsString": false,
@@ -410621,12 +410680,12 @@
         }
       },
       "FieldUpdatesType": {
-        "const": null,
         "enum": [
           "field_updates"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a FieldUpdateAssociate action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "field_updates",
         "x-ms-enum": {
           "name": "FieldUpdatesType",
           "modelAsString": false,
@@ -410639,12 +410698,12 @@
         }
       },
       "TaskAssociateActionSchemaType": {
-        "const": null,
         "enum": [
           "tasks"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a TaskAssociate action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "tasks",
         "x-ms-enum": {
           "name": "TaskAssociateActionSchemaType",
           "modelAsString": false,
@@ -410689,12 +410748,12 @@
         }
       },
       "AssignOwnerType": {
-        "const": null,
         "enum": [
           "assign_owner"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a AssignOwner action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "assign_owner",
         "x-ms-enum": {
           "name": "AssignOwnerType",
           "modelAsString": false,
@@ -410707,12 +410766,12 @@
         }
       },
       "CreateRecordType": {
-        "const": null,
         "enum": [
           "create_record"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a CreateRecord action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "create_record",
         "x-ms-enum": {
           "name": "CreateRecordType",
           "modelAsString": false,
@@ -410725,12 +410784,12 @@
         }
       },
       "AddMeetingType": {
-        "const": null,
         "enum": [
           "add_meeting"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this action as an add-meeting action within the workflow rule. The value is fixed for this action type and must correspond to a type supported by the target module and trigger event.",
+        "x-client-original-const": "add_meeting",
         "x-ms-enum": {
           "name": "AddMeetingType",
           "modelAsString": false,
@@ -410743,12 +410802,12 @@
         }
       },
       "ScheduleCallActionSchemaType": {
-        "const": null,
         "enum": [
           "schedule_call"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a ScheduleCall action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "schedule_call",
         "x-ms-enum": {
           "name": "ScheduleCallActionSchemaType",
           "modelAsString": false,
@@ -410761,12 +410820,12 @@
         }
       },
       "AddTagsType": {
-        "const": null,
         "enum": [
           "add_tags"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this action as an add-tags action within the workflow rule. The value is fixed for this action type and must correspond to a type supported by the target module and trigger event.",
+        "x-client-original-const": "add_tags",
         "x-ms-enum": {
           "name": "AddTagsType",
           "modelAsString": false,
@@ -410779,12 +410838,12 @@
         }
       },
       "RemoveTagsType": {
-        "const": null,
         "enum": [
           "remove_tags"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a RemoveTags action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "remove_tags",
         "x-ms-enum": {
           "name": "RemoveTagsType",
           "modelAsString": false,
@@ -410797,12 +410856,12 @@
         }
       },
       "ConvertType": {
-        "const": null,
         "enum": [
           "convert"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a Convert action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "convert",
         "x-ms-enum": {
           "name": "ConvertType",
           "modelAsString": false,
@@ -410815,12 +410874,12 @@
         }
       },
       "CreateConnectedRecordType": {
-        "const": null,
         "enum": [
           "create_connected_record"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a CreateConnectedRecord action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "create_connected_record",
         "x-ms-enum": {
           "name": "CreateConnectedRecordType",
           "modelAsString": false,
@@ -410870,12 +410929,12 @@
         }
       },
       "CircuitsType": {
-        "const": null,
         "enum": [
           "circuits"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a Circuits action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "circuits",
         "x-ms-enum": {
           "name": "CircuitsType",
           "modelAsString": false,
@@ -410888,12 +410947,12 @@
         }
       },
       "FlowType": {
-        "const": null,
         "enum": [
           "flow"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a Zoho Flow action within the workflow rule.",
+        "x-client-original-const": "flow",
         "x-ms-enum": {
           "name": "FlowType",
           "modelAsString": false,
@@ -410948,12 +411007,12 @@
         }
       },
       "CreateRecordEmailType": {
-        "const": null,
         "enum": [
           "create_record_email"
         ],
         "type": "string",
         "description": "Represents the action type discriminator that identifies this as a EmailCreateRecord action within the workflow rule. The value is fixed for this action type and must be supported by the target module and trigger event.",
+        "x-client-original-const": "create_record_email",
         "x-ms-enum": {
           "name": "CreateRecordEmailType",
           "modelAsString": false,
@@ -411207,12 +411266,12 @@
         }
       },
       "AutomationAssignToMergeFieldEntryType": {
-        "const": null,
         "enum": [
           "merge_field"
         ],
         "type": "string",
         "description": "Assignment method indicating merge field resolution.",
+        "x-client-original-const": "merge_field",
         "x-ms-enum": {
           "name": "AutomationAssignToMergeFieldEntryType",
           "modelAsString": false,
@@ -411631,12 +411690,12 @@
         }
       },
       "AutomationAssignToCriteriaEntryType": {
-        "const": null,
         "enum": [
           "criteria"
         ],
         "type": "string",
         "description": "Assignment method indicating criteria-based evaluation.",
+        "x-client-original-const": "criteria",
         "x-ms-enum": {
           "name": "AutomationAssignToCriteriaEntryType",
           "modelAsString": false,
@@ -411679,12 +411738,12 @@
         }
       },
       "WorkflowRulesStaticFieldMappingType": {
-        "const": null,
         "enum": [
           "static"
         ],
         "type": "string",
         "description": "Identifies the mapping strategy for this field assignment. The value must be \u0060static\u0060, which instructs the automation engine to assign a fixed, literal value to the target field at execution time rather than resolving it dynamically.",
+        "x-client-original-const": "static",
         "x-ms-enum": {
           "name": "WorkflowRulesStaticFieldMappingType",
           "modelAsString": false,
@@ -411697,12 +411756,12 @@
         }
       },
       "WorkflowRulesMergeFieldMappingType": {
-        "const": null,
         "enum": [
           "merge_field"
         ],
         "type": "string",
         "description": "Identifies the mapping strategy for this field assignment. The value must be \u0060merge_field\u0060, which instructs the automation engine to resolve the field value dynamically from a merge field token at execution time rather than from a static literal.",
+        "x-client-original-const": "merge_field",
         "x-ms-enum": {
           "name": "WorkflowRulesMergeFieldMappingType",
           "modelAsString": false,
@@ -411796,12 +411855,12 @@
         }
       },
       "WorkflowRulesExecutionTimeFieldMappingType": {
-        "const": null,
         "enum": [
           "execution_time"
         ],
         "type": "string",
         "description": "Identifies the mapping variant as an execution-time offset. The value is always \u0022execution_time\u0022 for this schema and acts as the polymorphic discriminator across the AutomationFieldMappings union.",
+        "x-client-original-const": "execution_time",
         "x-ms-enum": {
           "name": "WorkflowRulesExecutionTimeFieldMappingType",
           "modelAsString": false,
@@ -411814,12 +411873,12 @@
         }
       },
       "WorkflowRulesCompositeFieldMappingType": {
-        "const": null,
         "enum": [
           "composite"
         ],
         "type": "string",
         "description": "Serves as the polymorphic discriminator that identifies this field mapping as a composite mapping; the value must be set to \u0022composite\u0022 to select this schema variant.",
+        "x-client-original-const": "composite",
         "x-ms-enum": {
           "name": "WorkflowRulesCompositeFieldMappingType",
           "modelAsString": false,
@@ -412088,12 +412147,12 @@
         }
       },
       "WorkflowTasksStaticFieldMappingType": {
-        "const": null,
         "enum": [
           "static"
         ],
         "type": "string",
         "description": "Identifies the mapping strategy for this field assignment. The value must be \u0060static\u0060, which instructs the automation engine to assign a fixed, literal value to the target field at execution time rather than resolving it dynamically.",
+        "x-client-original-const": "static",
         "x-ms-enum": {
           "name": "WorkflowTasksStaticFieldMappingType",
           "modelAsString": false,
@@ -412106,12 +412165,12 @@
         }
       },
       "WorkflowTasksMergeFieldMappingType": {
-        "const": null,
         "enum": [
           "merge_field"
         ],
         "type": "string",
         "description": "Identifies the mapping strategy for this field assignment. The value must be \u0060merge_field\u0060, which instructs the automation engine to resolve the field value dynamically from a merge field token at execution time rather than from a static literal.",
+        "x-client-original-const": "merge_field",
         "x-ms-enum": {
           "name": "WorkflowTasksMergeFieldMappingType",
           "modelAsString": false,
@@ -412205,12 +412264,12 @@
         }
       },
       "WorkflowTasksExecutionTimeFieldMappingType": {
-        "const": null,
         "enum": [
           "execution_time"
         ],
         "type": "string",
         "description": "Identifies the mapping variant as an execution-time offset. The value is always \u0022execution_time\u0022 for this schema and acts as the polymorphic discriminator across the AutomationFieldMappings union.",
+        "x-client-original-const": "execution_time",
         "x-ms-enum": {
           "name": "WorkflowTasksExecutionTimeFieldMappingType",
           "modelAsString": false,
@@ -412223,12 +412282,12 @@
         }
       },
       "WorkflowTasksCompositeFieldMappingType": {
-        "const": null,
         "enum": [
           "composite"
         ],
         "type": "string",
         "description": "Serves as the polymorphic discriminator that identifies this field mapping as a composite mapping; the value must be set to \u0022composite\u0022 to select this schema variant.",
+        "x-client-original-const": "composite",
         "x-ms-enum": {
           "name": "WorkflowTasksCompositeFieldMappingType",
           "modelAsString": false,
@@ -413282,12 +413341,12 @@
         }
       },
       "FieldsErrorResponseOneOf24Code": {
-        "const": null,
         "enum": [
           "NO_PERMISSION"
         ],
         "type": "string",
         "description": "Represents the error code for this error type.",
+        "x-client-original-const": "NO_PERMISSION",
         "x-ms-enum": {
           "name": "FieldsErrorResponseOneOf24Code",
           "modelAsString": false,
@@ -413300,12 +413359,12 @@
         }
       },
       "FieldsErrorResponseOneOf24Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the response status.",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "FieldsErrorResponseOneOf24Status",
           "modelAsString": false,
@@ -413395,12 +413454,12 @@
         }
       },
       "FieldsErrorResponseOneOf26Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the response status.",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "FieldsErrorResponseOneOf26Status",
           "modelAsString": false,
@@ -413430,12 +413489,12 @@
         }
       },
       "FieldsErrorResponseOneOf27Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the response status.",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "FieldsErrorResponseOneOf27Status",
           "modelAsString": false,
@@ -413893,12 +413952,12 @@
         }
       },
       "TerritoryCriteriaErrorTerritoriesItemOneOf9Code": {
-        "const": null,
         "enum": [
           "INVALID_DATA"
         ],
         "type": "string",
         "description": "Represents the error code for the request.",
+        "x-client-original-const": "INVALID_DATA",
         "x-ms-enum": {
           "name": "TerritoryCriteriaErrorTerritoriesItemOneOf9Code",
           "modelAsString": false,
@@ -413953,12 +414012,12 @@
         }
       },
       "TerritoryCriteriaErrorTerritoriesItemOneOf9Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the operation. Possible values: **error**.",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "TerritoryCriteriaErrorTerritoriesItemOneOf9Status",
           "modelAsString": false,
@@ -414783,12 +414842,12 @@
         "format": "int32"
       },
       "FieldsParamName": {
-        "const": null,
         "enum": [
           "fields"
         ],
         "type": "string",
         "description": "Name of the missing required parameter",
+        "x-client-original-const": "fields",
         "x-ms-enum": {
           "name": "FieldsParamName",
           "modelAsString": false,
@@ -414801,12 +414860,12 @@
         }
       },
       "CrmImpliedViewPotentialsItem": {
-        "const": null,
         "enum": [
           "Crm_Implied_View_Potentials"
         ],
         "type": "string",
         "description": "Permission identifier for viewing deals",
+        "x-client-original-const": "Crm_Implied_View_Potentials",
         "x-ms-enum": {
           "name": "CrmImpliedViewPotentialsItem",
           "modelAsString": false,
@@ -414819,12 +414878,12 @@
         }
       },
       "CrmImpliedViewContactsItem": {
-        "const": null,
         "enum": [
           "Crm_Implied_View_Contacts"
         ],
         "type": "string",
         "description": "Permission identifier for viewing contacts",
+        "x-client-original-const": "Crm_Implied_View_Contacts",
         "x-ms-enum": {
           "name": "CrmImpliedViewContactsItem",
           "modelAsString": false,
@@ -414837,12 +414896,12 @@
         }
       },
       "DeleteRelationsSuccessResponseDataItemCode": {
-        "const": null,
         "enum": [
           "SUCCESS"
         ],
         "type": "string",
         "description": "Operation status code",
+        "x-client-original-const": "SUCCESS",
         "x-ms-enum": {
           "name": "DeleteRelationsSuccessResponseDataItemCode",
           "modelAsString": false,
@@ -414855,12 +414914,12 @@
         }
       },
       "RelationRemovedMessage": {
-        "const": null,
         "enum": [
           "relation removed"
         ],
         "type": "string",
         "description": "Result message",
+        "x-client-original-const": "relation removed",
         "x-ms-enum": {
           "name": "RelationRemovedMessage",
           "modelAsString": false,
@@ -414873,12 +414932,12 @@
         }
       },
       "DeleteRelationsSuccessResponseDataItemStatus": {
-        "const": null,
         "enum": [
           "success"
         ],
         "type": "string",
         "description": "Operation status",
+        "x-client-original-const": "success",
         "x-ms-enum": {
           "name": "DeleteRelationsSuccessResponseDataItemStatus",
           "modelAsString": false,
@@ -414891,12 +414950,12 @@
         }
       },
       "UpsertRelationsSuccessResponseDataItemCode": {
-        "const": null,
         "enum": [
           "SUCCESS"
         ],
         "type": "string",
         "description": "Operation status code",
+        "x-client-original-const": "SUCCESS",
         "x-ms-enum": {
           "name": "UpsertRelationsSuccessResponseDataItemCode",
           "modelAsString": false,
@@ -414931,12 +414990,12 @@
         }
       },
       "UpsertRelationsSuccessResponseDataItemStatus": {
-        "const": null,
         "enum": [
           "success"
         ],
         "type": "string",
         "description": "Operation status",
+        "x-client-original-const": "success",
         "x-ms-enum": {
           "name": "UpsertRelationsSuccessResponseDataItemStatus",
           "modelAsString": false,
@@ -423129,12 +423188,12 @@
         }
       },
       "DownloadAttachmentsDownloadEmailAttachments400ResponseOneOf2Code": {
-        "const": null,
         "enum": [
           "MANDATORY_NOT_FOUND"
         ],
         "type": "string",
         "description": "Represents the error code indicating that a mandatory parameter was not provided in the request. Always returned in the response.\nPossible values:\n**MANDATORY_NOT_FOUND** - Indicates that one or more mandatory parameters are missing from the request.\n",
+        "x-client-original-const": "MANDATORY_NOT_FOUND",
         "x-ms-enum": {
           "name": "DownloadAttachmentsDownloadEmailAttachments400ResponseOneOf2Code",
           "modelAsString": false,
@@ -423940,12 +423999,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf1Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the error response. ",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf1Status",
           "modelAsString": false,
@@ -423958,12 +424017,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf1Code": {
-        "const": null,
         "enum": [
           "MANDATORY_NOT_FOUND"
         ],
         "type": "string",
         "description": "Represents the error code for the response. ",
+        "x-client-original-const": "MANDATORY_NOT_FOUND",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf1Code",
           "modelAsString": false,
@@ -423976,12 +424035,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf1Message": {
-        "const": null,
         "enum": [
           "required field not found"
         ],
         "type": "string",
         "description": "Represents the error message for the response. ",
+        "x-client-original-const": "required field not found",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf1Message",
           "modelAsString": false,
@@ -423994,12 +424053,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf2Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the error response. ",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf2Status",
           "modelAsString": false,
@@ -424012,12 +424071,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf2Code": {
-        "const": null,
         "enum": [
           "ALREADY_SCHEDULED"
         ],
         "type": "string",
         "description": "Represents the error code returned when a mass delete job is already running for the provided Custom View. ",
+        "x-client-original-const": "ALREADY_SCHEDULED",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf2Code",
           "modelAsString": false,
@@ -424030,12 +424089,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf3Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the error response.",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf3Status",
           "modelAsString": false,
@@ -424048,12 +424107,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf3Code": {
-        "const": null,
         "enum": [
           "INVALID_DATA"
         ],
         "type": "string",
         "description": "Represents the error code for the response. ",
+        "x-client-original-const": "INVALID_DATA",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf3Code",
           "modelAsString": false,
@@ -424066,12 +424125,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf4Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the error response. ",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf4Status",
           "modelAsString": false,
@@ -424084,12 +424143,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf4Code": {
-        "const": null,
         "enum": [
           "INVALID_MODULE"
         ],
         "type": "string",
         "description": "Represents the error code for the response. ",
+        "x-client-original-const": "INVALID_MODULE",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf4Code",
           "modelAsString": false,
@@ -424102,12 +424161,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf4Message": {
-        "const": null,
         "enum": [
           "the module name given seems to be invalid"
         ],
         "type": "string",
         "description": "Represents the error message for the response.",
+        "x-client-original-const": "the module name given seems to be invalid",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf4Message",
           "modelAsString": false,
@@ -424120,12 +424179,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf5Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the error response. ",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf5Status",
           "modelAsString": false,
@@ -424138,12 +424197,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf5Code": {
-        "const": null,
         "enum": [
           "NOT_SUPPORTED"
         ],
         "type": "string",
         "description": "Represents the error code for the response. ",
+        "x-client-original-const": "NOT_SUPPORTED",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf5Code",
           "modelAsString": false,
@@ -424156,12 +424215,12 @@
         }
       },
       "MassDeleteMassDelete400ResponseOneOf6Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the error response. ",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete400ResponseOneOf6Status",
           "modelAsString": false,
@@ -424174,12 +424233,12 @@
         }
       },
       "NoRecordsFoundCode": {
-        "const": null,
         "enum": [
           "NO_RECORDS_FOUND"
         ],
         "type": "string",
         "description": "Represents the error code for the response. ",
+        "x-client-original-const": "NO_RECORDS_FOUND",
         "x-ms-enum": {
           "name": "NoRecordsFoundCode",
           "modelAsString": false,
@@ -424192,12 +424251,12 @@
         }
       },
       "NoRecordFoundToUpdateMessage": {
-        "const": null,
         "enum": [
           "no record found to update"
         ],
         "type": "string",
         "description": "Represents the error message for the response. ",
+        "x-client-original-const": "no record found to update",
         "x-ms-enum": {
           "name": "NoRecordFoundToUpdateMessage",
           "modelAsString": false,
@@ -424210,12 +424269,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf1Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the error response. ",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf1Status",
           "modelAsString": false,
@@ -424228,12 +424287,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf1Code": {
-        "const": null,
         "enum": [
           "MANDATORY_NOT_FOUND"
         ],
         "type": "string",
         "description": "Represents the error code for the response.",
+        "x-client-original-const": "MANDATORY_NOT_FOUND",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf1Code",
           "modelAsString": false,
@@ -424246,12 +424305,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf1Message": {
-        "const": null,
         "enum": [
           "mandatory param missing"
         ],
         "type": "string",
         "description": "Represents the error message for the response. ",
+        "x-client-original-const": "mandatory param missing",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf1Message",
           "modelAsString": false,
@@ -424264,12 +424323,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf2Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the error response.",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf2Status",
           "modelAsString": false,
@@ -424282,12 +424341,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf2Code": {
-        "const": null,
         "enum": [
           "INVALID_DATA"
         ],
         "type": "string",
         "description": "Represents the error code for the response.",
+        "x-client-original-const": "INVALID_DATA",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf2Code",
           "modelAsString": false,
@@ -424300,12 +424359,12 @@
         }
       },
       "TheJobidGivenSeemsToBeInvalidMessage": {
-        "const": null,
         "enum": [
           "The jobid given seems to be invalid"
         ],
         "type": "string",
         "description": "Represents the error message for the response. ",
+        "x-client-original-const": "The jobid given seems to be invalid",
         "x-ms-enum": {
           "name": "TheJobidGivenSeemsToBeInvalidMessage",
           "modelAsString": false,
@@ -424318,12 +424377,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf3Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the error response.",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf3Status",
           "modelAsString": false,
@@ -424336,12 +424395,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf3Code": {
-        "const": null,
         "enum": [
           "INVALID_MODULE"
         ],
         "type": "string",
         "description": "Represents the error code for the response. ",
+        "x-client-original-const": "INVALID_MODULE",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf3Code",
           "modelAsString": false,
@@ -424354,12 +424413,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf3Message": {
-        "const": null,
         "enum": [
           "the module name given seems to be invalid"
         ],
         "type": "string",
         "description": "Represents the error message for the response. ",
+        "x-client-original-const": "the module name given seems to be invalid",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf3Message",
           "modelAsString": false,
@@ -424372,12 +424431,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf4Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the error response. ",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf4Status",
           "modelAsString": false,
@@ -424390,12 +424449,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf4Code": {
-        "const": null,
         "enum": [
           "UNABLE_TO_PARSE_DATA_TYPE"
         ],
         "type": "string",
         "description": "Represents the error code for the response. ",
+        "x-client-original-const": "UNABLE_TO_PARSE_DATA_TYPE",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf4Code",
           "modelAsString": false,
@@ -424408,12 +424467,12 @@
         }
       },
       "EitherTheRequestBodyOrParametersIsInWrongFormatMessage": {
-        "const": null,
         "enum": [
           "either the request body or parameters is in wrong format"
         ],
         "type": "string",
         "description": "Represents the error message for the response.",
+        "x-client-original-const": "either the request body or parameters is in wrong format",
         "x-ms-enum": {
           "name": "EitherTheRequestBodyOrParametersIsInWrongFormatMessage",
           "modelAsString": false,
@@ -424839,13 +424898,13 @@
         }
       },
       "RecordCountGetRecordCount400ResponseOneOf1Message": {
-        "const": null,
         "maxLength": 1000,
         "enum": [
           "unable to process your request. please verify whether you have entered proper method name, parameter and parameter values."
         ],
         "type": "string",
         "description": "Human-readable error message",
+        "x-client-original-const": "unable to process your request. please verify whether you have entered proper method name, parameter and parameter values.",
         "x-ms-enum": {
           "name": "RecordCountGetRecordCount400ResponseOneOf1Message",
           "modelAsString": false,
@@ -424893,12 +424952,12 @@
         }
       },
       "RecordCountGetRecordCount400ResponseOneOf3Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Error status indicator",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "RecordCountGetRecordCount400ResponseOneOf3Status",
           "modelAsString": false,
@@ -424911,12 +424970,12 @@
         }
       },
       "RecordCountGetRecordCount400ResponseOneOf3Code": {
-        "const": null,
         "enum": [
           "NOT_SUPPORTED"
         ],
         "type": "string",
         "description": "Error code indicating unsupported operation",
+        "x-client-original-const": "NOT_SUPPORTED",
         "x-ms-enum": {
           "name": "RecordCountGetRecordCount400ResponseOneOf3Code",
           "modelAsString": false,
@@ -425782,12 +425841,12 @@
         }
       },
       "MassDeleteMassDelete200ResponseDataItemOneOf1Status": {
-        "const": null,
         "enum": [
           "success"
         ],
         "type": "string",
         "description": "Represents the status of the response. ",
+        "x-client-original-const": "success",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete200ResponseDataItemOneOf1Status",
           "modelAsString": false,
@@ -425800,12 +425859,12 @@
         }
       },
       "MassDeleteMassDelete200ResponseDataItemOneOf1Code": {
-        "const": null,
         "enum": [
           "SUCCESS"
         ],
         "type": "string",
         "description": "Represents the success code for the response. ",
+        "x-client-original-const": "SUCCESS",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete200ResponseDataItemOneOf1Code",
           "modelAsString": false,
@@ -425818,12 +425877,12 @@
         }
       },
       "RecordIsDeletedMessage": {
-        "const": null,
         "enum": [
           "record is deleted"
         ],
         "type": "string",
         "description": "Represents the success message for the response. ",
+        "x-client-original-const": "record is deleted",
         "x-ms-enum": {
           "name": "RecordIsDeletedMessage",
           "modelAsString": false,
@@ -425836,12 +425895,12 @@
         }
       },
       "MassDeleteMassDelete200ResponseDataItemOneOf2Status": {
-        "const": null,
         "enum": [
           "success"
         ],
         "type": "string",
         "description": "Represents the status of the response. ",
+        "x-client-original-const": "success",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete200ResponseDataItemOneOf2Status",
           "modelAsString": false,
@@ -425854,12 +425913,12 @@
         }
       },
       "MassDeleteMassDelete200ResponseDataItemOneOf2Code": {
-        "const": null,
         "enum": [
           "SUCCESS"
         ],
         "type": "string",
         "description": "Represents the success code for the response. ",
+        "x-client-original-const": "SUCCESS",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete200ResponseDataItemOneOf2Code",
           "modelAsString": false,
@@ -425872,12 +425931,12 @@
         }
       },
       "MassDeleteScheduledSuccessfullyMessage": {
-        "const": null,
         "enum": [
           "mass delete scheduled successfully"
         ],
         "type": "string",
         "description": "Represents the success message for the response. ",
+        "x-client-original-const": "mass delete scheduled successfully",
         "x-ms-enum": {
           "name": "MassDeleteScheduledSuccessfullyMessage",
           "modelAsString": false,
@@ -425890,12 +425949,12 @@
         }
       },
       "MassDeleteMassDelete207ResponseDataItemOneOf1Status": {
-        "const": null,
         "enum": [
           "success"
         ],
         "type": "string",
         "description": "Represents the status of the response. ",
+        "x-client-original-const": "success",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete207ResponseDataItemOneOf1Status",
           "modelAsString": false,
@@ -425908,12 +425967,12 @@
         }
       },
       "MassDeleteMassDelete207ResponseDataItemOneOf1Code": {
-        "const": null,
         "enum": [
           "SUCCESS"
         ],
         "type": "string",
         "description": "Represents the success code for the response. ",
+        "x-client-original-const": "SUCCESS",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete207ResponseDataItemOneOf1Code",
           "modelAsString": false,
@@ -425926,12 +425985,12 @@
         }
       },
       "MassDeleteMassDelete207ResponseDataItemOneOf1Message": {
-        "const": null,
         "enum": [
           "record is deleted"
         ],
         "type": "string",
         "description": "Represents the success message for the response. ",
+        "x-client-original-const": "record is deleted",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete207ResponseDataItemOneOf1Message",
           "modelAsString": false,
@@ -425944,12 +426003,12 @@
         }
       },
       "MassDeleteMassDelete207ResponseDataItemOneOf2Status": {
-        "const": null,
         "enum": [
           "error"
         ],
         "type": "string",
         "description": "Represents the status of the response. ",
+        "x-client-original-const": "error",
         "x-ms-enum": {
           "name": "MassDeleteMassDelete207ResponseDataItemOneOf2Status",
           "modelAsString": false,
@@ -429247,12 +429306,12 @@
         }
       },
       "DealContactRolesAssociateContactRoleToDeal200ResponseDataItemCode": {
-        "const": null,
         "enum": [
           "SUCCESS"
         ],
         "type": "string",
         "description": "Operation status code",
+        "x-client-original-const": "SUCCESS",
         "x-ms-enum": {
           "name": "DealContactRolesAssociateContactRoleToDeal200ResponseDataItemCode",
           "modelAsString": false,
@@ -429265,12 +429324,12 @@
         }
       },
       "RelationUpdatedMessage": {
-        "const": null,
         "enum": [
           "relation updated"
         ],
         "type": "string",
         "description": "Result message",
+        "x-client-original-const": "relation updated",
         "x-ms-enum": {
           "name": "RelationUpdatedMessage",
           "modelAsString": false,
@@ -429283,12 +429342,12 @@
         }
       },
       "DealContactRolesAssociateContactRoleToDeal200ResponseDataItemStatus": {
-        "const": null,
         "enum": [
           "success"
         ],
         "type": "string",
         "description": "Operation status",
+        "x-client-original-const": "success",
         "x-ms-enum": {
           "name": "DealContactRolesAssociateContactRoleToDeal200ResponseDataItemStatus",
           "modelAsString": false,
@@ -433388,7 +433447,17 @@
           ""
         ],
         "type": "string",
-        "description": "Represents the invalid alias name used in the COQL query."
+        "description": "Represents the invalid alias name used in the COQL query.",
+        "x-ms-enum": {
+          "name": "CoqlExecuteCoqlQuery400ResponseInvalidAliasDetailsAlias",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "CurrenciesCreateCurrencies400ResponseOneOf2CurrenciesItemStatus": {
         "maxLength": 20,
@@ -434137,12 +434206,12 @@
         "format": "int32"
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf1DetailsParamName": {
-        "const": null,
         "enum": [
           "job_id"
         ],
         "type": "string",
         "description": "Represents the name of the missing required query parameter. ",
+        "x-client-original-const": "job_id",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf1DetailsParamName",
           "modelAsString": false,
@@ -434155,12 +434224,12 @@
         }
       },
       "MassDeleteGetMassDeleteJobStatus400ResponseOneOf2DetailsParamName": {
-        "const": null,
         "enum": [
           "job_id"
         ],
         "type": "string",
         "description": "Represents the name of the invalid query parameter. ",
+        "x-client-original-const": "job_id",
         "x-ms-enum": {
           "name": "MassDeleteGetMassDeleteJobStatus400ResponseOneOf2DetailsParamName",
           "modelAsString": false,
@@ -435202,12 +435271,12 @@
         }
       },
       "UsersPipeRolesPipeGroupsPipeTerritoriesRegex": {
-        "const": null,
         "enum": [
           "users|roles|groups|territories"
         ],
         "type": "string",
         "description": "Represents the regex pattern that the parameter value failed to match. ",
+        "x-client-original-const": "users|roles|groups|territories",
         "x-ms-enum": {
           "name": "UsersPipeRolesPipeGroupsPipeTerritoriesRegex",
           "modelAsString": false,
@@ -435220,12 +435289,12 @@
         }
       },
       "TypeParamName": {
-        "const": null,
         "enum": [
           "type"
         ],
         "type": "string",
         "description": "Represents the name of the query parameter that failed the pattern validation. ",
+        "x-client-original-const": "type",
         "x-ms-enum": {
           "name": "TypeParamName",
           "modelAsString": false,
@@ -437396,6 +437465,10 @@
           "name": "PortalUsersInviteUsersRequestPortalInviteItemDataItemLanguage",
           "modelAsString": false,
           "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            },
             {
               "value": "it_IT",
               "name": "ItIt"
@@ -446633,6 +446706,10 @@
           "name": "PortalUsersSingleInviteUserLanguageParameter",
           "modelAsString": false,
           "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            },
             {
               "value": "it_IT",
               "name": "ItIt"

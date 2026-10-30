@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_t
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_users.Settings.Portals.Item.User_type.Item.Users.ActionNamespace.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/portal_users/settings/portals/{portal}/user_type/{userType}/users/action/transfer", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

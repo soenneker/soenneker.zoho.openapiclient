@@ -18,17 +18,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("show_from_number") is { } nullNodeShowFromNumber && nullNodeShowFromNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowFromNumber = null;
-            if (parseNode.GetChildNode("show_to_number") is { } nullNodeShowToNumber && nullNodeShowToNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowToNumber = null;
+            if (parseNode.GetChildNode("show_from_number") is null) { _explicitNullValueShowFromNumber = default!; _explicitNullProperties?.Remove("show_from_number"); }
+            else if (parseNode.GetChildNode("show_from_number") is { } nullNodeShowFromNumber && nullNodeShowFromNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowFromNumber = null;
+            if (parseNode.GetChildNode("show_to_number") is null) { _explicitNullValueShowToNumber = default!; _explicitNullProperties?.Remove("show_to_number"); }
+            else if (parseNode.GetChildNode("show_to_number") is { } nullNodeShowToNumber && nullNodeShowToNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowToNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the **From Number** field is currently enabled on records in the Calls module. **Possible values:****true** - The **From Number** field is enabled and appears on Call records.**false** - The **From Number** field is disabled and is hidden from Call records.</summary>
-        public bool? ShowFromNumber { get => _explicitNullValueShowFromNumber; set { _explicitNullValueShowFromNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_from_number"); else _explicitNullProperties?.Remove("show_from_number"); } }
+        public bool? ShowFromNumber { get => _explicitNullValueShowFromNumber; set { _explicitNullValueShowFromNumber = value; AdditionalData?.Remove("show_from_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_from_number"); else _explicitNullProperties?.Remove("show_from_number"); } }
         private bool? _explicitNullValueShowFromNumber = default!;
         /// <summary>Indicates whether the **To Number** field is currently enabled on records in the Calls module. **Possible values:****true** - The **To Number** field is enabled and appears on Call records.**false** - The **To Number** field is disabled and is hidden from Call records.</summary>
-        public bool? ShowToNumber { get => _explicitNullValueShowToNumber; set { _explicitNullValueShowToNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_to_number"); else _explicitNullProperties?.Remove("show_to_number"); } }
+        public bool? ShowToNumber { get => _explicitNullValueShowToNumber; set { _explicitNullValueShowToNumber = value; AdditionalData?.Remove("show_to_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_to_number"); else _explicitNullProperties?.Remove("show_to_number"); } }
         private bool? _explicitNullValueShowToNumber = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences"/> and sets the default values.

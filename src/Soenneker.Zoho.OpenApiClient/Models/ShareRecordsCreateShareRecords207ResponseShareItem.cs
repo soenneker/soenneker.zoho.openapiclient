@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MergedSchema1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateBadResponseWithShareArrayShareItem"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShareRecordsCreateShareRecords207ResponseShareItem : IComposedTypeWrapper, IParsable
@@ -18,6 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateBadResponseWithShareArrayShareItem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateBadResponseWithShareArrayShareItem? CreateAndUpdateBadResponseWithShareArrayShareItem { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateBadResponseWithShareArrayShareItem CreateAndUpdateBadResponseWithShareArrayShareItem { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,14 +33,6 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse CreateAndUpdateSuccessResponse { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MergedSchema1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.MergedSchema1? MergedSchema1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Zoho.OpenApiClient.Models.MergedSchema1 MergedSchema1 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,10 +50,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null && (parseNode.GetChildNode("code")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("SUCCESS".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("details") != null && parseNode.GetChildNode("message") != null && (parseNode.GetChildNode("message")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("record will be shared successfully".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("success".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
-            if (result.CreateAndUpdateSuccessResponse == null && result.MergedSchema1 == null && matchesUnionBranch0) result.CreateAndUpdateSuccessResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse(), parseNode);
-            if (result.CreateAndUpdateSuccessResponse == null && result.MergedSchema1 == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.CreateAndUpdateSuccessResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse(), parseNode);
-            if (result.CreateAndUpdateSuccessResponse == null && result.MergedSchema1 == null) result.UnrecognizedValue = unionPayload;
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("code") && shapeMembers1.ContainsKey("details") && shapeMembers1.ContainsKey("message") && shapeMembers1.ContainsKey("status") && (!shapeMembers1.ContainsKey("code") || (((shapeMembers1["code"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["code"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "SUCCESS".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("details") || (((shapeMembers1["details"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)))) && (!shapeMembers1.ContainsKey("message") || (((shapeMembers1["message"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["message"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "record will be shared successfully".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("status") || (((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal10 && "success".Equals(literal10.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => true))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.CreateAndUpdateBadResponseWithShareArrayShareItem == null && result.CreateAndUpdateSuccessResponse == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CreateAndUpdateSuccessResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse(), parseNode);
+            if (result.CreateAndUpdateBadResponseWithShareArrayShareItem == null && result.CreateAndUpdateSuccessResponse == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -62,13 +66,15 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateAndUpdateSuccessResponse != null)
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
+            if(CreateAndUpdateBadResponseWithShareArrayShareItem != null)
+            {
+                return CreateAndUpdateBadResponseWithShareArrayShareItem.GetFieldDeserializers();
+            }
+            else if(CreateAndUpdateSuccessResponse != null)
             {
                 return CreateAndUpdateSuccessResponse.GetFieldDeserializers();
-            }
-            else if(MergedSchema1 != null)
-            {
-                return MergedSchema1.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,19 +85,22 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (CreateAndUpdateSuccessResponse == null && MergedSchema1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (CreateAndUpdateSuccessResponse != null && MergedSchema1 == null) { if (CreateAndUpdateSuccessResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateAndUpdateSuccessResponse); return; }
+            if (CreateAndUpdateBadResponseWithShareArrayShareItem == null && CreateAndUpdateSuccessResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (CreateAndUpdateBadResponseWithShareArrayShareItem != null) selectedUnionBranches++;
+            if (CreateAndUpdateSuccessResponse != null) selectedUnionBranches++;
+            if (CreateAndUpdateSuccessResponse != null && selectedUnionBranches == 1) { if (CreateAndUpdateSuccessResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateAndUpdateSuccessResponse); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CreateAndUpdateSuccessResponse != null)
+            if(CreateAndUpdateBadResponseWithShareArrayShareItem != null)
+            {
+                if (CreateAndUpdateBadResponseWithShareArrayShareItem is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateBadResponseWithShareArrayShareItem>(null, CreateAndUpdateBadResponseWithShareArrayShareItem);
+            }
+            else if(CreateAndUpdateSuccessResponse != null)
             {
                 if (CreateAndUpdateSuccessResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse>(null, CreateAndUpdateSuccessResponse);
-            }
-            else if(MergedSchema1 != null)
-            {
-                if (MergedSchema1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.MergedSchema1>(null, MergedSchema1);
             }
         }
     }

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("call_preferences") is { } nullNodeCallPreferences && nullNodeCallPreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallPreferences = null;
+            if (parseNode.GetChildNode("call_preferences") is null) { _explicitNullValueCallPreferences = default!; _explicitNullProperties?.Remove("call_preferences"); }
+            else if (parseNode.GetChildNode("call_preferences") is { } nullNodeCallPreferences && nullNodeCallPreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallPreferences = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains the current Call Preferences configuration for your Zoho CRM organization in the **Calls** module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences? CallPreferences { get => _explicitNullValueCallPreferences; set { _explicitNullValueCallPreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_preferences"); else _explicitNullProperties?.Remove("call_preferences"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences? CallPreferences { get => _explicitNullValueCallPreferences; set { _explicitNullValueCallPreferences = value; AdditionalData?.Remove("call_preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_preferences"); else _explicitNullProperties?.Remove("call_preferences"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences? _explicitNullValueCallPreferences = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences CallPreferences { get => _explicitNullValueCallPreferences; set { _explicitNullValueCallPreferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_preferences"); else _explicitNullProperties?.Remove("call_preferences"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences CallPreferences { get => _explicitNullValueCallPreferences; set { _explicitNullValueCallPreferences = value; AdditionalData?.Remove("call_preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_preferences"); else _explicitNullProperties?.Remove("call_preferences"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CallPreferencesGetCallPreferences200ResponseCallPreferences _explicitNullValueCallPreferences = default!;
 #endif
         /// <summary>

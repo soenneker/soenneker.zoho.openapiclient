@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
-            if (parseNode.GetChildNode("relational_criteria") is { } nullNodeRelationalCriteria && nullNodeRelationalCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelationalCriteria = null;
+            if (parseNode.GetChildNode("criteria") is null) { _explicitNullValueCriteria = default!; _explicitNullProperties?.Remove("criteria"); }
+            else if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
+            if (parseNode.GetChildNode("relational_criteria") is null) { _explicitNullValueRelationalCriteria = default!; _explicitNullProperties?.Remove("relational_criteria"); }
+            else if (parseNode.GetChildNode("relational_criteria") is { } nullNodeRelationalCriteria && nullNodeRelationalCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelationalCriteria = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the filter criteria applied to the trigger module records. When null, the rule applies to all records without additional field-level filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaCriteria? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaCriteria? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaCriteria? _explicitNullValueCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaCriteria Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaCriteria Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaCriteria _explicitNullValueCriteria = default!;
 #endif
         /// <summary>Represents the filter criteria applied to a related module when the trigger involves cross-module data, such as emails, calls, or notes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria? RelationalCriteria { get => _explicitNullValueRelationalCriteria; set { _explicitNullValueRelationalCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relational_criteria"); else _explicitNullProperties?.Remove("relational_criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria? RelationalCriteria { get => _explicitNullValueRelationalCriteria; set { _explicitNullValueRelationalCriteria = value; AdditionalData?.Remove("relational_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relational_criteria"); else _explicitNullProperties?.Remove("relational_criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria? _explicitNullValueRelationalCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria RelationalCriteria { get => _explicitNullValueRelationalCriteria; set { _explicitNullValueRelationalCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relational_criteria"); else _explicitNullProperties?.Remove("relational_criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria RelationalCriteria { get => _explicitNullValueRelationalCriteria; set { _explicitNullValueRelationalCriteria = value; AdditionalData?.Remove("relational_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relational_criteria"); else _explicitNullProperties?.Remove("relational_criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria _explicitNullValueRelationalCriteria = default!;
 #endif
         /// <summary>

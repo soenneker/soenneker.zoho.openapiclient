@@ -101,7 +101,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_change_owner.Mass_change_ownerRequestBuilder.Mass_change_ownerRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/mass_change_owner/{module}/actions/mass_change_owner?job_id={job_id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/mass_change_owner/{module}/actions/mass_change_owner?job_id={job_id}", RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/mass_change_owner/{module}/actions/mass_change_owner", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -122,7 +122,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_change_owner.Item.Actions.Mass_chang
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/mass_change_owner/{module}/actions/mass_change_owner", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

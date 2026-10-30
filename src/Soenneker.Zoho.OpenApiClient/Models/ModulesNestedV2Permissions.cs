@@ -18,29 +18,34 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("create") is { } nullNodeCreate && nullNodeCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Create = null;
-            if (parseNode.GetChildNode("delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
-            if (parseNode.GetChildNode("edit") is { } nullNodeEdit && nullNodeEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edit = null;
-            if (parseNode.GetChildNode("edit_shared_records") is { } nullNodeEditSharedRecords && nullNodeEditSharedRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditSharedRecords = null;
-            if (parseNode.GetChildNode("view") is { } nullNodeView && nullNodeView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) View = null;
+            if (parseNode.GetChildNode("create") is null) { _explicitNullValueCreate = default!; _explicitNullProperties?.Remove("create"); }
+            else if (parseNode.GetChildNode("create") is { } nullNodeCreate && nullNodeCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Create = null;
+            if (parseNode.GetChildNode("delete") is null) { _explicitNullValueDelete = default!; _explicitNullProperties?.Remove("delete"); }
+            else if (parseNode.GetChildNode("delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
+            if (parseNode.GetChildNode("edit") is null) { _explicitNullValueEdit = default!; _explicitNullProperties?.Remove("edit"); }
+            else if (parseNode.GetChildNode("edit") is { } nullNodeEdit && nullNodeEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edit = null;
+            if (parseNode.GetChildNode("edit_shared_records") is null) { _explicitNullValueEditSharedRecords = default!; _explicitNullProperties?.Remove("edit_shared_records"); }
+            else if (parseNode.GetChildNode("edit_shared_records") is { } nullNodeEditSharedRecords && nullNodeEditSharedRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditSharedRecords = null;
+            if (parseNode.GetChildNode("view") is null) { _explicitNullValueView = default!; _explicitNullProperties?.Remove("view"); }
+            else if (parseNode.GetChildNode("view") is { } nullNodeView && nullNodeView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) View = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the updated create permission for portal users on this module. Set to `true` to allow portal users to create records.</summary>
-        public bool? Create { get => _explicitNullValueCreate; set { _explicitNullValueCreate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create"); else _explicitNullProperties?.Remove("create"); } }
+        public bool? Create { get => _explicitNullValueCreate; set { _explicitNullValueCreate = value; AdditionalData?.Remove("create"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create"); else _explicitNullProperties?.Remove("create"); } }
         private bool? _explicitNullValueCreate = default!;
         /// <summary>Represents the updated delete permission for portal users on this module. Set to `true` to allow portal users to delete records.</summary>
-        public bool? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        public bool? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
         private bool? _explicitNullValueDelete = default!;
         /// <summary>Represents the updated edit permission for portal users on records they created in this module.</summary>
-        public bool? Edit { get => _explicitNullValueEdit; set { _explicitNullValueEdit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit"); else _explicitNullProperties?.Remove("edit"); } }
+        public bool? Edit { get => _explicitNullValueEdit; set { _explicitNullValueEdit = value; AdditionalData?.Remove("edit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit"); else _explicitNullProperties?.Remove("edit"); } }
         private bool? _explicitNullValueEdit = default!;
         /// <summary>Represents the updated permission for portal users to edit records shared from CRM into this module.</summary>
-        public bool? EditSharedRecords { get => _explicitNullValueEditSharedRecords; set { _explicitNullValueEditSharedRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit_shared_records"); else _explicitNullProperties?.Remove("edit_shared_records"); } }
+        public bool? EditSharedRecords { get => _explicitNullValueEditSharedRecords; set { _explicitNullValueEditSharedRecords = value; AdditionalData?.Remove("edit_shared_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit_shared_records"); else _explicitNullProperties?.Remove("edit_shared_records"); } }
         private bool? _explicitNullValueEditSharedRecords = default!;
         /// <summary>Represents the updated view permission for portal users on this module.</summary>
-        public bool? View { get => _explicitNullValueView; set { _explicitNullValueView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view"); else _explicitNullProperties?.Remove("view"); } }
+        public bool? View { get => _explicitNullValueView; set { _explicitNullValueView = value; AdditionalData?.Remove("view"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view"); else _explicitNullProperties?.Remove("view"); } }
         private bool? _explicitNullValueView = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesNestedV2Permissions"/> and sets the default values.

@@ -18,30 +18,44 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account_rule_criteria") is { } nullNodeAccountRuleCriteria && nullNodeAccountRuleCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountRuleCriteria = null;
-            if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
-            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
-            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
-            if (parseNode.GetChildNode("deal_rule_criteria") is { } nullNodeDealRuleCriteria && nullNodeDealRuleCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DealRuleCriteria = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("lead_rule_criteria") is { } nullNodeLeadRuleCriteria && nullNodeLeadRuleCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadRuleCriteria = null;
-            if (parseNode.GetChildNode("manager") is { } nullNodeManager && nullNodeManager.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Manager = null;
-            if (parseNode.GetChildNode("modified_by") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
-            if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("permission_type") is { } nullNodePermissionType && nullNodePermissionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionType = null;
-            if (parseNode.GetChildNode("reporting_to") is { } nullNodeReportingTo && nullNodeReportingTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportingTo = null;
+            if (parseNode.GetChildNode("account_rule_criteria") is null) { _explicitNullValueAccountRuleCriteria = default!; _explicitNullProperties?.Remove("account_rule_criteria"); }
+            else if (parseNode.GetChildNode("account_rule_criteria") is { } nullNodeAccountRuleCriteria && nullNodeAccountRuleCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountRuleCriteria = null;
+            if (parseNode.GetChildNode("api_name") is null) { _explicitNullValueApiName = default!; _explicitNullProperties?.Remove("api_name"); }
+            else if (parseNode.GetChildNode("api_name") is { } nullNodeApiName && nullNodeApiName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiName = null;
+            if (parseNode.GetChildNode("created_by") is null) { _explicitNullValueCreatedBy = default!; _explicitNullProperties?.Remove("created_by"); }
+            else if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("created_time") is null) { _explicitNullValueCreatedTime = default!; _explicitNullProperties?.Remove("created_time"); }
+            else if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("deal_rule_criteria") is null) { _explicitNullValueDealRuleCriteria = default!; _explicitNullProperties?.Remove("deal_rule_criteria"); }
+            else if (parseNode.GetChildNode("deal_rule_criteria") is { } nullNodeDealRuleCriteria && nullNodeDealRuleCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DealRuleCriteria = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("lead_rule_criteria") is null) { _explicitNullValueLeadRuleCriteria = default!; _explicitNullProperties?.Remove("lead_rule_criteria"); }
+            else if (parseNode.GetChildNode("lead_rule_criteria") is { } nullNodeLeadRuleCriteria && nullNodeLeadRuleCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadRuleCriteria = null;
+            if (parseNode.GetChildNode("manager") is null) { _explicitNullValueManager = default!; _explicitNullProperties?.Remove("manager"); }
+            else if (parseNode.GetChildNode("manager") is { } nullNodeManager && nullNodeManager.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Manager = null;
+            if (parseNode.GetChildNode("modified_by") is null) { _explicitNullValueModifiedBy = default!; _explicitNullProperties?.Remove("modified_by"); }
+            else if (parseNode.GetChildNode("modified_by") is { } nullNodeModifiedBy && nullNodeModifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedBy = null;
+            if (parseNode.GetChildNode("modified_time") is null) { _explicitNullValueModifiedTime = default!; _explicitNullProperties?.Remove("modified_time"); }
+            else if (parseNode.GetChildNode("modified_time") is { } nullNodeModifiedTime && nullNodeModifiedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedTime = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("permission_type") is null) { _explicitNullValuePermissionType = default!; _explicitNullProperties?.Remove("permission_type"); }
+            else if (parseNode.GetChildNode("permission_type") is { } nullNodePermissionType && nullNodePermissionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionType = null;
+            if (parseNode.GetChildNode("reporting_to") is null) { _explicitNullValueReportingTo = default!; _explicitNullProperties?.Remove("reporting_to"); }
+            else if (parseNode.GetChildNode("reporting_to") is { } nullNodeReportingTo && nullNodeReportingTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportingTo = null;
         }
 
         /// <summary>Represents the criteria used to auto-assign accounts to the territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteria? AccountRuleCriteria { get => _explicitNullValueAccountRuleCriteria; set { _explicitNullValueAccountRuleCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_rule_criteria"); else _explicitNullProperties?.Remove("account_rule_criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteria? AccountRuleCriteria { get => _explicitNullValueAccountRuleCriteria; set { _explicitNullValueAccountRuleCriteria = value; AdditionalData?.Remove("account_rule_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_rule_criteria"); else _explicitNullProperties?.Remove("account_rule_criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteria? _explicitNullValueAccountRuleCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteria AccountRuleCriteria { get => _explicitNullValueAccountRuleCriteria; set { _explicitNullValueAccountRuleCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_rule_criteria"); else _explicitNullProperties?.Remove("account_rule_criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteria AccountRuleCriteria { get => _explicitNullValueAccountRuleCriteria; set { _explicitNullValueAccountRuleCriteria = value; AdditionalData?.Remove("account_rule_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_rule_criteria"); else _explicitNullProperties?.Remove("account_rule_criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaAccountRuleCriteria _explicitNullValueAccountRuleCriteria = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -49,110 +63,110 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the unique API name of the territory used in API requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string? ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string? _explicitNullValueApiName = default!;
 #nullable restore
 #else
-        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
+        public string ApiName { get => _explicitNullValueApiName; set { _explicitNullValueApiName = value; AdditionalData?.Remove("api_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_name"); else _explicitNullProperties?.Remove("api_name"); } }
         private string _explicitNullValueApiName = default!;
 #endif
         /// <summary>Represents the user who created the territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Represents the date and time the territory record took effect, in ISO 8601 format.</summary>
-        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; AdditionalData?.Remove("created_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
         private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>Represents the criteria used to auto-assign deals to the territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaDealRuleCriteria? DealRuleCriteria { get => _explicitNullValueDealRuleCriteria; set { _explicitNullValueDealRuleCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deal_rule_criteria"); else _explicitNullProperties?.Remove("deal_rule_criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaDealRuleCriteria? DealRuleCriteria { get => _explicitNullValueDealRuleCriteria; set { _explicitNullValueDealRuleCriteria = value; AdditionalData?.Remove("deal_rule_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deal_rule_criteria"); else _explicitNullProperties?.Remove("deal_rule_criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaDealRuleCriteria? _explicitNullValueDealRuleCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaDealRuleCriteria DealRuleCriteria { get => _explicitNullValueDealRuleCriteria; set { _explicitNullValueDealRuleCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deal_rule_criteria"); else _explicitNullProperties?.Remove("deal_rule_criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaDealRuleCriteria DealRuleCriteria { get => _explicitNullValueDealRuleCriteria; set { _explicitNullValueDealRuleCriteria = value; AdditionalData?.Remove("deal_rule_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deal_rule_criteria"); else _explicitNullProperties?.Remove("deal_rule_criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaDealRuleCriteria _explicitNullValueDealRuleCriteria = default!;
 #endif
         /// <summary>Represents the description of the territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Represents the unique identifier of the territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the criteria used to auto-assign leads to the territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteria? LeadRuleCriteria { get => _explicitNullValueLeadRuleCriteria; set { _explicitNullValueLeadRuleCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lead_rule_criteria"); else _explicitNullProperties?.Remove("lead_rule_criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteria? LeadRuleCriteria { get => _explicitNullValueLeadRuleCriteria; set { _explicitNullValueLeadRuleCriteria = value; AdditionalData?.Remove("lead_rule_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lead_rule_criteria"); else _explicitNullProperties?.Remove("lead_rule_criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteria? _explicitNullValueLeadRuleCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteria LeadRuleCriteria { get => _explicitNullValueLeadRuleCriteria; set { _explicitNullValueLeadRuleCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lead_rule_criteria"); else _explicitNullProperties?.Remove("lead_rule_criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteria LeadRuleCriteria { get => _explicitNullValueLeadRuleCriteria; set { _explicitNullValueLeadRuleCriteria = value; AdditionalData?.Remove("lead_rule_criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lead_rule_criteria"); else _explicitNullProperties?.Remove("lead_rule_criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaLeadRuleCriteria _explicitNullValueLeadRuleCriteria = default!;
 #endif
         /// <summary>Represents a territory manager identified by user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaManager? Manager { get => _explicitNullValueManager; set { _explicitNullValueManager = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manager"); else _explicitNullProperties?.Remove("manager"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaManager? Manager { get => _explicitNullValueManager; set { _explicitNullValueManager = value; AdditionalData?.Remove("manager"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manager"); else _explicitNullProperties?.Remove("manager"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaManager? _explicitNullValueManager = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaManager Manager { get => _explicitNullValueManager; set { _explicitNullValueManager = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manager"); else _explicitNullProperties?.Remove("manager"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaManager Manager { get => _explicitNullValueManager; set { _explicitNullValueManager = value; AdditionalData?.Remove("manager"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manager"); else _explicitNullProperties?.Remove("manager"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaManager _explicitNullValueManager = default!;
 #endif
         /// <summary>Represents the user who last modified the territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaModifiedBy? ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; AdditionalData?.Remove("modified_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaModifiedBy? _explicitNullValueModifiedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaModifiedBy ModifiedBy { get => _explicitNullValueModifiedBy; set { _explicitNullValueModifiedBy = value; AdditionalData?.Remove("modified_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_by"); else _explicitNullProperties?.Remove("modified_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaModifiedBy _explicitNullValueModifiedBy = default!;
 #endif
         /// <summary>Represents the date and time when the territory was last modified, in ISO 8601 format.</summary>
-        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
+        public DateTimeOffset? ModifiedTime { get => _explicitNullValueModifiedTime; set { _explicitNullValueModifiedTime = value; AdditionalData?.Remove("modified_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_time"); else _explicitNullProperties?.Remove("modified_time"); } }
         private DateTimeOffset? _explicitNullValueModifiedTime = default!;
         /// <summary>Represents the display name of the territory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Represents the access permission for users in this territory. Possible values: **read_write_delete**, **read_only**.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaPermissionType? PermissionType { get => _explicitNullValuePermissionType; set { _explicitNullValuePermissionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_type"); else _explicitNullProperties?.Remove("permission_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaPermissionType? PermissionType { get => _explicitNullValuePermissionType; set { _explicitNullValuePermissionType = value; AdditionalData?.Remove("permission_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_type"); else _explicitNullProperties?.Remove("permission_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaPermissionType? _explicitNullValuePermissionType = default!;
         /// <summary>Represents the parent territory to which this territory reports in the hierarchy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaReportingTo? ReportingTo { get => _explicitNullValueReportingTo; set { _explicitNullValueReportingTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reporting_to"); else _explicitNullProperties?.Remove("reporting_to"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaReportingTo? ReportingTo { get => _explicitNullValueReportingTo; set { _explicitNullValueReportingTo = value; AdditionalData?.Remove("reporting_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reporting_to"); else _explicitNullProperties?.Remove("reporting_to"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaReportingTo? _explicitNullValueReportingTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaReportingTo ReportingTo { get => _explicitNullValueReportingTo; set { _explicitNullValueReportingTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reporting_to"); else _explicitNullProperties?.Remove("reporting_to"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaReportingTo ReportingTo { get => _explicitNullValueReportingTo; set { _explicitNullValueReportingTo = value; AdditionalData?.Remove("reporting_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reporting_to"); else _explicitNullProperties?.Remove("reporting_to"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaReportingTo _explicitNullValueReportingTo = default!;
 #endif
         /// <summary>
@@ -192,7 +206,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaModifiedBy>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaModifiedBy.CreateFromDiscriminatorValue); } },
                 { "modified_time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permission_type", n => { PermissionType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaPermissionType>(); } },
+                { "permission_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaPermissionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePermissionType = default; _explicitNullProperties?.Remove("permission_type"); AdditionalData["permission_type"] = unknown; } else { PermissionType = parsed; AdditionalData.Remove("permission_type"); } } },
                 { "reporting_to", n => { ReportingTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaReportingTo>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoryGetSchemaReportingTo.CreateFromDiscriminatorValue); } },
             };
         }

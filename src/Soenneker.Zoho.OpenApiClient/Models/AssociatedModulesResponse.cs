@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("associated_modules") is { } nullNodeAssociatedModules && nullNodeAssociatedModules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedModules = null;
+            if (parseNode.GetChildNode("associated_modules") is null) { _explicitNullValueAssociatedModules = default!; _explicitNullProperties?.Remove("associated_modules"); }
+            else if (parseNode.GetChildNode("associated_modules") is { } nullNodeAssociatedModules && nullNodeAssociatedModules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedModules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of module references that have at least one webhook associated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference>? AssociatedModules { get => _explicitNullValueAssociatedModules; set { _explicitNullValueAssociatedModules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_modules"); else _explicitNullProperties?.Remove("associated_modules"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference>? AssociatedModules { get => _explicitNullValueAssociatedModules; set { _explicitNullValueAssociatedModules = value; AdditionalData?.Remove("associated_modules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_modules"); else _explicitNullProperties?.Remove("associated_modules"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference>? _explicitNullValueAssociatedModules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference> AssociatedModules { get => _explicitNullValueAssociatedModules; set { _explicitNullValueAssociatedModules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_modules"); else _explicitNullProperties?.Remove("associated_modules"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference> AssociatedModules { get => _explicitNullValueAssociatedModules; set { _explicitNullValueAssociatedModules = value; AdditionalData?.Remove("associated_modules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_modules"); else _explicitNullProperties?.Remove("associated_modules"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference> _explicitNullValueAssociatedModules = default!;
 #endif
         /// <summary>

@@ -18,21 +18,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("calendar_type") is { } nullNodeCalendarType && nullNodeCalendarType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalendarType = null;
-            if (parseNode.GetChildNode("display_based_on") is { } nullNodeDisplayBasedOn && nullNodeDisplayBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayBasedOn = null;
-            if (parseNode.GetChildNode("start_month") is { } nullNodeStartMonth && nullNodeStartMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartMonth = null;
+            if (parseNode.GetChildNode("calendar_type") is null) { _explicitNullValueCalendarType = default!; _explicitNullProperties?.Remove("calendar_type"); }
+            else if (parseNode.GetChildNode("calendar_type") is { } nullNodeCalendarType && nullNodeCalendarType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalendarType = null;
+            if (parseNode.GetChildNode("display_based_on") is null) { _explicitNullValueDisplayBasedOn = default!; _explicitNullProperties?.Remove("display_based_on"); }
+            else if (parseNode.GetChildNode("display_based_on") is { } nullNodeDisplayBasedOn && nullNodeDisplayBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayBasedOn = null;
+            if (parseNode.GetChildNode("start_month") is null) { _explicitNullValueStartMonth = default!; _explicitNullProperties?.Remove("start_month"); }
+            else if (parseNode.GetChildNode("start_month") is { } nullNodeStartMonth && nullNodeStartMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartMonth = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the calendar type used to switch to a standard fiscal year. Possible values: `gregorian`.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GregorianCalendarType? CalendarType { get => _explicitNullValueCalendarType; set { _explicitNullValueCalendarType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendar_type"); else _explicitNullProperties?.Remove("calendar_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GregorianCalendarType? CalendarType { get => _explicitNullValueCalendarType; set { _explicitNullValueCalendarType = value; AdditionalData?.Remove("calendar_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendar_type"); else _explicitNullProperties?.Remove("calendar_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GregorianCalendarType? _explicitNullValueCalendarType = default!;
         /// <summary>Specify whether the fiscal year label is based on the start month or the end month of the fiscal period. When set to `end_month`, the `start_month` cannot be `JANUARY`. Possible values: `start_month`, `end_month`.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDisplayBasedOn? DisplayBasedOn { get => _explicitNullValueDisplayBasedOn; set { _explicitNullValueDisplayBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_based_on"); else _explicitNullProperties?.Remove("display_based_on"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDisplayBasedOn? DisplayBasedOn { get => _explicitNullValueDisplayBasedOn; set { _explicitNullValueDisplayBasedOn = value; AdditionalData?.Remove("display_based_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_based_on"); else _explicitNullProperties?.Remove("display_based_on"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDisplayBasedOn? _explicitNullValueDisplayBasedOn = default!;
         /// <summary>Specify the start month of the fiscal year. Possible values: `JANUARY`, `FEBRUARY`, `MARCH`, `APRIL`, `MAY`, `JUNE`, `JULY`, `AUGUST`, `SEPTEMBER`, `OCTOBER`, `NOVEMBER`, `DECEMBER`.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStartMonth? StartMonth { get => _explicitNullValueStartMonth; set { _explicitNullValueStartMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_month"); else _explicitNullProperties?.Remove("start_month"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStartMonth? StartMonth { get => _explicitNullValueStartMonth; set { _explicitNullValueStartMonth = value; AdditionalData?.Remove("start_month"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_month"); else _explicitNullProperties?.Remove("start_month"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStartMonth? _explicitNullValueStartMonth = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf3"/> and sets the default values.
@@ -59,9 +62,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "calendar_type", n => { CalendarType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GregorianCalendarType>(); } },
-                { "display_based_on", n => { DisplayBasedOn = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDisplayBasedOn>(); } },
-                { "start_month", n => { StartMonth = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStartMonth>(); } },
+                { "calendar_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GregorianCalendarType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCalendarType = default; _explicitNullProperties?.Remove("calendar_type"); AdditionalData["calendar_type"] = unknown; } else { CalendarType = parsed; AdditionalData.Remove("calendar_type"); } } },
+                { "display_based_on", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearDisplayBasedOn>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDisplayBasedOn = default; _explicitNullProperties?.Remove("display_based_on"); AdditionalData["display_based_on"] = unknown; } else { DisplayBasedOn = parsed; AdditionalData.Remove("display_based_on"); } } },
+                { "start_month", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FiscalYearStartMonth>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStartMonth = default; _explicitNullProperties?.Remove("start_month"); AdditionalData["start_month"] = unknown; } else { StartMonth = parsed; AdditionalData.Remove("start_month"); } } },
             };
         }
         /// <summary>

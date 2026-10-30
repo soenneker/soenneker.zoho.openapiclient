@@ -19,7 +19,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("workflow_rules") is { } nullNodeWorkflowRules && nullNodeWorkflowRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRules = null;
+            if (parseNode.GetChildNode("workflow_rules") is null) { _explicitNullValueWorkflowRules = default!; _explicitNullProperties?.Remove("workflow_rules"); }
+            else if (parseNode.GetChildNode("workflow_rules") is { } nullNodeWorkflowRules && nullNodeWorkflowRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,11 +30,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of error objects</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem>? WorkflowRules { get => _explicitNullValueWorkflowRules; set { _explicitNullValueWorkflowRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rules"); else _explicitNullProperties?.Remove("workflow_rules"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem>? WorkflowRules { get => _explicitNullValueWorkflowRules; set { _explicitNullValueWorkflowRules = value; AdditionalData?.Remove("workflow_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rules"); else _explicitNullProperties?.Remove("workflow_rules"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem>? _explicitNullValueWorkflowRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem> WorkflowRules { get => _explicitNullValueWorkflowRules; set { _explicitNullValueWorkflowRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rules"); else _explicitNullProperties?.Remove("workflow_rules"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem> WorkflowRules { get => _explicitNullValueWorkflowRules; set { _explicitNullValueWorkflowRules = value; AdditionalData?.Remove("workflow_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_rules"); else _explicitNullProperties?.Remove("workflow_rules"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesPostWorkflowRule400ResponseOneOf1WorkflowRulesItem> _explicitNullValueWorkflowRules = default!;
 #endif
         /// <summary>

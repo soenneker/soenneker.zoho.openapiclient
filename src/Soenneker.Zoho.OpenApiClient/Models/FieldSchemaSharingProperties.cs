@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scheduler_status") is { } nullNodeSchedulerStatus && nullNodeSchedulerStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchedulerStatus = null;
-            if (parseNode.GetChildNode("share_permission") is { } nullNodeSharePermission && nullNodeSharePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharePermission = null;
-            if (parseNode.GetChildNode("share_preference_enabled") is { } nullNodeSharePreferenceEnabled && nullNodeSharePreferenceEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharePreferenceEnabled = null;
+            if (parseNode.GetChildNode("scheduler_status") is null) { _explicitNullValueSchedulerStatus = default!; _explicitNullProperties?.Remove("scheduler_status"); }
+            else if (parseNode.GetChildNode("scheduler_status") is { } nullNodeSchedulerStatus && nullNodeSchedulerStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchedulerStatus = null;
+            if (parseNode.GetChildNode("share_permission") is null) { _explicitNullValueSharePermission = default!; _explicitNullProperties?.Remove("share_permission"); }
+            else if (parseNode.GetChildNode("share_permission") is { } nullNodeSharePermission && nullNodeSharePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharePermission = null;
+            if (parseNode.GetChildNode("share_preference_enabled") is null) { _explicitNullValueSharePreferenceEnabled = default!; _explicitNullProperties?.Remove("share_preference_enabled"); }
+            else if (parseNode.GetChildNode("share_preference_enabled") is { } nullNodeSharePreferenceEnabled && nullNodeSharePreferenceEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharePreferenceEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the scheduler status for sharing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchedulerStatus { get => _explicitNullValueSchedulerStatus; set { _explicitNullValueSchedulerStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduler_status"); else _explicitNullProperties?.Remove("scheduler_status"); } }
+        public string? SchedulerStatus { get => _explicitNullValueSchedulerStatus; set { _explicitNullValueSchedulerStatus = value; AdditionalData?.Remove("scheduler_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduler_status"); else _explicitNullProperties?.Remove("scheduler_status"); } }
         private string? _explicitNullValueSchedulerStatus = default!;
 #nullable restore
 #else
-        public string SchedulerStatus { get => _explicitNullValueSchedulerStatus; set { _explicitNullValueSchedulerStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduler_status"); else _explicitNullProperties?.Remove("scheduler_status"); } }
+        public string SchedulerStatus { get => _explicitNullValueSchedulerStatus; set { _explicitNullValueSchedulerStatus = value; AdditionalData?.Remove("scheduler_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduler_status"); else _explicitNullProperties?.Remove("scheduler_status"); } }
         private string _explicitNullValueSchedulerStatus = default!;
 #endif
         /// <summary>Represents the share permission for the field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SharePermission { get => _explicitNullValueSharePermission; set { _explicitNullValueSharePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_permission"); else _explicitNullProperties?.Remove("share_permission"); } }
+        public string? SharePermission { get => _explicitNullValueSharePermission; set { _explicitNullValueSharePermission = value; AdditionalData?.Remove("share_permission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_permission"); else _explicitNullProperties?.Remove("share_permission"); } }
         private string? _explicitNullValueSharePermission = default!;
 #nullable restore
 #else
-        public string SharePermission { get => _explicitNullValueSharePermission; set { _explicitNullValueSharePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_permission"); else _explicitNullProperties?.Remove("share_permission"); } }
+        public string SharePermission { get => _explicitNullValueSharePermission; set { _explicitNullValueSharePermission = value; AdditionalData?.Remove("share_permission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_permission"); else _explicitNullProperties?.Remove("share_permission"); } }
         private string _explicitNullValueSharePermission = default!;
 #endif
         /// <summary>Indicates if share preference is enabled.</summary>
-        public bool? SharePreferenceEnabled { get => _explicitNullValueSharePreferenceEnabled; set { _explicitNullValueSharePreferenceEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_preference_enabled"); else _explicitNullProperties?.Remove("share_preference_enabled"); } }
+        public bool? SharePreferenceEnabled { get => _explicitNullValueSharePreferenceEnabled; set { _explicitNullValueSharePreferenceEnabled = value; AdditionalData?.Remove("share_preference_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_preference_enabled"); else _explicitNullProperties?.Remove("share_preference_enabled"); } }
         private bool? _explicitNullValueSharePreferenceEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaSharingProperties"/> and sets the default values.

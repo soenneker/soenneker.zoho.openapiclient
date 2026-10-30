@@ -18,18 +18,30 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
-            if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
-            if (parseNode.GetChildNode("date_time_format") is { } nullNodeDateTimeFormat && nullNodeDateTimeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateTimeFormat = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("feature_type") is { } nullNodeFeatureType && nullNodeFeatureType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureType = null;
-            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
-            if (parseNode.GetChildNode("http_method") is { } nullNodeHttpMethod && nullNodeHttpMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpMethod = null;
-            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("related_module") is { } nullNodeRelatedModule && nullNodeRelatedModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedModule = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
-            if (parseNode.GetChildNode("url_parameters") is { } nullNodeUrlParameters && nullNodeUrlParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlParameters = null;
+            if (parseNode.GetChildNode("authentication") is null) { _explicitNullValueAuthentication = default!; _explicitNullProperties?.Remove("authentication"); }
+            else if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
+            if (parseNode.GetChildNode("body") is null) { _explicitNullValueBody = default!; _explicitNullProperties?.Remove("body"); }
+            else if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
+            if (parseNode.GetChildNode("date_time_format") is null) { _explicitNullValueDateTimeFormat = default!; _explicitNullProperties?.Remove("date_time_format"); }
+            else if (parseNode.GetChildNode("date_time_format") is { } nullNodeDateTimeFormat && nullNodeDateTimeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateTimeFormat = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("feature_type") is null) { _explicitNullValueFeatureType = default!; _explicitNullProperties?.Remove("feature_type"); }
+            else if (parseNode.GetChildNode("feature_type") is { } nullNodeFeatureType && nullNodeFeatureType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureType = null;
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("http_method") is null) { _explicitNullValueHttpMethod = default!; _explicitNullProperties?.Remove("http_method"); }
+            else if (parseNode.GetChildNode("http_method") is { } nullNodeHttpMethod && nullNodeHttpMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpMethod = null;
+            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
+            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("related_module") is null) { _explicitNullValueRelatedModule = default!; _explicitNullProperties?.Remove("related_module"); }
+            else if (parseNode.GetChildNode("related_module") is { } nullNodeRelatedModule && nullNodeRelatedModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedModule = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("url_parameters") is null) { _explicitNullValueUrlParameters = default!; _explicitNullProperties?.Remove("url_parameters"); }
+            else if (parseNode.GetChildNode("url_parameters") is { } nullNodeUrlParameters && nullNodeUrlParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlParameters = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,107 +49,107 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Authentication configuration. Required for all webhooks, including those without authentication credentials. Use type=general for webhooks that do not require authentication (no connection_name needed). Use type=connection when the webhook endpoint requires authenticated access via a pre-configured connection (connection_name is required).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputAuthentication? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputAuthentication? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; AdditionalData?.Remove("authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputAuthentication? _explicitNullValueAuthentication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputAuthentication Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputAuthentication Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; AdditionalData?.Remove("authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputAuthentication _explicitNullValueAuthentication = default!;
 #endif
         /// <summary>Request body configuration. Only allowed when http_method is POST or PUT. type and format are required. When type=form_data: provide form_data_content (object with module_parameters and custom_parameters arrays); When type=raw: provide raw_data_content (string) and format (JSON, XML, Text, or HTML). When type=none: format may be null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputBody? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputBody? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputBody? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputBody Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputBody Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputBody _explicitNullValueBody = default!;
 #endif
         /// <summary>Optional. Only relevant when a date or datetime merge-field is used in any parameter (headers, url_parameters, or body). Use datetime_format + time_zone when a datetime field is referenced (e.g., ${!Leads.Created_Time}). Use date_format when a date field is referenced (e.g., ${!Leads.Date_1}). Ignored if no date/datetime merge-fields are present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputDateTimeFormat? DateTimeFormat { get => _explicitNullValueDateTimeFormat; set { _explicitNullValueDateTimeFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_time_format"); else _explicitNullProperties?.Remove("date_time_format"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputDateTimeFormat? DateTimeFormat { get => _explicitNullValueDateTimeFormat; set { _explicitNullValueDateTimeFormat = value; AdditionalData?.Remove("date_time_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_time_format"); else _explicitNullProperties?.Remove("date_time_format"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputDateTimeFormat? _explicitNullValueDateTimeFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputDateTimeFormat DateTimeFormat { get => _explicitNullValueDateTimeFormat; set { _explicitNullValueDateTimeFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_time_format"); else _explicitNullProperties?.Remove("date_time_format"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputDateTimeFormat DateTimeFormat { get => _explicitNullValueDateTimeFormat; set { _explicitNullValueDateTimeFormat = value; AdditionalData?.Remove("date_time_format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_time_format"); else _explicitNullProperties?.Remove("date_time_format"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputDateTimeFormat _explicitNullValueDateTimeFormat = default!;
 #endif
         /// <summary>Specify the optional description of the webhook purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Specify the automation feature type for this webhook.Possible values:**workflow** - Workflow Rule.**approval_process** - Approval Process.**blueprint_transition** - Blueprint transition.**blueprint_state** - Blueprint state.**assignment_rules** - Assignment Rules.**kiosk** - Kiosk feature.**commandcenter_service** - CommandCenter service.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputFeatureType? FeatureType { get => _explicitNullValueFeatureType; set { _explicitNullValueFeatureType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_type"); else _explicitNullProperties?.Remove("feature_type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputFeatureType? FeatureType { get => _explicitNullValueFeatureType; set { _explicitNullValueFeatureType = value; AdditionalData?.Remove("feature_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_type"); else _explicitNullProperties?.Remove("feature_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputFeatureType? _explicitNullValueFeatureType = default!;
         /// <summary>HTTP headers for the outgoing webhook request. Only allowed when http_method is POST, PUT, or DELETE. Restricted header name: HOST is not allowed. Parameter names must be unique across the collection (DUPLICATE_DATA).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>Specify the HTTP method used when the webhook fires. POST and PUT accept headers and body. GET and DELETE accept url_parameters. DELETE also accepts headers.Possible values:**POST** - Sends a POST request.**GET** - Sends a GET request.**PUT** - Sends a PUT request.**DELETE** - Sends a DELETE request.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHttpMethod? HttpMethod { get => _explicitNullValueHttpMethod; set { _explicitNullValueHttpMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_method"); else _explicitNullProperties?.Remove("http_method"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHttpMethod? HttpMethod { get => _explicitNullValueHttpMethod; set { _explicitNullValueHttpMethod = value; AdditionalData?.Remove("http_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_method"); else _explicitNullProperties?.Remove("http_method"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHttpMethod? _explicitNullValueHttpMethod = default!;
         /// <summary>The CRM module this webhook is associated with. Provide at least one of api_name or id. Cannot be changed after creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Specify the display name of the webhook. The name must not contain the tilde (~) character.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Related CRM module. Required when feature_type is kiosk. Null otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputRelatedModule? RelatedModule { get => _explicitNullValueRelatedModule; set { _explicitNullValueRelatedModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_module"); else _explicitNullProperties?.Remove("related_module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputRelatedModule? RelatedModule { get => _explicitNullValueRelatedModule; set { _explicitNullValueRelatedModule = value; AdditionalData?.Remove("related_module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_module"); else _explicitNullProperties?.Remove("related_module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputRelatedModule? _explicitNullValueRelatedModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputRelatedModule RelatedModule { get => _explicitNullValueRelatedModule; set { _explicitNullValueRelatedModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_module"); else _explicitNullProperties?.Remove("related_module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputRelatedModule RelatedModule { get => _explicitNullValueRelatedModule; set { _explicitNullValueRelatedModule = value; AdditionalData?.Remove("related_module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_module"); else _explicitNullProperties?.Remove("related_module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputRelatedModule _explicitNullValueRelatedModule = default!;
 #endif
         /// <summary>Specify the destination URL that receives the webhook request when triggered. The URL must begin with http://, https://, www., or a merge-field token (${...}). URLs resolving to internal or private host addresses are rejected by SSRF protection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>URL query parameters for the outgoing request. Only allowed when http_method is GET or DELETE.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputUrlParameters? UrlParameters { get => _explicitNullValueUrlParameters; set { _explicitNullValueUrlParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_parameters"); else _explicitNullProperties?.Remove("url_parameters"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputUrlParameters? UrlParameters { get => _explicitNullValueUrlParameters; set { _explicitNullValueUrlParameters = value; AdditionalData?.Remove("url_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_parameters"); else _explicitNullProperties?.Remove("url_parameters"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputUrlParameters? _explicitNullValueUrlParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputUrlParameters UrlParameters { get => _explicitNullValueUrlParameters; set { _explicitNullValueUrlParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_parameters"); else _explicitNullProperties?.Remove("url_parameters"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputUrlParameters UrlParameters { get => _explicitNullValueUrlParameters; set { _explicitNullValueUrlParameters = value; AdditionalData?.Remove("url_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_parameters"); else _explicitNullProperties?.Remove("url_parameters"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputUrlParameters _explicitNullValueUrlParameters = default!;
 #endif
         /// <summary>
@@ -169,9 +181,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "body", n => { Body = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputBody>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputBody.CreateFromDiscriminatorValue); } },
                 { "date_time_format", n => { DateTimeFormat = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputDateTimeFormat>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputDateTimeFormat.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "feature_type", n => { FeatureType = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputFeatureType>(); } },
+                { "feature_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputFeatureType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFeatureType = default; _explicitNullProperties?.Remove("feature_type"); AdditionalData["feature_type"] = unknown; } else { FeatureType = parsed; AdditionalData.Remove("feature_type"); } } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHeaders>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHeaders.CreateFromDiscriminatorValue); } },
-                { "http_method", n => { HttpMethod = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHttpMethod>(); } },
+                { "http_method", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputHttpMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHttpMethod = default; _explicitNullProperties?.Remove("http_method"); AdditionalData["http_method"] = unknown; } else { HttpMethod = parsed; AdditionalData.Remove("http_method"); } } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputModule>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputModule.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "related_module", n => { RelatedModule = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputRelatedModule>(global::Soenneker.Zoho.OpenApiClient.Models.WebhookCreateInputRelatedModule.CreateFromDiscriminatorValue); } },

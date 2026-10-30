@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
-            if (parseNode.GetChildNode("function") is { } nullNodeFunction && nullNodeFunction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Function = null;
-            if (parseNode.GetChildNode("function_parameters") is { } nullNodeFunctionParameters && nullNodeFunctionParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionParameters = null;
+            if (parseNode.GetChildNode("criteria") is null) { _explicitNullValueCriteria = default!; _explicitNullProperties?.Remove("criteria"); }
+            else if (parseNode.GetChildNode("criteria") is { } nullNodeCriteria && nullNodeCriteria.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Criteria = null;
+            if (parseNode.GetChildNode("function") is null) { _explicitNullValueFunction = default!; _explicitNullProperties?.Remove("function"); }
+            else if (parseNode.GetChildNode("function") is { } nullNodeFunction && nullNodeFunction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Function = null;
+            if (parseNode.GetChildNode("function_parameters") is null) { _explicitNullValueFunctionParameters = default!; _explicitNullProperties?.Remove("function_parameters"); }
+            else if (parseNode.GetChildNode("function_parameters") is { } nullNodeFunctionParameters && nullNodeFunctionParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionParameters = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the filter criteria for lookup fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionCriteria? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionCriteria? Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionCriteria? _explicitNullValueCriteria = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionCriteria Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionCriteria Criteria { get => _explicitNullValueCriteria; set { _explicitNullValueCriteria = value; AdditionalData?.Remove("criteria"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria"); else _explicitNullProperties?.Remove("criteria"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionCriteria _explicitNullValueCriteria = default!;
 #endif
         /// <summary>Specify the aggregation function.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunction? Function { get => _explicitNullValueFunction; set { _explicitNullValueFunction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function"); else _explicitNullProperties?.Remove("function"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunction? Function { get => _explicitNullValueFunction; set { _explicitNullValueFunction = value; AdditionalData?.Remove("function"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function"); else _explicitNullProperties?.Remove("function"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunction? _explicitNullValueFunction = default!;
         /// <summary>Specify the fields to aggregate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunctionParametersItem>? FunctionParameters { get => _explicitNullValueFunctionParameters; set { _explicitNullValueFunctionParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_parameters"); else _explicitNullProperties?.Remove("function_parameters"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunctionParametersItem>? FunctionParameters { get => _explicitNullValueFunctionParameters; set { _explicitNullValueFunctionParameters = value; AdditionalData?.Remove("function_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_parameters"); else _explicitNullProperties?.Remove("function_parameters"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunctionParametersItem>? _explicitNullValueFunctionParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunctionParametersItem> FunctionParameters { get => _explicitNullValueFunctionParameters; set { _explicitNullValueFunctionParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_parameters"); else _explicitNullProperties?.Remove("function_parameters"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunctionParametersItem> FunctionParameters { get => _explicitNullValueFunctionParameters; set { _explicitNullValueFunctionParameters = value; AdditionalData?.Remove("function_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_parameters"); else _explicitNullProperties?.Remove("function_parameters"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunctionParametersItem> _explicitNullValueFunctionParameters = default!;
 #endif
         /// <summary>
@@ -74,7 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionCriteria.CreateFromDiscriminatorValue); } },
-                { "function", n => { Function = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunction>(); } },
+                { "function", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFunction = default; _explicitNullProperties?.Remove("function"); AdditionalData["function"] = unknown; } else { Function = parsed; AdditionalData.Remove("function"); } } },
                 { "function_parameters", n => { FunctionParameters = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunctionParametersItem>(global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemRollupSummaryExpressionFunctionParametersItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

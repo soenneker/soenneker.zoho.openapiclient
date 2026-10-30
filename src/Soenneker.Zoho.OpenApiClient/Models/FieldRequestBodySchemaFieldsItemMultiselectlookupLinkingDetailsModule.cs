@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("plural_label") is { } nullNodePluralLabel && nullNodePluralLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralLabel = null;
+            if (parseNode.GetChildNode("plural_label") is null) { _explicitNullValuePluralLabel = default!; _explicitNullProperties?.Remove("plural_label"); }
+            else if (parseNode.GetChildNode("plural_label") is { } nullNodePluralLabel && nullNodePluralLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluralLabel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the plural label for linking module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
+        public string? PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; AdditionalData?.Remove("plural_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
         private string? _explicitNullValuePluralLabel = default!;
 #nullable restore
 #else
-        public string PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
+        public string PluralLabel { get => _explicitNullValuePluralLabel; set { _explicitNullValuePluralLabel = value; AdditionalData?.Remove("plural_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plural_label"); else _explicitNullProperties?.Remove("plural_label"); } }
         private string _explicitNullValuePluralLabel = default!;
 #endif
         /// <summary>

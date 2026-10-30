@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("base_currency") is { } nullNodeBaseCurrency && nullNodeBaseCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseCurrency = null;
+            if (parseNode.GetChildNode("base_currency") is null) { _explicitNullValueBaseCurrency = default!; _explicitNullProperties?.Remove("base_currency"); }
+            else if (parseNode.GetChildNode("base_currency") is { } nullNodeBaseCurrency && nullNodeBaseCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseCurrency = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Success response object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrency200ResponseBaseCurrency? BaseCurrency { get => _explicitNullValueBaseCurrency; set { _explicitNullValueBaseCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_currency"); else _explicitNullProperties?.Remove("base_currency"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrency200ResponseBaseCurrency? BaseCurrency { get => _explicitNullValueBaseCurrency; set { _explicitNullValueBaseCurrency = value; AdditionalData?.Remove("base_currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_currency"); else _explicitNullProperties?.Remove("base_currency"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrency200ResponseBaseCurrency? _explicitNullValueBaseCurrency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrency200ResponseBaseCurrency BaseCurrency { get => _explicitNullValueBaseCurrency; set { _explicitNullValueBaseCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_currency"); else _explicitNullProperties?.Remove("base_currency"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrency200ResponseBaseCurrency BaseCurrency { get => _explicitNullValueBaseCurrency; set { _explicitNullValueBaseCurrency = value; AdditionalData?.Remove("base_currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_currency"); else _explicitNullProperties?.Remove("base_currency"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesEnableCurrency200ResponseBaseCurrency _explicitNullValueBaseCurrency = default!;
 #endif
         /// <summary>

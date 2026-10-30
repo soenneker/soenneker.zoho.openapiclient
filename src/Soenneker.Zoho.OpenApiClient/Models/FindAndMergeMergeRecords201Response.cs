@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("merge") is { } nullNodeMerge && nullNodeMerge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Merge = null;
+            if (parseNode.GetChildNode("merge") is null) { _explicitNullValueMerge = default!; _explicitNullProperties?.Remove("merge"); }
+            else if (parseNode.GetChildNode("merge") is { } nullNodeMerge && nullNodeMerge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Merge = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains the list of merge operation results indicating whether the merge completed or was scheduled.  </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem>? Merge { get => _explicitNullValueMerge; set { _explicitNullValueMerge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge"); else _explicitNullProperties?.Remove("merge"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem>? Merge { get => _explicitNullValueMerge; set { _explicitNullValueMerge = value; AdditionalData?.Remove("merge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge"); else _explicitNullProperties?.Remove("merge"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem>? _explicitNullValueMerge = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem> Merge { get => _explicitNullValueMerge; set { _explicitNullValueMerge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge"); else _explicitNullProperties?.Remove("merge"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem> Merge { get => _explicitNullValueMerge; set { _explicitNullValueMerge = value; AdditionalData?.Remove("merge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge"); else _explicitNullProperties?.Remove("merge"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem> _explicitNullValueMerge = default!;
 #endif
         /// <summary>

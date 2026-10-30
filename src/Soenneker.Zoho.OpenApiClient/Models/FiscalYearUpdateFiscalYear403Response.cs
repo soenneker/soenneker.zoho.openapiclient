@@ -19,7 +19,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fiscal_year") is { } nullNodeFiscalYear && nullNodeFiscalYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiscalYear = null;
+            if (parseNode.GetChildNode("fiscal_year") is null) { _explicitNullValueFiscalYear = default!; _explicitNullProperties?.Remove("fiscal_year"); }
+            else if (parseNode.GetChildNode("fiscal_year") is { } nullNodeFiscalYear && nullNodeFiscalYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiscalYear = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,11 +28,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the wrapped error response returned when the user does not have permission to update the fiscal year settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalNoPermissionErrorFiscalYear? FiscalYear { get => _explicitNullValueFiscalYear; set { _explicitNullValueFiscalYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fiscal_year"); else _explicitNullProperties?.Remove("fiscal_year"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalNoPermissionErrorFiscalYear? FiscalYear { get => _explicitNullValueFiscalYear; set { _explicitNullValueFiscalYear = value; AdditionalData?.Remove("fiscal_year"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fiscal_year"); else _explicitNullProperties?.Remove("fiscal_year"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FiscalNoPermissionErrorFiscalYear? _explicitNullValueFiscalYear = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalNoPermissionErrorFiscalYear FiscalYear { get => _explicitNullValueFiscalYear; set { _explicitNullValueFiscalYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fiscal_year"); else _explicitNullProperties?.Remove("fiscal_year"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FiscalNoPermissionErrorFiscalYear FiscalYear { get => _explicitNullValueFiscalYear; set { _explicitNullValueFiscalYear = value; AdditionalData?.Remove("fiscal_year"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fiscal_year"); else _explicitNullProperties?.Remove("fiscal_year"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FiscalNoPermissionErrorFiscalYear _explicitNullValueFiscalYear = default!;
 #endif
         /// <summary>The primary error message.</summary>

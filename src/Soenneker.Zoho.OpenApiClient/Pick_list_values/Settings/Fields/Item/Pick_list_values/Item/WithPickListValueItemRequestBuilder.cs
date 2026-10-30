@@ -97,7 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pic
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pick_list_values.Item.WithPickListValueItemRequestBuilder.WithPickListValueItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/pick_list_values/settings/fields/{fieldId}/pick_list_values/{pickListValueId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -116,7 +116,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pic
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pick_list_values.Item.WithPickListValueItemRequestBuilder.WithPickListValueItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/pick_list_values/settings/fields/{fieldId}/pick_list_values/{pickListValueId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

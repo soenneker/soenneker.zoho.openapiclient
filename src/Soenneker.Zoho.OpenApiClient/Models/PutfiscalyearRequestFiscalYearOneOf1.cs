@@ -18,13 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("display_based_on") is { } nullNodeDisplayBasedOn && nullNodeDisplayBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayBasedOn = null;
+            if (parseNode.GetChildNode("display_based_on") is null) { _explicitNullValueDisplayBasedOn = default!; _explicitNullProperties?.Remove("display_based_on"); }
+            else if (parseNode.GetChildNode("display_based_on") is { } nullNodeDisplayBasedOn && nullNodeDisplayBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayBasedOn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether the fiscal year label is based on the start month or the end month of the fiscal period. Possible values: `start_month`, `end_month`.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdateDisplayBasedOn? DisplayBasedOn { get => _explicitNullValueDisplayBasedOn; set { _explicitNullValueDisplayBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_based_on"); else _explicitNullProperties?.Remove("display_based_on"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdateDisplayBasedOn? DisplayBasedOn { get => _explicitNullValueDisplayBasedOn; set { _explicitNullValueDisplayBasedOn = value; AdditionalData?.Remove("display_based_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_based_on"); else _explicitNullProperties?.Remove("display_based_on"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdateDisplayBasedOn? _explicitNullValueDisplayBasedOn = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutfiscalyearRequestFiscalYearOneOf1"/> and sets the default values.
@@ -51,7 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "display_based_on", n => { DisplayBasedOn = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdateDisplayBasedOn>(); } },
+                { "display_based_on", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.DisplayBasedOnFiscalYearUpdateDisplayBasedOn>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDisplayBasedOn = default; _explicitNullProperties?.Remove("display_based_on"); AdditionalData["display_based_on"] = unknown; } else { DisplayBasedOn = parsed; AdditionalData.Remove("display_based_on"); } } },
             };
         }
         /// <summary>

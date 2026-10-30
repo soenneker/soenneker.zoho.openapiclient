@@ -18,13 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("job_sheet_enabled") is { } nullNodeJobSheetEnabled && nullNodeJobSheetEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobSheetEnabled = null;
+            if (parseNode.GetChildNode("job_sheet_enabled") is null) { _explicitNullValueJobSheetEnabled = default!; _explicitNullProperties?.Remove("job_sheet_enabled"); }
+            else if (parseNode.GetChildNode("job_sheet_enabled") is { } nullNodeJobSheetEnabled && nullNodeJobSheetEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobSheetEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes whether the job sheet is enabled for theorganization. When the job sheet is enabled, a jobsheet can be generated for a service appointment oncethe appointment is marked complete.Possible values:- **true**: The job sheet is enabled for theorganization. This is the default value.- **false**: The job sheet is disabled for theorganization.</summary>
-        public bool? JobSheetEnabled { get => _explicitNullValueJobSheetEnabled; set { _explicitNullValueJobSheetEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_sheet_enabled"); else _explicitNullProperties?.Remove("job_sheet_enabled"); } }
+        public bool? JobSheetEnabled { get => _explicitNullValueJobSheetEnabled; set { _explicitNullValueJobSheetEnabled = value; AdditionalData?.Remove("job_sheet_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("job_sheet_enabled"); else _explicitNullProperties?.Remove("job_sheet_enabled"); } }
         private bool? _explicitNullValueJobSheetEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ServicePreferenceGetServicePreference200ResponseServicePreferences"/> and sets the default values.

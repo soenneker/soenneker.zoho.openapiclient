@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("duplicate_check_preference") is { } nullNodeDuplicateCheckPreference && nullNodeDuplicateCheckPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateCheckPreference = null;
+            if (parseNode.GetChildNode("duplicate_check_preference") is null) { _explicitNullValueDuplicateCheckPreference = default!; _explicitNullProperties?.Remove("duplicate_check_preference"); }
+            else if (parseNode.GetChildNode("duplicate_check_preference") is { } nullNodeDuplicateCheckPreference && nullNodeDuplicateCheckPreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateCheckPreference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Duplicate Check Preference update response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200ResponseDuplicateCheckPreference? DuplicateCheckPreference { get => _explicitNullValueDuplicateCheckPreference; set { _explicitNullValueDuplicateCheckPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_check_preference"); else _explicitNullProperties?.Remove("duplicate_check_preference"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200ResponseDuplicateCheckPreference? DuplicateCheckPreference { get => _explicitNullValueDuplicateCheckPreference; set { _explicitNullValueDuplicateCheckPreference = value; AdditionalData?.Remove("duplicate_check_preference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_check_preference"); else _explicitNullProperties?.Remove("duplicate_check_preference"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200ResponseDuplicateCheckPreference? _explicitNullValueDuplicateCheckPreference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200ResponseDuplicateCheckPreference DuplicateCheckPreference { get => _explicitNullValueDuplicateCheckPreference; set { _explicitNullValueDuplicateCheckPreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_check_preference"); else _explicitNullProperties?.Remove("duplicate_check_preference"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200ResponseDuplicateCheckPreference DuplicateCheckPreference { get => _explicitNullValueDuplicateCheckPreference; set { _explicitNullValueDuplicateCheckPreference = value; AdditionalData?.Remove("duplicate_check_preference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_check_preference"); else _explicitNullProperties?.Remove("duplicate_check_preference"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.DuplicateCheckPreferenceUpdateDuplicateCheckPreference200ResponseDuplicateCheckPreference _explicitNullValueDuplicateCheckPreference = default!;
 #endif
         /// <summary>

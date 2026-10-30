@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("configured_areas") is { } nullNodeConfiguredAreas && nullNodeConfiguredAreas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfiguredAreas = null;
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("configured_areas") is null) { _explicitNullValueConfiguredAreas = default!; _explicitNullProperties?.Remove("configured_areas"); }
+            else if (parseNode.GetChildNode("configured_areas") is { } nullNodeConfiguredAreas && nullNodeConfiguredAreas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfiguredAreas = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for configured_areas in records count response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested? ConfiguredAreas { get => _explicitNullValueConfiguredAreas; set { _explicitNullValueConfiguredAreas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured_areas"); else _explicitNullProperties?.Remove("configured_areas"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested? ConfiguredAreas { get => _explicitNullValueConfiguredAreas; set { _explicitNullValueConfiguredAreas = value; AdditionalData?.Remove("configured_areas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured_areas"); else _explicitNullProperties?.Remove("configured_areas"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested? _explicitNullValueConfiguredAreas = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested ConfiguredAreas { get => _explicitNullValueConfiguredAreas; set { _explicitNullValueConfiguredAreas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured_areas"); else _explicitNullProperties?.Remove("configured_areas"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested ConfiguredAreas { get => _explicitNullValueConfiguredAreas; set { _explicitNullValueConfiguredAreas = value; AdditionalData?.Remove("configured_areas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured_areas"); else _explicitNullProperties?.Remove("configured_areas"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetConfiguredAreasNested _explicitNullValueConfiguredAreas = default!;
 #endif
         /// <summary>Total count of records associated with the tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public string? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private string? _explicitNullValueCount = default!;
 #nullable restore
 #else
-        public string Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public string Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private string _explicitNullValueCount = default!;
 #endif
         /// <summary>

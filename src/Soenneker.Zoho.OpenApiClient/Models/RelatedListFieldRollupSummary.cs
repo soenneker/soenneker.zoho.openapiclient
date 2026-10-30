@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("return_type") is { } nullNodeReturnType && nullNodeReturnType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnType = null;
+            if (parseNode.GetChildNode("return_type") is null) { _explicitNullValueReturnType = default!; _explicitNullProperties?.Remove("return_type"); }
+            else if (parseNode.GetChildNode("return_type") is { } nullNodeReturnType && nullNodeReturnType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The return type of the rollup summary (e.g., integer, number).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReturnType { get => _explicitNullValueReturnType; set { _explicitNullValueReturnType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_type"); else _explicitNullProperties?.Remove("return_type"); } }
+        public string? ReturnType { get => _explicitNullValueReturnType; set { _explicitNullValueReturnType = value; AdditionalData?.Remove("return_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_type"); else _explicitNullProperties?.Remove("return_type"); } }
         private string? _explicitNullValueReturnType = default!;
 #nullable restore
 #else
-        public string ReturnType { get => _explicitNullValueReturnType; set { _explicitNullValueReturnType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_type"); else _explicitNullProperties?.Remove("return_type"); } }
+        public string ReturnType { get => _explicitNullValueReturnType; set { _explicitNullValueReturnType = value; AdditionalData?.Remove("return_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("return_type"); else _explicitNullProperties?.Remove("return_type"); } }
         private string _explicitNullValueReturnType = default!;
 #endif
         /// <summary>

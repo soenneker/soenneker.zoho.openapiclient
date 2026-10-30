@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
-            if (parseNode.GetChildNode("recycle_bin") is { } nullNodeRecycleBin && nullNodeRecycleBin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecycleBin = null;
+            if (parseNode.GetChildNode("info") is null) { _explicitNullValueInfo = default!; _explicitNullProperties?.Remove("info"); }
+            else if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
+            if (parseNode.GetChildNode("recycle_bin") is null) { _explicitNullValueRecycleBin = default!; _explicitNullProperties?.Remove("recycle_bin"); }
+            else if (parseNode.GetChildNode("recycle_bin") is { } nullNodeRecycleBin && nullNodeRecycleBin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecycleBin = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents pagination and count information for the returned list of recycle-bin records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseInfo? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseInfo _explicitNullValueInfo = default!;
 #endif
         /// <summary>Represents the list of recycle-bin records that match the request, with up to 200 records per page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseRecycleBinItem>? RecycleBin { get => _explicitNullValueRecycleBin; set { _explicitNullValueRecycleBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recycle_bin"); else _explicitNullProperties?.Remove("recycle_bin"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseRecycleBinItem>? RecycleBin { get => _explicitNullValueRecycleBin; set { _explicitNullValueRecycleBin = value; AdditionalData?.Remove("recycle_bin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recycle_bin"); else _explicitNullProperties?.Remove("recycle_bin"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseRecycleBinItem>? _explicitNullValueRecycleBin = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseRecycleBinItem> RecycleBin { get => _explicitNullValueRecycleBin; set { _explicitNullValueRecycleBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recycle_bin"); else _explicitNullProperties?.Remove("recycle_bin"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseRecycleBinItem> RecycleBin { get => _explicitNullValueRecycleBin; set { _explicitNullValueRecycleBin = value; AdditionalData?.Remove("recycle_bin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recycle_bin"); else _explicitNullProperties?.Remove("recycle_bin"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecords200ResponseRecycleBinItem> _explicitNullValueRecycleBin = default!;
 #endif
         /// <summary>

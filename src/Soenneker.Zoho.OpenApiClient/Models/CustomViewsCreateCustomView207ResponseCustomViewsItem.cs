@@ -50,9 +50,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null && (parseNode.GetChildNode("code")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("SUCCESS".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("details") != null && parseNode.GetChildNode("message") != null && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("success".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal)))))();
-            if (result.CustomViewCreateFailureItem == null && result.CustomViewPostSuccessResponse == null && matchesUnionBranch0) result.CustomViewPostSuccessResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostSuccessResponse(), parseNode);
-            if (result.CustomViewCreateFailureItem == null && result.CustomViewPostSuccessResponse == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.CustomViewPostSuccessResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostSuccessResponse(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("code") && shapeMembers1.ContainsKey("details") && shapeMembers1.ContainsKey("message") && shapeMembers1.ContainsKey("status") && (!shapeMembers1.ContainsKey("status") || (((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["status"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "success".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("code") || (((shapeMembers1["code"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["code"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal5 && "SUCCESS".Equals(literal5.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("details") || (((shapeMembers1["details"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["details"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject8 || (shapeObject8.GetValue() is var shapeMembers9 && (shapeMembers9.ContainsKey("id") && (!shapeMembers9.ContainsKey("id") || (((shapeMembers9["id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))))))))) && (!shapeMembers1.ContainsKey("message") || (((shapeMembers1["message"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => true))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.CustomViewCreateFailureItem == null && result.CustomViewPostSuccessResponse == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CustomViewPostSuccessResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPostSuccessResponse(), parseNode);
             if (result.CustomViewCreateFailureItem == null && result.CustomViewPostSuccessResponse == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -62,6 +66,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(CustomViewCreateFailureItem != null)
             {
                 return CustomViewCreateFailureItem.GetFieldDeserializers();
@@ -80,7 +86,10 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (CustomViewCreateFailureItem == null && CustomViewPostSuccessResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (CustomViewPostSuccessResponse != null && CustomViewCreateFailureItem == null) { if (CustomViewPostSuccessResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CustomViewPostSuccessResponse); return; }
+            int selectedUnionBranches = 0;
+            if (CustomViewCreateFailureItem != null) selectedUnionBranches++;
+            if (CustomViewPostSuccessResponse != null) selectedUnionBranches++;
+            if (CustomViewPostSuccessResponse != null && selectedUnionBranches == 1) { if (CustomViewPostSuccessResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CustomViewPostSuccessResponse); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CustomViewCreateFailureItem != null)

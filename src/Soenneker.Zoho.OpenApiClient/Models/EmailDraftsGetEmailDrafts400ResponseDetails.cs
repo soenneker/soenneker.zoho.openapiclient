@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("param_name") is { } nullNodeParamName && nullNodeParamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamName = null;
-            if (parseNode.GetChildNode("resource_path_index") is { } nullNodeResourcePathIndex && nullNodeResourcePathIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourcePathIndex = null;
+            if (parseNode.GetChildNode("param_name") is null) { _explicitNullValueParamName = default!; _explicitNullProperties?.Remove("param_name"); }
+            else if (parseNode.GetChildNode("param_name") is { } nullNodeParamName && nullNodeParamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamName = null;
+            if (parseNode.GetChildNode("resource_path_index") is null) { _explicitNullValueResourcePathIndex = default!; _explicitNullProperties?.Remove("resource_path_index"); }
+            else if (parseNode.GetChildNode("resource_path_index") is { } nullNodeResourcePathIndex && nullNodeResourcePathIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourcePathIndex = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Name of the query parameter whose value failed pattern validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
+        public string? ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; AdditionalData?.Remove("param_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
         private string? _explicitNullValueParamName = default!;
 #nullable restore
 #else
-        public string ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
+        public string ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; AdditionalData?.Remove("param_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
         private string _explicitNullValueParamName = default!;
 #endif
         /// <summary>Index of the invalid path parameter.</summary>
-        public int? ResourcePathIndex { get => _explicitNullValueResourcePathIndex; set { _explicitNullValueResourcePathIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_path_index"); else _explicitNullProperties?.Remove("resource_path_index"); } }
+        public int? ResourcePathIndex { get => _explicitNullValueResourcePathIndex; set { _explicitNullValueResourcePathIndex = value; AdditionalData?.Remove("resource_path_index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_path_index"); else _explicitNullProperties?.Remove("resource_path_index"); } }
         private int? _explicitNullValueResourcePathIndex = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts400ResponseDetails"/> and sets the default values.

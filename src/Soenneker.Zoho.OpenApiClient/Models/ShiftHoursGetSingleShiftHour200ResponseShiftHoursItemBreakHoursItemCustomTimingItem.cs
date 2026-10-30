@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("break_timing") is { } nullNodeBreakTiming && nullNodeBreakTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BreakTiming = null;
-            if (parseNode.GetChildNode("days") is { } nullNodeDays && nullNodeDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Days = null;
+            if (parseNode.GetChildNode("break_timing") is null) { _explicitNullValueBreakTiming = default!; _explicitNullProperties?.Remove("break_timing"); }
+            else if (parseNode.GetChildNode("break_timing") is { } nullNodeBreakTiming && nullNodeBreakTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BreakTiming = null;
+            if (parseNode.GetChildNode("days") is null) { _explicitNullValueDays = default!; _explicitNullProperties?.Remove("days"); }
+            else if (parseNode.GetChildNode("days") is { } nullNodeDays && nullNodeDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Days = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the start and end time of the break on the specified dayin `HH:MM` 24-hour format. A break mustbe longer than 15 minutes and shorterthan 2 hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BreakTiming { get => _explicitNullValueBreakTiming; set { _explicitNullValueBreakTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_timing"); else _explicitNullProperties?.Remove("break_timing"); } }
+        public List<string>? BreakTiming { get => _explicitNullValueBreakTiming; set { _explicitNullValueBreakTiming = value; AdditionalData?.Remove("break_timing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_timing"); else _explicitNullProperties?.Remove("break_timing"); } }
         private List<string>? _explicitNullValueBreakTiming = default!;
 #nullable restore
 #else
-        public List<string> BreakTiming { get => _explicitNullValueBreakTiming; set { _explicitNullValueBreakTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_timing"); else _explicitNullProperties?.Remove("break_timing"); } }
+        public List<string> BreakTiming { get => _explicitNullValueBreakTiming; set { _explicitNullValueBreakTiming = value; AdditionalData?.Remove("break_timing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("break_timing"); else _explicitNullProperties?.Remove("break_timing"); } }
         private List<string> _explicitNullValueBreakTiming = default!;
 #endif
         /// <summary>Represents the day of the week to whichthis custom break timing applies.**Possible values**: - Monday- Tuesday- Wednesday- Thursday- Friday- Saturday- Sunday</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
+        public string? Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; AdditionalData?.Remove("days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
         private string? _explicitNullValueDays = default!;
 #nullable restore
 #else
-        public string Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
+        public string Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; AdditionalData?.Remove("days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
         private string _explicitNullValueDays = default!;
 #endif
         /// <summary>

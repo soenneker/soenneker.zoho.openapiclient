@@ -18,17 +18,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fields_update_supported") is { } nullNodeFieldsUpdateSupported && nullNodeFieldsUpdateSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldsUpdateSupported = null;
-            if (parseNode.GetChildNode("record_operations_supported") is { } nullNodeRecordOperationsSupported && nullNodeRecordOperationsSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordOperationsSupported = null;
+            if (parseNode.GetChildNode("fields_update_supported") is null) { _explicitNullValueFieldsUpdateSupported = default!; _explicitNullProperties?.Remove("fields_update_supported"); }
+            else if (parseNode.GetChildNode("fields_update_supported") is { } nullNodeFieldsUpdateSupported && nullNodeFieldsUpdateSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldsUpdateSupported = null;
+            if (parseNode.GetChildNode("record_operations_supported") is null) { _explicitNullValueRecordOperationsSupported = default!; _explicitNullProperties?.Remove("record_operations_supported"); }
+            else if (parseNode.GetChildNode("record_operations_supported") is { } nullNodeRecordOperationsSupported && nullNodeRecordOperationsSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordOperationsSupported = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if field updates are supported by email parser.</summary>
-        public bool? FieldsUpdateSupported { get => _explicitNullValueFieldsUpdateSupported; set { _explicitNullValueFieldsUpdateSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields_update_supported"); else _explicitNullProperties?.Remove("fields_update_supported"); } }
+        public bool? FieldsUpdateSupported { get => _explicitNullValueFieldsUpdateSupported; set { _explicitNullValueFieldsUpdateSupported = value; AdditionalData?.Remove("fields_update_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields_update_supported"); else _explicitNullProperties?.Remove("fields_update_supported"); } }
         private bool? _explicitNullValueFieldsUpdateSupported = default!;
         /// <summary>Indicates if record operations are supported by email parser.</summary>
-        public bool? RecordOperationsSupported { get => _explicitNullValueRecordOperationsSupported; set { _explicitNullValueRecordOperationsSupported = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_operations_supported"); else _explicitNullProperties?.Remove("record_operations_supported"); } }
+        public bool? RecordOperationsSupported { get => _explicitNullValueRecordOperationsSupported; set { _explicitNullValueRecordOperationsSupported = value; AdditionalData?.Remove("record_operations_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_operations_supported"); else _explicitNullProperties?.Remove("record_operations_supported"); } }
         private bool? _explicitNullValueRecordOperationsSupported = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaEmailParser"/> and sets the default values.

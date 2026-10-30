@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("3060320000000666022") is { } nullNodeThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo && nullNodeThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = null;
+            if (parseNode.GetChildNode("3060320000000666022") is null) { _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = default!; _explicitNullProperties?.Remove("3060320000000666022"); }
+            else if (parseNode.GetChildNode("3060320000000666022") is { } nullNodeThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo && nullNodeThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Nested schema for tag ID 3060320000000666022 configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1? ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo { get => _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo; set { _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3060320000000666022"); else _explicitNullProperties?.Remove("3060320000000666022"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1? ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo { get => _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo; set { _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = value; AdditionalData?.Remove("3060320000000666022"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3060320000000666022"); else _explicitNullProperties?.Remove("3060320000000666022"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1? _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1 ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo { get => _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo; set { _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3060320000000666022"); else _explicitNullProperties?.Remove("3060320000000666022"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1 ThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo { get => _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo; set { _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = value; AdditionalData?.Remove("3060320000000666022"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("3060320000000666022"); else _explicitNullProperties?.Remove("3060320000000666022"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.Get3060320000000666022Nested1 _explicitNullValueThreeZeroSixZeroThreeTwoZeroZeroZeroZeroZeroZeroZeroSixSixSixZeroTwoTwo = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sort_by") is { } nullNodeSortBy && nullNodeSortBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortBy = null;
-            if (parseNode.GetChildNode("sort_order") is { } nullNodeSortOrder && nullNodeSortOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrder = null;
+            if (parseNode.GetChildNode("sort_by") is null) { _explicitNullValueSortBy = default!; _explicitNullProperties?.Remove("sort_by"); }
+            else if (parseNode.GetChildNode("sort_by") is { } nullNodeSortBy && nullNodeSortBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortBy = null;
+            if (parseNode.GetChildNode("sort_order") is null) { _explicitNullValueSortOrder = default!; _explicitNullProperties?.Remove("sort_order"); }
+            else if (parseNode.GetChildNode("sort_order") is { } nullNodeSortOrder && nullNodeSortOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrder = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents a reference to a field in the Custom View, identified by its API name and unique ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldReference? SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldReference? SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; AdditionalData?.Remove("sort_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldReference? _explicitNullValueSortBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldReference SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldReference SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; AdditionalData?.Remove("sort_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldReference _explicitNullValueSortBy = default!;
 #endif
         /// <summary>Specify the sort order for the Custom View.Possible values:**asc** - Ascending order.**desc** - Descending order.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortByIdRequestCustomViewsItemSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortByIdRequestCustomViewsItemSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortByIdRequestCustomViewsItemSortOrder? _explicitNullValueSortOrder = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortByIdRequestCustomViewsItem"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "sort_by", n => { SortBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>(global::Soenneker.Zoho.OpenApiClient.Models.FieldReference.CreateFromDiscriminatorValue); } },
-                { "sort_order", n => { SortOrder = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortByIdRequestCustomViewsItemSortOrder>(); } },
+                { "sort_order", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsChangeSortByIdRequestCustomViewsItemSortOrder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSortOrder = default; _explicitNullProperties?.Remove("sort_order"); AdditionalData["sort_order"] = unknown; } else { SortOrder = parsed; AdditionalData.Remove("sort_order"); } } },
             };
         }
         /// <summary>

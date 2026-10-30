@@ -18,27 +18,30 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
-            if (parseNode.GetChildNode("over_write") is { } nullNodeOverWrite && nullNodeOverWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverWrite = null;
-            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("ids") is null) { _explicitNullValueIds = default!; _explicitNullProperties?.Remove("ids"); }
+            else if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
+            if (parseNode.GetChildNode("over_write") is null) { _explicitNullValueOverWrite = default!; _explicitNullProperties?.Remove("over_write"); }
+            else if (parseNode.GetChildNode("over_write") is { } nullNodeOverWrite && nullNodeOverWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverWrite = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>JSON array string of record IDs to associate tags with. Use the [Get Records API](record.yaml#$.paths./module.get) to retrieve record IDs.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002538026QuoteRightBracketIds? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002538026QuoteRightBracketIds? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; AdditionalData?.Remove("ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002538026QuoteRightBracketIds? _explicitNullValueIds = default!;
         /// <summary>If true, replaces all existing tags. If false, appends tags to existing ones.</summary>
-        public bool? OverWrite { get => _explicitNullValueOverWrite; set { _explicitNullValueOverWrite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("over_write"); else _explicitNullProperties?.Remove("over_write"); } }
+        public bool? OverWrite { get => _explicitNullValueOverWrite; set { _explicitNullValueOverWrite = value; AdditionalData?.Remove("over_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("over_write"); else _explicitNullProperties?.Remove("over_write"); } }
         private bool? _explicitNullValueOverWrite = default!;
         /// <summary>Array of tags to associate with the records (Required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested> _explicitNullValueTags = default!;
 #endif
         /// <summary>
@@ -66,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ids", n => { Ids = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002538026QuoteRightBracketIds>(); } },
+                { "ids", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.LeftBracketQuote3060320000002538026QuoteRightBracketIds>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIds = default; _explicitNullProperties?.Remove("ids"); AdditionalData["ids"] = unknown; } else { Ids = parsed; AdditionalData.Remove("ids"); } } },
                 { "over_write", n => { OverWrite = n.GetBoolValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested>(global::Soenneker.Zoho.OpenApiClient.Models.TagsActionsTagsNested.CreateFromDiscriminatorValue)?.AsList(); } },
             };

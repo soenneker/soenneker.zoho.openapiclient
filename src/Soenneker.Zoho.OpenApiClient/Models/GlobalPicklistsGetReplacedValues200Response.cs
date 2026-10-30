@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("replaced_values") is { } nullNodeReplacedValues && nullNodeReplacedValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplacedValues = null;
+            if (parseNode.GetChildNode("replaced_values") is null) { _explicitNullValueReplacedValues = default!; _explicitNullProperties?.Remove("replaced_values"); }
+            else if (parseNode.GetChildNode("replaced_values") is { } nullNodeReplacedValues && nullNodeReplacedValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplacedValues = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array of picklist values that are currently being replaced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetReplacedValues200ResponseReplacedValuesItem>? ReplacedValues { get => _explicitNullValueReplacedValues; set { _explicitNullValueReplacedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replaced_values"); else _explicitNullProperties?.Remove("replaced_values"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetReplacedValues200ResponseReplacedValuesItem>? ReplacedValues { get => _explicitNullValueReplacedValues; set { _explicitNullValueReplacedValues = value; AdditionalData?.Remove("replaced_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replaced_values"); else _explicitNullProperties?.Remove("replaced_values"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetReplacedValues200ResponseReplacedValuesItem>? _explicitNullValueReplacedValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetReplacedValues200ResponseReplacedValuesItem> ReplacedValues { get => _explicitNullValueReplacedValues; set { _explicitNullValueReplacedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replaced_values"); else _explicitNullProperties?.Remove("replaced_values"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetReplacedValues200ResponseReplacedValuesItem> ReplacedValues { get => _explicitNullValueReplacedValues; set { _explicitNullValueReplacedValues = value; AdditionalData?.Remove("replaced_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replaced_values"); else _explicitNullProperties?.Remove("replaced_values"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetReplacedValues200ResponseReplacedValuesItem> _explicitNullValueReplacedValues = default!;
 #endif
         /// <summary>

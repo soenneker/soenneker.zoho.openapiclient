@@ -18,34 +18,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
-            if (parseNode.GetChildNode("param_name") is { } nullNodeParamName && nullNodeParamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamName = null;
-            if (parseNode.GetChildNode("supported_values") is { } nullNodeSupportedValues && nullNodeSupportedValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedValues = null;
+            if (parseNode.GetChildNode("index") is null) { _explicitNullValueIndex = default!; _explicitNullProperties?.Remove("index"); }
+            else if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
+            if (parseNode.GetChildNode("param_name") is null) { _explicitNullValueParamName = default!; _explicitNullProperties?.Remove("param_name"); }
+            else if (parseNode.GetChildNode("param_name") is { } nullNodeParamName && nullNodeParamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParamName = null;
+            if (parseNode.GetChildNode("supported_values") is null) { _explicitNullValueSupportedValues = default!; _explicitNullProperties?.Remove("supported_values"); }
+            else if (parseNode.GetChildNode("supported_values") is { } nullNodeSupportedValues && nullNodeSupportedValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedValues = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Zero-based index of the invalid parameter.</summary>
-        public int? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        public int? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; AdditionalData?.Remove("index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
         private int? _explicitNullValueIndex = default!;
         /// <summary>Name of the invalid parameter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
+        public string? ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; AdditionalData?.Remove("param_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
         private string? _explicitNullValueParamName = default!;
 #nullable restore
 #else
-        public string ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
+        public string ParamName { get => _explicitNullValueParamName; set { _explicitNullValueParamName = value; AdditionalData?.Remove("param_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param_name"); else _explicitNullProperties?.Remove("param_name"); } }
         private string _explicitNullValueParamName = default!;
 #endif
         /// <summary>List of valid values accepted for the parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportedValues { get => _explicitNullValueSupportedValues; set { _explicitNullValueSupportedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_values"); else _explicitNullProperties?.Remove("supported_values"); } }
+        public List<string>? SupportedValues { get => _explicitNullValueSupportedValues; set { _explicitNullValueSupportedValues = value; AdditionalData?.Remove("supported_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_values"); else _explicitNullProperties?.Remove("supported_values"); } }
         private List<string>? _explicitNullValueSupportedValues = default!;
 #nullable restore
 #else
-        public List<string> SupportedValues { get => _explicitNullValueSupportedValues; set { _explicitNullValueSupportedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_values"); else _explicitNullProperties?.Remove("supported_values"); } }
+        public List<string> SupportedValues { get => _explicitNullValueSupportedValues; set { _explicitNullValueSupportedValues = value; AdditionalData?.Remove("supported_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_values"); else _explicitNullProperties?.Remove("supported_values"); } }
         private List<string> _explicitNullValueSupportedValues = default!;
 #endif
         /// <summary>

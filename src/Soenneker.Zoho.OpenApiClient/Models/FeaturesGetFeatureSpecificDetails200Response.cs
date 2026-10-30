@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("__features") is { } nullNodeFeatures && nullNodeFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Features = null;
+            if (parseNode.GetChildNode("__features") is null) { _explicitNullValueFeatures = default!; _explicitNullProperties?.Remove("__features"); }
+            else if (parseNode.GetChildNode("__features") is { } nullNodeFeatures && nullNodeFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Features = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list containing the detailed information for the requested feature. Always returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200ResponseFeaturesItem>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__features"); else _explicitNullProperties?.Remove("__features"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200ResponseFeaturesItem>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("__features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__features"); else _explicitNullProperties?.Remove("__features"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200ResponseFeaturesItem>? _explicitNullValueFeatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200ResponseFeaturesItem> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__features"); else _explicitNullProperties?.Remove("__features"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200ResponseFeaturesItem> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("__features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__features"); else _explicitNullProperties?.Remove("__features"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.FeaturesGetFeatureSpecificDetails200ResponseFeaturesItem> _explicitNullValueFeatures = default!;
 #endif
         /// <summary>

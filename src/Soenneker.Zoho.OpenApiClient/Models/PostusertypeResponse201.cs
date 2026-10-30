@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("user_type") is { } nullNodeUserType && nullNodeUserType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserType = null;
+            if (parseNode.GetChildNode("user_type") is null) { _explicitNullValueUserType = default!; _explicitNullProperties?.Remove("user_type"); }
+            else if (parseNode.GetChildNode("user_type") is { } nullNodeUserType && nullNodeUserType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>An array containing the full configuration of the newly created portal user type, including its generated identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested1>? UserType { get => _explicitNullValueUserType; set { _explicitNullValueUserType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_type"); else _explicitNullProperties?.Remove("user_type"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested1>? UserType { get => _explicitNullValueUserType; set { _explicitNullValueUserType = value; AdditionalData?.Remove("user_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_type"); else _explicitNullProperties?.Remove("user_type"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested1>? _explicitNullValueUserType = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested1> UserType { get => _explicitNullValueUserType; set { _explicitNullValueUserType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_type"); else _explicitNullProperties?.Remove("user_type"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested1> UserType { get => _explicitNullValueUserType; set { _explicitNullValueUserType = value; AdditionalData?.Remove("user_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_type"); else _explicitNullProperties?.Remove("user_type"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UserTypeNested1> _explicitNullValueUserType = default!;
 #endif
         /// <summary>

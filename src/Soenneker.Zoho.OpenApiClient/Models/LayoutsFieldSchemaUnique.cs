@@ -18,13 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("case_sensitive") is { } nullNodeCaseSensitive && nullNodeCaseSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaseSensitive = null;
+            if (parseNode.GetChildNode("case_sensitive") is null) { _explicitNullValueCaseSensitive = default!; _explicitNullProperties?.Remove("case_sensitive"); }
+            else if (parseNode.GetChildNode("case_sensitive") is { } nullNodeCaseSensitive && nullNodeCaseSensitive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaseSensitive = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the field&apos;s uniqueness constraint treats values differing only in letter case as distinct. Possible values: `true` — case-sensitive comparison is applied and values with different casing are treated as unique; `false` — the uniqueness check is case-insensitive.</summary>
-        public bool? CaseSensitive { get => _explicitNullValueCaseSensitive; set { _explicitNullValueCaseSensitive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("case_sensitive"); else _explicitNullProperties?.Remove("case_sensitive"); } }
+        public bool? CaseSensitive { get => _explicitNullValueCaseSensitive; set { _explicitNullValueCaseSensitive = value; AdditionalData?.Remove("case_sensitive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("case_sensitive"); else _explicitNullProperties?.Remove("case_sensitive"); } }
         private bool? _explicitNullValueCaseSensitive = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaUnique"/> and sets the default values.

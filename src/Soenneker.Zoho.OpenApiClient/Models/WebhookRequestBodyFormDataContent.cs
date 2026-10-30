@@ -18,9 +18,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_parameters") is { } nullNodeCustomParameters && nullNodeCustomParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomParameters = null;
-            if (parseNode.GetChildNode("module_parameters") is { } nullNodeModuleParameters && nullNodeModuleParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleParameters = null;
-            if (parseNode.GetChildNode("user_defined_parameter") is { } nullNodeUserDefinedParameter && nullNodeUserDefinedParameter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserDefinedParameter = null;
+            if (parseNode.GetChildNode("custom_parameters") is null) { _explicitNullValueCustomParameters = default!; _explicitNullProperties?.Remove("custom_parameters"); }
+            else if (parseNode.GetChildNode("custom_parameters") is { } nullNodeCustomParameters && nullNodeCustomParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomParameters = null;
+            if (parseNode.GetChildNode("module_parameters") is null) { _explicitNullValueModuleParameters = default!; _explicitNullProperties?.Remove("module_parameters"); }
+            else if (parseNode.GetChildNode("module_parameters") is { } nullNodeModuleParameters && nullNodeModuleParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleParameters = null;
+            if (parseNode.GetChildNode("user_defined_parameter") is null) { _explicitNullValueUserDefinedParameter = default!; _explicitNullProperties?.Remove("user_defined_parameter"); }
+            else if (parseNode.GetChildNode("user_defined_parameter") is { } nullNodeUserDefinedParameter && nullNodeUserDefinedParameter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserDefinedParameter = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the custom static key-value pairs sent as form data in the webhook request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>? CustomParameters { get => _explicitNullValueCustomParameters; set { _explicitNullValueCustomParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_parameters"); else _explicitNullProperties?.Remove("custom_parameters"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>? CustomParameters { get => _explicitNullValueCustomParameters; set { _explicitNullValueCustomParameters = value; AdditionalData?.Remove("custom_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_parameters"); else _explicitNullProperties?.Remove("custom_parameters"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters>? _explicitNullValueCustomParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters> CustomParameters { get => _explicitNullValueCustomParameters; set { _explicitNullValueCustomParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_parameters"); else _explicitNullProperties?.Remove("custom_parameters"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters> CustomParameters { get => _explicitNullValueCustomParameters; set { _explicitNullValueCustomParameters = value; AdditionalData?.Remove("custom_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_parameters"); else _explicitNullProperties?.Remove("custom_parameters"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookCustomParameters> _explicitNullValueCustomParameters = default!;
 #endif
         /// <summary>Represents the module merge-field parameters resolved at runtime and sent as form data in the webhook request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>? ModuleParameters { get => _explicitNullValueModuleParameters; set { _explicitNullValueModuleParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_parameters"); else _explicitNullProperties?.Remove("module_parameters"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>? ModuleParameters { get => _explicitNullValueModuleParameters; set { _explicitNullValueModuleParameters = value; AdditionalData?.Remove("module_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_parameters"); else _explicitNullProperties?.Remove("module_parameters"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters>? _explicitNullValueModuleParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters> ModuleParameters { get => _explicitNullValueModuleParameters; set { _explicitNullValueModuleParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_parameters"); else _explicitNullProperties?.Remove("module_parameters"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters> ModuleParameters { get => _explicitNullValueModuleParameters; set { _explicitNullValueModuleParameters = value; AdditionalData?.Remove("module_parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_parameters"); else _explicitNullProperties?.Remove("module_parameters"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhookModuleParameters> _explicitNullValueModuleParameters = default!;
 #endif
         /// <summary>A single user-defined key-value parameter sent as a form data field. Note: The API uses singular &apos;user_defined_parameter&apos; for form_data_content (this field) and plural &apos;user_defined_parameters&apos; for url_parameters  - both are single objects, not arrays.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.FormDataContentUserDefinedParameter? UserDefinedParameter { get => _explicitNullValueUserDefinedParameter; set { _explicitNullValueUserDefinedParameter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_defined_parameter"); else _explicitNullProperties?.Remove("user_defined_parameter"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FormDataContentUserDefinedParameter? UserDefinedParameter { get => _explicitNullValueUserDefinedParameter; set { _explicitNullValueUserDefinedParameter = value; AdditionalData?.Remove("user_defined_parameter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_defined_parameter"); else _explicitNullProperties?.Remove("user_defined_parameter"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FormDataContentUserDefinedParameter? _explicitNullValueUserDefinedParameter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.FormDataContentUserDefinedParameter UserDefinedParameter { get => _explicitNullValueUserDefinedParameter; set { _explicitNullValueUserDefinedParameter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_defined_parameter"); else _explicitNullProperties?.Remove("user_defined_parameter"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FormDataContentUserDefinedParameter UserDefinedParameter { get => _explicitNullValueUserDefinedParameter; set { _explicitNullValueUserDefinedParameter = value; AdditionalData?.Remove("user_defined_parameter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_defined_parameter"); else _explicitNullProperties?.Remove("user_defined_parameter"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FormDataContentUserDefinedParameter _explicitNullValueUserDefinedParameter = default!;
 #endif
         /// <summary>

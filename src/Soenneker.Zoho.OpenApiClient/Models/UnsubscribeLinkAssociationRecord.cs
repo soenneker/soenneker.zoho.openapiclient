@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("associated_places") is { } nullNodeAssociatedPlaces && nullNodeAssociatedPlaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedPlaces = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("associated_places") is null) { _explicitNullValueAssociatedPlaces = default!; _explicitNullProperties?.Remove("associated_places"); }
+            else if (parseNode.GetChildNode("associated_places") is { } nullNodeAssociatedPlaces && nullNodeAssociatedPlaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedPlaces = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of places where this unsubscribe link is being used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociatedPlace>? AssociatedPlaces { get => _explicitNullValueAssociatedPlaces; set { _explicitNullValueAssociatedPlaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_places"); else _explicitNullProperties?.Remove("associated_places"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociatedPlace>? AssociatedPlaces { get => _explicitNullValueAssociatedPlaces; set { _explicitNullValueAssociatedPlaces = value; AdditionalData?.Remove("associated_places"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_places"); else _explicitNullProperties?.Remove("associated_places"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociatedPlace>? _explicitNullValueAssociatedPlaces = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociatedPlace> AssociatedPlaces { get => _explicitNullValueAssociatedPlaces; set { _explicitNullValueAssociatedPlaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_places"); else _explicitNullProperties?.Remove("associated_places"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociatedPlace> AssociatedPlaces { get => _explicitNullValueAssociatedPlaces; set { _explicitNullValueAssociatedPlaces = value; AdditionalData?.Remove("associated_places"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_places"); else _explicitNullProperties?.Remove("associated_places"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkAssociatedPlace> _explicitNullValueAssociatedPlaces = default!;
 #endif
         /// <summary>Represents the unique identifier for an unsubscribe link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("run_rules") is { } nullNodeRunRules && nullNodeRunRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunRules = null;
+            if (parseNode.GetChildNode("run_rules") is null) { _explicitNullValueRunRules = default!; _explicitNullProperties?.Remove("run_rules"); }
+            else if (parseNode.GetChildNode("run_rules") is { } nullNodeRunRules && nullNodeRunRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunRules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the result of the scheduled territory rules execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRunRulesScheduledResponseRunRules? RunRules { get => _explicitNullValueRunRules; set { _explicitNullValueRunRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_rules"); else _explicitNullProperties?.Remove("run_rules"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRunRulesScheduledResponseRunRules? RunRules { get => _explicitNullValueRunRules; set { _explicitNullValueRunRules = value; AdditionalData?.Remove("run_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_rules"); else _explicitNullProperties?.Remove("run_rules"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRunRulesScheduledResponseRunRules? _explicitNullValueRunRules = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRunRulesScheduledResponseRunRules RunRules { get => _explicitNullValueRunRules; set { _explicitNullValueRunRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_rules"); else _explicitNullProperties?.Remove("run_rules"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRunRulesScheduledResponseRunRules RunRules { get => _explicitNullValueRunRules; set { _explicitNullValueRunRules = value; AdditionalData?.Remove("run_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_rules"); else _explicitNullProperties?.Remove("run_rules"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryRunRulesScheduledResponseRunRules _explicitNullValueRunRules = default!;
 #endif
         /// <summary>

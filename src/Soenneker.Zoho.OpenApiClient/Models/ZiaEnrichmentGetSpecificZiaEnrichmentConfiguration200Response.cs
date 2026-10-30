@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data_enrichment") is { } nullNodeDataEnrichment && nullNodeDataEnrichment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataEnrichment = null;
+            if (parseNode.GetChildNode("data_enrichment") is null) { _explicitNullValueDataEnrichment = default!; _explicitNullProperties?.Remove("data_enrichment"); }
+            else if (parseNode.GetChildNode("data_enrichment") is { } nullNodeDataEnrichment && nullNodeDataEnrichment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataEnrichment = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array containing the requested enrichment configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentGetSpecificZiaEnrichmentConfiguration200ResponseDataEnrichmentItem>? DataEnrichment { get => _explicitNullValueDataEnrichment; set { _explicitNullValueDataEnrichment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_enrichment"); else _explicitNullProperties?.Remove("data_enrichment"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentGetSpecificZiaEnrichmentConfiguration200ResponseDataEnrichmentItem>? DataEnrichment { get => _explicitNullValueDataEnrichment; set { _explicitNullValueDataEnrichment = value; AdditionalData?.Remove("data_enrichment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_enrichment"); else _explicitNullProperties?.Remove("data_enrichment"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentGetSpecificZiaEnrichmentConfiguration200ResponseDataEnrichmentItem>? _explicitNullValueDataEnrichment = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentGetSpecificZiaEnrichmentConfiguration200ResponseDataEnrichmentItem> DataEnrichment { get => _explicitNullValueDataEnrichment; set { _explicitNullValueDataEnrichment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_enrichment"); else _explicitNullProperties?.Remove("data_enrichment"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentGetSpecificZiaEnrichmentConfiguration200ResponseDataEnrichmentItem> DataEnrichment { get => _explicitNullValueDataEnrichment; set { _explicitNullValueDataEnrichment = value; AdditionalData?.Remove("data_enrichment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_enrichment"); else _explicitNullProperties?.Remove("data_enrichment"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentGetSpecificZiaEnrichmentConfiguration200ResponseDataEnrichmentItem> _explicitNullValueDataEnrichment = default!;
 #endif
         /// <summary>

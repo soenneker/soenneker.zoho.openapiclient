@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("get_related_records_count") is { } nullNodeGetRelatedRecordsCount && nullNodeGetRelatedRecordsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GetRelatedRecordsCount = null;
+            if (parseNode.GetChildNode("get_related_records_count") is null) { _explicitNullValueGetRelatedRecordsCount = default!; _explicitNullProperties?.Remove("get_related_records_count"); }
+            else if (parseNode.GetChildNode("get_related_records_count") is { } nullNodeGetRelatedRecordsCount && nullNodeGetRelatedRecordsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GetRelatedRecordsCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the array of related list count request objects. Each object specifies a related list to query and optional filtering criteria to apply before counting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountItem>? GetRelatedRecordsCount { get => _explicitNullValueGetRelatedRecordsCount; set { _explicitNullValueGetRelatedRecordsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("get_related_records_count"); else _explicitNullProperties?.Remove("get_related_records_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountItem>? GetRelatedRecordsCount { get => _explicitNullValueGetRelatedRecordsCount; set { _explicitNullValueGetRelatedRecordsCount = value; AdditionalData?.Remove("get_related_records_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("get_related_records_count"); else _explicitNullProperties?.Remove("get_related_records_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountItem>? _explicitNullValueGetRelatedRecordsCount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountItem> GetRelatedRecordsCount { get => _explicitNullValueGetRelatedRecordsCount; set { _explicitNullValueGetRelatedRecordsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("get_related_records_count"); else _explicitNullProperties?.Remove("get_related_records_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountItem> GetRelatedRecordsCount { get => _explicitNullValueGetRelatedRecordsCount; set { _explicitNullValueGetRelatedRecordsCount = value; AdditionalData?.Remove("get_related_records_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("get_related_records_count"); else _explicitNullProperties?.Remove("get_related_records_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordCountItem> _explicitNullValueGetRelatedRecordsCount = default!;
 #endif
         /// <summary>

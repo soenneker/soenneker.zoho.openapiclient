@@ -18,21 +18,26 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("execute_after") is { } nullNodeExecuteAfter && nullNodeExecuteAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecuteAfter = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("parent_follow_up") is { } nullNodeParentFollowUp && nullNodeParentFollowUp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentFollowUp = null;
-            if (parseNode.GetChildNode("triggers") is { } nullNodeTriggers && nullNodeTriggers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Triggers = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("execute_after") is null) { _explicitNullValueExecuteAfter = default!; _explicitNullProperties?.Remove("execute_after"); }
+            else if (parseNode.GetChildNode("execute_after") is { } nullNodeExecuteAfter && nullNodeExecuteAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecuteAfter = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("parent_follow_up") is null) { _explicitNullValueParentFollowUp = default!; _explicitNullProperties?.Remove("parent_follow_up"); }
+            else if (parseNode.GetChildNode("parent_follow_up") is { } nullNodeParentFollowUp && nullNodeParentFollowUp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentFollowUp = null;
+            if (parseNode.GetChildNode("triggers") is null) { _explicitNullValueTriggers = default!; _explicitNullProperties?.Remove("triggers"); }
+            else if (parseNode.GetChildNode("triggers") is { } nullNodeTriggers && nullNodeTriggers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Triggers = null;
         }
 
         /// <summary>Represents the action configured for the follow-up step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemActionProperty? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemActionProperty? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemActionProperty? _explicitNullValueAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemActionProperty Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemActionProperty Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemActionProperty _explicitNullValueAction = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,41 +45,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the wait period before this follow-up step executes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemExecuteAfter? ExecuteAfter { get => _explicitNullValueExecuteAfter; set { _explicitNullValueExecuteAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_after"); else _explicitNullProperties?.Remove("execute_after"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemExecuteAfter? ExecuteAfter { get => _explicitNullValueExecuteAfter; set { _explicitNullValueExecuteAfter = value; AdditionalData?.Remove("execute_after"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_after"); else _explicitNullProperties?.Remove("execute_after"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemExecuteAfter? _explicitNullValueExecuteAfter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemExecuteAfter ExecuteAfter { get => _explicitNullValueExecuteAfter; set { _explicitNullValueExecuteAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_after"); else _explicitNullProperties?.Remove("execute_after"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemExecuteAfter ExecuteAfter { get => _explicitNullValueExecuteAfter; set { _explicitNullValueExecuteAfter = value; AdditionalData?.Remove("execute_after"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execute_after"); else _explicitNullProperties?.Remove("execute_after"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemExecuteAfter _explicitNullValueExecuteAfter = default!;
 #endif
         /// <summary>Represents the unique identifier of the follow-up step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents the parent follow-up step that this step branches from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemParentFollowUp? ParentFollowUp { get => _explicitNullValueParentFollowUp; set { _explicitNullValueParentFollowUp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_follow_up"); else _explicitNullProperties?.Remove("parent_follow_up"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemParentFollowUp? ParentFollowUp { get => _explicitNullValueParentFollowUp; set { _explicitNullValueParentFollowUp = value; AdditionalData?.Remove("parent_follow_up"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_follow_up"); else _explicitNullProperties?.Remove("parent_follow_up"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemParentFollowUp? _explicitNullValueParentFollowUp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemParentFollowUp ParentFollowUp { get => _explicitNullValueParentFollowUp; set { _explicitNullValueParentFollowUp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_follow_up"); else _explicitNullProperties?.Remove("parent_follow_up"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemParentFollowUp ParentFollowUp { get => _explicitNullValueParentFollowUp; set { _explicitNullValueParentFollowUp = value; AdditionalData?.Remove("parent_follow_up"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_follow_up"); else _explicitNullProperties?.Remove("parent_follow_up"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetByIdCadenceSuccessRespCadencesItemFollowUpsItemParentFollowUp _explicitNullValueParentFollowUp = default!;
 #endif
         /// <summary>Represents the list of trigger conditions for the follow-up step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
+        public List<string>? Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; AdditionalData?.Remove("triggers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
         private List<string>? _explicitNullValueTriggers = default!;
 #nullable restore
 #else
-        public List<string> Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
+        public List<string> Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; AdditionalData?.Remove("triggers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
         private List<string> _explicitNullValueTriggers = default!;
 #endif
         /// <summary>

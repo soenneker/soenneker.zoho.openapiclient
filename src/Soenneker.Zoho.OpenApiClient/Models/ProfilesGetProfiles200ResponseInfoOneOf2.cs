@@ -18,13 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("license_limit") is { } nullNodeLicenseLimit && nullNodeLicenseLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LicenseLimit = null;
+            if (parseNode.GetChildNode("license_limit") is null) { _explicitNullValueLicenseLimit = default!; _explicitNullProperties?.Remove("license_limit"); }
+            else if (parseNode.GetChildNode("license_limit") is { } nullNodeLicenseLimit && nullNodeLicenseLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LicenseLimit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum number of profiles allowed by the organization&apos;s license.</summary>
-        public int? LicenseLimit { get => _explicitNullValueLicenseLimit; set { _explicitNullValueLicenseLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("license_limit"); else _explicitNullProperties?.Remove("license_limit"); } }
+        public int? LicenseLimit { get => _explicitNullValueLicenseLimit; set { _explicitNullValueLicenseLimit = value; AdditionalData?.Remove("license_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("license_limit"); else _explicitNullProperties?.Remove("license_limit"); } }
         private int? _explicitNullValueLicenseLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesGetProfiles200ResponseInfoOneOf2"/> and sets the default values.

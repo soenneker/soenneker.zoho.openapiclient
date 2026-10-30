@@ -18,32 +18,36 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pos_x") is { } nullNodePosX && nullNodePosX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PosX = null;
-            if (parseNode.GetChildNode("pos_y") is { } nullNodePosY && nullNodePosY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PosY = null;
-            if (parseNode.GetChildNode("screen") is { } nullNodeScreen && nullNodeScreen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screen = null;
-            if (parseNode.GetChildNode("start_node") is { } nullNodeStartNode && nullNodeStartNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartNode = null;
+            if (parseNode.GetChildNode("pos_x") is null) { _explicitNullValuePosX = default!; _explicitNullProperties?.Remove("pos_x"); }
+            else if (parseNode.GetChildNode("pos_x") is { } nullNodePosX && nullNodePosX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PosX = null;
+            if (parseNode.GetChildNode("pos_y") is null) { _explicitNullValuePosY = default!; _explicitNullProperties?.Remove("pos_y"); }
+            else if (parseNode.GetChildNode("pos_y") is { } nullNodePosY && nullNodePosY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PosY = null;
+            if (parseNode.GetChildNode("screen") is null) { _explicitNullValueScreen = default!; _explicitNullProperties?.Remove("screen"); }
+            else if (parseNode.GetChildNode("screen") is { } nullNodeScreen && nullNodeScreen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screen = null;
+            if (parseNode.GetChildNode("start_node") is null) { _explicitNullValueStartNode = default!; _explicitNullProperties?.Remove("start_node"); }
+            else if (parseNode.GetChildNode("start_node") is { } nullNodeStartNode && nullNodeStartNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartNode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the X-coordinate position, in pixels, of the node on the wizard canvas.</summary>
-        public int? PosX { get => _explicitNullValuePosX; set { _explicitNullValuePosX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pos_x"); else _explicitNullProperties?.Remove("pos_x"); } }
+        public int? PosX { get => _explicitNullValuePosX; set { _explicitNullValuePosX = value; AdditionalData?.Remove("pos_x"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pos_x"); else _explicitNullProperties?.Remove("pos_x"); } }
         private int? _explicitNullValuePosX = default!;
         /// <summary>Represents the Y-coordinate position, in pixels, of the node on the wizard canvas.</summary>
-        public int? PosY { get => _explicitNullValuePosY; set { _explicitNullValuePosY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pos_y"); else _explicitNullProperties?.Remove("pos_y"); } }
+        public int? PosY { get => _explicitNullValuePosY; set { _explicitNullValuePosY = value; AdditionalData?.Remove("pos_y"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pos_y"); else _explicitNullProperties?.Remove("pos_y"); } }
         private int? _explicitNullValuePosY = default!;
         /// <summary>Represents the wizard screen associated with this node in the flow chart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItemScreen? Screen { get => _explicitNullValueScreen; set { _explicitNullValueScreen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screen"); else _explicitNullProperties?.Remove("screen"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItemScreen? Screen { get => _explicitNullValueScreen; set { _explicitNullValueScreen = value; AdditionalData?.Remove("screen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screen"); else _explicitNullProperties?.Remove("screen"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItemScreen? _explicitNullValueScreen = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItemScreen Screen { get => _explicitNullValueScreen; set { _explicitNullValueScreen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screen"); else _explicitNullProperties?.Remove("screen"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItemScreen Screen { get => _explicitNullValueScreen; set { _explicitNullValueScreen = value; AdditionalData?.Remove("screen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screen"); else _explicitNullProperties?.Remove("screen"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItemScreen _explicitNullValueScreen = default!;
 #endif
         /// <summary>Indicates whether this node is the starting screen in the wizard flow.Possible values:true - The node is the starting screen of the wizard flow.false - The node is not the starting screen of the wizard flow.</summary>
-        public bool? StartNode { get => _explicitNullValueStartNode; set { _explicitNullValueStartNode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_node"); else _explicitNullProperties?.Remove("start_node"); } }
+        public bool? StartNode { get => _explicitNullValueStartNode; set { _explicitNullValueStartNode = value; AdditionalData?.Remove("start_node"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_node"); else _explicitNullProperties?.Remove("start_node"); } }
         private bool? _explicitNullValueStartNode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WizardsGetWizardDetails200ResponseWizardsItemContainersItemChartDataNodesItem"/> and sets the default values.

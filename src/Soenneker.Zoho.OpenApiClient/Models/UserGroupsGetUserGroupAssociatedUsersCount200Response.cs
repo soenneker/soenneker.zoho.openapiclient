@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("associated_users_count") is { } nullNodeAssociatedUsersCount && nullNodeAssociatedUsersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedUsersCount = null;
-            if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
+            if (parseNode.GetChildNode("associated_users_count") is null) { _explicitNullValueAssociatedUsersCount = default!; _explicitNullProperties?.Remove("associated_users_count"); }
+            else if (parseNode.GetChildNode("associated_users_count") is { } nullNodeAssociatedUsersCount && nullNodeAssociatedUsersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedUsersCount = null;
+            if (parseNode.GetChildNode("info") is null) { _explicitNullValueInfo = default!; _explicitNullProperties?.Remove("info"); }
+            else if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the array of user group entries with their associated user counts. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItem>? AssociatedUsersCount { get => _explicitNullValueAssociatedUsersCount; set { _explicitNullValueAssociatedUsersCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_users_count"); else _explicitNullProperties?.Remove("associated_users_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItem>? AssociatedUsersCount { get => _explicitNullValueAssociatedUsersCount; set { _explicitNullValueAssociatedUsersCount = value; AdditionalData?.Remove("associated_users_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_users_count"); else _explicitNullProperties?.Remove("associated_users_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItem>? _explicitNullValueAssociatedUsersCount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItem> AssociatedUsersCount { get => _explicitNullValueAssociatedUsersCount; set { _explicitNullValueAssociatedUsersCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_users_count"); else _explicitNullProperties?.Remove("associated_users_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItem> AssociatedUsersCount { get => _explicitNullValueAssociatedUsersCount; set { _explicitNullValueAssociatedUsersCount = value; AdditionalData?.Remove("associated_users_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_users_count"); else _explicitNullProperties?.Remove("associated_users_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseAssociatedUsersCountItem> _explicitNullValueAssociatedUsersCount = default!;
 #endif
         /// <summary>Represents pagination information for the response. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseInfo? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupAssociatedUsersCount200ResponseInfo _explicitNullValueInfo = default!;
 #endif
         /// <summary>

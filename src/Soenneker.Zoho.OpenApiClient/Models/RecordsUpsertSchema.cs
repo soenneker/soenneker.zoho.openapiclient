@@ -18,11 +18,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("duplicate_check_fields") is { } nullNodeDuplicateCheckFields && nullNodeDuplicateCheckFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateCheckFields = null;
-            if (parseNode.GetChildNode("lar_id") is { } nullNodeLarId && nullNodeLarId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LarId = null;
-            if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
-            if (parseNode.GetChildNode("wf_trigger") is { } nullNodeWfTrigger && nullNodeWfTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WfTrigger = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("duplicate_check_fields") is null) { _explicitNullValueDuplicateCheckFields = default!; _explicitNullProperties?.Remove("duplicate_check_fields"); }
+            else if (parseNode.GetChildNode("duplicate_check_fields") is { } nullNodeDuplicateCheckFields && nullNodeDuplicateCheckFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateCheckFields = null;
+            if (parseNode.GetChildNode("lar_id") is null) { _explicitNullValueLarId = default!; _explicitNullProperties?.Remove("lar_id"); }
+            else if (parseNode.GetChildNode("lar_id") is { } nullNodeLarId && nullNodeLarId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LarId = null;
+            if (parseNode.GetChildNode("trigger") is null) { _explicitNullValueTrigger = default!; _explicitNullProperties?.Remove("trigger"); }
+            else if (parseNode.GetChildNode("trigger") is { } nullNodeTrigger && nullNodeTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trigger = null;
+            if (parseNode.GetChildNode("wf_trigger") is null) { _explicitNullValueWfTrigger = default!; _explicitNullProperties?.Remove("wf_trigger"); }
+            else if (parseNode.GetChildNode("wf_trigger") is { } nullNodeWfTrigger && nullNodeWfTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WfTrigger = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of records to be created or updated using the upsert operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordSinglePutWriteDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>Specifies the fields used to check for duplicate records during an Upsert operation. Duplicate check fields can be system-defined unique fields or user-defined unique fields.  The following are the system-defined duplicate check fields for the respective modules: Leads - &quot;Email&quot;; Accounts - &quot;Account_Name&quot;; Contacts - &quot;Email&quot;; Deals - &quot;Deal_Name&quot;; Campaigns - &quot;Campaign_Name&quot;; Cases - &quot;Subject&quot;; Solutions - &quot;Solution_Title&quot;; Products - &quot;Product_Name&quot;; Vendors - &quot;Vendor_Name&quot;; PriceBooks - &quot;Price_Book_Name&quot;; Quotes - &quot;Subject&quot;; SalesOrders - &quot;Subject&quot;; PurchaseOrders - &quot;Subject&quot;; Invoices - &quot;Subject&quot;; Custom Modules - &quot;Name&quot;.If a matching record is found based on these fields, the record is updated; otherwise, a new record is inserted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DuplicateCheckFields { get => _explicitNullValueDuplicateCheckFields; set { _explicitNullValueDuplicateCheckFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_check_fields"); else _explicitNullProperties?.Remove("duplicate_check_fields"); } }
+        public List<string>? DuplicateCheckFields { get => _explicitNullValueDuplicateCheckFields; set { _explicitNullValueDuplicateCheckFields = value; AdditionalData?.Remove("duplicate_check_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_check_fields"); else _explicitNullProperties?.Remove("duplicate_check_fields"); } }
         private List<string>? _explicitNullValueDuplicateCheckFields = default!;
 #nullable restore
 #else
-        public List<string> DuplicateCheckFields { get => _explicitNullValueDuplicateCheckFields; set { _explicitNullValueDuplicateCheckFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_check_fields"); else _explicitNullProperties?.Remove("duplicate_check_fields"); } }
+        public List<string> DuplicateCheckFields { get => _explicitNullValueDuplicateCheckFields; set { _explicitNullValueDuplicateCheckFields = value; AdditionalData?.Remove("duplicate_check_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicate_check_fields"); else _explicitNullProperties?.Remove("duplicate_check_fields"); } }
         private List<string> _explicitNullValueDuplicateCheckFields = default!;
 #endif
         /// <summary>The unique ID of the assignment rule to trigger while inserting a record. Use the Get Assignment Rules API to retrieve valid values. This key must be provided parallel to the data key. Supported for all modules where assignment rules are applicable, such as Leads, Contacts, Deals, Accounts, Tasks, Cases, and Custom.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LarId { get => _explicitNullValueLarId; set { _explicitNullValueLarId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lar_id"); else _explicitNullProperties?.Remove("lar_id"); } }
+        public string? LarId { get => _explicitNullValueLarId; set { _explicitNullValueLarId = value; AdditionalData?.Remove("lar_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lar_id"); else _explicitNullProperties?.Remove("lar_id"); } }
         private string? _explicitNullValueLarId = default!;
 #nullable restore
 #else
-        public string LarId { get => _explicitNullValueLarId; set { _explicitNullValueLarId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lar_id"); else _explicitNullProperties?.Remove("lar_id"); } }
+        public string LarId { get => _explicitNullValueLarId; set { _explicitNullValueLarId = value; AdditionalData?.Remove("lar_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lar_id"); else _explicitNullProperties?.Remove("lar_id"); } }
         private string _explicitNullValueLarId = default!;
 #endif
         /// <summary>Specifies the CRM features to execute for the API request. Supported values are &quot;workflow&quot;, &quot;approval&quot;, and &quot;blueprint&quot;. If the &quot;trigger&quot; parameter is not specified, workflows, approvals, and blueprints related to the API are executed. Specify an empty array [] to prevent these features from executing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerItem?>? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerItem?>? Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerItem?>? _explicitNullValueTrigger = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerItem?> Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerItem?> Trigger { get => _explicitNullValueTrigger; set { _explicitNullValueTrigger = value; AdditionalData?.Remove("trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger"); else _explicitNullProperties?.Remove("trigger"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertSchemaTriggerItem?> _explicitNullValueTrigger = default!;
 #endif
         /// <summary>Workflow trigger identifier to be executed as part of the upsert operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WfTrigger { get => _explicitNullValueWfTrigger; set { _explicitNullValueWfTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wf_trigger"); else _explicitNullProperties?.Remove("wf_trigger"); } }
+        public string? WfTrigger { get => _explicitNullValueWfTrigger; set { _explicitNullValueWfTrigger = value; AdditionalData?.Remove("wf_trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wf_trigger"); else _explicitNullProperties?.Remove("wf_trigger"); } }
         private string? _explicitNullValueWfTrigger = default!;
 #nullable restore
 #else
-        public string WfTrigger { get => _explicitNullValueWfTrigger; set { _explicitNullValueWfTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wf_trigger"); else _explicitNullProperties?.Remove("wf_trigger"); } }
+        public string WfTrigger { get => _explicitNullValueWfTrigger; set { _explicitNullValueWfTrigger = value; AdditionalData?.Remove("wf_trigger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wf_trigger"); else _explicitNullProperties?.Remove("wf_trigger"); } }
         private string _explicitNullValueWfTrigger = default!;
 #endif
         /// <summary>

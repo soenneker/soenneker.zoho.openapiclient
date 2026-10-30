@@ -18,17 +18,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("method") is null) { _explicitNullValueMethod = default!; _explicitNullProperties?.Remove("method"); }
+            else if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the HTTP method for the callback request.Possible values:**post** - Sends the callback notification as an HTTP POST request.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.PostMethod? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.PostMethod? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; AdditionalData?.Remove("method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PostMethod? _explicitNullValueMethod = default!;
         /// <summary>Represents the URL that receives the job completion notification.Possible values:http://requestbin.fullcontact.com/1fcimk51 - Sample callback URL recorded for the job.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.HttpColonSlashSlashRequestbinFullcontactCom1Fcimk51Url? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.HttpColonSlashSlashRequestbinFullcontactCom1Fcimk51Url? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.HttpColonSlashSlashRequestbinFullcontactCom1Fcimk51Url? _explicitNullValueUrl = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkWriteGetBulkWriteJobDetails200ResponseCallback"/> and sets the default values.
@@ -55,8 +57,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PostMethod>(); } },
-                { "url", n => { Url = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.HttpColonSlashSlashRequestbinFullcontactCom1Fcimk51Url>(); } },
+                { "method", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.PostMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMethod = default; _explicitNullProperties?.Remove("method"); AdditionalData["method"] = unknown; } else { Method = parsed; AdditionalData.Remove("method"); } } },
+                { "url", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.HttpColonSlashSlashRequestbinFullcontactCom1Fcimk51Url>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUrl = default; _explicitNullProperties?.Remove("url"); AdditionalData["url"] = unknown; } else { Url = parsed; AdditionalData.Remove("url"); } } },
             };
         }
         /// <summary>

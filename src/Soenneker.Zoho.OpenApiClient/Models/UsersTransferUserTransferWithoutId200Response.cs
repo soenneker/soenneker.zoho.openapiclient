@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("transfer_and_delete") is { } nullNodeTransferAndDelete && nullNodeTransferAndDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferAndDelete = null;
+            if (parseNode.GetChildNode("transfer_and_delete") is null) { _explicitNullValueTransferAndDelete = default!; _explicitNullProperties?.Remove("transfer_and_delete"); }
+            else if (parseNode.GetChildNode("transfer_and_delete") is { } nullNodeTransferAndDelete && nullNodeTransferAndDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferAndDelete = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents an array containing transfer and delete operation results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItem>? TransferAndDelete { get => _explicitNullValueTransferAndDelete; set { _explicitNullValueTransferAndDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_and_delete"); else _explicitNullProperties?.Remove("transfer_and_delete"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItem>? TransferAndDelete { get => _explicitNullValueTransferAndDelete; set { _explicitNullValueTransferAndDelete = value; AdditionalData?.Remove("transfer_and_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_and_delete"); else _explicitNullProperties?.Remove("transfer_and_delete"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItem>? _explicitNullValueTransferAndDelete = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItem> TransferAndDelete { get => _explicitNullValueTransferAndDelete; set { _explicitNullValueTransferAndDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_and_delete"); else _explicitNullProperties?.Remove("transfer_and_delete"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItem> TransferAndDelete { get => _explicitNullValueTransferAndDelete; set { _explicitNullValueTransferAndDelete = value; AdditionalData?.Remove("transfer_and_delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_and_delete"); else _explicitNullProperties?.Remove("transfer_and_delete"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferUserTransferWithoutId200ResponseTransferAndDeleteItem> _explicitNullValueTransferAndDelete = default!;
 #endif
         /// <summary>

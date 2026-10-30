@@ -56,6 +56,17 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("data") || (((shapeMembers1["data"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("data") || (((shapeMembers1["data"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("data") || (((shapeMembers1["data"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            if (matchesUnionBranch2) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.ChangeOwnerChangeOwnerBulk200Response == null && result.ChangeOwnerChangeOwnerBulk202Response == null && result.ChangeOwnerChangeOwnerBulk207Response == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.ChangeOwnerChangeOwnerBulk200Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulk200Response(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.ChangeOwnerChangeOwnerBulk202Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulk202Response(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.ChangeOwnerChangeOwnerBulk207Response = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulk207Response(), parseNode);
             if (result.ChangeOwnerChangeOwnerBulk200Response == null && result.ChangeOwnerChangeOwnerBulk202Response == null && result.ChangeOwnerChangeOwnerBulk207Response == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -65,6 +76,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(ChangeOwnerChangeOwnerBulk200Response != null || ChangeOwnerChangeOwnerBulk202Response != null || ChangeOwnerChangeOwnerBulk207Response != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ChangeOwnerChangeOwnerBulk200Response, ChangeOwnerChangeOwnerBulk202Response, ChangeOwnerChangeOwnerBulk207Response);
@@ -79,9 +92,13 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (ChangeOwnerChangeOwnerBulk200Response == null && ChangeOwnerChangeOwnerBulk202Response == null && ChangeOwnerChangeOwnerBulk207Response == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (ChangeOwnerChangeOwnerBulk200Response != null && ChangeOwnerChangeOwnerBulk202Response == null && ChangeOwnerChangeOwnerBulk207Response == null) { if (ChangeOwnerChangeOwnerBulk200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ChangeOwnerChangeOwnerBulk200Response); return; }
-            if (ChangeOwnerChangeOwnerBulk202Response != null && ChangeOwnerChangeOwnerBulk200Response == null && ChangeOwnerChangeOwnerBulk207Response == null) { if (ChangeOwnerChangeOwnerBulk202Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ChangeOwnerChangeOwnerBulk202Response); return; }
-            if (ChangeOwnerChangeOwnerBulk207Response != null && ChangeOwnerChangeOwnerBulk200Response == null && ChangeOwnerChangeOwnerBulk202Response == null) { if (ChangeOwnerChangeOwnerBulk207Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ChangeOwnerChangeOwnerBulk207Response); return; }
+            int selectedUnionBranches = 0;
+            if (ChangeOwnerChangeOwnerBulk200Response != null) selectedUnionBranches++;
+            if (ChangeOwnerChangeOwnerBulk202Response != null) selectedUnionBranches++;
+            if (ChangeOwnerChangeOwnerBulk207Response != null) selectedUnionBranches++;
+            if (ChangeOwnerChangeOwnerBulk200Response != null && selectedUnionBranches == 1) { if (ChangeOwnerChangeOwnerBulk200Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ChangeOwnerChangeOwnerBulk200Response); return; }
+            if (ChangeOwnerChangeOwnerBulk202Response != null && selectedUnionBranches == 1) { if (ChangeOwnerChangeOwnerBulk202Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ChangeOwnerChangeOwnerBulk202Response); return; }
+            if (ChangeOwnerChangeOwnerBulk207Response != null && selectedUnionBranches == 1) { if (ChangeOwnerChangeOwnerBulk207Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ChangeOwnerChangeOwnerBulk207Response); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeOwnerBulk200Response>(null, ChangeOwnerChangeOwnerBulk200Response, ChangeOwnerChangeOwnerBulk202Response, ChangeOwnerChangeOwnerBulk207Response);

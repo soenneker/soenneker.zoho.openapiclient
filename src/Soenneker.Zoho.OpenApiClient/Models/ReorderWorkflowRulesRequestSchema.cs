@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("reorder") is { } nullNodeReorder && nullNodeReorder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reorder = null;
+            if (parseNode.GetChildNode("reorder") is null) { _explicitNullValueReorder = default!; _explicitNullProperties?.Remove("reorder"); }
+            else if (parseNode.GetChildNode("reorder") is { } nullNodeReorder && nullNodeReorder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reorder = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the reorder payload containing the list of workflow rules and their updated execution order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder? Reorder { get => _explicitNullValueReorder; set { _explicitNullValueReorder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reorder"); else _explicitNullProperties?.Remove("reorder"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder? Reorder { get => _explicitNullValueReorder; set { _explicitNullValueReorder = value; AdditionalData?.Remove("reorder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reorder"); else _explicitNullProperties?.Remove("reorder"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder? _explicitNullValueReorder = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder Reorder { get => _explicitNullValueReorder; set { _explicitNullValueReorder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reorder"); else _explicitNullProperties?.Remove("reorder"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder Reorder { get => _explicitNullValueReorder; set { _explicitNullValueReorder = value; AdditionalData?.Remove("reorder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reorder"); else _explicitNullProperties?.Remove("reorder"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ReorderWorkflowRulesRequestSchemaReorder _explicitNullValueReorder = default!;
 #endif
         /// <summary>

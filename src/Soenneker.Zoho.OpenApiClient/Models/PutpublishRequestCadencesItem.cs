@@ -18,13 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("process_existing_records") is { } nullNodeProcessExistingRecords && nullNodeProcessExistingRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessExistingRecords = null;
+            if (parseNode.GetChildNode("process_existing_records") is null) { _explicitNullValueProcessExistingRecords = default!; _explicitNullProperties?.Remove("process_existing_records"); }
+            else if (parseNode.GetChildNode("process_existing_records") is { } nullNodeProcessExistingRecords && nullNodeProcessExistingRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessExistingRecords = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents whether existing records should be enrolled in the Cadence upon publication.</summary>
-        public bool? ProcessExistingRecords { get => _explicitNullValueProcessExistingRecords; set { _explicitNullValueProcessExistingRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("process_existing_records"); else _explicitNullProperties?.Remove("process_existing_records"); } }
+        public bool? ProcessExistingRecords { get => _explicitNullValueProcessExistingRecords; set { _explicitNullValueProcessExistingRecords = value; AdditionalData?.Remove("process_existing_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("process_existing_records"); else _explicitNullProperties?.Remove("process_existing_records"); } }
         private bool? _explicitNullValueProcessExistingRecords = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.PutpublishRequestCadencesItem"/> and sets the default values.

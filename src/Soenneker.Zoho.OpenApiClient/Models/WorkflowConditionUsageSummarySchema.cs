@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("instant_actions") is { } nullNodeInstantActions && nullNodeInstantActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstantActions = null;
-            if (parseNode.GetChildNode("scheduled_actions") is { } nullNodeScheduledActions && nullNodeScheduledActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledActions = null;
-            if (parseNode.GetChildNode("usage_count") is { } nullNodeUsageCount && nullNodeUsageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCount = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("instant_actions") is null) { _explicitNullValueInstantActions = default!; _explicitNullProperties?.Remove("instant_actions"); }
+            else if (parseNode.GetChildNode("instant_actions") is { } nullNodeInstantActions && nullNodeInstantActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstantActions = null;
+            if (parseNode.GetChildNode("scheduled_actions") is null) { _explicitNullValueScheduledActions = default!; _explicitNullProperties?.Remove("scheduled_actions"); }
+            else if (parseNode.GetChildNode("scheduled_actions") is { } nullNodeScheduledActions && nullNodeScheduledActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledActions = null;
+            if (parseNode.GetChildNode("usage_count") is null) { _explicitNullValueUsageCount = default!; _explicitNullProperties?.Remove("usage_count"); }
+            else if (parseNode.GetChildNode("usage_count") is { } nullNodeUsageCount && nullNodeUsageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,35 +33,35 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the unique ID of the WorkflowConditionUsageSummary within the workflow rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Represents a container for the list of instant action usage detail objects associated with a workflow rule condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageListSchema? InstantActions { get => _explicitNullValueInstantActions; set { _explicitNullValueInstantActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_actions"); else _explicitNullProperties?.Remove("instant_actions"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageListSchema? InstantActions { get => _explicitNullValueInstantActions; set { _explicitNullValueInstantActions = value; AdditionalData?.Remove("instant_actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_actions"); else _explicitNullProperties?.Remove("instant_actions"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageListSchema? _explicitNullValueInstantActions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageListSchema InstantActions { get => _explicitNullValueInstantActions; set { _explicitNullValueInstantActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_actions"); else _explicitNullProperties?.Remove("instant_actions"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageListSchema InstantActions { get => _explicitNullValueInstantActions; set { _explicitNullValueInstantActions = value; AdditionalData?.Remove("instant_actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instant_actions"); else _explicitNullProperties?.Remove("instant_actions"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.InstantActionsUsageListSchema _explicitNullValueInstantActions = default!;
 #endif
         /// <summary>Represents the array of scheduled action groups configured for this condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsUsageGroupSchema>? ScheduledActions { get => _explicitNullValueScheduledActions; set { _explicitNullValueScheduledActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_actions"); else _explicitNullProperties?.Remove("scheduled_actions"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsUsageGroupSchema>? ScheduledActions { get => _explicitNullValueScheduledActions; set { _explicitNullValueScheduledActions = value; AdditionalData?.Remove("scheduled_actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_actions"); else _explicitNullProperties?.Remove("scheduled_actions"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsUsageGroupSchema>? _explicitNullValueScheduledActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsUsageGroupSchema> ScheduledActions { get => _explicitNullValueScheduledActions; set { _explicitNullValueScheduledActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_actions"); else _explicitNullProperties?.Remove("scheduled_actions"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsUsageGroupSchema> ScheduledActions { get => _explicitNullValueScheduledActions; set { _explicitNullValueScheduledActions = value; AdditionalData?.Remove("scheduled_actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_actions"); else _explicitNullProperties?.Remove("scheduled_actions"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ScheduledActionsUsageGroupSchema> _explicitNullValueScheduledActions = default!;
 #endif
         /// <summary>Represents the total number of times the actions in this condition were executed.</summary>
-        public int? UsageCount { get => _explicitNullValueUsageCount; set { _explicitNullValueUsageCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_count"); else _explicitNullProperties?.Remove("usage_count"); } }
+        public int? UsageCount { get => _explicitNullValueUsageCount; set { _explicitNullValueUsageCount = value; AdditionalData?.Remove("usage_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_count"); else _explicitNullProperties?.Remove("usage_count"); } }
         private int? _explicitNullValueUsageCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowConditionUsageSummarySchema"/> and sets the default values.

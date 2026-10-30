@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("report_link") is { } nullNodeReportLink && nullNodeReportLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportLink = null;
+            if (parseNode.GetChildNode("report_link") is null) { _explicitNullValueReportLink = default!; _explicitNullProperties?.Remove("report_link"); }
+            else if (parseNode.GetChildNode("report_link") is { } nullNodeReportLink && nullNodeReportLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReportLink = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the URL of the mail merge job report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
+        public string? ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; AdditionalData?.Remove("report_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
         private string? _explicitNullValueReportLink = default!;
 #nullable restore
 #else
-        public string ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
+        public string ReportLink { get => _explicitNullValueReportLink; set { _explicitNullValueReportLink = value; AdditionalData?.Remove("report_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("report_link"); else _explicitNullProperties?.Remove("report_link"); } }
         private string _explicitNullValueReportLink = default!;
 #endif
         /// <summary>

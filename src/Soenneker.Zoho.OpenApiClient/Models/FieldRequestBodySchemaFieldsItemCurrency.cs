@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("precision") is { } nullNodePrecision && nullNodePrecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Precision = null;
-            if (parseNode.GetChildNode("rounding_option") is { } nullNodeRoundingOption && nullNodeRoundingOption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoundingOption = null;
+            if (parseNode.GetChildNode("precision") is null) { _explicitNullValuePrecision = default!; _explicitNullProperties?.Remove("precision"); }
+            else if (parseNode.GetChildNode("precision") is { } nullNodePrecision && nullNodePrecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Precision = null;
+            if (parseNode.GetChildNode("rounding_option") is null) { _explicitNullValueRoundingOption = default!; _explicitNullProperties?.Remove("rounding_option"); }
+            else if (parseNode.GetChildNode("rounding_option") is { } nullNodeRoundingOption && nullNodeRoundingOption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoundingOption = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the number of decimal places displayed for the currency value in the user interface. This value should be less than decimal_place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Precision { get => _explicitNullValuePrecision; set { _explicitNullValuePrecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precision"); else _explicitNullProperties?.Remove("precision"); } }
+        public string? Precision { get => _explicitNullValuePrecision; set { _explicitNullValuePrecision = value; AdditionalData?.Remove("precision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precision"); else _explicitNullProperties?.Remove("precision"); } }
         private string? _explicitNullValuePrecision = default!;
 #nullable restore
 #else
-        public string Precision { get => _explicitNullValuePrecision; set { _explicitNullValuePrecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precision"); else _explicitNullProperties?.Remove("precision"); } }
+        public string Precision { get => _explicitNullValuePrecision; set { _explicitNullValuePrecision = value; AdditionalData?.Remove("precision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("precision"); else _explicitNullProperties?.Remove("precision"); } }
         private string _explicitNullValuePrecision = default!;
 #endif
         /// <summary>Specify how to round currency values.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemCurrencyRoundingOption? RoundingOption { get => _explicitNullValueRoundingOption; set { _explicitNullValueRoundingOption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rounding_option"); else _explicitNullProperties?.Remove("rounding_option"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemCurrencyRoundingOption? RoundingOption { get => _explicitNullValueRoundingOption; set { _explicitNullValueRoundingOption = value; AdditionalData?.Remove("rounding_option"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rounding_option"); else _explicitNullProperties?.Remove("rounding_option"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemCurrencyRoundingOption? _explicitNullValueRoundingOption = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemCurrency"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "precision", n => { Precision = n.GetStringValue(); } },
-                { "rounding_option", n => { RoundingOption = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemCurrencyRoundingOption>(); } },
+                { "rounding_option", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldRequestBodySchemaFieldsItemCurrencyRoundingOption>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRoundingOption = default; _explicitNullProperties?.Remove("rounding_option"); AdditionalData["rounding_option"] = unknown; } else { RoundingOption = parsed; AdditionalData.Remove("rounding_option"); } } },
             };
         }
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Invoices") is { } nullNodeInvoices && nullNodeInvoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invoices = null;
+            if (parseNode.GetChildNode("Invoices") is null) { _explicitNullValueInvoices = default!; _explicitNullProperties?.Remove("Invoices"); }
+            else if (parseNode.GetChildNode("Invoices") is { } nullNodeInvoices && nullNodeInvoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Invoices = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the API name of the destination field in the **Invoices** module to which this field&apos;s value is mapped under an alternate conversion schema variant, or null when no mapping to Invoices is defined in this context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingSalesOrdersFieldConvertMappingInvoices? Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Invoices"); else _explicitNullProperties?.Remove("Invoices"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingSalesOrdersFieldConvertMappingInvoices? Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; AdditionalData?.Remove("Invoices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Invoices"); else _explicitNullProperties?.Remove("Invoices"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingSalesOrdersFieldConvertMappingInvoices? _explicitNullValueInvoices = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingSalesOrdersFieldConvertMappingInvoices Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Invoices"); else _explicitNullProperties?.Remove("Invoices"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingSalesOrdersFieldConvertMappingInvoices Invoices { get => _explicitNullValueInvoices; set { _explicitNullValueInvoices = value; AdditionalData?.Remove("Invoices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Invoices"); else _explicitNullProperties?.Remove("Invoices"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.LayoutsFieldSchemaConvertMappingSalesOrdersFieldConvertMappingInvoices _explicitNullValueInvoices = default!;
 #endif
         /// <summary>

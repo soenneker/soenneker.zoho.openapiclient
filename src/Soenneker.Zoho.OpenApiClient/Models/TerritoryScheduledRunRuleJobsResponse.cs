@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scheduled_run_rule_jobs") is { } nullNodeScheduledRunRuleJobs && nullNodeScheduledRunRuleJobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledRunRuleJobs = null;
+            if (parseNode.GetChildNode("scheduled_run_rule_jobs") is null) { _explicitNullValueScheduledRunRuleJobs = default!; _explicitNullProperties?.Remove("scheduled_run_rule_jobs"); }
+            else if (parseNode.GetChildNode("scheduled_run_rule_jobs") is { } nullNodeScheduledRunRuleJobs && nullNodeScheduledRunRuleJobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledRunRuleJobs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the status and details of the scheduled territory rule execution job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobs? ScheduledRunRuleJobs { get => _explicitNullValueScheduledRunRuleJobs; set { _explicitNullValueScheduledRunRuleJobs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_run_rule_jobs"); else _explicitNullProperties?.Remove("scheduled_run_rule_jobs"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobs? ScheduledRunRuleJobs { get => _explicitNullValueScheduledRunRuleJobs; set { _explicitNullValueScheduledRunRuleJobs = value; AdditionalData?.Remove("scheduled_run_rule_jobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_run_rule_jobs"); else _explicitNullProperties?.Remove("scheduled_run_rule_jobs"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobs? _explicitNullValueScheduledRunRuleJobs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobs ScheduledRunRuleJobs { get => _explicitNullValueScheduledRunRuleJobs; set { _explicitNullValueScheduledRunRuleJobs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_run_rule_jobs"); else _explicitNullProperties?.Remove("scheduled_run_rule_jobs"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobs ScheduledRunRuleJobs { get => _explicitNullValueScheduledRunRuleJobs; set { _explicitNullValueScheduledRunRuleJobs = value; AdditionalData?.Remove("scheduled_run_rule_jobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_run_rule_jobs"); else _explicitNullProperties?.Remove("scheduled_run_rule_jobs"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoryScheduledRunRuleJobsResponseScheduledRunRuleJobs _explicitNullValueScheduledRunRuleJobs = default!;
 #endif
         /// <summary>

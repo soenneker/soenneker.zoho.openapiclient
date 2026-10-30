@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("expected_type") is { } nullNodeExpectedType && nullNodeExpectedType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedType = null;
+            if (parseNode.GetChildNode("expected_type") is null) { _explicitNullValueExpectedType = default!; _explicitNullProperties?.Remove("expected_type"); }
+            else if (parseNode.GetChildNode("expected_type") is { } nullNodeExpectedType && nullNodeExpectedType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Expected data type for the file field when INVALID_DATA error occurs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedType { get => _explicitNullValueExpectedType; set { _explicitNullValueExpectedType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_type"); else _explicitNullProperties?.Remove("expected_type"); } }
+        public string? ExpectedType { get => _explicitNullValueExpectedType; set { _explicitNullValueExpectedType = value; AdditionalData?.Remove("expected_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_type"); else _explicitNullProperties?.Remove("expected_type"); } }
         private string? _explicitNullValueExpectedType = default!;
 #nullable restore
 #else
-        public string ExpectedType { get => _explicitNullValueExpectedType; set { _explicitNullValueExpectedType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_type"); else _explicitNullProperties?.Remove("expected_type"); } }
+        public string ExpectedType { get => _explicitNullValueExpectedType; set { _explicitNullValueExpectedType = value; AdditionalData?.Remove("expected_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_type"); else _explicitNullProperties?.Remove("expected_type"); } }
         private string _explicitNullValueExpectedType = default!;
 #endif
         /// <summary>

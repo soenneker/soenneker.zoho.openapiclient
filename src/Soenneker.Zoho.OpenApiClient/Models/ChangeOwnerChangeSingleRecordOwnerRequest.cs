@@ -18,34 +18,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notify") is { } nullNodeNotify && nullNodeNotify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notify = null;
-            if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
-            if (parseNode.GetChildNode("related_modules") is { } nullNodeRelatedModules && nullNodeRelatedModules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedModules = null;
+            if (parseNode.GetChildNode("notify") is null) { _explicitNullValueNotify = default!; _explicitNullProperties?.Remove("notify"); }
+            else if (parseNode.GetChildNode("notify") is { } nullNodeNotify && nullNodeNotify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notify = null;
+            if (parseNode.GetChildNode("owner") is null) { _explicitNullValueOwner = default!; _explicitNullProperties?.Remove("owner"); }
+            else if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("related_modules") is null) { _explicitNullValueRelatedModules = default!; _explicitNullProperties?.Remove("related_modules"); }
+            else if (parseNode.GetChildNode("related_modules") is { } nullNodeRelatedModules && nullNodeRelatedModules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelatedModules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify whether to notify the new owner via email when the record is assigned.\nPossible values:\n**true** - The new owner is notified via email.\n**false** - The new owner is not notified via email.</summary>
-        public bool? Notify { get => _explicitNullValueNotify; set { _explicitNullValueNotify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify"); else _explicitNullProperties?.Remove("notify"); } }
+        public bool? Notify { get => _explicitNullValueNotify; set { _explicitNullValueNotify = value; AdditionalData?.Remove("notify"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify"); else _explicitNullProperties?.Remove("notify"); } }
         private bool? _explicitNullValueNotify = default!;
         /// <summary>Specify the details of the new owner for the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>Specify the related modules for which you want to transfer record ownership along with the main record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestRelatedModulesItem>? RelatedModules { get => _explicitNullValueRelatedModules; set { _explicitNullValueRelatedModules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_modules"); else _explicitNullProperties?.Remove("related_modules"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestRelatedModulesItem>? RelatedModules { get => _explicitNullValueRelatedModules; set { _explicitNullValueRelatedModules = value; AdditionalData?.Remove("related_modules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_modules"); else _explicitNullProperties?.Remove("related_modules"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestRelatedModulesItem>? _explicitNullValueRelatedModules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestRelatedModulesItem> RelatedModules { get => _explicitNullValueRelatedModules; set { _explicitNullValueRelatedModules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_modules"); else _explicitNullProperties?.Remove("related_modules"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestRelatedModulesItem> RelatedModules { get => _explicitNullValueRelatedModules; set { _explicitNullValueRelatedModules = value; AdditionalData?.Remove("related_modules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_modules"); else _explicitNullProperties?.Remove("related_modules"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ChangeOwnerChangeSingleRecordOwnerRequestRelatedModulesItem> _explicitNullValueRelatedModules = default!;
 #endif
         /// <summary>

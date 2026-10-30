@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("__email_drafts") is { } nullNodeEmailDrafts && nullNodeEmailDrafts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailDrafts = null;
-            if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
+            if (parseNode.GetChildNode("__email_drafts") is null) { _explicitNullValueEmailDrafts = default!; _explicitNullProperties?.Remove("__email_drafts"); }
+            else if (parseNode.GetChildNode("__email_drafts") is { } nullNodeEmailDrafts && nullNodeEmailDrafts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailDrafts = null;
+            if (parseNode.GetChildNode("info") is null) { _explicitNullValueInfo = default!; _explicitNullProperties?.Remove("info"); }
+            else if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of email draft objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseEmailDraftsItem>? EmailDrafts { get => _explicitNullValueEmailDrafts; set { _explicitNullValueEmailDrafts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__email_drafts"); else _explicitNullProperties?.Remove("__email_drafts"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseEmailDraftsItem>? EmailDrafts { get => _explicitNullValueEmailDrafts; set { _explicitNullValueEmailDrafts = value; AdditionalData?.Remove("__email_drafts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__email_drafts"); else _explicitNullProperties?.Remove("__email_drafts"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseEmailDraftsItem>? _explicitNullValueEmailDrafts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseEmailDraftsItem> EmailDrafts { get => _explicitNullValueEmailDrafts; set { _explicitNullValueEmailDrafts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__email_drafts"); else _explicitNullProperties?.Remove("__email_drafts"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseEmailDraftsItem> EmailDrafts { get => _explicitNullValueEmailDrafts; set { _explicitNullValueEmailDrafts = value; AdditionalData?.Remove("__email_drafts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__email_drafts"); else _explicitNullProperties?.Remove("__email_drafts"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseEmailDraftsItem> _explicitNullValueEmailDrafts = default!;
 #endif
         /// <summary>Pagination info for the list response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseInfo? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsGetEmailDrafts200ResponseInfo _explicitNullValueInfo = default!;
 #endif
         /// <summary>

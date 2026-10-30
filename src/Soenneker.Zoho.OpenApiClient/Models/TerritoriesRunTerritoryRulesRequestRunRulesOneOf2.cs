@@ -18,35 +18,38 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("based_on") is { } nullNodeBasedOn && nullNodeBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasedOn = null;
-            if (parseNode.GetChildNode("custom_view") is { } nullNodeCustomView && nullNodeCustomView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomView = null;
-            if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
+            if (parseNode.GetChildNode("based_on") is null) { _explicitNullValueBasedOn = default!; _explicitNullProperties?.Remove("based_on"); }
+            else if (parseNode.GetChildNode("based_on") is { } nullNodeBasedOn && nullNodeBasedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasedOn = null;
+            if (parseNode.GetChildNode("custom_view") is null) { _explicitNullValueCustomView = default!; _explicitNullProperties?.Remove("custom_view"); }
+            else if (parseNode.GetChildNode("custom_view") is { } nullNodeCustomView && nullNodeCustomView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomView = null;
+            if (parseNode.GetChildNode("module") is null) { _explicitNullValueModule = default!; _explicitNullProperties?.Remove("module"); }
+            else if (parseNode.GetChildNode("module") is { } nullNodeModule && nullNodeModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Module = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify the execution method for territory assignment rules.Possible values:**custom_view** - Runs territory rules against records included in a specified Custom View.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewBasedOn? BasedOn { get => _explicitNullValueBasedOn; set { _explicitNullValueBasedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("based_on"); else _explicitNullProperties?.Remove("based_on"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewBasedOn? BasedOn { get => _explicitNullValueBasedOn; set { _explicitNullValueBasedOn = value; AdditionalData?.Remove("based_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("based_on"); else _explicitNullProperties?.Remove("based_on"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewBasedOn? _explicitNullValueBasedOn = default!;
         /// <summary>Specify the Custom View for which the territory assignment rules apply. Provide either the **ID** or the **api_name** of the Custom View.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2CustomView? CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2CustomView? CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; AdditionalData?.Remove("custom_view"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2CustomView? _explicitNullValueCustomView = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2CustomView CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2CustomView CustomView { get => _explicitNullValueCustomView; set { _explicitNullValueCustomView = value; AdditionalData?.Remove("custom_view"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_view"); else _explicitNullProperties?.Remove("custom_view"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2CustomView _explicitNullValueCustomView = default!;
 #endif
         /// <summary>Specify the API name of the module for which to run territory assignment rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2Module? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2Module? _explicitNullValueModule = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1Module? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1Module? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2Module Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2Module _explicitNullValueModule = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1Module Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1Module _explicitNullValueModule = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2"/> and sets the default values.
@@ -73,9 +76,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "based_on", n => { BasedOn = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewBasedOn>(); } },
+                { "based_on", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewBasedOn>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBasedOn = default; _explicitNullProperties?.Remove("based_on"); AdditionalData["based_on"] = unknown; } else { BasedOn = parsed; AdditionalData.Remove("based_on"); } } },
                 { "custom_view", n => { CustomView = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2CustomView>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2CustomView.CreateFromDiscriminatorValue); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2Module>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2Module.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1Module>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1Module.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,7 +90,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewBasedOn>("based_on", BasedOn);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2CustomView>("custom_view", CustomView);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2Module>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1Module>("module", Module);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

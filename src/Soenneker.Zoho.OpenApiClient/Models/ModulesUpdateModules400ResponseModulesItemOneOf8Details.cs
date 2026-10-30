@@ -18,13 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("supported_version") is { } nullNodeSupportedVersion && nullNodeSupportedVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedVersion = null;
+            if (parseNode.GetChildNode("supported_version") is null) { _explicitNullValueSupportedVersion = default!; _explicitNullProperties?.Remove("supported_version"); }
+            else if (parseNode.GetChildNode("supported_version") is { } nullNodeSupportedVersion && nullNodeSupportedVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Minimum API version number required to perform this operation.</summary>
-        public int? SupportedVersion { get => _explicitNullValueSupportedVersion; set { _explicitNullValueSupportedVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_version"); else _explicitNullProperties?.Remove("supported_version"); } }
+        public int? SupportedVersion { get => _explicitNullValueSupportedVersion; set { _explicitNullValueSupportedVersion = value; AdditionalData?.Remove("supported_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_version"); else _explicitNullProperties?.Remove("supported_version"); } }
         private int? _explicitNullValueSupportedVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules400ResponseModulesItemOneOf8Details"/> and sets the default values.

@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.Fetch_full_d
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Fetch_full_data.Item.Actions.Fetch_full_data.Fetch_full_dataRequestBuilder.Fetch_full_dataRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/fetch_full_data/{moduleApiName}/actions/fetch_full_data", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

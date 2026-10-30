@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("workflow_configurations") is { } nullNodeWorkflowConfigurations && nullNodeWorkflowConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowConfigurations = null;
+            if (parseNode.GetChildNode("workflow_configurations") is null) { _explicitNullValueWorkflowConfigurations = default!; _explicitNullProperties?.Remove("workflow_configurations"); }
+            else if (parseNode.GetChildNode("workflow_configurations") is { } nullNodeWorkflowConfigurations && nullNodeWorkflowConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowConfigurations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Workflow configuration metadata for the requested module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations? WorkflowConfigurations { get => _explicitNullValueWorkflowConfigurations; set { _explicitNullValueWorkflowConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_configurations"); else _explicitNullProperties?.Remove("workflow_configurations"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations? WorkflowConfigurations { get => _explicitNullValueWorkflowConfigurations; set { _explicitNullValueWorkflowConfigurations = value; AdditionalData?.Remove("workflow_configurations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_configurations"); else _explicitNullProperties?.Remove("workflow_configurations"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations? _explicitNullValueWorkflowConfigurations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations WorkflowConfigurations { get => _explicitNullValueWorkflowConfigurations; set { _explicitNullValueWorkflowConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_configurations"); else _explicitNullProperties?.Remove("workflow_configurations"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations WorkflowConfigurations { get => _explicitNullValueWorkflowConfigurations; set { _explicitNullValueWorkflowConfigurations = value; AdditionalData?.Remove("workflow_configurations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_configurations"); else _explicitNullProperties?.Remove("workflow_configurations"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetworkflowconfigurationsResponse200WorkflowConfigurations _explicitNullValueWorkflowConfigurations = default!;
 #endif
         /// <summary>

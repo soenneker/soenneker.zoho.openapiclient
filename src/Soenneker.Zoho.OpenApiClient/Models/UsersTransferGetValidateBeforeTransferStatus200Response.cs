@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("validate_before_transfer") is { } nullNodeValidateBeforeTransfer && nullNodeValidateBeforeTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidateBeforeTransfer = null;
+            if (parseNode.GetChildNode("validate_before_transfer") is null) { _explicitNullValueValidateBeforeTransfer = default!; _explicitNullProperties?.Remove("validate_before_transfer"); }
+            else if (parseNode.GetChildNode("validate_before_transfer") is { } nullNodeValidateBeforeTransfer && nullNodeValidateBeforeTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidateBeforeTransfer = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of pre-transfer validation results for the specified user. The array contains a maximum of one object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem>? ValidateBeforeTransfer { get => _explicitNullValueValidateBeforeTransfer; set { _explicitNullValueValidateBeforeTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validate_before_transfer"); else _explicitNullProperties?.Remove("validate_before_transfer"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem>? ValidateBeforeTransfer { get => _explicitNullValueValidateBeforeTransfer; set { _explicitNullValueValidateBeforeTransfer = value; AdditionalData?.Remove("validate_before_transfer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validate_before_transfer"); else _explicitNullProperties?.Remove("validate_before_transfer"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem>? _explicitNullValueValidateBeforeTransfer = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem> ValidateBeforeTransfer { get => _explicitNullValueValidateBeforeTransfer; set { _explicitNullValueValidateBeforeTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validate_before_transfer"); else _explicitNullProperties?.Remove("validate_before_transfer"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem> ValidateBeforeTransfer { get => _explicitNullValueValidateBeforeTransfer; set { _explicitNullValueValidateBeforeTransfer = value; AdditionalData?.Remove("validate_before_transfer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validate_before_transfer"); else _explicitNullProperties?.Remove("validate_before_transfer"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.UsersTransferGetValidateBeforeTransferStatus200ResponseValidateBeforeTransferItem> _explicitNullValueValidateBeforeTransfer = default!;
 #endif
         /// <summary>

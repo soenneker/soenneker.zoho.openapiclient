@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scoring_rules") is { } nullNodeScoringRules && nullNodeScoringRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoringRules = null;
+            if (parseNode.GetChildNode("scoring_rules") is null) { _explicitNullValueScoringRules = default!; _explicitNullProperties?.Remove("scoring_rules"); }
+            else if (parseNode.GetChildNode("scoring_rules") is { } nullNodeScoringRules && nullNodeScoringRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoringRules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents an array of per-item operation statuses for the partial success response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleResponseDetails>? ScoringRules { get => _explicitNullValueScoringRules; set { _explicitNullValueScoringRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoring_rules"); else _explicitNullProperties?.Remove("scoring_rules"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleResponseDetails>? ScoringRules { get => _explicitNullValueScoringRules; set { _explicitNullValueScoringRules = value; AdditionalData?.Remove("scoring_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoring_rules"); else _explicitNullProperties?.Remove("scoring_rules"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleResponseDetails>? _explicitNullValueScoringRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleResponseDetails> ScoringRules { get => _explicitNullValueScoringRules; set { _explicitNullValueScoringRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoring_rules"); else _explicitNullProperties?.Remove("scoring_rules"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleResponseDetails> ScoringRules { get => _explicitNullValueScoringRules; set { _explicitNullValueScoringRules = value; AdditionalData?.Remove("scoring_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoring_rules"); else _explicitNullProperties?.Remove("scoring_rules"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.ScoringRuleResponseDetails> _explicitNullValueScoringRules = default!;
 #endif
         /// <summary>

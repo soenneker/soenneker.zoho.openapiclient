@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("portal_invite") is { } nullNodePortalInvite && nullNodePortalInvite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortalInvite = null;
+            if (parseNode.GetChildNode("portal_invite") is null) { _explicitNullValuePortalInvite = default!; _explicitNullProperties?.Remove("portal_invite"); }
+            else if (parseNode.GetChildNode("portal_invite") is { } nullNodePortalInvite && nullNodePortalInvite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PortalInvite = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of portal invitation response objects. Contains one object per invitation batch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200ResponsePortalInviteItem>? PortalInvite { get => _explicitNullValuePortalInvite; set { _explicitNullValuePortalInvite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_invite"); else _explicitNullProperties?.Remove("portal_invite"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200ResponsePortalInviteItem>? PortalInvite { get => _explicitNullValuePortalInvite; set { _explicitNullValuePortalInvite = value; AdditionalData?.Remove("portal_invite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_invite"); else _explicitNullProperties?.Remove("portal_invite"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200ResponsePortalInviteItem>? _explicitNullValuePortalInvite = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200ResponsePortalInviteItem> PortalInvite { get => _explicitNullValuePortalInvite; set { _explicitNullValuePortalInvite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_invite"); else _explicitNullProperties?.Remove("portal_invite"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200ResponsePortalInviteItem> PortalInvite { get => _explicitNullValuePortalInvite; set { _explicitNullValuePortalInvite = value; AdditionalData?.Remove("portal_invite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_invite"); else _explicitNullProperties?.Remove("portal_invite"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.PortalUsersInviteUsers200ResponsePortalInviteItem> _explicitNullValuePortalInvite = default!;
 #endif
         /// <summary>

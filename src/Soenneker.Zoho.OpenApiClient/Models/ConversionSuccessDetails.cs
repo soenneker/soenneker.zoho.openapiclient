@@ -18,19 +18,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
-            if (parseNode.GetChildNode("Contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
-            if (parseNode.GetChildNode("Deals") is { } nullNodeDeals && nullNodeDeals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deals = null;
+            if (parseNode.GetChildNode("Accounts") is null) { _explicitNullValueAccounts = default!; _explicitNullProperties?.Remove("Accounts"); }
+            else if (parseNode.GetChildNode("Accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
+            if (parseNode.GetChildNode("Contacts") is null) { _explicitNullValueContacts = default!; _explicitNullProperties?.Remove("Contacts"); }
+            else if (parseNode.GetChildNode("Contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
+            if (parseNode.GetChildNode("Deals") is null) { _explicitNullValueDeals = default!; _explicitNullProperties?.Remove("Deals"); }
+            else if (parseNode.GetChildNode("Deals") is { } nullNodeDeals && nullNodeDeals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deals = null;
         }
 
         /// <summary>Account record information, or null if no Account was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accounts"); else _explicitNullProperties?.Remove("Accounts"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; AdditionalData?.Remove("Accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accounts"); else _explicitNullProperties?.Remove("Accounts"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? _explicitNullValueAccounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accounts"); else _explicitNullProperties?.Remove("Accounts"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; AdditionalData?.Remove("Accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accounts"); else _explicitNullProperties?.Remove("Accounts"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EntityReference _explicitNullValueAccounts = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,21 +41,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Reference to a CRM entity with ID and name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contacts"); else _explicitNullProperties?.Remove("Contacts"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; AdditionalData?.Remove("Contacts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contacts"); else _explicitNullProperties?.Remove("Contacts"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? _explicitNullValueContacts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contacts"); else _explicitNullProperties?.Remove("Contacts"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference Contacts { get => _explicitNullValueContacts; set { _explicitNullValueContacts = value; AdditionalData?.Remove("Contacts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Contacts"); else _explicitNullProperties?.Remove("Contacts"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EntityReference _explicitNullValueContacts = default!;
 #endif
         /// <summary>Deal record information, or null if no Deal was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; AdditionalData?.Remove("Deals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EntityReference? _explicitNullValueDeals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.EntityReference Deals { get => _explicitNullValueDeals; set { _explicitNullValueDeals = value; AdditionalData?.Remove("Deals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Deals"); else _explicitNullProperties?.Remove("Deals"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.EntityReference _explicitNullValueDeals = default!;
 #endif
         /// <summary>

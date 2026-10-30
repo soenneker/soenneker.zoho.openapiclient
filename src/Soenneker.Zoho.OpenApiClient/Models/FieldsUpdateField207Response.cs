@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("fields") is null) { _explicitNullValueFields = default!; _explicitNullProperties?.Remove("fields"); }
+            else if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,12 +27,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of per-field results for the bulk update operation, where each item indicates either a successful update or a validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsUpdateField207ResponseFieldsItem>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsUpdateField207ResponseFieldsItem>? _explicitNullValueFields = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsCreateFields207ResponseFieldsItem>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsCreateFields207ResponseFieldsItem>? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsUpdateField207ResponseFieldsItem> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsUpdateField207ResponseFieldsItem> _explicitNullValueFields = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsCreateFields207ResponseFieldsItem> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.FieldsCreateFields207ResponseFieldsItem> _explicitNullValueFields = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldsUpdateField207Response"/> and sets the default values.
@@ -58,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldsUpdateField207ResponseFieldsItem>(global::Soenneker.Zoho.OpenApiClient.Models.FieldsUpdateField207ResponseFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldsCreateFields207ResponseFieldsItem>(global::Soenneker.Zoho.OpenApiClient.Models.FieldsCreateFields207ResponseFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -68,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldsUpdateField207ResponseFieldsItem>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldsCreateFields207ResponseFieldsItem>("fields", Fields);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

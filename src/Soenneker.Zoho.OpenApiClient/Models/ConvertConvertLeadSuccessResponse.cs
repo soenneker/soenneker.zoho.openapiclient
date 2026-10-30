@@ -47,9 +47,13 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("data") != null))();
-            if (result.ConversionSuccessWrapper == null && result.ConvertConvertLead202Response == null && matchesUnionBranch0) result.ConversionSuccessWrapper = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccessWrapper(), parseNode);
-            if (result.ConversionSuccessWrapper == null && result.ConvertConvertLead202Response == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.ConversionSuccessWrapper = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccessWrapper(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("data") && (!shapeMembers1.ContainsKey("data") || (((shapeMembers1["data"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => true))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.ConversionSuccessWrapper == null && result.ConvertConvertLead202Response == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.ConversionSuccessWrapper = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccessWrapper(), parseNode);
             if (result.ConversionSuccessWrapper == null && result.ConvertConvertLead202Response == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -59,6 +63,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(ConversionSuccessWrapper != null || ConvertConvertLead202Response != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ConversionSuccessWrapper, ConvertConvertLead202Response);
@@ -73,8 +79,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (ConversionSuccessWrapper == null && ConvertConvertLead202Response == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (ConversionSuccessWrapper != null && ConvertConvertLead202Response == null) { if (ConversionSuccessWrapper is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConversionSuccessWrapper); return; }
-            if (ConvertConvertLead202Response != null && ConversionSuccessWrapper == null) { if (ConvertConvertLead202Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConvertConvertLead202Response); return; }
+            int selectedUnionBranches = 0;
+            if (ConversionSuccessWrapper != null) selectedUnionBranches++;
+            if (ConvertConvertLead202Response != null) selectedUnionBranches++;
+            if (ConversionSuccessWrapper != null && selectedUnionBranches == 1) { if (ConversionSuccessWrapper is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConversionSuccessWrapper); return; }
+            if (ConvertConvertLead202Response != null && selectedUnionBranches == 1) { if (ConvertConvertLead202Response is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConvertConvertLead202Response); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ConversionSuccessWrapper>(null, ConversionSuccessWrapper, ConvertConvertLead202Response);

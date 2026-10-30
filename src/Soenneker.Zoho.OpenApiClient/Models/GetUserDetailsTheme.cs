@@ -18,13 +18,20 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("background") is { } nullNodeBackground && nullNodeBackground.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Background = null;
-            if (parseNode.GetChildNode("header") is { } nullNodeHeader && nullNodeHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Header = null;
-            if (parseNode.GetChildNode("new_background") is { } nullNodeNewBackground && nullNodeNewBackground.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBackground = null;
-            if (parseNode.GetChildNode("normal_tab") is { } nullNodeNormalTab && nullNodeNormalTab.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NormalTab = null;
-            if (parseNode.GetChildNode("screen") is { } nullNodeScreen && nullNodeScreen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screen = null;
-            if (parseNode.GetChildNode("selected_tab") is { } nullNodeSelectedTab && nullNodeSelectedTab.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectedTab = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("background") is null) { _explicitNullValueBackground = default!; _explicitNullProperties?.Remove("background"); }
+            else if (parseNode.GetChildNode("background") is { } nullNodeBackground && nullNodeBackground.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Background = null;
+            if (parseNode.GetChildNode("header") is null) { _explicitNullValueHeader = default!; _explicitNullProperties?.Remove("header"); }
+            else if (parseNode.GetChildNode("header") is { } nullNodeHeader && nullNodeHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Header = null;
+            if (parseNode.GetChildNode("new_background") is null) { _explicitNullValueNewBackground = default!; _explicitNullProperties?.Remove("new_background"); }
+            else if (parseNode.GetChildNode("new_background") is { } nullNodeNewBackground && nullNodeNewBackground.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBackground = null;
+            if (parseNode.GetChildNode("normal_tab") is null) { _explicitNullValueNormalTab = default!; _explicitNullProperties?.Remove("normal_tab"); }
+            else if (parseNode.GetChildNode("normal_tab") is { } nullNodeNormalTab && nullNodeNormalTab.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NormalTab = null;
+            if (parseNode.GetChildNode("screen") is null) { _explicitNullValueScreen = default!; _explicitNullProperties?.Remove("screen"); }
+            else if (parseNode.GetChildNode("screen") is { } nullNodeScreen && nullNodeScreen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Screen = null;
+            if (parseNode.GetChildNode("selected_tab") is null) { _explicitNullValueSelectedTab = default!; _explicitNullProperties?.Remove("selected_tab"); }
+            else if (parseNode.GetChildNode("selected_tab") is { } nullNodeSelectedTab && nullNodeSelectedTab.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectedTab = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,58 +39,58 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the background color of the user&apos;s theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
+        public string? Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; AdditionalData?.Remove("background"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
         private string? _explicitNullValueBackground = default!;
 #nullable restore
 #else
-        public string Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
+        public string Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; AdditionalData?.Remove("background"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
         private string _explicitNullValueBackground = default!;
 #endif
         /// <summary>Represents the theme configuration for the header area of the user&apos;s CRM interface. Includes the background color and font color settings for the header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeHeader? Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeHeader? Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; AdditionalData?.Remove("header"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeHeader? _explicitNullValueHeader = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeHeader Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeHeader Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; AdditionalData?.Remove("header"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeHeader _explicitNullValueHeader = default!;
 #endif
         /// <summary>Represents the updated background color applied to the user&apos;s theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewBackground { get => _explicitNullValueNewBackground; set { _explicitNullValueNewBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_background"); else _explicitNullProperties?.Remove("new_background"); } }
+        public string? NewBackground { get => _explicitNullValueNewBackground; set { _explicitNullValueNewBackground = value; AdditionalData?.Remove("new_background"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_background"); else _explicitNullProperties?.Remove("new_background"); } }
         private string? _explicitNullValueNewBackground = default!;
 #nullable restore
 #else
-        public string NewBackground { get => _explicitNullValueNewBackground; set { _explicitNullValueNewBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_background"); else _explicitNullProperties?.Remove("new_background"); } }
+        public string NewBackground { get => _explicitNullValueNewBackground; set { _explicitNullValueNewBackground = value; AdditionalData?.Remove("new_background"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_background"); else _explicitNullProperties?.Remove("new_background"); } }
         private string _explicitNullValueNewBackground = default!;
 #endif
         /// <summary>Represents the theme configuration for the normal (unselected) tab in the user&apos;s CRM interface, including background color and font color settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeNormalTab? NormalTab { get => _explicitNullValueNormalTab; set { _explicitNullValueNormalTab = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normal_tab"); else _explicitNullProperties?.Remove("normal_tab"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeNormalTab? NormalTab { get => _explicitNullValueNormalTab; set { _explicitNullValueNormalTab = value; AdditionalData?.Remove("normal_tab"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normal_tab"); else _explicitNullProperties?.Remove("normal_tab"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeNormalTab? _explicitNullValueNormalTab = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeNormalTab NormalTab { get => _explicitNullValueNormalTab; set { _explicitNullValueNormalTab = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normal_tab"); else _explicitNullProperties?.Remove("normal_tab"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeNormalTab NormalTab { get => _explicitNullValueNormalTab; set { _explicitNullValueNormalTab = value; AdditionalData?.Remove("normal_tab"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normal_tab"); else _explicitNullProperties?.Remove("normal_tab"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeNormalTab _explicitNullValueNormalTab = default!;
 #endif
         /// <summary>Specify the screen type or layout for the user&apos;s CRM interface.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.FixedValueScreen? Screen { get => _explicitNullValueScreen; set { _explicitNullValueScreen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screen"); else _explicitNullProperties?.Remove("screen"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FixedValueScreen? Screen { get => _explicitNullValueScreen; set { _explicitNullValueScreen = value; AdditionalData?.Remove("screen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screen"); else _explicitNullProperties?.Remove("screen"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FixedValueScreen? _explicitNullValueScreen = default!;
         /// <summary>Represents the theme configuration for the currently selected tab in the user&apos;s CRM interface, including background color and font color settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeSelectedTab? SelectedTab { get => _explicitNullValueSelectedTab; set { _explicitNullValueSelectedTab = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_tab"); else _explicitNullProperties?.Remove("selected_tab"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeSelectedTab? SelectedTab { get => _explicitNullValueSelectedTab; set { _explicitNullValueSelectedTab = value; AdditionalData?.Remove("selected_tab"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_tab"); else _explicitNullProperties?.Remove("selected_tab"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeSelectedTab? _explicitNullValueSelectedTab = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeSelectedTab SelectedTab { get => _explicitNullValueSelectedTab; set { _explicitNullValueSelectedTab = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_tab"); else _explicitNullProperties?.Remove("selected_tab"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeSelectedTab SelectedTab { get => _explicitNullValueSelectedTab; set { _explicitNullValueSelectedTab = value; AdditionalData?.Remove("selected_tab"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_tab"); else _explicitNullProperties?.Remove("selected_tab"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeSelectedTab _explicitNullValueSelectedTab = default!;
 #endif
         /// <summary>Represents the type of theme applied to the user&apos;s CRM interface.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsTheme"/> and sets the default values.
@@ -114,9 +121,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "header", n => { Header = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeHeader>(global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeHeader.CreateFromDiscriminatorValue); } },
                 { "new_background", n => { NewBackground = n.GetStringValue(); } },
                 { "normal_tab", n => { NormalTab = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeNormalTab>(global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeNormalTab.CreateFromDiscriminatorValue); } },
-                { "screen", n => { Screen = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FixedValueScreen>(); } },
+                { "screen", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FixedValueScreen>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScreen = default; _explicitNullProperties?.Remove("screen"); AdditionalData["screen"] = unknown; } else { Screen = parsed; AdditionalData.Remove("screen"); } } },
                 { "selected_tab", n => { SelectedTab = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeSelectedTab>(global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeSelectedTab.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsThemeType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

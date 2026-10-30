@@ -18,36 +18,41 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("completed_tasks_count") is { } nullNodeCompletedTasksCount && nullNodeCompletedTasksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedTasksCount = null;
-            if (parseNode.GetChildNode("failed_tasks_count") is { } nullNodeFailedTasksCount && nullNodeFailedTasksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedTasksCount = null;
-            if (parseNode.GetChildNode("open_tasks_count") is { } nullNodeOpenTasksCount && nullNodeOpenTasksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenTasksCount = null;
-            if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
-            if (parseNode.GetChildNode("tasks_count") is { } nullNodeTasksCount && nullNodeTasksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TasksCount = null;
+            if (parseNode.GetChildNode("completed_tasks_count") is null) { _explicitNullValueCompletedTasksCount = default!; _explicitNullProperties?.Remove("completed_tasks_count"); }
+            else if (parseNode.GetChildNode("completed_tasks_count") is { } nullNodeCompletedTasksCount && nullNodeCompletedTasksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedTasksCount = null;
+            if (parseNode.GetChildNode("failed_tasks_count") is null) { _explicitNullValueFailedTasksCount = default!; _explicitNullProperties?.Remove("failed_tasks_count"); }
+            else if (parseNode.GetChildNode("failed_tasks_count") is { } nullNodeFailedTasksCount && nullNodeFailedTasksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedTasksCount = null;
+            if (parseNode.GetChildNode("open_tasks_count") is null) { _explicitNullValueOpenTasksCount = default!; _explicitNullProperties?.Remove("open_tasks_count"); }
+            else if (parseNode.GetChildNode("open_tasks_count") is { } nullNodeOpenTasksCount && nullNodeOpenTasksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenTasksCount = null;
+            if (parseNode.GetChildNode("subject") is null) { _explicitNullValueSubject = default!; _explicitNullProperties?.Remove("subject"); }
+            else if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+            if (parseNode.GetChildNode("tasks_count") is null) { _explicitNullValueTasksCount = default!; _explicitNullProperties?.Remove("tasks_count"); }
+            else if (parseNode.GetChildNode("tasks_count") is { } nullNodeTasksCount && nullNodeTasksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TasksCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of tasks that were completed.</summary>
-        public int? CompletedTasksCount { get => _explicitNullValueCompletedTasksCount; set { _explicitNullValueCompletedTasksCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_tasks_count"); else _explicitNullProperties?.Remove("completed_tasks_count"); } }
+        public int? CompletedTasksCount { get => _explicitNullValueCompletedTasksCount; set { _explicitNullValueCompletedTasksCount = value; AdditionalData?.Remove("completed_tasks_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_tasks_count"); else _explicitNullProperties?.Remove("completed_tasks_count"); } }
         private int? _explicitNullValueCompletedTasksCount = default!;
         /// <summary>Represents the number of tasks that failed to execute.</summary>
-        public int? FailedTasksCount { get => _explicitNullValueFailedTasksCount; set { _explicitNullValueFailedTasksCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_tasks_count"); else _explicitNullProperties?.Remove("failed_tasks_count"); } }
+        public int? FailedTasksCount { get => _explicitNullValueFailedTasksCount; set { _explicitNullValueFailedTasksCount = value; AdditionalData?.Remove("failed_tasks_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_tasks_count"); else _explicitNullProperties?.Remove("failed_tasks_count"); } }
         private int? _explicitNullValueFailedTasksCount = default!;
         /// <summary>Represents the number of tasks that are currently open.</summary>
-        public int? OpenTasksCount { get => _explicitNullValueOpenTasksCount; set { _explicitNullValueOpenTasksCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("open_tasks_count"); else _explicitNullProperties?.Remove("open_tasks_count"); } }
+        public int? OpenTasksCount { get => _explicitNullValueOpenTasksCount; set { _explicitNullValueOpenTasksCount = value; AdditionalData?.Remove("open_tasks_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("open_tasks_count"); else _explicitNullProperties?.Remove("open_tasks_count"); } }
         private int? _explicitNullValueOpenTasksCount = default!;
         /// <summary>Represents the subject of the task action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>Represents the total number of tasks generated by the follow-up action.</summary>
-        public int? TasksCount { get => _explicitNullValueTasksCount; set { _explicitNullValueTasksCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tasks_count"); else _explicitNullProperties?.Remove("tasks_count"); } }
+        public int? TasksCount { get => _explicitNullValueTasksCount; set { _explicitNullValueTasksCount = value; AdditionalData?.Remove("tasks_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tasks_count"); else _explicitNullProperties?.Remove("tasks_count"); } }
         private int? _explicitNullValueTasksCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CadenceAnalyticsResponseCadencesItemFollowUpsItemAnalyticsOneOf1"/> and sets the default values.

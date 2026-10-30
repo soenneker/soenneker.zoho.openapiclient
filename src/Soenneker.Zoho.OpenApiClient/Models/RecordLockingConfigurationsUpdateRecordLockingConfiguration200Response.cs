@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("record_locking_configurations") is { } nullNodeRecordLockingConfigurations && nullNodeRecordLockingConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordLockingConfigurations = null;
+            if (parseNode.GetChildNode("record_locking_configurations") is null) { _explicitNullValueRecordLockingConfigurations = default!; _explicitNullProperties?.Remove("record_locking_configurations"); }
+            else if (parseNode.GetChildNode("record_locking_configurations") is { } nullNodeRecordLockingConfigurations && nullNodeRecordLockingConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordLockingConfigurations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Array containing the update response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200ResponseRecordLockingConfigurationsItem>? RecordLockingConfigurations { get => _explicitNullValueRecordLockingConfigurations; set { _explicitNullValueRecordLockingConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_locking_configurations"); else _explicitNullProperties?.Remove("record_locking_configurations"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200ResponseRecordLockingConfigurationsItem>? RecordLockingConfigurations { get => _explicitNullValueRecordLockingConfigurations; set { _explicitNullValueRecordLockingConfigurations = value; AdditionalData?.Remove("record_locking_configurations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_locking_configurations"); else _explicitNullProperties?.Remove("record_locking_configurations"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200ResponseRecordLockingConfigurationsItem>? _explicitNullValueRecordLockingConfigurations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200ResponseRecordLockingConfigurationsItem> RecordLockingConfigurations { get => _explicitNullValueRecordLockingConfigurations; set { _explicitNullValueRecordLockingConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_locking_configurations"); else _explicitNullProperties?.Remove("record_locking_configurations"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200ResponseRecordLockingConfigurationsItem> RecordLockingConfigurations { get => _explicitNullValueRecordLockingConfigurations; set { _explicitNullValueRecordLockingConfigurations = value; AdditionalData?.Remove("record_locking_configurations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_locking_configurations"); else _explicitNullProperties?.Remove("record_locking_configurations"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.RecordLockingConfigurationsUpdateRecordLockingConfiguration200ResponseRecordLockingConfigurationsItem> _explicitNullValueRecordLockingConfigurations = default!;
 #endif
         /// <summary>

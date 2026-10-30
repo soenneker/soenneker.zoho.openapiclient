@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("share") is { } nullNodeShare && nullNodeShare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Share = null;
+            if (parseNode.GetChildNode("share") is null) { _explicitNullValueShare = default!; _explicitNullProperties?.Remove("share"); }
+            else if (parseNode.GetChildNode("share") is { } nullNodeShare && nullNodeShare.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Share = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the details of each share record creation result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse>? Share { get => _explicitNullValueShare; set { _explicitNullValueShare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share"); else _explicitNullProperties?.Remove("share"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse>? Share { get => _explicitNullValueShare; set { _explicitNullValueShare = value; AdditionalData?.Remove("share"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share"); else _explicitNullProperties?.Remove("share"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse>? _explicitNullValueShare = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse> Share { get => _explicitNullValueShare; set { _explicitNullValueShare = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share"); else _explicitNullProperties?.Remove("share"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse> Share { get => _explicitNullValueShare; set { _explicitNullValueShare = value; AdditionalData?.Remove("share"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share"); else _explicitNullProperties?.Remove("share"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CreateAndUpdateSuccessResponse> _explicitNullValueShare = default!;
 #endif
         /// <summary>

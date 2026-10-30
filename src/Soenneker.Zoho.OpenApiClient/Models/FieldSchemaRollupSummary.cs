@@ -50,7 +50,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            if (result.FieldSchemaRollupSummaryOneOf1 == null && result.FieldsTypeNull == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.FieldSchemaRollupSummaryOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("return_type") || (((shapeMembers1["return_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("expression") || (((shapeMembers1["expression"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["expression"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject4 || (shapeObject4.GetValue() is var shapeMembers5 && (shapeMembers5.ContainsKey("function") && shapeMembers5.ContainsKey("function_parameters") && (!shapeMembers5.ContainsKey("function_parameters") || (((shapeMembers5["function_parameters"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers5.ContainsKey("function") || (((shapeMembers5["function"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))))))))) && (!shapeMembers1.ContainsKey("based_on_module") || (((shapeMembers1["based_on_module"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["based_on_module"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject16 || (shapeObject16.GetValue() is var shapeMembers17 && (shapeMembers17.ContainsKey("api_name") && shapeMembers17.ContainsKey("id") && (!shapeMembers17.ContainsKey("api_name") || (((shapeMembers17["api_name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers17.ContainsKey("id") || (((shapeMembers17["id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))))))))) && (!shapeMembers1.ContainsKey("related_list") || (((shapeMembers1["related_list"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["related_list"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject22 || (shapeObject22.GetValue() is var shapeMembers23 && (shapeMembers23.ContainsKey("api_name") && shapeMembers23.ContainsKey("id") && (!shapeMembers23.ContainsKey("api_name") || (((shapeMembers23["api_name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers23.ContainsKey("id") || (((shapeMembers23["id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))))))))) && (!shapeMembers1.ContainsKey("rollup_based_on") || (((shapeMembers1["rollup_based_on"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.FieldSchemaRollupSummaryOneOf1 == null && result.FieldsTypeNull == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.FieldSchemaRollupSummaryOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldSchemaRollupSummaryOneOf1(), parseNode);
             if (result.FieldSchemaRollupSummaryOneOf1 == null && result.FieldsTypeNull == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -60,6 +64,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(FieldSchemaRollupSummaryOneOf1 != null)
             {
                 return FieldSchemaRollupSummaryOneOf1.GetFieldDeserializers();
@@ -78,7 +84,10 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (FieldSchemaRollupSummaryOneOf1 == null && FieldsTypeNull == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (FieldSchemaRollupSummaryOneOf1 != null && FieldsTypeNull == null) { if (FieldSchemaRollupSummaryOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FieldSchemaRollupSummaryOneOf1); return; }
+            int selectedUnionBranches = 0;
+            if (FieldSchemaRollupSummaryOneOf1 != null) selectedUnionBranches++;
+            if (FieldsTypeNull != null) selectedUnionBranches++;
+            if (FieldSchemaRollupSummaryOneOf1 != null && selectedUnionBranches == 1) { if (FieldSchemaRollupSummaryOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FieldSchemaRollupSummaryOneOf1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(FieldSchemaRollupSummaryOneOf1 != null)

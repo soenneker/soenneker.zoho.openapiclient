@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cadences_records_count") is { } nullNodeCadencesRecordsCount && nullNodeCadencesRecordsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CadencesRecordsCount = null;
+            if (parseNode.GetChildNode("cadences_records_count") is null) { _explicitNullValueCadencesRecordsCount = default!; _explicitNullProperties?.Remove("cadences_records_count"); }
+            else if (parseNode.GetChildNode("cadences_records_count") is { } nullNodeCadencesRecordsCount && nullNodeCadencesRecordsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CadencesRecordsCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of Cadence record count entries in the success response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccess>? CadencesRecordsCount { get => _explicitNullValueCadencesRecordsCount; set { _explicitNullValueCadencesRecordsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadences_records_count"); else _explicitNullProperties?.Remove("cadences_records_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccess>? CadencesRecordsCount { get => _explicitNullValueCadencesRecordsCount; set { _explicitNullValueCadencesRecordsCount = value; AdditionalData?.Remove("cadences_records_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadences_records_count"); else _explicitNullProperties?.Remove("cadences_records_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccess>? _explicitNullValueCadencesRecordsCount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccess> CadencesRecordsCount { get => _explicitNullValueCadencesRecordsCount; set { _explicitNullValueCadencesRecordsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadences_records_count"); else _explicitNullProperties?.Remove("cadences_records_count"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccess> CadencesRecordsCount { get => _explicitNullValueCadencesRecordsCount; set { _explicitNullValueCadencesRecordsCount = value; AdditionalData?.Remove("cadences_records_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cadences_records_count"); else _explicitNullProperties?.Remove("cadences_records_count"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CadencesRecordsCountSuccess> _explicitNullValueCadencesRecordsCount = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_label") is { } nullNodeFieldLabel && nullNodeFieldLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldLabel = null;
+            if (parseNode.GetChildNode("field_label") is null) { _explicitNullValueFieldLabel = default!; _explicitNullProperties?.Remove("field_label"); }
+            else if (parseNode.GetChildNode("field_label") is { } nullNodeFieldLabel && nullNodeFieldLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldLabel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specify the field label in connected module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FieldLabel { get => _explicitNullValueFieldLabel; set { _explicitNullValueFieldLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_label"); else _explicitNullProperties?.Remove("field_label"); } }
+        public string? FieldLabel { get => _explicitNullValueFieldLabel; set { _explicitNullValueFieldLabel = value; AdditionalData?.Remove("field_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_label"); else _explicitNullProperties?.Remove("field_label"); } }
         private string? _explicitNullValueFieldLabel = default!;
 #nullable restore
 #else
-        public string FieldLabel { get => _explicitNullValueFieldLabel; set { _explicitNullValueFieldLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_label"); else _explicitNullProperties?.Remove("field_label"); } }
+        public string FieldLabel { get => _explicitNullValueFieldLabel; set { _explicitNullValueFieldLabel = value; AdditionalData?.Remove("field_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_label"); else _explicitNullProperties?.Remove("field_label"); } }
         private string _explicitNullValueFieldLabel = default!;
 #endif
         /// <summary>

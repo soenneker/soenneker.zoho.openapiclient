@@ -18,10 +18,14 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
-            if (parseNode.GetChildNode("subordinates") is { } nullNodeSubordinates && nullNodeSubordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subordinates = null;
-            if (parseNode.GetChildNode("sub_territories") is { } nullNodeSubTerritories && nullNodeSubTerritories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubTerritories = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("subordinates") is null) { _explicitNullValueSubordinates = default!; _explicitNullProperties?.Remove("subordinates"); }
+            else if (parseNode.GetChildNode("subordinates") is { } nullNodeSubordinates && nullNodeSubordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subordinates = null;
+            if (parseNode.GetChildNode("sub_territories") is null) { _explicitNullValueSubTerritories = default!; _explicitNullProperties?.Remove("sub_territories"); }
+            else if (parseNode.GetChildNode("sub_territories") is { } nullNodeSubTerritories && nullNodeSubTerritories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubTerritories = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,21 +33,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the identifier and name of the source. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemSource? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemSource _explicitNullValueSource = default!;
 #endif
         /// <summary>Indicates whether users in subordinate roles are included for role-type sources. Present when configured during group creation or update.</summary>
-        public bool? Subordinates { get => _explicitNullValueSubordinates; set { _explicitNullValueSubordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subordinates"); else _explicitNullProperties?.Remove("subordinates"); } }
+        public bool? Subordinates { get => _explicitNullValueSubordinates; set { _explicitNullValueSubordinates = value; AdditionalData?.Remove("subordinates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subordinates"); else _explicitNullProperties?.Remove("subordinates"); } }
         private bool? _explicitNullValueSubordinates = default!;
         /// <summary>Indicates whether members from sub-territories are included for territory-type sources. Present when configured during group creation or update.</summary>
-        public bool? SubTerritories { get => _explicitNullValueSubTerritories; set { _explicitNullValueSubTerritories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_territories"); else _explicitNullProperties?.Remove("sub_territories"); } }
+        public bool? SubTerritories { get => _explicitNullValueSubTerritories; set { _explicitNullValueSubTerritories = value; AdditionalData?.Remove("sub_territories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_territories"); else _explicitNullProperties?.Remove("sub_territories"); } }
         private bool? _explicitNullValueSubTerritories = default!;
         /// <summary>Represents the type of this member source. Possible values:**users** - Individual CRM users.**roles** - CRM roles.**territories** - CRM territories.**groups** - CRM user groups.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItem"/> and sets the default values.
@@ -73,7 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemSource>(global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemSource.CreateFromDiscriminatorValue); } },
                 { "sub_territories", n => { SubTerritories = n.GetBoolValue(); } },
                 { "subordinates", n => { Subordinates = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.UserGroupsGetUserGroupSources200ResponseSourcesItemType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_mappings") is { } nullNodeFieldMappings && nullNodeFieldMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldMappings = null;
-            if (parseNode.GetChildNode("mapped_module") is { } nullNodeMappedModule && nullNodeMappedModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MappedModule = null;
+            if (parseNode.GetChildNode("field_mappings") is null) { _explicitNullValueFieldMappings = default!; _explicitNullProperties?.Remove("field_mappings"); }
+            else if (parseNode.GetChildNode("field_mappings") is { } nullNodeFieldMappings && nullNodeFieldMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldMappings = null;
+            if (parseNode.GetChildNode("mapped_module") is null) { _explicitNullValueMappedModule = default!; _explicitNullProperties?.Remove("mapped_module"); }
+            else if (parseNode.GetChildNode("mapped_module") is { } nullNodeMappedModule && nullNodeMappedModule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MappedModule = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Field mappings for duplicate check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem>? _explicitNullValueFieldMappings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
         private List<global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemFieldMappingsItem> _explicitNullValueFieldMappings = default!;
 #endif
         /// <summary>Represents the mapped module details. Mandatory when type is mapped_module_records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemMappedModule? MappedModule { get => _explicitNullValueMappedModule; set { _explicitNullValueMappedModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapped_module"); else _explicitNullProperties?.Remove("mapped_module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemMappedModule? MappedModule { get => _explicitNullValueMappedModule; set { _explicitNullValueMappedModule = value; AdditionalData?.Remove("mapped_module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapped_module"); else _explicitNullProperties?.Remove("mapped_module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemMappedModule? _explicitNullValueMappedModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemMappedModule MappedModule { get => _explicitNullValueMappedModule; set { _explicitNullValueMappedModule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapped_module"); else _explicitNullProperties?.Remove("mapped_module"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemMappedModule MappedModule { get => _explicitNullValueMappedModule; set { _explicitNullValueMappedModule = value; AdditionalData?.Remove("mapped_module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapped_module"); else _explicitNullProperties?.Remove("mapped_module"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CreateDuplicateCheckPreferenceRequestDuplicateCheckPreferenceTypeConfigurationsItemMappedModule _explicitNullValueMappedModule = default!;
 #endif
         /// <summary>

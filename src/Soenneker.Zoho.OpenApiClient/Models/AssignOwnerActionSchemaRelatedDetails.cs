@@ -18,34 +18,37 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("best_time") is { } nullNodeBestTime && nullNodeBestTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BestTime = null;
-            if (parseNode.GetChildNode("followup_details") is { } nullNodeFollowupDetails && nullNodeFollowupDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowupDetails = null;
-            if (parseNode.GetChildNode("lookup_field") is { } nullNodeLookupField && nullNodeLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupField = null;
+            if (parseNode.GetChildNode("best_time") is null) { _explicitNullValueBestTime = default!; _explicitNullProperties?.Remove("best_time"); }
+            else if (parseNode.GetChildNode("best_time") is { } nullNodeBestTime && nullNodeBestTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BestTime = null;
+            if (parseNode.GetChildNode("followup_details") is null) { _explicitNullValueFollowupDetails = default!; _explicitNullProperties?.Remove("followup_details"); }
+            else if (parseNode.GetChildNode("followup_details") is { } nullNodeFollowupDetails && nullNodeFollowupDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowupDetails = null;
+            if (parseNode.GetChildNode("lookup_field") is null) { _explicitNullValueLookupField = default!; _explicitNullProperties?.Remove("lookup_field"); }
+            else if (parseNode.GetChildNode("lookup_field") is { } nullNodeLookupField && nullNodeLookupField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LookupField = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether to send the email notification at the best time for the recipient. When set to true, the platform determines the optimal send time.</summary>
-        public bool? BestTime { get => _explicitNullValueBestTime; set { _explicitNullValueBestTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("best_time"); else _explicitNullProperties?.Remove("best_time"); } }
+        public bool? BestTime { get => _explicitNullValueBestTime; set { _explicitNullValueBestTime = value; AdditionalData?.Remove("best_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("best_time"); else _explicitNullProperties?.Remove("best_time"); } }
         private bool? _explicitNullValueBestTime = default!;
         /// <summary>Represents the followup task configuration, including the trigger condition and delay settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2FollowupDetails? FollowupDetails { get => _explicitNullValueFollowupDetails; set { _explicitNullValueFollowupDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followup_details"); else _explicitNullProperties?.Remove("followup_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2FollowupDetails? FollowupDetails { get => _explicitNullValueFollowupDetails; set { _explicitNullValueFollowupDetails = value; AdditionalData?.Remove("followup_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followup_details"); else _explicitNullProperties?.Remove("followup_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2FollowupDetails? _explicitNullValueFollowupDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2FollowupDetails FollowupDetails { get => _explicitNullValueFollowupDetails; set { _explicitNullValueFollowupDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followup_details"); else _explicitNullProperties?.Remove("followup_details"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2FollowupDetails FollowupDetails { get => _explicitNullValueFollowupDetails; set { _explicitNullValueFollowupDetails = value; AdditionalData?.Remove("followup_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followup_details"); else _explicitNullProperties?.Remove("followup_details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf2FollowupDetails _explicitNullValueFollowupDetails = default!;
 #endif
         /// <summary>The lookup field linking the rule module to the target module (e.g., Account_Name on Contacts). Provide the field&apos;s id and api_name. When the field update targets the same module, related_details is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3LookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3LookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; AdditionalData?.Remove("lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3LookupField? _explicitNullValueLookupField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3LookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        public global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3LookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; AdditionalData?.Remove("lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RelatedDetailsNestedSchemaOneOf3LookupField _explicitNullValueLookupField = default!;
 #endif
         /// <summary>

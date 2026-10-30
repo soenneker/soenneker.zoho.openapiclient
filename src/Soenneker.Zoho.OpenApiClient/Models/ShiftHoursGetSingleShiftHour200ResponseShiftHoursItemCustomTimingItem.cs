@@ -18,8 +18,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("days") is { } nullNodeDays && nullNodeDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Days = null;
-            if (parseNode.GetChildNode("shift_timing") is { } nullNodeShiftTiming && nullNodeShiftTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftTiming = null;
+            if (parseNode.GetChildNode("days") is null) { _explicitNullValueDays = default!; _explicitNullProperties?.Remove("days"); }
+            else if (parseNode.GetChildNode("days") is { } nullNodeDays && nullNodeDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Days = null;
+            if (parseNode.GetChildNode("shift_timing") is null) { _explicitNullValueShiftTiming = default!; _explicitNullProperties?.Remove("shift_timing"); }
+            else if (parseNode.GetChildNode("shift_timing") is { } nullNodeShiftTiming && nullNodeShiftTiming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftTiming = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the day of the week to which thiscustom shift timing applies.**Possible values**: - Monday- Tuesday- Wednesday- Thursday- Friday- Saturday- Sunday</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
+        public string? Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; AdditionalData?.Remove("days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
         private string? _explicitNullValueDays = default!;
 #nullable restore
 #else
-        public string Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
+        public string Days { get => _explicitNullValueDays; set { _explicitNullValueDays = value; AdditionalData?.Remove("days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("days"); else _explicitNullProperties?.Remove("days"); } }
         private string _explicitNullValueDays = default!;
 #endif
         /// <summary>Represents the start and end time of the shift on the specifiedday in `HH:MM` 24-hour format. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ShiftTiming { get => _explicitNullValueShiftTiming; set { _explicitNullValueShiftTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_timing"); else _explicitNullProperties?.Remove("shift_timing"); } }
+        public List<string>? ShiftTiming { get => _explicitNullValueShiftTiming; set { _explicitNullValueShiftTiming = value; AdditionalData?.Remove("shift_timing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_timing"); else _explicitNullProperties?.Remove("shift_timing"); } }
         private List<string>? _explicitNullValueShiftTiming = default!;
 #nullable restore
 #else
-        public List<string> ShiftTiming { get => _explicitNullValueShiftTiming; set { _explicitNullValueShiftTiming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_timing"); else _explicitNullProperties?.Remove("shift_timing"); } }
+        public List<string> ShiftTiming { get => _explicitNullValueShiftTiming; set { _explicitNullValueShiftTiming = value; AdditionalData?.Remove("shift_timing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shift_timing"); else _explicitNullProperties?.Remove("shift_timing"); } }
         private List<string> _explicitNullValueShiftTiming = default!;
 #endif
         /// <summary>
