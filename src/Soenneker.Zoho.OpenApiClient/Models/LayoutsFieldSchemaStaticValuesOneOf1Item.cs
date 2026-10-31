@@ -66,6 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "sequence_number", n => { SequenceNumber = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
+
             };
         }
         /// <summary>

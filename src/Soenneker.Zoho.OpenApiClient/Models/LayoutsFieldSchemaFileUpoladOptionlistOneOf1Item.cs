@@ -61,6 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
                 { "actual_value", n => { ActualValue = n.GetStringValue(); } },
+
             };
         }
         /// <summary>

@@ -61,6 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "sequence_number", n => { SequenceNumber = n.GetDoubleValue(); } },
                 { "field", n => { Field = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
+
             };
         }
         /// <summary>

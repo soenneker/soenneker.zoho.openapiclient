@@ -5329,6 +5329,40 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the Assignment Rule response details for the completed operation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Successful Assignment Rule operation",
+                    "description": "Shows a successful Assignment Rule response with the status, message, and Assignment Rule ID details.",
+                    "value": {
+                      "assignment_rules": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "123456789",
+                            "rule_entries": [
+                              {
+                                "id": "123456789"
+                              }
+                            ]
+                          },
+                          "message": "created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -7310,6 +7344,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the success details for the cloned Assignment Rule, including the new Assignment Rule ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Successful Assignment Rule operation",
+                    "description": "Shows a successful Assignment Rule response with the status, message, and Assignment Rule ID details.",
+                    "value": {
+                      "assignment_rules": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "123456"
+                          },
+                          "message": "",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -8897,6 +8960,33 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Email associated successfully with the record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssociateEmailAssociateEmail201Response"
+                },
+                "examples": {
+                  "Success": {
+                    "value": {
+                      "Emails": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "message_id": "msg_123"
+                          },
+                          "message": "Email associated successfully.",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -10164,6 +10254,42 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The bulk read job was successfully created. The response includes the job ID and initial state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkReadCreateBulkReadJob201Response"
+                },
+                "examples": {
+                  "Example1": {
+                    "summary": "Bulk read job created",
+                    "description": "A sample response confirming that the bulk read job was successfully created, including the assigned job ID and initial state.",
+                    "value": {
+                      "data": [
+                        {
+                          "status": "success",
+                          "code": "ADDED_SUCCESSFULLY",
+                          "message": "Added successfully.",
+                          "details": {
+                            "id": "string",
+                            "operation": "read",
+                            "state": "COMPLETED",
+                            "created_by": {
+                              "id": "string"
+                            },
+                            "created_time": "2023-01-01T00:00:00Z"
+                          }
+                        }
+                      ],
+                      "info": {}
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -10502,6 +10628,34 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the details of the bulk write job that was scheduled, including its unique identifier and the user who created it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkWriteCreateBulkWriteJob201Response"
+                },
+                "examples": {
+                  "SuccessResponse": {
+                    "summary": "Successful bulk write job creation",
+                    "description": "Returns the unique identifier of the scheduled bulk write job and the ID of the creating user.",
+                    "value": {
+                      "status": "success",
+                      "code": "SUCCESS",
+                      "message": "success",
+                      "details": {
+                        "id": "3524001000005697001",
+                        "created_by": {
+                          "id": "3524001000000186003"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -10728,6 +10882,32 @@
           "403": {
             "description": "Access denied. The authenticated user does not have the required permissions to manage business hours settings.",
             "$ref": "#/components/responses/ForbiddenResponse"
+          },
+          "200": {
+            "description": "Business hours operation completed successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessHoursSuccessResponseResponse"
+                },
+                "examples": {
+                  "Success": {
+                    "summary": "Success Response",
+                    "value": {
+                      "business_hours": {
+                        "status": "success",
+                        "code": "SUCCESS",
+                        "message": "Business Hours saved successfully",
+                        "details": {
+                          "id": "1234567890"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -13060,6 +13240,40 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the details of the newly created Cadence, including its unique identifier.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse200"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Successful Cadence creation response",
+                    "description": "Shows a successful response after creating a new Cadence, returning the unique identifier of the created Cadence.",
+                    "value": {
+                      "cadences": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "follow_ups": [
+                              {
+                                "id": "111112000000092009"
+                              }
+                            ],
+                            "id": "111112000000092007"
+                          },
+                          "message": "Cadences created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -18118,6 +18332,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the details of the newly cloned Cadence, including its unique identifier.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse200"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Successful Cadence clone response",
+                    "description": "Shows a successful response after cloning a Cadence, returning the identifier of the newly created Cadence.",
+                    "value": {
+                      "cadences": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "111112000000092007"
+                          },
+                          "message": "Cadences cloned successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -26821,6 +27064,38 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the details of the Custom Views created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomViewsCreateCustomViewSuccessResponse"
+                },
+                "examples": {
+                  "PostSuccessResponse": {
+                    "summary": "Custom view created successfully",
+                    "description": "Shows a success response for the create Custom View operation, including the ID of the created view.",
+                    "value": {
+                      "custom_views": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "2411194000004076067"
+                          },
+                          "message": "custom view created",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/CustomViewsCreateCustomView201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -31802,6 +32077,37 @@
           "403": {
             "description": "Forbidden - the user does not have permission to perform the operation.",
             "$ref": "#/components/responses/NoPermissionForbidden"
+          },
+          "200": {
+            "description": "Returns the creation results when all email drafts in the request are created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmailDraftsCreateEmailDraftsSuccessResponse"
+                },
+                "examples": {
+                  "Success": {
+                    "summary": "Successful Creation",
+                    "value": {
+                      "__email_drafts": [
+                        {
+                          "code": "SUCCESS",
+                          "message": "Draft created Successfully",
+                          "status": "success",
+                          "details": {
+                            "id": "4f8efdcbaf23fd33c939217d4e14222d6d1cb21e4a45914fb9ba0c31c3c47330"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/EmailDraftsCreateEmailDrafts201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -36650,6 +36956,34 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Field update action created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostfieldupdatesResponse201"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Success response for status 201",
+                    "value": {
+                      "field_updates": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "3361265000006103128"
+                          },
+                          "message": "fieldupdate created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -39504,6 +39838,53 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns a list of results confirming that all requested custom fields were created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldsCreateFieldsSuccessResponse"
+                },
+                "examples": {
+                  "FullExample": {
+                    "summary": "Successful field creation response with IDs for each created field",
+                    "value": {
+                      "fields": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "111112000000067259"
+                          },
+                          "message": "field created",
+                          "status": "success"
+                        },
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "11111200000006724"
+                          },
+                          "message": "field created",
+                          "status": "success"
+                        },
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "111112000000067239"
+                          },
+                          "message": "field created",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/CreateFieldsResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -42168,6 +42549,51 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the result of a merge operation that was either completed synchronously (with SUCCESS code and merged record ID) or scheduled for asynchronous processing (with SCHEDULED code and job_id). ",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FindAndMergeMergeRecords201Response"
+                },
+                "examples": {
+                  "MergeCompleted": {
+                    "summary": "Example of merge operation completed successfully.",
+                    "description": "Shows the response when the merge was completed synchronously, returning a SUCCESS code with the retained master record ID.",
+                    "value": {
+                      "merge": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "111111000000116112"
+                          },
+                          "message": "The records has been merged successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  },
+                  "MergeScheduled": {
+                    "summary": "Example of merge operation scheduled for processing.",
+                    "description": "Shows the response when the merge was scheduled for processing, returning a SCHEDULED code and job_id.",
+                    "value": {
+                      "merge": [
+                        {
+                          "code": "SCHEDULED",
+                          "details": {
+                            "job_id": "1234567890"
+                          },
+                          "message": "The records have been scheduled in a scheduler",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -44965,6 +45391,34 @@
           "500": {
             "description": "Internal Server Error",
             "$ref": "#/components/responses/global_picklists_InternalServerError"
+          },
+          "200": {
+            "description": "Created - Global picklist created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPicklistsCreateGlobalPicklist201Response"
+                },
+                "examples": {
+                  "SuccessExample": {
+                    "summary": "Successful creation response",
+                    "value": {
+                      "global_picklists": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "4793076000000560088"
+                          },
+                          "message": "global picklist added successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -45885,6 +46339,33 @@
           "500": {
             "description": "Internal Server Error",
             "$ref": "#/components/responses/global_picklists_InternalServerError"
+          },
+          "200": {
+            "description": "Accepted - deletion scheduled. Response contains job_id in details. No status endpoint is provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPicklistsDeleteGlobalPicklists202Response"
+                },
+                "examples": {
+                  "AcceptedExample": {
+                    "value": {
+                      "global_picklists": [
+                        {
+                          "code": "SCHEDULED",
+                          "message": "Deletion scheduled",
+                          "details": {
+                            "job_id": "job_01Fxxxxxx"
+                          },
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -46986,6 +47467,33 @@
           "500": {
             "description": "Internal Server Error",
             "$ref": "#/components/responses/global_picklists_InternalServerError"
+          },
+          "200": {
+            "description": "Accepted - deletion scheduled. Response contains job_id in details. No status endpoint is provided.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlobalPicklistsDeleteGlobalPicklist202Response"
+                },
+                "examples": {
+                  "AcceptedExample": {
+                    "value": {
+                      "global_picklists": [
+                        {
+                          "code": "SCHEDULED",
+                          "message": "Deletion scheduled",
+                          "details": {
+                            "job_id": "job_01Fxxxxxx"
+                          },
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -48201,6 +48709,29 @@
           "403": {
             "description": "The user does not have sufficient permission to perform the requested operation. **Resolution** The CRM administrator must grant the required permission to the user\u0027s profile.",
             "$ref": "#/components/responses/ForbiddenError"
+          },
+          "200": {
+            "description": "Returns the result for each holiday submitted in the create request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HolidaysCreateHolidaysSuccessResponse"
+                },
+                "examples": {
+                  "Default": {
+                    "summary": "Default 400 error response for holiday creation",
+                    "description": "Shows a sample 400 error response returned when holiday validation fails.",
+                    "value": {
+                      "holidays": []
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/HolidaysCreateHolidays201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -51661,6 +52192,44 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns a success response when the record is locked successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LockingInformationsLockRecord201Response"
+                },
+                "examples": {
+                  "SuccessCase": {
+                    "summary": "Successful record lock",
+                    "value": {
+                      "data": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "Modified_Time": "2021-07-13T18:54:49\u002B05:30",
+                            "Modified_By": {
+                              "name": "priya",
+                              "id": "111111000000047241"
+                            },
+                            "Created_Time": "2021-07-13T18:54:49\u002B05:30",
+                            "id": "111111000000054029",
+                            "Created_By": {
+                              "name": "priya",
+                              "id": "111111000000047241"
+                            }
+                          },
+                          "message": "record added",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -53696,6 +54265,35 @@
           "500": {
             "description": "An unexpected error occurred on the server.\n**Resolution:** Retry the request. If the error persists, contact Zoho CRM support.\n",
             "$ref": "#/components/responses/map_dependency_InternalServerError"
+          },
+          "200": {
+            "description": "Returns the result of the create operation, including the unique identifier of the newly created field dependency.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MapDependencyCreateMapDependency201Response"
+                },
+                "examples": {
+                  "SuccessResponse": {
+                    "summary": "Example of field dependency created successfully.",
+                    "description": "Shows the success response containing the unique identifier of the newly created field dependency.",
+                    "value": {
+                      "map_dependency": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "111111000000064003"
+                          },
+                          "message": "map dependency created",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -54677,6 +55275,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the job details after the mass change owner request is accepted and scheduled for processing.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MassChangeOwnerMassChangeOwner202Response"
+                },
+                "examples": {
+                  "SuccessResponse": {
+                    "summary": "Example of a successful mass change owner job scheduling.",
+                    "description": "Shows the successful response when the mass change owner request is accepted and a job is scheduled.",
+                    "value": {
+                      "data": [
+                        {
+                          "status": "success",
+                          "code": "SCHEDULED",
+                          "message": "change owner is successfully scheduled",
+                          "details": {
+                            "job_id": "2423488000001234567"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -55178,6 +55805,31 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns confirmation that the mass convert job has been scheduled, along with a job identifier for status tracking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MassConvertMassConvert202Response"
+                },
+                "examples": {
+                  "Success": {
+                    "summary": "Example of a successful mass convert job scheduling response.",
+                    "description": "Shows the response when a mass convert job is successfully scheduled, including the job identifier.",
+                    "value": {
+                      "code": "SCHEDULED",
+                      "message": "Mass Convert scheduled successfully",
+                      "status": "success",
+                      "details": {
+                        "job_id": "1234567890"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -56193,6 +56845,31 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the job identifier and the schedule code for the mass delete tag job that was queued for processing.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MassDeleteTagsMassDeleteTags202Response"
+                },
+                "examples": {
+                  "Sample": {
+                    "summary": "An example of mass delete tag job scheduled successfully.",
+                    "description": "Shows the response when a mass delete tag job is scheduled successfully, returning the job identifier that the client can use to track job progress.",
+                    "value": {
+                      "status": "success",
+                      "code": "202",
+                      "details": {
+                        "job_id": "job_789"
+                      },
+                      "message": "Mass delete job scheduled successfully"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -58914,6 +59591,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the success result of the module creation, including the unique identifier of the newly created module.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModulesCreateModules201Response"
+                },
+                "examples": {
+                  "SuccessfulCreation": {
+                    "summary": "Custom module created successfully",
+                    "description": "Shows the response after successfully creating a custom module, with the new module ID returned in the details object.",
+                    "value": {
+                      "modules": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "111111000000123456"
+                          },
+                          "message": "module created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -61372,6 +62078,47 @@
           "500": {
             "description": "Internal Server Error - An unexpected error occurred on the server",
             "$ref": "#/components/responses/notes_InternalServerError"
+          },
+          "200": {
+            "description": "Created - Note(s) successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotesCreateNotesModuleSuccessResponse"
+                },
+                "examples": {
+                  "SuccessfulCreation": {
+                    "summary": "Note successfully created",
+                    "value": {
+                      "data": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "Modified_Time": "2023-12-19T16:45:07\u002B05:30",
+                            "Modified_By": {
+                              "name": "Patricia Boyle",
+                              "id": "4876876000000327001"
+                            },
+                            "Created_Time": "2023-12-19T16:45:07\u002B05:30",
+                            "id": "4876876000006021002",
+                            "Created_By": {
+                              "name": "Patricia Boyle",
+                              "id": "4876876000000327001"
+                            }
+                          },
+                          "message": "record added",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/NotesCreateNotesModule201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -62495,6 +63242,46 @@
           "500": {
             "description": "An unexpected error occurred while processing the request.",
             "$ref": "#/components/responses/notifications_InternalServerError"
+          },
+          "200": {
+            "description": "Returns the creation results for each notification channel submitted in the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationsCreateNotificationsSuccessResponse"
+                },
+                "examples": {
+                  "Sample": {
+                    "summary": "Successful notification channel creation response",
+                    "description": "Shows the successful creation result for a notification channel, including the subscribed event details, resource information, and status.",
+                    "value": {
+                      "watch": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "events": [
+                              {
+                                "channel_expiry": "2023-08-02T16:59:50-11:00",
+                                "resource_uri": "https://www.zohoapis.com/crm/v8/Deals",
+                                "resource_id": "554023000000000131",
+                                "resource_name": "Deals",
+                                "channel_id": "10000"
+                              }
+                            ]
+                          },
+                          "message": "Successfully subscribed for actions-watch of the given module",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/NotificationsCreateNotifications201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -64785,6 +65572,34 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Accepted - Request accepted for processing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PicklistReplaceResponse"
+                },
+                "examples": {
+                  "Success202": {
+                    "summary": "Success response for status 202",
+                    "value": {
+                      "replace_pick_list_values": [
+                        {
+                          "code": "SCHEDULED",
+                          "details": {
+                            "job_id": "2423488000000732044"
+                          },
+                          "message": "Picklist option replace operation scheduled successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -65284,6 +66099,33 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Success Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PipelineSuccessResponse"
+                },
+                "examples": {
+                  "PipelineCreateResponse": {
+                    "value": {
+                      "pipeline": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "2766660000055809093"
+                          },
+                          "message": "Pipeline created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -69575,6 +70417,334 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Zoho CRM created the portal user type successfully. The response contains the identifier and name of the newly created user type.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostusertypeResponse201"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Portal user type created successfully (201)",
+                    "description": "Zoho CRM created the portal user type. The response includes the generated \u0060id\u0060 for the new user type along with the full configuration of the personality module, invitation field, modules, permissions, fields, layouts, and views.",
+                    "value": {
+                      "user_type": [
+                        {
+                          "default": false,
+                          "personality_module": {
+                            "plural_label": "Contacts",
+                            "api_name": "Contacts",
+                            "id": "111113000000002666"
+                          },
+                          "name": "Client Portal V8",
+                          "active": true,
+                          "invitation_field": {
+                            "api_name": "Email",
+                            "id": "111113000000004612"
+                          },
+                          "id": "111113000000168122",
+                          "modules": [
+                            {
+                              "plural_label": "Contacts",
+                              "shared_type": "private",
+                              "api_name": "Contacts",
+                              "permissions": {
+                                "view": true,
+                                "edit": true,
+                                "edit_shared_records": false,
+                                "create": true,
+                                "delete": true
+                              },
+                              "id": "111113000000002666",
+                              "filters": null,
+                              "fields": [
+                                {
+                                  "read_only": false,
+                                  "api_name": "Last_Name",
+                                  "id": "111113000000004604"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Full_Name",
+                                  "id": "111113000000004606"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Currency",
+                                  "id": "111113000000004660"
+                                },
+                                {
+                                  "read_only": true,
+                                  "api_name": "Exchange_Rate",
+                                  "id": "111113000000004662"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Layout",
+                                  "id": "111113000000004668"
+                                },
+                                {
+                                  "read_only": true,
+                                  "api_name": "Change_Log_Time__s",
+                                  "id": "111113000000004694"
+                                },
+                                {
+                                  "read_only": true,
+                                  "api_name": "Locked__s",
+                                  "id": "111113000000004696"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Contact_X_CM01",
+                                  "id": "111113000000131043"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Last_Enriched_Time__s",
+                                  "id": "111113000000006734"
+                                }
+                              ],
+                              "layouts": [
+                                {
+                                  "display_label": "Standard",
+                                  "name": "Standard",
+                                  "id": "111113000000003678",
+                                  "_default_view": {
+                                    "display_label": "Standard",
+                                    "name": "Standard",
+                                    "id": "111113000000003678",
+                                    "type": "layout"
+                                  }
+                                }
+                              ],
+                              "views": {
+                                "id": "111113000000070019",
+                                "type": "canvas_view"
+                              }
+                            },
+                            {
+                              "plural_label": "Products",
+                              "shared_type": "public",
+                              "api_name": "Products",
+                              "permissions": {
+                                "view": true
+                              },
+                              "id": "111113000000002768",
+                              "filters": null,
+                              "fields": [
+                                {
+                                  "read_only": false,
+                                  "api_name": "Product_Name",
+                                  "id": "111113000000005278"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Currency",
+                                  "id": "111113000000005308"
+                                },
+                                {
+                                  "read_only": true,
+                                  "api_name": "Exchange_Rate",
+                                  "id": "111113000000005310"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Layout",
+                                  "id": "111113000000005312"
+                                },
+                                {
+                                  "read_only": true,
+                                  "api_name": "Change_Log_Time__s",
+                                  "id": "111113000000005332"
+                                },
+                                {
+                                  "read_only": true,
+                                  "api_name": "Locked__s",
+                                  "id": "111113000000005326"
+                                }
+                              ],
+                              "layouts": [
+                                {
+                                  "display_label": "Standard",
+                                  "name": "Standard",
+                                  "id": "111113000000003684",
+                                  "_default_view": {
+                                    "display_label": "Standard",
+                                    "name": "Standard",
+                                    "id": "111113000000003684",
+                                    "type": "layout"
+                                  }
+                                }
+                              ],
+                              "views": {
+                                "id": "111113000000053489",
+                                "type": "custom_view"
+                              }
+                            },
+                            {
+                              "plural_label": "Custom Module",
+                              "shared_type": "private",
+                              "api_name": "Custom_Module",
+                              "permissions": {
+                                "view": true,
+                                "edit": false,
+                                "edit_shared_records": false,
+                                "create": false,
+                                "delete": false
+                              },
+                              "id": "111113000000125002",
+                              "filters": [
+                                {
+                                  "display_label": "Lookup 1",
+                                  "api_name": "Lookup_1",
+                                  "id": "111113000000127669"
+                                }
+                              ],
+                              "fields": [
+                                {
+                                  "read_only": false,
+                                  "api_name": "Currency",
+                                  "id": "111113000000125065"
+                                },
+                                {
+                                  "read_only": true,
+                                  "api_name": "Exchange_Rate",
+                                  "id": "111113000000125067"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Layout",
+                                  "id": "111113000000125071"
+                                },
+                                {
+                                  "read_only": true,
+                                  "api_name": "Locked__s",
+                                  "id": "111113000000125093"
+                                },
+                                {
+                                  "read_only": true,
+                                  "api_name": "Change_Log_Time__s",
+                                  "id": "111113000000125111"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Name",
+                                  "id": "111113000000125047"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Lookup_1",
+                                  "id": "111113000000127669"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Multi_Select_Lookup_1",
+                                  "id": "111113000000131001"
+                                }
+                              ],
+                              "layouts": [
+                                {
+                                  "display_label": "Standard",
+                                  "name": "Standard",
+                                  "id": "111113000000125001",
+                                  "_default_view": {
+                                    "display_label": "Standard",
+                                    "name": "Standard",
+                                    "id": "111113000000125001",
+                                    "type": "layout"
+                                  }
+                                }
+                              ],
+                              "views": {
+                                "id": "111113000000125014",
+                                "type": "custom_view"
+                              }
+                            },
+                            {
+                              "plural_label": "Notes",
+                              "shared_type": "private",
+                              "api_name": "Notes",
+                              "permissions": {
+                                "view": true,
+                                "delete_attachment": false,
+                                "edit": false,
+                                "create": false,
+                                "create_attachment": false,
+                                "delete": false
+                              },
+                              "id": "111113000000002694",
+                              "filters": null,
+                              "fields": [
+                                {
+                                  "read_only": false,
+                                  "api_name": "Owner",
+                                  "id": "111113000000004322"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Note_Title",
+                                  "id": "111113000000004324"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Note_Content",
+                                  "id": "111113000000004326"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Parent_Id",
+                                  "id": "111113000000004328"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Created_By",
+                                  "id": "111113000000004330"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Modified_By",
+                                  "id": "111113000000004332"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Created_Time",
+                                  "id": "111113000000004334"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Modified_Time",
+                                  "id": "111113000000004336"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "id",
+                                  "id": "111113000000004338"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Associated_Id__s",
+                                  "id": "111113000000004340"
+                                },
+                                {
+                                  "read_only": false,
+                                  "api_name": "Record_Status__s",
+                                  "id": "111113000000004342"
+                                }
+                              ],
+                              "layouts": null,
+                              "views": null
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -75763,6 +76933,35 @@
           "500": {
             "description": "Internal server error - an unexpected error occurred while processing the request.",
             "$ref": "#/components/responses/profiles_InternalServerErrorResponse"
+          },
+          "200": {
+            "description": "Profile cloned successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CloneProfileResponse"
+                },
+                "examples": {
+                  "Created": {
+                    "summary": "Clone result",
+                    "description": "A sample response confirming that the profile was cloned successfully.",
+                    "value": {
+                      "profiles": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "1697753000033202019"
+                          },
+                          "message": "profile created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -89359,6 +90558,49 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the details of each successfully created record, including the record ID and audit metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecordCreateRecordsSuccessResponse"
+                },
+                "examples": {
+                  "Success": {
+                    "summary": "Successfully created a single record",
+                    "description": "Shows the 201 response for a successfully created record, including the record ID, audit timestamps, and approval state.",
+                    "value": {
+                      "data": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "Modified_Time": "2023-05-10T01:10:47-07:00",
+                            "Modified_By": {
+                              "name": "Patricia Boyle",
+                              "id": "5725767000000411001"
+                            },
+                            "Created_Time": "2023-05-10T01:10:47-07:00",
+                            "id": "5725767000000524157",
+                            "Created_By": {
+                              "name": "Patricia Boyle",
+                              "id": "5725767000000411001"
+                            },
+                            "$approval_state": "approved"
+                          },
+                          "message": "record added",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/RecordSuccessResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -93173,6 +94415,46 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the details of each successfully cloned record, including the record ID and audit metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecordSuccessResponse"
+                },
+                "examples": {
+                  "Success": {
+                    "summary": "Successfully completed operation",
+                    "description": "Shows the successful response for the cloneRecord operation, including the record ID and audit metadata.",
+                    "value": {
+                      "data": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "Modified_Time": "2023-05-10T01:10:47-07:00",
+                            "Modified_By": {
+                              "name": "Patricia Boyle",
+                              "id": "5725767000000411001"
+                            },
+                            "Created_Time": "2023-05-10T01:10:47-07:00",
+                            "id": "5725767000000524157",
+                            "Created_By": {
+                              "name": "Patricia Boyle",
+                              "id": "5725767000000411001"
+                            },
+                            "$approval_state": "approved"
+                          },
+                          "message": "record added",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -94473,6 +95755,34 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Successfully created the record locking configuration for the specified module.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecordLockingConfigurationsCreateRecordLockingConfiguration201Response"
+                },
+                "examples": {
+                  "SuccessCase": {
+                    "summary": "Successful response for creating a record locking configuration",
+                    "value": {
+                      "record_locking_configurations": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "431525000001114019"
+                          },
+                          "message": "record locking configuration created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -97848,6 +99158,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns a mix of success and failure results when some email unsharing operations succeed and others fail. Inspect each item in the \u0060data\u0060 array for the individual outcome.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecordShareEmailUnshareBulkEmails207Response"
+                },
+                "examples": {
+                  "InvalidData": {
+                    "summary": "INVALID_DATA - invalid record ID",
+                    "description": "Shows the partial success response when some records fail validation during a bulk email unsharing request.",
+                    "value": {
+                      "data": [
+                        {
+                          "code": "INVALID_DATA",
+                          "details": {
+                            "id": "3249415000000548012"
+                          },
+                          "message": "the related id given seems to be invalid",
+                          "status": "error"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "207"
           }
         },
         "security": [
@@ -99912,6 +101251,48 @@
           "500": {
             "description": "An unexpected error occurred on the server. Resolution: Retry the request after a brief delay. If the error persists, contact Zoho CRM support.",
             "$ref": "#/components/responses/related_notes_InternalServerError"
+          },
+          "200": {
+            "description": "Returns the action status for each newly created note.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RelatedNotesCreateNotesSuccessResponse"
+                },
+                "examples": {
+                  "SuccessfulCreation": {
+                    "summary": "Success response for status 201",
+                    "description": "Shows a successful 201 response with the action status for each newly created note.",
+                    "value": {
+                      "data": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "Modified_Time": "2023-12-19T16:45:07\u002B05:30",
+                            "Modified_By": {
+                              "name": "Patricia Boyle",
+                              "id": "4876876000000327001"
+                            },
+                            "Created_Time": "2023-12-19T16:45:07\u002B05:30",
+                            "id": "4876876000006021002",
+                            "Created_By": {
+                              "name": "Patricia Boyle",
+                              "id": "4876876000000327001"
+                            }
+                          },
+                          "message": "record added",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/RelatedNotesCreateNotes201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -104514,6 +105895,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the creation result for each role submitted in the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RolesCreateRoles201Response"
+                },
+                "examples": {
+                  "Success": {
+                    "summary": "Successful role creation response",
+                    "description": "Shows a successful response returning the creation result with the ID of the newly created role.",
+                    "value": {
+                      "roles": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "4413524000000991004"
+                          },
+                          "message": "Role added",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -107525,6 +108935,37 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Scoring rule is created successfully, but one or more custom fields are not created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScoringRulesPostScoringRulesSuccessResponse"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Successful create Scoring Rules response",
+                    "value": {
+                      "scoring_rules": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "2995635000023340017"
+                          },
+                          "message": "scoring rule created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/CreateScoringRuleSuccessResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -111800,6 +113241,66 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns a data array confirming the successful creation of each service record. Each item contains the success code, the ID assigned to the created record, and audit metadata including the creation and last-modified timestamps and the users who performed those actions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServicesCreateServicesSSuccessResponse"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Successful single-record service creation returning a 201 with new record ID and audit metadata.",
+                    "description": "Shows the success response returned after the API creates a single service record successfully, including the new record ID, creation and modification timestamps, and the identities of the users who created and last modified the record.",
+                    "value": {
+                      "data": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "Modified_Time": "2026-01-12T11:03:03\u002B04:00",
+                            "Modified_By": {
+                              "name": "madesh04",
+                              "id": "111115000000058229"
+                            },
+                            "Created_Time": "2026-01-12T11:03:03\u002B04:00",
+                            "id": "111115000000121665",
+                            "Created_By": {
+                              "name": "madesh04",
+                              "id": "111115000000058229"
+                            }
+                          },
+                          "message": "record added",
+                          "status": "success"
+                        },
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "Modified_Time": "2026-01-12T11:25:46\u002B04:00",
+                            "Modified_By": {
+                              "name": "madesh04",
+                              "id": "111115000000058229"
+                            },
+                            "Created_Time": "2026-01-12T11:25:46\u002B04:00",
+                            "id": "111115000000121687",
+                            "Created_By": {
+                              "name": "madesh04",
+                              "id": "111115000000058229"
+                            }
+                          },
+                          "message": "record added",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/PostservicessResponse201"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -113785,6 +115286,36 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns a per-entry success result for each share entry created on the record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShareRecordsCreateShareRecordsSuccessResponse"
+                },
+                "examples": {
+                  "CreateShareRecordsSuccess": {
+                    "summary": "An example of successful share response.",
+                    "description": "Shows a per-entry success result that the API returns after creating the share entry successfully.",
+                    "value": {
+                      "share": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {},
+                          "message": "record will be shared successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ShareRecordsCreateShareRecords201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -114248,6 +115779,36 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns a per-entry success result for each share entry updated on the record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShareRecordsUpdateShareRecordsSuccessResponse"
+                },
+                "examples": {
+                  "UpdateShareRecordsSuccess": {
+                    "summary": "An example of successful update response.",
+                    "description": "Shows a per-entry success result that the API returns after updating the share entry successfully.",
+                    "value": {
+                      "share": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {},
+                          "message": "record will be shared successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/ShareRecordsUpdateShareRecords201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -114811,6 +116372,35 @@
           "403": {
             "description": "Returned when the requesting user does not hold the CRM profile permission required to manage shift hours.",
             "$ref": "#/components/responses/shift_hours_ForbiddenResponse"
+          },
+          "200": {
+            "description": "Returned when the shift hour create, update, or delete operation completes successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShiftHoursSuccessResponse"
+                },
+                "examples": {
+                  "Default": {
+                    "summary": "An example success response.",
+                    "description": "Example success response returned after a shift hour create, update, or delete operation.",
+                    "value": {
+                      "shift_hours": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "12345"
+                          },
+                          "message": "Success",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -123637,6 +125227,50 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns a success response for a successful tag creation. The response includes the tag details and metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TagsCreateTagsSuccessResponse"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Successful response for tag creation",
+                    "description": "Demonstrates a successful tag creation response with status 201.",
+                    "value": {
+                      "tags": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "created_time": "2025-12-29T17:58:36\u002B05:30",
+                            "modified_time": "2025-12-29T17:58:36\u002B05:30",
+                            "name": "NewTag",
+                            "modified_by": {
+                              "name": "Roobini Devi",
+                              "id": "111111000000059475"
+                            },
+                            "id": "111111000000116258",
+                            "created_by": {
+                              "name": "Roobini Devi",
+                              "id": "111111000000059475"
+                            },
+                            "color_code": "#AAFE62"
+                          },
+                          "message": "tags created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/PosttagsResponse201"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -126476,6 +128110,34 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the result of the territory creation request for each territory in the **territories** array. The **code** field indicates **SUCCESS** for created territories and **ERROR** for failed ones, with the territory ID in the **details** object for successful entries.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TerritoryCreateSuccessResponse"
+                },
+                "examples": {
+                  "AutoGeneratedExample": {
+                    "summary": "Successful territory creation response",
+                    "value": {
+                      "territories": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "431581000000734292"
+                          },
+                          "message": "Territory Created Successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -129931,6 +131593,32 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns a scheduled status response indicating that the territory assignment rules execution has been queued as a background job. The response includes a **job_id** for tracking the scheduled execution.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TerritoryRunRulesScheduledResponse"
+                },
+                "examples": {
+                  "TerritoryRulesScheduled": {
+                    "summary": "Scheduled response for territory rules execution",
+                    "value": {
+                      "run_rules": {
+                        "code": "SCHEDULED",
+                        "details": {
+                          "job_id": "111111678900087967"
+                        },
+                        "message": "Territory rules scheduled successfully.Once done, completion email will be sent.",
+                        "status": "success"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -133736,6 +135424,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created - Unsubscribe link created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateUnsubscribeLinksSuccessResponse"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Success response for status 201",
+                    "description": "Shows a successful 201 response with the action status for the newly created unsubscribe link.",
+                    "value": {
+                      "unsubscribe_links": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "111111000000115581"
+                          },
+                          "message": "Unsubscribe Link created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -135298,6 +137015,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "User group created successfully. Returns the new group ID and a success status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserGroupsCreateGroup201Response"
+                },
+                "examples": {
+                  "SuccessWithId": {
+                    "summary": "User group created successfully",
+                    "description": "Shows the success response for a user group creation, returning the new group ID and a SUCCESS code.",
+                    "value": {
+                      "user_groups": [
+                        {
+                          "code": "SUCCESS",
+                          "message": "User group created successfully",
+                          "status": "success",
+                          "details": {
+                            "id": "3652397000009949005"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -137439,6 +139185,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns the result of the user creation request, including the unique ID of the newly created user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersCreateUser201Response"
+                },
+                "examples": {
+                  "UserCreatedSuccessfully": {
+                    "summary": "Successful user creation response",
+                    "description": "Shows the response returned after a user is successfully added to the CRM organization, including the unique ID of the new user record.",
+                    "value": {
+                      "users": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "111113000000071587"
+                          },
+                          "message": "User added",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -144359,6 +146134,37 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created - Resource created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VariablesCreateVariablesSuccessResponse"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Success response for status 201",
+                    "value": {
+                      "variables": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "40000000047009"
+                          },
+                          "message": "variable added",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/VariablesBatchOperationCreated"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -144472,6 +146278,50 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Multi-Status - Response contains mixed status results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VariablesBatchRemovalMultiStatusResponse"
+                },
+                "examples": {
+                  "Success207": {
+                    "summary": "Success response for status 207",
+                    "value": {
+                      "variables": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "111114000000454011"
+                          },
+                          "message": "variable deleted",
+                          "status": "success"
+                        },
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "111114000000454008"
+                          },
+                          "message": "variable deleted",
+                          "status": "success"
+                        },
+                        {
+                          "code": "INVALID_DATA",
+                          "details": {
+                            "id": "234576960"
+                          },
+                          "message": "variable not deleted",
+                          "status": "error"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "207"
           }
         },
         "security": [
@@ -148817,6 +150667,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns an array containing the operation result for the created webhook, including the new webhook ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateWebhooksSuccessResponse"
+                },
+                "examples": {
+                  "Success201": {
+                    "summary": "Success response for webhook creation with new webhook ID",
+                    "description": "Shows the successful response for a create webhook request, including the new webhook ID in the details object.",
+                    "value": {
+                      "webhooks": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "5725767000007186002"
+                          },
+                          "message": "webhook created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -154308,6 +156187,34 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Workflow Rule created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowSuccessSchema"
+                },
+                "examples": {
+                  "SuccessResponse": {
+                    "summary": "POST- Success response for status 201",
+                    "value": {
+                      "workflow_rules": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "3361265000006294001"
+                          },
+                          "message": "workflow created",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -159792,6 +161699,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Task definition created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTaskSuccessResponse"
+                },
+                "examples": {
+                  "CreateTaskSuccess": {
+                    "summary": "Task created successfully",
+                    "description": "Returns the SUCCESS code and the newly created automation task ID, confirming that the task definition was persisted.",
+                    "value": {
+                      "tasks": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "id": "6660682000001550002"
+                          },
+                          "message": "task created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -162007,6 +163943,38 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Enrichment configuration created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZiaEnrichmentCreateZiaEnrichmentConfigurations201Response"
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "data_enrichment": [
+                        {
+                          "code": "SUCCESS",
+                          "details": {
+                            "created_time": "2025-11-13T12:25:39\u002B05:30",
+                            "id": "917992000008626025",
+                            "created_by": {
+                              "id": "917992000000417001",
+                              "name": "Brendon Caster"
+                            }
+                          },
+                          "message": "Enrichment created successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -163520,6 +165488,35 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Returns a confirmation that the enrichment job has been accepted and queued for asynchronous execution.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZiaOrgEnrichmentSubmitOrgEnrichmentRequest202Response"
+                },
+                "examples": {
+                  "Example": {
+                    "summary": "Enrichment job scheduled",
+                    "description": "Demonstrates the response returned when the enrichment request is accepted and a job identifier is issued.",
+                    "value": {
+                      "__zia_org_enrichment": [
+                        {
+                          "code": "SCHEDULED",
+                          "details": {
+                            "id": "917992000008742464"
+                          },
+                          "message": "Org Enrichment scheduled successfully",
+                          "status": "success"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -243082,15 +245079,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/EqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionRequestValueArrayItems"
@@ -243109,15 +245098,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/NotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItems"
@@ -243735,15 +245716,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/CustomViewsEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionRequestValueArrayItems"
@@ -243762,15 +245735,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/CustomViewsNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItems"
@@ -243796,15 +245761,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectResponse"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionResponseValueArrayItemsObject"
+            "$ref": "#/components/schemas/EqualFilterCriterionResponseValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionResponseValueArrayItems"
@@ -243823,15 +245780,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectResponse"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionResponseValueArrayItemsObject"
+            "$ref": "#/components/schemas/NotEqualFilterCriterionResponseValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionResponseValueArrayItems"
@@ -245769,15 +247718,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/RecordSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/RecordSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/RecordEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionRequestValueArrayItems"
@@ -245796,15 +247737,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/RecordSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/RecordSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/RecordNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItems"
@@ -245830,15 +247763,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/RecordCountSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/RecordCountSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/RecordCountEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionRequestValueArrayItems"
@@ -245857,15 +247782,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/RecordCountSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/RecordCountSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/RecordCountNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItems"
@@ -245891,15 +247808,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/RelatedRecordsSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/RelatedRecordsSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/RelatedRecordsEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionRequestValueArrayItems"
@@ -245918,15 +247827,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/RelatedRecordsSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/RelatedRecordsSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/RelatedRecordsNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItems"
@@ -245952,15 +247853,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectResponse"
-              },
-              {
-                "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionResponseValueArrayItemsObject"
+            "$ref": "#/components/schemas/ScoringRulesEqualFilterCriterionResponseValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionResponseValueArrayItems"
@@ -245979,15 +247872,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectResponse"
-              },
-              {
-                "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionResponseValueArrayItemsObject"
+            "$ref": "#/components/schemas/ScoringRulesNotEqualFilterCriterionResponseValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionResponseValueArrayItems"
@@ -246013,15 +247898,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/ScoringRulesEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionRequestValueArrayItems"
@@ -246040,15 +247917,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/ScoringRulesNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItems"
@@ -246305,15 +248174,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/TerritoriesEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionRequestValueArrayItems"
@@ -246332,15 +248193,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/TerritoriesNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItems"
@@ -246366,15 +248219,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectResponse"
-              },
-              {
-                "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionResponseValueArrayItemsObject"
+            "$ref": "#/components/schemas/TerritoriesEqualFilterCriterionResponseValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionResponseValueArrayItems"
@@ -246393,15 +248238,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectResponse"
-              },
-              {
-                "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionResponseValueArrayItemsObject"
+            "$ref": "#/components/schemas/TerritoriesNotEqualFilterCriterionResponseValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionResponseValueArrayItems"
@@ -246501,15 +248338,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/WorkflowRulesSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/WorkflowRulesSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/WorkflowRulesEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "EqualFilterCriterionRequestValueArrayItems"
@@ -246528,15 +248357,7 @@
             "x-zs-$id": "SimpleFilterCriterionValueNumber"
           },
           {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/WorkflowRulesSimpleFilterCriterionValueObjectRequest"
-              },
-              {
-                "$ref": "#/components/schemas/WorkflowRulesSimpleFilterCriterionValueObjectPredefined"
-              }
-            ],
-            "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+            "$ref": "#/components/schemas/WorkflowRulesNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3"
           }
         ],
         "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItems"
@@ -288312,27 +290133,7 @@
             "$ref": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf1"
           },
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf1Branch"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf2"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf3Branch"
-              }
-            ],
-            "description": "Flat error: URL/module validation failures",
-            "x-zs-$id": "UrlErrorResponseForCustomView",
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf1Branch",
-                "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf2",
-                "INVALID_MODULE": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf3Branch"
-              }
-            }
+            "$ref": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf2"
           },
           {
             "$ref": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf3"
@@ -288418,27 +290219,7 @@
             "$ref": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf1"
           },
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf1Branch"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf2"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf3Branch"
-              }
-            ],
-            "description": "Flat error: URL/module validation failures",
-            "x-zs-$id": "UrlErrorResponseForCustomView",
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf1Branch",
-                "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf2",
-                "INVALID_MODULE": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf3Branch"
-              }
-            }
+            "$ref": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf2"
           },
           {
             "$ref": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf3"
@@ -288485,27 +290266,7 @@
       "CustomViewsGetCustomViews400Response": {
         "oneOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf1"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf2Branch"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf3Branch"
-              }
-            ],
-            "description": "Flat error: URL/module validation failures",
-            "x-zs-$id": "UrlErrorResponseForCustomView",
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf1",
-                "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf2Branch",
-                "INVALID_MODULE": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf3Branch"
-              }
-            }
+            "$ref": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf1"
           },
           {
             "$ref": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf2"
@@ -288579,27 +290340,7 @@
       "CustomViewsDeleteCustomView400Response": {
         "oneOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf1"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf2Branch"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf3Branch"
-              }
-            ],
-            "description": "Flat error: URL/module validation failures",
-            "x-zs-$id": "UrlErrorResponseForCustomView",
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf1",
-                "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf2Branch",
-                "INVALID_MODULE": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf3Branch"
-              }
-            }
+            "$ref": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf1"
           },
           {
             "$ref": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf2"
@@ -288687,27 +290428,7 @@
       "CustomViewsUpdateCustomView400Response": {
         "oneOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf1"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf2Branch"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf3Branch"
-              }
-            ],
-            "description": "Flat error: URL/module validation failures",
-            "x-zs-$id": "UrlErrorResponseForCustomView",
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf1",
-                "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf2Branch",
-                "INVALID_MODULE": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf3Branch"
-              }
-            }
+            "$ref": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf1"
           },
           {
             "$ref": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf2"
@@ -288763,13 +290484,13 @@
             "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseRequiredParamMissing"
           },
           {
-            "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf1Branch"
+            "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseUnableToParseDataType"
           },
           {
-            "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf2"
+            "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseInvalidUrlPattern"
           },
           {
-            "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf3Branch"
+            "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseInvalidModule"
           },
           {
             "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseInvalidData"
@@ -288781,9 +290502,9 @@
           "propertyName": "code",
           "mapping": {
             "REQUIRED_PARAM_MISSING": "#/components/schemas/CustomViewsGetCustomViewById400ResponseRequiredParamMissing",
-            "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf1Branch",
-            "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf2",
-            "INVALID_MODULE": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf3Branch",
+            "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsGetCustomViewById400ResponseUnableToParseDataType",
+            "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsGetCustomViewById400ResponseInvalidUrlPattern",
+            "INVALID_MODULE": "#/components/schemas/CustomViewsGetCustomViewById400ResponseInvalidModule",
             "INVALID_DATA": "#/components/schemas/CustomViewsGetCustomViewById400ResponseInvalidData"
           }
         }
@@ -288846,27 +290567,7 @@
       "CustomViewsChangeSort400Response": {
         "oneOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf1"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf2Branch"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf3Branch"
-              }
-            ],
-            "description": "Flat error: URL/module validation failures",
-            "x-zs-$id": "UrlErrorResponseForCustomView",
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf1",
-                "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf2Branch",
-                "INVALID_MODULE": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf3Branch"
-              }
-            }
+            "$ref": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf1"
           },
           {
             "$ref": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf2"
@@ -288920,27 +290621,7 @@
       "CustomViewsChangeSortById400Response": {
         "oneOf": [
           {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf1"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf2Branch"
-              },
-              {
-                "$ref": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf3Branch"
-              }
-            ],
-            "description": "Flat error: URL/module validation failures",
-            "x-zs-$id": "UrlErrorResponseForCustomView",
-            "discriminator": {
-              "propertyName": "code",
-              "mapping": {
-                "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf1",
-                "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf2Branch",
-                "INVALID_MODULE": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf3Branch"
-              }
-            }
+            "$ref": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf1"
           },
           {
             "$ref": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf2"
@@ -449508,6 +451189,248 @@
         "x-zs-$id": "CompositeFieldMapping",
         "x-zs-llm-description": "type=\u0027composite\u0027 mapping. Used ONLY for the Participants field in Events module (add_meeting action). Value is a structured object representing multiple participant entries. Cannot be used on other field types  returns NOT_ALLOWED."
       },
+      "EqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "NotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "CustomViewsEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "CustomViewsNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "EqualFilterCriterionResponseValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectResponse"
+          },
+          {
+            "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionResponseValueArrayItemsObject"
+      },
+      "NotEqualFilterCriterionResponseValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/SimpleFilterCriterionValueObjectResponse"
+          },
+          {
+            "$ref": "#/components/schemas/CustomViewsSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionResponseValueArrayItemsObject"
+      },
+      "RecordEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/RecordSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/RecordSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "RecordNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/RecordSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/RecordSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "RecordCountEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/RecordCountSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/RecordCountSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "RecordCountNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/RecordCountSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/RecordCountSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "RelatedRecordsEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/RelatedRecordsSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/RelatedRecordsSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "RelatedRecordsNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/RelatedRecordsSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/RelatedRecordsSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "ScoringRulesEqualFilterCriterionResponseValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectResponse"
+          },
+          {
+            "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionResponseValueArrayItemsObject"
+      },
+      "ScoringRulesNotEqualFilterCriterionResponseValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectResponse"
+          },
+          {
+            "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionResponseValueArrayItemsObject"
+      },
+      "ScoringRulesEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "ScoringRulesNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/ScoringRulesSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "TerritoriesEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "TerritoriesNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "TerritoriesEqualFilterCriterionResponseValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectResponse"
+          },
+          {
+            "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionResponseValueArrayItemsObject"
+      },
+      "TerritoriesNotEqualFilterCriterionResponseValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectResponse"
+          },
+          {
+            "$ref": "#/components/schemas/TerritoriesSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionResponseValueArrayItemsObject"
+      },
+      "WorkflowRulesEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/WorkflowRulesSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/WorkflowRulesSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "EqualFilterCriterionRequestValueArrayItemsObject"
+      },
+      "WorkflowRulesNotEqualFilterCriterionRequestValueAnyOf1ItemOneOf3": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/WorkflowRulesSimpleFilterCriterionValueObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/WorkflowRulesSimpleFilterCriterionValueObjectPredefined"
+          }
+        ],
+        "x-zs-$id": "NotEqualFilterCriterionRequestValueArrayItemsObject"
+      },
       "CustomViewsUpdateCustomViewsBulk400ResponseOneOf1": {
         "required": [
           "status",
@@ -449538,6 +451461,29 @@
         "description": "Flat error: required query parameter missing",
         "x-zs-$id": "RequiredParameterMissingResponse"
       },
+      "CustomViewsUpdateCustomViewsBulk400ResponseOneOf2": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf2UnableToParseDataType"
+          },
+          {
+            "$ref": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf2InvalidUrlPattern"
+          },
+          {
+            "$ref": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf2InvalidModule"
+          }
+        ],
+        "description": "Flat error: URL/module validation failures",
+        "x-zs-$id": "UrlErrorResponseForCustomView",
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf2UnableToParseDataType",
+            "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf2InvalidUrlPattern",
+            "INVALID_MODULE": "#/components/schemas/CustomViewsUpdateCustomViewsBulk400ResponseOneOf2InvalidModule"
+          }
+        }
+      },
       "CustomViewsUpdateCustomViewsBulk400ResponseOneOf3": {
         "required": [
           "custom_views"
@@ -449558,96 +451504,6 @@
         },
         "description": "Wrapped error: per-item update failures inside custom_views array",
         "x-zs-$id": "CustomViewUpdateFailureDetails"
-      },
-      "CustomViewsUpdateCustomViewsBulk400ResponseOneOf1Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the data type parse failure."
-          },
-          "details": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Data type could not be parsed from the request",
-        "x-zs-$id": "UnableToParseDataTypeError"
-      },
-      "CustomViewsUpdateCustomViewsBulk400ResponseOneOf2": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidUrlPatternCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the URL pattern issue."
-          },
-          "details": {
-            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Request URL does not match any known pattern",
-        "x-zs-$id": "InvalidUrlPatternError"
-      },
-      "CustomViewsUpdateCustomViewsBulk400ResponseOneOf3Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidModuleCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the invalid module."
-          },
-          "details": {
-            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "The specified module is invalid or does not exist",
-        "x-zs-$id": "InvalidModuleError"
       },
       "CustomViewsCreateCustomView400ResponseOneOf1": {
         "required": [
@@ -449679,6 +451535,29 @@
         "description": "Flat error: required query parameter missing",
         "x-zs-$id": "RequiredParameterMissingResponse"
       },
+      "CustomViewsCreateCustomView400ResponseOneOf2": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf2UnableToParseDataType"
+          },
+          {
+            "$ref": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf2InvalidUrlPattern"
+          },
+          {
+            "$ref": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf2InvalidModule"
+          }
+        ],
+        "description": "Flat error: URL/module validation failures",
+        "x-zs-$id": "UrlErrorResponseForCustomView",
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf2UnableToParseDataType",
+            "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf2InvalidUrlPattern",
+            "INVALID_MODULE": "#/components/schemas/CustomViewsCreateCustomView400ResponseOneOf2InvalidModule"
+          }
+        }
+      },
       "CustomViewsCreateCustomView400ResponseOneOf3": {
         "required": [
           "custom_views"
@@ -449700,95 +451579,28 @@
         "description": "Wrapped error: per-item creation failures inside custom_views array",
         "x-zs-$id": "CustomViewCreateFailureResponse"
       },
-      "CustomViewsCreateCustomView400ResponseOneOf1Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
+      "CustomViewsGetCustomViews400ResponseOneOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf1UnableToParseDataType"
           },
-          "code": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          {
+            "$ref": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf1InvalidUrlPattern"
           },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the data type parse failure."
-          },
-          "details": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          {
+            "$ref": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf1InvalidModule"
           }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Data type could not be parsed from the request",
-        "x-zs-$id": "UnableToParseDataTypeError"
-      },
-      "CustomViewsCreateCustomView400ResponseOneOf2": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
         ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidUrlPatternCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the URL pattern issue."
-          },
-          "details": {
-            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+        "description": "Flat error: URL/module validation failures",
+        "x-zs-$id": "UrlErrorResponseForCustomView",
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf1UnableToParseDataType",
+            "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf1InvalidUrlPattern",
+            "INVALID_MODULE": "#/components/schemas/CustomViewsGetCustomViews400ResponseOneOf1InvalidModule"
           }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Request URL does not match any known pattern",
-        "x-zs-$id": "InvalidUrlPatternError"
-      },
-      "CustomViewsCreateCustomView400ResponseOneOf3Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidModuleCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the invalid module."
-          },
-          "details": {
-            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "The specified module is invalid or does not exist",
-        "x-zs-$id": "InvalidModuleError"
+        }
       },
       "CustomViewsGetCustomViews400ResponseOneOf2": {
         "required": [
@@ -450090,95 +451902,28 @@
         "description": "Filter criteria error: mandatory field not found",
         "x-zs-$id": "FilterMandatoryNotFound"
       },
-      "CustomViewsGetCustomViews400ResponseOneOf1": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
+      "CustomViewsDeleteCustomView400ResponseOneOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf1UnableToParseDataType"
           },
-          "code": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          {
+            "$ref": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf1InvalidUrlPattern"
           },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the data type parse failure."
-          },
-          "details": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          {
+            "$ref": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf1InvalidModule"
           }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Data type could not be parsed from the request",
-        "x-zs-$id": "UnableToParseDataTypeError"
-      },
-      "CustomViewsGetCustomViews400ResponseOneOf2Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
         ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidUrlPatternCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the URL pattern issue."
-          },
-          "details": {
-            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+        "description": "Flat error: URL/module validation failures",
+        "x-zs-$id": "UrlErrorResponseForCustomView",
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf1UnableToParseDataType",
+            "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf1InvalidUrlPattern",
+            "INVALID_MODULE": "#/components/schemas/CustomViewsDeleteCustomView400ResponseOneOf1InvalidModule"
           }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Request URL does not match any known pattern",
-        "x-zs-$id": "InvalidUrlPatternError"
-      },
-      "CustomViewsGetCustomViews400ResponseOneOf3Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidModuleCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the invalid module."
-          },
-          "details": {
-            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "The specified module is invalid or does not exist",
-        "x-zs-$id": "InvalidModuleError"
+        }
       },
       "CustomViewsDeleteCustomView400ResponseOneOf2": {
         "required": [
@@ -450231,95 +451976,28 @@
         "description": "Wrapped error: per-item delete failures inside custom_views array",
         "x-zs-$id": "CustomViewDeleteItem"
       },
-      "CustomViewsDeleteCustomView400ResponseOneOf1": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
+      "CustomViewsUpdateCustomView400ResponseOneOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf1UnableToParseDataType"
           },
-          "code": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          {
+            "$ref": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf1InvalidUrlPattern"
           },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the data type parse failure."
-          },
-          "details": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          {
+            "$ref": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf1InvalidModule"
           }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Data type could not be parsed from the request",
-        "x-zs-$id": "UnableToParseDataTypeError"
-      },
-      "CustomViewsDeleteCustomView400ResponseOneOf2Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
         ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidUrlPatternCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the URL pattern issue."
-          },
-          "details": {
-            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+        "description": "Flat error: URL/module validation failures",
+        "x-zs-$id": "UrlErrorResponseForCustomView",
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf1UnableToParseDataType",
+            "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf1InvalidUrlPattern",
+            "INVALID_MODULE": "#/components/schemas/CustomViewsUpdateCustomView400ResponseOneOf1InvalidModule"
           }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Request URL does not match any known pattern",
-        "x-zs-$id": "InvalidUrlPatternError"
-      },
-      "CustomViewsDeleteCustomView400ResponseOneOf3Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidModuleCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the invalid module."
-          },
-          "details": {
-            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "The specified module is invalid or does not exist",
-        "x-zs-$id": "InvalidModuleError"
+        }
       },
       "CustomViewsUpdateCustomView400ResponseOneOf2": {
         "required": [
@@ -450403,96 +452081,6 @@
         "description": "Flat error: invalid resource path segment",
         "x-zs-$id": "ResourcePathIndexErrorResponse"
       },
-      "CustomViewsUpdateCustomView400ResponseOneOf1": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the data type parse failure."
-          },
-          "details": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Data type could not be parsed from the request",
-        "x-zs-$id": "UnableToParseDataTypeError"
-      },
-      "CustomViewsUpdateCustomView400ResponseOneOf2Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidUrlPatternCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the URL pattern issue."
-          },
-          "details": {
-            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Request URL does not match any known pattern",
-        "x-zs-$id": "InvalidUrlPatternError"
-      },
-      "CustomViewsUpdateCustomView400ResponseOneOf3Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidModuleCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the invalid module."
-          },
-          "details": {
-            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "The specified module is invalid or does not exist",
-        "x-zs-$id": "InvalidModuleError"
-      },
       "CustomViewsGetCustomViewById400ResponseOneOf1": {
         "required": [
           "status",
@@ -450522,6 +452110,29 @@
         },
         "description": "Flat error: required query parameter missing",
         "x-zs-$id": "RequiredParameterMissingResponse"
+      },
+      "CustomViewsGetCustomViewById400ResponseOneOf2": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf2UnableToParseDataType"
+          },
+          {
+            "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf2InvalidUrlPattern"
+          },
+          {
+            "$ref": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf2InvalidModule"
+          }
+        ],
+        "description": "Flat error: URL/module validation failures",
+        "x-zs-$id": "UrlErrorResponseForCustomView",
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf2UnableToParseDataType",
+            "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf2InvalidUrlPattern",
+            "INVALID_MODULE": "#/components/schemas/CustomViewsGetCustomViewById400ResponseOneOf2InvalidModule"
+          }
+        }
       },
       "CustomViewsGetCustomViewById400ResponseOneOf3": {
         "required": [
@@ -450554,95 +452165,28 @@
         "description": "Flat error: invalid resource path segment",
         "x-zs-$id": "ResourcePathIndexErrorResponse"
       },
-      "CustomViewsGetCustomViewById400ResponseOneOf1Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
+      "CustomViewsChangeSort400ResponseOneOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf1UnableToParseDataType"
           },
-          "code": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          {
+            "$ref": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf1InvalidUrlPattern"
           },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the data type parse failure."
-          },
-          "details": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          {
+            "$ref": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf1InvalidModule"
           }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Data type could not be parsed from the request",
-        "x-zs-$id": "UnableToParseDataTypeError"
-      },
-      "CustomViewsGetCustomViewById400ResponseOneOf2": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
         ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidUrlPatternCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the URL pattern issue."
-          },
-          "details": {
-            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+        "description": "Flat error: URL/module validation failures",
+        "x-zs-$id": "UrlErrorResponseForCustomView",
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf1UnableToParseDataType",
+            "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf1InvalidUrlPattern",
+            "INVALID_MODULE": "#/components/schemas/CustomViewsChangeSort400ResponseOneOf1InvalidModule"
           }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Request URL does not match any known pattern",
-        "x-zs-$id": "InvalidUrlPatternError"
-      },
-      "CustomViewsGetCustomViewById400ResponseOneOf3Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidModuleCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the invalid module."
-          },
-          "details": {
-            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "The specified module is invalid or does not exist",
-        "x-zs-$id": "InvalidModuleError"
+        }
       },
       "CustomViewsChangeSort400ResponseOneOf2": {
         "required": [
@@ -450695,95 +452239,28 @@
         "description": "Wrapped error: per-item sort failures inside custom_views array",
         "x-zs-$id": "CustomViewSortFailureDetails"
       },
-      "CustomViewsChangeSort400ResponseOneOf1": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
+      "CustomViewsChangeSortById400ResponseOneOf1": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf1UnableToParseDataType"
           },
-          "code": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          {
+            "$ref": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf1InvalidUrlPattern"
           },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the data type parse failure."
-          },
-          "details": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          {
+            "$ref": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf1InvalidModule"
           }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Data type could not be parsed from the request",
-        "x-zs-$id": "UnableToParseDataTypeError"
-      },
-      "CustomViewsChangeSort400ResponseOneOf2Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
         ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidUrlPatternCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the URL pattern issue."
-          },
-          "details": {
-            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+        "description": "Flat error: URL/module validation failures",
+        "x-zs-$id": "UrlErrorResponseForCustomView",
+        "discriminator": {
+          "propertyName": "code",
+          "mapping": {
+            "UNABLE_TO_PARSE_DATA_TYPE": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf1UnableToParseDataType",
+            "INVALID_URL_PATTERN": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf1InvalidUrlPattern",
+            "INVALID_MODULE": "#/components/schemas/CustomViewsChangeSortById400ResponseOneOf1InvalidModule"
           }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Request URL does not match any known pattern",
-        "x-zs-$id": "InvalidUrlPatternError"
-      },
-      "CustomViewsChangeSort400ResponseOneOf3Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidModuleCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the invalid module."
-          },
-          "details": {
-            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "The specified module is invalid or does not exist",
-        "x-zs-$id": "InvalidModuleError"
+        }
       },
       "CustomViewsChangeSortById400ResponseOneOf2": {
         "required": [
@@ -450866,96 +452343,6 @@
         },
         "description": "Flat error: invalid resource path segment",
         "x-zs-$id": "ResourcePathIndexErrorResponse"
-      },
-      "CustomViewsChangeSortById400ResponseOneOf1": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the data type parse failure."
-          },
-          "details": {
-            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Data type could not be parsed from the request",
-        "x-zs-$id": "UnableToParseDataTypeError"
-      },
-      "CustomViewsChangeSortById400ResponseOneOf2Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidUrlPatternCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the URL pattern issue."
-          },
-          "details": {
-            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "Request URL does not match any known pattern",
-        "x-zs-$id": "InvalidUrlPatternError"
-      },
-      "CustomViewsChangeSortById400ResponseOneOf3Branch": {
-        "required": [
-          "code",
-          "details",
-          "message",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/ErrorStatus"
-          },
-          "code": {
-            "$ref": "#/components/schemas/InvalidModuleCode"
-          },
-          "message": {
-            "maxLength": 255,
-            "type": "string",
-            "description": "Represents the error message describing the invalid module."
-          },
-          "details": {
-            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
-          }
-        },
-        "additionalProperties": {
-          "not": {}
-        },
-        "description": "The specified module is invalid or does not exist",
-        "x-zs-$id": "InvalidModuleError"
       },
       "FieldUpdatesGetFieldUpdates400ResponseOneOf1": {
         "title": "Invalid Data Param Error",
@@ -452391,6 +453778,96 @@
         "description": "Flat error: required query parameter missing",
         "x-zs-$id": "RequiredParameterMissingResponse"
       },
+      "CustomViewsGetCustomViewById400ResponseUnableToParseDataType": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the data type parse failure."
+          },
+          "details": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Data type could not be parsed from the request",
+        "x-zs-$id": "UnableToParseDataTypeError"
+      },
+      "CustomViewsGetCustomViewById400ResponseInvalidUrlPattern": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidUrlPatternCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the URL pattern issue."
+          },
+          "details": {
+            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Request URL does not match any known pattern",
+        "x-zs-$id": "InvalidUrlPatternError"
+      },
+      "CustomViewsGetCustomViewById400ResponseInvalidModule": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidModuleCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the invalid module."
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The specified module is invalid or does not exist",
+        "x-zs-$id": "InvalidModuleError"
+      },
       "CustomViewsGetCustomViewById400ResponseInvalidData": {
         "required": [
           "code",
@@ -452726,6 +454203,726 @@
         },
         "description": "Represents a criteria field value of type object.",
         "x-zs-$id": "CreatebulkreadjobResponseDetails6ObjectValue"
+      },
+      "CustomViewsUpdateCustomViewsBulk400ResponseOneOf2UnableToParseDataType": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the data type parse failure."
+          },
+          "details": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Data type could not be parsed from the request",
+        "x-zs-$id": "UnableToParseDataTypeError"
+      },
+      "CustomViewsUpdateCustomViewsBulk400ResponseOneOf2InvalidUrlPattern": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidUrlPatternCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the URL pattern issue."
+          },
+          "details": {
+            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Request URL does not match any known pattern",
+        "x-zs-$id": "InvalidUrlPatternError"
+      },
+      "CustomViewsUpdateCustomViewsBulk400ResponseOneOf2InvalidModule": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidModuleCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the invalid module."
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The specified module is invalid or does not exist",
+        "x-zs-$id": "InvalidModuleError"
+      },
+      "CustomViewsCreateCustomView400ResponseOneOf2UnableToParseDataType": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the data type parse failure."
+          },
+          "details": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Data type could not be parsed from the request",
+        "x-zs-$id": "UnableToParseDataTypeError"
+      },
+      "CustomViewsCreateCustomView400ResponseOneOf2InvalidUrlPattern": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidUrlPatternCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the URL pattern issue."
+          },
+          "details": {
+            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Request URL does not match any known pattern",
+        "x-zs-$id": "InvalidUrlPatternError"
+      },
+      "CustomViewsCreateCustomView400ResponseOneOf2InvalidModule": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidModuleCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the invalid module."
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The specified module is invalid or does not exist",
+        "x-zs-$id": "InvalidModuleError"
+      },
+      "CustomViewsGetCustomViews400ResponseOneOf1UnableToParseDataType": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the data type parse failure."
+          },
+          "details": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Data type could not be parsed from the request",
+        "x-zs-$id": "UnableToParseDataTypeError"
+      },
+      "CustomViewsGetCustomViews400ResponseOneOf1InvalidUrlPattern": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidUrlPatternCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the URL pattern issue."
+          },
+          "details": {
+            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Request URL does not match any known pattern",
+        "x-zs-$id": "InvalidUrlPatternError"
+      },
+      "CustomViewsGetCustomViews400ResponseOneOf1InvalidModule": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidModuleCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the invalid module."
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The specified module is invalid or does not exist",
+        "x-zs-$id": "InvalidModuleError"
+      },
+      "CustomViewsDeleteCustomView400ResponseOneOf1UnableToParseDataType": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the data type parse failure."
+          },
+          "details": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Data type could not be parsed from the request",
+        "x-zs-$id": "UnableToParseDataTypeError"
+      },
+      "CustomViewsDeleteCustomView400ResponseOneOf1InvalidUrlPattern": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidUrlPatternCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the URL pattern issue."
+          },
+          "details": {
+            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Request URL does not match any known pattern",
+        "x-zs-$id": "InvalidUrlPatternError"
+      },
+      "CustomViewsDeleteCustomView400ResponseOneOf1InvalidModule": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidModuleCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the invalid module."
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The specified module is invalid or does not exist",
+        "x-zs-$id": "InvalidModuleError"
+      },
+      "CustomViewsUpdateCustomView400ResponseOneOf1UnableToParseDataType": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the data type parse failure."
+          },
+          "details": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Data type could not be parsed from the request",
+        "x-zs-$id": "UnableToParseDataTypeError"
+      },
+      "CustomViewsUpdateCustomView400ResponseOneOf1InvalidUrlPattern": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidUrlPatternCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the URL pattern issue."
+          },
+          "details": {
+            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Request URL does not match any known pattern",
+        "x-zs-$id": "InvalidUrlPatternError"
+      },
+      "CustomViewsUpdateCustomView400ResponseOneOf1InvalidModule": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidModuleCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the invalid module."
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The specified module is invalid or does not exist",
+        "x-zs-$id": "InvalidModuleError"
+      },
+      "CustomViewsGetCustomViewById400ResponseOneOf2UnableToParseDataType": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the data type parse failure."
+          },
+          "details": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Data type could not be parsed from the request",
+        "x-zs-$id": "UnableToParseDataTypeError"
+      },
+      "CustomViewsGetCustomViewById400ResponseOneOf2InvalidUrlPattern": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidUrlPatternCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the URL pattern issue."
+          },
+          "details": {
+            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Request URL does not match any known pattern",
+        "x-zs-$id": "InvalidUrlPatternError"
+      },
+      "CustomViewsGetCustomViewById400ResponseOneOf2InvalidModule": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidModuleCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the invalid module."
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The specified module is invalid or does not exist",
+        "x-zs-$id": "InvalidModuleError"
+      },
+      "CustomViewsChangeSort400ResponseOneOf1UnableToParseDataType": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the data type parse failure."
+          },
+          "details": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Data type could not be parsed from the request",
+        "x-zs-$id": "UnableToParseDataTypeError"
+      },
+      "CustomViewsChangeSort400ResponseOneOf1InvalidUrlPattern": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidUrlPatternCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the URL pattern issue."
+          },
+          "details": {
+            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Request URL does not match any known pattern",
+        "x-zs-$id": "InvalidUrlPatternError"
+      },
+      "CustomViewsChangeSort400ResponseOneOf1InvalidModule": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidModuleCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the invalid module."
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The specified module is invalid or does not exist",
+        "x-zs-$id": "InvalidModuleError"
+      },
+      "CustomViewsChangeSortById400ResponseOneOf1UnableToParseDataType": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the data type parse failure."
+          },
+          "details": {
+            "$ref": "#/components/schemas/UnableToParseDataTypeErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Data type could not be parsed from the request",
+        "x-zs-$id": "UnableToParseDataTypeError"
+      },
+      "CustomViewsChangeSortById400ResponseOneOf1InvalidUrlPattern": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidUrlPatternCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the URL pattern issue."
+          },
+          "details": {
+            "$ref": "#/components/schemas/InvalidUrlPatternErrorDetailsProperty"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Request URL does not match any known pattern",
+        "x-zs-$id": "InvalidUrlPatternError"
+      },
+      "CustomViewsChangeSortById400ResponseOneOf1InvalidModule": {
+        "required": [
+          "code",
+          "details",
+          "message",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ErrorStatus"
+          },
+          "code": {
+            "$ref": "#/components/schemas/InvalidModuleCode"
+          },
+          "message": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "Represents the error message describing the invalid module."
+          },
+          "details": {
+            "$ref": "#/components/schemas/CustomViewsInvalidModuleErrorDetails"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "The specified module is invalid or does not exist",
+        "x-zs-$id": "InvalidModuleError"
       },
       "AppointmentsUpdateAppointmentsSSuccessResponse": {
         "anyOf": [

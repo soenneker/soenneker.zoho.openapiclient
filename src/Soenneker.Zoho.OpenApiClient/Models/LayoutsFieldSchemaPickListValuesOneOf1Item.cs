@@ -116,6 +116,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "forecast_type", n => { ForecastType = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
+
             };
         }
         /// <summary>
