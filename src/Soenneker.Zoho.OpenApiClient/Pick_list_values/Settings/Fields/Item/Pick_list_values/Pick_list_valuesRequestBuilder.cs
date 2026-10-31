@@ -85,7 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pic
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Pick_list_values.Settings.Fields.Item.Pick_list_values.Pick_list_valuesRequestBuilder.Pick_list_valuesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/pick_list_values/settings/fields/{fieldId}/pick_list_values", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

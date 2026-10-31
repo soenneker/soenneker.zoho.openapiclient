@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Territories.Settings.Territories.Actions.Scheduled_run_rule_jobs.Scheduled_run_rule_jobsRequestBuilder.Scheduled_run_rule_jobsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/territories/settings/territories/actions/scheduled_run_rule_jobs", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

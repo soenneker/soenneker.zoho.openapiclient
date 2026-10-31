@@ -85,7 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Ite
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Item.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/deal_link_emails/Contacts/{contactId}/Emails/{messageId}/actions/link_record?owner_id={owner_id}", RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/deal_link_emails/Contacts/{contactId}/Emails/{messageId}/actions/link_record", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deal_link_emails/Contacts/{contactId}/Emails/{messageId}/actions/link_record?owner_id={owner_id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -106,7 +106,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Ite
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://zohoapis.com/crm/v8", "/deal_link_emails/Contacts/{contactId}/Emails/{messageId}/actions/link_record", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
