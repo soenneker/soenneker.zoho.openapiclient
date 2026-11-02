@@ -52,12 +52,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "criteria" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToRuleEntryCreateRequestObjectAssignToOneOf6(),
-                "group" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToRuleEntryCreateRequestObjectAssignToOneOf3(),
-                "profile" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToRuleEntryCreateRequestObjectAssignToOneOf4(),
-                "role" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToRuleEntryCreateRequestObjectAssignToOneOf2(),
-                "users" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToRuleEntryCreateRequestObjectAssignToOneOf5(),
-                "zia_suggested_users" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToRuleEntryCreateRequestObjectAssignToOneOf1(),
+                "criteria" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToOneOf6Variant(),
+                "group" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToOneOf3Variant(),
+                "profile" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToOneOf4Variant(),
+                "role" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToOneOf2Variant(),
+                "users" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToOneOf5Variant(),
+                "zia_suggested_users" => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignToOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.RuleEntryCreateRequestObjectAssignTo(),
             };
         }

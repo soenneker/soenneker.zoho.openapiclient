@@ -52,9 +52,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("based_on")?.GetStringValue();
             return mappingValue switch
             {
-                "criteria" => new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesRunTerritoryRulesRequestRunRulesOneOf1(),
-                "custom_view" => new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesRunTerritoryRulesRequestRunRulesOneOf2(),
-                "territory" => new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesTerritoriesRunTerritoryRulesRequestRunRulesOneOf3(),
+                "criteria" => new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf1Variant(),
+                "custom_view" => new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf2Variant(),
+                "territory" => new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRulesOneOf3Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesRunTerritoryRulesRequestRunRules(),
             };
         }

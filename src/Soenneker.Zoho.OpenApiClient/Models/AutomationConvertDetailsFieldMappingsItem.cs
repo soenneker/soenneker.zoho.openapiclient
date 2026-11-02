@@ -52,10 +52,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "composite" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItemAutomationConvertDetailsFieldMappingsItemOneOf4(),
-                "execution_time" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItemAutomationConvertDetailsFieldMappingsItemOneOf3(),
-                "merge_field" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItemAutomationConvertDetailsFieldMappingsItemOneOf2(),
-                "static" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItemAutomationConvertDetailsFieldMappingsItemOneOf1(),
+                "composite" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItemOneOf4Variant(),
+                "execution_time" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItemOneOf3Variant(),
+                "merge_field" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItemOneOf2Variant(),
+                "static" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItem(),
             };
         }

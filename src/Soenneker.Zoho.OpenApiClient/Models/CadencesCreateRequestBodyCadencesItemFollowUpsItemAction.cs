@@ -52,10 +52,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "email_notifications" => new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionCadencesCreateRequestBodyCadencesItemFollowUpsItemActionOneOf2(),
-                "schedule_call" => new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionCadencesCreateRequestBodyCadencesItemFollowUpsItemActionOneOf3(),
-                "tasks" => new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionCadencesCreateRequestBodyCadencesItemFollowUpsItemActionOneOf1(),
-                "whatsapp_message_notification" => new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionCadencesCreateRequestBodyCadencesItemFollowUpsItemActionOneOf4(),
+                "email_notifications" => new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionOneOf2Variant(),
+                "schedule_call" => new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionOneOf3Variant(),
+                "tasks" => new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionOneOf1Variant(),
+                "whatsapp_message_notification" => new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemActionOneOf4Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.CadencesCreateRequestBodyCadencesItemFollowUpsItemAction(),
             };
         }

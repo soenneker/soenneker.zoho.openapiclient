@@ -52,11 +52,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             return mappingValue switch
             {
-                "ALREADY_SHARED" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItemRecordShareEmailShareBulkEmails207ResponseDataItemOneOf1(),
-                "DUPLICATE_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItemRecordShareEmailShareBulkEmails207ResponseDataItemOneOf5(),
-                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItemRecordShareEmailShareBulkEmails207ResponseDataItemOneOf3(),
-                "NOT_ALLOWED" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItemRecordShareEmailShareBulkEmails207ResponseDataItemOneOf4(),
-                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItemRecordShareEmailShareBulkEmails207ResponseDataItemOneOf2(),
+                "ALREADY_SHARED" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItemOneOf1Variant(),
+                "DUPLICATE_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItemOneOf5Variant(),
+                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItemOneOf3Variant(),
+                "NOT_ALLOWED" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItemOneOf4Variant(),
+                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItemOneOf2Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailShareBulkEmails207ResponseDataItem(),
             };
         }

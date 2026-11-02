@@ -54,7 +54,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteMultiStatusResponseDataItemRecordDeleteInvalidDataItem(),
                 "REQUIRED_PARAM_MISSING" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteMultiStatusResponseDataItemRecordDeleteRequiredParamMissingItem(),
-                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteMultiStatusResponseDataItemRecordDeleteMultiStatusResponseDataItemOneOf1(),
+                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteMultiStatusResponseDataItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteMultiStatusResponseDataItem(),
             };
         }

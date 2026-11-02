@@ -52,15 +52,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "combined_view" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRelatedListNonMultiselectLookup(),
-                "custom" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRelatedListNonMultiselectLookup(),
-                "custom_lookup" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRelatedListNonMultiselectLookup(),
-                "custom_related_list" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRelatedListNonMultiselectLookup(),
-                "default" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRelatedListNonMultiselectLookup(),
-                "grouped" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRelatedListNonMultiselectLookup(),
-                "multiselectlookup" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRelatedListMultiselectLookup(),
-                "queries" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRelatedListNonMultiselectLookup(),
-                "slyteui" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListRelatedListNonMultiselectLookup(),
+                "combined_view" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookupVariant(),
+                "custom" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookupVariant(),
+                "custom_lookup" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookupVariant(),
+                "custom_related_list" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookupVariant(),
+                "default" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookupVariant(),
+                "grouped" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookupVariant(),
+                "multiselectlookup" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListMultiselectLookupVariant(),
+                "queries" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookupVariant(),
+                "slyteui" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedListNonMultiselectLookupVariant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedList(),
             };
         }

@@ -52,10 +52,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "composite" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItemAutomationCreateRecordDetailsFieldMappingsItemOneOf4(),
-                "execution_time" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItemAutomationCreateRecordDetailsFieldMappingsItemOneOf3(),
-                "merge_field" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItemAutomationCreateRecordDetailsFieldMappingsItemOneOf2(),
-                "static" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItemAutomationCreateRecordDetailsFieldMappingsItemOneOf1(),
+                "composite" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItemOneOf4Variant(),
+                "execution_time" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItemOneOf3Variant(),
+                "merge_field" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItemOneOf2Variant(),
+                "static" => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItem(),
             };
         }

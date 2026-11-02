@@ -52,8 +52,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             return mappingValue switch
             {
-                "SCHEDULED" => new global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemFindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2(),
-                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemFindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1(),
+                "SCHEDULED" => new global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf2Variant(),
+                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.FindAndMergeMergeRecords201ResponseOneOf1MergeItem(),
             };
         }

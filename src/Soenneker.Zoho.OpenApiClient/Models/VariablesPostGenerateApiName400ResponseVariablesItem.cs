@@ -54,7 +54,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 "Invalid data" => new global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400ResponseVariablesItemErrorInvalidDataResponse(),
                 "Invalid data type" => new global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400ResponseVariablesItemErrorInvalidDataTypeResponse(),
                 "Required field is missing" => new global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400ResponseVariablesItemErrorMandatoryFieldMissingResponse(),
-                "required field not found" => new global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400ResponseVariablesItemErrorApiNameGenerationMandatoryMissingResponse(),
+                "required field not found" => new global::Soenneker.Zoho.OpenApiClient.Models.TaggedRequiredFieldNotFoundVariantCC2A8D7C46BC9B44(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.VariablesPostGenerateApiName400ResponseVariablesItem(),
             };
         }

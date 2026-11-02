@@ -52,8 +52,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
             return mappingValue switch
             {
-                "error" => new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete207ResponseDataItemMassDeleteMassDelete207ResponseDataItemOneOf2(),
-                "success" => new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete207ResponseDataItemMassDeleteMassDelete207ResponseDataItemOneOf1(),
+                "error" => new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete207ResponseDataItemOneOf2Variant(),
+                "success" => new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete207ResponseDataItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete207ResponseDataItem(),
             };
         }

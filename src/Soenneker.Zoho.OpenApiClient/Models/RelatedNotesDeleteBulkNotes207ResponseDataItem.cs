@@ -52,8 +52,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             return mappingValue switch
             {
-                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes207ResponseDataItemRelatedNotesDeleteBulkNotes207ResponseDataItemOneOf2(),
-                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes207ResponseDataItemRelatedNotesDeleteBulkNotes207ResponseDataItemOneOf1(),
+                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes207ResponseDataItemOneOf2Variant(),
+                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes207ResponseDataItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.RelatedNotesDeleteBulkNotes207ResponseDataItem(),
             };
         }

@@ -52,11 +52,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             return mappingValue switch
             {
-                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItemModulesUpdateModules207ResponseModulesItemOneOf2(),
-                "INVALID_MODULE" => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItemModulesUpdateModules207ResponseModulesItemOneOf5(),
-                "MANDATORY_NOT_FOUND" => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItemModulesUpdateModules207ResponseModulesItemOneOf3(),
-                "NOT_ALLOWED" => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItemModulesUpdateModules207ResponseModulesItemOneOf4(),
-                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItemModulesUpdateModules207ResponseModulesItemOneOf1(),
+                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItemOneOf2Variant(),
+                "INVALID_MODULE" => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItemOneOf5Variant(),
+                "MANDATORY_NOT_FOUND" => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItemOneOf3Variant(),
+                "NOT_ALLOWED" => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItemOneOf4Variant(),
+                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.ModulesUpdateModules207ResponseModulesItem(),
             };
         }

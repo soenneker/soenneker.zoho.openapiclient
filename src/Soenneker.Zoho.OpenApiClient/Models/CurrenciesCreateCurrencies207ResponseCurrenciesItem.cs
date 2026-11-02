@@ -51,8 +51,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
             return mappingValue switch
             {
-                "error" => new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrencies207ResponseCurrenciesItemCurrenciesCreateCurrencies207ResponseCurrenciesItemOneOf2(),
-                "success" => new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrencies207ResponseCurrenciesItemCurrenciesCreateCurrencies207ResponseCurrenciesItemOneOf1(),
+                "error" => new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrencies207ResponseCurrenciesItemOneOf2Variant(),
+                "success" => new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrencies207ResponseCurrenciesItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.CurrenciesCreateCurrencies207ResponseCurrenciesItem(),
             };
         }

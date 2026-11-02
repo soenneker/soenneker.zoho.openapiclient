@@ -52,8 +52,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("message")?.GetStringValue();
             return mappingValue switch
             {
-                "mass delete scheduled successfully" => new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemMassDeleteMassDelete200ResponseDataItemOneOf2(),
-                "record is deleted" => new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemMassDeleteMassDelete200ResponseDataItemOneOf1(),
+                "mass delete scheduled successfully" => new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf2Variant(),
+                "record is deleted" => new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteMassDelete200ResponseDataItem(),
             };
         }

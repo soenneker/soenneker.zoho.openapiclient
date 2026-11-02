@@ -52,8 +52,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             return mappingValue switch
             {
-                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItemContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItemOneOf1(),
-                "LOWER_LIMIT_REACHED" => new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItemContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItemOneOf2(),
+                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItemOneOf1Variant(),
+                "LOWER_LIMIT_REACHED" => new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItemOneOf2Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.ContactRolesDeleteContactRole400ResponseOneOf1ContactRolesItem(),
             };
         }

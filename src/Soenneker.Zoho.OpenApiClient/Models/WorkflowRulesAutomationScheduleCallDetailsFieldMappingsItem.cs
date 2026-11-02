@@ -52,10 +52,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "composite" => new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemWorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemOneOf4(),
-                "execution_time" => new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemWorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemOneOf3(),
-                "merge_field" => new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemWorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemOneOf2(),
-                "static" => new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemWorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemOneOf1(),
+                "composite" => new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemOneOf4Variant(),
+                "execution_time" => new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemOneOf3Variant(),
+                "merge_field" => new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemOneOf2Variant(),
+                "static" => new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationScheduleCallDetailsFieldMappingsItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationScheduleCallDetailsFieldMappingsItem(),
             };
         }

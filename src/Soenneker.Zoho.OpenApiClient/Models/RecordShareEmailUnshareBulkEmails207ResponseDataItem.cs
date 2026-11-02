@@ -52,11 +52,11 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             return mappingValue switch
             {
-                "DUPLICATE_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItemRecordShareEmailUnshareBulkEmails207ResponseDataItemOneOf5(),
-                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItemRecordShareEmailUnshareBulkEmails207ResponseDataItemOneOf3(),
-                "NOT_ALLOWED" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItemRecordShareEmailUnshareBulkEmails207ResponseDataItemOneOf4(),
-                "NOT_SHARED" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItemRecordShareEmailUnshareBulkEmails207ResponseDataItemOneOf1(),
-                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItemRecordShareEmailUnshareBulkEmails207ResponseDataItemOneOf2(),
+                "DUPLICATE_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItemOneOf5Variant(),
+                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItemOneOf3Variant(),
+                "NOT_ALLOWED" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItemOneOf4Variant(),
+                "NOT_SHARED" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItemOneOf1Variant(),
+                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItemOneOf2Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.RecordShareEmailUnshareBulkEmails207ResponseDataItem(),
             };
         }

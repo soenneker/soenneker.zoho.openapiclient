@@ -52,10 +52,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "email_notifications" => new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionFollowUpsUpdateNestedActionOneOf2(),
-                "schedule_call" => new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionFollowUpsUpdateNestedActionOneOf3(),
-                "tasks" => new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionFollowUpsUpdateNestedActionOneOf1(),
-                "whatsapp_message_notification" => new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionFollowUpsUpdateNestedActionOneOf4(),
+                "email_notifications" => new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf2Variant(),
+                "schedule_call" => new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf3Variant(),
+                "tasks" => new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf1Variant(),
+                "whatsapp_message_notification" => new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedActionOneOf4Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.FollowUpsUpdateNestedAction(),
             };
         }

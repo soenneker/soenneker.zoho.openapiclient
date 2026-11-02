@@ -51,15 +51,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             return mappingValue switch
             {
-                "AMBIGUITY_DURING_PROCESSING" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemEmailDraftsMultiStatusResponseEmailDraftsItemOneOf2(),
-                "DEPENDENT_MISMATCH" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemEmailDraftsMultiStatusResponseEmailDraftsItemOneOf2(),
-                "DUPLICATE_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemEmailDraftsMultiStatusResponseEmailDraftsItemOneOf2(),
-                "EXPECTED_FIELD_MISSING" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemEmailDraftsMultiStatusResponseEmailDraftsItemOneOf2(),
-                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemEmailDraftsMultiStatusResponseEmailDraftsItemOneOf2(),
-                "MANDATORY_NOT_FOUND" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemEmailDraftsMultiStatusResponseEmailDraftsItemOneOf2(),
-                "NOT_ALLOWED" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemEmailDraftsMultiStatusResponseEmailDraftsItemOneOf2(),
-                "NOT_SUPPORTED" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemEmailDraftsMultiStatusResponseEmailDraftsItemOneOf2(),
-                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemEmailDraftsMultiStatusResponseEmailDraftsItemOneOf1(),
+                "AMBIGUITY_DURING_PROCESSING" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemOneOf2Variant(),
+                "DEPENDENT_MISMATCH" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemOneOf2Variant(),
+                "DUPLICATE_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemOneOf2Variant(),
+                "EXPECTED_FIELD_MISSING" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemOneOf2Variant(),
+                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemOneOf2Variant(),
+                "MANDATORY_NOT_FOUND" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemOneOf2Variant(),
+                "NOT_ALLOWED" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemOneOf2Variant(),
+                "NOT_SUPPORTED" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemOneOf2Variant(),
+                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.EmailDraftsMultiStatusResponseEmailDraftsItem(),
             };
         }

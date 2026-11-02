@@ -52,9 +52,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "groups" => new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemSharedWithShareRecordsCreateShareRecordsRequestShareItemSharedWithOneOf2(),
-                "roles" => new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemSharedWithShareRecordsCreateShareRecordsRequestShareItemSharedWithOneOf1(),
-                "users" => new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemSharedWithShareRecordsCreateShareRecordsRequestShareItemSharedWithOneOf3(),
+                "groups" => new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemSharedWithOneOf2Variant(),
+                "roles" => new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemSharedWithOneOf1Variant(),
+                "users" => new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemSharedWithOneOf3Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequestShareItemSharedWith(),
             };
         }

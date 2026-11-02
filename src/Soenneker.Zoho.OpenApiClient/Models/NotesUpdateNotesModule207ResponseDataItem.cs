@@ -51,10 +51,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("code")?.GetStringValue();
             return mappingValue switch
             {
-                "EXPECTED_FIELD_MISSING" => new global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNotesModule207ResponseDataItemNotesUpdateNotesModule207ResponseDataItemOneOf2(),
-                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNotesModule207ResponseDataItemNotesUpdateNotesModule207ResponseDataItemOneOf2(),
-                "MANDATORY_NOT_FOUND" => new global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNotesModule207ResponseDataItemNotesUpdateNotesModule207ResponseDataItemOneOf2(),
-                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNotesModule207ResponseDataItemNotesUpdateNotesModule207ResponseDataItemOneOf1(),
+                "EXPECTED_FIELD_MISSING" => new global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNotesModule207ResponseDataItemOneOf2Variant(),
+                "INVALID_DATA" => new global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNotesModule207ResponseDataItemOneOf2Variant(),
+                "MANDATORY_NOT_FOUND" => new global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNotesModule207ResponseDataItemOneOf2Variant(),
+                "SUCCESS" => new global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNotesModule207ResponseDataItemOneOf1Variant(),
                 _ => new global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNotesModule207ResponseDataItem(),
             };
         }
