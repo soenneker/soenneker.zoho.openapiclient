@@ -39,6 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsDisableNotificationsSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsBadRequestResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
@@ -54,6 +55,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsBadRequestResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
@@ -68,6 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsBadRequestResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
@@ -83,6 +86,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsBadRequestResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
@@ -98,6 +102,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <param name="body">Contains the notification channel fields to be partially updated.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsBadRequestResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
@@ -114,6 +119,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsBadRequestResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
@@ -129,6 +135,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <param name="body">The request body must contain a watch array. You can include a maximum of **50** objects per request.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsBadRequestResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
@@ -145,6 +152,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsBadRequestResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
@@ -160,6 +168,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
         /// <param name="body">Contains the complete notification channel configurations that will replace the existing settings.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsBadRequestResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse">When receiving a 500 status code</exception>
@@ -176,6 +185,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notifications.Actions.Watch
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsBadRequestResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotificationsErrorResponse.CreateFromDiscriminatorValue },

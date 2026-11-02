@@ -213,8 +213,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortBy _explicitNullValueSortBy = default!;
 #endif
         /// <summary>Sort direction applied to this view. Possible values: asc - ascending order; desc - descending order; null - no sort order is configured.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortOrder? _explicitNullValueSortOrder = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortOrder SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortOrder _explicitNullValueSortOrder = default!;
+#endif
         /// <summary>True when this custom view was created automatically by the system; false when created by a user.</summary>
         public bool? SystemDefined { get => _explicitNullValueSystemDefined; set { _explicitNullValueSystemDefined = value; AdditionalData?.Remove("system_defined"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_defined"); else _explicitNullProperties?.Remove("system_defined"); } }
         private bool? _explicitNullValueSystemDefined = default!;
@@ -280,7 +287,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "offline", n => { Offline = n.GetBoolValue(); } },
                 { "shared_to", n => { SharedTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItem>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sort_by", n => { SortBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortBy>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortBy.CreateFromDiscriminatorValue); } },
-                { "sort_order", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortOrder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSortOrder = default; _explicitNullProperties?.Remove("sort_order"); AdditionalData["sort_order"] = unknown; } else { SortOrder = parsed; AdditionalData.Remove("sort_order"); } } },
+                { "sort_order", n => { SortOrder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortOrder>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortOrder.CreateFromDiscriminatorValue); } },
                 { "system_defined", n => { SystemDefined = n.GetBoolValue(); } },
                 { "system_name", n => { SystemName = n.GetStringValue(); } },
                 { "wrap_text", n => { WrapText = n.GetBoolValue(); } },
@@ -314,7 +321,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("offline", Offline);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSharedToItem>("shared_to", SharedTo);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortBy>("sort_by", SortBy);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortOrder>("sort_order", SortOrder);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemCustomViewSortOrder>("sort_order", SortOrder);
             writer.WriteBoolValue("system_defined", SystemDefined);
             writer.WriteStringValue("system_name", SystemName);
             writer.WriteBoolValue("wrap_text", WrapText);

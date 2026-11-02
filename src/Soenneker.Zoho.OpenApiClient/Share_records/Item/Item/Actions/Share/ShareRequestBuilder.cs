@@ -39,6 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsDeleteShareRecords400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.CommonForbiddenErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -64,6 +66,8 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords403ResponseError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share.ShareRequestBuilder.ShareRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,7 +78,14 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords400ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords403ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsGetShareRecords200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To share a specific record in a module with one or more users, roles, or groups. A record can be shared with up to 10 users, 5 roles, and 5 groups.&gt; **Note**:&gt; - The records can be shared to other users in the organization only if certain conditions are met. For simplicity, let us assume that User A shares a record with User B. Now, User A can share the record successfully only if:&gt;    - User B is a **confirmed** and **active** user.&gt;    - User B **does not already have access** to that particular record.&gt;    - User B has access to that particular module. For instance, to share a contact, User B must have access to the Contacts module.&gt; - You cannot share the records in Calls, Meetings, Tasks, and Linking modules directly. They can be shared as related lists.&gt; - The users who have profiles with **share** permission can share any records that they have access to, except the records that are shared to them. To check the same, go to Setup &gt; Users and Control &gt; Security Control &gt; Choose the profile &gt; Tool Permissions. Check if **share** is enabled. It is enabled by default for Standard and Administrator Profiles.&gt; - The details of the records that form many-to-many relationships (with multi-select lookup) cannot be shared.&gt; - A record can be shared only with **10 users**, **5 groups**, and **5 roles**.&gt; - Once the record gets shared successfully, the user who initiated the share operation can be notified via email.
@@ -84,6 +95,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords403ResponseError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -98,6 +110,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsCreateShareRecords403ResponseError.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
@@ -111,6 +124,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords403ResponseError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -125,6 +139,7 @@ namespace Soenneker.Zoho.OpenApiClient.Share_records.Item.Item.Actions.Share
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShareRecordsUpdateShareRecords403ResponseError.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };

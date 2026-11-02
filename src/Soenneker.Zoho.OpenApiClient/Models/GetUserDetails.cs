@@ -451,8 +451,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus? _explicitNullValueStatus = default!;
         /// <summary>Represents the reason for the user&apos;s current status. Returns null if no reason is associated with the current status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS? StatusReasonS { get => _explicitNullValueStatusReasonS; set { _explicitNullValueStatusReasonS = value; AdditionalData?.Remove("status_reason__s"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_reason__s"); else _explicitNullProperties?.Remove("status_reason__s"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS? _explicitNullValueStatusReasonS = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS StatusReasonS { get => _explicitNullValueStatusReasonS; set { _explicitNullValueStatusReasonS = value; AdditionalData?.Remove("status_reason__s"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_reason__s"); else _explicitNullProperties?.Remove("status_reason__s"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS _explicitNullValueStatusReasonS = default!;
+#endif
         /// <summary>Represents the details of the user who last updated the status of this user. Returns null if no status update has been recorded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -603,7 +610,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "sort_order_preference__s", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsSortOrderPreferenceS>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSortOrderPreferenceS = default; _explicitNullProperties?.Remove("sort_order_preference__s"); AdditionalData["sort_order_preference__s"] = unknown; } else { SortOrderPreferenceS = parsed; AdditionalData.Remove("sort_order_preference__s"); } } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
-                { "status_reason__s", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatusReasonS = default; _explicitNullProperties?.Remove("status_reason__s"); AdditionalData["status_reason__s"] = unknown; } else { StatusReasonS = parsed; AdditionalData.Remove("status_reason__s"); } } },
+                { "status_reason__s", n => { StatusReasonS = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS>(global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS.CreateFromDiscriminatorValue); } },
                 { "Status_Updated_By__s", n => { StatusUpdatedByS = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusUpdatedByS>(global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusUpdatedByS.CreateFromDiscriminatorValue); } },
                 { "Status_Updated_Time__s", n => { StatusUpdatedTimeS = n.GetDateTimeOffsetValue(); } },
                 { "street", n => { Street = n.GetStringValue(); } },
@@ -667,7 +674,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsSortOrderPreferenceS>("sort_order_preference__s", SortOrderPreferenceS);
             writer.WriteStringValue("state", State);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS>("status_reason__s", StatusReasonS);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsStatusReasonS>("status_reason__s", StatusReasonS);
             writer.WriteStringValue("street", Street);
             writer.WriteBoolValue("telephony_enabled", TelephonyEnabled);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetUserDetailsTimeFormat>("time_format", TimeFormat);

@@ -40,6 +40,7 @@ namespace Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.Actions.Sign_mail_me
         /// <param name="body">Represents the request body schema for the sign mail merge operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MailMergePostSignMailMerge400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,7 +52,13 @@ namespace Soenneker.Zoho.OpenApiClient.Mail_merge.Item.Item.Actions.Sign_mail_me
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MailMergePostSignMailMerge400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostsignmailmergeResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To send a merged document to one or more recipients for signing or approval using a mail merge template associated with a specific record in your Zoho CRM organization. Before using this operation for the first time, you must access the Merge and Sign dialog in the Zoho Writer UI once.

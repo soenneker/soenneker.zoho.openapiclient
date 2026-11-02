@@ -78,6 +78,7 @@ namespace Soenneker.Zoho.OpenApiClient.Audit_log_export.Settings.Audit_log_expor
         /// <param name="body">Represents the request body for creating an audit log export job.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportCreateAuditLogExport400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportForbiddenResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Audit_log_export.Settings.Audit_log_expor
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportCreateAuditLogExport400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.AuditLogExportForbiddenResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

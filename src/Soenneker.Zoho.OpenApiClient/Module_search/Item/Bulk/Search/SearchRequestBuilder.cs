@@ -39,6 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Bulk.Search
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchBulkSearchRecords200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchBulkSearchRecords400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse">When receiving a 404 status code</exception>
@@ -58,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Module_search.Item.Bulk.Search
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchBulkSearchRecords400ResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.ModuleSearchErrorResponse.CreateFromDiscriminatorValue },

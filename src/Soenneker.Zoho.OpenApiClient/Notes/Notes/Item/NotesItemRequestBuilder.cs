@@ -39,6 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notes.Notes.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotesDeleteNoteById200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotesDeleteNoteById400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotesUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotesNotFoundResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotesInternalServerErrorResponse">When receiving a 500 status code</exception>
@@ -54,6 +55,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notes.Notes.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.NotesDeleteNoteById400ResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotesUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.NotesNotFoundResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotesInternalServerErrorResponse.CreateFromDiscriminatorValue },
@@ -100,6 +102,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notes.Notes.Item
         /// <param name="body">Request payload for updating a note</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNoteById400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotesUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotesNotFoundResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.NotesInternalServerErrorResponse">When receiving a 500 status code</exception>
@@ -116,6 +119,7 @@ namespace Soenneker.Zoho.OpenApiClient.Notes.Notes.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.NotesUpdateNoteById400ResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.NotesUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.NotesNotFoundResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.NotesInternalServerErrorResponse.CreateFromDiscriminatorValue },

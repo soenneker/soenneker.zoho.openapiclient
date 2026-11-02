@@ -30,33 +30,33 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the text comparison operator applied to the criterion.Possible values:like - Matches records where the field value contains the specified pattern.not_like - Matches records where the field value does not contain the specified pattern.starts_with - Matches records where the field value begins with the specified string.ends_with - Matches records where the field value ends with the specified string.contains - Matches records where the field value contains the specified string.not_contains - Matches records where the field value does not contain the specified string.</summary>
+        /// <summary>Represents the equal comparison operator applied to the criterion.Possible values:equal - Matches records where the field value equals the specified filter value.</summary>
 #nullable enable
         public string? Comparator { get => _explicitNullValueComparator; set { _explicitNullValueComparator = value; AdditionalData?.Remove("comparator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparator"); else _explicitNullProperties?.Remove("comparator"); } }
         private string? _explicitNullValueComparator = default!;
 #nullable restore
-        /// <summary>Represents the target field definition to which the text filter criterion is applied, conforming to the base field structure.</summary>
+        /// <summary>Represents the target field definition to which the equal filter criterion is applied, conforming to the base field structure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestField? _explicitNullValueField = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestField _explicitNullValueField = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestField _explicitNullValueField = default!;
 #endif
         /// <summary>Indicates the value resolution mode of the criterion, distinguishing whether the filter value is a literal value, a merge field reference, a predefined system variable, or another field reference.Possible values:value - The value is a direct literal.merge_field - The value is a merge field reference.pre_defined - The value is a predefined system variable placeholder.field - The value references another field.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestType? _explicitNullValueType = default!;
-        /// <summary>Represents the string filter value used in the text comparator. Accepts a scalar string or an array of string values.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestType? _explicitNullValueType = default!;
+        /// <summary>Represents the filter value used in the equal comparator. Accepts a scalar or an array of values, depending on the field&apos;s data_type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsTextFilterCriterionRequestValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsTextFilterCriterionRequestValue? _explicitNullValueValue = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsTextFilterCriterionRequestValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsTextFilterCriterionRequestValue _explicitNullValueValue = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesSimpleFilterCriterionRequest"/> and sets the default values.
@@ -84,9 +84,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comparator", n => { Comparator = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestField>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestField.CreateFromDiscriminatorValue); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsTextFilterCriterionRequestValue>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsTextFilterCriterionRequestValue.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestField>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestField.CreateFromDiscriminatorValue); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestValue>(global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,9 +97,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comparator", Comparator);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestField>("field", Field);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesTextFilterCriterionRequestType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsTextFilterCriterionRequestValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestField>("field", Field);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.TerritoriesEqualFilterCriterionRequestValue>("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

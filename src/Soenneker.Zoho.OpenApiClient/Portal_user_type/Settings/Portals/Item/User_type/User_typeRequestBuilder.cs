@@ -52,6 +52,8 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.Us
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeGetPortalUserTypes400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeGetPortalUserTypes403ResponseError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeResponse200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.User_type.User_typeRequestBuilder.User_typeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +64,14 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.Us
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeGetPortalUserTypes400ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeGetPortalUserTypes403ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetusertypeResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new portal user type for the specified portal. A portal user type defines the personality module, invitation field, and per-module access permissions for portal users. The portal must already exist in the organization&apos;s Zoho CRM account.
@@ -71,6 +80,8 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.Us
         /// <param name="body">The request body schema for the create portal user type operation. Contains the `user_type` array with the configuration of the user type to be created.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeCreatePortalUserType400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeCreatePortalUserType403ResponseError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.PostusertypeResponse201?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostusertypeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,7 +93,14 @@ namespace Soenneker.Zoho.OpenApiClient.Portal_user_type.Settings.Portals.Item.Us
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostusertypeResponse201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostusertypeResponse201.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeCreatePortalUserType400ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.PortalUserTypeCreatePortalUserType403ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.PostusertypeResponse201>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.PostusertypeResponse201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of all portal user types configured for the specified portal, with their summary configuration including name, status, user counts, and last modification time.

@@ -39,6 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Ite
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Item.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,7 +50,13 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Ite
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailFromRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Links an email to a specified record in CRM.
@@ -58,6 +65,8 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Ite
         /// <param name="body">Request body schema for linking email to record</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord404ResponseError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord200Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecordRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,7 +78,14 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Ite
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord400ResponseError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord404ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailToRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Unlinks an email from a specified record in CRM.

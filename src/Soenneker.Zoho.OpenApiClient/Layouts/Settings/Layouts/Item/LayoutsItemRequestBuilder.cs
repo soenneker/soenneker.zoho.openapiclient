@@ -45,6 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutSuccessResponseBody"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutBadRequestResponseResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse">When receiving a 500 status code</exception>
@@ -60,6 +61,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts.Settings.Layouts.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DeleteLayoutBadRequestResponseResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsErrorResponse.CreateFromDiscriminatorValue },

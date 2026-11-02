@@ -40,6 +40,8 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item.Actions.Clone
         /// <param name="body">By default, when you clone a record, the field values of the parent record will also be copied to the cloned record. If you want to modify certain fields or to add value to some fields, specify their field API names and their corresponding values in the input body.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordCloneRecord400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordCloneRecord401ResponseError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse">When receiving a 500 status code</exception>
@@ -56,6 +58,8 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Item.Actions.Clone
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordCloneRecord400ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordCloneRecord401ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RecordInternalErrorResponse.CreateFromDiscriminatorValue },

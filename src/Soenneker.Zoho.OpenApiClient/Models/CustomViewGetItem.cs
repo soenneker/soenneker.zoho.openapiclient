@@ -205,8 +205,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldReference _explicitNullValueSortBy = default!;
 #endif
         /// <summary>Represents the sort order applied to the records in the Custom View.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder? _explicitNullValueSortOrder = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder _explicitNullValueSortOrder = default!;
+#endif
         /// <summary>Indicates whether the Custom View is a system-defined view created by Zoho CRM.Possible values:**true** - The view is system-defined.**false** - The view is user-defined.</summary>
         public bool? SystemDefined { get => _explicitNullValueSystemDefined; set { _explicitNullValueSystemDefined = value; AdditionalData?.Remove("system_defined"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_defined"); else _explicitNullProperties?.Remove("system_defined"); } }
         private bool? _explicitNullValueSystemDefined = default!;
@@ -255,7 +262,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "offline", n => { Offline = n.GetBoolValue(); } },
                 { "shared_to", n => { SharedTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem>(global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sort_by", n => { SortBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>(global::Soenneker.Zoho.OpenApiClient.Models.FieldReference.CreateFromDiscriminatorValue); } },
-                { "sort_order", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSortOrder = default; _explicitNullProperties?.Remove("sort_order"); AdditionalData["sort_order"] = unknown; } else { SortOrder = parsed; AdditionalData.Remove("sort_order"); } } },
+                { "sort_order", n => { SortOrder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder.CreateFromDiscriminatorValue); } },
                 { "system_defined", n => { SystemDefined = n.GetBoolValue(); } },
                 { "system_name", n => { SystemName = n.GetStringValue(); } },
             };
@@ -287,7 +294,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("offline", Offline);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem>("shared_to", SharedTo);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>("sort_by", SortBy);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder>("sort_order", SortOrder);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewGetItemSortOrder>("sort_order", SortOrder);
             writer.WriteBoolValue("system_defined", SystemDefined);
             writer.WriteStringValue("system_name", SystemName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

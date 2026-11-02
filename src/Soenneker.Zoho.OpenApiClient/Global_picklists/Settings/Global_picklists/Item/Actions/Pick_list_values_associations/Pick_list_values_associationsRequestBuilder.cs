@@ -39,6 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsInternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,6 +54,7 @@ namespace Soenneker.Zoho.OpenApiClient.Global_picklists.Settings.Global_picklist
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsGetPickListValuesAssociations400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsForbiddenResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.GlobalPicklistsInternalServerErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

@@ -39,6 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate403Response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,6 +54,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateLayoutDeactivate500Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -67,6 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
         /// <param name="body">Represents the request payload for activating a layout, including the layout identifier and optional profile associations.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout403Response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,6 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate.Settings.Layo
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout403Response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.LayoutsActivateDeactivateActivateLayout500Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

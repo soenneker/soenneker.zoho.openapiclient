@@ -64,6 +64,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteRecordsSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteBadRequestResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeletePermissionResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInvalidUrlResponse">When receiving a 404 status code</exception>
@@ -80,6 +81,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteBadRequestResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeletePermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordDeleteInvalidUrlResponse.CreateFromDiscriminatorValue },
@@ -95,6 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordGetRecords400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse">When receiving a 404 status code</exception>
@@ -111,6 +114,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordGetRecords400ResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
@@ -127,6 +131,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <param name="body">The request body for Records Post</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordsPostErrorResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse">When receiving a 404 status code</exception>
@@ -144,6 +149,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordsPostErrorResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },
@@ -160,6 +166,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
         /// <param name="body">Request body containing the updated resource data to modify the existing record.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutErrorResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse">When receiving a 404 status code</exception>
@@ -178,6 +185,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordsPutErrorResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },

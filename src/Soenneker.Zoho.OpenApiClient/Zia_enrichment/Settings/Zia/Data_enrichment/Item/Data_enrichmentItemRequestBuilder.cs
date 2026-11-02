@@ -39,6 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_enrichment.Settings.Zia.Data_enrichme
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentDeleteZiaEnrichmentConfiguration200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentDeleteZiaEnrichmentConfiguration400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentDeleteZiaEnrichmentConfiguration403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_enrichment.Settings.Zia.Data_enrichme
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentDeleteZiaEnrichmentConfiguration400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentDeleteZiaEnrichmentConfiguration403Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -92,6 +94,7 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_enrichment.Settings.Zia.Data_enrichme
         /// <param name="body">Request body schema for updating Zia Enrichment configurations.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentUpdateZiaEnrichmentConfigurations400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentUpdateZiaEnrichmentConfigurations403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +109,7 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_enrichment.Settings.Zia.Data_enrichme
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentUpdateZiaEnrichmentConfigurations400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ZiaEnrichmentUpdateZiaEnrichmentConfigurations403Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

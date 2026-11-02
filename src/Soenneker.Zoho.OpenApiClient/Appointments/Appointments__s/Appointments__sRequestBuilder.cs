@@ -52,6 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsS400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder.Appointments__sRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,13 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsS400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsDeleteAppointmentsSSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve appointment records from your Zoho CRM organization. Use the `page` and `per_page` parameters to paginate up to 2,000 records, or use the `page_token` received in a prior response to paginate beyond 2,000 records up to a maximum of 100,000. Each request returns a maximum of 200 records. Subform data is not included when retrieving multiple appointments. The API returns field values containing sensitive health data only when the Restrict Data access through API option is disabled in compliance settings.
@@ -70,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsGetAppointmentsS400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s.Appointments__sRequestBuilder.Appointments__sRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,7 +88,13 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsGetAppointmentsS400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetappointmentssResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create one or more appointment records in your Zoho CRM organization.
@@ -89,6 +103,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
         /// <param name="body">Represents the request body schema for creating appointment records.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsS400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsSSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostappointmentssRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,7 +115,13 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsSSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsS400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsCreateAppointmentsSSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update one or more appointment records in your Zoho CRM organization. You can update a maximum of 100 appointments per API call.
@@ -109,6 +130,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
         /// <param name="body">Represents the request body schema for updating appointment records.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsS400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsS403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +145,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsS400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.AppointmentsUpdateAppointmentsS403Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

@@ -45,6 +45,7 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinBadRequestResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,7 +56,13 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinBadRequestResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve metadata for a single record from the Recycle Bin in your Zoho CRM account using its unique ID. The response includes the display name, source module, deletion timestamp, original owner, and the user who deleted the record.
@@ -63,6 +70,7 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinBadRequestResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord401Response">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,6 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinBadRequestResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord401Response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinGetRecycleBinRecord404Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

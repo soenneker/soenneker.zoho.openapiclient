@@ -39,6 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteFieldUpdateSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesDeleteFieldUpdateById400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesDeleteFieldUpdateById403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +53,7 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesDeleteFieldUpdateById400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesDeleteFieldUpdateById403Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -64,6 +66,7 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateByIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesGetFieldUpdateById400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesGetFieldUpdateById403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +80,7 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesGetFieldUpdateById400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesGetFieldUpdateById403Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -90,6 +94,8 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
         /// <param name="body">The request body wrapper for creating or updating a field update action. Must contain a field_updates array with exactly one entry.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesUpdateFieldUpdateById400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesUpdateFieldUpdateById403ResponseError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UpdateFieldUpdateSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CreateFieldUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -101,7 +107,14 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateFieldUpdateSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateFieldUpdateSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesUpdateFieldUpdateById400ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesUpdateFieldUpdateById403ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UpdateFieldUpdateSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UpdateFieldUpdateSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a single field update action identified by the path ID. Use the [Get Field Updates API](field_updates.yaml#$.paths./settings/automation/field_updates.get) to retrieve the field update ID. Actions associated with active automation rules return a `NOT_ALLOWED` error, and read-only actions cannot be deleted.

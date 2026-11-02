@@ -45,6 +45,8 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRulesDeleteAssignmentRuleById400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Possible403ErrorResponsesInManagingArError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Item.Assignment_rulesItemRequestBuilder.Assignment_rulesItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,7 +57,14 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRulesDeleteAssignmentRuleById400ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Possible403ErrorResponsesInManagingArError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the details of a single Assignment Rule in your Zoho CRM organization.
@@ -63,6 +72,8 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetSpecificAssignmentRuleSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRulesGetAssignmentRuleById400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Possible403ErrorResponsesInManagingArError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetSpecificAssignmentRuleSuccessResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Item.Assignment_rulesItemRequestBuilder.Assignment_rulesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -73,7 +84,14 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetSpecificAssignmentRuleSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetSpecificAssignmentRuleSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRulesGetAssignmentRuleById400ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Possible403ErrorResponsesInManagingArError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetSpecificAssignmentRuleSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetSpecificAssignmentRuleSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update a single Assignment Rule in your Zoho CRM organization.
@@ -82,6 +100,8 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
         /// <param name="body">Request body for creating Assignment Rule.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRulesUpdateAssignmentRuleById400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Possible403ErrorResponsesInManagingArError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RequestBodySchemaForUpdate body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Item.Assignment_rulesItemRequestBuilder.Assignment_rulesItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,7 +113,14 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRulesUpdateAssignmentRuleById400ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Possible403ErrorResponsesInManagingArError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To delete a single Assignment Rule from your Zoho CRM organization.

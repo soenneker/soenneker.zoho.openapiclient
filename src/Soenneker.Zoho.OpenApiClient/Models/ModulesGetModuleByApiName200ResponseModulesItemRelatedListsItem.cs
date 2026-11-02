@@ -255,8 +255,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy _explicitNullValueSortBy = default!;
 #endif
         /// <summary>Sort direction applied to records in this related list. Possible values: asc - ascending; desc - descending; null - no sort order configured.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder? _explicitNullValueSortOrder = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder _explicitNullValueSortOrder = default!;
+#endif
         /// <summary>Visibility status of this related list; currently only &apos;visible&apos; is supported.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.VisibleStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.VisibleStatus? _explicitNullValueStatus = default!;
@@ -312,7 +319,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "record_operations", n => { RecordOperations = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations.CreateFromDiscriminatorValue); } },
                 { "sequence_number", n => { SequenceNumber = n.GetStringValue(); } },
                 { "sort_by", n => { SortBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy.CreateFromDiscriminatorValue); } },
-                { "sort_order", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSortOrder = default; _explicitNullProperties?.Remove("sort_order"); AdditionalData["sort_order"] = unknown; } else { SortOrder = parsed; AdditionalData.Remove("sort_order"); } } },
+                { "sort_order", n => { SortOrder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder>(global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder.CreateFromDiscriminatorValue); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VisibleStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "visibility", n => { Visibility = n.GetIntValue(); } },
@@ -346,7 +353,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemRecordOperations>("record_operations", RecordOperations);
             writer.WriteStringValue("sequence_number", SequenceNumber);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortBy>("sort_by", SortBy);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder>("sort_order", SortOrder);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemSortOrder>("sort_order", SortOrder);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.VisibleStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.ModulesGetModuleByApiName200ResponseModulesItemRelatedListsItemType>("type", Type);
             writer.WriteIntValue("visibility", Visibility);

@@ -52,6 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ServicesDeleteServicesSSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ServicesDeleteServicesS400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDeleteServicesSSuccessResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,13 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDeleteServicesSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ServicesDeleteServicesSSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ServicesDeleteServicesS400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ServicesDeleteServicesSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ServicesDeleteServicesSSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the list of service records in your Zoho CRM organization that match the specified filter criteria. Supports pagination using either the **page** or **page_token** parameter and can return up to 100,000 services across paginated requests.
@@ -70,6 +77,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetServicesS400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,7 +88,13 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ServicesGetServicesS400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.GetservicessResponse200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To create one or more service records in your Zoho CRM organization, submitting up to 100 service objects per request, each configurable with a name, duration, price, location, members, availability type, and availability window.
@@ -89,6 +103,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
         /// <param name="body">Request body schema for creating services. Contains a data array of service objects to be created and an optional skip_mandatory flag.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ServicesCreateServicesS400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ServicesCreateServicesSSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.PostservicessRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,7 +115,13 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ServicesCreateServicesSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ServicesCreateServicesSSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ServicesCreateServicesS400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ServicesCreateServicesSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ServicesCreateServicesSSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To update one or more existing service records in your Zoho CRM organization. Each request can include up to 100 service objects identified by their record IDs; only the fields supplied in the payload are modified.
@@ -109,6 +130,7 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
         /// <param name="body">Request body schema for updating multiple services. Contains a data array with up to 100 service objects, each identified by its ID and carrying the fields to be updated.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ServicesUpdateServicesS400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.ServicesUpdateServicesSSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.PutservicessBulkRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Services.Services__s.Services__sRequestBuilder.Services__sRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -120,7 +142,13 @@ namespace Soenneker.Zoho.OpenApiClient.Services.Services__s
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ServicesUpdateServicesSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ServicesUpdateServicesSSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ServicesUpdateServicesS400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.ServicesUpdateServicesSSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.ServicesUpdateServicesSSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To delete one or more service records from your Zoho CRM organization. All appointments associated with the deleted services are also deleted; however, deals created upon completion of those appointments are not deleted.

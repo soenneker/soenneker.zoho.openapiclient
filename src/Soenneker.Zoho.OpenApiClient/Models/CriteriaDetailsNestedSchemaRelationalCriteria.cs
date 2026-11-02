@@ -49,8 +49,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         private global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema _explicitNullValueModule = default!;
 #endif
         /// <summary>Represents the scope selector for the related module filter. Required when **relational_criteria** is present.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection? ModuleSelection { get => _explicitNullValueModuleSelection; set { _explicitNullValueModuleSelection = value; AdditionalData?.Remove("module_selection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_selection"); else _explicitNullProperties?.Remove("module_selection"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection? _explicitNullValueModuleSelection = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection ModuleSelection { get => _explicitNullValueModuleSelection; set { _explicitNullValueModuleSelection = value; AdditionalData?.Remove("module_selection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_selection"); else _explicitNullProperties?.Remove("module_selection"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection _explicitNullValueModuleSelection = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteria"/> and sets the default values.
         /// </summary>
@@ -78,7 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaCriteria>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaCriteria.CreateFromDiscriminatorValue); } },
                 { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>(global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema.CreateFromDiscriminatorValue); } },
-                { "module_selection", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModuleSelection = default; _explicitNullProperties?.Remove("module_selection"); AdditionalData["module_selection"] = unknown; } else { ModuleSelection = parsed; AdditionalData.Remove("module_selection"); } } },
+                { "module_selection", n => { ModuleSelection = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection>(global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,7 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaCriteria>("criteria", Criteria);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.ModuleOrFieldNestedSchema>("module", Module);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection>("module_selection", ModuleSelection);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CriteriaDetailsNestedSchemaRelationalCriteriaModuleSelection>("module_selection", ModuleSelection);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

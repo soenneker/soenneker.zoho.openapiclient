@@ -39,6 +39,7 @@ namespace Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GetEmailTemplates400ErrorError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates.Email_templatesRequestBuilder.Email_templatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,7 +50,13 @@ namespace Soenneker.Zoho.OpenApiClient.Email_templates.Settings.Email_templates
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.GetEmailTemplates400ErrorError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.EmailTemplateListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve a paginated list of email templates accessible to the authenticated user in your Zoho CRM organization. The list can be scoped to a specific CRM module using the module parameter, filtered by category (such as favorite, draft, or created_by_me), and refined using a structured filter expression. Results are sortable by last_usage_time, modified_time, or name, and paginated using the page and per_page parameters.

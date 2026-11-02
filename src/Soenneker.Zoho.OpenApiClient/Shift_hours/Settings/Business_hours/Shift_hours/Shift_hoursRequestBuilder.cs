@@ -78,6 +78,7 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
         /// <param name="body">Represents the request body for creating one or more shift hour configurations. Each entry in `shift_hours` defines a shift with its timing, break hours, optional holidays, and assigned users.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Shift_hours.Settings.Business_hours.Shift
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursCreateShifts400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ShiftHoursForbiddenResponseResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

@@ -40,6 +40,9 @@ namespace Soenneker.Zoho.OpenApiClient.Get_related_records_count.Item.Item.Actio
         /// <param name="body">Represents the request payload for counting related records. Contains an array of related list count specifications, each identifying a related list and optional filtering criteria.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountGetRelatedRecordsCount400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountGetRelatedRecordsCount401ResponseError">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountGetRelatedRecordsCount403ResponseError">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountInvalidUrlPatternError">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +58,9 @@ namespace Soenneker.Zoho.OpenApiClient.Get_related_records_count.Item.Item.Actio
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountGetRelatedRecordsCount400ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountGetRelatedRecordsCount401ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountGetRelatedRecordsCount403ResponseError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.GetRelatedRecordsCountInvalidUrlPatternError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalError.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

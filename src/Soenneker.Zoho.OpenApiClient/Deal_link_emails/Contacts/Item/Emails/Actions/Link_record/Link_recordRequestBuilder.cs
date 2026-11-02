@@ -39,6 +39,8 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal404ResponseError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Actions.Link_record.Link_recordRequestBuilder.Link_recordRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,7 +51,14 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal400ResponseError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal404ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsUnlinkEmailsFromDeal200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To link a deal with one or more of a contact&apos;s emails. An email can only be linked to a single deal at a time. Zoho CRM automatically links a contact&apos;s incoming emails to the deals using the [Deal Prediction Mechanism](https://help.zoho.com/portal/en/kb/crm/connect-with-customers/email/user-functions/articles/email-association-with-deal#Auto-link_Emails_by_Deal_Prediction_Mechanism). You can also manage these links using the Link Deal to Emails API and [Unlink Deal from Emails API](deal_link_emails.yaml#$.paths./Contacts/{contactId}/Emails/{messageId}/actions/link_record.delete).
@@ -58,6 +67,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
         /// <param name="body">The request body schema for linking emails to deals.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +82,7 @@ namespace Soenneker.Zoho.OpenApiClient.Deal_link_emails.Contacts.Item.Emails.Act
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals400ResponseError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.DealLinkEmailsLinkEmailsToDeals404Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

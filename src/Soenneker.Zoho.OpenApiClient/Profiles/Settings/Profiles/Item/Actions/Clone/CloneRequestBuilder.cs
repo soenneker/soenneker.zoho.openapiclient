@@ -40,6 +40,8 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.Actions.C
         /// <param name="body">Request body for cloning a profile.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCloneProfile400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponseError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +57,8 @@ namespace Soenneker.Zoho.OpenApiClient.Profiles.Settings.Profiles.Item.Actions.C
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesCloneProfile400ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesUnauthorizedResponseResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesForbiddenResponseResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.ProfilesInternalServerErrorResponseResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

@@ -87,6 +87,7 @@ namespace Soenneker.Zoho.OpenApiClient.Org_photo.Org.Photo
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.OrgPhotoUploadOrganizationPhoto400Response">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.OrgPhotoUploadOrganizationPhoto403Response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.OrgPhotoUploadOrganizationPhoto413Response">When receiving a 413 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.OrgPhotoUploadOrganizationPhoto415ResponseError">When receiving a 415 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.OrgPhotoUploadOrganizationPhoto200Response?> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -103,6 +104,7 @@ namespace Soenneker.Zoho.OpenApiClient.Org_photo.Org.Photo
                 { "400", global::Soenneker.Zoho.OpenApiClient.Models.OrgPhotoUploadOrganizationPhoto400Response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.OrgPhotoUploadOrganizationPhoto403Response.CreateFromDiscriminatorValue },
                 { "413", global::Soenneker.Zoho.OpenApiClient.Models.OrgPhotoUploadOrganizationPhoto413Response.CreateFromDiscriminatorValue },
+                { "415", global::Soenneker.Zoho.OpenApiClient.Models.OrgPhotoUploadOrganizationPhoto415ResponseError.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };

@@ -49,8 +49,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         private UntypedNode _explicitNullValueGroup = default!;
 #endif
         /// <summary>Represents the logical operator applied to the conditions within this sub-group.Possible values:and - All conditions in the sub-group must be satisfied.or - Any condition in the sub-group must be satisfied.null - No grouping operator is applied.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator? GroupOperator { get => _explicitNullValueGroupOperator; set { _explicitNullValueGroupOperator = value; AdditionalData?.Remove("group_operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_operator"); else _explicitNullProperties?.Remove("group_operator"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator? _explicitNullValueGroupOperator = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator GroupOperator { get => _explicitNullValueGroupOperator; set { _explicitNullValueGroupOperator = value; AdditionalData?.Remove("group_operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_operator"); else _explicitNullProperties?.Remove("group_operator"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator _explicitNullValueGroupOperator = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItem"/> and sets the default values.
         /// </summary>
@@ -78,7 +85,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemField>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemField.CreateFromDiscriminatorValue); } },
                 { "group", n => { Group = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "group_operator", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGroupOperator = default; _explicitNullProperties?.Remove("group_operator"); AdditionalData["group_operator"] = unknown; } else { GroupOperator = parsed; AdditionalData.Remove("group_operator"); } } },
+                { "group_operator", n => { GroupOperator = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator>(global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,7 +97,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemField>("field", Field);
             writer.WriteObjectValue<UntypedNode>("group", Group);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator>("group_operator", GroupOperator);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.NotificationsGetNotifications200ResponseWatchItemNotificationConditionItemFieldSelectionGroupItemGroupOperator>("group_operator", GroupOperator);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

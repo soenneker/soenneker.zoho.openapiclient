@@ -45,6 +45,8 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetCustomViewByIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById401ResponseError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +60,8 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById400ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsGetCustomViewById401ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.ModuleForbiddenErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -71,6 +75,9 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item
         /// <param name="body">Represents the request body envelope for updating a specific Custom View by its ID.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomView400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomView401ResponseError">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomView403ResponseError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomViewRequest body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item.Custom_viewsItemRequestBuilder.Custom_viewsItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,7 +89,15 @@ namespace Soenneker.Zoho.OpenApiClient.Custom_views.Settings.Custom_views.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomView400ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomView401ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.CustomViewsUpdateCustomView403ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.CustomViewUpdateSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the details of a specific Custom View for a module in your Zoho CRM organization, using the Custom View ID.

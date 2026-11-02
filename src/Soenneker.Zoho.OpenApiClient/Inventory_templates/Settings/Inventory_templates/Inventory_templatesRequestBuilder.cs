@@ -52,6 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_te
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesGetInventoryTemplates400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_templates.Inventory_templatesRequestBuilder.Inventory_templatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,13 @@ namespace Soenneker.Zoho.OpenApiClient.Inventory_templates.Settings.Inventory_te
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplatesGetInventoryTemplates400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.InventoryTemplateListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve a paginated list of inventory templates configured in your Zoho CRM organization, with optional filtering by module, category, and field criteria, and sorting by name or usage and modification timestamps.

@@ -40,6 +40,8 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
         /// <param name="body">Request body for reordering entries of an Assignment Rule.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRulesPutReorderEntries400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.Possible403ErrorResponsesInManagingArError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.RequestBodySchemaForActionReorderEntries body, Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assignment_rules.Item.Actions.Reorder_entries.Reorder_entriesRequestBuilder.Reorder_entriesRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,7 +53,14 @@ namespace Soenneker.Zoho.OpenApiClient.Assignment_rules.Settings.Automation.Assi
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.AssignmentRulesPutReorderEntries400ResponseError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.Possible403ErrorResponsesInManagingArError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.SuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To reorder rule entries for a single Assignment Rule in your Zoho CRM organization.

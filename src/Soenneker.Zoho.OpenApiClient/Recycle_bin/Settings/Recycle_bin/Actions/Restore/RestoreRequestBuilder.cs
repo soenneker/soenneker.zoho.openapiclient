@@ -40,6 +40,7 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Actions.
         /// <param name="body">Request payload that specifies how to scope the restoration. Provide exactly one of **ids**, **filters**, or **restore_all_records**; supplying more than one results in an AMBIGUITY_DURING_PROCESSING error.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinBadRequestResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecordsSuccessResponse?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinRestoreRecycleBinRecordsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,7 +52,13 @@ namespace Soenneker.Zoho.OpenApiClient.Recycle_bin.Settings.Recycle_bin.Actions.
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecordsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecordsSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinBadRequestResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecordsSuccessResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.RecycleBinDeleteRecycleBinRecordsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To restore one or more deleted records from the Recycle Bin in your Zoho CRM account. Supply the scope of restoration in the request body using exactly one of three options: **ids** to restore specific records, **filters** to restore records matching field-based criteria, or **restore_all_records** to restore every record currently in the Recycle Bin. When restoring a parent record, Zoho CRM also restores all its associated child records, such as Notes and Attachments. If the total number of records to restore, including child records, is 1000 or fewer, the operation completes immediately. When the total exceeds 1000, when the **filters** option is applied, or when **restore_all_records** is **true**, the restoration runs as a background job. Admin users can restore any record; non-admin users can restore only the records they own unless their profile grants broader access.

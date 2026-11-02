@@ -78,6 +78,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
         /// <param name="body">Request payload to create one or more unsubscribe links.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPostUnsubscribeLinks400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPostUnsubscribeLinks403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPostUnsubscribeLinks400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPostUnsubscribeLinks403Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -105,6 +107,7 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
         /// <param name="body">Request payload for bulk PUT requests to update unsubscribe link configurations.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPutUnsubscribeLinks400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkModificationResultList?> PutAsync(global::Soenneker.Zoho.OpenApiClient.Models.UpdateUnsubscribeLinksRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -116,7 +119,13 @@ namespace Soenneker.Zoho.OpenApiClient.Unsubscribe_links.Settings.Unsubscribe_li
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkModificationResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkModificationResultList.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinksPutUnsubscribeLinks400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkModificationResultList>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.UnsubscribeLinkModificationResultList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve the details of all unsubscribe links configured in your CRM account. This API returns a list of unsubscribe links with their complete configuration, including page type, submission behavior, timestamps, and creator information.

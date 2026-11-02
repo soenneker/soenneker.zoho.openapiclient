@@ -39,6 +39,8 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.DeleteTaskByIdSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksDeleteTaskById400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PostTasksAuthenticationErrorResponseError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,6 +55,8 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksDeleteTaskById400ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.PostTasksAuthenticationErrorResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -66,6 +70,8 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetTaskByIdSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGetTaskById400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.PostTasksAuthenticationErrorResponseError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskInvalidDataSchema">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse">When receiving a 500 status code</exception>
@@ -81,6 +87,8 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksGetTaskById400ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.PostTasksAuthenticationErrorResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.TaskNoPermissionSchema.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.TaskInvalidDataSchema.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse.CreateFromDiscriminatorValue },
@@ -96,7 +104,9 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.
         /// <param name="body">PURPOSE: Request body wrapper for creating or updating an automation task definition. MUST contain a tasks array with exactly 1 task object.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksUpdateWorkflowTaskById400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksUpdateWorkflowTaskById401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksUpdateWorkflowTaskById403ResponseError">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.TaskInvalidDataSchema">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +122,9 @@ namespace Soenneker.Zoho.OpenApiClient.Workflow_tasks.Settings.Automation.Tasks.
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksUpdateWorkflowTaskById400ResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksUpdateWorkflowTaskById401Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.WorkflowTasksUpdateWorkflowTaskById403ResponseError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.TaskInvalidDataSchema.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.InternalServerErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

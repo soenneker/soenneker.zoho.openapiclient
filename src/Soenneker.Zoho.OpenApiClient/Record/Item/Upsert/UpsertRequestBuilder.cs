@@ -40,6 +40,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Upsert
         /// <param name="body">Request body schema for upsert operations, allowing creation or update of records based on duplicate fields.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertErrorResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse">When receiving a 404 status code</exception>
@@ -58,6 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Record.Item.Upsert
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RecordsUpsertErrorResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.RecordUnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RecordPermissionResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Zoho.OpenApiClient.Models.RecordInvalidUrlResponse.CreateFromDiscriminatorValue },

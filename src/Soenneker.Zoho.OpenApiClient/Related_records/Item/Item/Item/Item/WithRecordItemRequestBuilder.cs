@@ -39,7 +39,10 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkOperationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkSpecificRelatedRecord400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkSpecificRelatedRecord401ResponseError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkSpecificRelatedRecord403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkSpecificRelatedRecord404ResponseError">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkSpecificRelatedRecord500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +56,10 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkSpecificRelatedRecord400ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkSpecificRelatedRecord401ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkSpecificRelatedRecord403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkSpecificRelatedRecord404ResponseError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsDelinkSpecificRelatedRecord500Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -66,7 +72,10 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.Item
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord401ResponseError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord404ResponseError">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +89,10 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord400ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord401ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord404ResponseError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsGetRelatedRecord500Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -94,7 +106,10 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.Item
         /// <param name="body">Represents the request payload for updating a specific related record.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateSpecificRelatedRecord400ResponseError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateSpecificRelatedRecord401ResponseError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateSpecificRelatedRecord403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateSpecificRelatedRecord404ResponseError">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateSpecificRelatedRecord500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,7 +124,10 @@ namespace Soenneker.Zoho.OpenApiClient.Related_records.Item.Item.Item.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateSpecificRelatedRecord400ResponseError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateSpecificRelatedRecord401ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateSpecificRelatedRecord403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateSpecificRelatedRecord404ResponseError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordsUpdateSpecificRelatedRecord500Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

@@ -39,7 +39,9 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Ma
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsErrorResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsErrorResponseError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Mass_delete.Mass_deleteRequestBuilder.Mass_deleteRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +54,9 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Ma
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsErrorResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsGetMassDeleteTagsStatus401Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsErrorResponseError.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
@@ -65,7 +69,9 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Ma
         /// <param name="body">Represents the request payload for scheduling a mass delete tag job, containing the target module and the tags to delete.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsErrorResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsErrorResponseError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags202Response?> PostAsync(global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTagsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -79,7 +85,9 @@ namespace Soenneker.Zoho.OpenApiClient.Mass_delete_tags.Settings.Tags.Actions.Ma
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsErrorResponseError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsMassDeleteTags401Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Zoho.OpenApiClient.Models.MassDeleteTagsErrorResponseError.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };

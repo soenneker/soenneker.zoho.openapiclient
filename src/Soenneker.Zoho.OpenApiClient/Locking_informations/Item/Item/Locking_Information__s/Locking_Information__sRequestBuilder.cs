@@ -52,6 +52,7 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
         /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord400ResponseError">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_Information__s.Locking_Information__sRequestBuilder.Locking_Information__sRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,13 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord400ResponseError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsGetRecordLockingInformationOfTheRecord200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To lock a record in the specified module of your Zoho CRM account with a reason for locking.
@@ -71,6 +78,7 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
         /// <param name="body">Specify the request payload for the locking operation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +93,7 @@ namespace Soenneker.Zoho.OpenApiClient.Locking_informations.Item.Item.Locking_In
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord400ResponseError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Zoho.OpenApiClient.Models.LockingInformationsLockRecord403Response.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },

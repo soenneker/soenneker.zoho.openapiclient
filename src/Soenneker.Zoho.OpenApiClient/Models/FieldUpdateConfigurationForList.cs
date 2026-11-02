@@ -230,8 +230,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType? _explicitNullValueType = default!;
         /// <summary>Specifies how the new value is applied to a multi-select picklist or Owner field: overwrite replaces the existing value, append adds to the existing entries. Omit or set to null for single-value fields.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType? UpdateType { get => _explicitNullValueUpdateType; set { _explicitNullValueUpdateType = value; AdditionalData?.Remove("update_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_type"); else _explicitNullProperties?.Remove("update_type"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType? _explicitNullValueUpdateType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType UpdateType { get => _explicitNullValueUpdateType; set { _explicitNullValueUpdateType = value; AdditionalData?.Remove("update_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_type"); else _explicitNullProperties?.Remove("update_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType _explicitNullValueUpdateType = default!;
+#endif
         /// <summary>The value configured for the field update. The shape depends on the target field type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -288,7 +295,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "related_records", n => { RelatedRecords = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>(global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
-                { "update_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUpdateType = default; _explicitNullProperties?.Remove("update_type"); AdditionalData["update_type"] = unknown; } else { UpdateType = parsed; AdditionalData.Remove("update_type"); } } },
+                { "update_type", n => { UpdateType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -320,7 +327,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.RelatedRecordModule>("related_records", RelatedRecords);
             writer.WriteStringValue("source", Source);
             writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListType>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType>("update_type", UpdateType);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListUpdateType>("update_type", UpdateType);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForListValue>("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -117,8 +117,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         private global::Soenneker.Zoho.OpenApiClient.Models.FieldReference _explicitNullValueSortBy = default!;
 #endif
         /// <summary>Represents the sort order applied to the records in the Custom View.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder? _explicitNullValueSortOrder = default!;
+#nullable restore
+#else
+        public global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder _explicitNullValueSortOrder = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItem"/> and sets the default values.
         /// </summary>
@@ -154,7 +161,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "shared_to", n => { SharedTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem>(global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sort_by", n => { SortBy = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>(global::Soenneker.Zoho.OpenApiClient.Models.FieldReference.CreateFromDiscriminatorValue); } },
-                { "sort_order", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSortOrder = default; _explicitNullProperties?.Remove("sort_order"); AdditionalData["sort_order"] = unknown; } else { SortOrder = parsed; AdditionalData.Remove("sort_order"); } } },
+                { "sort_order", n => { SortOrder = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder>(global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -174,7 +181,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.SharedToItem>("shared_to", SharedTo);
             writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldReference>("sort_by", SortBy);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder>("sort_order", SortOrder);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.CustomViewPutByIdItemSortOrder>("sort_order", SortOrder);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
