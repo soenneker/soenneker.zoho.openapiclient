@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the error code for the request. Possible values: **FEATURE_NOT_ENABLED**.</summary>
+    /// <summary>The error code identifying the feature-not-enabled condition. Possible values: **FEATURE_NOT_ENABLED** - The requested feature is not enabled in the CRM organization.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FeatureNotEnabledCode
     {

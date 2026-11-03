@@ -44,12 +44,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Specifies how the new owner is determined. Each entry defines an assignment method  - a specific user, role, group, assignment rule, profile, merge field, or criteria-based filter. For round-robin assignment across multiple users, provide multiple entries of type=user. For criteria-based assignment, provide a single entry of type=criteria with filter conditions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem>? AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; AdditionalData?.Remove("assign_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem>? _explicitNullValueAssignTo = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsAssignToItem>? AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; AdditionalData?.Remove("assign_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsAssignToItem>? _explicitNullValueAssignTo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem> AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; AdditionalData?.Remove("assign_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem> _explicitNullValueAssignTo = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsAssignToItem> AssignTo { get => _explicitNullValueAssignTo; set { _explicitNullValueAssignTo = value; AdditionalData?.Remove("assign_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assign_to"); else _explicitNullProperties?.Remove("assign_to"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsAssignToItem> _explicitNullValueAssignTo = default!;
 #endif
         /// <summary>Server-generated unique identifier for this assign owner action. Present only in GET responses; not required in POST or PUT requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,22 +64,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>The lookup field linking the trigger module to the target module. Required only for cross-module assign owner actions (where the action&apos;s module differs from the workflow rule&apos;s trigger module). For same-module assignments, this field is omitted and the action operates directly on the triggering record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; AdditionalData?.Remove("lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField? _explicitNullValueLookupField = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsLookupField? LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; AdditionalData?.Remove("lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsLookupField? _explicitNullValueLookupField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; AdditionalData?.Remove("lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField _explicitNullValueLookupField = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsLookupField LookupField { get => _explicitNullValueLookupField; set { _explicitNullValueLookupField = value; AdditionalData?.Remove("lookup_field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lookup_field"); else _explicitNullProperties?.Remove("lookup_field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsLookupField _explicitNullValueLookupField = default!;
 #endif
         /// <summary>Target module for the ownership assignment. Must match the workflow rule&apos;s trigger module for direct assignments, or the lookup field&apos;s related module for cross-module assignments. At least api_name or id must be provided; if both are given and they do not match, the API returns AMBIGUITY_DURING_PROCESSING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule? _explicitNullValueModule = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule _explicitNullValueModule = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Whether to send an email notification to the new owner when the record is reassigned. When true, the newly assigned owner receives an email informing them of the ownership change.</summary>
         public bool? Notify { get => _explicitNullValueNotify; set { _explicitNullValueNotify = value; AdditionalData?.Remove("notify"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify"); else _explicitNullProperties?.Remove("notify"); } }
@@ -87,12 +87,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Related modules whose open record ownership should also be transferred when the parent record is reassigned. Common activity modules (Tasks, Calls, Events) are available for all modules. Additional modules depend on the parent module: Accounts can also include Contacts and Deals; Contacts can also include Deals. Null when no related modules are selected for ownership transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord>? RelatedRecords { get => _explicitNullValueRelatedRecords; set { _explicitNullValueRelatedRecords = value; AdditionalData?.Remove("related_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_records"); else _explicitNullProperties?.Remove("related_records"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord>? _explicitNullValueRelatedRecords = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationRelatedRecord>? RelatedRecords { get => _explicitNullValueRelatedRecords; set { _explicitNullValueRelatedRecords = value; AdditionalData?.Remove("related_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_records"); else _explicitNullProperties?.Remove("related_records"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationRelatedRecord>? _explicitNullValueRelatedRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord> RelatedRecords { get => _explicitNullValueRelatedRecords; set { _explicitNullValueRelatedRecords = value; AdditionalData?.Remove("related_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_records"); else _explicitNullProperties?.Remove("related_records"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord> _explicitNullValueRelatedRecords = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationRelatedRecord> RelatedRecords { get => _explicitNullValueRelatedRecords; set { _explicitNullValueRelatedRecords = value; AdditionalData?.Remove("related_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("related_records"); else _explicitNullProperties?.Remove("related_records"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationRelatedRecord> _explicitNullValueRelatedRecords = default!;
 #endif
         /// <summary>Restricts assignment to users who are currently available. When set to [&quot;online_status&quot;], only users logged in to the Zoho CRM web interface are eligible for assignment. If the selected user is offline, the assignment is skipped or deferred. Null means no availability check is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,12 +132,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apply_assignment_threshold", n => { ApplyAssignmentThreshold = n.GetBoolValue(); } },
-                { "assign_to", n => { AssignTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "assign_to", n => { AssignTo = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsAssignToItem>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsAssignToItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "lookup_field", n => { LookupField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField.CreateFromDiscriminatorValue); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule.CreateFromDiscriminatorValue); } },
+                { "lookup_field", n => { LookupField = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsLookupField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsLookupField.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsModule>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsModule.CreateFromDiscriminatorValue); } },
                 { "notify", n => { Notify = n.GetBoolValue(); } },
-                { "related_records", n => { RelatedRecords = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "related_records", n => { RelatedRecords = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationRelatedRecord>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationRelatedRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "user_availability_based_on", n => { UserAvailabilityBasedOn = n.GetCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.OnlineStatusItem>()?.AsList(); } },
             };
         }
@@ -149,12 +149,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apply_assignment_threshold", ApplyAssignmentThreshold);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsAssignToItem>("assign_to", AssignTo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsAssignToItem>("assign_to", AssignTo);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsLookupField>("lookup_field", LookupField);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignOwnerDetailsModule>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsLookupField>("lookup_field", LookupField);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAssignOwnerDetailsModule>("module", Module);
             writer.WriteBoolValue("notify", Notify);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationRelatedRecord>("related_records", RelatedRecords);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationRelatedRecord>("related_records", RelatedRecords);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Zoho.OpenApiClient.Models.OnlineStatusItem>("user_availability_based_on", UserAvailabilityBasedOn);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

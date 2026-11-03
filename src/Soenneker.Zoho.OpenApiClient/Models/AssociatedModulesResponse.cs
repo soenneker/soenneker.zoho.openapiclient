@@ -27,12 +27,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Represents the list of module references that have at least one webhook associated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference>? AssociatedModules { get => _explicitNullValueAssociatedModules; set { _explicitNullValueAssociatedModules = value; AdditionalData?.Remove("associated_modules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_modules"); else _explicitNullProperties?.Remove("associated_modules"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference>? _explicitNullValueAssociatedModules = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAssociatedModuleReference>? AssociatedModules { get => _explicitNullValueAssociatedModules; set { _explicitNullValueAssociatedModules = value; AdditionalData?.Remove("associated_modules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_modules"); else _explicitNullProperties?.Remove("associated_modules"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAssociatedModuleReference>? _explicitNullValueAssociatedModules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference> AssociatedModules { get => _explicitNullValueAssociatedModules; set { _explicitNullValueAssociatedModules = value; AdditionalData?.Remove("associated_modules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_modules"); else _explicitNullProperties?.Remove("associated_modules"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference> _explicitNullValueAssociatedModules = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAssociatedModuleReference> AssociatedModules { get => _explicitNullValueAssociatedModules; set { _explicitNullValueAssociatedModules = value; AdditionalData?.Remove("associated_modules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_modules"); else _explicitNullProperties?.Remove("associated_modules"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAssociatedModuleReference> _explicitNullValueAssociatedModules = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModulesResponse"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "associated_modules", n => { AssociatedModules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference>(global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "associated_modules", n => { AssociatedModules = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAssociatedModuleReference>(global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAssociatedModuleReference.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AssociatedModuleReference>("associated_modules", AssociatedModules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAssociatedModuleReference>("associated_modules", AssociatedModules);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

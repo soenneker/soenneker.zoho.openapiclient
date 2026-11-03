@@ -40,22 +40,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Target field to populate when the automation executes. api_name is required. If id is also provided, both must refer to the same field; otherwise the API returns AMBIGUITY_DURING_PROCESSING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingField? _explicitNullValueField = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingField _explicitNullValueField = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingField _explicitNullValueField = default!;
 #endif
         /// <summary>The literal value assigned to the target field at automation execution time. The expected shape is determined by the target field data_type, discoverable via GET /settings/fields?module={module}. For most field types, supply a string (for example, &quot;High&quot;, &quot;Not Started&quot;, &quot;1234&quot;). For multi-select picklist fields (data_type: multiselectpicklist), supply an array of option strings. For fields that reference an entity such as an owner or layout (data_type: ownerlookup), supply an object with at minimum the entity ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingValue? _explicitNullValueValue = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingValue _explicitNullValueValue = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -76,8 +76,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingField.CreateFromDiscriminatorValue); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingValue>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingValue.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingField.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingValue>(global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("display_value", DisplayValue);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingField>("field", Field);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesStaticFieldMappingValue>("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingField>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesStaticFieldMappingValue>("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

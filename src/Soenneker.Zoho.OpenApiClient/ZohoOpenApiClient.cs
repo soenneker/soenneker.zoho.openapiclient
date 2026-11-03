@@ -13,6 +13,7 @@ using Soenneker.Zoho.OpenApiClient.Assignment_rules;
 using Soenneker.Zoho.OpenApiClient.Associate_email;
 using Soenneker.Zoho.OpenApiClient.Attachments;
 using Soenneker.Zoho.OpenApiClient.Audit_log_export;
+using Soenneker.Zoho.OpenApiClient.Automation_functions;
 using Soenneker.Zoho.OpenApiClient.Bulk_read;
 using Soenneker.Zoho.OpenApiClient.Bulk_write;
 using Soenneker.Zoho.OpenApiClient.Business_hours;
@@ -35,6 +36,7 @@ using Soenneker.Zoho.OpenApiClient.Download_attachments;
 using Soenneker.Zoho.OpenApiClient.Download_inline_images;
 using Soenneker.Zoho.OpenApiClient.Duplicate_check_preference;
 using Soenneker.Zoho.OpenApiClient.Email_drafts;
+using Soenneker.Zoho.OpenApiClient.Email_notifications;
 using Soenneker.Zoho.OpenApiClient.Email_templates;
 using Soenneker.Zoho.OpenApiClient.Emails_sharing_details;
 using Soenneker.Zoho.OpenApiClient.Features;
@@ -45,11 +47,16 @@ using Soenneker.Zoho.OpenApiClient.Files;
 using Soenneker.Zoho.OpenApiClient.Find_and_merge;
 using Soenneker.Zoho.OpenApiClient.Fiscal_year;
 using Soenneker.Zoho.OpenApiClient.From_addresses;
+using Soenneker.Zoho.OpenApiClient.Functions;
 using Soenneker.Zoho.OpenApiClient.Get_related_records_count;
 using Soenneker.Zoho.OpenApiClient.Global_picklists;
 using Soenneker.Zoho.OpenApiClient.Holidays;
 using Soenneker.Zoho.OpenApiClient.Inventory_convert;
 using Soenneker.Zoho.OpenApiClient.Inventory_templates;
+using Soenneker.Zoho.OpenApiClient.Kiosks;
+using Soenneker.Zoho.OpenApiClient.Kiosks_execute;
+using Soenneker.Zoho.OpenApiClient.Kiosks_get_records;
+using Soenneker.Zoho.OpenApiClient.Kiosks_states;
 using Soenneker.Zoho.OpenApiClient.Layouts;
 using Soenneker.Zoho.OpenApiClient.Layouts_activate_deactivate;
 using Soenneker.Zoho.OpenApiClient.Locking_informations;
@@ -155,6 +162,11 @@ namespace Soenneker.Zoho.OpenApiClient
         public global::Soenneker.Zoho.OpenApiClient.Audit_log_export.Audit_log_exportRequestBuilder Audit_log_export
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Audit_log_export.Audit_log_exportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The automation_functions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Automation_functions.Automation_functionsRequestBuilder Automation_functions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Automation_functions.Automation_functionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bulk_read property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Bulk_read.Bulk_readRequestBuilder Bulk_read
@@ -266,6 +278,11 @@ namespace Soenneker.Zoho.OpenApiClient
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Email_drafts.Email_draftsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The email_notifications property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Email_notifications.Email_notificationsRequestBuilder Email_notifications
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Email_notifications.Email_notificationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The email_templates property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Email_templates.Email_templatesRequestBuilder Email_templates
         {
@@ -316,6 +333,11 @@ namespace Soenneker.Zoho.OpenApiClient
         {
             get => new global::Soenneker.Zoho.OpenApiClient.From_addresses.From_addressesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The functions property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Functions.FunctionsRequestBuilder Functions
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Functions.FunctionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The get_related_records_count property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Get_related_records_count.Get_related_records_countRequestBuilder Get_related_records_count
         {
@@ -340,6 +362,26 @@ namespace Soenneker.Zoho.OpenApiClient
         public global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Inventory_templatesRequestBuilder Inventory_templates
         {
             get => new global::Soenneker.Zoho.OpenApiClient.Inventory_templates.Inventory_templatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The kiosks property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Kiosks.KiosksRequestBuilder Kiosks
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Kiosks.KiosksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The kiosks_execute property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Kiosks_execute.Kiosks_executeRequestBuilder Kiosks_execute
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Kiosks_execute.Kiosks_executeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The kiosks_get_records property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Kiosks_get_records.Kiosks_get_recordsRequestBuilder Kiosks_get_records
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Kiosks_get_records.Kiosks_get_recordsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The kiosks_states property</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Kiosks_states.Kiosks_statesRequestBuilder Kiosks_states
+        {
+            get => new global::Soenneker.Zoho.OpenApiClient.Kiosks_states.Kiosks_statesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The layouts property</summary>
         public global::Soenneker.Zoho.OpenApiClient.Layouts.LayoutsRequestBuilder Layouts

@@ -43,7 +43,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeGenericErrorDetails Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeGenericErrorDetails _explicitNullValueDetails = default!;
 #endif
-        /// <summary>Represents the error message. </summary>
+        /// <summary>The error message describing the issue. Possible values: **Invalid data type** - The value provided for the field does not match the expected data type.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeMessage? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.InvalidDataTypeMessage? _explicitNullValueMessage = default!;
         /// <summary>Indicates the response status.</summary>

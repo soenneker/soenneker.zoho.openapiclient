@@ -58,22 +58,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of target modules that should inherit tags from the source record during conversion. For Leads: may include Contacts, Accounts, Deals. Each entry identifies a module by api_name and/or id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsCarryTagsItem>? CarryTags { get => _explicitNullValueCarryTags; set { _explicitNullValueCarryTags = value; AdditionalData?.Remove("carry_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carry_tags"); else _explicitNullProperties?.Remove("carry_tags"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsCarryTagsItem>? _explicitNullValueCarryTags = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsCarryTagsItem>? CarryTags { get => _explicitNullValueCarryTags; set { _explicitNullValueCarryTags = value; AdditionalData?.Remove("carry_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carry_tags"); else _explicitNullProperties?.Remove("carry_tags"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsCarryTagsItem>? _explicitNullValueCarryTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsCarryTagsItem> CarryTags { get => _explicitNullValueCarryTags; set { _explicitNullValueCarryTags = value; AdditionalData?.Remove("carry_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carry_tags"); else _explicitNullProperties?.Remove("carry_tags"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsCarryTagsItem> _explicitNullValueCarryTags = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsCarryTagsItem> CarryTags { get => _explicitNullValueCarryTags; set { _explicitNullValueCarryTags = value; AdditionalData?.Remove("carry_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carry_tags"); else _explicitNullProperties?.Remove("carry_tags"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsCarryTagsItem> _explicitNullValueCarryTags = default!;
 #endif
         /// <summary>New owner assignment for the converted records. Specifies the user (by id) who should own the converted records, which modules should receive the new owner (via related_modules), and whether to enforce assignment thresholds. When omitted, the source record&apos;s owner is retained.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsChangeOwner? ChangeOwner { get => _explicitNullValueChangeOwner; set { _explicitNullValueChangeOwner = value; AdditionalData?.Remove("change_owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_owner"); else _explicitNullProperties?.Remove("change_owner"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsChangeOwner? _explicitNullValueChangeOwner = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsChangeOwner? ChangeOwner { get => _explicitNullValueChangeOwner; set { _explicitNullValueChangeOwner = value; AdditionalData?.Remove("change_owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_owner"); else _explicitNullProperties?.Remove("change_owner"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsChangeOwner? _explicitNullValueChangeOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsChangeOwner ChangeOwner { get => _explicitNullValueChangeOwner; set { _explicitNullValueChangeOwner = value; AdditionalData?.Remove("change_owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_owner"); else _explicitNullProperties?.Remove("change_owner"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsChangeOwner _explicitNullValueChangeOwner = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsChangeOwner ChangeOwner { get => _explicitNullValueChangeOwner; set { _explicitNullValueChangeOwner = value; AdditionalData?.Remove("change_owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("change_owner"); else _explicitNullProperties?.Remove("change_owner"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsChangeOwner _explicitNullValueChangeOwner = default!;
 #endif
         /// <summary>Unique ID of the Contact Role to assign when a Deal is created during Leads conversion. Only applicable when create_deal=true. Obtain valid Contact Role IDs from GET /Contacts/roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,12 +88,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>MANDATORY for Quotes and Sales_Orders conversion (omitting returns MANDATORY_NOT_FOUND). Identifies the target module for conversion as an object with api_name and id. For Quotes: convert_to can be {api_name: &apos;SalesOrders&apos;, id: &apos;&lt;module_id&gt;&apos;} or {api_name: &apos;Invoices&apos;, id: &apos;&lt;module_id&gt;&apos;}. For Sales_Orders: convert_to must be {api_name: &apos;Invoices&apos;, id: &apos;&lt;module_id&gt;&apos;}. Obtain the module id from GET /settings/modules. Not applicable for Leads conversion (Leads always convert to Contacts+Accounts, optionally +Deals).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsConvertTo? ConvertTo { get => _explicitNullValueConvertTo; set { _explicitNullValueConvertTo = value; AdditionalData?.Remove("convert_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convert_to"); else _explicitNullProperties?.Remove("convert_to"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsConvertTo? _explicitNullValueConvertTo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsConvertTo? ConvertTo { get => _explicitNullValueConvertTo; set { _explicitNullValueConvertTo = value; AdditionalData?.Remove("convert_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convert_to"); else _explicitNullProperties?.Remove("convert_to"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsConvertTo? _explicitNullValueConvertTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsConvertTo ConvertTo { get => _explicitNullValueConvertTo; set { _explicitNullValueConvertTo = value; AdditionalData?.Remove("convert_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convert_to"); else _explicitNullProperties?.Remove("convert_to"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsConvertTo _explicitNullValueConvertTo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsConvertTo ConvertTo { get => _explicitNullValueConvertTo; set { _explicitNullValueConvertTo = value; AdditionalData?.Remove("convert_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convert_to"); else _explicitNullProperties?.Remove("convert_to"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsConvertTo _explicitNullValueConvertTo = default!;
 #endif
         /// <summary>Whether to create a Deal record as part of Leads conversion. Only applicable when the trigger module is Leads. When true, the Deal module field mappings in field_mappings are used to populate the new Deal.</summary>
         public bool? CreateDeal { get => _explicitNullValueCreateDeal; set { _explicitNullValueCreateDeal = value; AdditionalData?.Remove("create_deal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create_deal"); else _explicitNullProperties?.Remove("create_deal"); } }
@@ -101,12 +101,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of field-value pairs to populate in the converted record(s). Each entry maps a target field to a value using one of the supported types: static, merge_field, or execution_time. For Leads conversion, field mappings can target Contacts, Accounts, and Deals modules. Fetch available fields from GET /settings/fields?module={target_module_api_name}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItem>? _explicitNullValueFieldMappings = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsFieldMappingsItem>? _explicitNullValueFieldMappings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItem> _explicitNullValueFieldMappings = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsFieldMappingsItem> _explicitNullValueFieldMappings = default!;
 #endif
         /// <summary>Server-generated unique identifier for this convert action. Present only in GET responses; not required in POST requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,22 +121,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Target module to which attachments from the source record should be moved during conversion. For Leads: typically Contacts or Accounts. For Quotes/SalesOrders: the target conversion module. Provide api_name and/or id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsMoveAttachmentTo? MoveAttachmentTo { get => _explicitNullValueMoveAttachmentTo; set { _explicitNullValueMoveAttachmentTo = value; AdditionalData?.Remove("move_attachment_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_attachment_to"); else _explicitNullProperties?.Remove("move_attachment_to"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsMoveAttachmentTo? _explicitNullValueMoveAttachmentTo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsMoveAttachmentTo? MoveAttachmentTo { get => _explicitNullValueMoveAttachmentTo; set { _explicitNullValueMoveAttachmentTo = value; AdditionalData?.Remove("move_attachment_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_attachment_to"); else _explicitNullProperties?.Remove("move_attachment_to"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsMoveAttachmentTo? _explicitNullValueMoveAttachmentTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsMoveAttachmentTo MoveAttachmentTo { get => _explicitNullValueMoveAttachmentTo; set { _explicitNullValueMoveAttachmentTo = value; AdditionalData?.Remove("move_attachment_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_attachment_to"); else _explicitNullProperties?.Remove("move_attachment_to"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsMoveAttachmentTo _explicitNullValueMoveAttachmentTo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsMoveAttachmentTo MoveAttachmentTo { get => _explicitNullValueMoveAttachmentTo; set { _explicitNullValueMoveAttachmentTo = value; AdditionalData?.Remove("move_attachment_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_attachment_to"); else _explicitNullProperties?.Remove("move_attachment_to"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsMoveAttachmentTo _explicitNullValueMoveAttachmentTo = default!;
 #endif
         /// <summary>Portal user type to assign during Leads conversion. Only applicable when the org has portals configured and the converted Contact should be provisioned as a portal user. The id and name must match an existing portal user type - validated against the org&apos;s portal metadata (CrmClientPortalFilterUtil). Not applicable for Quotes or Sales_Orders conversions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsPortalUserType? PortalUserType { get => _explicitNullValuePortalUserType; set { _explicitNullValuePortalUserType = value; AdditionalData?.Remove("portal_user_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_user_type"); else _explicitNullProperties?.Remove("portal_user_type"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsPortalUserType? _explicitNullValuePortalUserType = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsPortalUserType? PortalUserType { get => _explicitNullValuePortalUserType; set { _explicitNullValuePortalUserType = value; AdditionalData?.Remove("portal_user_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_user_type"); else _explicitNullProperties?.Remove("portal_user_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsPortalUserType? _explicitNullValuePortalUserType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsPortalUserType PortalUserType { get => _explicitNullValuePortalUserType; set { _explicitNullValuePortalUserType = value; AdditionalData?.Remove("portal_user_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_user_type"); else _explicitNullProperties?.Remove("portal_user_type"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsPortalUserType _explicitNullValuePortalUserType = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsPortalUserType PortalUserType { get => _explicitNullValuePortalUserType; set { _explicitNullValuePortalUserType = value; AdditionalData?.Remove("portal_user_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("portal_user_type"); else _explicitNullProperties?.Remove("portal_user_type"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsPortalUserType _explicitNullValuePortalUserType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.ConvertActionSchemaDetails"/> and sets the default values.
@@ -170,15 +170,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
                 { "add_to_existing_account", n => { AddToExistingAccount = n.GetBoolValue(); } },
                 { "add_to_existing_contact", n => { AddToExistingContact = n.GetBoolValue(); } },
                 { "apply_restriction", n => { ApplyRestriction = n.GetBoolValue(); } },
-                { "carry_tags", n => { CarryTags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsCarryTagsItem>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsCarryTagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "change_owner", n => { ChangeOwner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsChangeOwner>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsChangeOwner.CreateFromDiscriminatorValue); } },
+                { "carry_tags", n => { CarryTags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsCarryTagsItem>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsCarryTagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "change_owner", n => { ChangeOwner = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsChangeOwner>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsChangeOwner.CreateFromDiscriminatorValue); } },
                 { "contact_role", n => { ContactRole = n.GetStringValue(); } },
-                { "convert_to", n => { ConvertTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsConvertTo>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsConvertTo.CreateFromDiscriminatorValue); } },
+                { "convert_to", n => { ConvertTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsConvertTo>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsConvertTo.CreateFromDiscriminatorValue); } },
                 { "create_deal", n => { CreateDeal = n.GetBoolValue(); } },
-                { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItem>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsFieldMappingsItem>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsFieldMappingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "move_attachment_to", n => { MoveAttachmentTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsMoveAttachmentTo>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsMoveAttachmentTo.CreateFromDiscriminatorValue); } },
-                { "portal_user_type", n => { PortalUserType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsPortalUserType>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsPortalUserType.CreateFromDiscriminatorValue); } },
+                { "move_attachment_to", n => { MoveAttachmentTo = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsMoveAttachmentTo>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsMoveAttachmentTo.CreateFromDiscriminatorValue); } },
+                { "portal_user_type", n => { PortalUserType = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsPortalUserType>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsPortalUserType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -191,15 +191,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             writer.WriteBoolValue("add_to_existing_account", AddToExistingAccount);
             writer.WriteBoolValue("add_to_existing_contact", AddToExistingContact);
             writer.WriteBoolValue("apply_restriction", ApplyRestriction);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsCarryTagsItem>("carry_tags", CarryTags);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsChangeOwner>("change_owner", ChangeOwner);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsCarryTagsItem>("carry_tags", CarryTags);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsChangeOwner>("change_owner", ChangeOwner);
             writer.WriteStringValue("contact_role", ContactRole);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsConvertTo>("convert_to", ConvertTo);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsConvertTo>("convert_to", ConvertTo);
             writer.WriteBoolValue("create_deal", CreateDeal);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsFieldMappingsItem>("field_mappings", FieldMappings);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsFieldMappingsItem>("field_mappings", FieldMappings);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsMoveAttachmentTo>("move_attachment_to", MoveAttachmentTo);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationConvertDetailsPortalUserType>("portal_user_type", PortalUserType);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsMoveAttachmentTo>("move_attachment_to", MoveAttachmentTo);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationConvertDetailsPortalUserType>("portal_user_type", PortalUserType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

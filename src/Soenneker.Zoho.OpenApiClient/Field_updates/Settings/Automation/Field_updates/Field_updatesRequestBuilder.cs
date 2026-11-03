@@ -223,7 +223,7 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
         {
             /// <summary>Filter field updates by automation feature type.</summary>
             [QueryParameter("feature_type")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.ParamQueryFeatureType? FeatureType { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesParamQueryFeatureType? FeatureType { get; set; }
             /// <summary>Advanced filter criteria (JSON-encoded string). Supported only: **field.api_name=&apos;name&apos;** and **comparator=&apos;contains&apos;**. The value field is dynamic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -268,7 +268,7 @@ namespace Soenneker.Zoho.OpenApiClient.Field_updates.Settings.Automation.Field_u
             public global::Soenneker.Zoho.OpenApiClient.Models.ModifiedTimeSortBy? SortBy { get; set; }
             /// <summary>Sort order for the results based on sort_by. Allowed values: desc, asc.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.ParamQuerySortOrder? SortOrder { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesParamQuerySortOrder? SortOrder { get; set; }
         }
     }
 }

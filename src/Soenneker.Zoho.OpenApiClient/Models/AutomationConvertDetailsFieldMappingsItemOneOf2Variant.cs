@@ -45,12 +45,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Target field to populate when the automation executes. api_name is required. If id is also provided, both must refer to the same field; otherwise the API returns AMBIGUITY_DURING_PROCESSING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesMergeFieldMappingField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesMergeFieldMappingField? _explicitNullValueField = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesMergeFieldMappingField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesMergeFieldMappingField? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesMergeFieldMappingField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesMergeFieldMappingField _explicitNullValueField = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesMergeFieldMappingField Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesMergeFieldMappingField _explicitNullValueField = default!;
 #endif
         /// <summary>Represents the string value carried by a merge_field mapping, containing one or more runtime-resolved token references. Supports direct field tokens (${!Module.Field}), lookup traversal tokens (${!Module.Lookup.Field}), and system tokens (${CURRENTTIME}, ${CURRENTUSER}). Tokens may be combined with surrounding text for multi-line field targets. Fields that hold a single typed value such as email or URL accept exactly one token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             {
                 { "allow_agent_user", n => { AllowAgentUser = n.GetBoolValue(); } },
                 { "display_value", n => { DisplayValue = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesMergeFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesMergeFieldMappingField.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesMergeFieldMappingField>(global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesMergeFieldMappingField.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -103,7 +103,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteBoolValue("allow_agent_user", AllowAgentUser);
             writer.WriteStringValue("display_value", DisplayValue);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesMergeFieldMappingField>("field", Field);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesMergeFieldMappingField>("field", Field);
             writer.WriteStringValue("value", Value);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

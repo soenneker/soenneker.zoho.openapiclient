@@ -30,7 +30,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the error code for the request. Possible values: **FEATURE_NOT_ENABLED**.</summary>
+        /// <summary>The error code identifying the feature-not-enabled condition. Possible values: **FEATURE_NOT_ENABLED** - The requested feature is not enabled in the CRM organization.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FeatureNotEnabledCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FeatureNotEnabledCode? _explicitNullValueCode = default!;
         /// <summary>Contains diagnostic information about the error, identifying the specific field or condition that caused the failure.</summary>

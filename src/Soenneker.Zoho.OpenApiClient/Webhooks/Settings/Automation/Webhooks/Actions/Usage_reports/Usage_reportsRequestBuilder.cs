@@ -36,18 +36,18 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Act
         /// <summary>
         /// To retrieve usage statistics for webhook actions executed in your Zoho CRM organization. Specify the **group_by** parameter to control the granularity of results; optionally filter by automation feature type and date range.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAutomationUsageReportResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGetWebhookUsageReports400ResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Zoho.OpenApiClient.Models.WebhooksGetWebhookUsageReports403Response">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.Usage_reportsRequestBuilder.Usage_reportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAutomationUsageReportResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.Usage_reportsRequestBuilder.Usage_reportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.Usage_reportsRequestBuilder.Usage_reportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAutomationUsageReportResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Actions.Usage_reports.Usage_reportsRequestBuilder.Usage_reportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,7 +58,7 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Act
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.AutomationUsageReportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAutomationUsageReportResponse>(requestInfo, global::Soenneker.Zoho.OpenApiClient.Models.WebhooksAutomationUsageReportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve usage statistics for webhook actions executed in your Zoho CRM organization. Specify the **group_by** parameter to control the granularity of results; optionally filter by automation feature type and date range.
@@ -99,10 +99,10 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Act
             public Date? From { get; set; }
             /// <summary>Specify the grouping criteria for usage data. Must include date.Possible values:**date** - Returns daily totals; the resource object is omitted from each row.**date,resource** - Returns per-action rows including resource.id and resource.name.**date,resource,type** - Returns per-action rows grouped by resource and type.</summary>
             [QueryParameter("group_by")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.ParamQueryGroupBy? GroupBy { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksParamQueryGroupBy? GroupBy { get; set; }
             /// <summary>Specify to request additional nested fields within usage report resource objects. Currently, only resource.layout_id is recognized; it adds layout_id inside the resource object when available, primarily for wizard usage rows. Other values are silently ignored.</summary>
             [QueryParameter("include_inner_details")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.ResourceLayoutIdIncludeInnerDetails? IncludeInnerDetails { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksParamQueryUsageIncludeInnerDetails? IncludeInnerDetails { get; set; }
             /// <summary>Specify the page number for paginated results. Defaults to 1 when omitted. Use together with per_page to navigate large result sets.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -117,7 +117,7 @@ namespace Soenneker.Zoho.OpenApiClient.Webhooks.Settings.Automation.Webhooks.Act
             public Date? To { get; set; }
             /// <summary>Specify the automation feature type to filter usage data. When omitted, usage across all supported feature types is returned.Possible values:**workflow_rules** - Workflow Rules.**approval_process** - Approval Process.**blueprint** - Blueprint.**orchestrations** - Orchestrations.**wizards** - Wizards.**modules** - Modules.**webhooks** - Webhooks.**kiosks** - Kiosks.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.ParamQueryType? Type { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.WebhooksParamQueryType? Type { get; set; }
         }
     }
 }

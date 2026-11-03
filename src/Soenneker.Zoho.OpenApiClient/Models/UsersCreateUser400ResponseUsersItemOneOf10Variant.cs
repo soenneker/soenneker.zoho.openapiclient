@@ -27,7 +27,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
-        /// <summary>Represents the error code for the request. Possible values: **FEATURE_NOT_ENABLED**.</summary>
+        /// <summary>The error code identifying the feature-not-enabled condition. Possible values: **FEATURE_NOT_ENABLED** - The requested feature is not enabled in the CRM organization.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FeatureNotEnabledCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FeatureNotEnabledCode? _explicitNullValueCode = default!;
         /// <summary>Contains additional context about the feature not enabled error.</summary>

@@ -43,7 +43,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Soenneker.Zoho.OpenApiClient.Models.ServicesMandatoryFieldMissingErrorDetails Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.ServicesMandatoryFieldMissingErrorDetails _explicitNullValueDetails = default!;
 #endif
-        /// <summary>Represents the error message. </summary>
+        /// <summary>Represents the error message describing the issue. Possible values:Required field is missing</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.RequiredFieldIsMissingMessage? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.RequiredFieldIsMissingMessage? _explicitNullValueMessage = default!;
         /// <summary>Indicates the response status.</summary>

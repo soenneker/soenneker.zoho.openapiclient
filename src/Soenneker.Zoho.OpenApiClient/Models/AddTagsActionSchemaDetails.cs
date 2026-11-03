@@ -42,12 +42,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Target module for the tag action. Must match the workflow rule&apos;s trigger module. Supported modules: Leads, Accounts, Contacts, Deals, Campaigns, Tasks, Cases, Events, Calls, Solutions, Products, Vendors, Price_Books, Quotes, Sales_Orders, Purchase_Orders, Invoices, and custom modules. Unsupported modules (Visits, Users, LinkingModules) return NOT_ALLOWED.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsModule? _explicitNullValueModule = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsModule _explicitNullValueModule = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsModule _explicitNullValueModule = default!;
 #endif
         /// <summary>Whether to overwrite all existing tags on the record with the specified tags (true) or append to existing tags (false). Default is false. When set to true, any RemoveTags action in the same workflow rule becomes invalid and returns INVALID_DATA (&apos;Remove tag not supported with Overwrite Add Tag&apos;).</summary>
         public bool? OverWrite { get => _explicitNullValueOverWrite; set { _explicitNullValueOverWrite = value; AdditionalData?.Remove("over_write"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("over_write"); else _explicitNullProperties?.Remove("over_write"); } }
@@ -55,12 +55,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>List of tags to add to the record. All tags must pre-exist in the org  - fetch available tags from GET /settings/tags?module={module_api_name}. To create new tags: POST /settings/tags?module={module_api_name}. If the list is empty after parsing, the API returns FAILURE (&apos;Empty Tag&apos;). If the tag count exceeds the edition limit, the API returns FAILURE (&apos;Invalid Tag Count&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsTagsItem>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsTagsItem>? _explicitNullValueTags = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsTagsItem>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsTagsItem>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsTagsItem> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsTagsItem> _explicitNullValueTags = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsTagsItem> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsTagsItem> _explicitNullValueTags = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AddTagsActionSchemaDetails"/> and sets the default values.
@@ -89,9 +89,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsModule>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsModule.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsModule>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsModule.CreateFromDiscriminatorValue); } },
                 { "over_write", n => { OverWrite = n.GetBoolValue(); } },
-                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsTagsItem>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsTagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsTagsItem>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsTagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -102,9 +102,9 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsModule>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsModule>("module", Module);
             writer.WriteBoolValue("over_write", OverWrite);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddTagsDetailsTagsItem>("tags", Tags);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddTagsDetailsTagsItem>("tags", Tags);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

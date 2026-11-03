@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Failure code.</summary>
+    /// <summary>Represents the failure code indicating why the bulk delete operation failed for this record.Possible values:INVALID_DATA - The data provided for the record is invalid.NOT_ALLOWED - The delete operation is not permitted for this record.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BulkDeleteFailureItemCode
     {

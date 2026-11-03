@@ -300,7 +300,7 @@ namespace Soenneker.Zoho.OpenApiClient.Appointments.Appointments__s
             public global::Soenneker.Zoho.OpenApiClient.Models.SortBy? SortBy { get; set; }
             /// <summary>Specify the sort order for the records.&lt;br/&gt; &lt;b&gt;Possible values:&lt;/b&gt; &lt;br/&gt;desc - Returns records in descending order.&lt;br/&gt; asc - Returns records in ascending order.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.SortOrder? SortOrder { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.SortOrderEnum? SortOrder { get; set; }
         }
     }
 }

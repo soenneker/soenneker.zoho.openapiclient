@@ -30,7 +30,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Error code</summary>
+        /// <summary>Represents the error code indicating the type of error that occurred.Possible values:AUTHORIZATION_ERROR - The request was rejected because the email notification is locked and cannot be edited.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.AuthorizationErrorCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.AuthorizationErrorCode? _explicitNullValueCode = default!;
         /// <summary>Error details with validation information</summary>

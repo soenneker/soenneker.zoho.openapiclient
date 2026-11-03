@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Error code</summary>
+    /// <summary>Represents the error code indicating the type of error that occurred.Possible values:AUTHORIZATION_ERROR - The request was rejected because the email notification is locked and cannot be edited.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AuthorizationErrorCode
     {

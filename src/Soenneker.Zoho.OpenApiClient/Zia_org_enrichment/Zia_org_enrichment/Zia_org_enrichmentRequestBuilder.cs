@@ -169,7 +169,7 @@ namespace Soenneker.Zoho.OpenApiClient.Zia_org_enrichment.Zia_org_enrichment
             public global::Soenneker.Zoho.OpenApiClient.Models.CreatedTimeSortBy? SortBy { get; set; }
             /// <summary>Specify the direction(ascending or descending) in which to sort the response.Possible values:**asc** - Sort results in ascending order.**desc** - Sort results in descending order.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Zoho.OpenApiClient.Models.SortorderEnum? SortOrder { get; set; }
+            public global::Soenneker.Zoho.OpenApiClient.Models.SortorderEnum2? SortOrder { get; set; }
             /// <summary>Filter the response by the status of the scheduled enrichment job, using the create org enrichment API.Possible values:**COMPLETED** - Returns jobs that finished and produced enriched data.**FAILED** - Returns jobs that ended with a failure.**DATA_NOT_FOUND** - Returns jobs that completed but could not locate any public data to enrich.**SCHEDULED** - Returns jobs that are queued and yet to run.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Zoho.OpenApiClient.Models.ZiaOrgEnrichmentStatus? Status { get; set; }

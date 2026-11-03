@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
+    /// <summary>Automation feature type filter. When omitted, returns all email notifications regardless of feature type. &apos;workflow&apos;  - workflow rules. &apos;approval_process&apos;  - approval workflows. &apos;blueprint&apos; / &apos;blueprint_transition&apos; / &apos;blueprint_state&apos;  - blueprint stages. &apos;review_process&apos;  - review processes. &apos;orchestration&apos;  - orchestration flows. &apos;assignment_rules&apos;  - assignment rules. &apos;kiosk&apos;  - kiosk actions. &apos;pathfinder&apos;  - pathfinder. &apos;connected_workflows&apos;  - connected workflows. &apos;commandcenter_service&apos;  - command center. &apos;cadences&apos;  - cadence actions.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ParamQueryFeatureType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "workflow")]
         #pragma warning disable CS1591
@@ -55,6 +54,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         [EnumMember(Value = "commandcenter_service")]
         #pragma warning disable CS1591
         CommandcenterService,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cadences")]
+        #pragma warning disable CS1591
+        Cadences,
         #pragma warning restore CS1591
     }
 }

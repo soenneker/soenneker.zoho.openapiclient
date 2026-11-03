@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Pagination metadata for list responses. Use more_records to determine if additional pages are available.
+    /// Represents the pagination state for a collection response, including the current page number, the number of records per page, the total records returned, and whether additional records are available.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaginationInfo : IAdditionalDataHolder, IParsable
@@ -20,6 +20,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
             else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("max_limit") is null) { _explicitNullValueMaxLimit = default!; _explicitNullProperties?.Remove("max_limit"); }
+            else if (parseNode.GetChildNode("max_limit") is { } nullNodeMaxLimit && nullNodeMaxLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLimit = null;
             if (parseNode.GetChildNode("more_records") is null) { _explicitNullValueMoreRecords = default!; _explicitNullProperties?.Remove("more_records"); }
             else if (parseNode.GetChildNode("more_records") is { } nullNodeMoreRecords && nullNodeMoreRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MoreRecords = null;
             if (parseNode.GetChildNode("page") is null) { _explicitNullValuePage = default!; _explicitNullProperties?.Remove("page"); }
@@ -30,16 +32,19 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Number of records returned in the current page.</summary>
+        /// <summary>Represents the number of records returned in the current response page.</summary>
         public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
-        /// <summary>True when additional records are available on subsequent pages.</summary>
+        /// <summary>Represents the maximum number of records that can be returned per page for this collection.</summary>
+        public int? MaxLimit { get => _explicitNullValueMaxLimit; set { _explicitNullValueMaxLimit = value; AdditionalData?.Remove("max_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_limit"); else _explicitNullProperties?.Remove("max_limit"); } }
+        private int? _explicitNullValueMaxLimit = default!;
+        /// <summary>Indicates whether additional records are available beyond the current page.Possible values:true - More records exist beyond the current page.false - No additional records exist beyond the current page.</summary>
         public bool? MoreRecords { get => _explicitNullValueMoreRecords; set { _explicitNullValueMoreRecords = value; AdditionalData?.Remove("more_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("more_records"); else _explicitNullProperties?.Remove("more_records"); } }
         private bool? _explicitNullValueMoreRecords = default!;
-        /// <summary>Current page number (starts at 1).</summary>
+        /// <summary>Represents the current page number in the paginated result set, reflecting the requested page value.</summary>
         public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
         private int? _explicitNullValuePage = default!;
-        /// <summary>Maximum number of records returned per page (default 200).</summary>
+        /// <summary>Represents the number of records requested per page.</summary>
         public int? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; AdditionalData?.Remove("per_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
         private int? _explicitNullValuePerPage = default!;
         /// <summary>
@@ -68,6 +73,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
+                { "max_limit", n => { MaxLimit = n.GetIntValue(); } },
                 { "more_records", n => { MoreRecords = n.GetBoolValue(); } },
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "per_page", n => { PerPage = n.GetIntValue(); } },
@@ -81,6 +87,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
+            writer.WriteIntValue("max_limit", MaxLimit);
             writer.WriteBoolValue("more_records", MoreRecords);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("per_page", PerPage);

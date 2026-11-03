@@ -31,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Error code indicating the type of error</summary>
+        /// <summary>Represents the error code for the file size violation. Possible values: **FILE_SIZE_EXCEEDS** - The uploaded file exceeds the maximum permitted size limit.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.FileSizeExceedsCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.FileSizeExceedsCode? _explicitNullValueCode = default!;
         /// <summary>Represents additional details about the file size error, including the size of the file that exceeded the limit.</summary>

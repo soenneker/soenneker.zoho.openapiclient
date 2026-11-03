@@ -38,12 +38,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Field mappings for the new record. Each entry: {&quot;field&quot;: {&quot;api_name&quot;: &quot;Last_Name&quot;}, &quot;type&quot;: &quot;static&quot;, &quot;value&quot;: &quot;Test&quot;}. Must include all mandatory fields (system_mandatory=true or api_mandatory=true from GET /settings/layouts?module={module}) - missing ones cause REQUIRED_DATA_NOT_FOUND. Mapping types: static - literal values for text, picklist, phone, number fields; NOT for Date/DateTime/ALARM (DEPENDENT_MISMATCH) or unique fields (INVALID_DATA, check unique=true in GET /settings/fields). merge_field - runtime tokens like ${!Leads.Company} for text-based fields; NOT for lookup/owner fields (DEPENDENT_MISMATCH). execution_time - REQUIRED for Date/DateTime/ALARM fields; periods: days, business_days, hours, minutes; sign required for datetime fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItem>? _explicitNullValueFieldMappings = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsFieldMappingsItem>? _explicitNullValueFieldMappings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItem> _explicitNullValueFieldMappings = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsFieldMappingsItem> _explicitNullValueFieldMappings = default!;
 #endif
         /// <summary>Server-generated unique identifier for this create record action. Present only in GET responses; not required in POST requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,22 +58,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Layout to use when creating the record. Determines which fields are available and their validation rules. Fetch valid layouts from GET /settings/layouts?module={module_api_name}. The layout.id is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsLayout? _explicitNullValueLayout = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsLayout? _explicitNullValueLayout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsLayout _explicitNullValueLayout = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsLayout _explicitNullValueLayout = default!;
 #endif
         /// <summary>Target module in which the new record will be created. Supported modules: Leads, Contacts, Potentials (Deals), Accounts, Products, Cases, custom modules, and team modules. NOT supported: Tasks, Events, Calls - use add_meeting for Events and schedule_call for Calls. Fetch available modules from GET /settings/modules. At least api_name or id must be provided; always use the full 19-digit module ID as returned by the modules API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsModule? _explicitNullValueModule = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsModule _explicitNullValueModule = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsModule _explicitNullValueModule = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.CreateRecordActionSchemaDetails"/> and sets the default values.
@@ -102,10 +102,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apply_restriction", n => { ApplyRestriction = n.GetBoolValue(); } },
-                { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItem>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsFieldMappingsItem>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsFieldMappingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsLayout>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsLayout.CreateFromDiscriminatorValue); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsModule>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsModule.CreateFromDiscriminatorValue); } },
+                { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsLayout>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsLayout.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsModule>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsModule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -116,10 +116,10 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apply_restriction", ApplyRestriction);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsFieldMappingsItem>("field_mappings", FieldMappings);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsFieldMappingsItem>("field_mappings", FieldMappings);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsLayout>("layout", Layout);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationCreateRecordDetailsModule>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsLayout>("layout", Layout);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationCreateRecordDetailsModule>("module", Module);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

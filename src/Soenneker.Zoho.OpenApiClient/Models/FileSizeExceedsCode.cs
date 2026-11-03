@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Error code indicating the type of error</summary>
+    /// <summary>Represents the error code for the file size violation. Possible values: **FILE_SIZE_EXCEEDS** - The uploaded file exceeds the maximum permitted size limit.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FileSizeExceedsCode
     {

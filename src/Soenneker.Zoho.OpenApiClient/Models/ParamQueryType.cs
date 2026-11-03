@@ -32,13 +32,25 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         #pragma warning disable CS1591
         Modules,
         #pragma warning restore CS1591
-        [EnumMember(Value = "webhooks")]
+        [EnumMember(Value = "email_notifications")]
         #pragma warning disable CS1591
-        Webhooks,
+        EmailNotifications,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "email_templates")]
+        #pragma warning disable CS1591
+        EmailTemplates,
         #pragma warning restore CS1591
         [EnumMember(Value = "kiosks")]
         #pragma warning disable CS1591
         Kiosks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cadences")]
+        #pragma warning disable CS1591
+        Cadences,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connected_workflows")]
+        #pragma warning disable CS1591
+        ConnectedWorkflows,
         #pragma warning restore CS1591
     }
 }

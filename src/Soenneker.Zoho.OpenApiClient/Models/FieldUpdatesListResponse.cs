@@ -39,12 +39,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Pagination metadata for list responses. Use more_records to determine if additional pages are available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo? _explicitNullValueInfo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesPaginationInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesPaginationInfo? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo _explicitNullValueInfo = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesPaginationInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesPaginationInfo _explicitNullValueInfo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesListResponse"/> and sets the default values.
@@ -72,7 +72,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "field_updates", n => { FieldUpdates = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo>(global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesPaginationInfo>(global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesPaginationInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdateConfigurationForList>("field_updates", FieldUpdates);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.PaginationInfo>("info", Info);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesPaginationInfo>("info", Info);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

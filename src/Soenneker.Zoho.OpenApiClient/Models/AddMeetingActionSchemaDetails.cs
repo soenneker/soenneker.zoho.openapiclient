@@ -42,22 +42,22 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Field mappings for the new Event. Each entry: {&quot;field&quot;: {&quot;api_name&quot;: &quot;Event_Title&quot;}, &quot;type&quot;: &quot;static&quot;, &quot;value&quot;: &quot;Meeting&quot;}. Must include all mandatory fields from GET /settings/layouts?module=Events. Common fields: Event_Title, Start_DateTime, All_Day, Participants (composite type), Remind_At. End_DateTime is auto-computed from Start_DateTime + meeting_duration - do NOT provide it. Mapping types: static - literal values for text, picklist fields; NOT for DateTime/ALARM (DEPENDENT_MISMATCH). merge_field - runtime tokens like ${!Leads.Company} for text-based fields; NOT for lookup/owner (DEPENDENT_MISMATCH). execution_time - REQUIRED for Start_DateTime and Remind_At; sign required for datetime; periods: days, business_days, hours, minutes. When All_Day=true, period must be &quot;days&quot; and omit meeting_duration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsFieldMappingsItem>? _explicitNullValueFieldMappings = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsFieldMappingsItem>? FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsFieldMappingsItem>? _explicitNullValueFieldMappings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsFieldMappingsItem> _explicitNullValueFieldMappings = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsFieldMappingsItem> FieldMappings { get => _explicitNullValueFieldMappings; set { _explicitNullValueFieldMappings = value; AdditionalData?.Remove("field_mappings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_mappings"); else _explicitNullProperties?.Remove("field_mappings"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsFieldMappingsItem> _explicitNullValueFieldMappings = default!;
 #endif
         /// <summary>Fallback behavior when the designated meeting host is unavailable. Either assign the record owner as host (assign_record_owner_as_host=true) or create a follow-up task (assign_task with a pre-configured task ID). Exactly one option must be specified; providing both returns INVALID_DATA with field1/field2 conflict, providing neither returns EXPECTED_FIELD_MISSING.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsHostUnavailable? HostUnavailable { get => _explicitNullValueHostUnavailable; set { _explicitNullValueHostUnavailable = value; AdditionalData?.Remove("host_unavailable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_unavailable"); else _explicitNullProperties?.Remove("host_unavailable"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsHostUnavailable? _explicitNullValueHostUnavailable = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsHostUnavailable? HostUnavailable { get => _explicitNullValueHostUnavailable; set { _explicitNullValueHostUnavailable = value; AdditionalData?.Remove("host_unavailable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_unavailable"); else _explicitNullProperties?.Remove("host_unavailable"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsHostUnavailable? _explicitNullValueHostUnavailable = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsHostUnavailable HostUnavailable { get => _explicitNullValueHostUnavailable; set { _explicitNullValueHostUnavailable = value; AdditionalData?.Remove("host_unavailable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_unavailable"); else _explicitNullProperties?.Remove("host_unavailable"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsHostUnavailable _explicitNullValueHostUnavailable = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsHostUnavailable HostUnavailable { get => _explicitNullValueHostUnavailable; set { _explicitNullValueHostUnavailable = value; AdditionalData?.Remove("host_unavailable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_unavailable"); else _explicitNullProperties?.Remove("host_unavailable"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsHostUnavailable _explicitNullValueHostUnavailable = default!;
 #endif
         /// <summary>Server-generated unique identifier for this add meeting action. Present only in GET responses; not required in POST requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,32 +72,32 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Layout to use when creating the Event record. Determines which fields are available and their validation rules. Fetch valid layouts from GET /settings/layouts?module=Events. The layout.id is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsLayout? _explicitNullValueLayout = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsLayout? _explicitNullValueLayout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsLayout _explicitNullValueLayout = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsLayout _explicitNullValueLayout = default!;
 #endif
         /// <summary>Duration of the meeting. Specifies a numeric value and time period (e.g., 1 hour, 30 minutes). Required when All_Day is not set to true in field_mappings. If All_Day is true, meeting_duration must not be provided  - the API returns INVALID_DATA with field1/field2 conflict details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsMeetingDuration? MeetingDuration { get => _explicitNullValueMeetingDuration; set { _explicitNullValueMeetingDuration = value; AdditionalData?.Remove("meeting_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_duration"); else _explicitNullProperties?.Remove("meeting_duration"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsMeetingDuration? _explicitNullValueMeetingDuration = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsMeetingDuration? MeetingDuration { get => _explicitNullValueMeetingDuration; set { _explicitNullValueMeetingDuration = value; AdditionalData?.Remove("meeting_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_duration"); else _explicitNullProperties?.Remove("meeting_duration"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsMeetingDuration? _explicitNullValueMeetingDuration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsMeetingDuration MeetingDuration { get => _explicitNullValueMeetingDuration; set { _explicitNullValueMeetingDuration = value; AdditionalData?.Remove("meeting_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_duration"); else _explicitNullProperties?.Remove("meeting_duration"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsMeetingDuration _explicitNullValueMeetingDuration = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsMeetingDuration MeetingDuration { get => _explicitNullValueMeetingDuration; set { _explicitNullValueMeetingDuration = value; AdditionalData?.Remove("meeting_duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_duration"); else _explicitNullProperties?.Remove("meeting_duration"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsMeetingDuration _explicitNullValueMeetingDuration = default!;
 #endif
         /// <summary>Target module for the meeting. Must be the Events module. Provide either api_name (&quot;Events&quot;) or the Events module id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsModule? _explicitNullValueModule = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsModule? Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsModule? _explicitNullValueModule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsModule _explicitNullValueModule = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsModule Module { get => _explicitNullValueModule; set { _explicitNullValueModule = value; AdditionalData?.Remove("module"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module"); else _explicitNullProperties?.Remove("module"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsModule _explicitNullValueModule = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AddMeetingActionSchemaDetails"/> and sets the default values.
@@ -126,12 +126,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apply_restriction", n => { ApplyRestriction = n.GetBoolValue(); } },
-                { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsFieldMappingsItem>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsFieldMappingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "host_unavailable", n => { HostUnavailable = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsHostUnavailable>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsHostUnavailable.CreateFromDiscriminatorValue); } },
+                { "field_mappings", n => { FieldMappings = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsFieldMappingsItem>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsFieldMappingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "host_unavailable", n => { HostUnavailable = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsHostUnavailable>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsHostUnavailable.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsLayout>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsLayout.CreateFromDiscriminatorValue); } },
-                { "meeting_duration", n => { MeetingDuration = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsMeetingDuration>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsMeetingDuration.CreateFromDiscriminatorValue); } },
-                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsModule>(global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsModule.CreateFromDiscriminatorValue); } },
+                { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsLayout>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsLayout.CreateFromDiscriminatorValue); } },
+                { "meeting_duration", n => { MeetingDuration = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsMeetingDuration>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsMeetingDuration.CreateFromDiscriminatorValue); } },
+                { "module", n => { Module = n.GetObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsModule>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsModule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -142,12 +142,12 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apply_restriction", ApplyRestriction);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsFieldMappingsItem>("field_mappings", FieldMappings);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsHostUnavailable>("host_unavailable", HostUnavailable);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsFieldMappingsItem>("field_mappings", FieldMappings);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsHostUnavailable>("host_unavailable", HostUnavailable);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsLayout>("layout", Layout);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsMeetingDuration>("meeting_duration", MeetingDuration);
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.AutomationAddMeetingDetailsModule>("module", Module);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsLayout>("layout", Layout);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsMeetingDuration>("meeting_duration", MeetingDuration);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesAutomationAddMeetingDetailsModule>("module", Module);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

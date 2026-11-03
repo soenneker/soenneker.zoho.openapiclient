@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
-    /// <summary>Represents the type of the address.Possible values:**email** - Indicates that the value is an email address.</summary>
+    /// <summary>Represents the type of sender address for the notification.Possible values:email - The sender address resolves to a plain email address.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EmailType
     {

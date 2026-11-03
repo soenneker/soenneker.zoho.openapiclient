@@ -46,7 +46,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>Represents the error message describing the validation issue.</summary>
+        /// <summary>The error message describing the parameter pattern mismatch.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PleaseCheckWhetherTheInputValuesAreCorrectMessage? MessageEscaped { get => _explicitNullValueMessageEscaped; set { _explicitNullValueMessageEscaped = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PleaseCheckWhetherTheInputValuesAreCorrectMessage? _explicitNullValueMessageEscaped = default!;
         /// <summary>Indicates the response status.</summary>

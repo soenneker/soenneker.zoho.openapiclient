@@ -31,7 +31,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Error code indicating pattern not matched.</summary>
+        /// <summary>Represents the error code identifying the type of pattern mismatch. Possible values: **PATTERN_NOT_MATCHED** - Indicates the query parameter value does not match the expected pattern.</summary>
         public global::Soenneker.Zoho.OpenApiClient.Models.PatternNotMatchedCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private global::Soenneker.Zoho.OpenApiClient.Models.PatternNotMatchedCode? _explicitNullValueCode = default!;
         /// <summary>Contains additional details about the validation error, such as the affected parameter name.</summary>

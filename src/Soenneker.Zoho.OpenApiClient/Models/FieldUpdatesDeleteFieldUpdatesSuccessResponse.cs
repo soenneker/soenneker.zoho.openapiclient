@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteMixedResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteMixedResponse"/>, <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteSuccessResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FieldUpdatesDeleteFieldUpdatesSuccessResponse : IComposedTypeWrapper, IParsable
@@ -18,21 +18,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteMixedResponse"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteMixedResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteMixedResponse? BulkDeleteMixedResponse { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteMixedResponse? FieldUpdatesBulkDeleteMixedResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteMixedResponse BulkDeleteMixedResponse { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteMixedResponse FieldUpdatesBulkDeleteMixedResponse { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessResponse"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteSuccessResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessResponse? BulkDeleteSuccessResponse { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteSuccessResponse? FieldUpdatesBulkDeleteSuccessResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessResponse BulkDeleteSuccessResponse { get; set; }
+        public global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteSuccessResponse FieldUpdatesBulkDeleteSuccessResponse { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -162,7 +162,15 @@ return result;
 bool? MatchSchema11(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
-{ result &= (MatchSchema16(node, depth + 1)); if (result == false) return false; }
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
+if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
+{ result &= (fields.ContainsKey("id")); if (result == false) return false; }
+{ result &= (!fields.ContainsKey("id") ? (bool?)true : MatchSchema16(fields["id"], depth + 1)); if (result == false) return false; }
+foreach (var field in fields) {
+if (field.Key == "id") continue;
+{ result &= (MatchSchema17(field.Value, depth + 1)); if (result == false) return false; }
+}
+}
 return result;
 }
 bool? MatchSchema12(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
@@ -184,7 +192,7 @@ return result;
 bool? MatchSchema14(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
-{ result &= (!(MatchSchema17(node, depth + 1))); if (result == false) return false; }
+{ result &= (!(MatchSchema18(node, depth + 1))); if (result == false) return false; }
 return result;
 }
 bool? MatchSchema15(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
@@ -196,36 +204,22 @@ return result;
 bool? MatchSchema16(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
-{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject); if (result == false) return false; }
-if (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject obj) { var fields = obj.GetValue();
-{ result &= (fields.ContainsKey("id")); if (result == false) return false; }
-{ result &= (!fields.ContainsKey("id") ? (bool?)true : MatchSchema18(fields["id"], depth + 1)); if (result == false) return false; }
-foreach (var field in fields) {
-if (field.Key == "id") continue;
-{ result &= (MatchSchema19(field.Value, depth + 1)); if (result == false) return false; }
-}
-}
+{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+{ result &= (node is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text ? (bool?)true : text.GetValue() is string textValue ? StringLength(textValue) <= 20m : null); if (result == false) return false; }
 return result;
 }
 bool? MatchSchema17(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
+{ result &= (!(MatchSchema19(node, depth + 1))); if (result == false) return false; }
 return result;
 }
 bool? MatchSchema18(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
-{ result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
-{ result &= (node is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text ? (bool?)true : text.GetValue() is string textValue ? StringLength(textValue) <= 20m : null); if (result == false) return false; }
 return result;
 }
 bool? MatchSchema19(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
-if (depth > 64 || --remaining < 0) return null;
-bool? result = true;
-{ result &= (!(MatchSchema20(node, depth + 1))); if (result == false) return false; }
-return result;
-}
-bool? MatchSchema20(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
 return result;
@@ -239,10 +233,10 @@ return matches; }))() : null;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
             if (matchesUnionBranch1 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.BulkDeleteMixedResponse == null && result.BulkDeleteSuccessResponse == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.BulkDeleteSuccessResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessResponse(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.BulkDeleteMixedResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteMixedResponse(), parseNode);
-            if (result.BulkDeleteMixedResponse == null && result.BulkDeleteSuccessResponse == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.FieldUpdatesBulkDeleteMixedResponse == null && result.FieldUpdatesBulkDeleteSuccessResponse == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.FieldUpdatesBulkDeleteSuccessResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteSuccessResponse(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.FieldUpdatesBulkDeleteMixedResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteMixedResponse(), parseNode);
+            if (result.FieldUpdatesBulkDeleteMixedResponse == null && result.FieldUpdatesBulkDeleteSuccessResponse == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -253,9 +247,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(BulkDeleteMixedResponse != null || BulkDeleteSuccessResponse != null)
+            if(FieldUpdatesBulkDeleteMixedResponse != null || FieldUpdatesBulkDeleteSuccessResponse != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BulkDeleteMixedResponse, BulkDeleteSuccessResponse);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(FieldUpdatesBulkDeleteMixedResponse, FieldUpdatesBulkDeleteSuccessResponse);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -266,15 +260,15 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (BulkDeleteMixedResponse == null && BulkDeleteSuccessResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (FieldUpdatesBulkDeleteMixedResponse == null && FieldUpdatesBulkDeleteSuccessResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (BulkDeleteMixedResponse != null) selectedUnionBranches++;
-            if (BulkDeleteSuccessResponse != null) selectedUnionBranches++;
-            if (BulkDeleteMixedResponse != null && selectedUnionBranches == 1) { if (BulkDeleteMixedResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BulkDeleteMixedResponse); return; }
-            if (BulkDeleteSuccessResponse != null && selectedUnionBranches == 1) { if (BulkDeleteSuccessResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BulkDeleteSuccessResponse); return; }
+            if (FieldUpdatesBulkDeleteMixedResponse != null) selectedUnionBranches++;
+            if (FieldUpdatesBulkDeleteSuccessResponse != null) selectedUnionBranches++;
+            if (FieldUpdatesBulkDeleteMixedResponse != null && selectedUnionBranches == 1) { if (FieldUpdatesBulkDeleteMixedResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FieldUpdatesBulkDeleteMixedResponse); return; }
+            if (FieldUpdatesBulkDeleteSuccessResponse != null && selectedUnionBranches == 1) { if (FieldUpdatesBulkDeleteSuccessResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FieldUpdatesBulkDeleteSuccessResponse); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteMixedResponse>(null, BulkDeleteMixedResponse, BulkDeleteSuccessResponse);
+            writer.WriteObjectValue<global::Soenneker.Zoho.OpenApiClient.Models.FieldUpdatesBulkDeleteMixedResponse>(null, FieldUpdatesBulkDeleteMixedResponse, FieldUpdatesBulkDeleteSuccessResponse);
         }
     }
 }

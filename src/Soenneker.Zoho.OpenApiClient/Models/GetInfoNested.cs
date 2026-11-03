@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents pagination and limit information for the tag list response.
+    /// Pagination metadata returned with list responses, including page number, per-page count, total record count, sort details, and page tokens for cursor-based navigation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetInfoNested : IAdditionalDataHolder, IParsable
@@ -18,25 +18,69 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed_count") is null) { _explicitNullValueAllowedCount = default!; _explicitNullProperties?.Remove("allowed_count"); }
-            else if (parseNode.GetChildNode("allowed_count") is { } nullNodeAllowedCount && nullNodeAllowedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedCount = null;
             if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
             else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
-            if (parseNode.GetChildNode("record_limit") is null) { _explicitNullValueRecordLimit = default!; _explicitNullProperties?.Remove("record_limit"); }
-            else if (parseNode.GetChildNode("record_limit") is { } nullNodeRecordLimit && nullNodeRecordLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordLimit = null;
+            if (parseNode.GetChildNode("more_records") is null) { _explicitNullValueMoreRecords = default!; _explicitNullProperties?.Remove("more_records"); }
+            else if (parseNode.GetChildNode("more_records") is { } nullNodeMoreRecords && nullNodeMoreRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MoreRecords = null;
+            if (parseNode.GetChildNode("next_page_token") is null) { _explicitNullValueNextPageToken = default!; _explicitNullProperties?.Remove("next_page_token"); }
+            else if (parseNode.GetChildNode("next_page_token") is { } nullNodeNextPageToken && nullNodeNextPageToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageToken = null;
+            if (parseNode.GetChildNode("page") is null) { _explicitNullValuePage = default!; _explicitNullProperties?.Remove("page"); }
+            else if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
+            if (parseNode.GetChildNode("page_token_expiry") is null) { _explicitNullValuePageTokenExpiry = default!; _explicitNullProperties?.Remove("page_token_expiry"); }
+            else if (parseNode.GetChildNode("page_token_expiry") is { } nullNodePageTokenExpiry && nullNodePageTokenExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageTokenExpiry = null;
+            if (parseNode.GetChildNode("per_page") is null) { _explicitNullValuePerPage = default!; _explicitNullProperties?.Remove("per_page"); }
+            else if (parseNode.GetChildNode("per_page") is { } nullNodePerPage && nullNodePerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerPage = null;
+            if (parseNode.GetChildNode("previous_page_token") is null) { _explicitNullValuePreviousPageToken = default!; _explicitNullProperties?.Remove("previous_page_token"); }
+            else if (parseNode.GetChildNode("previous_page_token") is { } nullNodePreviousPageToken && nullNodePreviousPageToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousPageToken = null;
+            if (parseNode.GetChildNode("sort_by") is null) { _explicitNullValueSortBy = default!; _explicitNullProperties?.Remove("sort_by"); }
+            else if (parseNode.GetChildNode("sort_by") is { } nullNodeSortBy && nullNodeSortBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortBy = null;
+            if (parseNode.GetChildNode("sort_order") is null) { _explicitNullValueSortOrder = default!; _explicitNullProperties?.Remove("sort_order"); }
+            else if (parseNode.GetChildNode("sort_order") is { } nullNodeSortOrder && nullNodeSortOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortOrder = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents the maximum number of tags allowed for the module in your plan.</summary>
-        public int? AllowedCount { get => _explicitNullValueAllowedCount; set { _explicitNullValueAllowedCount = value; AdditionalData?.Remove("allowed_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_count"); else _explicitNullProperties?.Remove("allowed_count"); } }
-        private int? _explicitNullValueAllowedCount = default!;
-        /// <summary>Represents the total number of tags returned in the response.</summary>
+        /// <summary>The total number of records returned in the current response.</summary>
         public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
-        /// <summary>Represents the maximum number of records a tag can be applied to.</summary>
-        public int? RecordLimit { get => _explicitNullValueRecordLimit; set { _explicitNullValueRecordLimit = value; AdditionalData?.Remove("record_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_limit"); else _explicitNullProperties?.Remove("record_limit"); } }
-        private int? _explicitNullValueRecordLimit = default!;
+        /// <summary>Indicates whether additional records are available beyond the current page. Possible values: **true** - More records exist beyond the current page. **false** - No additional records exist beyond the current page.</summary>
+        public bool? MoreRecords { get => _explicitNullValueMoreRecords; set { _explicitNullValueMoreRecords = value; AdditionalData?.Remove("more_records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("more_records"); else _explicitNullProperties?.Remove("more_records"); } }
+        private bool? _explicitNullValueMoreRecords = default!;
+        /// <summary>The token used to retrieve the next page of results. Present when additional records are available beyond the current page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NextPageToken { get => _explicitNullValueNextPageToken; set { _explicitNullValueNextPageToken = value; AdditionalData?.Remove("next_page_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_token"); else _explicitNullProperties?.Remove("next_page_token"); } }
+        private string? _explicitNullValueNextPageToken = default!;
+#nullable restore
+#else
+        public string NextPageToken { get => _explicitNullValueNextPageToken; set { _explicitNullValueNextPageToken = value; AdditionalData?.Remove("next_page_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_token"); else _explicitNullProperties?.Remove("next_page_token"); } }
+        private string _explicitNullValueNextPageToken = default!;
+#endif
+        /// <summary>The current page number in offset-based pagination.</summary>
+        public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        private int? _explicitNullValuePage = default!;
+        /// <summary>Represents the expiration timestamp of the page tokens in ISO 8601 format.</summary>
+        public DateTimeOffset? PageTokenExpiry { get => _explicitNullValuePageTokenExpiry; set { _explicitNullValuePageTokenExpiry = value; AdditionalData?.Remove("page_token_expiry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_token_expiry"); else _explicitNullProperties?.Remove("page_token_expiry"); } }
+        private DateTimeOffset? _explicitNullValuePageTokenExpiry = default!;
+        /// <summary>The maximum number of records returned per page in the response.</summary>
+        public int? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; AdditionalData?.Remove("per_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
+        private int? _explicitNullValuePerPage = default!;
+        /// <summary>The token used to retrieve the previous page of results. Present when a previous page exists.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousPageToken { get => _explicitNullValuePreviousPageToken; set { _explicitNullValuePreviousPageToken = value; AdditionalData?.Remove("previous_page_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_page_token"); else _explicitNullProperties?.Remove("previous_page_token"); } }
+        private string? _explicitNullValuePreviousPageToken = default!;
+#nullable restore
+#else
+        public string PreviousPageToken { get => _explicitNullValuePreviousPageToken; set { _explicitNullValuePreviousPageToken = value; AdditionalData?.Remove("previous_page_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_page_token"); else _explicitNullProperties?.Remove("previous_page_token"); } }
+        private string _explicitNullValuePreviousPageToken = default!;
+#endif
+        /// <summary>The field used to sort the results. Possible values: **id** - Sorts results by record ID.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.IdSortBy? SortBy { get => _explicitNullValueSortBy; set { _explicitNullValueSortBy = value; AdditionalData?.Remove("sort_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_by"); else _explicitNullProperties?.Remove("sort_by"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.IdSortBy? _explicitNullValueSortBy = default!;
+        /// <summary>Represents the direction in which results are sorted. Possible values: **asc** - Ascending order. **desc** - Descending order.</summary>
+        public global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNestedSortOrder? SortOrder { get => _explicitNullValueSortOrder; set { _explicitNullValueSortOrder = value; AdditionalData?.Remove("sort_order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort_order"); else _explicitNullProperties?.Remove("sort_order"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNestedSortOrder? _explicitNullValueSortOrder = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNested"/> and sets the default values.
         /// </summary>
@@ -62,9 +106,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_count", n => { AllowedCount = n.GetIntValue(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "record_limit", n => { RecordLimit = n.GetIntValue(); } },
+                { "more_records", n => { MoreRecords = n.GetBoolValue(); } },
+                { "next_page_token", n => { NextPageToken = n.GetStringValue(); } },
+                { "page", n => { Page = n.GetIntValue(); } },
+                { "page_token_expiry", n => { PageTokenExpiry = n.GetDateTimeOffsetValue(); } },
+                { "per_page", n => { PerPage = n.GetIntValue(); } },
+                { "previous_page_token", n => { PreviousPageToken = n.GetStringValue(); } },
+                { "sort_by", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.IdSortBy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSortBy = default; _explicitNullProperties?.Remove("sort_by"); AdditionalData["sort_by"] = unknown; } else { SortBy = parsed; AdditionalData.Remove("sort_by"); } } },
+                { "sort_order", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNestedSortOrder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSortOrder = default; _explicitNullProperties?.Remove("sort_order"); AdditionalData["sort_order"] = unknown; } else { SortOrder = parsed; AdditionalData.Remove("sort_order"); } } },
             };
         }
         /// <summary>
@@ -74,9 +124,15 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("allowed_count", AllowedCount);
             writer.WriteIntValue("count", Count);
-            writer.WriteIntValue("record_limit", RecordLimit);
+            writer.WriteBoolValue("more_records", MoreRecords);
+            writer.WriteStringValue("next_page_token", NextPageToken);
+            writer.WriteIntValue("page", Page);
+            writer.WriteDateTimeOffsetValue("page_token_expiry", PageTokenExpiry);
+            writer.WriteIntValue("per_page", PerPage);
+            writer.WriteStringValue("previous_page_token", PreviousPageToken);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.IdSortBy>("sort_by", SortBy);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.GetInfoNestedSortOrder>("sort_order", SortOrder);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

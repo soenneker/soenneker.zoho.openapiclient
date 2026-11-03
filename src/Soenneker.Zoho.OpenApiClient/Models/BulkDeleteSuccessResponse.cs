@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Bulk delete success response where all requested field update IDs are deleted.
+    /// Represents the response returned when all requested email notification definitions are successfully deleted.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BulkDeleteSuccessResponse : IAdditionalDataHolder, IParsable
@@ -18,21 +18,21 @@ namespace Soenneker.Zoho.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field_updates") is null) { _explicitNullValueFieldUpdates = default!; _explicitNullProperties?.Remove("field_updates"); }
-            else if (parseNode.GetChildNode("field_updates") is { } nullNodeFieldUpdates && nullNodeFieldUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldUpdates = null;
+            if (parseNode.GetChildNode("email_notifications") is null) { _explicitNullValueEmailNotifications = default!; _explicitNullProperties?.Remove("email_notifications"); }
+            else if (parseNode.GetChildNode("email_notifications") is { } nullNodeEmailNotifications && nullNodeEmailNotifications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailNotifications = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Deletion result entries for each requested ID.</summary>
+        /// <summary>Represents the list of deletion result entries for each email notification ID included in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem>? FieldUpdates { get => _explicitNullValueFieldUpdates; set { _explicitNullValueFieldUpdates = value; AdditionalData?.Remove("field_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_updates"); else _explicitNullProperties?.Remove("field_updates"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem>? _explicitNullValueFieldUpdates = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem>? EmailNotifications { get => _explicitNullValueEmailNotifications; set { _explicitNullValueEmailNotifications = value; AdditionalData?.Remove("email_notifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_notifications"); else _explicitNullProperties?.Remove("email_notifications"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem>? _explicitNullValueEmailNotifications = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem> FieldUpdates { get => _explicitNullValueFieldUpdates; set { _explicitNullValueFieldUpdates = value; AdditionalData?.Remove("field_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_updates"); else _explicitNullProperties?.Remove("field_updates"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem> _explicitNullValueFieldUpdates = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem> EmailNotifications { get => _explicitNullValueEmailNotifications; set { _explicitNullValueEmailNotifications = value; AdditionalData?.Remove("email_notifications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_notifications"); else _explicitNullProperties?.Remove("email_notifications"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem> _explicitNullValueEmailNotifications = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessResponse"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "field_updates", n => { FieldUpdates = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem>(global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "email_notifications", n => { EmailNotifications = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem>(global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem>("field_updates", FieldUpdates);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.BulkDeleteSuccessItem>("email_notifications", EmailNotifications);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

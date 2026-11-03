@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Zoho.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents additional details about the authentication error.
+    /// Represents additional details about the authorization error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnauthorizedErrorDetailsProperty : IAdditionalDataHolder, IParsable

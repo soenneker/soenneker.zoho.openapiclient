@@ -29,16 +29,16 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         /// <summary>Contains an array of filter conditions grouped together and evaluated with the specified logical operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem>? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem>? _explicitNullValueGroup = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupItem>? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupItem>? _explicitNullValueGroup = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem> Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
-        private List<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem> _explicitNullValueGroup = default!;
+        public List<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupItem> Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private List<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupItem> _explicitNullValueGroup = default!;
 #endif
         /// <summary>Represents the logical operator applied between the filter conditions in the group.Possible values:AND - All conditions in the group must be satisfied.OR - At least one condition in the group must be satisfied.and - Equivalent to AND; all conditions in the group must be satisfied.or - Equivalent to OR; at least one condition in the group must be satisfied.</summary>
-        public global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupOperator? GroupOperator { get => _explicitNullValueGroupOperator; set { _explicitNullValueGroupOperator = value; AdditionalData?.Remove("group_operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_operator"); else _explicitNullProperties?.Remove("group_operator"); } }
-        private global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupOperator? _explicitNullValueGroupOperator = default!;
+        public global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupOperator? GroupOperator { get => _explicitNullValueGroupOperator; set { _explicitNullValueGroupOperator = value; AdditionalData?.Remove("group_operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_operator"); else _explicitNullProperties?.Remove("group_operator"); } }
+        private global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupOperator? _explicitNullValueGroupOperator = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Zoho.OpenApiClient.Models.AutomationAssignToCriteriaEntryDetailsCriteria"/> and sets the default values.
         /// </summary>
@@ -64,8 +64,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group", n => { Group = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem>(global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "group_operator", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupOperator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGroupOperator = default; _explicitNullProperties?.Remove("group_operator"); AdditionalData["group_operator"] = unknown; } else { GroupOperator = parsed; AdditionalData.Remove("group_operator"); } } },
+                { "group", n => { Group = n.GetCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupItem>(global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "group_operator", n => { var parsed = n.GetEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupOperator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGroupOperator = default; _explicitNullProperties?.Remove("group_operator"); AdditionalData["group_operator"] = unknown; } else { GroupOperator = parsed; AdditionalData.Remove("group_operator"); } } },
             };
         }
         /// <summary>
@@ -75,8 +75,8 @@ namespace Soenneker.Zoho.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupItem>("group", Group);
-            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.WorkflowRulesGroupedFilterCriterionRequestGroupOperator>("group_operator", GroupOperator);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupItem>("group", Group);
+            writer.WriteEnumValue<global::Soenneker.Zoho.OpenApiClient.Models.KiosksStatesGroupedFilterCriterionRequestGroupOperator>("group_operator", GroupOperator);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
